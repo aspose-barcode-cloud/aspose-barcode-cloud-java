@@ -650,7 +650,7 @@ public class StorageApi {
         if (storageName == null) {
             throw new ApiException(
                     "Missing the required parameter 'storageName' when calling"
-                            + " storageExists(Async)");
+                        + " storageExists(Async)");
         }
 
         com.squareup.okhttp.Call call =

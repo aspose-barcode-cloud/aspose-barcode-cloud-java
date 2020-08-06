@@ -240,7 +240,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Text that will be displayed instead of codetext in 2D barcodes. Used for:"
-                            + " Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode")
+                        + " Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode")
     public String getTwoDDisplayText() {
         return twoDDisplayText;
     }
@@ -263,7 +263,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Specify the displaying Text Location, set to CodeLocation.None to hide"
-                            + " CodeText. Default value: CodeLocation.Below.")
+                        + " CodeText. Default value: CodeLocation.Below.")
     public CodeLocation getTextLocation() {
         return textLocation;
     }
@@ -325,7 +325,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Specify the displaying Text's font. Default value: Arial 5pt regular. Ignored"
-                            + " if FontSizeMode is set to FontSizeMode.Auto.")
+                        + " if FontSizeMode is set to FontSizeMode.Auto.")
     public FontParams getFont() {
         return font;
     }
@@ -374,7 +374,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Resolution of the BarCode image. One value for both dimensions. Default"
-                            + " value: 96 dpi.")
+                        + " value: 96 dpi.")
     public Double getResolution() {
         return resolution;
     }
@@ -436,9 +436,9 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "The smallest width of the unit of BarCode bars or spaces. Increase this will"
-                            + " increase the whole barcode image width. Ignored if AutoSizeMode"
-                            + " property is set to AutoSizeMode.Nearest or"
-                            + " AutoSizeMode.Interpolation.")
+                        + " increase the whole barcode image width. Ignored if AutoSizeMode"
+                        + " property is set to AutoSizeMode.Nearest or"
+                        + " AutoSizeMode.Interpolation.")
     public Double getDimensionX() {
         return dimensionX;
     }
@@ -461,8 +461,8 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Space between the CodeText and the BarCode in Unit value. Default value: 2pt."
-                            + " Ignored for EAN8, EAN13, UPCE, UPCA, ISBN, ISMN, ISSN,"
-                            + " UpcaGs1DatabarCoupon.")
+                        + " Ignored for EAN8, EAN13, UPCE, UPCA, ISBN, ISMN, ISSN,"
+                        + " UpcaGs1DatabarCoupon.")
     public Double getTextSpace() {
         return textSpace;
     }
@@ -503,7 +503,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Specifies the different types of automatic sizing modes. Default value:"
-                            + " AutoSizeMode.None.")
+                        + " AutoSizeMode.None.")
     public AutoSizeMode getSizeMode() {
         return sizeMode;
     }
@@ -760,7 +760,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Border visibility. If false than parameter Width is always ignored (0)."
-                            + " Default value: false.")
+                        + " Default value: false.")
     public Boolean isBorderVisible() {
         return borderVisible;
     }
@@ -786,11 +786,11 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Enable checksum during generation 1D barcodes. Default is treated as Yes for"
-                            + " symbology which must contain checksum, as No where checksum only"
-                            + " possible. Checksum is possible: Code39 Standard/Extended,"
-                            + " Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25,"
-                            + " DeutschePostIdentcode, DeutschePostLeitcode, VIN, Codabar Checksum"
-                            + " always used: Rest symbology")
+                        + " symbology which must contain checksum, as No where checksum only"
+                        + " possible. Checksum is possible: Code39 Standard/Extended,"
+                        + " Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25,"
+                        + " DeutschePostIdentcode, DeutschePostLeitcode, VIN, Codabar Checksum"
+                        + " always used: Rest symbology")
     public EnableChecksum getEnableChecksum() {
         return enableChecksum;
     }
@@ -842,7 +842,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Value indicating whether bars are filled. Only for 1D barcodes. Default"
-                            + " value: true.")
+                        + " value: true.")
     public Boolean isFilledBars() {
         return filledBars;
     }
@@ -864,7 +864,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Always display checksum digit in the human readable text for Code128 and"
-                            + " GS1Code128 barcodes.")
+                        + " GS1Code128 barcodes.")
     public Boolean isAlwaysShowChecksum() {
         return alwaysShowChecksum;
     }
@@ -889,10 +889,10 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Wide bars to Narrow bars ratio. Default value: 3, that is, wide bars are 3"
-                            + " times as wide as narrow bars. Used for ITF, PZN, PharmaCode,"
-                            + " Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5,"
-                            + " VIN, DeutschePost, OPC, Code32, DataLogic2of5, PatchCode,"
-                            + " Code39Extended, Code39Standard")
+                        + " times as wide as narrow bars. Used for ITF, PZN, PharmaCode,"
+                        + " Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5,"
+                        + " VIN, DeutschePost, OPC, Code32, DataLogic2of5, PatchCode,"
+                        + " Code39Extended, Code39Standard")
     public Double getWideNarrowRatio() {
         return wideNarrowRatio;
     }
@@ -945,7 +945,7 @@ public class GeneratorParams {
     @ApiModelProperty(
             value =
                     "Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8,"
-                            + " UPCA, UPCE, ISBN, ISSN, ISMN.")
+                        + " UPCA, UPCE, ISBN, ISSN, ISMN.")
     public String getSupplementData() {
         return supplementData;
     }

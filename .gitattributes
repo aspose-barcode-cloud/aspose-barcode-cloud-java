@@ -4,6 +4,9 @@
 # code files
 *.java text eol=lf
 
+# doc files
+*.md text eol=lf
+
 # test files
 *.xml text eol=lf
 *.json text eol=lf

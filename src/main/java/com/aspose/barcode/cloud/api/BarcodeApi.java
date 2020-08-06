@@ -1200,7 +1200,7 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                            + " getBarcodeRecognize(Async)");
+                        + " getBarcodeRecognize(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -2674,7 +2674,7 @@ public class BarcodeApi {
         if (generatorParamsList == null) {
             throw new ApiException(
                     "Missing the required parameter 'generatorParamsList' when calling"
-                            + " postGenerateMultiple(Async)");
+                        + " postGenerateMultiple(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -3058,21 +3058,21 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                            + " putBarcodeGenerateFile(Async)");
+                        + " putBarcodeGenerateFile(Async)");
         }
 
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException(
                     "Missing the required parameter 'type' when calling"
-                            + " putBarcodeGenerateFile(Async)");
+                        + " putBarcodeGenerateFile(Async)");
         }
 
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException(
                     "Missing the required parameter 'text' when calling"
-                            + " putBarcodeGenerateFile(Async)");
+                        + " putBarcodeGenerateFile(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -3731,14 +3731,14 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                            + " putBarcodeRecognizeFromBody(Async)");
+                        + " putBarcodeRecognizeFromBody(Async)");
         }
 
         // verify the required parameter 'readerParams' is set
         if (readerParams == null) {
             throw new ApiException(
                     "Missing the required parameter 'readerParams' when calling"
-                            + " putBarcodeRecognizeFromBody(Async)");
+                        + " putBarcodeRecognizeFromBody(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -3951,14 +3951,14 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                            + " putGenerateMultiple(Async)");
+                        + " putGenerateMultiple(Async)");
         }
 
         // verify the required parameter 'generatorParamsList' is set
         if (generatorParamsList == null) {
             throw new ApiException(
                     "Missing the required parameter 'generatorParamsList' when calling"
-                            + " putGenerateMultiple(Async)");
+                        + " putGenerateMultiple(Async)");
         }
 
         com.squareup.okhttp.Call call =

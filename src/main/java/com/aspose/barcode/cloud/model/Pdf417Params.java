@@ -136,7 +136,7 @@ public class Pdf417Params {
     @ApiModelProperty(
             value =
                     "Pdf417 symbology type of BarCode's compaction mode. Default value:"
-                            + " Pdf417CompactionMode.Auto.")
+                        + " Pdf417CompactionMode.Auto.")
     public Pdf417CompactionMode getCompactionMode() {
         return compactionMode;
     }
@@ -160,8 +160,8 @@ public class Pdf417Params {
     @ApiModelProperty(
             value =
                     "Pdf417 symbology type of BarCode's error correction level ranging from level0"
-                            + " to level8, level0 means no error correction info, level8 means best"
-                            + " error correction which means a larger picture.")
+                        + " to level8, level0 means no error correction info, level8 means best"
+                        + " error correction which means a larger picture.")
     public Pdf417ErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -202,7 +202,7 @@ public class Pdf417Params {
     @ApiModelProperty(
             value =
                     "Macro Pdf417 barcode's segment ID, which starts from 0, to MacroSegmentsCount"
-                            + " - 1.")
+                        + " - 1.")
     public Integer getMacroSegmentID() {
         return macroSegmentID;
     }

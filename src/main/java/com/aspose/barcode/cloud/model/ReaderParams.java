@@ -349,7 +349,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Window size for median smoothing. Typical values are 3 or 4. Default value is"
-                            + " 3. AllowMedianSmoothing must be set.")
+                        + " 3. AllowMedianSmoothing must be set.")
     public Integer getMedianSmoothingWindowSize() {
         return medianSmoothingWindowSize;
     }
@@ -372,7 +372,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine to enable median smoothing as additional scan. Mode helps to"
-                            + " recognize noised barcodes.")
+                        + " recognize noised barcodes.")
     public Boolean isAllowMedianSmoothing() {
         return allowMedianSmoothing;
     }
@@ -395,7 +395,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine to recognize color barcodes on color background as additional"
-                            + " scan. Extremely slow mode.")
+                        + " scan. Extremely slow mode.")
     public Boolean isAllowComplexBackground() {
         return allowComplexBackground;
     }
@@ -469,7 +469,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine to use gap between scans to increase recognition speed. Mode"
-                            + " can make recognition problems with low height barcodes.")
+                        + " can make recognition problems with low height barcodes.")
     public Boolean isAllowDetectScanGap() {
         return allowDetectScanGap;
     }
@@ -516,7 +516,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine to recognize inverse color image as additional scan. Mode can"
-                            + " be used when barcode is white on black background.")
+                        + " be used when barcode is white on black background.")
     public Boolean isAllowInvertImage() {
         return allowInvertImage;
     }
@@ -539,7 +539,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine for Postal barcodes to recognize slightly noised images. Mode"
-                            + " helps to recognize slightly damaged Postal barcodes.")
+                        + " helps to recognize slightly damaged Postal barcodes.")
     public Boolean isAllowMicroWhiteSpotsRemoving() {
         return allowMicroWhiteSpotsRemoving;
     }
@@ -562,8 +562,8 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine for 1D barcodes to quickly recognize high quality barcodes"
-                            + " which fill almost whole image. Mode helps to quickly recognize"
-                            + " generated barcodes from Internet.")
+                        + " which fill almost whole image. Mode helps to quickly recognize"
+                        + " generated barcodes from Internet.")
     public Boolean isAllowOneDFastBarcodesDetector() {
         return allowOneDFastBarcodesDetector;
     }
@@ -585,7 +585,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine for 1D barcodes to recognize barcodes with single wiped/glued"
-                            + " bars in pattern.")
+                        + " bars in pattern.")
     public Boolean isAllowOneDWipedBarsRestoration() {
         return allowOneDWipedBarsRestoration;
     }
@@ -627,7 +627,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine to recognize regular image without any restorations as main"
-                            + " scan. Mode to recognize image as is.")
+                        + " scan. Mode to recognize image as is.")
     public Boolean isAllowRegularImage() {
         return allowRegularImage;
     }
@@ -650,7 +650,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Allows engine to recognize barcodes with salt and pepper noise type. Mode can"
-                            + " remove small noise with white and black dots.")
+                        + " remove small noise with white and black dots.")
     public Boolean isAllowSaltAndPepperFiltering() {
         return allowSaltAndPepperFiltering;
     }
@@ -814,7 +814,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "Interpreting Type for the Customer Information of AustralianPost"
-                            + " BarCode.Default is CustomerInformationInterpretingType.Other.")
+                        + " BarCode.Default is CustomerInformationInterpretingType.Other.")
     public CustomerInformationInterpretingType getAustralianPostEncodingTable() {
         return australianPostEncodingTable;
     }
