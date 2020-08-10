@@ -170,7 +170,7 @@ public enum DecodeBarcodeType {
 
     CODABLOCKF("CodablockF");
 
-    private String value;
+    private final String value;
 
     DecodeBarcodeType(String value) {
         this.value = value;

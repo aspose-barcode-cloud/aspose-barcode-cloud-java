@@ -44,7 +44,7 @@ public enum AvailableGraphicsUnit {
 
     MILLIMETER("Millimeter");
 
-    private String value;
+    private final String value;
 
     AvailableGraphicsUnit(String value) {
         this.value = value;

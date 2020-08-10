@@ -44,7 +44,7 @@ public enum Pdf417CompactionMode {
 
     BINARY("Binary");
 
-    private String value;
+    private final String value;
 
     Pdf417CompactionMode(String value) {
         this.value = value;

@@ -40,7 +40,7 @@ public enum CodabarChecksumMode {
 
     MOD16("Mod16");
 
-    private String value;
+    private final String value;
 
     CodabarChecksumMode(String value) {
         this.value = value;

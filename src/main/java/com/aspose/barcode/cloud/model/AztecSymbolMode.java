@@ -44,7 +44,7 @@ public enum AztecSymbolMode {
 
     RUNE("Rune");
 
-    private String value;
+    private final String value;
 
     AztecSymbolMode(String value) {
         this.value = value;

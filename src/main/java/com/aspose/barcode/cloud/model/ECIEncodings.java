@@ -88,7 +88,7 @@ public enum ECIEncodings {
 
     EUC_KR("EUC_KR");
 
-    private String value;
+    private final String value;
 
     ECIEncodings(String value) {
         this.value = value;

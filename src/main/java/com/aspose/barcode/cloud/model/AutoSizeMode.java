@@ -42,7 +42,7 @@ public enum AutoSizeMode {
 
     INTERPOLATION("Interpolation");
 
-    private String value;
+    private final String value;
 
     AutoSizeMode(String value) {
         this.value = value;

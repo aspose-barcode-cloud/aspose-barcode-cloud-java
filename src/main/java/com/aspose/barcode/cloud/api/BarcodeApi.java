@@ -1010,8 +1010,7 @@ public class BarcodeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name.toString());
+        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -2886,8 +2885,7 @@ public class BarcodeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/{name}/generate".replaceAll("\\{" + "name" + "\\}", name.toString());
+        String localVarPath = "/barcode/{name}/generate".replaceAll("\\{" + "name" + "\\}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3658,8 +3656,7 @@ public class BarcodeApi {
         Object localVarPostBody = readerParams;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name.toString());
+        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3878,8 +3875,7 @@ public class BarcodeApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/{name}/generateMultiple"
-                        .replaceAll("\\{" + "name" + "\\}", name.toString());
+                "/barcode/{name}/generateMultiple".replaceAll("\\{" + "name" + "\\}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

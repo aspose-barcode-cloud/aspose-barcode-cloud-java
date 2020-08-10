@@ -90,7 +90,7 @@ public class FileApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/file/copy/{srcPath}"
-                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath.toString());
+                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -311,7 +311,7 @@ public class FileApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -484,7 +484,7 @@ public class FileApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -667,7 +667,7 @@ public class FileApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/file/move/{srcPath}"
-                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath.toString());
+                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -890,7 +890,7 @@ public class FileApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

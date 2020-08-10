@@ -52,7 +52,7 @@ public enum DataMatrixEncodeMode {
 
     ANSIX12("ANSIX12");
 
-    private String value;
+    private final String value;
 
     DataMatrixEncodeMode(String value) {
         this.value = value;

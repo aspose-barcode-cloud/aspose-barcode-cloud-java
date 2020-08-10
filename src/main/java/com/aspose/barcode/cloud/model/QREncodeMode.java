@@ -48,7 +48,7 @@ public enum QREncodeMode {
 
     EXTENDEDCODETEXT("ExtendedCodetext");
 
-    private String value;
+    private final String value;
 
     QREncodeMode(String value) {
         this.value = value;

@@ -126,7 +126,7 @@ public enum QRVersion {
 
     VERSIONM4("VersionM4");
 
-    private String value;
+    private final String value;
 
     QRVersion(String value) {
         this.value = value;

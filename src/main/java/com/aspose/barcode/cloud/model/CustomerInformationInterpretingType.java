@@ -42,7 +42,7 @@ public enum CustomerInformationInterpretingType {
 
     OTHER("Other");
 
-    private String value;
+    private final String value;
 
     CustomerInformationInterpretingType(String value) {
         this.value = value;

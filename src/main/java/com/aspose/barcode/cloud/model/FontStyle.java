@@ -46,7 +46,7 @@ public enum FontStyle {
 
     STRIKEOUT("Strikeout");
 
-    private String value;
+    private final String value;
 
     FontStyle(String value) {
         this.value = value;

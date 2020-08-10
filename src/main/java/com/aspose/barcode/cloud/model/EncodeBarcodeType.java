@@ -168,7 +168,7 @@ public enum EncodeBarcodeType {
 
     GS1CODABLOCKF("GS1CodablockF");
 
-    private String value;
+    private final String value;
 
     EncodeBarcodeType(String value) {
         this.value = value;

@@ -237,8 +237,7 @@ public class StorageApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/version/{path}"
-                        .replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/version/{path}".replaceAll("\\{" + "path" + "\\}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -408,7 +407,7 @@ public class StorageApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "\\}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -586,7 +585,7 @@ public class StorageApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/{storageName}/exist"
-                        .replaceAll("\\{" + "storageName" + "\\}", storageName.toString());
+                        .replaceAll("\\{" + "storageName" + "\\}", storageName);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

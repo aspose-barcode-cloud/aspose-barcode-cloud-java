@@ -42,7 +42,7 @@ public enum CodeLocation {
 
     NONE("None");
 
-    private String value;
+    private final String value;
 
     CodeLocation(String value) {
         this.value = value;
