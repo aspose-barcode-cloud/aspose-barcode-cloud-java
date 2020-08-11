@@ -44,11 +44,6 @@ public class ResultImageInfo {
     @SerializedName(value = "imageHeight")
     private Integer imageHeight = null;
 
-    public ResultImageInfo fileSize(Long fileSize) {
-        this.fileSize = fileSize;
-        return this;
-    }
-
     /**
      * Result file size.
      *
@@ -63,11 +58,6 @@ public class ResultImageInfo {
         this.fileSize = fileSize;
     }
 
-    public ResultImageInfo imageWidth(Integer imageWidth) {
-        this.imageWidth = imageWidth;
-        return this;
-    }
-
     /**
      * Result image width.
      *
@@ -80,11 +70,6 @@ public class ResultImageInfo {
 
     public void setImageWidth(Integer imageWidth) {
         this.imageWidth = imageWidth;
-    }
-
-    public ResultImageInfo imageHeight(Integer imageHeight) {
-        this.imageHeight = imageHeight;
-        return this;
     }
 
     /**

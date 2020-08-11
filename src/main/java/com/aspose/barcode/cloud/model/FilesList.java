@@ -40,11 +40,6 @@ public class FilesList {
     @SerializedName(value = "value")
     private List<StorageFile> value = null;
 
-    public FilesList value(List<StorageFile> value) {
-        this.value = value;
-        return this;
-    }
-
     public FilesList addValueItem(StorageFile valueItem) {
         if (this.value == null) {
             this.value = new ArrayList<StorageFile>();

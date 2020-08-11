@@ -46,11 +46,6 @@ public class GeneratorParamsList {
     @SerializedName(value = "ystep")
     private Integer ystep = null;
 
-    public GeneratorParamsList barcodeBuilders(List<GeneratorParams> barcodeBuilders) {
-        this.barcodeBuilders = barcodeBuilders;
-        return this;
-    }
-
     public GeneratorParamsList addBarcodeBuildersItem(GeneratorParams barcodeBuildersItem) {
         if (this.barcodeBuilders == null) {
             this.barcodeBuilders = new ArrayList<GeneratorParams>();
@@ -73,11 +68,6 @@ public class GeneratorParamsList {
         this.barcodeBuilders = barcodeBuilders;
     }
 
-    public GeneratorParamsList xstep(Integer xstep) {
-        this.xstep = xstep;
-        return this;
-    }
-
     /**
      * Shift step according to X axis
      *
@@ -90,11 +80,6 @@ public class GeneratorParamsList {
 
     public void setXstep(Integer xstep) {
         this.xstep = xstep;
-    }
-
-    public GeneratorParamsList ystep(Integer ystep) {
-        this.ystep = ystep;
-        return this;
     }
 
     /**

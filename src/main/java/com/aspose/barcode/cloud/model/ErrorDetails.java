@@ -43,11 +43,6 @@ public class ErrorDetails {
     @SerializedName(value = "date")
     private OffsetDateTime date = null;
 
-    public ErrorDetails requestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
     /**
      * The request id
      *
@@ -60,11 +55,6 @@ public class ErrorDetails {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
-    }
-
-    public ErrorDetails date(OffsetDateTime date) {
-        this.date = date;
-        return this;
     }
 
     /**

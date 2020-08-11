@@ -44,11 +44,6 @@ public class CodablockParams {
     @SerializedName(value = "rows")
     private Integer rows = null;
 
-    public CodablockParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -63,11 +58,6 @@ public class CodablockParams {
         this.aspectRatio = aspectRatio;
     }
 
-    public CodablockParams columns(Integer columns) {
-        this.columns = columns;
-        return this;
-    }
-
     /**
      * Columns count.
      *
@@ -80,11 +70,6 @@ public class CodablockParams {
 
     public void setColumns(Integer columns) {
         this.columns = columns;
-    }
-
-    public CodablockParams rows(Integer rows) {
-        this.rows = rows;
-        return this;
     }
 
     /**

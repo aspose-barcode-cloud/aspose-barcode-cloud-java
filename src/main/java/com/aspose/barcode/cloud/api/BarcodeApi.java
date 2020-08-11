@@ -146,7 +146,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getBarcodeGenerateCall(
+    protected com.squareup.okhttp.Call getBarcodeGenerateCall(
             String type,
             String text,
             String twoDDisplayText,
@@ -969,7 +969,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getBarcodeRecognizeCall(
+    protected com.squareup.okhttp.Call getBarcodeRecognizeCall(
             String name,
             String type,
             String checksumValidation,
@@ -1827,7 +1827,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentCall(
+    protected com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentCall(
             String type,
             String checksumValidation,
             Boolean detectEncoding,
@@ -2596,7 +2596,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postGenerateMultipleCall(
+    protected com.squareup.okhttp.Call postGenerateMultipleCall(
             GeneratorParamsList generatorParamsList,
             String format,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -2842,7 +2842,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putBarcodeGenerateFileCall(
+    protected com.squareup.okhttp.Call putBarcodeGenerateFileCall(
             String name,
             String type,
             String text,
@@ -3644,7 +3644,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putBarcodeRecognizeFromBodyCall(
+    protected com.squareup.okhttp.Call putBarcodeRecognizeFromBodyCall(
             String name,
             ReaderParams readerParams,
             String type,
@@ -3862,7 +3862,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putGenerateMultipleCall(
+    protected com.squareup.okhttp.Call putGenerateMultipleCall(
             String name,
             GeneratorParamsList generatorParamsList,
             String format,

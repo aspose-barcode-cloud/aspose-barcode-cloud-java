@@ -53,11 +53,6 @@ public class DataMatrixParams {
     @SerializedName(value = "rows")
     private Integer rows = null;
 
-    public DataMatrixParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module
      *
@@ -70,11 +65,6 @@ public class DataMatrixParams {
 
     public void setAspectRatio(Double aspectRatio) {
         this.aspectRatio = aspectRatio;
-    }
-
-    public DataMatrixParams textEncoding(String textEncoding) {
-        this.textEncoding = textEncoding;
-        return this;
     }
 
     /**
@@ -91,11 +81,6 @@ public class DataMatrixParams {
         this.textEncoding = textEncoding;
     }
 
-    public DataMatrixParams columns(Integer columns) {
-        this.columns = columns;
-        return this;
-    }
-
     /**
      * Columns count.
      *
@@ -108,11 +93,6 @@ public class DataMatrixParams {
 
     public void setColumns(Integer columns) {
         this.columns = columns;
-    }
-
-    public DataMatrixParams dataMatrixEcc(DataMatrixEccType dataMatrixEcc) {
-        this.dataMatrixEcc = dataMatrixEcc;
-        return this;
     }
 
     /**
@@ -129,11 +109,6 @@ public class DataMatrixParams {
         this.dataMatrixEcc = dataMatrixEcc;
     }
 
-    public DataMatrixParams dataMatrixEncodeMode(DataMatrixEncodeMode dataMatrixEncodeMode) {
-        this.dataMatrixEncodeMode = dataMatrixEncodeMode;
-        return this;
-    }
-
     /**
      * Encode mode of Datamatrix barcode. Default value: DataMatrixEncodeMode.Auto.
      *
@@ -147,11 +122,6 @@ public class DataMatrixParams {
 
     public void setDataMatrixEncodeMode(DataMatrixEncodeMode dataMatrixEncodeMode) {
         this.dataMatrixEncodeMode = dataMatrixEncodeMode;
-    }
-
-    public DataMatrixParams rows(Integer rows) {
-        this.rows = rows;
-        return this;
     }
 
     /**

@@ -41,11 +41,6 @@ public class RegionPoint {
     @SerializedName(value = "y")
     private Integer Y = null;
 
-    public RegionPoint X(Integer X) {
-        this.X = X;
-        return this;
-    }
-
     /**
      * X-coordinate
      *
@@ -58,11 +53,6 @@ public class RegionPoint {
 
     public void setX(Integer X) {
         this.X = X;
-    }
-
-    public RegionPoint Y(Integer Y) {
-        this.Y = Y;
-        return this;
     }
 
     /**

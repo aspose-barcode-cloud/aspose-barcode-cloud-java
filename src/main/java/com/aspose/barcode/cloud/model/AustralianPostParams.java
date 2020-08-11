@@ -41,11 +41,6 @@ public class AustralianPostParams {
     @SerializedName(value = "shortBarHeight")
     private Double shortBarHeight = null;
 
-    public AustralianPostParams encodingTable(CustomerInformationInterpretingType encodingTable) {
-        this.encodingTable = encodingTable;
-        return this;
-    }
-
     /**
      * Interpreting type for the Customer Information of AustralianPost, default to
      * CustomerInformationInterpretingType.Other\&quot;
@@ -62,11 +57,6 @@ public class AustralianPostParams {
 
     public void setEncodingTable(CustomerInformationInterpretingType encodingTable) {
         this.encodingTable = encodingTable;
-    }
-
-    public AustralianPostParams shortBarHeight(Double shortBarHeight) {
-        this.shortBarHeight = shortBarHeight;
-        return this;
     }
 
     /**

@@ -47,11 +47,6 @@ public class AztecParams {
     @SerializedName(value = "textEncoding")
     private String textEncoding = null;
 
-    public AztecParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -64,11 +59,6 @@ public class AztecParams {
 
     public void setAspectRatio(Double aspectRatio) {
         this.aspectRatio = aspectRatio;
-    }
-
-    public AztecParams errorLevel(Integer errorLevel) {
-        this.errorLevel = errorLevel;
-        return this;
     }
 
     /**
@@ -88,11 +78,6 @@ public class AztecParams {
         this.errorLevel = errorLevel;
     }
 
-    public AztecParams symbolMode(AztecSymbolMode symbolMode) {
-        this.symbolMode = symbolMode;
-        return this;
-    }
-
     /**
      * Aztec Symbol mode. Default value: AztecSymbolMode.Auto.
      *
@@ -105,11 +90,6 @@ public class AztecParams {
 
     public void setSymbolMode(AztecSymbolMode symbolMode) {
         this.symbolMode = symbolMode;
-    }
-
-    public AztecParams textEncoding(String textEncoding) {
-        this.textEncoding = textEncoding;
-        return this;
     }
 
     /**

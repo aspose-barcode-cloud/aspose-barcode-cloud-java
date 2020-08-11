@@ -74,7 +74,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call copyFolderCall(
+    protected com.squareup.okhttp.Call copyFolderCall(
             String srcPath,
             String destPath,
             String srcStorageName,
@@ -279,7 +279,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFolderCall(
+    protected com.squareup.okhttp.Call createFolderCall(
             String path,
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -443,7 +443,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteFolderCall(
+    protected com.squareup.okhttp.Call deleteFolderCall(
             String path,
             String storageName,
             Boolean recursive,
@@ -616,7 +616,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFilesListCall(
+    protected com.squareup.okhttp.Call getFilesListCall(
             String path,
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -786,7 +786,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call moveFolderCall(
+    protected com.squareup.okhttp.Call moveFolderCall(
             String srcPath,
             String destPath,
             String srcStorageName,

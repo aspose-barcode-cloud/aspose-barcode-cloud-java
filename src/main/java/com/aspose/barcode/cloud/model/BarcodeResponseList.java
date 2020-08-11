@@ -40,11 +40,6 @@ public class BarcodeResponseList {
     @SerializedName(value = "barcodes")
     private List<BarcodeResponse> barcodes = null;
 
-    public BarcodeResponseList barcodes(List<BarcodeResponse> barcodes) {
-        this.barcodes = barcodes;
-        return this;
-    }
-
     public BarcodeResponseList addBarcodesItem(BarcodeResponse barcodesItem) {
         if (this.barcodes == null) {
             this.barcodes = new ArrayList<BarcodeResponse>();

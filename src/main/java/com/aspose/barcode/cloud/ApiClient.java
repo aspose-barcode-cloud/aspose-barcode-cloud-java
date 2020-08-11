@@ -68,7 +68,7 @@ public class ApiClient {
 
     private String basePath = "https://api.aspose.cloud/v3.0";
     private boolean debugging = false;
-    private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
+    private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private String tempFolderPath = null;
 
     private Map<String, Authentication> authentications;
@@ -110,7 +110,7 @@ public class ApiClient {
     /**
      * Get base path
      *
-     * @return Baes path
+     * @return Base path
      */
     public String getBasePath() {
         return basePath;

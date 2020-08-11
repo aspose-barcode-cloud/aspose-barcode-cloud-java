@@ -41,11 +41,6 @@ public class PatchCodeParams {
     @SerializedName(value = "patchFormat")
     private PatchFormat patchFormat = null;
 
-    public PatchCodeParams extraBarcodeText(String extraBarcodeText) {
-        this.extraBarcodeText = extraBarcodeText;
-        return this;
-    }
-
     /**
      * Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode.
      *
@@ -61,11 +56,6 @@ public class PatchCodeParams {
 
     public void setExtraBarcodeText(String extraBarcodeText) {
         this.extraBarcodeText = extraBarcodeText;
-    }
-
-    public PatchCodeParams patchFormat(PatchFormat patchFormat) {
-        this.patchFormat = patchFormat;
-        return this;
     }
 
     /**

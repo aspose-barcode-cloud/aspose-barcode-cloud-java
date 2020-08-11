@@ -38,11 +38,6 @@ public class BarCodeErrorResponse {
     @SerializedName(value = "error")
     private Error error = null;
 
-    public BarCodeErrorResponse error(Error error) {
-        this.error = error;
-        return this;
-    }
-
     /**
      * Error
      *

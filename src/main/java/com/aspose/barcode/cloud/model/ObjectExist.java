@@ -41,11 +41,6 @@ public class ObjectExist {
     @SerializedName(value = "isFolder")
     private Boolean isFolder = null;
 
-    public ObjectExist exists(Boolean exists) {
-        this.exists = exists;
-        return this;
-    }
-
     /**
      * Indicates that the file or folder exists.
      *
@@ -58,11 +53,6 @@ public class ObjectExist {
 
     public void setExists(Boolean exists) {
         this.exists = exists;
-    }
-
-    public ObjectExist isFolder(Boolean isFolder) {
-        this.isFolder = isFolder;
-        return this;
     }
 
     /**

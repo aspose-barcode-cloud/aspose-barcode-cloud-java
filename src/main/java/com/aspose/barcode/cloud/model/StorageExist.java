@@ -38,11 +38,6 @@ public class StorageExist {
     @SerializedName(value = "exists")
     private Boolean exists = null;
 
-    public StorageExist exists(Boolean exists) {
-        this.exists = exists;
-        return this;
-    }
-
     /**
      * Shows that the storage exists.
      *

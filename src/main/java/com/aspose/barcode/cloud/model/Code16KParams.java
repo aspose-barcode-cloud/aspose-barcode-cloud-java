@@ -44,11 +44,6 @@ public class Code16KParams {
     @SerializedName(value = "quietZoneRightCoef")
     private Integer quietZoneRightCoef = null;
 
-    public Code16KParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -61,11 +56,6 @@ public class Code16KParams {
 
     public void setAspectRatio(Double aspectRatio) {
         this.aspectRatio = aspectRatio;
-    }
-
-    public Code16KParams quietZoneLeftCoef(Integer quietZoneLeftCoef) {
-        this.quietZoneLeftCoef = quietZoneLeftCoef;
-        return this;
     }
 
     /**
@@ -84,11 +74,6 @@ public class Code16KParams {
 
     public void setQuietZoneLeftCoef(Integer quietZoneLeftCoef) {
         this.quietZoneLeftCoef = quietZoneLeftCoef;
-    }
-
-    public Code16KParams quietZoneRightCoef(Integer quietZoneRightCoef) {
-        this.quietZoneRightCoef = quietZoneRightCoef;
-        return this;
     }
 
     /**

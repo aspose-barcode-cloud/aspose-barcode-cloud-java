@@ -44,11 +44,6 @@ public class DataBarParams {
     @SerializedName(value = "rows")
     private Integer rows = null;
 
-    public DataBarParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module. Used for DataBar stacked.
      *
@@ -63,11 +58,6 @@ public class DataBarParams {
         this.aspectRatio = aspectRatio;
     }
 
-    public DataBarParams columns(Integer columns) {
-        this.columns = columns;
-        return this;
-    }
-
     /**
      * Columns count.
      *
@@ -80,11 +70,6 @@ public class DataBarParams {
 
     public void setColumns(Integer columns) {
         this.columns = columns;
-    }
-
-    public DataBarParams rows(Integer rows) {
-        this.rows = rows;
-        return this;
     }
 
     /**

@@ -44,11 +44,6 @@ public class CodabarParams {
     @SerializedName(value = "stopSymbol")
     private CodabarSymbol stopSymbol = null;
 
-    public CodabarParams checksumMode(CodabarChecksumMode checksumMode) {
-        this.checksumMode = checksumMode;
-        return this;
-    }
-
     /**
      * Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable
      * checksum calculation set value EnableChecksum.Yes to property EnableChecksum.
@@ -68,11 +63,6 @@ public class CodabarParams {
         this.checksumMode = checksumMode;
     }
 
-    public CodabarParams startSymbol(CodabarSymbol startSymbol) {
-        this.startSymbol = startSymbol;
-        return this;
-    }
-
     /**
      * Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A
      *
@@ -86,11 +76,6 @@ public class CodabarParams {
 
     public void setStartSymbol(CodabarSymbol startSymbol) {
         this.startSymbol = startSymbol;
-    }
-
-    public CodabarParams stopSymbol(CodabarSymbol stopSymbol) {
-        this.stopSymbol = stopSymbol;
-        return this;
     }
 
     /**

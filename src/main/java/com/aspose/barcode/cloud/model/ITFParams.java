@@ -44,11 +44,6 @@ public class ITFParams {
     @SerializedName(value = "quietZoneCoef")
     private Integer quietZoneCoef = null;
 
-    public ITFParams borderThickness(Double borderThickness) {
-        this.borderThickness = borderThickness;
-        return this;
-    }
-
     /**
      * ITF border (bearer bar) thickness in Unit value. Default value: 12pt.
      *
@@ -64,11 +59,6 @@ public class ITFParams {
         this.borderThickness = borderThickness;
     }
 
-    public ITFParams borderType(ITF14BorderType borderType) {
-        this.borderType = borderType;
-        return this;
-    }
-
     /**
      * Border type of ITF barcode. Default value: ITF14BorderType.Bar.
      *
@@ -81,11 +71,6 @@ public class ITFParams {
 
     public void setBorderType(ITF14BorderType borderType) {
         this.borderType = borderType;
-    }
-
-    public ITFParams quietZoneCoef(Integer quietZoneCoef) {
-        this.quietZoneCoef = quietZoneCoef;
-        return this;
     }
 
     /**

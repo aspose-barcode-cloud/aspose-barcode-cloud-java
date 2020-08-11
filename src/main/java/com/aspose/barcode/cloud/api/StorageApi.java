@@ -74,7 +74,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getDiscUsageCall(
+    protected com.squareup.okhttp.Call getDiscUsageCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -227,7 +227,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileVersionsCall(
+    protected com.squareup.okhttp.Call getFileVersionsCall(
             String path,
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -396,7 +396,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call objectExistsCall(
+    protected com.squareup.okhttp.Call objectExistsCall(
             String path,
             String storageName,
             String versionId,
@@ -575,7 +575,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call storageExistsCall(
+    protected com.squareup.okhttp.Call storageExistsCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)

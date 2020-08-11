@@ -41,11 +41,6 @@ public class MaxiCodeParams {
     @SerializedName(value = "encodeMode")
     private Integer encodeMode = null;
 
-    public MaxiCodeParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -58,11 +53,6 @@ public class MaxiCodeParams {
 
     public void setAspectRatio(Double aspectRatio) {
         this.aspectRatio = aspectRatio;
-    }
-
-    public MaxiCodeParams encodeMode(Integer encodeMode) {
-        this.encodeMode = encodeMode;
-        return this;
     }
 
     /**

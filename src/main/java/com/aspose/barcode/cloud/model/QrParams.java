@@ -56,11 +56,6 @@ public class QrParams {
     @SerializedName(value = "version")
     private QRVersion version = null;
 
-    public QrParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -75,11 +70,6 @@ public class QrParams {
         this.aspectRatio = aspectRatio;
     }
 
-    public QrParams textEncoding(String textEncoding) {
-        this.textEncoding = textEncoding;
-        return this;
-    }
-
     /**
      * Encoding of codetext.
      *
@@ -92,11 +82,6 @@ public class QrParams {
 
     public void setTextEncoding(String textEncoding) {
         this.textEncoding = textEncoding;
-    }
-
-    public QrParams encodeType(QREncodeType encodeType) {
-        this.encodeType = encodeType;
-        return this;
     }
 
     /**
@@ -114,11 +99,6 @@ public class QrParams {
 
     public void setEncodeType(QREncodeType encodeType) {
         this.encodeType = encodeType;
-    }
-
-    public QrParams ecIEncoding(ECIEncodings ecIEncoding) {
-        this.ecIEncoding = ecIEncoding;
-        return this;
     }
 
     /**
@@ -142,11 +122,6 @@ public class QrParams {
         this.ecIEncoding = ecIEncoding;
     }
 
-    public QrParams encodeMode(QREncodeMode encodeMode) {
-        this.encodeMode = encodeMode;
-        return this;
-    }
-
     /**
      * QR symbology type of BarCode&#39;s encoding mode. Default value: QREncodeMode.Auto.
      *
@@ -162,11 +137,6 @@ public class QrParams {
 
     public void setEncodeMode(QREncodeMode encodeMode) {
         this.encodeMode = encodeMode;
-    }
-
-    public QrParams errorLevel(QRErrorLevel errorLevel) {
-        this.errorLevel = errorLevel;
-        return this;
     }
 
     /**
@@ -185,11 +155,6 @@ public class QrParams {
 
     public void setErrorLevel(QRErrorLevel errorLevel) {
         this.errorLevel = errorLevel;
-    }
-
-    public QrParams version(QRVersion version) {
-        this.version = version;
-        return this;
     }
 
     /**

@@ -38,11 +38,6 @@ public class PostalParams {
     @SerializedName(value = "shortBarHeight")
     private Double shortBarHeight = null;
 
-    public PostalParams shortBarHeight(Double shortBarHeight) {
-        this.shortBarHeight = shortBarHeight;
-        return this;
-    }
-
     /**
      * Short bar&#39;s height of Postal barcodes.
      *

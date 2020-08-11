@@ -40,11 +40,6 @@ public class FileVersions {
     @SerializedName(value = "value")
     private List<FileVersion> value = null;
 
-    public FileVersions value(List<FileVersion> value) {
-        this.value = value;
-        return this;
-    }
-
     public FileVersions addValueItem(FileVersion valueItem) {
         if (this.value == null) {
             this.value = new ArrayList<FileVersion>();

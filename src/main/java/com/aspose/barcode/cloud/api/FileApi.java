@@ -76,7 +76,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call copyFileCall(
+    protected com.squareup.okhttp.Call copyFileCall(
             String srcPath,
             String destPath,
             String srcStorageName,
@@ -300,7 +300,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteFileCall(
+    protected com.squareup.okhttp.Call deleteFileCall(
             String path,
             String storageName,
             String versionId,
@@ -473,7 +473,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call downloadFileCall(
+    protected com.squareup.okhttp.Call downloadFileCall(
             String path,
             String storageName,
             String versionId,
@@ -653,7 +653,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call moveFileCall(
+    protected com.squareup.okhttp.Call moveFileCall(
             String srcPath,
             String destPath,
             String srcStorageName,
@@ -879,7 +879,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call uploadFileCall(
+    protected com.squareup.okhttp.Call uploadFileCall(
             String path,
             File file,
             String storageName,
