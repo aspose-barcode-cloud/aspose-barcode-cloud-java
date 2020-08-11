@@ -149,7 +149,7 @@ public class FileVersion {
             required = true,
             value =
                     "Specifies whether the file is (true) or is not (false) the latest version of"
-                        + " an file.")
+                            + " an file.")
     public Boolean isIsLatest() {
         return isLatest;
     }

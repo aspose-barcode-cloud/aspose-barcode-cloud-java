@@ -124,7 +124,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -133,11 +132,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getDiscUsageValidateBeforeCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -237,7 +234,7 @@ public class StorageApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/version/{path}".replaceAll("\\{" + "path" + "\\}", path);
+                "/barcode/storage/version/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -279,7 +276,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -288,11 +284,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getFileVersionsValidateBeforeCall(
             String path,
             String storageName,
@@ -407,7 +401,7 @@ public class StorageApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "\\}", path);
+                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -451,7 +445,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -460,11 +453,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call objectExistsValidateBeforeCall(
             String path,
             String storageName,
@@ -585,7 +576,7 @@ public class StorageApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/{storageName}/exist"
-                        .replaceAll("\\{" + "storageName" + "\\}", storageName);
+                        .replaceAll("\\{" + "storageName" + "}", storageName);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -625,7 +616,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -634,11 +624,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call storageExistsValidateBeforeCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -649,7 +637,7 @@ public class StorageApi {
         if (storageName == null) {
             throw new ApiException(
                     "Missing the required parameter 'storageName' when calling"
-                        + " storageExists(Async)");
+                            + " storageExists(Async)");
         }
 
         com.squareup.okhttp.Call call =

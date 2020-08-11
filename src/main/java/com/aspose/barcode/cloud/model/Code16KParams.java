@@ -67,7 +67,7 @@ public class Code16KParams {
     @ApiModelProperty(
             value =
                     "Size of the left quiet zone in xDimension. Default value: 10, meaning if"
-                        + " xDimension = 2px than left quiet zone will be 20px.")
+                            + " xDimension = 2px than left quiet zone will be 20px.")
     public Integer getQuietZoneLeftCoef() {
         return quietZoneLeftCoef;
     }
@@ -85,7 +85,7 @@ public class Code16KParams {
     @ApiModelProperty(
             value =
                     "Size of the right quiet zone in xDimension. Default value: 1, meaning if"
-                        + " xDimension = 2px than right quiet zone will be 2px.")
+                            + " xDimension = 2px than right quiet zone will be 2px.")
     public Integer getQuietZoneRightCoef() {
         return quietZoneRightCoef;
     }

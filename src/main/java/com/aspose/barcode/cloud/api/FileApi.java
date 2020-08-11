@@ -89,8 +89,7 @@ public class FileApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/file/copy/{srcPath}"
-                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath);
+                "/barcode/storage/file/copy/{srcPath}".replaceAll("\\{" + "srcPath" + "}", srcPath);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -139,7 +138,6 @@ public class FileApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -148,11 +146,9 @@ public class FileApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call copyFileValidateBeforeCall(
             String srcPath,
             String destPath,
@@ -310,8 +306,7 @@ public class FileApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path);
+        String localVarPath = "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -355,7 +350,6 @@ public class FileApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "DELETE",
@@ -364,11 +358,9 @@ public class FileApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call deleteFileValidateBeforeCall(
             String path,
             String storageName,
@@ -483,8 +475,7 @@ public class FileApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path);
+        String localVarPath = "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -528,7 +519,6 @@ public class FileApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -537,11 +527,9 @@ public class FileApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call downloadFileValidateBeforeCall(
             String path,
             String storageName,
@@ -666,8 +654,7 @@ public class FileApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/file/move/{srcPath}"
-                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath);
+                "/barcode/storage/file/move/{srcPath}".replaceAll("\\{" + "srcPath" + "}", srcPath);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -716,7 +703,6 @@ public class FileApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -725,11 +711,9 @@ public class FileApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call moveFileValidateBeforeCall(
             String srcPath,
             String destPath,
@@ -889,8 +873,7 @@ public class FileApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "\\}", path);
+        String localVarPath = "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -933,7 +916,6 @@ public class FileApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -942,11 +924,9 @@ public class FileApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call uploadFileValidateBeforeCall(
             String path,
             File file,

@@ -25,7 +25,6 @@
 
 package com.aspose.barcode.cloud;
 
-
 import java.util.List;
 import java.util.Map;
 

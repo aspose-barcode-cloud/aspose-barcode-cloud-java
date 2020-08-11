@@ -69,7 +69,7 @@ public class AztecParams {
     @ApiModelProperty(
             value =
                     "Level of error correction of Aztec types of barcode. Value should between 10"
-                        + " to 95.")
+                            + " to 95.")
     public Integer getErrorLevel() {
         return errorLevel;
     }

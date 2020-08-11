@@ -53,8 +53,8 @@ public class CodabarParams {
     @ApiModelProperty(
             value =
                     "Checksum algorithm for Codabar barcodes. Default value:"
-                        + " CodabarChecksumMode.Mod16. To enable checksum calculation set value"
-                        + " EnableChecksum.Yes to property EnableChecksum.")
+                            + " CodabarChecksumMode.Mod16. To enable checksum calculation set value"
+                            + " EnableChecksum.Yes to property EnableChecksum.")
     public CodabarChecksumMode getChecksumMode() {
         return checksumMode;
     }

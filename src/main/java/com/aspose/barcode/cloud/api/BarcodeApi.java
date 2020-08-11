@@ -295,7 +295,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -304,11 +303,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getBarcodeGenerateValidateBeforeCall(
             String type,
             String text,
@@ -1010,7 +1007,7 @@ public class BarcodeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name);
+        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1142,7 +1139,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -1151,11 +1147,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getBarcodeRecognizeValidateBeforeCall(
             String name,
             String type,
@@ -1199,7 +1193,7 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                        + " getBarcodeRecognize(Async)");
+                            + " getBarcodeRecognize(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -1998,7 +1992,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "POST",
@@ -2007,11 +2000,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentValidateBeforeCall(
             String type,
             String checksumValidation,
@@ -2648,7 +2639,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "POST",
@@ -2657,11 +2647,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call postGenerateMultipleValidateBeforeCall(
             GeneratorParamsList generatorParamsList,
             String format,
@@ -2673,7 +2661,7 @@ public class BarcodeApi {
         if (generatorParamsList == null) {
             throw new ApiException(
                     "Missing the required parameter 'generatorParamsList' when calling"
-                        + " postGenerateMultiple(Async)");
+                            + " postGenerateMultiple(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -2885,7 +2873,7 @@ public class BarcodeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/barcode/{name}/generate".replaceAll("\\{" + "name" + "\\}", name);
+        String localVarPath = "/barcode/{name}/generate".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -2997,7 +2985,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -3006,11 +2993,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putBarcodeGenerateFileValidateBeforeCall(
             String name,
             String type,
@@ -3056,21 +3041,21 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                        + " putBarcodeGenerateFile(Async)");
+                            + " putBarcodeGenerateFile(Async)");
         }
 
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException(
                     "Missing the required parameter 'type' when calling"
-                        + " putBarcodeGenerateFile(Async)");
+                            + " putBarcodeGenerateFile(Async)");
         }
 
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException(
                     "Missing the required parameter 'text' when calling"
-                        + " putBarcodeGenerateFile(Async)");
+                            + " putBarcodeGenerateFile(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -3656,7 +3641,7 @@ public class BarcodeApi {
         Object localVarPostBody = readerParams;
 
         // create path and map variables
-        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name);
+        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3700,7 +3685,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -3709,11 +3693,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putBarcodeRecognizeFromBodyValidateBeforeCall(
             String name,
             ReaderParams readerParams,
@@ -3728,14 +3710,14 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                        + " putBarcodeRecognizeFromBody(Async)");
+                            + " putBarcodeRecognizeFromBody(Async)");
         }
 
         // verify the required parameter 'readerParams' is set
         if (readerParams == null) {
             throw new ApiException(
                     "Missing the required parameter 'readerParams' when calling"
-                        + " putBarcodeRecognizeFromBody(Async)");
+                            + " putBarcodeRecognizeFromBody(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -3875,7 +3857,7 @@ public class BarcodeApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/{name}/generateMultiple".replaceAll("\\{" + "name" + "\\}", name);
+                "/barcode/{name}/generateMultiple".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3919,7 +3901,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -3928,11 +3909,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putGenerateMultipleValidateBeforeCall(
             String name,
             GeneratorParamsList generatorParamsList,
@@ -3947,14 +3926,14 @@ public class BarcodeApi {
         if (name == null) {
             throw new ApiException(
                     "Missing the required parameter 'name' when calling"
-                        + " putGenerateMultiple(Async)");
+                            + " putGenerateMultiple(Async)");
         }
 
         // verify the required parameter 'generatorParamsList' is set
         if (generatorParamsList == null) {
             throw new ApiException(
                     "Missing the required parameter 'generatorParamsList' when calling"
-                        + " putGenerateMultiple(Async)");
+                            + " putGenerateMultiple(Async)");
         }
 
         com.squareup.okhttp.Call call =

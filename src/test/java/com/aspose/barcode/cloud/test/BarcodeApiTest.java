@@ -4,13 +4,11 @@ import static org.junit.Assert.*;
 
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.Configuration;
 import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.api.FileApi;
-import com.aspose.barcode.cloud.auth.OAuth;
 import com.aspose.barcode.cloud.model.*;
 
-import org.junit.*;
+import org.junit.Test;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -20,15 +18,9 @@ import java.util.List;
 /** API tests for BarcodeApi */
 public class BarcodeApiTest extends TestBase {
 
-    private static final ApiClient client = Configuration.getDefaultApiClient();
+    private static final ApiClient client = new ApiClient(accessToken);
     private static final BarcodeApi api = new BarcodeApi(client);
     private static final FileApi fileApi = new FileApi(client);
-
-    @BeforeClass
-    public static void setUpClass() {
-        OAuth JWT = (OAuth) client.getAuthentication("JWT");
-        JWT.setAccessToken(accessToken);
-    }
 
     /**
      * Generate barcode.
@@ -118,7 +110,7 @@ public class BarcodeApiTest extends TestBase {
     @Test
     public void getBarcodeRecognizeTest() throws ApiException {
         String testFileName = "1.png";
-        String remoteFolder = uploadTestFile(testFileName);
+        uploadTestFile(testFileName);
 
         String type = DecodeBarcodeType.CODE11.getValue();
         String checksumValidation = ChecksumValidation.OFF.toString();
@@ -186,7 +178,7 @@ public class BarcodeApiTest extends TestBase {
                         australianPostEncodingTable,
                         rectangleRegion,
                         testStorageName,
-                        remoteFolder);
+                        remoteTempFolder);
 
         assertNotNull(response);
         assertFalse(response.getBarcodes().isEmpty());
@@ -201,7 +193,7 @@ public class BarcodeApiTest extends TestBase {
         assertTrue(region.get(0).getY() > 0);
     }
 
-    private String uploadTestFile(String testFileName) throws ApiException {
+    private void uploadTestFile(String testFileName) throws ApiException {
         Path filePath = Paths.get(testDataPath, testFileName);
         File file = new File(filePath.toString());
         String remotePath = remoteTempFolder + filePath.getFileName();
@@ -211,8 +203,6 @@ public class BarcodeApiTest extends TestBase {
         if (!result.getErrors().isEmpty()) {
             throw new ApiException(result.getErrors().toString());
         }
-
-        return remoteTempFolder;
     }
 
     /**
@@ -431,14 +421,14 @@ public class BarcodeApiTest extends TestBase {
     @Test
     public void putBarcodeRecognizeFromBodyTest() throws ApiException {
         String testFileName = "1.png";
-        String remoteFolder = uploadTestFile(testFileName);
+        uploadTestFile(testFileName);
 
         ReaderParams readerParams = new ReaderParams();
         readerParams.setChecksumValidation(ChecksumValidation.OFF);
         String type = DecodeBarcodeType.CODE11.getValue();
         BarcodeResponseList response =
                 api.putBarcodeRecognizeFromBody(
-                        testFileName, readerParams, type, testStorageName, remoteFolder);
+                        testFileName, readerParams, type, testStorageName, remoteTempFolder);
 
         assertNotNull(response);
         assertFalse(response.getBarcodes().isEmpty());

@@ -50,7 +50,7 @@ public class AustralianPostParams {
     @ApiModelProperty(
             value =
                     "Interpreting type for the Customer Information of AustralianPost, default to"
-                        + " CustomerInformationInterpretingType.Other\"")
+                            + " CustomerInformationInterpretingType.Other\"")
     public CustomerInformationInterpretingType getEncodingTable() {
         return encodingTable;
     }

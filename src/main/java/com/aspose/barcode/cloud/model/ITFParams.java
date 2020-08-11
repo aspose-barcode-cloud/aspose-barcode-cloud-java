@@ -82,7 +82,7 @@ public class ITFParams {
     @ApiModelProperty(
             value =
                     "Size of the quiet zones in xDimension. Default value: 10, meaning if"
-                        + " xDimension = 2px than quiet zones will be 20px.")
+                            + " xDimension = 2px than quiet zones will be 20px.")
     public Integer getQuietZoneCoef() {
         return quietZoneCoef;
     }

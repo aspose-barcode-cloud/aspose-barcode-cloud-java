@@ -10,6 +10,8 @@ fix:
 .PHONY: format
 format: fix
 	find ./src -iname "*.java" | xargs java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace
+# Repeat for consistent formatting
+	find ./src -iname "*.java" | xargs java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace
 
 .PHONY: format_tests
 format_tests:

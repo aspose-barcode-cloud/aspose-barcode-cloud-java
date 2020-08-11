@@ -92,7 +92,7 @@ public class QrParams {
     @ApiModelProperty(
             value =
                     "QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for"
-                        + " MicroQR.")
+                            + " MicroQR.")
     public QREncodeType getEncodeType() {
         return encodeType;
     }
@@ -130,7 +130,7 @@ public class QrParams {
     @ApiModelProperty(
             value =
                     "QR symbology type of BarCode's encoding mode. Default value:"
-                        + " QREncodeMode.Auto.")
+                            + " QREncodeMode.Auto.")
     public QREncodeMode getEncodeMode() {
         return encodeMode;
     }
@@ -148,7 +148,7 @@ public class QrParams {
     @ApiModelProperty(
             value =
                     "Level of Reed-Solomon error correction for QR barcode. From low to high:"
-                        + " LevelL, LevelM, LevelQ, LevelH. see QRErrorLevel.")
+                            + " LevelL, LevelM, LevelQ, LevelH. see QRErrorLevel.")
     public QRErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -166,7 +166,7 @@ public class QrParams {
     @ApiModelProperty(
             value =
                     "Version of QR Code. From Version1 to Version40 for QR code and from M1 to M4"
-                        + " for MicroQr. Default value is QRVersion.Auto.")
+                            + " for MicroQr. Default value is QRVersion.Auto.")
     public QRVersion getVersion() {
         return version;
     }

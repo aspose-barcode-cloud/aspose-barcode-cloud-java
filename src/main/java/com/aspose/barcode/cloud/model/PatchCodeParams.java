@@ -49,7 +49,7 @@ public class PatchCodeParams {
     @ApiModelProperty(
             value =
                     "Specifies codetext for an extra QR barcode, when PatchCode is generated in"
-                        + " page mode.")
+                            + " page mode.")
     public String getExtraBarcodeText() {
         return extraBarcodeText;
     }
@@ -67,8 +67,8 @@ public class PatchCodeParams {
     @ApiModelProperty(
             value =
                     "PatchCode format. Choose PatchOnly to generate single PatchCode. Use page"
-                        + " format to generate Patch page with PatchCodes as borders. Default"
-                        + " value: PatchFormat.PatchOnly")
+                            + " format to generate Patch page with PatchCodes as borders. Default"
+                            + " value: PatchFormat.PatchOnly")
     public PatchFormat getPatchFormat() {
         return patchFormat;
     }

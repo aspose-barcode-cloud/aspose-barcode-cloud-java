@@ -25,10 +25,6 @@
 
 package com.aspose.barcode.cloud;
 
-import com.aspose.barcode.cloud.auth.ApiKeyAuth;
-import com.aspose.barcode.cloud.auth.Authentication;
-import com.aspose.barcode.cloud.auth.HttpBasicAuth;
-import com.aspose.barcode.cloud.auth.OAuth;
 import com.squareup.okhttp.*;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
@@ -39,7 +35,6 @@ import okio.Okio;
 
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,7 +47,6 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.text.DateFormat;
@@ -66,12 +60,14 @@ import javax.net.ssl.*;
 
 public class ApiClient {
 
-    private String basePath = "https://api.aspose.cloud/v3.0";
+    public final String apiVersion = "v3.0";
+    public final String clientVersion = "20.8.0";
+    private String baseUrl = "https://api.aspose.cloud";
+    private String appSid;
+    private String appKey;
     private boolean debugging = false;
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private String tempFolderPath = null;
-
-    private Map<String, Authentication> authentications;
 
     private DateFormat dateFormat;
     private DateFormat datetimeFormat;
@@ -86,11 +82,30 @@ public class ApiClient {
     private JSON json;
 
     private HttpLoggingInterceptor loggingInterceptor;
+    private String accessToken;
+
+    public ApiClient(String appSid, String appKey, String baseUrl) {
+        this();
+        this.appSid = appSid;
+        this.appKey = appKey;
+        if (baseUrl != null) {
+            this.baseUrl = baseUrl;
+        }
+    }
+
+    public ApiClient(String appSid, String appKey) {
+        this(appSid, appKey, null);
+    }
+
+    public ApiClient(String accessToken) {
+        this();
+        this.setAccessToken(accessToken);
+    }
 
     /*
      * Constructor for ApiClient
      */
-    public ApiClient() {
+    protected ApiClient() {
         httpClient = new OkHttpClient();
 
         verifyingSsl = true;
@@ -100,11 +115,8 @@ public class ApiClient {
         // Set default User-Agent.
         setUserAgent("Swagger-Codegen/20.8.0/java");
 
-        // Setup authentications (key: authentication name, value: authentication).
-        authentications = new HashMap<String, Authentication>();
-        authentications.put("JWT", new OAuth());
-        // Prevent the authentications from being modified.
-        authentications = Collections.unmodifiableMap(authentications);
+        addDefaultHeader("x-aspose-client", "java sdk");
+        addDefaultHeader("x-aspose-client-version", clientVersion);
     }
 
     /**
@@ -113,18 +125,7 @@ public class ApiClient {
      * @return Base path
      */
     public String getBasePath() {
-        return basePath;
-    }
-
-    /**
-     * Set base path
-     *
-     * @param basePath Base path of the URL (e.g https://api.aspose.cloud/v3.0
-     * @return An instance of OkHttpClient
-     */
-    public ApiClient setBasePath(String basePath) {
-        this.basePath = basePath;
-        return this;
+        return baseUrl + "/" + apiVersion;
     }
 
     /**
@@ -233,123 +234,16 @@ public class ApiClient {
         return dateFormat;
     }
 
-    public ApiClient setDateFormat(DateFormat dateFormat) {
-        this.json.setDateFormat(dateFormat);
-        return this;
-    }
-
-    public ApiClient setSqlDateFormat(DateFormat dateFormat) {
-        this.json.setSqlDateFormat(dateFormat);
-        return this;
-    }
-
-    public ApiClient setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
-        this.json.setOffsetDateTimeFormat(dateFormat);
-        return this;
-    }
-
-    public ApiClient setLocalDateFormat(DateTimeFormatter dateFormat) {
-        this.json.setLocalDateFormat(dateFormat);
-        return this;
-    }
-
-    public ApiClient setLenientOnJson(boolean lenientOnJson) {
-        this.json.setLenientOnJson(lenientOnJson);
-        return this;
-    }
-
-    /**
-     * Get authentications (key: authentication name, value: authentication).
-     *
-     * @return Map of authentication objects
-     */
-    public Map<String, Authentication> getAuthentications() {
-        return authentications;
-    }
-
-    /**
-     * Get authentication for the given name.
-     *
-     * @param authName The authentication name
-     * @return The authentication, null if not found
-     */
-    public Authentication getAuthentication(String authName) {
-        return authentications.get(authName);
-    }
-
-    /**
-     * Helper method to set username for the first HTTP basic authentication.
-     *
-     * @param username Username
-     */
-    public void setUsername(String username) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof HttpBasicAuth) {
-                ((HttpBasicAuth) auth).setUsername(username);
-                return;
-            }
-        }
-        throw new RuntimeException("No HTTP basic authentication configured!");
-    }
-
-    /**
-     * Helper method to set password for the first HTTP basic authentication.
-     *
-     * @param password Password
-     */
-    public void setPassword(String password) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof HttpBasicAuth) {
-                ((HttpBasicAuth) auth).setPassword(password);
-                return;
-            }
-        }
-        throw new RuntimeException("No HTTP basic authentication configured!");
-    }
-
-    /**
-     * Helper method to set API key value for the first API key authentication.
-     *
-     * @param apiKey API key
-     */
-    public void setApiKey(String apiKey) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof ApiKeyAuth) {
-                ((ApiKeyAuth) auth).setApiKey(apiKey);
-                return;
-            }
-        }
-        throw new RuntimeException("No API key authentication configured!");
-    }
-
-    /**
-     * Helper method to set API key prefix for the first API key authentication.
-     *
-     * @param apiKeyPrefix API key prefix
-     */
-    public void setApiKeyPrefix(String apiKeyPrefix) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof ApiKeyAuth) {
-                ((ApiKeyAuth) auth).setApiKeyPrefix(apiKeyPrefix);
-                return;
-            }
-        }
-        throw new RuntimeException("No API key authentication configured!");
-    }
-
     /**
      * Helper method to set access token for the first OAuth2 authentication.
      *
      * @param accessToken Access token
      */
-    public void setAccessToken(String accessToken) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof OAuth) {
-                ((OAuth) auth).setAccessToken(accessToken);
-                return;
-            }
+    protected void setAccessToken(String accessToken) {
+        if (accessToken == null) {
+            throw new RuntimeException("accessToken can not be null");
         }
-        throw new RuntimeException("No OAuth2 authentication configured!");
+        this.accessToken = accessToken;
     }
 
     /**
@@ -513,7 +407,7 @@ public class ApiClient {
                 if (b.length() > 0) {
                     b.append(",");
                 }
-                b.append(String.valueOf(o));
+                b.append(o);
             }
             return b.toString();
         } else {
@@ -878,7 +772,7 @@ public class ApiClient {
                     }
 
                     @Override
-                    public void onResponse(Response response) throws IOException {
+                    public void onResponse(Response response) {
                         T result;
                         try {
                             result = (T) handleResponse(response, returnType);
@@ -951,7 +845,6 @@ public class ApiClient {
      * @param body The request body object
      * @param headerParams The header parameters
      * @param formParams The form parameters
-     * @param authNames The authentications to apply
      * @param progressRequestListener Progress request listener
      * @return The HTTP call
      * @throws ApiException If fail to serialize the request body object
@@ -964,7 +857,6 @@ public class ApiClient {
             Object body,
             Map<String, String> headerParams,
             Map<String, Object> formParams,
-            String[] authNames,
             ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
         Request request =
@@ -976,7 +868,6 @@ public class ApiClient {
                         body,
                         headerParams,
                         formParams,
-                        authNames,
                         progressRequestListener);
 
         return httpClient.newCall(request);
@@ -993,7 +884,6 @@ public class ApiClient {
      * @param body The request body object
      * @param headerParams The header parameters
      * @param formParams The form parameters
-     * @param authNames The authentications to apply
      * @param progressRequestListener Progress request listener
      * @return The HTTP request
      * @throws ApiException If fail to serialize the request body object
@@ -1006,10 +896,9 @@ public class ApiClient {
             Object body,
             Map<String, String> headerParams,
             Map<String, Object> formParams,
-            String[] authNames,
             ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        updateParamsForAuth(authNames, queryParams, headerParams);
+        addOAuthAuthentication(headerParams);
 
         final String url = buildUrl(path, queryParams, collectionQueryParams);
         final Request.Builder reqBuilder = new Request.Builder().url(url);
@@ -1063,7 +952,7 @@ public class ApiClient {
      */
     public String buildUrl(String path, List<Pair> queryParams, List<Pair> collectionQueryParams) {
         final StringBuilder url = new StringBuilder();
-        url.append(basePath).append(path);
+        url.append(getBasePath()).append(path);
 
         if (queryParams != null && !queryParams.isEmpty()) {
             // support (constant) query string in `path`, e.g. "/posts?draft=1"
@@ -1107,8 +996,8 @@ public class ApiClient {
     /**
      * Set header parameters to the request builder, including default headers.
      *
-     * @param headerParams Header parameters in the ofrm of Map
-     * @param reqBuilder Reqeust.Builder
+     * @param headerParams Header parameters in the form of Map
+     * @param reqBuilder Request.Builder
      */
     public void processHeaderParams(Map<String, String> headerParams, Request.Builder reqBuilder) {
         for (Entry<String, String> param : headerParams.entrySet()) {
@@ -1118,22 +1007,6 @@ public class ApiClient {
             if (!headerParams.containsKey(header.getKey())) {
                 reqBuilder.header(header.getKey(), parameterToString(header.getValue()));
             }
-        }
-    }
-
-    /**
-     * Update query and header parameters based on authentication settings.
-     *
-     * @param authNames The authentications to apply
-     * @param queryParams List of query parameters
-     * @param headerParams Map of header parameters
-     */
-    public void updateParamsForAuth(
-            String[] authNames, List<Pair> queryParams, Map<String, String> headerParams) {
-        for (String authName : authNames) {
-            Authentication auth = authentications.get(authName);
-            if (auth == null) throw new RuntimeException("Authentication undefined: " + authName);
-            auth.applyToParams(queryParams, headerParams);
         }
     }
 
@@ -1212,12 +1085,12 @@ public class ApiClient {
                 TrustManager trustAll =
                         new X509TrustManager() {
                             @Override
-                            public void checkClientTrusted(X509Certificate[] chain, String authType)
-                                    throws CertificateException {}
+                            public void checkClientTrusted(
+                                    X509Certificate[] chain, String authType) {}
 
                             @Override
-                            public void checkServerTrusted(X509Certificate[] chain, String authType)
-                                    throws CertificateException {}
+                            public void checkServerTrusted(
+                                    X509Certificate[] chain, String authType) {}
 
                             @Override
                             public X509Certificate[] getAcceptedIssuers() {
@@ -1245,7 +1118,7 @@ public class ApiClient {
                 KeyStore caKeyStore = newEmptyKeyStore(password);
                 int index = 0;
                 for (Certificate certificate : certificates) {
-                    String certificateAlias = "ca" + Integer.toString(index++);
+                    String certificateAlias = "ca" + index++;
                     caKeyStore.setCertificateEntry(certificateAlias, certificate);
                 }
                 TrustManagerFactory trustManagerFactory =
@@ -1275,5 +1148,53 @@ public class ApiClient {
         } catch (IOException e) {
             throw new AssertionError(e);
         }
+    }
+
+    /**
+     * Request OAuth token
+     *
+     * @throws ApiException If authorization is failed
+     */
+    public void requestToken() throws ApiException {
+        try {
+            RequestBody requestBody =
+                    new FormEncodingBuilder()
+                            .addEncoded("grant_type", "client_credentials")
+                            .addEncoded("client_id", appSid)
+                            .addEncoded("client_secret", appKey)
+                            .build();
+
+            String url = baseUrl + "/connect/token";
+            Request request =
+                    new Request.Builder()
+                            .url(url)
+                            .post(requestBody)
+                            .addHeader("Content-Type", " application/x-www-form-urlencoded")
+                            .build();
+
+            Response response = httpClient.newCall(request).execute();
+            GetAccessTokenResult result =
+                    json.deserialize(response.body().string(), GetAccessTokenResult.class);
+            setAccessToken(result.access_token);
+        } catch (Exception ex) {
+            throw new ApiException(ex);
+        }
+    }
+
+    /**
+     * Add OAuth2 header
+     *
+     * @param headerParams Map of request headers
+     */
+    private void addOAuthAuthentication(Map<String, String> headerParams) throws ApiException {
+        if (accessToken == null) {
+            requestToken();
+        }
+        headerParams.put("Authorization", "Bearer " + accessToken);
+    }
+
+    /** GetAccessTokenResult class */
+    private class GetAccessTokenResult {
+        public String access_token;
     }
 }
