@@ -20,7 +20,3 @@ format_tests:
 .PHONY: test
 test:
 	mvn -B package --file pom.xml
-
-.PHONY: run
-run:
-	mvn clean compile exec:java -Dexec.mainClass="com.aspose.barcode.cloud.examples.Main"

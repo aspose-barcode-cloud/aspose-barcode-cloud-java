@@ -775,7 +775,7 @@ public class ApiClient {
                     public void onResponse(Response response) {
                         T result;
                         try {
-                            result = (T) handleResponse(response, returnType);
+                            result = handleResponse(response, returnType);
                         } catch (ApiException e) {
                             callback.onFailure(e, response.code(), response.headers().toMultimap());
                             return;
@@ -904,7 +904,7 @@ public class ApiClient {
         final Request.Builder reqBuilder = new Request.Builder().url(url);
         processHeaderParams(headerParams, reqBuilder);
 
-        String contentType = (String) headerParams.get("Content-Type");
+        String contentType = headerParams.get("Content-Type");
         // ensuring a default content type
         if (contentType == null) {
             contentType = "application/json";
@@ -1194,6 +1194,7 @@ public class ApiClient {
     }
 
     /** GetAccessTokenResult class */
+    @SuppressWarnings({"unused", "InnerClassMayBeStatic"})
     private class GetAccessTokenResult {
         public String access_token;
     }
