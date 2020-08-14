@@ -91,6 +91,19 @@ public class BarcodeApiExample {
 }
 ```
 
+## Licensing
+
+All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed under [MIT License](LICENSE).
+
+## Resources
+
+- [**Website**](https://www.aspose.cloud)
+- [**Product Home**](https://products.aspose.cloud/barcode/cloud)
+- [**Documentation**](https://docs.aspose.cloud/display/barcodecloud/Home)
+- [**Free Support Forum**](https://forum.aspose.cloud/c/barcode)
+- [**Paid Support Helpdesk**](https://helpdesk.aspose.cloud/)
+- [**Blog**](https://blog.aspose.cloud/category/aspose-products/aspose-barcode-product-family/)
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *<https://api.aspose.cloud/v3.0>*
@@ -193,8 +206,7 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
-- **Authorization URL**: 
-- **Scopes**: N/A
+- **Authorization URL**: <https://api.aspose.cloud/connect/token>
 
 ## Recommendation
 

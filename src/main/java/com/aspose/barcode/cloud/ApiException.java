@@ -25,6 +25,9 @@
 
 package com.aspose.barcode.cloud;
 
+import com.aspose.barcode.cloud.model.BarCodeErrorResponse;
+import com.aspose.barcode.cloud.model.Error;
+
 import java.util.List;
 import java.util.Map;
 
@@ -32,8 +35,7 @@ public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;
-
-    public ApiException() {}
+    private BarCodeErrorResponse response = null;
 
     public ApiException(Throwable throwable) {
         super(throwable);
@@ -43,16 +45,9 @@ public class ApiException extends Exception {
         super(message);
     }
 
-    public ApiException(
-            String message,
-            Throwable throwable,
-            int code,
-            Map<String, List<String>> responseHeaders,
-            String responseBody) {
-        super(message, throwable);
-        this.code = code;
-        this.responseHeaders = responseHeaders;
-        this.responseBody = responseBody;
+    public ApiException(String httpMessage, int httpCode) {
+        super(httpMessage);
+        this.code = httpCode;
     }
 
     public ApiException(
@@ -60,7 +55,9 @@ public class ApiException extends Exception {
             int code,
             Map<String, List<String>> responseHeaders,
             String responseBody) {
-        this(message, (Throwable) null, code, responseHeaders, responseBody);
+        this(message, code);
+        this.responseHeaders = responseHeaders;
+        this.responseBody = responseBody;
     }
 
     public ApiException(
@@ -68,26 +65,14 @@ public class ApiException extends Exception {
             Throwable throwable,
             int code,
             Map<String, List<String>> responseHeaders) {
-        this(message, throwable, code, responseHeaders, null);
-    }
-
-    public ApiException(int code, Map<String, List<String>> responseHeaders, String responseBody) {
-        this((String) null, (Throwable) null, code, responseHeaders, responseBody);
-    }
-
-    public ApiException(int code, String message) {
-        super(message);
+        super(message, throwable);
         this.code = code;
+        this.responseHeaders = responseHeaders;
     }
 
-    public ApiException(
-            int code,
-            String message,
-            Map<String, List<String>> responseHeaders,
-            String responseBody) {
-        this(code, message);
-        this.responseHeaders = responseHeaders;
-        this.responseBody = responseBody;
+    public ApiException(String httpMessage, int httpCode, BarCodeErrorResponse errorResponse) {
+        this(httpMessage, httpCode);
+        this.response = errorResponse;
     }
 
     /**
@@ -109,11 +94,31 @@ public class ApiException extends Exception {
     }
 
     /**
-     * Get the HTTP response body.
+     * Get the error details
      *
      * @return Response body in the form of string
      */
-    public String getResponseBody() {
-        return responseBody;
+    public String getDetails() {
+        if (response != null) {
+            Error err = response.getError();
+            if (err != null) {
+                StringBuilder sb = new StringBuilder();
+                if (err.getCode() != null) {
+                    sb.append(err.getCode()).append(": ");
+                }
+                if (err.getMessage() != null) {
+                    sb.append(err.getMessage());
+                }
+                if (err.getDescription() != null) {
+                    sb.append(err.getDescription());
+                }
+
+                return sb.toString();
+            }
+        }
+        if (responseBody != null) {
+            return responseBody;
+        }
+        return "";
     }
 }
