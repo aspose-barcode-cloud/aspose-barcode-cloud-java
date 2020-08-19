@@ -43,7 +43,7 @@ public enum QRErrorLevel {
 
     LEVELH("LevelH");
 
-    private String value;
+    private final String value;
 
     QRErrorLevel(String value) {
         this.value = value;

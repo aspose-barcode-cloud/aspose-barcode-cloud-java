@@ -39,7 +39,7 @@ public enum FontMode {
 
     MANUAL("Manual");
 
-    private String value;
+    private final String value;
 
     FontMode(String value) {
         this.value = value;

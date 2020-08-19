@@ -41,11 +41,6 @@ public class DiscUsage {
     @SerializedName(value = "totalSize")
     private Long totalSize = null;
 
-    public DiscUsage usedSize(Long usedSize) {
-        this.usedSize = usedSize;
-        return this;
-    }
-
     /**
      * Application used disc space.
      *
@@ -58,11 +53,6 @@ public class DiscUsage {
 
     public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
-    }
-
-    public DiscUsage totalSize(Long totalSize) {
-        this.totalSize = totalSize;
-        return this;
     }
 
     /**

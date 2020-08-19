@@ -45,7 +45,7 @@ public enum BorderDashStyle {
 
     DASHDOTDOT("DashDotDot");
 
-    private String value;
+    private final String value;
 
     BorderDashStyle(String value) {
         this.value = value;

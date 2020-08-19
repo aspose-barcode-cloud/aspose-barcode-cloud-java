@@ -49,7 +49,7 @@ public enum DataMatrixEccType {
 
     ECC200("Ecc200");
 
-    private String value;
+    private final String value;
 
     DataMatrixEccType(String value) {
         this.value = value;

@@ -1,293 +1,266 @@
 # FileApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+All URIs are relative to *<https://api.aspose.cloud/v3.0>*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**copyFile**](FileApi.md#copyFile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
 [**deleteFile**](FileApi.md#deleteFile) | **DELETE** /barcode/storage/file/{path} | Delete file
 [**downloadFile**](FileApi.md#downloadFile) | **GET** /barcode/storage/file/{path} | Download file
 [**moveFile**](FileApi.md#moveFile) | **PUT** /barcode/storage/file/move/{srcPath} | Move file
 [**uploadFile**](FileApi.md#uploadFile) | **PUT** /barcode/storage/file/{path} | Upload file
 
+## copyFile
 
-<a name="copyFile"></a>
-# **copyFile**
 > copyFile(srcPath, destPath, srcStorageName, destStorageName, versionId)
 
 Copy file
 
-### Example
+### copyFile example
+
 ```java
 // Import classes:
-//import com.aspose.barcode.cloud.ApiClient;
-//import com.aspose.barcode.cloud.ApiException;
-//import com.aspose.barcode.cloud.Configuration;
-//import com.aspose.barcode.cloud.auth.*;
-//import com.aspose.barcode.cloud.api.FileApi;
+import com.aspose.barcode.cloud.ApiClient;
+import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
+import com.aspose.barcode.cloud.api.FileApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Main {
 
-// Configure OAuth2 access token for authorization: JWT
-OAuth JWT = (OAuth) defaultClient.getAuthentication("JWT");
-JWT.setAccessToken("YOUR ACCESS TOKEN");
+    public static void main(String[] args) {
 
-FileApi apiInstance = new FileApi();
-String srcPath = "srcPath_example"; // String | Source file path e.g. '/folder/file.ext'
-String destPath = "destPath_example"; // String | Destination file path
-String srcStorageName = "srcStorageName_example"; // String | Source storage name
-String destStorageName = "destStorageName_example"; // String | Destination storage name
-String versionId = "versionId_example"; // String | File version ID to copy
-try {
-    apiInstance.copyFile(srcPath, destPath, srcStorageName, destStorageName, versionId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FileApi#copyFile");
-    e.printStackTrace();
+        ApiClient client = new ApiClient(
+            "appSid",
+            "appKey"
+        );
+
+        FileApi api = new FileApi(client);
+        String srcPath = "srcPath_example"; // String | Source file path e.g. '/folder/file.ext'
+        String destPath = "destPath_example"; // String | Destination file path
+        try {
+            api.copyFile(srcPath, destPath);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileApi.copyFile");
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Parameters
+### copyFile parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **srcPath** | **String**| Source file path e.g. &#39;/folder/file.ext&#39; |
  **destPath** | **String**| Destination file path |
  **srcStorageName** | **String**| Source storage name | [optional]
  **destStorageName** | **String**| Destination storage name | [optional]
  **versionId** | **String**| File version ID to copy | [optional]
 
-### Return type
+### copyFile return type
 
 null (empty response body)
 
-### Authorization
+## deleteFile
 
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="deleteFile"></a>
-# **deleteFile**
 > deleteFile(path, storageName, versionId)
 
 Delete file
 
-### Example
+### deleteFile example
+
 ```java
 // Import classes:
-//import com.aspose.barcode.cloud.ApiClient;
-//import com.aspose.barcode.cloud.ApiException;
-//import com.aspose.barcode.cloud.Configuration;
-//import com.aspose.barcode.cloud.auth.*;
-//import com.aspose.barcode.cloud.api.FileApi;
+import com.aspose.barcode.cloud.ApiClient;
+import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
+import com.aspose.barcode.cloud.api.FileApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Main {
 
-// Configure OAuth2 access token for authorization: JWT
-OAuth JWT = (OAuth) defaultClient.getAuthentication("JWT");
-JWT.setAccessToken("YOUR ACCESS TOKEN");
+    public static void main(String[] args) {
 
-FileApi apiInstance = new FileApi();
-String path = "path_example"; // String | File path e.g. '/folder/file.ext'
-String storageName = "storageName_example"; // String | Storage name
-String versionId = "versionId_example"; // String | File version ID to delete
-try {
-    apiInstance.deleteFile(path, storageName, versionId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FileApi#deleteFile");
-    e.printStackTrace();
+        ApiClient client = new ApiClient(
+            "appSid",
+            "appKey"
+        );
+
+        FileApi api = new FileApi(client);
+        String path = "path_example"; // String | File path e.g. '/folder/file.ext'
+        try {
+            api.deleteFile(path);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileApi.deleteFile");
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Parameters
+### deleteFile parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; |
  **storageName** | **String**| Storage name | [optional]
  **versionId** | **String**| File version ID to delete | [optional]
 
-### Return type
+### deleteFile return type
 
 null (empty response body)
 
-### Authorization
+## downloadFile
 
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="downloadFile"></a>
-# **downloadFile**
 > File downloadFile(path, storageName, versionId)
 
 Download file
 
-### Example
+### downloadFile example
+
 ```java
 // Import classes:
-//import com.aspose.barcode.cloud.ApiClient;
-//import com.aspose.barcode.cloud.ApiException;
-//import com.aspose.barcode.cloud.Configuration;
-//import com.aspose.barcode.cloud.auth.*;
-//import com.aspose.barcode.cloud.api.FileApi;
+import com.aspose.barcode.cloud.ApiClient;
+import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
+import com.aspose.barcode.cloud.api.FileApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Main {
 
-// Configure OAuth2 access token for authorization: JWT
-OAuth JWT = (OAuth) defaultClient.getAuthentication("JWT");
-JWT.setAccessToken("YOUR ACCESS TOKEN");
+    public static void main(String[] args) {
 
-FileApi apiInstance = new FileApi();
-String path = "path_example"; // String | File path e.g. '/folder/file.ext'
-String storageName = "storageName_example"; // String | Storage name
-String versionId = "versionId_example"; // String | File version ID to download
-try {
-    File result = apiInstance.downloadFile(path, storageName, versionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FileApi#downloadFile");
-    e.printStackTrace();
+        ApiClient client = new ApiClient(
+            "appSid",
+            "appKey"
+        );
+
+        FileApi api = new FileApi(client);
+        String path = "path_example"; // String | File path e.g. '/folder/file.ext'
+        try {
+            File result = api.downloadFile(path);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileApi.downloadFile");
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Parameters
+### downloadFile parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| File path e.g. &#39;/folder/file.ext&#39; |
  **storageName** | **String**| Storage name | [optional]
  **versionId** | **String**| File version ID to download | [optional]
 
-### Return type
+### downloadFile return type
 
-[**File**](File.md)
+**File**
 
-### Authorization
+## moveFile
 
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: multipart/form-data
-
-<a name="moveFile"></a>
-# **moveFile**
 > moveFile(srcPath, destPath, srcStorageName, destStorageName, versionId)
 
 Move file
 
-### Example
+### moveFile example
+
 ```java
 // Import classes:
-//import com.aspose.barcode.cloud.ApiClient;
-//import com.aspose.barcode.cloud.ApiException;
-//import com.aspose.barcode.cloud.Configuration;
-//import com.aspose.barcode.cloud.auth.*;
-//import com.aspose.barcode.cloud.api.FileApi;
+import com.aspose.barcode.cloud.ApiClient;
+import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
+import com.aspose.barcode.cloud.api.FileApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Main {
 
-// Configure OAuth2 access token for authorization: JWT
-OAuth JWT = (OAuth) defaultClient.getAuthentication("JWT");
-JWT.setAccessToken("YOUR ACCESS TOKEN");
+    public static void main(String[] args) {
 
-FileApi apiInstance = new FileApi();
-String srcPath = "srcPath_example"; // String | Source file path e.g. '/src.ext'
-String destPath = "destPath_example"; // String | Destination file path e.g. '/dest.ext'
-String srcStorageName = "srcStorageName_example"; // String | Source storage name
-String destStorageName = "destStorageName_example"; // String | Destination storage name
-String versionId = "versionId_example"; // String | File version ID to move
-try {
-    apiInstance.moveFile(srcPath, destPath, srcStorageName, destStorageName, versionId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FileApi#moveFile");
-    e.printStackTrace();
+        ApiClient client = new ApiClient(
+            "appSid",
+            "appKey"
+        );
+
+        FileApi api = new FileApi(client);
+        String srcPath = "srcPath_example"; // String | Source file path e.g. '/src.ext'
+        String destPath = "destPath_example"; // String | Destination file path e.g. '/dest.ext'
+        try {
+            api.moveFile(srcPath, destPath);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileApi.moveFile");
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Parameters
+### moveFile parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **srcPath** | **String**| Source file path e.g. &#39;/src.ext&#39; |
  **destPath** | **String**| Destination file path e.g. &#39;/dest.ext&#39; |
  **srcStorageName** | **String**| Source storage name | [optional]
  **destStorageName** | **String**| Destination storage name | [optional]
  **versionId** | **String**| File version ID to move | [optional]
 
-### Return type
+### moveFile return type
 
 null (empty response body)
 
-### Authorization
+## uploadFile
 
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="uploadFile"></a>
-# **uploadFile**
 > FilesUploadResult uploadFile(path, file, storageName)
 
 Upload file
 
-### Example
+### uploadFile example
+
 ```java
 // Import classes:
-//import com.aspose.barcode.cloud.ApiClient;
-//import com.aspose.barcode.cloud.ApiException;
-//import com.aspose.barcode.cloud.Configuration;
-//import com.aspose.barcode.cloud.auth.*;
-//import com.aspose.barcode.cloud.api.FileApi;
+import com.aspose.barcode.cloud.ApiClient;
+import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
+import com.aspose.barcode.cloud.api.FileApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Main {
 
-// Configure OAuth2 access token for authorization: JWT
-OAuth JWT = (OAuth) defaultClient.getAuthentication("JWT");
-JWT.setAccessToken("YOUR ACCESS TOKEN");
+    public static void main(String[] args) {
 
-FileApi apiInstance = new FileApi();
-String path = "path_example"; // String | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
-File file = new File("/path/to/file.txt"); // File | File to upload
-String storageName = "storageName_example"; // String | Storage name
-try {
-    FilesUploadResult result = apiInstance.uploadFile(path, file, storageName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FileApi#uploadFile");
-    e.printStackTrace();
+        ApiClient client = new ApiClient(
+            "appSid",
+            "appKey"
+        );
+
+        FileApi api = new FileApi(client);
+        String path = "path_example"; // String | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header.
+        File file = new File("/path/to/file.txt"); // File | File to upload
+        try {
+            FilesUploadResult result = api.uploadFile(path, file);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FileApi.uploadFile");
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Parameters
+### uploadFile parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+---- | ---- | ------------ | -----
  **path** | **String**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext  If the content is multipart and path does not contains the file name it tries to get them from filename parameter  from Content-Disposition header. |
  **file** | **File**| File to upload |
  **storageName** | **String**| Storage name | [optional]
 
-### Return type
+### uploadFile return type
 
 [**FilesUploadResult**](FilesUploadResult.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
 

@@ -9,12 +9,18 @@ fix:
 
 .PHONY: format
 format: fix
-	find $(SRC) -iname "*.java" -exec java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace {} \;
+	find ./src -iname "*.java" | xargs java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace
+# Repeat for consistent formatting
+	find ./src -iname "*.java" | xargs java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace
 
 .PHONY: format_tests
 format_tests:
-	find $(SRC)/test -iname "*.java" -exec java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace {} \;
+	find $(SRC)/test -iname "*.java" | xargs java -jar tools/google-java-format-1.8-all-deps.jar --aosp --replace
 
 .PHONY: test
 test:
 	mvn -B package --file pom.xml
+
+.PHONY: publish
+publish:
+	mvn deploy

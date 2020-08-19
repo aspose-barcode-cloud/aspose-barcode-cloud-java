@@ -65,11 +65,6 @@ public class Pdf417Params {
     @SerializedName(value = "truncate")
     private Boolean truncate = null;
 
-    public Pdf417Params aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -82,11 +77,6 @@ public class Pdf417Params {
 
     public void setAspectRatio(Double aspectRatio) {
         this.aspectRatio = aspectRatio;
-    }
-
-    public Pdf417Params textEncoding(String textEncoding) {
-        this.textEncoding = textEncoding;
-        return this;
     }
 
     /**
@@ -103,11 +93,6 @@ public class Pdf417Params {
         this.textEncoding = textEncoding;
     }
 
-    public Pdf417Params columns(Integer columns) {
-        this.columns = columns;
-        return this;
-    }
-
     /**
      * Columns count.
      *
@@ -120,11 +105,6 @@ public class Pdf417Params {
 
     public void setColumns(Integer columns) {
         this.columns = columns;
-    }
-
-    public Pdf417Params compactionMode(Pdf417CompactionMode compactionMode) {
-        this.compactionMode = compactionMode;
-        return this;
     }
 
     /**
@@ -143,11 +123,6 @@ public class Pdf417Params {
 
     public void setCompactionMode(Pdf417CompactionMode compactionMode) {
         this.compactionMode = compactionMode;
-    }
-
-    public Pdf417Params errorLevel(Pdf417ErrorLevel errorLevel) {
-        this.errorLevel = errorLevel;
-        return this;
     }
 
     /**
@@ -170,11 +145,6 @@ public class Pdf417Params {
         this.errorLevel = errorLevel;
     }
 
-    public Pdf417Params macroFileID(Integer macroFileID) {
-        this.macroFileID = macroFileID;
-        return this;
-    }
-
     /**
      * Macro Pdf417 barcode&#39;s file ID. Used for MacroPdf417.
      *
@@ -187,11 +157,6 @@ public class Pdf417Params {
 
     public void setMacroFileID(Integer macroFileID) {
         this.macroFileID = macroFileID;
-    }
-
-    public Pdf417Params macroSegmentID(Integer macroSegmentID) {
-        this.macroSegmentID = macroSegmentID;
-        return this;
     }
 
     /**
@@ -211,11 +176,6 @@ public class Pdf417Params {
         this.macroSegmentID = macroSegmentID;
     }
 
-    public Pdf417Params macroSegmentsCount(Integer macroSegmentsCount) {
-        this.macroSegmentsCount = macroSegmentsCount;
-        return this;
-    }
-
     /**
      * Macro Pdf417 barcode segments count.
      *
@@ -230,11 +190,6 @@ public class Pdf417Params {
         this.macroSegmentsCount = macroSegmentsCount;
     }
 
-    public Pdf417Params rows(Integer rows) {
-        this.rows = rows;
-        return this;
-    }
-
     /**
      * Rows count.
      *
@@ -247,11 +202,6 @@ public class Pdf417Params {
 
     public void setRows(Integer rows) {
         this.rows = rows;
-    }
-
-    public Pdf417Params truncate(Boolean truncate) {
-        this.truncate = truncate;
-        return this;
     }
 
     /**

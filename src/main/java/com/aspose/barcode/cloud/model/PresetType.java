@@ -47,7 +47,7 @@ public enum PresetType {
 
     MAXBARCODES("MaxBarCodes");
 
-    private String value;
+    private final String value;
 
     PresetType(String value) {
         this.value = value;

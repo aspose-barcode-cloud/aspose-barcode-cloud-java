@@ -47,11 +47,6 @@ public class Error {
     @SerializedName(value = "innerError")
     private ErrorDetails innerError = null;
 
-    public Error code(String code) {
-        this.code = code;
-        return this;
-    }
-
     /**
      * Code
      *
@@ -64,11 +59,6 @@ public class Error {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public Error message(String message) {
-        this.message = message;
-        return this;
     }
 
     /**
@@ -85,11 +75,6 @@ public class Error {
         this.message = message;
     }
 
-    public Error description(String description) {
-        this.description = description;
-        return this;
-    }
-
     /**
      * Description
      *
@@ -102,11 +87,6 @@ public class Error {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Error innerError(ErrorDetails innerError) {
-        this.innerError = innerError;
-        return this;
     }
 
     /**

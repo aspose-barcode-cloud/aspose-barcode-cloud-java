@@ -56,11 +56,6 @@ public class FileVersion {
     @SerializedName(value = "isLatest")
     private Boolean isLatest = null;
 
-    public FileVersion name(String name) {
-        this.name = name;
-        return this;
-    }
-
     /**
      * File or folder name.
      *
@@ -73,11 +68,6 @@ public class FileVersion {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public FileVersion isFolder(Boolean isFolder) {
-        this.isFolder = isFolder;
-        return this;
     }
 
     /**
@@ -94,11 +84,6 @@ public class FileVersion {
         this.isFolder = isFolder;
     }
 
-    public FileVersion modifiedDate(OffsetDateTime modifiedDate) {
-        this.modifiedDate = modifiedDate;
-        return this;
-    }
-
     /**
      * File or folder last modified DateTime.
      *
@@ -111,11 +96,6 @@ public class FileVersion {
 
     public void setModifiedDate(OffsetDateTime modifiedDate) {
         this.modifiedDate = modifiedDate;
-    }
-
-    public FileVersion size(Long size) {
-        this.size = size;
-        return this;
     }
 
     /**
@@ -132,11 +112,6 @@ public class FileVersion {
         this.size = size;
     }
 
-    public FileVersion path(String path) {
-        this.path = path;
-        return this;
-    }
-
     /**
      * File or folder path.
      *
@@ -151,11 +126,6 @@ public class FileVersion {
         this.path = path;
     }
 
-    public FileVersion versionId(String versionId) {
-        this.versionId = versionId;
-        return this;
-    }
-
     /**
      * File Version ID.
      *
@@ -168,11 +138,6 @@ public class FileVersion {
 
     public void setVersionId(String versionId) {
         this.versionId = versionId;
-    }
-
-    public FileVersion isLatest(Boolean isLatest) {
-        this.isLatest = isLatest;
-        return this;
     }
 
     /**

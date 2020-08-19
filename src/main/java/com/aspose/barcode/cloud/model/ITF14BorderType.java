@@ -45,7 +45,7 @@ public enum ITF14BorderType {
 
     BAROUT("BarOut");
 
-    private String value;
+    private final String value;
 
     ITF14BorderType(String value) {
         this.value = value;

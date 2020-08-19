@@ -41,7 +41,7 @@ public enum QREncodeType {
 
     FORCEMICROQR("ForceMicroQR");
 
-    private String value;
+    private final String value;
 
     QREncodeType(String value) {
         this.value = value;

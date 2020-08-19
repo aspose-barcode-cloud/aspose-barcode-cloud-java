@@ -47,11 +47,6 @@ public class Padding {
     @SerializedName(value = "bottom")
     private Double bottom = null;
 
-    public Padding left(Double left) {
-        this.left = left;
-        return this;
-    }
-
     /**
      * Left padding.
      *
@@ -64,11 +59,6 @@ public class Padding {
 
     public void setLeft(Double left) {
         this.left = left;
-    }
-
-    public Padding right(Double right) {
-        this.right = right;
-        return this;
     }
 
     /**
@@ -85,11 +75,6 @@ public class Padding {
         this.right = right;
     }
 
-    public Padding top(Double top) {
-        this.top = top;
-        return this;
-    }
-
     /**
      * Top padding.
      *
@@ -102,11 +87,6 @@ public class Padding {
 
     public void setTop(Double top) {
         this.top = top;
-    }
-
-    public Padding bottom(Double bottom) {
-        this.bottom = bottom;
-        return this;
     }
 
     /**

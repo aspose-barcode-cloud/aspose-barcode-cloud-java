@@ -49,11 +49,6 @@ public class BarcodeResponse {
     @SerializedName(value = "checksum")
     private String checksum = null;
 
-    public BarcodeResponse barcodeValue(String barcodeValue) {
-        this.barcodeValue = barcodeValue;
-        return this;
-    }
-
     /**
      * Barcode data.
      *
@@ -68,11 +63,6 @@ public class BarcodeResponse {
         this.barcodeValue = barcodeValue;
     }
 
-    public BarcodeResponse type(String type) {
-        this.type = type;
-        return this;
-    }
-
     /**
      * Type of the barcode.
      *
@@ -85,11 +75,6 @@ public class BarcodeResponse {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public BarcodeResponse region(List<RegionPoint> region) {
-        this.region = region;
-        return this;
     }
 
     public BarcodeResponse addRegionItem(RegionPoint regionItem) {
@@ -112,11 +97,6 @@ public class BarcodeResponse {
 
     public void setRegion(List<RegionPoint> region) {
         this.region = region;
-    }
-
-    public BarcodeResponse checksum(String checksum) {
-        this.checksum = checksum;
-        return this;
     }
 
     /**

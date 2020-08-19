@@ -52,11 +52,6 @@ public class StorageFile {
     @SerializedName(value = "path")
     private String path = null;
 
-    public StorageFile name(String name) {
-        this.name = name;
-        return this;
-    }
-
     /**
      * File or folder name.
      *
@@ -69,11 +64,6 @@ public class StorageFile {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public StorageFile isFolder(Boolean isFolder) {
-        this.isFolder = isFolder;
-        return this;
     }
 
     /**
@@ -90,11 +80,6 @@ public class StorageFile {
         this.isFolder = isFolder;
     }
 
-    public StorageFile modifiedDate(OffsetDateTime modifiedDate) {
-        this.modifiedDate = modifiedDate;
-        return this;
-    }
-
     /**
      * File or folder last modified DateTime.
      *
@@ -109,11 +94,6 @@ public class StorageFile {
         this.modifiedDate = modifiedDate;
     }
 
-    public StorageFile size(Long size) {
-        this.size = size;
-        return this;
-    }
-
     /**
      * File or folder size.
      *
@@ -126,11 +106,6 @@ public class StorageFile {
 
     public void setSize(Long size) {
         this.size = size;
-    }
-
-    public StorageFile path(String path) {
-        this.path = path;
-        return this;
     }
 
     /**

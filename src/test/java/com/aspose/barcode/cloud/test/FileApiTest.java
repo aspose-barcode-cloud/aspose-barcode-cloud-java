@@ -5,12 +5,10 @@ import static org.junit.Assert.assertTrue;
 
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.Configuration;
 import com.aspose.barcode.cloud.api.FileApi;
-import com.aspose.barcode.cloud.auth.OAuth;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
 
-import org.junit.*;
+import org.junit.Test;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -19,14 +17,8 @@ import java.nio.file.Paths;
 /** API tests for FileApi */
 public class FileApiTest extends TestBase {
 
-    private static final ApiClient client = Configuration.getDefaultApiClient();
+    private static final ApiClient client = new ApiClient(accessToken);
     private static final FileApi api = new FileApi(client);
-
-    @BeforeClass
-    public static void setUpClass() {
-        OAuth JWT = (OAuth) client.getAuthentication("JWT");
-        JWT.setAccessToken(accessToken);
-    }
 
     /**
      * Upload file

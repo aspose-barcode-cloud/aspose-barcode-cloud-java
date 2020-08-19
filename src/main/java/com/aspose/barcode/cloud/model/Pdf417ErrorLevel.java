@@ -53,7 +53,7 @@ public enum Pdf417ErrorLevel {
 
     LEVEL8("Level8");
 
-    private String value;
+    private final String value;
 
     Pdf417ErrorLevel(String value) {
         this.value = value;

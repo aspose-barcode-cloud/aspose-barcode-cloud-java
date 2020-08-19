@@ -146,7 +146,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getBarcodeGenerateCall(
+    protected com.squareup.okhttp.Call getBarcodeGenerateCall(
             String type,
             String text,
             String twoDDisplayText,
@@ -295,7 +295,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -304,11 +303,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getBarcodeGenerateValidateBeforeCall(
             String type,
             String text,
@@ -969,7 +966,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getBarcodeRecognizeCall(
+    protected com.squareup.okhttp.Call getBarcodeRecognizeCall(
             String name,
             String type,
             String checksumValidation,
@@ -1010,8 +1007,7 @@ public class BarcodeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name.toString());
+        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1143,7 +1139,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -1152,11 +1147,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getBarcodeRecognizeValidateBeforeCall(
             String name,
             String type,
@@ -1828,7 +1821,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentCall(
+    protected com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentCall(
             String type,
             String checksumValidation,
             Boolean detectEncoding,
@@ -1999,7 +1992,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "POST",
@@ -2008,11 +2000,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentValidateBeforeCall(
             String type,
             String checksumValidation,
@@ -2597,7 +2587,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postGenerateMultipleCall(
+    protected com.squareup.okhttp.Call postGenerateMultipleCall(
             GeneratorParamsList generatorParamsList,
             String format,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -2649,7 +2639,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "POST",
@@ -2658,11 +2647,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call postGenerateMultipleValidateBeforeCall(
             GeneratorParamsList generatorParamsList,
             String format,
@@ -2843,7 +2830,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putBarcodeGenerateFileCall(
+    protected com.squareup.okhttp.Call putBarcodeGenerateFileCall(
             String name,
             String type,
             String text,
@@ -2886,8 +2873,7 @@ public class BarcodeApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/{name}/generate".replaceAll("\\{" + "name" + "\\}", name.toString());
+        String localVarPath = "/barcode/{name}/generate".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -2999,7 +2985,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -3008,11 +2993,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putBarcodeGenerateFileValidateBeforeCall(
             String name,
             String type,
@@ -3646,7 +3629,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putBarcodeRecognizeFromBodyCall(
+    protected com.squareup.okhttp.Call putBarcodeRecognizeFromBodyCall(
             String name,
             ReaderParams readerParams,
             String type,
@@ -3658,8 +3641,7 @@ public class BarcodeApi {
         Object localVarPostBody = readerParams;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "\\}", name.toString());
+        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3703,7 +3685,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -3712,11 +3693,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putBarcodeRecognizeFromBodyValidateBeforeCall(
             String name,
             ReaderParams readerParams,
@@ -3865,7 +3844,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putGenerateMultipleCall(
+    protected com.squareup.okhttp.Call putGenerateMultipleCall(
             String name,
             GeneratorParamsList generatorParamsList,
             String format,
@@ -3878,8 +3857,7 @@ public class BarcodeApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/{name}/generateMultiple"
-                        .replaceAll("\\{" + "name" + "\\}", name.toString());
+                "/barcode/{name}/generateMultiple".replaceAll("\\{" + "name" + "}", name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3923,7 +3901,6 @@ public class BarcodeApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -3932,11 +3909,9 @@ public class BarcodeApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call putGenerateMultipleValidateBeforeCall(
             String name,
             GeneratorParamsList generatorParamsList,

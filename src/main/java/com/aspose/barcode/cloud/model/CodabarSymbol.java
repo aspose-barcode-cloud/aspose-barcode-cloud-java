@@ -43,7 +43,7 @@ public enum CodabarSymbol {
 
     D("D");
 
-    private String value;
+    private final String value;
 
     CodabarSymbol(String value) {
         this.value = value;

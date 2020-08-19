@@ -41,7 +41,7 @@ public enum TextAlignment {
 
     RIGHT("Right");
 
-    private String value;
+    private final String value;
 
     TextAlignment(String value) {
         this.value = value;

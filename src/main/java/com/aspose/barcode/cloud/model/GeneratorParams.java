@@ -188,11 +188,6 @@ public class GeneratorParams {
     @SerializedName(value = "patchCode")
     private PatchCodeParams patchCode = null;
 
-    public GeneratorParams typeOfBarcode(EncodeBarcodeType typeOfBarcode) {
-        this.typeOfBarcode = typeOfBarcode;
-        return this;
-    }
-
     /**
      * Type of barcode to generate.
      *
@@ -207,11 +202,6 @@ public class GeneratorParams {
         this.typeOfBarcode = typeOfBarcode;
     }
 
-    public GeneratorParams text(String text) {
-        this.text = text;
-        return this;
-    }
-
     /**
      * Text to encode.
      *
@@ -224,11 +214,6 @@ public class GeneratorParams {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public GeneratorParams twoDDisplayText(String twoDDisplayText) {
-        this.twoDDisplayText = twoDDisplayText;
-        return this;
     }
 
     /**
@@ -249,11 +234,6 @@ public class GeneratorParams {
         this.twoDDisplayText = twoDDisplayText;
     }
 
-    public GeneratorParams textLocation(CodeLocation textLocation) {
-        this.textLocation = textLocation;
-        return this;
-    }
-
     /**
      * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default
      * value: CodeLocation.Below.
@@ -272,11 +252,6 @@ public class GeneratorParams {
         this.textLocation = textLocation;
     }
 
-    public GeneratorParams textAlignment(TextAlignment textAlignment) {
-        this.textAlignment = textAlignment;
-        return this;
-    }
-
     /**
      * Text alignment.
      *
@@ -289,11 +264,6 @@ public class GeneratorParams {
 
     public void setTextAlignment(TextAlignment textAlignment) {
         this.textAlignment = textAlignment;
-    }
-
-    public GeneratorParams textColor(String textColor) {
-        this.textColor = textColor;
-        return this;
     }
 
     /**
@@ -309,11 +279,6 @@ public class GeneratorParams {
 
     public void setTextColor(String textColor) {
         this.textColor = textColor;
-    }
-
-    public GeneratorParams font(FontParams font) {
-        this.font = font;
-        return this;
     }
 
     /**
@@ -332,11 +297,6 @@ public class GeneratorParams {
 
     public void setFont(FontParams font) {
         this.font = font;
-    }
-
-    public GeneratorParams fontSizeMode(FontMode fontSizeMode) {
-        this.fontSizeMode = fontSizeMode;
-        return this;
     }
 
     /**
@@ -361,11 +321,6 @@ public class GeneratorParams {
         this.fontSizeMode = fontSizeMode;
     }
 
-    public GeneratorParams resolution(Double resolution) {
-        this.resolution = resolution;
-        return this;
-    }
-
     /**
      * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
      *
@@ -383,11 +338,6 @@ public class GeneratorParams {
         this.resolution = resolution;
     }
 
-    public GeneratorParams resolutionX(Double resolutionX) {
-        this.resolutionX = resolutionX;
-        return this;
-    }
-
     /**
      * DEPRECATED: Use &#39;Resolution&#39; instead.
      *
@@ -402,11 +352,6 @@ public class GeneratorParams {
         this.resolutionX = resolutionX;
     }
 
-    public GeneratorParams resolutionY(Double resolutionY) {
-        this.resolutionY = resolutionY;
-        return this;
-    }
-
     /**
      * DEPRECATED: Use &#39;Resolution&#39; instead.
      *
@@ -419,11 +364,6 @@ public class GeneratorParams {
 
     public void setResolutionY(Double resolutionY) {
         this.resolutionY = resolutionY;
-    }
-
-    public GeneratorParams dimensionX(Double dimensionX) {
-        this.dimensionX = dimensionX;
-        return this;
     }
 
     /**
@@ -447,11 +387,6 @@ public class GeneratorParams {
         this.dimensionX = dimensionX;
     }
 
-    public GeneratorParams textSpace(Double textSpace) {
-        this.textSpace = textSpace;
-        return this;
-    }
-
     /**
      * Space between the CodeText and the BarCode in Unit value. Default value: 2pt. Ignored for
      * EAN8, EAN13, UPCE, UPCA, ISBN, ISMN, ISSN, UpcaGs1DatabarCoupon.
@@ -471,11 +406,6 @@ public class GeneratorParams {
         this.textSpace = textSpace;
     }
 
-    public GeneratorParams units(AvailableGraphicsUnit units) {
-        this.units = units;
-        return this;
-    }
-
     /**
      * Common Units for all measuring in query. Default units: pixel.
      *
@@ -488,11 +418,6 @@ public class GeneratorParams {
 
     public void setUnits(AvailableGraphicsUnit units) {
         this.units = units;
-    }
-
-    public GeneratorParams sizeMode(AutoSizeMode sizeMode) {
-        this.sizeMode = sizeMode;
-        return this;
     }
 
     /**
@@ -512,11 +437,6 @@ public class GeneratorParams {
         this.sizeMode = sizeMode;
     }
 
-    public GeneratorParams barHeight(Double barHeight) {
-        this.barHeight = barHeight;
-        return this;
-    }
-
     /**
      * Height of the barcode in given units. Default units: pixel.
      *
@@ -529,11 +449,6 @@ public class GeneratorParams {
 
     public void setBarHeight(Double barHeight) {
         this.barHeight = barHeight;
-    }
-
-    public GeneratorParams imageHeight(Double imageHeight) {
-        this.imageHeight = imageHeight;
-        return this;
     }
 
     /**
@@ -550,11 +465,6 @@ public class GeneratorParams {
         this.imageHeight = imageHeight;
     }
 
-    public GeneratorParams imageWidth(Double imageWidth) {
-        this.imageWidth = imageWidth;
-        return this;
-    }
-
     /**
      * Width of the barcode image in given units. Default units: pixel.
      *
@@ -567,11 +477,6 @@ public class GeneratorParams {
 
     public void setImageWidth(Double imageWidth) {
         this.imageWidth = imageWidth;
-    }
-
-    public GeneratorParams rotationAngle(Double rotationAngle) {
-        this.rotationAngle = rotationAngle;
-        return this;
     }
 
     /**
@@ -595,11 +500,6 @@ public class GeneratorParams {
         this.rotationAngle = rotationAngle;
     }
 
-    public GeneratorParams padding(Padding padding) {
-        this.padding = padding;
-        return this;
-    }
-
     /**
      * Barcode paddings. Default value: 5pt 5pt 5pt 5pt.
      *
@@ -612,11 +512,6 @@ public class GeneratorParams {
 
     public void setPadding(Padding padding) {
         this.padding = padding;
-    }
-
-    public GeneratorParams captionAbove(CaptionParams captionAbove) {
-        this.captionAbove = captionAbove;
-        return this;
     }
 
     /**
@@ -633,11 +528,6 @@ public class GeneratorParams {
         this.captionAbove = captionAbove;
     }
 
-    public GeneratorParams captionBelow(CaptionParams captionBelow) {
-        this.captionBelow = captionBelow;
-        return this;
-    }
-
     /**
      * Additional caption below barcode.
      *
@@ -650,11 +540,6 @@ public class GeneratorParams {
 
     public void setCaptionBelow(CaptionParams captionBelow) {
         this.captionBelow = captionBelow;
-    }
-
-    public GeneratorParams backColor(String backColor) {
-        this.backColor = backColor;
-        return this;
     }
 
     /**
@@ -671,11 +556,6 @@ public class GeneratorParams {
         this.backColor = backColor;
     }
 
-    public GeneratorParams barColor(String barColor) {
-        this.barColor = barColor;
-        return this;
-    }
-
     /**
      * Bars color. Default value: Color.Black.
      *
@@ -688,11 +568,6 @@ public class GeneratorParams {
 
     public void setBarColor(String barColor) {
         this.barColor = barColor;
-    }
-
-    public GeneratorParams borderColor(String borderColor) {
-        this.borderColor = borderColor;
-        return this;
     }
 
     /**
@@ -709,11 +584,6 @@ public class GeneratorParams {
         this.borderColor = borderColor;
     }
 
-    public GeneratorParams borderWidth(Double borderWidth) {
-        this.borderWidth = borderWidth;
-        return this;
-    }
-
     /**
      * Border width. Default value: 0. Ignored if Visible is set to false.
      *
@@ -728,11 +598,6 @@ public class GeneratorParams {
         this.borderWidth = borderWidth;
     }
 
-    public GeneratorParams borderDashStyle(BorderDashStyle borderDashStyle) {
-        this.borderDashStyle = borderDashStyle;
-        return this;
-    }
-
     /**
      * Border dash style. Default value: BorderDashStyle.Solid.
      *
@@ -745,11 +610,6 @@ public class GeneratorParams {
 
     public void setBorderDashStyle(BorderDashStyle borderDashStyle) {
         this.borderDashStyle = borderDashStyle;
-    }
-
-    public GeneratorParams borderVisible(Boolean borderVisible) {
-        this.borderVisible = borderVisible;
-        return this;
     }
 
     /**
@@ -767,11 +627,6 @@ public class GeneratorParams {
 
     public void setBorderVisible(Boolean borderVisible) {
         this.borderVisible = borderVisible;
-    }
-
-    public GeneratorParams enableChecksum(EnableChecksum enableChecksum) {
-        this.enableChecksum = enableChecksum;
-        return this;
     }
 
     /**
@@ -799,11 +654,6 @@ public class GeneratorParams {
         this.enableChecksum = enableChecksum;
     }
 
-    public GeneratorParams enableEscape(Boolean enableEscape) {
-        this.enableEscape = enableEscape;
-        return this;
-    }
-
     /**
      * Indicates whether explains the character \&quot;\\\&quot; as an escape character in CodeText
      * property. Used for Pdf417, DataMatrix, Code128 only If the EnableEscape is true,
@@ -829,11 +679,6 @@ public class GeneratorParams {
         this.enableEscape = enableEscape;
     }
 
-    public GeneratorParams filledBars(Boolean filledBars) {
-        this.filledBars = filledBars;
-        return this;
-    }
-
     /**
      * Value indicating whether bars are filled. Only for 1D barcodes. Default value: true.
      *
@@ -851,11 +696,6 @@ public class GeneratorParams {
         this.filledBars = filledBars;
     }
 
-    public GeneratorParams alwaysShowChecksum(Boolean alwaysShowChecksum) {
-        this.alwaysShowChecksum = alwaysShowChecksum;
-        return this;
-    }
-
     /**
      * Always display checksum digit in the human readable text for Code128 and GS1Code128 barcodes.
      *
@@ -871,11 +711,6 @@ public class GeneratorParams {
 
     public void setAlwaysShowChecksum(Boolean alwaysShowChecksum) {
         this.alwaysShowChecksum = alwaysShowChecksum;
-    }
-
-    public GeneratorParams wideNarrowRatio(Double wideNarrowRatio) {
-        this.wideNarrowRatio = wideNarrowRatio;
-        return this;
     }
 
     /**
@@ -899,11 +734,6 @@ public class GeneratorParams {
 
     public void setWideNarrowRatio(Double wideNarrowRatio) {
         this.wideNarrowRatio = wideNarrowRatio;
-    }
-
-    public GeneratorParams validateText(Boolean validateText) {
-        this.validateText = validateText;
-        return this;
     }
 
     /**
@@ -931,11 +761,6 @@ public class GeneratorParams {
         this.validateText = validateText;
     }
 
-    public GeneratorParams supplementData(String supplementData) {
-        this.supplementData = supplementData;
-        return this;
-    }
-
     /**
      * Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN,
      * ISSN, ISMN.
@@ -954,11 +779,6 @@ public class GeneratorParams {
         this.supplementData = supplementData;
     }
 
-    public GeneratorParams supplementSpace(Double supplementSpace) {
-        this.supplementSpace = supplementSpace;
-        return this;
-    }
-
     /**
      * Space between main the BarCode and supplement BarCode.
      *
@@ -971,11 +791,6 @@ public class GeneratorParams {
 
     public void setSupplementSpace(Double supplementSpace) {
         this.supplementSpace = supplementSpace;
-    }
-
-    public GeneratorParams australianPost(AustralianPostParams australianPost) {
-        this.australianPost = australianPost;
-        return this;
     }
 
     /**
@@ -992,11 +807,6 @@ public class GeneratorParams {
         this.australianPost = australianPost;
     }
 
-    public GeneratorParams aztec(AztecParams aztec) {
-        this.aztec = aztec;
-        return this;
-    }
-
     /**
      * Aztec params.
      *
@@ -1009,11 +819,6 @@ public class GeneratorParams {
 
     public void setAztec(AztecParams aztec) {
         this.aztec = aztec;
-    }
-
-    public GeneratorParams codabar(CodabarParams codabar) {
-        this.codabar = codabar;
-        return this;
     }
 
     /**
@@ -1030,11 +835,6 @@ public class GeneratorParams {
         this.codabar = codabar;
     }
 
-    public GeneratorParams codablock(CodablockParams codablock) {
-        this.codablock = codablock;
-        return this;
-    }
-
     /**
      * Codablock params.
      *
@@ -1047,11 +847,6 @@ public class GeneratorParams {
 
     public void setCodablock(CodablockParams codablock) {
         this.codablock = codablock;
-    }
-
-    public GeneratorParams code16K(Code16KParams code16K) {
-        this.code16K = code16K;
-        return this;
     }
 
     /**
@@ -1068,11 +863,6 @@ public class GeneratorParams {
         this.code16K = code16K;
     }
 
-    public GeneratorParams coupon(CouponParams coupon) {
-        this.coupon = coupon;
-        return this;
-    }
-
     /**
      * Coupon params.
      *
@@ -1085,11 +875,6 @@ public class GeneratorParams {
 
     public void setCoupon(CouponParams coupon) {
         this.coupon = coupon;
-    }
-
-    public GeneratorParams dataBar(DataBarParams dataBar) {
-        this.dataBar = dataBar;
-        return this;
     }
 
     /**
@@ -1106,11 +891,6 @@ public class GeneratorParams {
         this.dataBar = dataBar;
     }
 
-    public GeneratorParams dataMatrix(DataMatrixParams dataMatrix) {
-        this.dataMatrix = dataMatrix;
-        return this;
-    }
-
     /**
      * DataMatrix params.
      *
@@ -1123,11 +903,6 @@ public class GeneratorParams {
 
     public void setDataMatrix(DataMatrixParams dataMatrix) {
         this.dataMatrix = dataMatrix;
-    }
-
-    public GeneratorParams dotCode(DotCodeParams dotCode) {
-        this.dotCode = dotCode;
-        return this;
     }
 
     /**
@@ -1144,11 +919,6 @@ public class GeneratorParams {
         this.dotCode = dotCode;
     }
 
-    public GeneratorParams ITF(ITFParams ITF) {
-        this.ITF = ITF;
-        return this;
-    }
-
     /**
      * ITF params.
      *
@@ -1161,11 +931,6 @@ public class GeneratorParams {
 
     public void setITF(ITFParams ITF) {
         this.ITF = ITF;
-    }
-
-    public GeneratorParams maxiCode(MaxiCodeParams maxiCode) {
-        this.maxiCode = maxiCode;
-        return this;
     }
 
     /**
@@ -1182,11 +947,6 @@ public class GeneratorParams {
         this.maxiCode = maxiCode;
     }
 
-    public GeneratorParams pdf417(Pdf417Params pdf417) {
-        this.pdf417 = pdf417;
-        return this;
-    }
-
     /**
      * Pdf417 params.
      *
@@ -1199,11 +959,6 @@ public class GeneratorParams {
 
     public void setPdf417(Pdf417Params pdf417) {
         this.pdf417 = pdf417;
-    }
-
-    public GeneratorParams postal(PostalParams postal) {
-        this.postal = postal;
-        return this;
     }
 
     /**
@@ -1220,11 +975,6 @@ public class GeneratorParams {
         this.postal = postal;
     }
 
-    public GeneratorParams QR(QrParams QR) {
-        this.QR = QR;
-        return this;
-    }
-
     /**
      * QR params.
      *
@@ -1237,11 +987,6 @@ public class GeneratorParams {
 
     public void setQR(QrParams QR) {
         this.QR = QR;
-    }
-
-    public GeneratorParams patchCode(PatchCodeParams patchCode) {
-        this.patchCode = patchCode;
-        return this;
     }
 
     /**

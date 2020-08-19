@@ -127,11 +127,6 @@ public class ReaderParams {
     @SerializedName(value = "australianPostEncodingTable")
     private CustomerInformationInterpretingType australianPostEncodingTable = null;
 
-    public ReaderParams type(DecodeBarcodeType type) {
-        this.type = type;
-        return this;
-    }
-
     /**
      * The type of barcode to read.
      *
@@ -144,11 +139,6 @@ public class ReaderParams {
 
     public void setType(DecodeBarcodeType type) {
         this.type = type;
-    }
-
-    public ReaderParams checksumValidation(ChecksumValidation checksumValidation) {
-        this.checksumValidation = checksumValidation;
-        return this;
     }
 
     /**
@@ -176,11 +166,6 @@ public class ReaderParams {
         this.checksumValidation = checksumValidation;
     }
 
-    public ReaderParams detectEncoding(Boolean detectEncoding) {
-        this.detectEncoding = detectEncoding;
-        return this;
-    }
-
     /**
      * A flag which force engine to detect codetext encoding for Unicode.
      *
@@ -193,11 +178,6 @@ public class ReaderParams {
 
     public void setDetectEncoding(Boolean detectEncoding) {
         this.detectEncoding = detectEncoding;
-    }
-
-    public ReaderParams preset(PresetType preset) {
-        this.preset = preset;
-        return this;
     }
 
     /**
@@ -221,11 +201,6 @@ public class ReaderParams {
         this.preset = preset;
     }
 
-    public ReaderParams rectX(Integer rectX) {
-        this.rectX = rectX;
-        return this;
-    }
-
     /**
      * Set X for area for recognition.
      *
@@ -238,11 +213,6 @@ public class ReaderParams {
 
     public void setRectX(Integer rectX) {
         this.rectX = rectX;
-    }
-
-    public ReaderParams rectY(Integer rectY) {
-        this.rectY = rectY;
-        return this;
     }
 
     /**
@@ -259,11 +229,6 @@ public class ReaderParams {
         this.rectY = rectY;
     }
 
-    public ReaderParams rectWidth(Integer rectWidth) {
-        this.rectWidth = rectWidth;
-        return this;
-    }
-
     /**
      * Set Width of area for recognition.
      *
@@ -276,11 +241,6 @@ public class ReaderParams {
 
     public void setRectWidth(Integer rectWidth) {
         this.rectWidth = rectWidth;
-    }
-
-    public ReaderParams rectHeight(Integer rectHeight) {
-        this.rectHeight = rectHeight;
-        return this;
     }
 
     /**
@@ -297,11 +257,6 @@ public class ReaderParams {
         this.rectHeight = rectHeight;
     }
 
-    public ReaderParams stripFNC(Boolean stripFNC) {
-        this.stripFNC = stripFNC;
-        return this;
-    }
-
     /**
      * Value indicating whether FNC symbol strip must be done.
      *
@@ -316,11 +271,6 @@ public class ReaderParams {
         this.stripFNC = stripFNC;
     }
 
-    public ReaderParams timeout(Integer timeout) {
-        this.timeout = timeout;
-        return this;
-    }
-
     /**
      * Timeout of recognition process.
      *
@@ -333,11 +283,6 @@ public class ReaderParams {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
-    }
-
-    public ReaderParams medianSmoothingWindowSize(Integer medianSmoothingWindowSize) {
-        this.medianSmoothingWindowSize = medianSmoothingWindowSize;
-        return this;
     }
 
     /**
@@ -358,11 +303,6 @@ public class ReaderParams {
         this.medianSmoothingWindowSize = medianSmoothingWindowSize;
     }
 
-    public ReaderParams allowMedianSmoothing(Boolean allowMedianSmoothing) {
-        this.allowMedianSmoothing = allowMedianSmoothing;
-        return this;
-    }
-
     /**
      * Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised
      * barcodes.
@@ -379,11 +319,6 @@ public class ReaderParams {
 
     public void setAllowMedianSmoothing(Boolean allowMedianSmoothing) {
         this.allowMedianSmoothing = allowMedianSmoothing;
-    }
-
-    public ReaderParams allowComplexBackground(Boolean allowComplexBackground) {
-        this.allowComplexBackground = allowComplexBackground;
-        return this;
     }
 
     /**
@@ -404,12 +339,6 @@ public class ReaderParams {
         this.allowComplexBackground = allowComplexBackground;
     }
 
-    public ReaderParams allowDatamatrixIndustrialBarcodes(
-            Boolean allowDatamatrixIndustrialBarcodes) {
-        this.allowDatamatrixIndustrialBarcodes = allowDatamatrixIndustrialBarcodes;
-        return this;
-    }
-
     /**
      * Allows engine for Datamatrix to recognize dashed industrial Datamatrix barcodes. Slow mode
      * which helps only for dashed barcodes which consist from spots.
@@ -427,11 +356,6 @@ public class ReaderParams {
 
     public void setAllowDatamatrixIndustrialBarcodes(Boolean allowDatamatrixIndustrialBarcodes) {
         this.allowDatamatrixIndustrialBarcodes = allowDatamatrixIndustrialBarcodes;
-    }
-
-    public ReaderParams allowDecreasedImage(Boolean allowDecreasedImage) {
-        this.allowDecreasedImage = allowDecreasedImage;
-        return this;
     }
 
     /**
@@ -455,11 +379,6 @@ public class ReaderParams {
         this.allowDecreasedImage = allowDecreasedImage;
     }
 
-    public ReaderParams allowDetectScanGap(Boolean allowDetectScanGap) {
-        this.allowDetectScanGap = allowDetectScanGap;
-        return this;
-    }
-
     /**
      * Allows engine to use gap between scans to increase recognition speed. Mode can make
      * recognition problems with low height barcodes.
@@ -476,11 +395,6 @@ public class ReaderParams {
 
     public void setAllowDetectScanGap(Boolean allowDetectScanGap) {
         this.allowDetectScanGap = allowDetectScanGap;
-    }
-
-    public ReaderParams allowIncorrectBarcodes(Boolean allowIncorrectBarcodes) {
-        this.allowIncorrectBarcodes = allowIncorrectBarcodes;
-        return this;
     }
 
     /**
@@ -502,11 +416,6 @@ public class ReaderParams {
         this.allowIncorrectBarcodes = allowIncorrectBarcodes;
     }
 
-    public ReaderParams allowInvertImage(Boolean allowInvertImage) {
-        this.allowInvertImage = allowInvertImage;
-        return this;
-    }
-
     /**
      * Allows engine to recognize inverse color image as additional scan. Mode can be used when
      * barcode is white on black background.
@@ -525,11 +434,6 @@ public class ReaderParams {
         this.allowInvertImage = allowInvertImage;
     }
 
-    public ReaderParams allowMicroWhiteSpotsRemoving(Boolean allowMicroWhiteSpotsRemoving) {
-        this.allowMicroWhiteSpotsRemoving = allowMicroWhiteSpotsRemoving;
-        return this;
-    }
-
     /**
      * Allows engine for Postal barcodes to recognize slightly noised images. Mode helps to
      * recognize slightly damaged Postal barcodes.
@@ -546,11 +450,6 @@ public class ReaderParams {
 
     public void setAllowMicroWhiteSpotsRemoving(Boolean allowMicroWhiteSpotsRemoving) {
         this.allowMicroWhiteSpotsRemoving = allowMicroWhiteSpotsRemoving;
-    }
-
-    public ReaderParams allowOneDFastBarcodesDetector(Boolean allowOneDFastBarcodesDetector) {
-        this.allowOneDFastBarcodesDetector = allowOneDFastBarcodesDetector;
-        return this;
     }
 
     /**
@@ -572,11 +471,6 @@ public class ReaderParams {
         this.allowOneDFastBarcodesDetector = allowOneDFastBarcodesDetector;
     }
 
-    public ReaderParams allowOneDWipedBarsRestoration(Boolean allowOneDWipedBarsRestoration) {
-        this.allowOneDWipedBarsRestoration = allowOneDWipedBarsRestoration;
-        return this;
-    }
-
     /**
      * Allows engine for 1D barcodes to recognize barcodes with single wiped/glued bars in pattern.
      *
@@ -594,11 +488,6 @@ public class ReaderParams {
         this.allowOneDWipedBarsRestoration = allowOneDWipedBarsRestoration;
     }
 
-    public ReaderParams allowQRMicroQrRestoration(Boolean allowQRMicroQrRestoration) {
-        this.allowQRMicroQrRestoration = allowQRMicroQrRestoration;
-        return this;
-    }
-
     /**
      * Allows engine for QR/MicroQR to recognize damaged MicroQR barcodes.
      *
@@ -611,11 +500,6 @@ public class ReaderParams {
 
     public void setAllowQRMicroQrRestoration(Boolean allowQRMicroQrRestoration) {
         this.allowQRMicroQrRestoration = allowQRMicroQrRestoration;
-    }
-
-    public ReaderParams allowRegularImage(Boolean allowRegularImage) {
-        this.allowRegularImage = allowRegularImage;
-        return this;
     }
 
     /**
@@ -636,11 +520,6 @@ public class ReaderParams {
         this.allowRegularImage = allowRegularImage;
     }
 
-    public ReaderParams allowSaltAndPepperFiltering(Boolean allowSaltAndPepperFiltering) {
-        this.allowSaltAndPepperFiltering = allowSaltAndPepperFiltering;
-        return this;
-    }
-
     /**
      * Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small
      * noise with white and black dots.
@@ -657,11 +536,6 @@ public class ReaderParams {
 
     public void setAllowSaltAndPepperFiltering(Boolean allowSaltAndPepperFiltering) {
         this.allowSaltAndPepperFiltering = allowSaltAndPepperFiltering;
-    }
-
-    public ReaderParams allowWhiteSpotsRemoving(Boolean allowWhiteSpotsRemoving) {
-        this.allowWhiteSpotsRemoving = allowWhiteSpotsRemoving;
-        return this;
     }
 
     /**
@@ -681,11 +555,6 @@ public class ReaderParams {
 
     public void setAllowWhiteSpotsRemoving(Boolean allowWhiteSpotsRemoving) {
         this.allowWhiteSpotsRemoving = allowWhiteSpotsRemoving;
-    }
-
-    public ReaderParams regionLikelihoodThresholdPercent(Double regionLikelihoodThresholdPercent) {
-        this.regionLikelihoodThresholdPercent = regionLikelihoodThresholdPercent;
-        return this;
     }
 
     /**
@@ -711,11 +580,6 @@ public class ReaderParams {
 
     public void setRegionLikelihoodThresholdPercent(Double regionLikelihoodThresholdPercent) {
         this.regionLikelihoodThresholdPercent = regionLikelihoodThresholdPercent;
-    }
-
-    public ReaderParams scanWindowSizes(List<Integer> scanWindowSizes) {
-        this.scanWindowSizes = scanWindowSizes;
-        return this;
     }
 
     public ReaderParams addScanWindowSizesItem(Integer scanWindowSizesItem) {
@@ -747,11 +611,6 @@ public class ReaderParams {
         this.scanWindowSizes = scanWindowSizes;
     }
 
-    public ReaderParams similarity(Double similarity) {
-        this.similarity = similarity;
-        return this;
-    }
-
     /**
      * Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear
      * barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly.
@@ -773,11 +632,6 @@ public class ReaderParams {
         this.similarity = similarity;
     }
 
-    public ReaderParams skipDiagonalSearch(Boolean skipDiagonalSearch) {
-        this.skipDiagonalSearch = skipDiagonalSearch;
-        return this;
-    }
-
     /**
      * Allows detector to skip search for diagonal barcodes. Setting it to false will increase
      * detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of
@@ -797,12 +651,6 @@ public class ReaderParams {
 
     public void setSkipDiagonalSearch(Boolean skipDiagonalSearch) {
         this.skipDiagonalSearch = skipDiagonalSearch;
-    }
-
-    public ReaderParams australianPostEncodingTable(
-            CustomerInformationInterpretingType australianPostEncodingTable) {
-        this.australianPostEncodingTable = australianPostEncodingTable;
-        return this;
     }
 
     /**

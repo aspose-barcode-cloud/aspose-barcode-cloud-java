@@ -41,7 +41,7 @@ public enum ChecksumValidation {
 
     OFF("Off");
 
-    private String value;
+    private final String value;
 
     ChecksumValidation(String value) {
         this.value = value;

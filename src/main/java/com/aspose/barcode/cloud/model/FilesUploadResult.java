@@ -43,11 +43,6 @@ public class FilesUploadResult {
     @SerializedName(value = "errors")
     private List<Error> errors = null;
 
-    public FilesUploadResult uploaded(List<String> uploaded) {
-        this.uploaded = uploaded;
-        return this;
-    }
-
     public FilesUploadResult addUploadedItem(String uploadedItem) {
         if (this.uploaded == null) {
             this.uploaded = new ArrayList<String>();
@@ -68,11 +63,6 @@ public class FilesUploadResult {
 
     public void setUploaded(List<String> uploaded) {
         this.uploaded = uploaded;
-    }
-
-    public FilesUploadResult errors(List<Error> errors) {
-        this.errors = errors;
-        return this;
     }
 
     public FilesUploadResult addErrorsItem(Error errorsItem) {

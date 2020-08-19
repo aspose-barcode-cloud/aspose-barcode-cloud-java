@@ -74,7 +74,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call copyFolderCall(
+    protected com.squareup.okhttp.Call copyFolderCall(
             String srcPath,
             String destPath,
             String srcStorageName,
@@ -87,7 +87,7 @@ public class FolderApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/folder/copy/{srcPath}"
-                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath.toString());
+                        .replaceAll("\\{" + "srcPath" + "}", srcPath);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -134,7 +134,6 @@ public class FolderApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -143,11 +142,9 @@ public class FolderApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call copyFolderValidateBeforeCall(
             String srcPath,
             String destPath,
@@ -279,7 +276,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFolderCall(
+    protected com.squareup.okhttp.Call createFolderCall(
             String path,
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -289,8 +286,7 @@ public class FolderApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/folder/{path}"
-                        .replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/folder/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -332,7 +328,6 @@ public class FolderApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -341,11 +336,9 @@ public class FolderApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call createFolderValidateBeforeCall(
             String path,
             String storageName,
@@ -444,7 +437,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteFolderCall(
+    protected com.squareup.okhttp.Call deleteFolderCall(
             String path,
             String storageName,
             Boolean recursive,
@@ -455,8 +448,7 @@ public class FolderApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/folder/{path}"
-                        .replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/folder/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -500,7 +492,6 @@ public class FolderApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "DELETE",
@@ -509,11 +500,9 @@ public class FolderApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call deleteFolderValidateBeforeCall(
             String path,
             String storageName,
@@ -618,7 +607,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFilesListCall(
+    protected com.squareup.okhttp.Call getFilesListCall(
             String path,
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -628,8 +617,7 @@ public class FolderApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/folder/{path}"
-                        .replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/folder/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -671,7 +659,6 @@ public class FolderApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -680,11 +667,9 @@ public class FolderApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getFilesListValidateBeforeCall(
             String path,
             String storageName,
@@ -789,7 +774,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call moveFolderCall(
+    protected com.squareup.okhttp.Call moveFolderCall(
             String srcPath,
             String destPath,
             String srcStorageName,
@@ -802,7 +787,7 @@ public class FolderApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/folder/move/{srcPath}"
-                        .replaceAll("\\{" + "srcPath" + "\\}", srcPath.toString());
+                        .replaceAll("\\{" + "srcPath" + "}", srcPath);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -849,7 +834,6 @@ public class FolderApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "PUT",
@@ -858,11 +842,9 @@ public class FolderApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call moveFolderValidateBeforeCall(
             String srcPath,
             String destPath,

@@ -74,7 +74,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getDiscUsageCall(
+    protected com.squareup.okhttp.Call getDiscUsageCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -124,7 +124,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -133,11 +132,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getDiscUsageValidateBeforeCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -227,7 +224,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileVersionsCall(
+    protected com.squareup.okhttp.Call getFileVersionsCall(
             String path,
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -237,8 +234,7 @@ public class StorageApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/version/{path}"
-                        .replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/version/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -280,7 +276,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -289,11 +284,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getFileVersionsValidateBeforeCall(
             String path,
             String storageName,
@@ -397,7 +390,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call objectExistsCall(
+    protected com.squareup.okhttp.Call objectExistsCall(
             String path,
             String storageName,
             String versionId,
@@ -408,7 +401,7 @@ public class StorageApi {
 
         // create path and map variables
         String localVarPath =
-                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "\\}", path.toString());
+                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "}", path);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -452,7 +445,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -461,11 +453,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call objectExistsValidateBeforeCall(
             String path,
             String storageName,
@@ -576,7 +566,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call storageExistsCall(
+    protected com.squareup.okhttp.Call storageExistsCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -586,7 +576,7 @@ public class StorageApi {
         // create path and map variables
         String localVarPath =
                 "/barcode/storage/{storageName}/exist"
-                        .replaceAll("\\{" + "storageName" + "\\}", storageName.toString());
+                        .replaceAll("\\{" + "storageName" + "}", storageName);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -626,7 +616,6 @@ public class StorageApi {
                             });
         }
 
-        String[] localVarAuthNames = new String[] {"JWT"};
         return apiClient.buildCall(
                 localVarPath,
                 "GET",
@@ -635,11 +624,9 @@ public class StorageApi {
                 localVarPostBody,
                 localVarHeaderParams,
                 localVarFormParams,
-                localVarAuthNames,
                 progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call storageExistsValidateBeforeCall(
             String storageName,
             final ProgressResponseBody.ProgressListener progressListener,

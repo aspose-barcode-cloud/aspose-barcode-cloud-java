@@ -41,7 +41,7 @@ public enum EnableChecksum {
 
     NO("No");
 
-    private String value;
+    private final String value;
 
     EnableChecksum(String value) {
         this.value = value;

@@ -45,7 +45,7 @@ public enum PatchFormat {
 
     US_LETTER_LANDSCAPE("US_Letter_LANDSCAPE");
 
-    private String value;
+    private final String value;
 
     PatchFormat(String value) {
         this.value = value;

@@ -53,11 +53,6 @@ public class CaptionParams {
     @SerializedName(value = "padding")
     private Padding padding = null;
 
-    public CaptionParams text(String text) {
-        this.text = text;
-        return this;
-    }
-
     /**
      * Caption text.
      *
@@ -70,11 +65,6 @@ public class CaptionParams {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public CaptionParams alignment(TextAlignment alignment) {
-        this.alignment = alignment;
-        return this;
     }
 
     /**
@@ -91,11 +81,6 @@ public class CaptionParams {
         this.alignment = alignment;
     }
 
-    public CaptionParams color(String color) {
-        this.color = color;
-        return this;
-    }
-
     /**
      * Text color.
      *
@@ -108,11 +93,6 @@ public class CaptionParams {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public CaptionParams visible(Boolean visible) {
-        this.visible = visible;
-        return this;
     }
 
     /**
@@ -129,11 +109,6 @@ public class CaptionParams {
         this.visible = visible;
     }
 
-    public CaptionParams font(FontParams font) {
-        this.font = font;
-        return this;
-    }
-
     /**
      * Font.
      *
@@ -146,11 +121,6 @@ public class CaptionParams {
 
     public void setFont(FontParams font) {
         this.font = font;
-    }
-
-    public CaptionParams padding(Padding padding) {
-        this.padding = padding;
-        return this;
     }
 
     /**

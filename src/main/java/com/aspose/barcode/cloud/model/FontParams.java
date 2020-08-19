@@ -44,11 +44,6 @@ public class FontParams {
     @SerializedName(value = "style")
     private FontStyle style = null;
 
-    public FontParams family(String family) {
-        this.family = family;
-        return this;
-    }
-
     /**
      * Font family.
      *
@@ -63,11 +58,6 @@ public class FontParams {
         this.family = family;
     }
 
-    public FontParams size(Double size) {
-        this.size = size;
-        return this;
-    }
-
     /**
      * Font size in units.
      *
@@ -80,11 +70,6 @@ public class FontParams {
 
     public void setSize(Double size) {
         this.size = size;
-    }
-
-    public FontParams style(FontStyle style) {
-        this.style = style;
-        return this;
     }
 
     /**

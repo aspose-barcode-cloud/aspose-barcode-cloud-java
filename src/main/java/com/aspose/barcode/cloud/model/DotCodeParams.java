@@ -41,11 +41,6 @@ public class DotCodeParams {
     @SerializedName(value = "dotCodeMask")
     private Integer dotCodeMask = null;
 
-    public DotCodeParams aspectRatio(Double aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -58,11 +53,6 @@ public class DotCodeParams {
 
     public void setAspectRatio(Double aspectRatio) {
         this.aspectRatio = aspectRatio;
-    }
-
-    public DotCodeParams dotCodeMask(Integer dotCodeMask) {
-        this.dotCodeMask = dotCodeMask;
-        return this;
     }
 
     /**

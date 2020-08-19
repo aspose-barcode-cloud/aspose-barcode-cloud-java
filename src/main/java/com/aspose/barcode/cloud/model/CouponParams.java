@@ -38,11 +38,6 @@ public class CouponParams {
     @SerializedName(value = "supplementSpace")
     private Double supplementSpace = null;
 
-    public CouponParams supplementSpace(Double supplementSpace) {
-        this.supplementSpace = supplementSpace;
-        return this;
-    }
-
     /**
      * Space between main the BarCode and supplement BarCode in Unit value.
      *
