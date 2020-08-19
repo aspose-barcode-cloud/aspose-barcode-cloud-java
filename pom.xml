@@ -10,7 +10,9 @@
     <description>Aspose.BarCode Cloud SDK for Java</description>
     <scm>
         <connection>scm:git:git@github.com:aspose-barcode-cloud/aspose-barcode-cloud-java.git</connection>
-        <developerConnection>scm:git:git@github.com:aspose-barcode-cloud/aspose-barcode-cloud-java.git</developerConnection>
+        <developerConnection>
+            scm:git:git@github.com:aspose-barcode-cloud/aspose-barcode-cloud-java.git
+        </developerConnection>
         <url>https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-java</url>
     </scm>
 
@@ -30,6 +32,14 @@
             <organizationUrl>https://www.aspose.cloud/</organizationUrl>
         </developer>
     </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>aspose-cloud</id>
+            <name>Aspose Cloud Repository</name>
+            <url>https://repository.aspose.cloud/repo/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>

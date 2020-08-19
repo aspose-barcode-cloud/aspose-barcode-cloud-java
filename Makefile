@@ -20,3 +20,7 @@ format_tests:
 .PHONY: test
 test:
 	mvn -B package --file pom.xml
+
+.PHONY: publish
+publish:
+	mvn deploy
