@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## getBarcodeGenerate
 
-> File getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, format)
+> File getBarcodeGenerate(type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, format)
 
 Generate barcode.
 
@@ -87,6 +87,7 @@ Name | Type | Description  | Notes
  **validateText** | **Boolean**| Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode&#39;s specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect. | [optional]
  **supplementData** | **String**| Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional]
  **supplementSpace** | **Double**| Space between main the BarCode and supplement BarCode. | [optional]
+ **barWidthReduction** | **Double**| Bars reduction value that is used to compensate ink spread while printing. | [optional]
  **format** | **String**| Result image format. | [optional]
 
 ### getBarcodeGenerate return type
@@ -95,7 +96,7 @@ Name | Type | Description  | Notes
 
 ## getBarcodeRecognize
 
-> BarcodeResponseList getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, australianPostEncodingTable, rectangleRegion, storage, folder)
+> BarcodeResponseList getBarcodeRecognize(name, type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, rectangleRegion, storage, folder)
 
 Recognize barcode from a file on server.
 
@@ -165,6 +166,7 @@ Name | Type | Description  | Notes
  **scanWindowSizes** | **List&lt;Integer&gt;**| Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality. | [optional]
  **similarity** | **Double**| Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9] | [optional]
  **skipDiagonalSearch** | **Boolean**| Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. | [optional]
+ **readTinyBarcodes** | **Boolean**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional]
  **australianPostEncodingTable** | **String**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional] [enum: CTable, NTable, Other]
  **rectangleRegion** | **String**|  | [optional]
  **storage** | **String**| The image storage. | [optional]
@@ -176,7 +178,7 @@ Name | Type | Description  | Notes
 
 ## postBarcodeRecognizeFromUrlOrContent
 
-> BarcodeResponseList postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, australianPostEncodingTable, rectangleRegion, url, image)
+> BarcodeResponseList postBarcodeRecognizeFromUrlOrContent(type, checksumValidation, detectEncoding, preset, rectX, rectY, rectWidth, rectHeight, stripFNC, timeout, medianSmoothingWindowSize, allowMedianSmoothing, allowComplexBackground, allowDatamatrixIndustrialBarcodes, allowDecreasedImage, allowDetectScanGap, allowIncorrectBarcodes, allowInvertImage, allowMicroWhiteSpotsRemoving, allowOneDFastBarcodesDetector, allowOneDWipedBarsRestoration, allowQRMicroQrRestoration, allowRegularImage, allowSaltAndPepperFiltering, allowWhiteSpotsRemoving, regionLikelihoodThresholdPercent, scanWindowSizes, similarity, skipDiagonalSearch, readTinyBarcodes, australianPostEncodingTable, rectangleRegion, url, image)
 
 Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
 
@@ -244,6 +246,7 @@ Name | Type | Description  | Notes
  **scanWindowSizes** | **List&lt;Integer&gt;**| Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality. | [optional]
  **similarity** | **Double**| Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9] | [optional]
  **skipDiagonalSearch** | **Boolean**| Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. | [optional]
+ **readTinyBarcodes** | **Boolean**| Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. | [optional]
  **australianPostEncodingTable** | **String**| Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. | [optional] [enum: CTable, NTable, Other]
  **rectangleRegion** | **String**|  | [optional]
  **url** | **String**| The image file url. | [optional]
@@ -304,7 +307,7 @@ Name | Type | Description  | Notes
 
 ## putBarcodeGenerateFile
 
-> ResultImageInfo putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, storage, folder, format)
+> ResultImageInfo putBarcodeGenerateFile(name, type, text, twoDDisplayText, textLocation, textAlignment, textColor, fontSizeMode, resolution, resolutionX, resolutionY, dimensionX, textSpace, units, sizeMode, barHeight, imageHeight, imageWidth, rotationAngle, backColor, barColor, borderColor, borderWidth, borderDashStyle, borderVisible, enableChecksum, enableEscape, filledBars, alwaysShowChecksum, wideNarrowRatio, validateText, supplementData, supplementSpace, barWidthReduction, storage, folder, format)
 
 Generate barcode and save on server (from query params or from file with json or xml content)
 
@@ -379,6 +382,7 @@ Name | Type | Description  | Notes
  **validateText** | **Boolean**| Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be thrown. Otherwise codetext will be corrected to match barcode&#39;s specification. Exception always will be thrown for: Databar symbology if codetext is incorrect. Exception always will not be thrown for: AustraliaPost, SingaporePost, Code39Extended, Code93Extended, Code16K, Code128 symbology if codetext is incorrect. | [optional]
  **supplementData** | **String**| Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. | [optional]
  **supplementSpace** | **Double**| Space between main the BarCode and supplement BarCode. | [optional]
+ **barWidthReduction** | **Double**| Bars reduction value that is used to compensate ink spread while printing. | [optional]
  **storage** | **String**| Image&#39;s storage. | [optional]
  **folder** | **String**| Image&#39;s folder. | [optional]
  **format** | **String**| The image format. | [optional]

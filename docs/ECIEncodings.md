@@ -4,6 +4,8 @@
 ## Enum
 
 
+* `NONE` (value: `"NONE"`)
+
 * `ISO_8859_1` (value: `"ISO_8859_1"`)
 
 * `ISO_8859_2` (value: `"ISO_8859_2"`)

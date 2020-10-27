@@ -61,6 +61,7 @@ public class BarcodeApiTest extends TestBase {
         Boolean validateText = null;
         String supplementData = null;
         Double supplementSpace = null;
+        Double barWidthReduction = null;
         String format = "png";
         File response =
                 api.getBarcodeGenerate(
@@ -96,6 +97,7 @@ public class BarcodeApiTest extends TestBase {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         format);
 
         assertTrue(response.length() > 0);
@@ -141,6 +143,7 @@ public class BarcodeApiTest extends TestBase {
         List<Integer> scanWindowSizes = null;
         Double similarity = null;
         Boolean skipDiagonalSearch = null;
+        Boolean readTinyBarcodes = null;
         String australianPostEncodingTable = null;
         String rectangleRegion = null;
         BarcodeResponseList response =
@@ -175,6 +178,7 @@ public class BarcodeApiTest extends TestBase {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         testStorageName,
@@ -242,6 +246,7 @@ public class BarcodeApiTest extends TestBase {
         List<Integer> scanWindowSizes = null;
         Double similarity = null;
         Boolean skipDiagonalSearch = null;
+        Boolean readTinyBarcodes = null;
         String australianPostEncodingTable = null;
         String rectangleRegion = null;
         String url = null;
@@ -283,6 +288,7 @@ public class BarcodeApiTest extends TestBase {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         url,
@@ -368,6 +374,7 @@ public class BarcodeApiTest extends TestBase {
         Boolean validateText = null;
         String supplementData = null;
         Double supplementSpace = null;
+        Double barWidthReduction = null;
         String format = null;
         ResultImageInfo response =
                 api.putBarcodeGenerateFile(
@@ -404,6 +411,7 @@ public class BarcodeApiTest extends TestBase {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         testStorageName,
                         remoteTempFolder,
                         format);

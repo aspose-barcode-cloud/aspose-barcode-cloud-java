@@ -25,7 +25,7 @@
 
 package com.aspose.barcode.cloud;
 
-import com.aspose.barcode.cloud.model.BarCodeErrorResponse;
+import com.aspose.barcode.cloud.model.ApiErrorResponse;
 import com.squareup.okhttp.*;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
@@ -62,7 +62,7 @@ import javax.net.ssl.*;
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "20.8.0";
+    public final String clientVersion = "20.10.0";
     private String baseUrl = "https://api.aspose.cloud";
     private String appSid;
     private String appKey;
@@ -114,7 +114,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/20.8.0/java");
+        setUserAgent("Swagger-Codegen/20.10.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
@@ -819,9 +819,9 @@ public class ApiClient {
         if (response.body() == null) {
             throw new ApiException(response.message(), response.code());
         }
-        BarCodeErrorResponse errorResponse;
+        ApiErrorResponse errorResponse;
         try {
-            errorResponse = deserialize(response, BarCodeErrorResponse.class);
+            errorResponse = deserialize(response, ApiErrorResponse.class);
         } catch (Exception e) {
             throw new ApiException(
                     response.message(), e, response.code(), response.headers().toMultimap());

@@ -140,6 +140,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param format Result image format. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -179,6 +181,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String format,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -256,6 +259,9 @@ public class BarcodeApi {
         if (supplementSpace != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair("SupplementSpace", supplementSpace));
+        if (barWidthReduction != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BarWidthReduction", barWidthReduction));
         if (format != null) localVarQueryParams.addAll(apiClient.parameterToPair("format", format));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
@@ -339,6 +345,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String format,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -390,6 +397,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         format,
                         progressListener,
                         progressRequestListener);
@@ -470,6 +478,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param format Result image format. (optional)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
@@ -508,6 +518,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String format)
             throws ApiException {
         ApiResponse<File> resp =
@@ -544,6 +555,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         format);
         return resp.getData();
     }
@@ -622,6 +634,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param format Result image format. (optional)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
@@ -660,6 +674,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String format)
             throws ApiException {
         com.squareup.okhttp.Call call =
@@ -696,6 +711,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         format,
                         null,
                         null);
@@ -777,6 +793,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param format Result image format. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -816,6 +834,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String format,
             final ApiCallback<File> callback)
             throws ApiException {
@@ -876,6 +895,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         format,
                         progressListener,
                         progressRequestListener);
@@ -956,6 +976,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -997,6 +1019,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String storage,
@@ -1093,6 +1116,9 @@ public class BarcodeApi {
         if (skipDiagonalSearch != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair("SkipDiagonalSearch", skipDiagonalSearch));
+        if (readTinyBarcodes != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("ReadTinyBarcodes", readTinyBarcodes));
         if (australianPostEncodingTable != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
@@ -1181,6 +1207,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String storage,
@@ -1228,6 +1255,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         storage,
@@ -1310,6 +1338,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -1350,6 +1380,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String storage,
@@ -1387,6 +1418,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         storage,
@@ -1467,6 +1499,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -1507,6 +1541,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String storage,
@@ -1544,6 +1579,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         storage,
@@ -1627,6 +1663,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -1668,6 +1706,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String storage,
@@ -1729,6 +1768,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         storage,
@@ -1811,6 +1851,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -1851,6 +1893,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String url,
@@ -1947,6 +1990,9 @@ public class BarcodeApi {
         if (skipDiagonalSearch != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair("SkipDiagonalSearch", skipDiagonalSearch));
+        if (readTinyBarcodes != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("ReadTinyBarcodes", readTinyBarcodes));
         if (australianPostEncodingTable != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
@@ -2033,6 +2079,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String url,
@@ -2072,6 +2119,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         url,
@@ -2154,6 +2202,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -2193,6 +2243,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String url,
@@ -2229,6 +2280,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         url,
@@ -2309,6 +2361,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -2348,6 +2402,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String url,
@@ -2384,6 +2439,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         url,
@@ -2467,6 +2523,8 @@ public class BarcodeApi {
      * @param skipDiagonalSearch Allows detector to skip search for diagonal barcodes. Setting it to
      *     false will increase detection time but allow to find diagonal barcodes that can be missed
      *     otherwise. Enabling of diagonal search leads to a bigger detection time. (optional)
+     * @param readTinyBarcodes Allows engine to recognize tiny barcodes on large images. Ignored if
+     *     AllowIncorrectBarcodes is set to True. Default value: False. (optional)
      * @param australianPostEncodingTable Interpreting Type for the Customer Information of
      *     AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. (optional)
      * @param rectangleRegion (optional)
@@ -2507,6 +2565,7 @@ public class BarcodeApi {
             List<Integer> scanWindowSizes,
             Double similarity,
             Boolean skipDiagonalSearch,
+            Boolean readTinyBarcodes,
             String australianPostEncodingTable,
             String rectangleRegion,
             String url,
@@ -2567,6 +2626,7 @@ public class BarcodeApi {
                         scanWindowSizes,
                         similarity,
                         skipDiagonalSearch,
+                        readTinyBarcodes,
                         australianPostEncodingTable,
                         rectangleRegion,
                         url,
@@ -2822,6 +2882,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param storage Image&#39;s storage. (optional)
      * @param folder Image&#39;s folder. (optional)
      * @param format The image format. (optional)
@@ -2864,6 +2926,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String storage,
             String folder,
             String format,
@@ -2943,6 +3006,9 @@ public class BarcodeApi {
         if (supplementSpace != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair("SupplementSpace", supplementSpace));
+        if (barWidthReduction != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BarWidthReduction", barWidthReduction));
         if (storage != null)
             localVarQueryParams.addAll(apiClient.parameterToPair("storage", storage));
         if (folder != null) localVarQueryParams.addAll(apiClient.parameterToPair("folder", folder));
@@ -3030,6 +3096,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String storage,
             String folder,
             String format,
@@ -3093,6 +3160,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         storage,
                         folder,
                         format,
@@ -3176,6 +3244,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param storage Image&#39;s storage. (optional)
      * @param folder Image&#39;s folder. (optional)
      * @param format The image format. (optional)
@@ -3217,6 +3287,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String storage,
             String folder,
             String format)
@@ -3256,6 +3327,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         storage,
                         folder,
                         format);
@@ -3337,6 +3409,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param storage Image&#39;s storage. (optional)
      * @param folder Image&#39;s folder. (optional)
      * @param format The image format. (optional)
@@ -3378,6 +3452,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String storage,
             String folder,
             String format)
@@ -3417,6 +3492,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         storage,
                         folder,
                         format,
@@ -3502,6 +3578,8 @@ public class BarcodeApi {
      * @param supplementData Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13,
      *     EAN8, UPCA, UPCE, ISBN, ISSN, ISMN. (optional)
      * @param supplementSpace Space between main the BarCode and supplement BarCode. (optional)
+     * @param barWidthReduction Bars reduction value that is used to compensate ink spread while
+     *     printing. (optional)
      * @param storage Image&#39;s storage. (optional)
      * @param folder Image&#39;s folder. (optional)
      * @param format The image format. (optional)
@@ -3544,6 +3622,7 @@ public class BarcodeApi {
             Boolean validateText,
             String supplementData,
             Double supplementSpace,
+            Double barWidthReduction,
             String storage,
             String folder,
             String format,
@@ -3607,6 +3686,7 @@ public class BarcodeApi {
                         validateText,
                         supplementData,
                         supplementSpace,
+                        barWidthReduction,
                         storage,
                         folder,
                         format,

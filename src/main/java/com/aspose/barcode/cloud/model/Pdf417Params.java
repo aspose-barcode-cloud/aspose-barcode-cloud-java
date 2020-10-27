@@ -65,6 +65,12 @@ public class Pdf417Params {
     @SerializedName(value = "truncate")
     private Boolean truncate = null;
 
+    @SerializedName(value = "pdf417ECIEncoding")
+    private ECIEncodings pdf417ECIEncoding = null;
+
+    @SerializedName(value = "isReaderInitialization")
+    private Boolean isReaderInitialization = null;
+
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -219,6 +225,45 @@ public class Pdf417Params {
         this.truncate = truncate;
     }
 
+    /**
+     * Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details
+     * about the used references for encoding the data in the symbol. Current implementation
+     * consists all well known charset encodings.
+     *
+     * @return pdf417ECIEncoding
+     */
+    @ApiModelProperty(
+            value =
+                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode"
+                        + " reader details about the used references for encoding the data in the"
+                        + " symbol. Current implementation consists all well known charset"
+                        + " encodings.")
+    public ECIEncodings getPdf417ECIEncoding() {
+        return pdf417ECIEncoding;
+    }
+
+    public void setPdf417ECIEncoding(ECIEncodings pdf417ECIEncoding) {
+        this.pdf417ECIEncoding = pdf417ECIEncoding;
+    }
+
+    /**
+     * Used to instruct the reader to interpret the data contained within the symbol as programming
+     * for reader initialization
+     *
+     * @return isReaderInitialization
+     */
+    @ApiModelProperty(
+            value =
+                    "Used to instruct the reader to interpret the data contained within the symbol"
+                            + " as programming for reader initialization")
+    public Boolean isIsReaderInitialization() {
+        return isReaderInitialization;
+    }
+
+    public void setIsReaderInitialization(Boolean isReaderInitialization) {
+        this.isReaderInitialization = isReaderInitialization;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -237,7 +282,9 @@ public class Pdf417Params {
                 && Objects.equals(this.macroSegmentID, pdf417Params.macroSegmentID)
                 && Objects.equals(this.macroSegmentsCount, pdf417Params.macroSegmentsCount)
                 && Objects.equals(this.rows, pdf417Params.rows)
-                && Objects.equals(this.truncate, pdf417Params.truncate);
+                && Objects.equals(this.truncate, pdf417Params.truncate)
+                && Objects.equals(this.pdf417ECIEncoding, pdf417Params.pdf417ECIEncoding)
+                && Objects.equals(this.isReaderInitialization, pdf417Params.isReaderInitialization);
     }
 
     @Override
@@ -252,7 +299,9 @@ public class Pdf417Params {
                 macroSegmentID,
                 macroSegmentsCount,
                 rows,
-                truncate);
+                truncate,
+                pdf417ECIEncoding,
+                isReaderInitialization);
     }
 
     @Override
@@ -272,6 +321,12 @@ public class Pdf417Params {
                 .append("\n");
         sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
         sb.append("    truncate: ").append(toIndentedString(truncate)).append("\n");
+        sb.append("    pdf417ECIEncoding: ")
+                .append(toIndentedString(pdf417ECIEncoding))
+                .append("\n");
+        sb.append("    isReaderInitialization: ")
+                .append(toIndentedString(isReaderInitialization))
+                .append("\n");
         sb.append("}");
         return sb.toString();
     }

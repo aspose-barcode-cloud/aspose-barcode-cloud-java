@@ -124,6 +124,9 @@ public class ReaderParams {
     @SerializedName(value = "skipDiagonalSearch")
     private Boolean skipDiagonalSearch = null;
 
+    @SerializedName(value = "readTinyBarcodes")
+    private Boolean readTinyBarcodes = null;
+
     @SerializedName(value = "australianPostEncodingTable")
     private CustomerInformationInterpretingType australianPostEncodingTable = null;
 
@@ -654,6 +657,24 @@ public class ReaderParams {
     }
 
     /**
+     * Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes
+     * is set to True. Default value: False.
+     *
+     * @return readTinyBarcodes
+     */
+    @ApiModelProperty(
+            value =
+                    "Allows engine to recognize tiny barcodes on large images. Ignored if"
+                            + " AllowIncorrectBarcodes is set to True. Default value: False.")
+    public Boolean isReadTinyBarcodes() {
+        return readTinyBarcodes;
+    }
+
+    public void setReadTinyBarcodes(Boolean readTinyBarcodes) {
+        this.readTinyBarcodes = readTinyBarcodes;
+    }
+
+    /**
      * Interpreting Type for the Customer Information of AustralianPost BarCode.Default is
      * CustomerInformationInterpretingType.Other.
      *
@@ -724,6 +745,7 @@ public class ReaderParams {
                 && Objects.equals(this.scanWindowSizes, readerParams.scanWindowSizes)
                 && Objects.equals(this.similarity, readerParams.similarity)
                 && Objects.equals(this.skipDiagonalSearch, readerParams.skipDiagonalSearch)
+                && Objects.equals(this.readTinyBarcodes, readerParams.readTinyBarcodes)
                 && Objects.equals(
                         this.australianPostEncodingTable, readerParams.australianPostEncodingTable);
     }
@@ -760,6 +782,7 @@ public class ReaderParams {
                 scanWindowSizes,
                 similarity,
                 skipDiagonalSearch,
+                readTinyBarcodes,
                 australianPostEncodingTable);
     }
 
@@ -831,6 +854,7 @@ public class ReaderParams {
         sb.append("    skipDiagonalSearch: ")
                 .append(toIndentedString(skipDiagonalSearch))
                 .append("\n");
+        sb.append("    readTinyBarcodes: ").append(toIndentedString(readTinyBarcodes)).append("\n");
         sb.append("    australianPostEncodingTable: ")
                 .append(toIndentedString(australianPostEncodingTable))
                 .append("\n");

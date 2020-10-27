@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BarCodeErrorResponse.java">
+// <copyright company="Aspose" file="ApiErrorResponse.java">
 //   Copyright (c) 2020 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -27,28 +27,43 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-/** BarCodeErrorResponse */
-@ApiModel(description = "BarCodeErrorResponse")
-public class BarCodeErrorResponse {
+/** ApiErrorResponse */
+public class ApiErrorResponse {
+    @SerializedName(value = "requestId")
+    private String requestId = null;
+
     @SerializedName(value = "error")
-    private Error error = null;
+    private ApiError error = null;
 
     /**
-     * Error
+     * Get requestId
+     *
+     * @return requestId
+     */
+    @ApiModelProperty(value = "")
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    /**
+     * Get error
      *
      * @return error
      */
-    @ApiModelProperty(value = "Error")
-    public Error getError() {
+    @ApiModelProperty(value = "")
+    public ApiError getError() {
         return error;
     }
 
-    public void setError(Error error) {
+    public void setError(ApiError error) {
         this.error = error;
     }
 
@@ -60,20 +75,22 @@ public class BarCodeErrorResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BarCodeErrorResponse barCodeErrorResponse = (BarCodeErrorResponse) o;
-        return Objects.equals(this.error, barCodeErrorResponse.error);
+        ApiErrorResponse apiErrorResponse = (ApiErrorResponse) o;
+        return Objects.equals(this.requestId, apiErrorResponse.requestId)
+                && Objects.equals(this.error, apiErrorResponse.error);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(error);
+        return Objects.hash(requestId, error);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BarCodeErrorResponse {\n");
+        sb.append("class ApiErrorResponse {\n");
 
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("}");
         return sb.toString();

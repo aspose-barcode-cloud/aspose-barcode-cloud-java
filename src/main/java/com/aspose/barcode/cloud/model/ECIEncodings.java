@@ -35,6 +35,8 @@ import java.io.IOException;
 /** */
 @JsonAdapter(ECIEncodings.Adapter.class)
 public enum ECIEncodings {
+    NONE("NONE"),
+
     ISO_8859_1("ISO_8859_1"),
 
     ISO_8859_2("ISO_8859_2"),
