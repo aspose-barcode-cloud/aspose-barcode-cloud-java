@@ -25,8 +25,8 @@
 
 package com.aspose.barcode.cloud;
 
-import com.aspose.barcode.cloud.model.BarCodeErrorResponse;
-import com.aspose.barcode.cloud.model.Error;
+import com.aspose.barcode.cloud.model.ApiError;
+import com.aspose.barcode.cloud.model.ApiErrorResponse;
 
 import java.util.List;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;
-    private BarCodeErrorResponse response = null;
+    private ApiErrorResponse response = null;
 
     public ApiException(Throwable throwable) {
         super(throwable);
@@ -70,7 +70,7 @@ public class ApiException extends Exception {
         this.responseHeaders = responseHeaders;
     }
 
-    public ApiException(String httpMessage, int httpCode, BarCodeErrorResponse errorResponse) {
+    public ApiException(String httpMessage, int httpCode, ApiErrorResponse errorResponse) {
         this(httpMessage, httpCode);
         this.response = errorResponse;
     }
@@ -100,7 +100,7 @@ public class ApiException extends Exception {
      */
     public String getDetails() {
         if (response != null) {
-            Error err = response.getError();
+            ApiError err = response.getError();
             if (err != null) {
                 StringBuilder sb = new StringBuilder();
                 if (err.getCode() != null) {

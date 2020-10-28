@@ -52,6 +52,7 @@ public class ExceptionTest extends TestBase {
                     null,
                     null,
                     null,
+                    null,
                     null);
         } catch (ApiException e) {
             thrown = true;

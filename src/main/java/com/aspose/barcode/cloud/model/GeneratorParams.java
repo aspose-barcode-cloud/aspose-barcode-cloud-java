@@ -143,6 +143,9 @@ public class GeneratorParams {
     @SerializedName(value = "supplementSpace")
     private Double supplementSpace = null;
 
+    @SerializedName(value = "barWidthReduction")
+    private Double barWidthReduction = null;
+
     @SerializedName(value = "australianPost")
     private AustralianPostParams australianPost = null;
 
@@ -794,6 +797,21 @@ public class GeneratorParams {
     }
 
     /**
+     * Bars reduction value that is used to compensate ink spread while printing.
+     *
+     * @return barWidthReduction
+     */
+    @ApiModelProperty(
+            value = "Bars reduction value that is used to compensate ink spread while printing.")
+    public Double getBarWidthReduction() {
+        return barWidthReduction;
+    }
+
+    public void setBarWidthReduction(Double barWidthReduction) {
+        this.barWidthReduction = barWidthReduction;
+    }
+
+    /**
      * AustralianPost params.
      *
      * @return australianPost
@@ -1048,6 +1066,7 @@ public class GeneratorParams {
                 && Objects.equals(this.validateText, generatorParams.validateText)
                 && Objects.equals(this.supplementData, generatorParams.supplementData)
                 && Objects.equals(this.supplementSpace, generatorParams.supplementSpace)
+                && Objects.equals(this.barWidthReduction, generatorParams.barWidthReduction)
                 && Objects.equals(this.australianPost, generatorParams.australianPost)
                 && Objects.equals(this.aztec, generatorParams.aztec)
                 && Objects.equals(this.codabar, generatorParams.codabar)
@@ -1104,6 +1123,7 @@ public class GeneratorParams {
                 validateText,
                 supplementData,
                 supplementSpace,
+                barWidthReduction,
                 australianPost,
                 aztec,
                 codabar,
@@ -1164,6 +1184,9 @@ public class GeneratorParams {
         sb.append("    validateText: ").append(toIndentedString(validateText)).append("\n");
         sb.append("    supplementData: ").append(toIndentedString(supplementData)).append("\n");
         sb.append("    supplementSpace: ").append(toIndentedString(supplementSpace)).append("\n");
+        sb.append("    barWidthReduction: ")
+                .append(toIndentedString(barWidthReduction))
+                .append("\n");
         sb.append("    australianPost: ").append(toIndentedString(australianPost)).append("\n");
         sb.append("    aztec: ").append(toIndentedString(aztec)).append("\n");
         sb.append("    codabar: ").append(toIndentedString(codabar)).append("\n");

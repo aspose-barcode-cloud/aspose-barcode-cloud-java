@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for Java
 
 - API version: 3.0
-- SDK version: 20.8.0
+- SDK version: 20.10.0
 
 [Aspose.BarCode for Cloud](https://products.aspose.cloud/barcode/cloud) is a REST API for Linear, 2D and postal barcode generation and recognition in the cloud. API recognizes and generates barcode images in a variety of formats. Barcode REST API allows to specify barcode image attributes like image width, height, border style and output image format in order to customize the generation process. Developers can also specify the barcode type and text attributes such as text location and font styles in order to suit the application requirements.
 
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>20.8.0</version>
+  <version>20.10.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-20.8.0.jar`
+- `target/aspose-barcode-cloud-20.10.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -117,7 +117,7 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 
 - [**Website**](https://www.aspose.cloud)
 - [**Product Home**](https://products.aspose.cloud/barcode/cloud)
-- [**Documentation**](https://docs.aspose.cloud/display/barcodecloud/Home)
+- [**Documentation**](https://docs.aspose.cloud/barcode/)
 - [**Free Support Forum**](https://forum.aspose.cloud/c/barcode)
 - [**Paid Support Helpdesk**](https://helpdesk.aspose.cloud/)
 - [**Blog**](https://blog.aspose.cloud/category/aspose-products/aspose-barcode-product-family/)
@@ -152,12 +152,13 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+- [ApiError](docs/ApiError.md)
+- [ApiErrorResponse](docs/ApiErrorResponse.md)
 - [AustralianPostParams](docs/AustralianPostParams.md)
 - [AutoSizeMode](docs/AutoSizeMode.md)
 - [AvailableGraphicsUnit](docs/AvailableGraphicsUnit.md)
 - [AztecParams](docs/AztecParams.md)
 - [AztecSymbolMode](docs/AztecSymbolMode.md)
-- [BarCodeErrorResponse](docs/BarCodeErrorResponse.md)
 - [BarcodeResponse](docs/BarcodeResponse.md)
 - [BarcodeResponseList](docs/BarcodeResponseList.md)
 - [BorderDashStyle](docs/BorderDashStyle.md)
