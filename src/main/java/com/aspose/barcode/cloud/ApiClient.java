@@ -62,10 +62,10 @@ import javax.net.ssl.*;
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "20.10.0";
+    public final String clientVersion = "20.11.0";
     private String baseUrl = "https://api.aspose.cloud";
-    private String appSid;
-    private String appKey;
+    private String clientId;
+    private String clientSecret;
     private boolean debugging = false;
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private String tempFolderPath = null;
@@ -85,17 +85,17 @@ public class ApiClient {
     private HttpLoggingInterceptor loggingInterceptor;
     private String accessToken;
 
-    public ApiClient(String appSid, String appKey, String baseUrl) {
+    public ApiClient(String clientId, String clientSecret, String baseUrl) {
         this();
-        this.appSid = appSid;
-        this.appKey = appKey;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
         if (baseUrl != null) {
             this.baseUrl = baseUrl;
         }
     }
 
-    public ApiClient(String appSid, String appKey) {
-        this(appSid, appKey, null);
+    public ApiClient(String clientId, String clientSecret) {
+        this(clientId, clientSecret, null);
     }
 
     public ApiClient(String accessToken) {
@@ -114,7 +114,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/20.10.0/java");
+        setUserAgent("Swagger-Codegen/20.11.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
@@ -1156,8 +1156,8 @@ public class ApiClient {
             RequestBody requestBody =
                     new FormEncodingBuilder()
                             .addEncoded("grant_type", "client_credentials")
-                            .addEncoded("client_id", appSid)
-                            .addEncoded("client_secret", appKey)
+                            .addEncoded("client_id", clientId)
+                            .addEncoded("client_secret", clientSecret)
                             .build();
 
             String url = baseUrl + "/connect/token";

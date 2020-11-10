@@ -31,8 +31,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         FileApi api = new FileApi(client);
@@ -83,8 +83,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         FileApi api = new FileApi(client);
@@ -132,8 +132,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         FileApi api = new FileApi(client);
@@ -182,8 +182,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         FileApi api = new FileApi(client);
@@ -234,8 +234,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         FileApi api = new FileApi(client);
