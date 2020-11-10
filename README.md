@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for Java
 
 - API version: 3.0
-- SDK version: 20.10.0
+- SDK version: 20.11.0
 
 [Aspose.BarCode for Cloud](https://products.aspose.cloud/barcode/cloud) is a REST API for Linear, 2D and postal barcode generation and recognition in the cloud. API recognizes and generates barcode images in a variety of formats. Barcode REST API allows to specify barcode image attributes like image width, height, border style and output image format in order to customize the generation process. Developers can also specify the barcode type and text attributes such as text location and font styles in order to suit the application requirements.
 
@@ -16,7 +16,7 @@ Building the API client library requires:
 
 ## Prerequisites
 
-To use Aspose.BarCode Cloud SDK for Java you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+To use Aspose.BarCode Cloud SDK for Java you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create Client Id and Client Secret at [Cloud Dashboard](https://dashboard.aspose.cloud/applications). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
 
 ## Installation
 
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>20.10.0</version>
+  <version>20.11.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-20.10.0.jar`
+- `target/aspose-barcode-cloud-20.11.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -91,8 +91,8 @@ public class BarcodeApiExample {
 
     public static void main(String[] args) {
         ApiClient client = new ApiClient(
-            "App SID from https://dashboard.aspose.cloud/#/apps",
-            "App Key from https://dashboard.aspose.cloud/#/apps"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
         
         BarcodeApi api = new BarcodeApi(client);

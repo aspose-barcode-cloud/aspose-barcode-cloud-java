@@ -33,8 +33,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
@@ -115,8 +115,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
@@ -197,8 +197,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
@@ -277,8 +277,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
@@ -326,8 +326,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
@@ -412,8 +412,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
@@ -465,8 +465,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApiClient client = new ApiClient(
-            "appSid",
-            "appKey"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
 
         BarcodeApi api = new BarcodeApi(client);
