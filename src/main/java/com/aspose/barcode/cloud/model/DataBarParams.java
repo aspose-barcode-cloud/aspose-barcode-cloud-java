@@ -44,6 +44,12 @@ public class DataBarParams {
     @SerializedName(value = "rows")
     private Integer rows = null;
 
+    @SerializedName(value = "is2DCompositeComponent")
+    private Boolean is2DCompositeComponent = null;
+
+    @SerializedName(value = "isAllowOnlyGS1Encoding")
+    private Boolean isAllowOnlyGS1Encoding = null;
+
     /**
      * Height/Width ratio of 2D BarCode module. Used for DataBar stacked.
      *
@@ -86,6 +92,37 @@ public class DataBarParams {
         this.rows = rows;
     }
 
+    /**
+     * Enables flag of 2D composite component with DataBar barcode
+     *
+     * @return is2DCompositeComponent
+     */
+    @ApiModelProperty(value = "Enables flag of 2D composite component with DataBar barcode")
+    public Boolean isIs2DCompositeComponent() {
+        return is2DCompositeComponent;
+    }
+
+    public void setIs2DCompositeComponent(Boolean is2DCompositeComponent) {
+        this.is2DCompositeComponent = is2DCompositeComponent;
+    }
+
+    /**
+     * If this flag is set, it allows only GS1 encoding standard for Databar barcode types
+     *
+     * @return isAllowOnlyGS1Encoding
+     */
+    @ApiModelProperty(
+            value =
+                    "If this flag is set, it allows only GS1 encoding standard for Databar barcode"
+                            + " types")
+    public Boolean isIsAllowOnlyGS1Encoding() {
+        return isAllowOnlyGS1Encoding;
+    }
+
+    public void setIsAllowOnlyGS1Encoding(Boolean isAllowOnlyGS1Encoding) {
+        this.isAllowOnlyGS1Encoding = isAllowOnlyGS1Encoding;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -97,12 +134,16 @@ public class DataBarParams {
         DataBarParams dataBarParams = (DataBarParams) o;
         return Objects.equals(this.aspectRatio, dataBarParams.aspectRatio)
                 && Objects.equals(this.columns, dataBarParams.columns)
-                && Objects.equals(this.rows, dataBarParams.rows);
+                && Objects.equals(this.rows, dataBarParams.rows)
+                && Objects.equals(this.is2DCompositeComponent, dataBarParams.is2DCompositeComponent)
+                && Objects.equals(
+                        this.isAllowOnlyGS1Encoding, dataBarParams.isAllowOnlyGS1Encoding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aspectRatio, columns, rows);
+        return Objects.hash(
+                aspectRatio, columns, rows, is2DCompositeComponent, isAllowOnlyGS1Encoding);
     }
 
     @Override
@@ -113,6 +154,12 @@ public class DataBarParams {
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
         sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
+        sb.append("    is2DCompositeComponent: ")
+                .append(toIndentedString(is2DCompositeComponent))
+                .append("\n");
+        sb.append("    isAllowOnlyGS1Encoding: ")
+                .append(toIndentedString(isAllowOnlyGS1Encoding))
+                .append("\n");
         sb.append("}");
         return sb.toString();
     }

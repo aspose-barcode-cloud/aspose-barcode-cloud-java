@@ -82,6 +82,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -156,6 +157,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -206,6 +208,7 @@ public class BarcodeApi {
             localVarQueryParams.addAll(apiClient.parameterToPair("TextColor", textColor));
         if (fontSizeMode != null)
             localVarQueryParams.addAll(apiClient.parameterToPair("FontSizeMode", fontSizeMode));
+        if (noWrap != null) localVarQueryParams.addAll(apiClient.parameterToPair("NoWrap", noWrap));
         if (resolution != null)
             localVarQueryParams.addAll(apiClient.parameterToPair("Resolution", resolution));
         if (resolutionX != null)
@@ -320,6 +323,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -372,6 +376,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -420,6 +425,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -493,6 +499,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -530,6 +537,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -576,6 +584,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -649,6 +658,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -686,6 +696,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -735,6 +746,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -809,6 +821,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -870,6 +883,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -2824,6 +2838,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -2901,6 +2916,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -2953,6 +2969,7 @@ public class BarcodeApi {
             localVarQueryParams.addAll(apiClient.parameterToPair("TextColor", textColor));
         if (fontSizeMode != null)
             localVarQueryParams.addAll(apiClient.parameterToPair("FontSizeMode", fontSizeMode));
+        if (noWrap != null) localVarQueryParams.addAll(apiClient.parameterToPair("NoWrap", noWrap));
         if (resolution != null)
             localVarQueryParams.addAll(apiClient.parameterToPair("Resolution", resolution));
         if (resolutionX != null)
@@ -3071,6 +3088,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -3135,6 +3153,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -3186,6 +3205,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -3262,6 +3282,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -3302,6 +3323,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -3351,6 +3373,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -3427,6 +3450,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -3467,6 +3491,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -3520,6 +3545,7 @@ public class BarcodeApi {
      *     calculated automatically based on xDimension value. It is recommended to use
      *     FontSizeMode.Auto especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation.
      *     Default value: FontSizeMode.Auto. (optional)
+     * @param noWrap Specify word wraps (line breaks) within text. Default value: false. (optional)
      * @param resolution Resolution of the BarCode image. One value for both dimensions. Default
      *     value: 96 dpi. (optional)
      * @param resolutionX DEPRECATED: Use &#39;Resolution&#39; instead. (optional)
@@ -3597,6 +3623,7 @@ public class BarcodeApi {
             String textAlignment,
             String textColor,
             String fontSizeMode,
+            Boolean noWrap,
             Double resolution,
             Double resolutionX,
             Double resolutionY,
@@ -3661,6 +3688,7 @@ public class BarcodeApi {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,

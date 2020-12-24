@@ -59,6 +59,9 @@ public class GeneratorParams {
     @SerializedName(value = "fontSizeMode")
     private FontMode fontSizeMode = null;
 
+    @SerializedName(value = "noWrap")
+    private Boolean noWrap = null;
+
     @SerializedName(value = "resolution")
     private Double resolution = null;
 
@@ -322,6 +325,20 @@ public class GeneratorParams {
 
     public void setFontSizeMode(FontMode fontSizeMode) {
         this.fontSizeMode = fontSizeMode;
+    }
+
+    /**
+     * Specify word wraps (line breaks) within text. Default value: false.
+     *
+     * @return noWrap
+     */
+    @ApiModelProperty(value = "Specify word wraps (line breaks) within text. Default value: false.")
+    public Boolean isNoWrap() {
+        return noWrap;
+    }
+
+    public void setNoWrap(Boolean noWrap) {
+        this.noWrap = noWrap;
     }
 
     /**
@@ -1038,6 +1055,7 @@ public class GeneratorParams {
                 && Objects.equals(this.textColor, generatorParams.textColor)
                 && Objects.equals(this.font, generatorParams.font)
                 && Objects.equals(this.fontSizeMode, generatorParams.fontSizeMode)
+                && Objects.equals(this.noWrap, generatorParams.noWrap)
                 && Objects.equals(this.resolution, generatorParams.resolution)
                 && Objects.equals(this.resolutionX, generatorParams.resolutionX)
                 && Objects.equals(this.resolutionY, generatorParams.resolutionY)
@@ -1095,6 +1113,7 @@ public class GeneratorParams {
                 textColor,
                 font,
                 fontSizeMode,
+                noWrap,
                 resolution,
                 resolutionX,
                 resolutionY,
@@ -1154,6 +1173,7 @@ public class GeneratorParams {
         sb.append("    textColor: ").append(toIndentedString(textColor)).append("\n");
         sb.append("    font: ").append(toIndentedString(font)).append("\n");
         sb.append("    fontSizeMode: ").append(toIndentedString(fontSizeMode)).append("\n");
+        sb.append("    noWrap: ").append(toIndentedString(noWrap)).append("\n");
         sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
         sb.append("    resolutionX: ").append(toIndentedString(resolutionX)).append("\n");
         sb.append("    resolutionY: ").append(toIndentedString(resolutionY)).append("\n");

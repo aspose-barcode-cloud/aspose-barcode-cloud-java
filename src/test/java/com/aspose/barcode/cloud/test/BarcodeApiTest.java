@@ -36,6 +36,7 @@ public class BarcodeApiTest extends TestBase {
         String textAlignment = null;
         String textColor = null;
         String fontSizeMode = null;
+        Boolean noWrap = null;
         Double resolution = null;
         Double resolutionX = null;
         Double resolutionY = null;
@@ -72,6 +73,7 @@ public class BarcodeApiTest extends TestBase {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,
@@ -356,6 +358,7 @@ public class BarcodeApiTest extends TestBase {
         Double textSpace = null;
         String units = null;
         String sizeMode = null;
+        Boolean noWrap = null;
         Double barHeight = null;
         Double imageHeight = null;
         Double imageWidth = null;
@@ -386,6 +389,7 @@ public class BarcodeApiTest extends TestBase {
                         textAlignment,
                         textColor,
                         fontSizeMode,
+                        noWrap,
                         resolution,
                         resolutionX,
                         resolutionY,

@@ -53,6 +53,9 @@ public class CaptionParams {
     @SerializedName(value = "padding")
     private Padding padding = null;
 
+    @SerializedName(value = "noWrap")
+    private Boolean noWrap = null;
+
     /**
      * Caption text.
      *
@@ -137,6 +140,20 @@ public class CaptionParams {
         this.padding = padding;
     }
 
+    /**
+     * Specify word wraps (line breaks) within text. Default value: false.
+     *
+     * @return noWrap
+     */
+    @ApiModelProperty(value = "Specify word wraps (line breaks) within text. Default value: false.")
+    public Boolean isNoWrap() {
+        return noWrap;
+    }
+
+    public void setNoWrap(Boolean noWrap) {
+        this.noWrap = noWrap;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -151,12 +168,13 @@ public class CaptionParams {
                 && Objects.equals(this.color, captionParams.color)
                 && Objects.equals(this.visible, captionParams.visible)
                 && Objects.equals(this.font, captionParams.font)
-                && Objects.equals(this.padding, captionParams.padding);
+                && Objects.equals(this.padding, captionParams.padding)
+                && Objects.equals(this.noWrap, captionParams.noWrap);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(text, alignment, color, visible, font, padding);
+        return Objects.hash(text, alignment, color, visible, font, padding, noWrap);
     }
 
     @Override
@@ -170,6 +188,7 @@ public class CaptionParams {
         sb.append("    visible: ").append(toIndentedString(visible)).append("\n");
         sb.append("    font: ").append(toIndentedString(font)).append("\n");
         sb.append("    padding: ").append(toIndentedString(padding)).append("\n");
+        sb.append("    noWrap: ").append(toIndentedString(noWrap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -53,6 +53,9 @@ public class DataMatrixParams {
     @SerializedName(value = "rows")
     private Integer rows = null;
 
+    @SerializedName(value = "macroCharacters")
+    private MacroCharacter macroCharacters = null;
+
     /**
      * Height/Width ratio of 2D BarCode module
      *
@@ -138,6 +141,27 @@ public class DataMatrixParams {
         this.rows = rows;
     }
 
+    /**
+     * Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes.
+     * Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used
+     * with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None.
+     *
+     * @return macroCharacters
+     */
+    @ApiModelProperty(
+            value =
+                    "Macro Characters 05 and 06 values are used to obtain more compact encoding in"
+                            + " special modes. Can be used only with DataMatrixEccType.Ecc200 or"
+                            + " DataMatrixEccType.EccAuto. Cannot be used with"
+                            + " EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None.")
+    public MacroCharacter getMacroCharacters() {
+        return macroCharacters;
+    }
+
+    public void setMacroCharacters(MacroCharacter macroCharacters) {
+        this.macroCharacters = macroCharacters;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -152,13 +176,20 @@ public class DataMatrixParams {
                 && Objects.equals(this.columns, dataMatrixParams.columns)
                 && Objects.equals(this.dataMatrixEcc, dataMatrixParams.dataMatrixEcc)
                 && Objects.equals(this.dataMatrixEncodeMode, dataMatrixParams.dataMatrixEncodeMode)
-                && Objects.equals(this.rows, dataMatrixParams.rows);
+                && Objects.equals(this.rows, dataMatrixParams.rows)
+                && Objects.equals(this.macroCharacters, dataMatrixParams.macroCharacters);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(
-                aspectRatio, textEncoding, columns, dataMatrixEcc, dataMatrixEncodeMode, rows);
+                aspectRatio,
+                textEncoding,
+                columns,
+                dataMatrixEcc,
+                dataMatrixEncodeMode,
+                rows,
+                macroCharacters);
     }
 
     @Override
@@ -174,6 +205,7 @@ public class DataMatrixParams {
                 .append(toIndentedString(dataMatrixEncodeMode))
                 .append("\n");
         sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
+        sb.append("    macroCharacters: ").append(toIndentedString(macroCharacters)).append("\n");
         sb.append("}");
         return sb.toString();
     }

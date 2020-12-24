@@ -20,5 +20,7 @@
 
 * `ANSIX12` (value: `"ANSIX12"`)
 
+* `EXTENDEDCODETEXT` (value: `"ExtendedCodetext"`)
+
 
 
