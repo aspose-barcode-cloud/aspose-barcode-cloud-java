@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DataMatrixEncodeMode.java">
+// <copyright company="Aspose" file="MacroCharacter.java">
 //   Copyright (c) 2020 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -33,29 +33,17 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /** */
-@JsonAdapter(DataMatrixEncodeMode.Adapter.class)
-public enum DataMatrixEncodeMode {
-    AUTO("Auto"),
+@JsonAdapter(MacroCharacter.Adapter.class)
+public enum MacroCharacter {
+    NONE("None"),
 
-    ASCII("ASCII"),
+    MACRO05("Macro05"),
 
-    FULL("Full"),
-
-    CUSTOM("Custom"),
-
-    C40("C40"),
-
-    TEXT("Text"),
-
-    EDIFACT("EDIFACT"),
-
-    ANSIX12("ANSIX12"),
-
-    EXTENDEDCODETEXT("ExtendedCodetext");
+    MACRO06("Macro06");
 
     private final String value;
 
-    DataMatrixEncodeMode(String value) {
+    MacroCharacter(String value) {
         this.value = value;
     }
 
@@ -68,8 +56,8 @@ public enum DataMatrixEncodeMode {
         return String.valueOf(value);
     }
 
-    public static DataMatrixEncodeMode fromValue(String text) {
-        for (DataMatrixEncodeMode b : DataMatrixEncodeMode.values()) {
+    public static MacroCharacter fromValue(String text) {
+        for (MacroCharacter b : MacroCharacter.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -77,17 +65,17 @@ public enum DataMatrixEncodeMode {
         return null;
     }
 
-    public static class Adapter extends TypeAdapter<DataMatrixEncodeMode> {
+    public static class Adapter extends TypeAdapter<MacroCharacter> {
         @Override
-        public void write(final JsonWriter jsonWriter, final DataMatrixEncodeMode enumeration)
+        public void write(final JsonWriter jsonWriter, final MacroCharacter enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public DataMatrixEncodeMode read(final JsonReader jsonReader) throws IOException {
+        public MacroCharacter read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return DataMatrixEncodeMode.fromValue(String.valueOf(value));
+            return MacroCharacter.fromValue(String.valueOf(value));
         }
     }
 }

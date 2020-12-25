@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **visible** | **Boolean** | Is caption visible. |  [optional]
 **font** | [**FontParams**](FontParams.md) | Font. |  [optional]
 **padding** | [**Padding**](Padding.md) | Padding. |  [optional]
+**noWrap** | **Boolean** | Specify word wraps (line breaks) within text. Default value: false. |  [optional]
 
 
 

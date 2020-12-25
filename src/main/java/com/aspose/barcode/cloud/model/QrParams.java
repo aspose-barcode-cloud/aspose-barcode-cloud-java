@@ -56,6 +56,9 @@ public class QrParams {
     @SerializedName(value = "version")
     private QRVersion version = null;
 
+    @SerializedName(value = "structuredAppend")
+    private StructuredAppend structuredAppend = null;
+
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -175,6 +178,20 @@ public class QrParams {
         this.version = version;
     }
 
+    /**
+     * QR structured append parameters.
+     *
+     * @return structuredAppend
+     */
+    @ApiModelProperty(value = "QR structured append parameters.")
+    public StructuredAppend getStructuredAppend() {
+        return structuredAppend;
+    }
+
+    public void setStructuredAppend(StructuredAppend structuredAppend) {
+        this.structuredAppend = structuredAppend;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -190,7 +207,8 @@ public class QrParams {
                 && Objects.equals(this.ecIEncoding, qrParams.ecIEncoding)
                 && Objects.equals(this.encodeMode, qrParams.encodeMode)
                 && Objects.equals(this.errorLevel, qrParams.errorLevel)
-                && Objects.equals(this.version, qrParams.version);
+                && Objects.equals(this.version, qrParams.version)
+                && Objects.equals(this.structuredAppend, qrParams.structuredAppend);
     }
 
     @Override
@@ -202,7 +220,8 @@ public class QrParams {
                 ecIEncoding,
                 encodeMode,
                 errorLevel,
-                version);
+                version,
+                structuredAppend);
     }
 
     @Override
@@ -217,6 +236,7 @@ public class QrParams {
         sb.append("    encodeMode: ").append(toIndentedString(encodeMode)).append("\n");
         sb.append("    errorLevel: ").append(toIndentedString(errorLevel)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    structuredAppend: ").append(toIndentedString(structuredAppend)).append("\n");
         sb.append("}");
         return sb.toString();
     }
