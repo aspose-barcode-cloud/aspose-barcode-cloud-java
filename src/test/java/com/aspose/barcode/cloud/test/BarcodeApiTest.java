@@ -141,6 +141,7 @@ public class BarcodeApiTest extends TestBase {
         Boolean allowRegularImage = null;
         Boolean allowSaltAndPepperFiltering = null;
         Boolean allowWhiteSpotsRemoving = null;
+        Boolean checkMore1DVariants = null;
         Double regionLikelihoodThresholdPercent = null;
         List<Integer> scanWindowSizes = null;
         Double similarity = null;
@@ -176,6 +177,7 @@ public class BarcodeApiTest extends TestBase {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -244,6 +246,7 @@ public class BarcodeApiTest extends TestBase {
         Boolean allowRegularImage = null;
         Boolean allowSaltAndPepperFiltering = null;
         Boolean allowWhiteSpotsRemoving = null;
+        Boolean checkMore1DVariants = null;
         Double regionLikelihoodThresholdPercent = null;
         List<Integer> scanWindowSizes = null;
         Double similarity = null;
@@ -286,6 +289,7 @@ public class BarcodeApiTest extends TestBase {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
