@@ -16,6 +16,13 @@ Name | Type | Description | Notes
 **truncate** | **Boolean** | Whether Pdf417 symbology type of BarCode is truncated (to reduce space). |  [optional]
 **pdf417ECIEncoding** | [**ECIEncodings**](ECIEncodings.md) | Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings. |  [optional]
 **isReaderInitialization** | **Boolean** | Used to instruct the reader to interpret the data contained within the symbol as programming for reader initialization |  [optional]
+**macroTimeStamp** | [**OffsetDateTime**](OffsetDateTime.md) | Macro Pdf417 barcode time stamp |  [optional]
+**macroSender** | **String** | Macro Pdf417 barcode sender name |  [optional]
+**macroFileSize** | **Integer** | Macro Pdf417 file size. The file size field contains the size in bytes of the entire source file |  [optional]
+**macroChecksum** | **Integer** | Macro Pdf417 barcode checksum. The checksum field contains the value of the 16-bit (2 bytes) CRC checksum using the CCITT-16 polynomial |  [optional]
+**macroFileName** | **String** | Macro Pdf417 barcode file name |  [optional]
+**macroAddressee** | **String** | Macro Pdf417 barcode addressee name |  [optional]
+**macroECIEncoding** | [**ECIEncodings**](ECIEncodings.md) | Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields. |  [optional]
 
 
 

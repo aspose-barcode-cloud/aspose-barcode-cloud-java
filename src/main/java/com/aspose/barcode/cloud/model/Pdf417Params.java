@@ -30,6 +30,8 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import org.threeten.bp.OffsetDateTime;
+
 import java.util.Objects;
 
 /** PDF417 parameters. */
@@ -70,6 +72,27 @@ public class Pdf417Params {
 
     @SerializedName(value = "isReaderInitialization")
     private Boolean isReaderInitialization = null;
+
+    @SerializedName(value = "macroTimeStamp")
+    private OffsetDateTime macroTimeStamp = null;
+
+    @SerializedName(value = "macroSender")
+    private String macroSender = null;
+
+    @SerializedName(value = "macroFileSize")
+    private Integer macroFileSize = null;
+
+    @SerializedName(value = "macroChecksum")
+    private Integer macroChecksum = null;
+
+    @SerializedName(value = "macroFileName")
+    private String macroFileName = null;
+
+    @SerializedName(value = "macroAddressee")
+    private String macroAddressee = null;
+
+    @SerializedName(value = "macroECIEncoding")
+    private ECIEncodings macroECIEncoding = null;
 
     /**
      * Height/Width ratio of 2D BarCode module.
@@ -264,6 +287,115 @@ public class Pdf417Params {
         this.isReaderInitialization = isReaderInitialization;
     }
 
+    /**
+     * Macro Pdf417 barcode time stamp
+     *
+     * @return macroTimeStamp
+     */
+    @ApiModelProperty(value = "Macro Pdf417 barcode time stamp")
+    public OffsetDateTime getMacroTimeStamp() {
+        return macroTimeStamp;
+    }
+
+    public void setMacroTimeStamp(OffsetDateTime macroTimeStamp) {
+        this.macroTimeStamp = macroTimeStamp;
+    }
+
+    /**
+     * Macro Pdf417 barcode sender name
+     *
+     * @return macroSender
+     */
+    @ApiModelProperty(value = "Macro Pdf417 barcode sender name")
+    public String getMacroSender() {
+        return macroSender;
+    }
+
+    public void setMacroSender(String macroSender) {
+        this.macroSender = macroSender;
+    }
+
+    /**
+     * Macro Pdf417 file size. The file size field contains the size in bytes of the entire source
+     * file
+     *
+     * @return macroFileSize
+     */
+    @ApiModelProperty(
+            value =
+                    "Macro Pdf417 file size. The file size field contains the size in bytes of the"
+                            + " entire source file")
+    public Integer getMacroFileSize() {
+        return macroFileSize;
+    }
+
+    public void setMacroFileSize(Integer macroFileSize) {
+        this.macroFileSize = macroFileSize;
+    }
+
+    /**
+     * Macro Pdf417 barcode checksum. The checksum field contains the value of the 16-bit (2 bytes)
+     * CRC checksum using the CCITT-16 polynomial
+     *
+     * @return macroChecksum
+     */
+    @ApiModelProperty(
+            value =
+                    "Macro Pdf417 barcode checksum. The checksum field contains the value of the"
+                            + " 16-bit (2 bytes) CRC checksum using the CCITT-16 polynomial")
+    public Integer getMacroChecksum() {
+        return macroChecksum;
+    }
+
+    public void setMacroChecksum(Integer macroChecksum) {
+        this.macroChecksum = macroChecksum;
+    }
+
+    /**
+     * Macro Pdf417 barcode file name
+     *
+     * @return macroFileName
+     */
+    @ApiModelProperty(value = "Macro Pdf417 barcode file name")
+    public String getMacroFileName() {
+        return macroFileName;
+    }
+
+    public void setMacroFileName(String macroFileName) {
+        this.macroFileName = macroFileName;
+    }
+
+    /**
+     * Macro Pdf417 barcode addressee name
+     *
+     * @return macroAddressee
+     */
+    @ApiModelProperty(value = "Macro Pdf417 barcode addressee name")
+    public String getMacroAddressee() {
+        return macroAddressee;
+    }
+
+    public void setMacroAddressee(String macroAddressee) {
+        this.macroAddressee = macroAddressee;
+    }
+
+    /**
+     * Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields.
+     *
+     * @return macroECIEncoding
+     */
+    @ApiModelProperty(
+            value =
+                    "Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text"
+                            + " fields.")
+    public ECIEncodings getMacroECIEncoding() {
+        return macroECIEncoding;
+    }
+
+    public void setMacroECIEncoding(ECIEncodings macroECIEncoding) {
+        this.macroECIEncoding = macroECIEncoding;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -284,7 +416,14 @@ public class Pdf417Params {
                 && Objects.equals(this.rows, pdf417Params.rows)
                 && Objects.equals(this.truncate, pdf417Params.truncate)
                 && Objects.equals(this.pdf417ECIEncoding, pdf417Params.pdf417ECIEncoding)
-                && Objects.equals(this.isReaderInitialization, pdf417Params.isReaderInitialization);
+                && Objects.equals(this.isReaderInitialization, pdf417Params.isReaderInitialization)
+                && Objects.equals(this.macroTimeStamp, pdf417Params.macroTimeStamp)
+                && Objects.equals(this.macroSender, pdf417Params.macroSender)
+                && Objects.equals(this.macroFileSize, pdf417Params.macroFileSize)
+                && Objects.equals(this.macroChecksum, pdf417Params.macroChecksum)
+                && Objects.equals(this.macroFileName, pdf417Params.macroFileName)
+                && Objects.equals(this.macroAddressee, pdf417Params.macroAddressee)
+                && Objects.equals(this.macroECIEncoding, pdf417Params.macroECIEncoding);
     }
 
     @Override
@@ -301,7 +440,14 @@ public class Pdf417Params {
                 rows,
                 truncate,
                 pdf417ECIEncoding,
-                isReaderInitialization);
+                isReaderInitialization,
+                macroTimeStamp,
+                macroSender,
+                macroFileSize,
+                macroChecksum,
+                macroFileName,
+                macroAddressee,
+                macroECIEncoding);
     }
 
     @Override
@@ -327,6 +473,13 @@ public class Pdf417Params {
         sb.append("    isReaderInitialization: ")
                 .append(toIndentedString(isReaderInitialization))
                 .append("\n");
+        sb.append("    macroTimeStamp: ").append(toIndentedString(macroTimeStamp)).append("\n");
+        sb.append("    macroSender: ").append(toIndentedString(macroSender)).append("\n");
+        sb.append("    macroFileSize: ").append(toIndentedString(macroFileSize)).append("\n");
+        sb.append("    macroChecksum: ").append(toIndentedString(macroChecksum)).append("\n");
+        sb.append("    macroFileName: ").append(toIndentedString(macroFileName)).append("\n");
+        sb.append("    macroAddressee: ").append(toIndentedString(macroAddressee)).append("\n");
+        sb.append("    macroECIEncoding: ").append(toIndentedString(macroECIEncoding)).append("\n");
         sb.append("}");
         return sb.toString();
     }
