@@ -112,6 +112,9 @@ public class ReaderParams {
     @SerializedName(value = "allowWhiteSpotsRemoving")
     private Boolean allowWhiteSpotsRemoving = null;
 
+    @SerializedName(value = "checkMore1DVariants")
+    private Boolean checkMore1DVariants = null;
+
     @SerializedName(value = "regionLikelihoodThresholdPercent")
     private Double regionLikelihoodThresholdPercent = null;
 
@@ -561,6 +564,24 @@ public class ReaderParams {
     }
 
     /**
+     * Allows engine to recognize 1D barcodes with checksum by checking more recognition variants.
+     * Default value: False.
+     *
+     * @return checkMore1DVariants
+     */
+    @ApiModelProperty(
+            value =
+                    "Allows engine to recognize 1D barcodes with checksum by checking more"
+                            + " recognition variants. Default value: False.")
+    public Boolean isCheckMore1DVariants() {
+        return checkMore1DVariants;
+    }
+
+    public void setCheckMore1DVariants(Boolean checkMore1DVariants) {
+        this.checkMore1DVariants = checkMore1DVariants;
+    }
+
+    /**
      * Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom
      * 70% of possible regions are filtered out and not processed further. Region likelihood
      * threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use
@@ -739,6 +760,7 @@ public class ReaderParams {
                         this.allowSaltAndPepperFiltering, readerParams.allowSaltAndPepperFiltering)
                 && Objects.equals(
                         this.allowWhiteSpotsRemoving, readerParams.allowWhiteSpotsRemoving)
+                && Objects.equals(this.checkMore1DVariants, readerParams.checkMore1DVariants)
                 && Objects.equals(
                         this.regionLikelihoodThresholdPercent,
                         readerParams.regionLikelihoodThresholdPercent)
@@ -778,6 +800,7 @@ public class ReaderParams {
                 allowRegularImage,
                 allowSaltAndPepperFiltering,
                 allowWhiteSpotsRemoving,
+                checkMore1DVariants,
                 regionLikelihoodThresholdPercent,
                 scanWindowSizes,
                 similarity,
@@ -845,6 +868,9 @@ public class ReaderParams {
                 .append("\n");
         sb.append("    allowWhiteSpotsRemoving: ")
                 .append(toIndentedString(allowWhiteSpotsRemoving))
+                .append("\n");
+        sb.append("    checkMore1DVariants: ")
+                .append(toIndentedString(checkMore1DVariants))
                 .append("\n");
         sb.append("    regionLikelihoodThresholdPercent: ")
                 .append(toIndentedString(regionLikelihoodThresholdPercent))

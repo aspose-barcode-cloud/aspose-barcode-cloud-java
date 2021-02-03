@@ -975,6 +975,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -1029,6 +1031,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -1118,6 +1121,9 @@ public class BarcodeApi {
         if (allowWhiteSpotsRemoving != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair("AllowWhiteSpotsRemoving", allowWhiteSpotsRemoving));
+        if (checkMore1DVariants != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("CheckMore1DVariants", checkMore1DVariants));
         if (regionLikelihoodThresholdPercent != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
@@ -1217,6 +1223,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -1265,6 +1272,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -1337,6 +1345,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -1390,6 +1400,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -1428,6 +1439,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -1498,6 +1510,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -1551,6 +1565,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -1589,6 +1604,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -1662,6 +1678,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -1716,6 +1734,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -1778,6 +1797,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -1850,6 +1870,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -1903,6 +1925,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -1992,6 +2015,9 @@ public class BarcodeApi {
         if (allowWhiteSpotsRemoving != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair("AllowWhiteSpotsRemoving", allowWhiteSpotsRemoving));
+        if (checkMore1DVariants != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("CheckMore1DVariants", checkMore1DVariants));
         if (regionLikelihoodThresholdPercent != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
@@ -2089,6 +2115,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -2129,6 +2156,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -2201,6 +2229,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -2253,6 +2283,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -2290,6 +2321,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -2360,6 +2392,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -2412,6 +2446,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -2449,6 +2484,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,
@@ -2522,6 +2558,8 @@ public class BarcodeApi {
      * @param allowWhiteSpotsRemoving Allows engine to recognize image without small white spots as
      *     additional scan. Mode helps to recognize noised image as well as median smoothing
      *     filtering. (optional)
+     * @param checkMore1DVariants Allows engine to recognize 1D barcodes with checksum by checking
+     *     more recognition variants. Default value: False. (optional)
      * @param regionLikelihoodThresholdPercent Sets threshold for detected regions that may contain
      *     barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not
      *     processed further. Region likelihood threshold must be between [0.05, 0.9] Use high
@@ -2575,6 +2613,7 @@ public class BarcodeApi {
             Boolean allowRegularImage,
             Boolean allowSaltAndPepperFiltering,
             Boolean allowWhiteSpotsRemoving,
+            Boolean checkMore1DVariants,
             Double regionLikelihoodThresholdPercent,
             List<Integer> scanWindowSizes,
             Double similarity,
@@ -2636,6 +2675,7 @@ public class BarcodeApi {
                         allowRegularImage,
                         allowSaltAndPepperFiltering,
                         allowWhiteSpotsRemoving,
+                        checkMore1DVariants,
                         regionLikelihoodThresholdPercent,
                         scanWindowSizes,
                         similarity,

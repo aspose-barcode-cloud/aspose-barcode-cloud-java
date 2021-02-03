@@ -60,14 +60,11 @@ public class StructuredAppend {
     }
 
     /**
-     * Gets or sets the QR structured append mode barcodes quantity. Max value is 16.
+     * QR structured append mode barcodes quantity. Max value is 16.
      *
      * @return totalCount
      */
-    @ApiModelProperty(
-            value =
-                    "Gets or sets the QR structured append mode barcodes quantity. Max value is"
-                            + " 16.")
+    @ApiModelProperty(value = "QR structured append mode barcodes quantity. Max value is 16.")
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -77,11 +74,11 @@ public class StructuredAppend {
     }
 
     /**
-     * Gets or sets the QR structured append mode parity data.
+     * QR structured append mode parity data.
      *
      * @return parityByte
      */
-    @ApiModelProperty(value = "Gets or sets the QR structured append mode parity data.")
+    @ApiModelProperty(value = "QR structured append mode parity data.")
     public Integer getParityByte() {
         return parityByte;
     }
