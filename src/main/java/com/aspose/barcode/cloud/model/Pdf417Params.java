@@ -94,6 +94,9 @@ public class Pdf417Params {
     @SerializedName(value = "macroECIEncoding")
     private ECIEncodings macroECIEncoding = null;
 
+    @SerializedName(value = "code128Emulation")
+    private Code128Emulation code128Emulation = null;
+
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -396,6 +399,24 @@ public class Pdf417Params {
         this.macroECIEncoding = macroECIEncoding;
     }
 
+    /**
+     * Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417
+     * and MacroPDF417 barcodes.
+     *
+     * @return code128Emulation
+     */
+    @ApiModelProperty(
+            value =
+                    "Function codeword for Code 128 emulation. Applied for MicroPDF417 only."
+                            + " Ignored for PDF417 and MacroPDF417 barcodes.")
+    public Code128Emulation getCode128Emulation() {
+        return code128Emulation;
+    }
+
+    public void setCode128Emulation(Code128Emulation code128Emulation) {
+        this.code128Emulation = code128Emulation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -423,7 +444,8 @@ public class Pdf417Params {
                 && Objects.equals(this.macroChecksum, pdf417Params.macroChecksum)
                 && Objects.equals(this.macroFileName, pdf417Params.macroFileName)
                 && Objects.equals(this.macroAddressee, pdf417Params.macroAddressee)
-                && Objects.equals(this.macroECIEncoding, pdf417Params.macroECIEncoding);
+                && Objects.equals(this.macroECIEncoding, pdf417Params.macroECIEncoding)
+                && Objects.equals(this.code128Emulation, pdf417Params.code128Emulation);
     }
 
     @Override
@@ -447,7 +469,8 @@ public class Pdf417Params {
                 macroChecksum,
                 macroFileName,
                 macroAddressee,
-                macroECIEncoding);
+                macroECIEncoding,
+                code128Emulation);
     }
 
     @Override
@@ -480,6 +503,7 @@ public class Pdf417Params {
         sb.append("    macroFileName: ").append(toIndentedString(macroFileName)).append("\n");
         sb.append("    macroAddressee: ").append(toIndentedString(macroAddressee)).append("\n");
         sb.append("    macroECIEncoding: ").append(toIndentedString(macroECIEncoding)).append("\n");
+        sb.append("    code128Emulation: ").append(toIndentedString(code128Emulation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

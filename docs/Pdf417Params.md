@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **macroFileName** | **String** | Macro Pdf417 barcode file name |  [optional]
 **macroAddressee** | **String** | Macro Pdf417 barcode addressee name |  [optional]
 **macroECIEncoding** | [**ECIEncodings**](ECIEncodings.md) | Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields. |  [optional]
+**code128Emulation** | [**Code128Emulation**](Code128Emulation.md) | Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes. |  [optional]
 
 
 
