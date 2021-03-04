@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="putBarcodeGenerateFileRequest.java">
+// <copyright company="Aspose" file="PutBarcodeGenerateFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,7 +31,7 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class putBarcodeGenerateFileRequest {
+public class PutBarcodeGenerateFileRequest {
     public final String name;
     public final String type;
     public final String text;
@@ -71,7 +71,7 @@ public class putBarcodeGenerateFileRequest {
     public String folder;
     public String format;
 
-    public putBarcodeGenerateFileRequest(String name, String type, String text) {
+    public PutBarcodeGenerateFileRequest(String name, String type, String text) {
         this.name = name;
         this.type = type;
         this.text = text;

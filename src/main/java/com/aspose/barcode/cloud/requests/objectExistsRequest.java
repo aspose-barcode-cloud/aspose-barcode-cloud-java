@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="objectExistsRequest.java">
+// <copyright company="Aspose" file="ObjectExistsRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,12 +31,12 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class objectExistsRequest {
+public class ObjectExistsRequest {
     public final String path;
     public String storageName;
     public String versionId;
 
-    public objectExistsRequest(String path) {
+    public ObjectExistsRequest(String path) {
         this.path = path;
     }
 }

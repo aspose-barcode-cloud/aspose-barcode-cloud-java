@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="getBarcodeGenerateRequest.java">
+// <copyright company="Aspose" file="GetBarcodeGenerateRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,7 +31,7 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class getBarcodeGenerateRequest {
+public class GetBarcodeGenerateRequest {
     public final String type;
     public final String text;
     public String twoDDisplayText;
@@ -68,7 +68,7 @@ public class getBarcodeGenerateRequest {
     public Double barWidthReduction;
     public String format;
 
-    public getBarcodeGenerateRequest(String type, String text) {
+    public GetBarcodeGenerateRequest(String type, String text) {
         this.type = type;
         this.text = text;
     }

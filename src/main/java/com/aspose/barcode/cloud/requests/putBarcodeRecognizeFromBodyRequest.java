@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="putBarcodeRecognizeFromBodyRequest.java">
+// <copyright company="Aspose" file="PutBarcodeRecognizeFromBodyRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,14 +31,14 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class putBarcodeRecognizeFromBodyRequest {
+public class PutBarcodeRecognizeFromBodyRequest {
     public final String name;
     public final ReaderParams readerParams;
     public String type;
     public String storage;
     public String folder;
 
-    public putBarcodeRecognizeFromBodyRequest(String name, ReaderParams readerParams) {
+    public PutBarcodeRecognizeFromBodyRequest(String name, ReaderParams readerParams) {
         this.name = name;
         this.readerParams = readerParams;
     }

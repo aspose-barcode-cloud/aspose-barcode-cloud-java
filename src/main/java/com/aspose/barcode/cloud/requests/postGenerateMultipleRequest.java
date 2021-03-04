@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="postGenerateMultipleRequest.java">
+// <copyright company="Aspose" file="PostGenerateMultipleRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,11 +31,11 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class postGenerateMultipleRequest {
+public class PostGenerateMultipleRequest {
     public final GeneratorParamsList generatorParamsList;
     public String format;
 
-    public postGenerateMultipleRequest(GeneratorParamsList generatorParamsList) {
+    public PostGenerateMultipleRequest(GeneratorParamsList generatorParamsList) {
         this.generatorParamsList = generatorParamsList;
     }
 }

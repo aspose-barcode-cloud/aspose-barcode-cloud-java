@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="getBarcodeRecognizeRequest.java">
+// <copyright company="Aspose" file="GetBarcodeRecognizeRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -33,7 +33,7 @@ import com.aspose.barcode.cloud.model.*;
 
 import java.util.List;
 
-public class getBarcodeRecognizeRequest {
+public class GetBarcodeRecognizeRequest {
     public final String name;
     public String type;
     public String checksumValidation;
@@ -71,7 +71,7 @@ public class getBarcodeRecognizeRequest {
     public String storage;
     public String folder;
 
-    public getBarcodeRecognizeRequest(String name) {
+    public GetBarcodeRecognizeRequest(String name) {
         this.name = name;
     }
 }

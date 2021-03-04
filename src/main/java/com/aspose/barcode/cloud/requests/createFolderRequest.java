@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="createFolderRequest.java">
+// <copyright company="Aspose" file="CreateFolderRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,11 +31,11 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class createFolderRequest {
+public class CreateFolderRequest {
     public final String path;
     public String storageName;
 
-    public createFolderRequest(String path) {
+    public CreateFolderRequest(String path) {
         this.path = path;
     }
 }

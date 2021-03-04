@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="deleteFileRequest.java">
+// <copyright company="Aspose" file="DeleteFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,12 +31,12 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class deleteFileRequest {
+public class DeleteFileRequest {
     public final String path;
     public String storageName;
     public String versionId;
 
-    public deleteFileRequest(String path) {
+    public DeleteFileRequest(String path) {
         this.path = path;
     }
 }

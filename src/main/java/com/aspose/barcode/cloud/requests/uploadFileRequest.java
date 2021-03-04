@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="uploadFileRequest.java">
+// <copyright company="Aspose" file="UploadFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -33,12 +33,12 @@ import com.aspose.barcode.cloud.model.*;
 
 import java.io.File;
 
-public class uploadFileRequest {
+public class UploadFileRequest {
     public final String path;
     public final File file;
     public String storageName;
 
-    public uploadFileRequest(String path, File file) {
+    public UploadFileRequest(String path, File file) {
         this.path = path;
         this.file = file;
     }

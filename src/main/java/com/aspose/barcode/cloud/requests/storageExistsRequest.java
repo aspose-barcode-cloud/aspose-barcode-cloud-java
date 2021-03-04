@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="storageExistsRequest.java">
+// <copyright company="Aspose" file="StorageExistsRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,10 +31,10 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class storageExistsRequest {
+public class StorageExistsRequest {
     public final String storageName;
 
-    public storageExistsRequest(String storageName) {
+    public StorageExistsRequest(String storageName) {
         this.storageName = storageName;
     }
 }

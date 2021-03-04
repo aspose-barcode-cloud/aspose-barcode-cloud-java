@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="getDiscUsageRequest.java">
+// <copyright company="Aspose" file="GetDiscUsageRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -31,8 +31,8 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
-public class getDiscUsageRequest {
+public class GetDiscUsageRequest {
     public String storageName;
 
-    public getDiscUsageRequest() {}
+    public GetDiscUsageRequest() {}
 }

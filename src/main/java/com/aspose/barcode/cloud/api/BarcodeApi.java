@@ -34,9 +34,8 @@ import com.aspose.barcode.cloud.Pair;
 import com.aspose.barcode.cloud.ProgressRequestBody;
 import com.aspose.barcode.cloud.ProgressResponseBody;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
-import com.aspose.barcode.cloud.model.GeneratorParamsList;
-import com.aspose.barcode.cloud.model.ReaderParams;
 import com.aspose.barcode.cloud.model.ResultImageInfo;
+import com.aspose.barcode.cloud.requests.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
@@ -150,41 +149,7 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call getBarcodeGenerateCall(
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String format,
+            GetBarcodeGenerateRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -195,77 +160,96 @@ public class BarcodeApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (type != null) localVarQueryParams.addAll(apiClient.parameterToPair("Type", type));
-        if (text != null) localVarQueryParams.addAll(apiClient.parameterToPair("Text", text));
-        if (twoDDisplayText != null)
+        if (request.type != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Type", request.type));
+        if (request.text != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Text", request.text));
+        if (request.twoDDisplayText != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("TwoDDisplayText", twoDDisplayText));
-        if (textLocation != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextLocation", textLocation));
-        if (textAlignment != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextAlignment", textAlignment));
-        if (textColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextColor", textColor));
-        if (fontSizeMode != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("FontSizeMode", fontSizeMode));
-        if (noWrap != null) localVarQueryParams.addAll(apiClient.parameterToPair("NoWrap", noWrap));
-        if (resolution != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("Resolution", resolution));
-        if (resolutionX != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ResolutionX", resolutionX));
-        if (resolutionY != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ResolutionY", resolutionY));
-        if (dimensionX != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("DimensionX", dimensionX));
-        if (textSpace != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextSpace", textSpace));
-        if (units != null) localVarQueryParams.addAll(apiClient.parameterToPair("Units", units));
-        if (sizeMode != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("SizeMode", sizeMode));
-        if (barHeight != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BarHeight", barHeight));
-        if (imageHeight != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ImageHeight", imageHeight));
-        if (imageWidth != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ImageWidth", imageWidth));
-        if (rotationAngle != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("RotationAngle", rotationAngle));
-        if (backColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BackColor", backColor));
-        if (barColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BarColor", barColor));
-        if (borderColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BorderColor", borderColor));
-        if (borderWidth != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BorderWidth", borderWidth));
-        if (borderDashStyle != null)
+                    apiClient.parameterToPair("TwoDDisplayText", request.twoDDisplayText));
+        if (request.textLocation != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("BorderDashStyle", borderDashStyle));
-        if (borderVisible != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BorderVisible", borderVisible));
-        if (enableChecksum != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("EnableChecksum", enableChecksum));
-        if (enableEscape != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("EnableEscape", enableEscape));
-        if (filledBars != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("FilledBars", filledBars));
-        if (alwaysShowChecksum != null)
+                    apiClient.parameterToPair("TextLocation", request.textLocation));
+        if (request.textAlignment != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AlwaysShowChecksum", alwaysShowChecksum));
-        if (wideNarrowRatio != null)
+                    apiClient.parameterToPair("TextAlignment", request.textAlignment));
+        if (request.textColor != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
+        if (request.fontSizeMode != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("WideNarrowRatio", wideNarrowRatio));
-        if (validateText != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ValidateText", validateText));
-        if (supplementData != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("SupplementData", supplementData));
-        if (supplementSpace != null)
+                    apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
+        if (request.noWrap != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
+        if (request.resolution != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Resolution", request.resolution));
+        if (request.resolutionX != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("SupplementSpace", supplementSpace));
-        if (barWidthReduction != null)
+                    apiClient.parameterToPair("ResolutionX", request.resolutionX));
+        if (request.resolutionY != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("BarWidthReduction", barWidthReduction));
-        if (format != null) localVarQueryParams.addAll(apiClient.parameterToPair("format", format));
+                    apiClient.parameterToPair("ResolutionY", request.resolutionY));
+        if (request.dimensionX != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("DimensionX", request.dimensionX));
+        if (request.textSpace != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("TextSpace", request.textSpace));
+        if (request.units != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Units", request.units));
+        if (request.sizeMode != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("SizeMode", request.sizeMode));
+        if (request.barHeight != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("BarHeight", request.barHeight));
+        if (request.imageHeight != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("ImageHeight", request.imageHeight));
+        if (request.imageWidth != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("ImageWidth", request.imageWidth));
+        if (request.rotationAngle != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("RotationAngle", request.rotationAngle));
+        if (request.backColor != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("BackColor", request.backColor));
+        if (request.barColor != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("BarColor", request.barColor));
+        if (request.borderColor != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderColor", request.borderColor));
+        if (request.borderWidth != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderWidth", request.borderWidth));
+        if (request.borderDashStyle != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderDashStyle", request.borderDashStyle));
+        if (request.borderVisible != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderVisible", request.borderVisible));
+        if (request.enableChecksum != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("EnableChecksum", request.enableChecksum));
+        if (request.enableEscape != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("EnableEscape", request.enableEscape));
+        if (request.filledBars != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("FilledBars", request.filledBars));
+        if (request.alwaysShowChecksum != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("AlwaysShowChecksum", request.alwaysShowChecksum));
+        if (request.wideNarrowRatio != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("WideNarrowRatio", request.wideNarrowRatio));
+        if (request.validateText != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("ValidateText", request.validateText));
+        if (request.supplementData != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("SupplementData", request.supplementData));
+        if (request.supplementSpace != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("SupplementSpace", request.supplementSpace));
+        if (request.barWidthReduction != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BarWidthReduction", request.barWidthReduction));
+        if (request.format != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("format", request.format));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -316,96 +300,27 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call getBarcodeGenerateValidateBeforeCall(
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String format,
+            GetBarcodeGenerateRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'type' is set
-        if (type == null) {
+        // verify the required parameter 'request.type' is set
+        if (request.type == null) {
             throw new ApiException(
-                    "Missing the required parameter 'type' when calling getBarcodeGenerate(Async)");
+                    "Missing the required parameter 'request.type' when calling"
+                            + " getBarcodeGenerate(Async)");
         }
 
-        // verify the required parameter 'text' is set
-        if (text == null) {
+        // verify the required parameter 'request.text' is set
+        if (request.text == null) {
             throw new ApiException(
-                    "Missing the required parameter 'text' when calling getBarcodeGenerate(Async)");
+                    "Missing the required parameter 'request.text' when calling"
+                            + " getBarcodeGenerate(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                getBarcodeGenerateCall(
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        format,
-                        progressListener,
-                        progressRequestListener);
+                getBarcodeGenerateCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -491,80 +406,8 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public File getBarcodeGenerate(
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String format)
-            throws ApiException {
-        ApiResponse<File> resp =
-                getBarcodeGenerateWithHttpInfo(
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        format);
+    public File getBarcodeGenerate(GetBarcodeGenerateRequest request) throws ApiException {
+        ApiResponse<File> resp = getBarcodeGenerateWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -650,82 +493,9 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<File> getBarcodeGenerateWithHttpInfo(
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String format)
+    public ApiResponse<File> getBarcodeGenerateWithHttpInfo(GetBarcodeGenerateRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call =
-                getBarcodeGenerateValidateBeforeCall(
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        format,
-                        null,
-                        null);
+        com.squareup.okhttp.Call call = getBarcodeGenerateValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -814,42 +584,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call getBarcodeGenerateAsync(
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String format,
-            final ApiCallback<File> callback)
+            GetBarcodeGenerateRequest request, final ApiCallback<File> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -876,43 +611,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 getBarcodeGenerateValidateBeforeCall(
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        format,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1005,150 +704,130 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call getBarcodeRecognizeCall(
-            String name,
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String storage,
-            String folder,
+            GetBarcodeRecognizeRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", name);
+        String localVarPath =
+                "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", request.name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (type != null) localVarQueryParams.addAll(apiClient.parameterToPair("Type", type));
-        if (checksumValidation != null)
+        if (request.type != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Type", request.type));
+        if (request.checksumValidation != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("ChecksumValidation", checksumValidation));
-        if (detectEncoding != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("DetectEncoding", detectEncoding));
-        if (preset != null) localVarQueryParams.addAll(apiClient.parameterToPair("Preset", preset));
-        if (rectX != null) localVarQueryParams.addAll(apiClient.parameterToPair("RectX", rectX));
-        if (rectY != null) localVarQueryParams.addAll(apiClient.parameterToPair("RectY", rectY));
-        if (rectWidth != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("RectWidth", rectWidth));
-        if (rectHeight != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("RectHeight", rectHeight));
-        if (stripFNC != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("StripFNC", stripFNC));
-        if (timeout != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("Timeout", timeout));
-        if (medianSmoothingWindowSize != null)
+                    apiClient.parameterToPair("ChecksumValidation", request.checksumValidation));
+        if (request.detectEncoding != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("DetectEncoding", request.detectEncoding));
+        if (request.preset != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Preset", request.preset));
+        if (request.rectX != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectX", request.rectX));
+        if (request.rectY != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectY", request.rectY));
+        if (request.rectWidth != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectWidth", request.rectWidth));
+        if (request.rectHeight != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectHeight", request.rectHeight));
+        if (request.stripFNC != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("StripFNC", request.stripFNC));
+        if (request.timeout != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Timeout", request.timeout));
+        if (request.medianSmoothingWindowSize != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "MedianSmoothingWindowSize", medianSmoothingWindowSize));
-        if (allowMedianSmoothing != null)
+                            "MedianSmoothingWindowSize", request.medianSmoothingWindowSize));
+        if (request.allowMedianSmoothing != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowMedianSmoothing", allowMedianSmoothing));
-        if (allowComplexBackground != null)
+                    apiClient.parameterToPair(
+                            "AllowMedianSmoothing", request.allowMedianSmoothing));
+        if (request.allowComplexBackground != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowComplexBackground", allowComplexBackground));
-        if (allowDatamatrixIndustrialBarcodes != null)
+                    apiClient.parameterToPair(
+                            "AllowComplexBackground", request.allowComplexBackground));
+        if (request.allowDatamatrixIndustrialBarcodes != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowDatamatrixIndustrialBarcodes",
-                            allowDatamatrixIndustrialBarcodes));
-        if (allowDecreasedImage != null)
+                            request.allowDatamatrixIndustrialBarcodes));
+        if (request.allowDecreasedImage != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowDecreasedImage", allowDecreasedImage));
-        if (allowDetectScanGap != null)
+                    apiClient.parameterToPair("AllowDecreasedImage", request.allowDecreasedImage));
+        if (request.allowDetectScanGap != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowDetectScanGap", allowDetectScanGap));
-        if (allowIncorrectBarcodes != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowIncorrectBarcodes", allowIncorrectBarcodes));
-        if (allowInvertImage != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowInvertImage", allowInvertImage));
-        if (allowMicroWhiteSpotsRemoving != null)
+                    apiClient.parameterToPair("AllowDetectScanGap", request.allowDetectScanGap));
+        if (request.allowIncorrectBarcodes != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowMicroWhiteSpotsRemoving", allowMicroWhiteSpotsRemoving));
-        if (allowOneDFastBarcodesDetector != null)
+                            "AllowIncorrectBarcodes", request.allowIncorrectBarcodes));
+        if (request.allowInvertImage != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("AllowInvertImage", request.allowInvertImage));
+        if (request.allowMicroWhiteSpotsRemoving != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowOneDFastBarcodesDetector", allowOneDFastBarcodesDetector));
-        if (allowOneDWipedBarsRestoration != null)
+                            "AllowMicroWhiteSpotsRemoving", request.allowMicroWhiteSpotsRemoving));
+        if (request.allowOneDFastBarcodesDetector != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowOneDWipedBarsRestoration", allowOneDWipedBarsRestoration));
-        if (allowQRMicroQrRestoration != null)
+                            "AllowOneDFastBarcodesDetector",
+                            request.allowOneDFastBarcodesDetector));
+        if (request.allowOneDWipedBarsRestoration != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowQRMicroQrRestoration", allowQRMicroQrRestoration));
-        if (allowRegularImage != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowRegularImage", allowRegularImage));
-        if (allowSaltAndPepperFiltering != null)
+                            "AllowOneDWipedBarsRestoration",
+                            request.allowOneDWipedBarsRestoration));
+        if (request.allowQRMicroQrRestoration != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowSaltAndPepperFiltering", allowSaltAndPepperFiltering));
-        if (allowWhiteSpotsRemoving != null)
+                            "AllowQRMicroQrRestoration", request.allowQRMicroQrRestoration));
+        if (request.allowRegularImage != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowWhiteSpotsRemoving", allowWhiteSpotsRemoving));
-        if (checkMore1DVariants != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("CheckMore1DVariants", checkMore1DVariants));
-        if (regionLikelihoodThresholdPercent != null)
+                    apiClient.parameterToPair("AllowRegularImage", request.allowRegularImage));
+        if (request.allowSaltAndPepperFiltering != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "RegionLikelihoodThresholdPercent", regionLikelihoodThresholdPercent));
-        if (scanWindowSizes != null)
+                            "AllowSaltAndPepperFiltering", request.allowSaltAndPepperFiltering));
+        if (request.allowWhiteSpotsRemoving != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair(
+                            "AllowWhiteSpotsRemoving", request.allowWhiteSpotsRemoving));
+        if (request.checkMore1DVariants != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
+        if (request.regionLikelihoodThresholdPercent != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair(
+                            "RegionLikelihoodThresholdPercent",
+                            request.regionLikelihoodThresholdPercent));
+        if (request.scanWindowSizes != null)
             localVarCollectionQueryParams.addAll(
-                    apiClient.parameterToPairs("multi", "ScanWindowSizes", scanWindowSizes));
-        if (similarity != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("Similarity", similarity));
-        if (skipDiagonalSearch != null)
+                    apiClient.parameterToPairs(
+                            "multi", "ScanWindowSizes", request.scanWindowSizes));
+        if (request.similarity != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Similarity", request.similarity));
+        if (request.skipDiagonalSearch != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("SkipDiagonalSearch", skipDiagonalSearch));
-        if (readTinyBarcodes != null)
+                    apiClient.parameterToPair("SkipDiagonalSearch", request.skipDiagonalSearch));
+        if (request.readTinyBarcodes != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("ReadTinyBarcodes", readTinyBarcodes));
-        if (australianPostEncodingTable != null)
+                    apiClient.parameterToPair("ReadTinyBarcodes", request.readTinyBarcodes));
+        if (request.australianPostEncodingTable != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AustralianPostEncodingTable", australianPostEncodingTable));
-        if (rectangleRegion != null)
+                            "AustralianPostEncodingTable", request.australianPostEncodingTable));
+        if (request.rectangleRegion != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("RectangleRegion", rectangleRegion));
-        if (storage != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storage", storage));
-        if (folder != null) localVarQueryParams.addAll(apiClient.parameterToPair("folder", folder));
+                    apiClient.parameterToPair("RectangleRegion", request.rectangleRegion));
+        if (request.storage != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("storage", request.storage));
+        if (request.folder != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("folder", request.folder));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1197,93 +876,20 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call getBarcodeRecognizeValidateBeforeCall(
-            String name,
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String storage,
-            String folder,
+            GetBarcodeRecognizeRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'name' is set
-        if (name == null) {
+        // verify the required parameter 'request.name' is set
+        if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'name' when calling"
+                    "Missing the required parameter 'request.name' when calling"
                             + " getBarcodeRecognize(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                getBarcodeRecognizeCall(
-                        name,
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        storage,
-                        folder,
-                        progressListener,
-                        progressRequestListener);
+                getBarcodeRecognizeCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -1373,82 +979,9 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public BarcodeResponseList getBarcodeRecognize(
-            String name,
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String storage,
-            String folder)
+    public BarcodeResponseList getBarcodeRecognize(GetBarcodeRecognizeRequest request)
             throws ApiException {
-        ApiResponse<BarcodeResponseList> resp =
-                getBarcodeRecognizeWithHttpInfo(
-                        name,
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        storage,
-                        folder);
+        ApiResponse<BarcodeResponseList> resp = getBarcodeRecognizeWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -1539,83 +1072,8 @@ public class BarcodeApi {
      *     response body
      */
     public ApiResponse<BarcodeResponseList> getBarcodeRecognizeWithHttpInfo(
-            String name,
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String storage,
-            String folder)
-            throws ApiException {
-        com.squareup.okhttp.Call call =
-                getBarcodeRecognizeValidateBeforeCall(
-                        name,
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        storage,
-                        folder,
-                        null,
-                        null);
+            GetBarcodeRecognizeRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = getBarcodeRecognizeValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1708,43 +1166,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call getBarcodeRecognizeAsync(
-            String name,
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String storage,
-            String folder,
-            final ApiCallback<BarcodeResponseList> callback)
+            GetBarcodeRecognizeRequest request, final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1771,44 +1193,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 getBarcodeRecognizeValidateBeforeCall(
-                        name,
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        storage,
-                        folder,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1900,41 +1285,7 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentCall(
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String url,
-            File image,
+            PostBarcodeRecognizeFromUrlOrContentRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -1945,107 +1296,121 @@ public class BarcodeApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (type != null) localVarQueryParams.addAll(apiClient.parameterToPair("Type", type));
-        if (checksumValidation != null)
+        if (request.type != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Type", request.type));
+        if (request.checksumValidation != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("ChecksumValidation", checksumValidation));
-        if (detectEncoding != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("DetectEncoding", detectEncoding));
-        if (preset != null) localVarQueryParams.addAll(apiClient.parameterToPair("Preset", preset));
-        if (rectX != null) localVarQueryParams.addAll(apiClient.parameterToPair("RectX", rectX));
-        if (rectY != null) localVarQueryParams.addAll(apiClient.parameterToPair("RectY", rectY));
-        if (rectWidth != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("RectWidth", rectWidth));
-        if (rectHeight != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("RectHeight", rectHeight));
-        if (stripFNC != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("StripFNC", stripFNC));
-        if (timeout != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("Timeout", timeout));
-        if (medianSmoothingWindowSize != null)
+                    apiClient.parameterToPair("ChecksumValidation", request.checksumValidation));
+        if (request.detectEncoding != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("DetectEncoding", request.detectEncoding));
+        if (request.preset != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Preset", request.preset));
+        if (request.rectX != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectX", request.rectX));
+        if (request.rectY != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectY", request.rectY));
+        if (request.rectWidth != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectWidth", request.rectWidth));
+        if (request.rectHeight != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("RectHeight", request.rectHeight));
+        if (request.stripFNC != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("StripFNC", request.stripFNC));
+        if (request.timeout != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Timeout", request.timeout));
+        if (request.medianSmoothingWindowSize != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "MedianSmoothingWindowSize", medianSmoothingWindowSize));
-        if (allowMedianSmoothing != null)
+                            "MedianSmoothingWindowSize", request.medianSmoothingWindowSize));
+        if (request.allowMedianSmoothing != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowMedianSmoothing", allowMedianSmoothing));
-        if (allowComplexBackground != null)
+                    apiClient.parameterToPair(
+                            "AllowMedianSmoothing", request.allowMedianSmoothing));
+        if (request.allowComplexBackground != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowComplexBackground", allowComplexBackground));
-        if (allowDatamatrixIndustrialBarcodes != null)
+                    apiClient.parameterToPair(
+                            "AllowComplexBackground", request.allowComplexBackground));
+        if (request.allowDatamatrixIndustrialBarcodes != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowDatamatrixIndustrialBarcodes",
-                            allowDatamatrixIndustrialBarcodes));
-        if (allowDecreasedImage != null)
+                            request.allowDatamatrixIndustrialBarcodes));
+        if (request.allowDecreasedImage != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowDecreasedImage", allowDecreasedImage));
-        if (allowDetectScanGap != null)
+                    apiClient.parameterToPair("AllowDecreasedImage", request.allowDecreasedImage));
+        if (request.allowDetectScanGap != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowDetectScanGap", allowDetectScanGap));
-        if (allowIncorrectBarcodes != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowIncorrectBarcodes", allowIncorrectBarcodes));
-        if (allowInvertImage != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowInvertImage", allowInvertImage));
-        if (allowMicroWhiteSpotsRemoving != null)
+                    apiClient.parameterToPair("AllowDetectScanGap", request.allowDetectScanGap));
+        if (request.allowIncorrectBarcodes != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowMicroWhiteSpotsRemoving", allowMicroWhiteSpotsRemoving));
-        if (allowOneDFastBarcodesDetector != null)
+                            "AllowIncorrectBarcodes", request.allowIncorrectBarcodes));
+        if (request.allowInvertImage != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("AllowInvertImage", request.allowInvertImage));
+        if (request.allowMicroWhiteSpotsRemoving != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowOneDFastBarcodesDetector", allowOneDFastBarcodesDetector));
-        if (allowOneDWipedBarsRestoration != null)
+                            "AllowMicroWhiteSpotsRemoving", request.allowMicroWhiteSpotsRemoving));
+        if (request.allowOneDFastBarcodesDetector != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowOneDWipedBarsRestoration", allowOneDWipedBarsRestoration));
-        if (allowQRMicroQrRestoration != null)
+                            "AllowOneDFastBarcodesDetector",
+                            request.allowOneDFastBarcodesDetector));
+        if (request.allowOneDWipedBarsRestoration != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowQRMicroQrRestoration", allowQRMicroQrRestoration));
-        if (allowRegularImage != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowRegularImage", allowRegularImage));
-        if (allowSaltAndPepperFiltering != null)
+                            "AllowOneDWipedBarsRestoration",
+                            request.allowOneDWipedBarsRestoration));
+        if (request.allowQRMicroQrRestoration != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AllowSaltAndPepperFiltering", allowSaltAndPepperFiltering));
-        if (allowWhiteSpotsRemoving != null)
+                            "AllowQRMicroQrRestoration", request.allowQRMicroQrRestoration));
+        if (request.allowRegularImage != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AllowWhiteSpotsRemoving", allowWhiteSpotsRemoving));
-        if (checkMore1DVariants != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("CheckMore1DVariants", checkMore1DVariants));
-        if (regionLikelihoodThresholdPercent != null)
+                    apiClient.parameterToPair("AllowRegularImage", request.allowRegularImage));
+        if (request.allowSaltAndPepperFiltering != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "RegionLikelihoodThresholdPercent", regionLikelihoodThresholdPercent));
-        if (scanWindowSizes != null)
+                            "AllowSaltAndPepperFiltering", request.allowSaltAndPepperFiltering));
+        if (request.allowWhiteSpotsRemoving != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair(
+                            "AllowWhiteSpotsRemoving", request.allowWhiteSpotsRemoving));
+        if (request.checkMore1DVariants != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
+        if (request.regionLikelihoodThresholdPercent != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair(
+                            "RegionLikelihoodThresholdPercent",
+                            request.regionLikelihoodThresholdPercent));
+        if (request.scanWindowSizes != null)
             localVarCollectionQueryParams.addAll(
-                    apiClient.parameterToPairs("multi", "ScanWindowSizes", scanWindowSizes));
-        if (similarity != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("Similarity", similarity));
-        if (skipDiagonalSearch != null)
+                    apiClient.parameterToPairs(
+                            "multi", "ScanWindowSizes", request.scanWindowSizes));
+        if (request.similarity != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Similarity", request.similarity));
+        if (request.skipDiagonalSearch != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("SkipDiagonalSearch", skipDiagonalSearch));
-        if (readTinyBarcodes != null)
+                    apiClient.parameterToPair("SkipDiagonalSearch", request.skipDiagonalSearch));
+        if (request.readTinyBarcodes != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("ReadTinyBarcodes", readTinyBarcodes));
-        if (australianPostEncodingTable != null)
+                    apiClient.parameterToPair("ReadTinyBarcodes", request.readTinyBarcodes));
+        if (request.australianPostEncodingTable != null)
             localVarQueryParams.addAll(
                     apiClient.parameterToPair(
-                            "AustralianPostEncodingTable", australianPostEncodingTable));
-        if (rectangleRegion != null)
+                            "AustralianPostEncodingTable", request.australianPostEncodingTable));
+        if (request.rectangleRegion != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("RectangleRegion", rectangleRegion));
-        if (url != null) localVarQueryParams.addAll(apiClient.parameterToPair("url", url));
+                    apiClient.parameterToPair("RectangleRegion", request.rectangleRegion));
+        if (request.url != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("url", request.url));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (image != null) localVarFormParams.put("image", image);
+        if (request.image != null) localVarFormParams.put("image", request.image);
 
         final String[] localVarAccepts = {"application/json"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
@@ -2090,84 +1455,14 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentValidateBeforeCall(
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String url,
-            File image,
+            PostBarcodeRecognizeFromUrlOrContentRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
         com.squareup.okhttp.Call call =
                 postBarcodeRecognizeFromUrlOrContentCall(
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        url,
-                        image,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -2258,79 +1553,9 @@ public class BarcodeApi {
      *     response body
      */
     public BarcodeResponseList postBarcodeRecognizeFromUrlOrContent(
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String url,
-            File image)
-            throws ApiException {
+            PostBarcodeRecognizeFromUrlOrContentRequest request) throws ApiException {
         ApiResponse<BarcodeResponseList> resp =
-                postBarcodeRecognizeFromUrlOrContentWithHttpInfo(
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        url,
-                        image);
+                postBarcodeRecognizeFromUrlOrContentWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -2421,81 +1646,9 @@ public class BarcodeApi {
      *     response body
      */
     public ApiResponse<BarcodeResponseList> postBarcodeRecognizeFromUrlOrContentWithHttpInfo(
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String url,
-            File image)
-            throws ApiException {
+            PostBarcodeRecognizeFromUrlOrContentRequest request) throws ApiException {
         com.squareup.okhttp.Call call =
-                postBarcodeRecognizeFromUrlOrContentValidateBeforeCall(
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        url,
-                        image,
-                        null,
-                        null);
+                postBarcodeRecognizeFromUrlOrContentValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2588,41 +1741,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentAsync(
-            String type,
-            String checksumValidation,
-            Boolean detectEncoding,
-            String preset,
-            Integer rectX,
-            Integer rectY,
-            Integer rectWidth,
-            Integer rectHeight,
-            Boolean stripFNC,
-            Integer timeout,
-            Integer medianSmoothingWindowSize,
-            Boolean allowMedianSmoothing,
-            Boolean allowComplexBackground,
-            Boolean allowDatamatrixIndustrialBarcodes,
-            Boolean allowDecreasedImage,
-            Boolean allowDetectScanGap,
-            Boolean allowIncorrectBarcodes,
-            Boolean allowInvertImage,
-            Boolean allowMicroWhiteSpotsRemoving,
-            Boolean allowOneDFastBarcodesDetector,
-            Boolean allowOneDWipedBarsRestoration,
-            Boolean allowQRMicroQrRestoration,
-            Boolean allowRegularImage,
-            Boolean allowSaltAndPepperFiltering,
-            Boolean allowWhiteSpotsRemoving,
-            Boolean checkMore1DVariants,
-            Double regionLikelihoodThresholdPercent,
-            List<Integer> scanWindowSizes,
-            Double similarity,
-            Boolean skipDiagonalSearch,
-            Boolean readTinyBarcodes,
-            String australianPostEncodingTable,
-            String rectangleRegion,
-            String url,
-            File image,
+            PostBarcodeRecognizeFromUrlOrContentRequest request,
             final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
@@ -2650,43 +1769,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 postBarcodeRecognizeFromUrlOrContentValidateBeforeCall(
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        url,
-                        image,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2702,19 +1785,19 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call postGenerateMultipleCall(
-            GeneratorParamsList generatorParamsList,
-            String format,
+            PostGenerateMultipleRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = generatorParamsList;
+        Object localVarPostBody = request.generatorParamsList;
 
         // create path and map variables
         String localVarPath = "/barcode/generateMultiple";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (format != null) localVarQueryParams.addAll(apiClient.parameterToPair("format", format));
+        if (request.format != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("format", request.format));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2765,22 +1848,20 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call postGenerateMultipleValidateBeforeCall(
-            GeneratorParamsList generatorParamsList,
-            String format,
+            PostGenerateMultipleRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'generatorParamsList' is set
-        if (generatorParamsList == null) {
+        // verify the required parameter 'request.generatorParamsList' is set
+        if (request.generatorParamsList == null) {
             throw new ApiException(
-                    "Missing the required parameter 'generatorParamsList' when calling"
+                    "Missing the required parameter 'request.generatorParamsList' when calling"
                             + " postGenerateMultiple(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                postGenerateMultipleCall(
-                        generatorParamsList, format, progressListener, progressRequestListener);
+                postGenerateMultipleCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -2793,9 +1874,8 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public File postGenerateMultiple(GeneratorParamsList generatorParamsList, String format)
-            throws ApiException {
-        ApiResponse<File> resp = postGenerateMultipleWithHttpInfo(generatorParamsList, format);
+    public File postGenerateMultiple(PostGenerateMultipleRequest request) throws ApiException {
+        ApiResponse<File> resp = postGenerateMultipleWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -2808,10 +1888,9 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<File> postGenerateMultipleWithHttpInfo(
-            GeneratorParamsList generatorParamsList, String format) throws ApiException {
-        com.squareup.okhttp.Call call =
-                postGenerateMultipleValidateBeforeCall(generatorParamsList, format, null, null);
+    public ApiResponse<File> postGenerateMultipleWithHttpInfo(PostGenerateMultipleRequest request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = postGenerateMultipleValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2827,9 +1906,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call postGenerateMultipleAsync(
-            GeneratorParamsList generatorParamsList,
-            String format,
-            final ApiCallback<File> callback)
+            PostGenerateMultipleRequest request, final ApiCallback<File> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -2856,7 +1933,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 postGenerateMultipleValidateBeforeCall(
-                        generatorParamsList, format, progressListener, progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2948,128 +2025,112 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call putBarcodeGenerateFileCall(
-            String name,
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String storage,
-            String folder,
-            String format,
+            PutBarcodeGenerateFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/barcode/{name}/generate".replaceAll("\\{" + "name" + "}", name);
+        String localVarPath =
+                "/barcode/{name}/generate".replaceAll("\\{" + "name" + "}", request.name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (type != null) localVarQueryParams.addAll(apiClient.parameterToPair("Type", type));
-        if (text != null) localVarQueryParams.addAll(apiClient.parameterToPair("Text", text));
-        if (twoDDisplayText != null)
+        if (request.type != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Type", request.type));
+        if (request.text != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Text", request.text));
+        if (request.twoDDisplayText != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("TwoDDisplayText", twoDDisplayText));
-        if (textLocation != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextLocation", textLocation));
-        if (textAlignment != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextAlignment", textAlignment));
-        if (textColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextColor", textColor));
-        if (fontSizeMode != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("FontSizeMode", fontSizeMode));
-        if (noWrap != null) localVarQueryParams.addAll(apiClient.parameterToPair("NoWrap", noWrap));
-        if (resolution != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("Resolution", resolution));
-        if (resolutionX != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ResolutionX", resolutionX));
-        if (resolutionY != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ResolutionY", resolutionY));
-        if (dimensionX != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("DimensionX", dimensionX));
-        if (textSpace != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("TextSpace", textSpace));
-        if (units != null) localVarQueryParams.addAll(apiClient.parameterToPair("Units", units));
-        if (sizeMode != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("SizeMode", sizeMode));
-        if (barHeight != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BarHeight", barHeight));
-        if (imageHeight != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ImageHeight", imageHeight));
-        if (imageWidth != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ImageWidth", imageWidth));
-        if (rotationAngle != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("RotationAngle", rotationAngle));
-        if (backColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BackColor", backColor));
-        if (barColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BarColor", barColor));
-        if (borderColor != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BorderColor", borderColor));
-        if (borderWidth != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BorderWidth", borderWidth));
-        if (borderDashStyle != null)
+                    apiClient.parameterToPair("TwoDDisplayText", request.twoDDisplayText));
+        if (request.textLocation != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("BorderDashStyle", borderDashStyle));
-        if (borderVisible != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("BorderVisible", borderVisible));
-        if (enableChecksum != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("EnableChecksum", enableChecksum));
-        if (enableEscape != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("EnableEscape", enableEscape));
-        if (filledBars != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("FilledBars", filledBars));
-        if (alwaysShowChecksum != null)
+                    apiClient.parameterToPair("TextLocation", request.textLocation));
+        if (request.textAlignment != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("AlwaysShowChecksum", alwaysShowChecksum));
-        if (wideNarrowRatio != null)
+                    apiClient.parameterToPair("TextAlignment", request.textAlignment));
+        if (request.textColor != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
+        if (request.fontSizeMode != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("WideNarrowRatio", wideNarrowRatio));
-        if (validateText != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("ValidateText", validateText));
-        if (supplementData != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("SupplementData", supplementData));
-        if (supplementSpace != null)
+                    apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
+        if (request.noWrap != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
+        if (request.resolution != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Resolution", request.resolution));
+        if (request.resolutionX != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("SupplementSpace", supplementSpace));
-        if (barWidthReduction != null)
+                    apiClient.parameterToPair("ResolutionX", request.resolutionX));
+        if (request.resolutionY != null)
             localVarQueryParams.addAll(
-                    apiClient.parameterToPair("BarWidthReduction", barWidthReduction));
-        if (storage != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storage", storage));
-        if (folder != null) localVarQueryParams.addAll(apiClient.parameterToPair("folder", folder));
-        if (format != null) localVarQueryParams.addAll(apiClient.parameterToPair("format", format));
+                    apiClient.parameterToPair("ResolutionY", request.resolutionY));
+        if (request.dimensionX != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("DimensionX", request.dimensionX));
+        if (request.textSpace != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("TextSpace", request.textSpace));
+        if (request.units != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("Units", request.units));
+        if (request.sizeMode != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("SizeMode", request.sizeMode));
+        if (request.barHeight != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("BarHeight", request.barHeight));
+        if (request.imageHeight != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("ImageHeight", request.imageHeight));
+        if (request.imageWidth != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("ImageWidth", request.imageWidth));
+        if (request.rotationAngle != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("RotationAngle", request.rotationAngle));
+        if (request.backColor != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("BackColor", request.backColor));
+        if (request.barColor != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("BarColor", request.barColor));
+        if (request.borderColor != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderColor", request.borderColor));
+        if (request.borderWidth != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderWidth", request.borderWidth));
+        if (request.borderDashStyle != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderDashStyle", request.borderDashStyle));
+        if (request.borderVisible != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BorderVisible", request.borderVisible));
+        if (request.enableChecksum != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("EnableChecksum", request.enableChecksum));
+        if (request.enableEscape != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("EnableEscape", request.enableEscape));
+        if (request.filledBars != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("FilledBars", request.filledBars));
+        if (request.alwaysShowChecksum != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("AlwaysShowChecksum", request.alwaysShowChecksum));
+        if (request.wideNarrowRatio != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("WideNarrowRatio", request.wideNarrowRatio));
+        if (request.validateText != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("ValidateText", request.validateText));
+        if (request.supplementData != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("SupplementData", request.supplementData));
+        if (request.supplementSpace != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("SupplementSpace", request.supplementSpace));
+        if (request.barWidthReduction != null)
+            localVarQueryParams.addAll(
+                    apiClient.parameterToPair("BarWidthReduction", request.barWidthReduction));
+        if (request.storage != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("storage", request.storage));
+        if (request.folder != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("folder", request.folder));
+        if (request.format != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("format", request.format));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -3120,111 +2181,34 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call putBarcodeGenerateFileValidateBeforeCall(
-            String name,
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String storage,
-            String folder,
-            String format,
+            PutBarcodeGenerateFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'name' is set
-        if (name == null) {
+        // verify the required parameter 'request.name' is set
+        if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'name' when calling"
+                    "Missing the required parameter 'request.name' when calling"
                             + " putBarcodeGenerateFile(Async)");
         }
 
-        // verify the required parameter 'type' is set
-        if (type == null) {
+        // verify the required parameter 'request.type' is set
+        if (request.type == null) {
             throw new ApiException(
-                    "Missing the required parameter 'type' when calling"
+                    "Missing the required parameter 'request.type' when calling"
                             + " putBarcodeGenerateFile(Async)");
         }
 
-        // verify the required parameter 'text' is set
-        if (text == null) {
+        // verify the required parameter 'request.text' is set
+        if (request.text == null) {
             throw new ApiException(
-                    "Missing the required parameter 'text' when calling"
+                    "Missing the required parameter 'request.text' when calling"
                             + " putBarcodeGenerateFile(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                putBarcodeGenerateFileCall(
-                        name,
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        storage,
-                        folder,
-                        format,
-                        progressListener,
-                        progressRequestListener);
+                putBarcodeGenerateFileCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -3313,86 +2297,9 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ResultImageInfo putBarcodeGenerateFile(
-            String name,
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String storage,
-            String folder,
-            String format)
+    public ResultImageInfo putBarcodeGenerateFile(PutBarcodeGenerateFileRequest request)
             throws ApiException {
-        ApiResponse<ResultImageInfo> resp =
-                putBarcodeGenerateFileWithHttpInfo(
-                        name,
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        storage,
-                        folder,
-                        format);
+        ApiResponse<ResultImageInfo> resp = putBarcodeGenerateFileWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -3482,87 +2389,9 @@ public class BarcodeApi {
      *     response body
      */
     public ApiResponse<ResultImageInfo> putBarcodeGenerateFileWithHttpInfo(
-            String name,
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String storage,
-            String folder,
-            String format)
-            throws ApiException {
+            PutBarcodeGenerateFileRequest request) throws ApiException {
         com.squareup.okhttp.Call call =
-                putBarcodeGenerateFileValidateBeforeCall(
-                        name,
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        storage,
-                        folder,
-                        format,
-                        null,
-                        null);
+                putBarcodeGenerateFileValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<ResultImageInfo>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3655,45 +2484,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call putBarcodeGenerateFileAsync(
-            String name,
-            String type,
-            String text,
-            String twoDDisplayText,
-            String textLocation,
-            String textAlignment,
-            String textColor,
-            String fontSizeMode,
-            Boolean noWrap,
-            Double resolution,
-            Double resolutionX,
-            Double resolutionY,
-            Double dimensionX,
-            Double textSpace,
-            String units,
-            String sizeMode,
-            Double barHeight,
-            Double imageHeight,
-            Double imageWidth,
-            Double rotationAngle,
-            String backColor,
-            String barColor,
-            String borderColor,
-            Double borderWidth,
-            String borderDashStyle,
-            Boolean borderVisible,
-            String enableChecksum,
-            Boolean enableEscape,
-            Boolean filledBars,
-            Boolean alwaysShowChecksum,
-            Double wideNarrowRatio,
-            Boolean validateText,
-            String supplementData,
-            Double supplementSpace,
-            Double barWidthReduction,
-            String storage,
-            String folder,
-            String format,
-            final ApiCallback<ResultImageInfo> callback)
+            PutBarcodeGenerateFileRequest request, final ApiCallback<ResultImageInfo> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -3720,46 +2511,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 putBarcodeGenerateFileValidateBeforeCall(
-                        name,
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        storage,
-                        folder,
-                        format,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResultImageInfo>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -3778,25 +2530,24 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call putBarcodeRecognizeFromBodyCall(
-            String name,
-            ReaderParams readerParams,
-            String type,
-            String storage,
-            String folder,
+            PutBarcodeRecognizeFromBodyRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = readerParams;
+        Object localVarPostBody = request.readerParams;
 
         // create path and map variables
-        String localVarPath = "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", name);
+        String localVarPath =
+                "/barcode/{name}/recognize".replaceAll("\\{" + "name" + "}", request.name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (type != null) localVarQueryParams.addAll(apiClient.parameterToPair("type", type));
-        if (storage != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storage", storage));
-        if (folder != null) localVarQueryParams.addAll(apiClient.parameterToPair("folder", folder));
+        if (request.type != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("type", request.type));
+        if (request.storage != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("storage", request.storage));
+        if (request.folder != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("folder", request.folder));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -3845,38 +2596,27 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call putBarcodeRecognizeFromBodyValidateBeforeCall(
-            String name,
-            ReaderParams readerParams,
-            String type,
-            String storage,
-            String folder,
+            PutBarcodeRecognizeFromBodyRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'name' is set
-        if (name == null) {
+        // verify the required parameter 'request.name' is set
+        if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'name' when calling"
+                    "Missing the required parameter 'request.name' when calling"
                             + " putBarcodeRecognizeFromBody(Async)");
         }
 
-        // verify the required parameter 'readerParams' is set
-        if (readerParams == null) {
+        // verify the required parameter 'request.readerParams' is set
+        if (request.readerParams == null) {
             throw new ApiException(
-                    "Missing the required parameter 'readerParams' when calling"
+                    "Missing the required parameter 'request.readerParams' when calling"
                             + " putBarcodeRecognizeFromBody(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                putBarcodeRecognizeFromBodyCall(
-                        name,
-                        readerParams,
-                        type,
-                        storage,
-                        folder,
-                        progressListener,
-                        progressRequestListener);
+                putBarcodeRecognizeFromBodyCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -3893,10 +2633,8 @@ public class BarcodeApi {
      *     response body
      */
     public BarcodeResponseList putBarcodeRecognizeFromBody(
-            String name, ReaderParams readerParams, String type, String storage, String folder)
-            throws ApiException {
-        ApiResponse<BarcodeResponseList> resp =
-                putBarcodeRecognizeFromBodyWithHttpInfo(name, readerParams, type, storage, folder);
+            PutBarcodeRecognizeFromBodyRequest request) throws ApiException {
+        ApiResponse<BarcodeResponseList> resp = putBarcodeRecognizeFromBodyWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -3913,11 +2651,9 @@ public class BarcodeApi {
      *     response body
      */
     public ApiResponse<BarcodeResponseList> putBarcodeRecognizeFromBodyWithHttpInfo(
-            String name, ReaderParams readerParams, String type, String storage, String folder)
-            throws ApiException {
+            PutBarcodeRecognizeFromBodyRequest request) throws ApiException {
         com.squareup.okhttp.Call call =
-                putBarcodeRecognizeFromBodyValidateBeforeCall(
-                        name, readerParams, type, storage, folder, null, null);
+                putBarcodeRecognizeFromBodyValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3936,11 +2672,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call putBarcodeRecognizeFromBodyAsync(
-            String name,
-            ReaderParams readerParams,
-            String type,
-            String storage,
-            String folder,
+            PutBarcodeRecognizeFromBodyRequest request,
             final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
@@ -3968,13 +2700,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 putBarcodeRecognizeFromBodyValidateBeforeCall(
-                        name,
-                        readerParams,
-                        type,
-                        storage,
-                        folder,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -3993,26 +2719,24 @@ public class BarcodeApi {
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call putGenerateMultipleCall(
-            String name,
-            GeneratorParamsList generatorParamsList,
-            String format,
-            String folder,
-            String storage,
+            PutGenerateMultipleRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = generatorParamsList;
+        Object localVarPostBody = request.generatorParamsList;
 
         // create path and map variables
         String localVarPath =
-                "/barcode/{name}/generateMultiple".replaceAll("\\{" + "name" + "}", name);
+                "/barcode/{name}/generateMultiple".replaceAll("\\{" + "name" + "}", request.name);
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (format != null) localVarQueryParams.addAll(apiClient.parameterToPair("format", format));
-        if (folder != null) localVarQueryParams.addAll(apiClient.parameterToPair("folder", folder));
-        if (storage != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storage", storage));
+        if (request.format != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("format", request.format));
+        if (request.folder != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("folder", request.folder));
+        if (request.storage != null)
+            localVarQueryParams.addAll(apiClient.parameterToPair("storage", request.storage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -4061,38 +2785,27 @@ public class BarcodeApi {
     }
 
     private com.squareup.okhttp.Call putGenerateMultipleValidateBeforeCall(
-            String name,
-            GeneratorParamsList generatorParamsList,
-            String format,
-            String folder,
-            String storage,
+            PutGenerateMultipleRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'name' is set
-        if (name == null) {
+        // verify the required parameter 'request.name' is set
+        if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'name' when calling"
+                    "Missing the required parameter 'request.name' when calling"
                             + " putGenerateMultiple(Async)");
         }
 
-        // verify the required parameter 'generatorParamsList' is set
-        if (generatorParamsList == null) {
+        // verify the required parameter 'request.generatorParamsList' is set
+        if (request.generatorParamsList == null) {
             throw new ApiException(
-                    "Missing the required parameter 'generatorParamsList' when calling"
+                    "Missing the required parameter 'request.generatorParamsList' when calling"
                             + " putGenerateMultiple(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                putGenerateMultipleCall(
-                        name,
-                        generatorParamsList,
-                        format,
-                        folder,
-                        storage,
-                        progressListener,
-                        progressRequestListener);
+                putGenerateMultipleCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -4108,15 +2821,9 @@ public class BarcodeApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ResultImageInfo putGenerateMultiple(
-            String name,
-            GeneratorParamsList generatorParamsList,
-            String format,
-            String folder,
-            String storage)
+    public ResultImageInfo putGenerateMultiple(PutGenerateMultipleRequest request)
             throws ApiException {
-        ApiResponse<ResultImageInfo> resp =
-                putGenerateMultipleWithHttpInfo(name, generatorParamsList, format, folder, storage);
+        ApiResponse<ResultImageInfo> resp = putGenerateMultipleWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -4133,15 +2840,8 @@ public class BarcodeApi {
      *     response body
      */
     public ApiResponse<ResultImageInfo> putGenerateMultipleWithHttpInfo(
-            String name,
-            GeneratorParamsList generatorParamsList,
-            String format,
-            String folder,
-            String storage)
-            throws ApiException {
-        com.squareup.okhttp.Call call =
-                putGenerateMultipleValidateBeforeCall(
-                        name, generatorParamsList, format, folder, storage, null, null);
+            PutGenerateMultipleRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = putGenerateMultipleValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<ResultImageInfo>() {}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4160,12 +2860,7 @@ public class BarcodeApi {
      *     object
      */
     public com.squareup.okhttp.Call putGenerateMultipleAsync(
-            String name,
-            GeneratorParamsList generatorParamsList,
-            String format,
-            String folder,
-            String storage,
-            final ApiCallback<ResultImageInfo> callback)
+            PutGenerateMultipleRequest request, final ApiCallback<ResultImageInfo> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -4192,13 +2887,7 @@ public class BarcodeApi {
 
         com.squareup.okhttp.Call call =
                 putGenerateMultipleValidateBeforeCall(
-                        name,
-                        generatorParamsList,
-                        format,
-                        folder,
-                        storage,
-                        progressListener,
-                        progressRequestListener);
+                        request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResultImageInfo>() {}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="postBarcodeRecognizeFromUrlOrContentRequest.java">
+// <copyright company="Aspose" file="PostBarcodeRecognizeFromUrlOrContentRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -34,7 +34,7 @@ import com.aspose.barcode.cloud.model.*;
 import java.io.File;
 import java.util.List;
 
-public class postBarcodeRecognizeFromUrlOrContentRequest {
+public class PostBarcodeRecognizeFromUrlOrContentRequest {
     public String type;
     public String checksumValidation;
     public Boolean detectEncoding;
@@ -71,5 +71,5 @@ public class postBarcodeRecognizeFromUrlOrContentRequest {
     public String url;
     public File image;
 
-    public postBarcodeRecognizeFromUrlOrContentRequest() {}
+    public PostBarcodeRecognizeFromUrlOrContentRequest() {}
 }
