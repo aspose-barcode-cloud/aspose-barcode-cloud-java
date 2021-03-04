@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="GetDiscUsageRequest.java">
+// <copyright company="Aspose" file="DeleteFolderRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,13 +29,17 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-/** Get disc usage */
-public class GetDiscUsageRequest {
+/** Delete folder */
+public class DeleteFolderRequest {
+    /** Folder path e.g. '/folder' */
+    public final String path;
     /** Storage name */
     public String storageName;
+    /** Enable to delete folders, subfolders and files */
+    public Boolean recursive = false;
 
-    /***/
-    public GetDiscUsageRequest() {}
+    /** @param path Folder path e.g. '/folder' */
+    public DeleteFolderRequest(String path) {
+        this.path = path;
+    }
 }

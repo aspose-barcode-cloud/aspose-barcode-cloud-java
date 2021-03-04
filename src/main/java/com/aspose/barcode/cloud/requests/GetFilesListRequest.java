@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="MoveFolderRequest.java">
+// <copyright company="Aspose" file="GetFilesListRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,25 +29,15 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+/** Get all files and folders within a folder */
+public class GetFilesListRequest {
+    /** Folder path e.g. '/folder' */
+    public final String path;
+    /** Storage name */
+    public String storageName;
 
-/** Move folder */
-public class MoveFolderRequest {
-    /** Folder path to move e.g. '/folder' */
-    public final String srcPath;
-    /** Destination folder path to move to e.g '/dst' */
-    public final String destPath;
-    /** Source storage name */
-    public String srcStorageName;
-    /** Destination storage name */
-    public String destStorageName;
-
-    /**
-     * @param srcPath Folder path to move e.g. '/folder'
-     * @param destPath Destination folder path to move to e.g '/dst'
-     */
-    public MoveFolderRequest(String srcPath, String destPath) {
-        this.srcPath = srcPath;
-        this.destPath = destPath;
+    /** @param path Folder path e.g. '/folder' */
+    public GetFilesListRequest(String path) {
+        this.path = path;
     }
 }

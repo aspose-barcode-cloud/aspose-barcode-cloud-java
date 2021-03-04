@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="CopyFileRequest.java">
+// <copyright company="Aspose" file="UploadFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,27 +29,29 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+import java.io.File;
 
-/** Copy file */
-public class CopyFileRequest {
-    /** Source file path e.g. '/folder/file.ext' */
-    public final String srcPath;
-    /** Destination file path */
-    public final String destPath;
-    /** Source storage name */
-    public String srcStorageName;
-    /** Destination storage name */
-    public String destStorageName;
-    /** File version ID to copy */
-    public String versionId;
+/** Upload file */
+public class UploadFileRequest {
+    /**
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If
+     * the content is multipart and path does not contains the file name it tries to get them from
+     * filename parameter from Content-Disposition header.
+     */
+    public final String path;
+    /** File to upload */
+    public final File file;
+    /** Storage name */
+    public String storageName;
 
     /**
-     * @param srcPath Source file path e.g. '/folder/file.ext'
-     * @param destPath Destination file path
+     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
+     *     1/file.ext If the content is multipart and path does not contains the file name it tries
+     *     to get them from filename parameter from Content-Disposition header.
+     * @param file File to upload
      */
-    public CopyFileRequest(String srcPath, String destPath) {
-        this.srcPath = srcPath;
-        this.destPath = destPath;
+    public UploadFileRequest(String path, File file) {
+        this.path = path;
+        this.file = file;
     }
 }

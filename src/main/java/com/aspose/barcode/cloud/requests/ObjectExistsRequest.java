@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="GetFileVersionsRequest.java">
+// <copyright company="Aspose" file="ObjectExistsRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,17 +29,17 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-/** Get file versions */
-public class GetFileVersionsRequest {
-    /** File path e.g. '/file.ext' */
+/** Check if file or folder exists */
+public class ObjectExistsRequest {
+    /** File or folder path e.g. '/file.ext' or '/folder' */
     public final String path;
     /** Storage name */
     public String storageName;
+    /** File version ID */
+    public String versionId;
 
-    /** @param path File path e.g. '/file.ext' */
-    public GetFileVersionsRequest(String path) {
+    /** @param path File or folder path e.g. '/file.ext' or '/folder' */
+    public ObjectExistsRequest(String path) {
         this.path = path;
     }
 }

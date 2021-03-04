@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PostBarcodeRecognizeFromUrlOrContentRequest.java">
+// <copyright company="Aspose" file="GetBarcodeRecognizeRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,16 +29,12 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-import java.io.File;
 import java.util.List;
 
-/**
- * Recognize barcode from an url or from request body. Request body can contain raw data bytes of
- * the image or encoded with base64.
- */
-public class PostBarcodeRecognizeFromUrlOrContentRequest {
+/** Recognize barcode from a file on server. */
+public class GetBarcodeRecognizeRequest {
+    /** The image file name. */
+    public final String name;
     /** The type of barcode to read. */
     public String type;
     /**
@@ -184,11 +180,13 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
     public String australianPostEncodingTable;
     /** */
     public String rectangleRegion;
-    /** The image file url. */
-    public String url;
-    /** Image data */
-    public File image;
+    /** The image storage. */
+    public String storage;
+    /** The image folder. */
+    public String folder;
 
-    /***/
-    public PostBarcodeRecognizeFromUrlOrContentRequest() {}
+    /** @param name The image file name. */
+    public GetBarcodeRecognizeRequest(String name) {
+        this.name = name;
+    }
 }

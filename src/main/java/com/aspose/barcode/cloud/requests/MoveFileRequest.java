@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DeleteFolderRequest.java">
+// <copyright company="Aspose" file="MoveFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,19 +29,25 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+/** Move file */
+public class MoveFileRequest {
+    /** Source file path e.g. '/src.ext' */
+    public final String srcPath;
+    /** Destination file path e.g. '/dest.ext' */
+    public final String destPath;
+    /** Source storage name */
+    public String srcStorageName;
+    /** Destination storage name */
+    public String destStorageName;
+    /** File version ID to move */
+    public String versionId;
 
-/** Delete folder */
-public class DeleteFolderRequest {
-    /** Folder path e.g. '/folder' */
-    public final String path;
-    /** Storage name */
-    public String storageName;
-    /** Enable to delete folders, subfolders and files */
-    public Boolean recursive = false;
-
-    /** @param path Folder path e.g. '/folder' */
-    public DeleteFolderRequest(String path) {
-        this.path = path;
+    /**
+     * @param srcPath Source file path e.g. '/src.ext'
+     * @param destPath Destination file path e.g. '/dest.ext'
+     */
+    public MoveFileRequest(String srcPath, String destPath) {
+        this.srcPath = srcPath;
+        this.destPath = destPath;
     }
 }

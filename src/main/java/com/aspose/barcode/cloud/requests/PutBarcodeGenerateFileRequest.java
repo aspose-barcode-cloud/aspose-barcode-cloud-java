@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="GetBarcodeGenerateRequest.java">
+// <copyright company="Aspose" file="PutBarcodeGenerateFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,10 +29,10 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-/** Generate barcode. */
-public class GetBarcodeGenerateRequest {
+/** Generate barcode and save on server (from query params or from file with json or xml content) */
+public class PutBarcodeGenerateFileRequest {
+    /** The image file name. */
+    public final String name;
     /** Type of barcode to generate. */
     public final String type;
     /** Text to encode. */
@@ -155,14 +155,20 @@ public class GetBarcodeGenerateRequest {
     public Double supplementSpace;
     /** Bars reduction value that is used to compensate ink spread while printing. */
     public Double barWidthReduction;
-    /** Result image format. */
+    /** Image's storage. */
+    public String storage;
+    /** Image's folder. */
+    public String folder;
+    /** The image format. */
     public String format;
 
     /**
+     * @param name The image file name.
      * @param type Type of barcode to generate.
      * @param text Text to encode.
      */
-    public GetBarcodeGenerateRequest(String type, String text) {
+    public PutBarcodeGenerateFileRequest(String name, String type, String text) {
+        this.name = name;
         this.type = type;
         this.text = text;
     }

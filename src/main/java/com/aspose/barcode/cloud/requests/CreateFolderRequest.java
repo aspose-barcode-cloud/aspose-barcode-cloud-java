@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PutGenerateMultipleRequest.java">
+// <copyright company="Aspose" file="CreateFolderRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,27 +29,15 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+/** Create the folder */
+public class CreateFolderRequest {
+    /** Folder path to create e.g. 'folder_1/folder_2/' */
+    public final String path;
+    /** Storage name */
+    public String storageName;
 
-/** Generate image with multiple barcodes and put new file on server */
-public class PutGenerateMultipleRequest {
-    /** New filename */
-    public final String name;
-    /** List of barcodes */
-    public final GeneratorParamsList generatorParamsList;
-    /** Format of file */
-    public String format = "png";
-    /** Folder to place file to */
-    public String folder;
-    /** The storage name */
-    public String storage;
-
-    /**
-     * @param name New filename
-     * @param generatorParamsList List of barcodes
-     */
-    public PutGenerateMultipleRequest(String name, GeneratorParamsList generatorParamsList) {
-        this.name = name;
-        this.generatorParamsList = generatorParamsList;
+    /** @param path Folder path to create e.g. 'folder_1/folder_2/' */
+    public CreateFolderRequest(String path) {
+        this.path = path;
     }
 }

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="StorageExistsRequest.java">
+// <copyright company="Aspose" file="PutBarcodeRecognizeFromBodyRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,15 +29,27 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+import com.aspose.barcode.cloud.model.ReaderParams;
 
-/** Check if storage exists */
-public class StorageExistsRequest {
-    /** Storage name */
-    public final String storageName;
+/** Recognition of a barcode from file on server with parameters in body. */
+public class PutBarcodeRecognizeFromBodyRequest {
+    /** The image file name. */
+    public final String name;
+    /** BarcodeReader object with parameters. */
+    public final ReaderParams readerParams;
+    /** */
+    public String type;
+    /** The storage name */
+    public String storage;
+    /** The image folder. */
+    public String folder;
 
-    /** @param storageName Storage name */
-    public StorageExistsRequest(String storageName) {
-        this.storageName = storageName;
+    /**
+     * @param name The image file name.
+     * @param readerParams BarcodeReader object with parameters.
+     */
+    public PutBarcodeRecognizeFromBodyRequest(String name, ReaderParams readerParams) {
+        this.name = name;
+        this.readerParams = readerParams;
     }
 }

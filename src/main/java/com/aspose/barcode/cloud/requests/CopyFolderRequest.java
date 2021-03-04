@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="MoveFileRequest.java">
+// <copyright company="Aspose" file="CopyFolderRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,26 +29,22 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-/** Move file */
-public class MoveFileRequest {
-    /** Source file path e.g. '/src.ext' */
+/** Copy folder */
+public class CopyFolderRequest {
+    /** Source folder path e.g. '/src' */
     public final String srcPath;
-    /** Destination file path e.g. '/dest.ext' */
+    /** Destination folder path e.g. '/dst' */
     public final String destPath;
     /** Source storage name */
     public String srcStorageName;
     /** Destination storage name */
     public String destStorageName;
-    /** File version ID to move */
-    public String versionId;
 
     /**
-     * @param srcPath Source file path e.g. '/src.ext'
-     * @param destPath Destination file path e.g. '/dest.ext'
+     * @param srcPath Source folder path e.g. '/src'
+     * @param destPath Destination folder path e.g. '/dst'
      */
-    public MoveFileRequest(String srcPath, String destPath) {
+    public CopyFolderRequest(String srcPath, String destPath) {
         this.srcPath = srcPath;
         this.destPath = destPath;
     }

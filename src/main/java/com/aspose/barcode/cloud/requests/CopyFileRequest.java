@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PostGenerateMultipleRequest.java">
+// <copyright company="Aspose" file="CopyFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,17 +29,25 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+/** Copy file */
+public class CopyFileRequest {
+    /** Source file path e.g. '/folder/file.ext' */
+    public final String srcPath;
+    /** Destination file path */
+    public final String destPath;
+    /** Source storage name */
+    public String srcStorageName;
+    /** Destination storage name */
+    public String destStorageName;
+    /** File version ID to copy */
+    public String versionId;
 
-/** Generate multiple barcodes and return in response stream */
-public class PostGenerateMultipleRequest {
-    /** List of barcodes */
-    public final GeneratorParamsList generatorParamsList;
-    /** Format to return stream in */
-    public String format = "png";
-
-    /** @param generatorParamsList List of barcodes */
-    public PostGenerateMultipleRequest(GeneratorParamsList generatorParamsList) {
-        this.generatorParamsList = generatorParamsList;
+    /**
+     * @param srcPath Source file path e.g. '/folder/file.ext'
+     * @param destPath Destination file path
+     */
+    public CopyFileRequest(String srcPath, String destPath) {
+        this.srcPath = srcPath;
+        this.destPath = destPath;
     }
 }

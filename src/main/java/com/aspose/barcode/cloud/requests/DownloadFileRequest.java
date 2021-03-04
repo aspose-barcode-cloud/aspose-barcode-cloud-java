@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="CreateFolderRequest.java">
+// <copyright company="Aspose" file="DownloadFileRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,17 +29,17 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-/** Create the folder */
-public class CreateFolderRequest {
-    /** Folder path to create e.g. 'folder_1/folder_2/' */
+/** Download file */
+public class DownloadFileRequest {
+    /** File path e.g. '/folder/file.ext' */
     public final String path;
     /** Storage name */
     public String storageName;
+    /** File version ID to download */
+    public String versionId;
 
-    /** @param path Folder path to create e.g. 'folder_1/folder_2/' */
-    public CreateFolderRequest(String path) {
+    /** @param path File path e.g. '/folder/file.ext' */
+    public DownloadFileRequest(String path) {
         this.path = path;
     }
 }

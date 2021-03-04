@@ -50,21 +50,13 @@ public class ApiException extends Exception {
         this.code = httpCode;
     }
 
-    public ApiException(
-            String message,
-            int code,
-            Map<String, List<String>> responseHeaders,
-            String responseBody) {
+    public ApiException(String message, int code, Map<String, List<String>> responseHeaders, String responseBody) {
         this(message, code);
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
     }
 
-    public ApiException(
-            String message,
-            Throwable throwable,
-            int code,
-            Map<String, List<String>> responseHeaders) {
+    public ApiException(String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders) {
         super(message, throwable);
         this.code = code;
         this.responseHeaders = responseHeaders;

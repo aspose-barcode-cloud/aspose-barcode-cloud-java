@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="CopyFolderRequest.java">
+// <copyright company="Aspose" file="GetFileVersionsRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,25 +29,15 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+/** Get file versions */
+public class GetFileVersionsRequest {
+    /** File path e.g. '/file.ext' */
+    public final String path;
+    /** Storage name */
+    public String storageName;
 
-/** Copy folder */
-public class CopyFolderRequest {
-    /** Source folder path e.g. '/src' */
-    public final String srcPath;
-    /** Destination folder path e.g. '/dst' */
-    public final String destPath;
-    /** Source storage name */
-    public String srcStorageName;
-    /** Destination storage name */
-    public String destStorageName;
-
-    /**
-     * @param srcPath Source folder path e.g. '/src'
-     * @param destPath Destination folder path e.g. '/dst'
-     */
-    public CopyFolderRequest(String srcPath, String destPath) {
-        this.srcPath = srcPath;
-        this.destPath = destPath;
+    /** @param path File path e.g. '/file.ext' */
+    public GetFileVersionsRequest(String path) {
+        this.path = path;
     }
 }

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DeleteFileRequest.java">
+// <copyright company="Aspose" file="PutGenerateMultipleRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,19 +29,27 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+import com.aspose.barcode.cloud.model.GeneratorParamsList;
 
-/** Delete file */
-public class DeleteFileRequest {
-    /** File path e.g. '/folder/file.ext' */
-    public final String path;
-    /** Storage name */
-    public String storageName;
-    /** File version ID to delete */
-    public String versionId;
+/** Generate image with multiple barcodes and put new file on server */
+public class PutGenerateMultipleRequest {
+    /** New filename */
+    public final String name;
+    /** List of barcodes */
+    public final GeneratorParamsList generatorParamsList;
+    /** Format of file */
+    public String format = "png";
+    /** Folder to place file to */
+    public String folder;
+    /** The storage name */
+    public String storage;
 
-    /** @param path File path e.g. '/folder/file.ext' */
-    public DeleteFileRequest(String path) {
-        this.path = path;
+    /**
+     * @param name New filename
+     * @param generatorParamsList List of barcodes
+     */
+    public PutGenerateMultipleRequest(String name, GeneratorParamsList generatorParamsList) {
+        this.name = name;
+        this.generatorParamsList = generatorParamsList;
     }
 }

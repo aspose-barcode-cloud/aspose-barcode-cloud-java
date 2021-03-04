@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ObjectExistsRequest.java">
+// <copyright company="Aspose" file="PostGenerateMultipleRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,19 +29,17 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+import com.aspose.barcode.cloud.model.GeneratorParamsList;
 
-/** Check if file or folder exists */
-public class ObjectExistsRequest {
-    /** File or folder path e.g. '/file.ext' or '/folder' */
-    public final String path;
-    /** Storage name */
-    public String storageName;
-    /** File version ID */
-    public String versionId;
+/** Generate multiple barcodes and return in response stream */
+public class PostGenerateMultipleRequest {
+    /** List of barcodes */
+    public final GeneratorParamsList generatorParamsList;
+    /** Format to return stream in */
+    public String format = "png";
 
-    /** @param path File or folder path e.g. '/file.ext' or '/folder' */
-    public ObjectExistsRequest(String path) {
-        this.path = path;
+    /** @param generatorParamsList List of barcodes */
+    public PostGenerateMultipleRequest(GeneratorParamsList generatorParamsList) {
+        this.generatorParamsList = generatorParamsList;
     }
 }

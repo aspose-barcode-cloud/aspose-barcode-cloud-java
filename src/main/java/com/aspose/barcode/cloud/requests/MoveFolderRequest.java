@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="UploadFileRequest.java">
+// <copyright company="Aspose" file="MoveFolderRequest.java">
 //   Copyright (c) 2021 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,31 +29,23 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
-
-import java.io.File;
-
-/** Upload file */
-public class UploadFileRequest {
-    /**
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If
-     * the content is multipart and path does not contains the file name it tries to get them from
-     * filename parameter from Content-Disposition header.
-     */
-    public final String path;
-    /** File to upload */
-    public final File file;
-    /** Storage name */
-    public String storageName;
+/** Move folder */
+public class MoveFolderRequest {
+    /** Folder path to move e.g. '/folder' */
+    public final String srcPath;
+    /** Destination folder path to move to e.g '/dst' */
+    public final String destPath;
+    /** Source storage name */
+    public String srcStorageName;
+    /** Destination storage name */
+    public String destStorageName;
 
     /**
-     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
-     *     1/file.ext If the content is multipart and path does not contains the file name it tries
-     *     to get them from filename parameter from Content-Disposition header.
-     * @param file File to upload
+     * @param srcPath Folder path to move e.g. '/folder'
+     * @param destPath Destination folder path to move to e.g '/dst'
      */
-    public UploadFileRequest(String path, File file) {
-        this.path = path;
-        this.file = file;
+    public MoveFolderRequest(String srcPath, String destPath) {
+        this.srcPath = srcPath;
+        this.destPath = destPath;
     }
 }
