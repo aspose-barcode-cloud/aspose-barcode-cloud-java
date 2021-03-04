@@ -33,11 +33,25 @@ import com.aspose.barcode.cloud.model.*;
 
 import java.io.File;
 
+/** Upload file */
 public class UploadFileRequest {
+    /**
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext If
+     * the content is multipart and path does not contains the file name it tries to get them from
+     * filename parameter from Content-Disposition header.
+     */
     public final String path;
+    /** File to upload */
     public final File file;
+    /** Storage name */
     public String storageName;
 
+    /**
+     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
+     *     1/file.ext If the content is multipart and path does not contains the file name it tries
+     *     to get them from filename parameter from Content-Disposition header.
+     * @param file File to upload
+     */
     public UploadFileRequest(String path, File file) {
         this.path = path;
         this.file = file;

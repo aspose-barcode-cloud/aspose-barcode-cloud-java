@@ -31,8 +31,11 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Get disc usage */
 public class GetDiscUsageRequest {
+    /** Storage name */
     public String storageName;
 
+    /***/
     public GetDiscUsageRequest() {}
 }

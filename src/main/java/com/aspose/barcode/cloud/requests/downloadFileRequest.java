@@ -31,11 +31,16 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Download file */
 public class DownloadFileRequest {
+    /** File path e.g. '/folder/file.ext' */
     public final String path;
+    /** Storage name */
     public String storageName;
+    /** File version ID to download */
     public String versionId;
 
+    /** @param path File path e.g. '/folder/file.ext' */
     public DownloadFileRequest(String path) {
         this.path = path;
     }

@@ -31,13 +31,23 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Recognition of a barcode from file on server with parameters in body. */
 public class PutBarcodeRecognizeFromBodyRequest {
+    /** The image file name. */
     public final String name;
+    /** BarcodeReader object with parameters. */
     public final ReaderParams readerParams;
+    /** */
     public String type;
+    /** The storage name */
     public String storage;
+    /** The image folder. */
     public String folder;
 
+    /**
+     * @param name The image file name.
+     * @param readerParams BarcodeReader object with parameters.
+     */
     public PutBarcodeRecognizeFromBodyRequest(String name, ReaderParams readerParams) {
         this.name = name;
         this.readerParams = readerParams;

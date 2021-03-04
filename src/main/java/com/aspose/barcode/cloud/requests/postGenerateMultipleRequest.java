@@ -31,10 +31,14 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Generate multiple barcodes and return in response stream */
 public class PostGenerateMultipleRequest {
+    /** List of barcodes */
     public final GeneratorParamsList generatorParamsList;
-    public String format;
+    /** Format to return stream in */
+    public String format = "png";
 
+    /** @param generatorParamsList List of barcodes */
     public PostGenerateMultipleRequest(GeneratorParamsList generatorParamsList) {
         this.generatorParamsList = generatorParamsList;
     }

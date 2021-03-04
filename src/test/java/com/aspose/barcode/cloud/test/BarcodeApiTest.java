@@ -7,8 +7,8 @@ import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.*;
-
 import com.aspose.barcode.cloud.requests.*;
+
 import org.junit.Test;
 
 import java.io.File;
@@ -30,7 +30,8 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void getBarcodeGenerateTest() throws ApiException {
-        GetBarcodeGenerateRequest request = new GetBarcodeGenerateRequest(EncodeBarcodeType.QR.getValue(), "QR text");
+        GetBarcodeGenerateRequest request =
+                new GetBarcodeGenerateRequest(EncodeBarcodeType.QR.getValue(), "QR text");
         request.format = "png";
 
         File response = api.getBarcodeGenerate(request);
@@ -94,7 +95,8 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void postBarcodeRecognizeFromUrlOrContentTest() throws ApiException {
-        PostBarcodeRecognizeFromUrlOrContentRequest request = new PostBarcodeRecognizeFromUrlOrContentRequest();
+        PostBarcodeRecognizeFromUrlOrContentRequest request =
+                new PostBarcodeRecognizeFromUrlOrContentRequest();
         request.checksumValidation = ChecksumValidation.OFF.toString();
         request.preset = PresetType.HIGHPERFORMANCE.toString();
 
@@ -154,9 +156,13 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void putBarcodeGenerateFileTest() throws ApiException {
-        PutBarcodeGenerateFileRequest request = new PutBarcodeGenerateFileRequest("putBarcodeGenerateFileTest.png", EncodeBarcodeType.QR.getValue(), "Put Barcode Generate File Test");
+        PutBarcodeGenerateFileRequest request =
+                new PutBarcodeGenerateFileRequest(
+                        "putBarcodeGenerateFileTest.png",
+                        EncodeBarcodeType.QR.getValue(),
+                        "Put Barcode Generate File Test");
         request.storage = testStorageName;
-        request.folder  = remoteTempFolder;
+        request.folder = remoteTempFolder;
 
         ResultImageInfo response = api.putBarcodeGenerateFile(request);
 
@@ -178,7 +184,8 @@ public class BarcodeApiTest extends TestBase {
         ReaderParams readerParams = new ReaderParams();
         readerParams.setChecksumValidation(ChecksumValidation.OFF);
 
-        PutBarcodeRecognizeFromBodyRequest request = new PutBarcodeRecognizeFromBodyRequest(testFileName, readerParams);
+        PutBarcodeRecognizeFromBodyRequest request =
+                new PutBarcodeRecognizeFromBodyRequest(testFileName, readerParams);
         request.type = DecodeBarcodeType.CODE11.getValue();
         request.storage = testStorageName;
         request.folder = remoteTempFolder;
@@ -217,7 +224,8 @@ public class BarcodeApiTest extends TestBase {
         generatorParamsList.addBarcodeBuildersItem(barcode1);
         generatorParamsList.addBarcodeBuildersItem(barcode2);
 
-        PutGenerateMultipleRequest request = new PutGenerateMultipleRequest("putGenerateMultipleTest", generatorParamsList);
+        PutGenerateMultipleRequest request =
+                new PutGenerateMultipleRequest("putGenerateMultipleTest", generatorParamsList);
         request.format = "png";
         request.folder = remoteTempFolder;
         request.storage = testStorageName;

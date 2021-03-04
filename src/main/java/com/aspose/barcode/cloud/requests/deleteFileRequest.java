@@ -31,11 +31,16 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Delete file */
 public class DeleteFileRequest {
+    /** File path e.g. '/folder/file.ext' */
     public final String path;
+    /** Storage name */
     public String storageName;
+    /** File version ID to delete */
     public String versionId;
 
+    /** @param path File path e.g. '/folder/file.ext' */
     public DeleteFileRequest(String path) {
         this.path = path;
     }

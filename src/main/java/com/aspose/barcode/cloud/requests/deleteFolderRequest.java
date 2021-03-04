@@ -31,11 +31,16 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Delete folder */
 public class DeleteFolderRequest {
+    /** Folder path e.g. '/folder' */
     public final String path;
+    /** Storage name */
     public String storageName;
-    public Boolean recursive;
+    /** Enable to delete folders, subfolders and files */
+    public Boolean recursive = false;
 
+    /** @param path Folder path e.g. '/folder' */
     public DeleteFolderRequest(String path) {
         this.path = path;
     }

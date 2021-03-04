@@ -31,13 +31,23 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Generate image with multiple barcodes and put new file on server */
 public class PutGenerateMultipleRequest {
+    /** New filename */
     public final String name;
+    /** List of barcodes */
     public final GeneratorParamsList generatorParamsList;
-    public String format;
+    /** Format of file */
+    public String format = "png";
+    /** Folder to place file to */
     public String folder;
+    /** The storage name */
     public String storage;
 
+    /**
+     * @param name New filename
+     * @param generatorParamsList List of barcodes
+     */
     public PutGenerateMultipleRequest(String name, GeneratorParamsList generatorParamsList) {
         this.name = name;
         this.generatorParamsList = generatorParamsList;

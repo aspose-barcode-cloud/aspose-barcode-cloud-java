@@ -7,8 +7,8 @@ import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
-
 import com.aspose.barcode.cloud.requests.UploadFileRequest;
+
 import org.junit.Test;
 
 import java.io.File;

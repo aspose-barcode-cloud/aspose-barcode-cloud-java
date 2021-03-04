@@ -31,10 +31,14 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Create the folder */
 public class CreateFolderRequest {
+    /** Folder path to create e.g. 'folder_1/folder_2/' */
     public final String path;
+    /** Storage name */
     public String storageName;
 
+    /** @param path Folder path to create e.g. 'folder_1/folder_2/' */
     public CreateFolderRequest(String path) {
         this.path = path;
     }

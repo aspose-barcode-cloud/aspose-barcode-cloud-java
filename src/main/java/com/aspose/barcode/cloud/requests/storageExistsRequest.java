@@ -31,9 +31,12 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Check if storage exists */
 public class StorageExistsRequest {
+    /** Storage name */
     public final String storageName;
 
+    /** @param storageName Storage name */
     public StorageExistsRequest(String storageName) {
         this.storageName = storageName;
     }

@@ -66,10 +66,7 @@ public class FolderApi {
     /**
      * Build call for copyFolder
      *
-     * @param srcPath Source folder path e.g. &#39;/src&#39; (required)
-     * @param destPath Destination folder path e.g. &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link CopyFolderRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -80,35 +77,34 @@ public class FolderApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/folder/copy/{srcPath}"
                         .replaceAll("\\{" + "srcPath" + "}", request.srcPath);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.destPath != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
+            queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
         if (request.srcStorageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("srcStorageName", request.srcStorageName));
+            queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
         if (request.destStorageName != null)
-            localVarQueryParams.addAll(
+            queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -134,13 +130,13 @@ public class FolderApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -172,10 +168,7 @@ public class FolderApi {
     /**
      * Copy folder
      *
-     * @param srcPath Source folder path e.g. &#39;/src&#39; (required)
-     * @param destPath Destination folder path e.g. &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link CopyFolderRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -186,10 +179,7 @@ public class FolderApi {
     /**
      * Copy folder
      *
-     * @param srcPath Source folder path e.g. &#39;/src&#39; (required)
-     * @param destPath Destination folder path e.g. &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link CopyFolderRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -202,10 +192,7 @@ public class FolderApi {
     /**
      * Copy folder (asynchronously)
      *
-     * @param srcPath Source folder path e.g. &#39;/src&#39; (required)
-     * @param destPath Destination folder path e.g. &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link CopyFolderRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -244,8 +231,7 @@ public class FolderApi {
     /**
      * Build call for createFolder
      *
-     * @param path Folder path to create e.g. &#39;folder_1/folder_2/&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link CreateFolderRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -256,29 +242,28 @@ public class FolderApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/folder/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.storageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("storageName", request.storageName));
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -304,13 +289,13 @@ public class FolderApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -335,8 +320,7 @@ public class FolderApi {
     /**
      * Create the folder
      *
-     * @param path Folder path to create e.g. &#39;folder_1/folder_2/&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link CreateFolderRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -347,8 +331,7 @@ public class FolderApi {
     /**
      * Create the folder
      *
-     * @param path Folder path to create e.g. &#39;folder_1/folder_2/&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link CreateFolderRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -362,8 +345,7 @@ public class FolderApi {
     /**
      * Create the folder (asynchronously)
      *
-     * @param path Folder path to create e.g. &#39;folder_1/folder_2/&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link CreateFolderRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -402,9 +384,7 @@ public class FolderApi {
     /**
      * Build call for deleteFolder
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param recursive Enable to delete folders, subfolders and files (optional, default to false)
+     * @param request See {@link DeleteFolderRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -415,31 +395,30 @@ public class FolderApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/folder/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.storageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("storageName", request.storageName));
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
         if (request.recursive != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("recursive", request.recursive));
+            queryParams.addAll(apiClient.parameterToPair("recursive", request.recursive));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -465,13 +444,13 @@ public class FolderApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "DELETE",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -496,9 +475,7 @@ public class FolderApi {
     /**
      * Delete folder
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param recursive Enable to delete folders, subfolders and files (optional, default to false)
+     * @param request See {@link DeleteFolderRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -509,9 +486,7 @@ public class FolderApi {
     /**
      * Delete folder
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param recursive Enable to delete folders, subfolders and files (optional, default to false)
+     * @param request See {@link DeleteFolderRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -525,9 +500,7 @@ public class FolderApi {
     /**
      * Delete folder (asynchronously)
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param recursive Enable to delete folders, subfolders and files (optional, default to false)
+     * @param request See {@link DeleteFolderRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -566,8 +539,7 @@ public class FolderApi {
     /**
      * Build call for getFilesList
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFilesListRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -578,29 +550,28 @@ public class FolderApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/folder/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.storageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("storageName", request.storageName));
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -626,13 +597,13 @@ public class FolderApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -657,8 +628,7 @@ public class FolderApi {
     /**
      * Get all files and folders within a folder
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFilesListRequest}
      * @return FilesList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -671,8 +641,7 @@ public class FolderApi {
     /**
      * Get all files and folders within a folder
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFilesListRequest}
      * @return ApiResponse&lt;FilesList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -680,15 +649,14 @@ public class FolderApi {
     public ApiResponse<FilesList> getFilesListWithHttpInfo(GetFilesListRequest request)
             throws ApiException {
         com.squareup.okhttp.Call call = getFilesListValidateBeforeCall(request, null, null);
-        Type localVarReturnType = new TypeToken<FilesList>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        Type returnType = new TypeToken<FilesList>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Get all files and folders within a folder (asynchronously)
      *
-     * @param path Folder path e.g. &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFilesListRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -722,17 +690,14 @@ public class FolderApi {
 
         com.squareup.okhttp.Call call =
                 getFilesListValidateBeforeCall(request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<FilesList>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        Type returnType = new TypeToken<FilesList>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
     /**
      * Build call for moveFolder
      *
-     * @param srcPath Folder path to move e.g. &#39;/folder&#39; (required)
-     * @param destPath Destination folder path to move to e.g &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link MoveFolderRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -743,35 +708,34 @@ public class FolderApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/folder/move/{srcPath}"
                         .replaceAll("\\{" + "srcPath" + "}", request.srcPath);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.destPath != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
+            queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
         if (request.srcStorageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("srcStorageName", request.srcStorageName));
+            queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
         if (request.destStorageName != null)
-            localVarQueryParams.addAll(
+            queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -797,13 +761,13 @@ public class FolderApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -835,10 +799,7 @@ public class FolderApi {
     /**
      * Move folder
      *
-     * @param srcPath Folder path to move e.g. &#39;/folder&#39; (required)
-     * @param destPath Destination folder path to move to e.g &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link MoveFolderRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -849,10 +810,7 @@ public class FolderApi {
     /**
      * Move folder
      *
-     * @param srcPath Folder path to move e.g. &#39;/folder&#39; (required)
-     * @param destPath Destination folder path to move to e.g &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link MoveFolderRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -865,10 +823,7 @@ public class FolderApi {
     /**
      * Move folder (asynchronously)
      *
-     * @param srcPath Folder path to move e.g. &#39;/folder&#39; (required)
-     * @param destPath Destination folder path to move to e.g &#39;/dst&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
+     * @param request See {@link MoveFolderRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body

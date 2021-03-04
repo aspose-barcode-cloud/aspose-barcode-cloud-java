@@ -31,11 +31,16 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Check if file or folder exists */
 public class ObjectExistsRequest {
+    /** File or folder path e.g. '/file.ext' or '/folder' */
     public final String path;
+    /** Storage name */
     public String storageName;
+    /** File version ID */
     public String versionId;
 
+    /** @param path File or folder path e.g. '/file.ext' or '/folder' */
     public ObjectExistsRequest(String path) {
         this.path = path;
     }

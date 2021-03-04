@@ -31,10 +31,14 @@ package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.*;
 
+/** Get all files and folders within a folder */
 public class GetFilesListRequest {
+    /** Folder path e.g. '/folder' */
     public final String path;
+    /** Storage name */
     public String storageName;
 
+    /** @param path Folder path e.g. '/folder' */
     public GetFilesListRequest(String path) {
         this.path = path;
     }

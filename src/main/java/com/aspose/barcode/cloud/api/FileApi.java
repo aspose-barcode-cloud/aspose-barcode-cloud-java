@@ -67,11 +67,7 @@ public class FileApi {
     /**
      * Build call for copyFile
      *
-     * @param srcPath Source file path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param destPath Destination file path (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to copy (optional)
+     * @param request See {@link CopyFileRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -82,37 +78,36 @@ public class FileApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/file/copy/{srcPath}"
                         .replaceAll("\\{" + "srcPath" + "}", request.srcPath);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.destPath != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
+            queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
         if (request.srcStorageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("srcStorageName", request.srcStorageName));
+            queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
         if (request.destStorageName != null)
-            localVarQueryParams.addAll(
+            queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
         if (request.versionId != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+            queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -138,13 +133,13 @@ public class FileApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -176,11 +171,7 @@ public class FileApi {
     /**
      * Copy file
      *
-     * @param srcPath Source file path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param destPath Destination file path (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to copy (optional)
+     * @param request See {@link CopyFileRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -191,11 +182,7 @@ public class FileApi {
     /**
      * Copy file
      *
-     * @param srcPath Source file path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param destPath Destination file path (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to copy (optional)
+     * @param request See {@link CopyFileRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -208,11 +195,7 @@ public class FileApi {
     /**
      * Copy file (asynchronously)
      *
-     * @param srcPath Source file path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param destPath Destination file path (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to copy (optional)
+     * @param request See {@link CopyFileRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -251,9 +234,7 @@ public class FileApi {
     /**
      * Build call for deleteFile
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to delete (optional)
+     * @param request See {@link DeleteFileRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -264,31 +245,29 @@ public class FileApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", request.path);
+        String path = "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.storageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("storageName", request.storageName));
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
         if (request.versionId != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+            queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -314,13 +293,13 @@ public class FileApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "DELETE",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -344,9 +323,7 @@ public class FileApi {
     /**
      * Delete file
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to delete (optional)
+     * @param request See {@link DeleteFileRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -357,9 +334,7 @@ public class FileApi {
     /**
      * Delete file
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to delete (optional)
+     * @param request See {@link DeleteFileRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -372,9 +347,7 @@ public class FileApi {
     /**
      * Delete file (asynchronously)
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to delete (optional)
+     * @param request See {@link DeleteFileRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -413,9 +386,7 @@ public class FileApi {
     /**
      * Build call for downloadFile
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to download (optional)
+     * @param request See {@link DownloadFileRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -426,31 +397,29 @@ public class FileApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", request.path);
+        String path = "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.storageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("storageName", request.storageName));
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
         if (request.versionId != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+            queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"multipart/form-data"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"multipart/form-data"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -476,13 +445,13 @@ public class FileApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -507,9 +476,7 @@ public class FileApi {
     /**
      * Download file
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to download (optional)
+     * @param request See {@link DownloadFileRequest}
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -522,9 +489,7 @@ public class FileApi {
     /**
      * Download file
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to download (optional)
+     * @param request See {@link DownloadFileRequest}
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -532,16 +497,14 @@ public class FileApi {
     public ApiResponse<File> downloadFileWithHttpInfo(DownloadFileRequest request)
             throws ApiException {
         com.squareup.okhttp.Call call = downloadFileValidateBeforeCall(request, null, null);
-        Type localVarReturnType = new TypeToken<File>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        Type returnType = new TypeToken<File>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Download file (asynchronously)
      *
-     * @param path File path e.g. &#39;/folder/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID to download (optional)
+     * @param request See {@link DownloadFileRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -574,18 +537,14 @@ public class FileApi {
 
         com.squareup.okhttp.Call call =
                 downloadFileValidateBeforeCall(request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<File>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        Type returnType = new TypeToken<File>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
     /**
      * Build call for moveFile
      *
-     * @param srcPath Source file path e.g. &#39;/src.ext&#39; (required)
-     * @param destPath Destination file path e.g. &#39;/dest.ext&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to move (optional)
+     * @param request See {@link MoveFileRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -596,37 +555,36 @@ public class FileApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/file/move/{srcPath}"
                         .replaceAll("\\{" + "srcPath" + "}", request.srcPath);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.destPath != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
+            queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
         if (request.srcStorageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("srcStorageName", request.srcStorageName));
+            queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
         if (request.destStorageName != null)
-            localVarQueryParams.addAll(
+            queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
         if (request.versionId != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+            queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -652,13 +610,13 @@ public class FileApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -690,11 +648,7 @@ public class FileApi {
     /**
      * Move file
      *
-     * @param srcPath Source file path e.g. &#39;/src.ext&#39; (required)
-     * @param destPath Destination file path e.g. &#39;/dest.ext&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to move (optional)
+     * @param request See {@link MoveFileRequest}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
@@ -705,11 +659,7 @@ public class FileApi {
     /**
      * Move file
      *
-     * @param srcPath Source file path e.g. &#39;/src.ext&#39; (required)
-     * @param destPath Destination file path e.g. &#39;/dest.ext&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to move (optional)
+     * @param request See {@link MoveFileRequest}
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -722,11 +672,7 @@ public class FileApi {
     /**
      * Move file (asynchronously)
      *
-     * @param srcPath Source file path e.g. &#39;/src.ext&#39; (required)
-     * @param destPath Destination file path e.g. &#39;/dest.ext&#39; (required)
-     * @param srcStorageName Source storage name (optional)
-     * @param destStorageName Destination storage name (optional)
-     * @param versionId File version ID to move (optional)
+     * @param request See {@link MoveFileRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -765,11 +711,7 @@ public class FileApi {
     /**
      * Build call for uploadFile
      *
-     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
-     *     1/file.ext If the content is multipart and path does not contains the file name it tries
-     *     to get them from filename parameter from Content-Disposition header. (required)
-     * @param file File to upload (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link UploadFileRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -780,30 +722,28 @@ public class FileApi {
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", request.path);
+        String path = "/barcode/storage/file/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.storageName != null)
-            localVarQueryParams.addAll(
-                    apiClient.parameterToPair("storageName", request.storageName));
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (request.file != null) localVarFormParams.put("File", request.file);
+        Map<String, Object> formParams = new HashMap<>();
+        if (request.file != null) formParams.put("File", request.file);
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"multipart/form-data"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"multipart/form-data"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -829,13 +769,13 @@ public class FileApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
@@ -865,11 +805,7 @@ public class FileApi {
     /**
      * Upload file
      *
-     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
-     *     1/file.ext If the content is multipart and path does not contains the file name it tries
-     *     to get them from filename parameter from Content-Disposition header. (required)
-     * @param file File to upload (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link UploadFileRequest}
      * @return FilesUploadResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -882,11 +818,7 @@ public class FileApi {
     /**
      * Upload file
      *
-     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
-     *     1/file.ext If the content is multipart and path does not contains the file name it tries
-     *     to get them from filename parameter from Content-Disposition header. (required)
-     * @param file File to upload (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link UploadFileRequest}
      * @return ApiResponse&lt;FilesUploadResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
@@ -894,18 +826,14 @@ public class FileApi {
     public ApiResponse<FilesUploadResult> uploadFileWithHttpInfo(UploadFileRequest request)
             throws ApiException {
         com.squareup.okhttp.Call call = uploadFileValidateBeforeCall(request, null, null);
-        Type localVarReturnType = new TypeToken<FilesUploadResult>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        Type returnType = new TypeToken<FilesUploadResult>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Upload file (asynchronously)
      *
-     * @param path Path where to upload including filename and extension e.g. /file.ext or /Folder
-     *     1/file.ext If the content is multipart and path does not contains the file name it tries
-     *     to get them from filename parameter from Content-Disposition header. (required)
-     * @param file File to upload (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link UploadFileRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
@@ -939,8 +867,8 @@ public class FileApi {
 
         com.squareup.okhttp.Call call =
                 uploadFileValidateBeforeCall(request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<FilesUploadResult>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        Type returnType = new TypeToken<FilesUploadResult>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
 }
