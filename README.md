@@ -91,19 +91,21 @@ import java.io.File;
 public class BarcodeApiExample {
     public static void main(String[] args) {
         ApiClient client = new ApiClient(
-                "Client Id from https://dashboard.aspose.cloud/applications",
-                "Client Secret from https://dashboard.aspose.cloud/applications"
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
         );
+        client.setReadTimeout(5 * 60 * 1000);
+
         BarcodeApi api = new BarcodeApi(client);
 
         try {
             System.out.println("Generating barcode...");
             File barcodeImage = generateBarcode(api);
-            System.out.println("Barcode image generated");
+            System.out.println("Barcode image saved to file " + barcodeImage.getAbsolutePath());
 
             System.out.println("Recognizing barcode on image...");
             BarcodeResponseList recognized = recognizeBarcode(api, barcodeImage);
-            System.out.println("Barcode on image recognized");
+            System.out.print("Barcode on image:");
             System.out.println(recognized.toString());
         } catch (ApiException e) {
             System.err.println("Error");
