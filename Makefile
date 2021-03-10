@@ -22,5 +22,5 @@ test:
 	mvn -B package --file pom.xml
 
 .PHONY: publish
-publish:
+publish: test
 	mvn deploy
