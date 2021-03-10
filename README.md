@@ -1,7 +1,7 @@
 # Aspose.BarCode Cloud SDK for Java
 
 - API version: 3.0
-- SDK version: 21.2.0
+- SDK version: 21.3.0
 
 [Aspose.BarCode for Cloud](https://products.aspose.cloud/barcode/cloud) is a REST API for Linear, 2D and postal barcode generation and recognition in the cloud. API recognizes and generates barcode images in a variety of formats. Barcode REST API allows to specify barcode image attributes like image width, height, border style and output image format in order to customize the generation process. Developers can also specify the barcode type and text attributes such as text location and font styles in order to suit the application requirements.
 
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>21.2.0</version>
+  <version>21.3.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-21.2.0.jar`
+- `target/aspose-barcode-cloud-21.3.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -79,32 +79,54 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-import com.aspose.barcode.cloud.*;
-import com.aspose.barcode.cloud.auth.*;
-import com.aspose.barcode.cloud.model.*;
 import com.aspose.barcode.cloud.api.BarcodeApi;
+import com.aspose.barcode.cloud.model.BarcodeResponseList;
+import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.PresetType;
+import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
+import com.aspose.barcode.cloud.requests.PostBarcodeRecognizeFromUrlOrContentRequest;
 
 import java.io.File;
-import java.util.*;
 
 public class BarcodeApiExample {
-
     public static void main(String[] args) {
         ApiClient client = new ApiClient(
             "Client Id from https://dashboard.aspose.cloud/applications",
             "Client Secret from https://dashboard.aspose.cloud/applications"
         );
-        
+        client.setReadTimeout(5 * 60 * 1000);
+
         BarcodeApi api = new BarcodeApi(client);
-        String type = "type_example"; // String | Type of barcode to generate.
-        String text = "text_example"; // String | Text to encode.
+
         try {
-            File result = api.getBarcodeGenerate(type, text);
-            System.out.println(result);
+            System.out.println("Generating barcode...");
+            File barcodeImage = generateBarcode(api);
+            System.out.println("Barcode image saved to file " + barcodeImage.getAbsolutePath());
+
+            System.out.println("Recognizing barcode on image...");
+            BarcodeResponseList recognized = recognizeBarcode(api, barcodeImage);
+            System.out.print("Barcode on image:");
+            System.out.println(recognized.toString());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BarcodeApi#getBarcodeGenerate");
+            System.err.println("Error");
             e.printStackTrace();
         }
+    }
+
+    private static File generateBarcode(BarcodeApi api) throws ApiException {
+        String type = EncodeBarcodeType.PDF417.toString();
+        String text = "Aspose.BarCode for Cloud Sample";
+        GetBarcodeGenerateRequest request = new GetBarcodeGenerateRequest(type, text);
+
+        return api.getBarcodeGenerate(request);
+    }
+
+    private static BarcodeResponseList recognizeBarcode(BarcodeApi api, File barcodeImage) throws ApiException {
+        PostBarcodeRecognizeFromUrlOrContentRequest recognizeRequest = new PostBarcodeRecognizeFromUrlOrContentRequest();
+        recognizeRequest.image = barcodeImage;
+        recognizeRequest.preset = PresetType.HIGHPERFORMANCE.toString();
+
+        return api.postBarcodeRecognizeFromUrlOrContent(recognizeRequest);
     }
 }
 ```
@@ -168,6 +190,7 @@ Class | Method | HTTP request | Description
 - [CodabarParams](docs/CodabarParams.md)
 - [CodabarSymbol](docs/CodabarSymbol.md)
 - [CodablockParams](docs/CodablockParams.md)
+- [Code128Emulation](docs/Code128Emulation.md)
 - [Code16KParams](docs/Code16KParams.md)
 - [CodeLocation](docs/CodeLocation.md)
 - [CouponParams](docs/CouponParams.md)

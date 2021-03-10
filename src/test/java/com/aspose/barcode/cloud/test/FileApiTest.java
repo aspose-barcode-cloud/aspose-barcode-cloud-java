@@ -7,6 +7,7 @@ import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
+import com.aspose.barcode.cloud.requests.UploadFileRequest;
 
 import org.junit.Test;
 
@@ -31,7 +32,11 @@ public class FileApiTest extends TestBase {
 
         String path = remoteTempFolder + filePath.getFileName();
         File imageFile = new File(String.valueOf(filePath));
-        FilesUploadResult response = api.uploadFile(path, imageFile, testStorageName);
+
+        UploadFileRequest request = new UploadFileRequest(path, imageFile);
+        request.storageName = testStorageName;
+
+        FilesUploadResult response = api.uploadFile(request);
 
         assertTrue(String.valueOf(response.getErrors()), response.getErrors().isEmpty());
         assertEquals(1, response.getUploaded().size());

@@ -7,6 +7,7 @@ import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.*;
+import com.aspose.barcode.cloud.requests.*;
 
 import org.junit.Test;
 
@@ -29,78 +30,11 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void getBarcodeGenerateTest() throws ApiException {
-        String type = EncodeBarcodeType.QR.getValue();
-        String text = "QR text";
-        String twoDDisplayText = null;
-        String textLocation = null;
-        String textAlignment = null;
-        String textColor = null;
-        String fontSizeMode = null;
-        Boolean noWrap = null;
-        Double resolution = null;
-        Double resolutionX = null;
-        Double resolutionY = null;
-        Double dimensionX = null;
-        Double textSpace = null;
-        String units = null;
-        String sizeMode = null;
-        Double barHeight = null;
-        Double imageHeight = null;
-        Double imageWidth = null;
-        Double rotationAngle = null;
-        String backColor = null;
-        String barColor = null;
-        String borderColor = null;
-        Double borderWidth = null;
-        String borderDashStyle = null;
-        Boolean borderVisible = null;
-        String enableChecksum = null;
-        Boolean enableEscape = null;
-        Boolean filledBars = null;
-        Boolean alwaysShowChecksum = null;
-        Double wideNarrowRatio = null;
-        Boolean validateText = null;
-        String supplementData = null;
-        Double supplementSpace = null;
-        Double barWidthReduction = null;
-        String format = "png";
-        File response =
-                api.getBarcodeGenerate(
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        format);
+        GetBarcodeGenerateRequest request =
+                new GetBarcodeGenerateRequest(EncodeBarcodeType.QR.getValue(), "QR text");
+        request.format = "png";
+
+        File response = api.getBarcodeGenerate(request);
 
         assertTrue(response.length() > 0);
         assertTrue(response.getName().endsWith(".png"));
@@ -116,83 +50,20 @@ public class BarcodeApiTest extends TestBase {
         String testFileName = "1.png";
         uploadTestFile(testFileName);
 
-        String type = DecodeBarcodeType.CODE11.getValue();
-        String checksumValidation = ChecksumValidation.OFF.toString();
-        Boolean detectEncoding = null;
-        String preset = PresetType.HIGHPERFORMANCE.toString();
-        Integer rectX = null;
-        Integer rectY = null;
-        Integer rectWidth = null;
-        Integer rectHeight = null;
-        Boolean stripFNC = null;
-        Integer timeout = null;
-        Integer medianSmoothingWindowSize = null;
-        Boolean allowMedianSmoothing = null;
-        Boolean allowComplexBackground = null;
-        Boolean allowDatamatrixIndustrialBarcodes = null;
-        Boolean allowDecreasedImage = null;
-        Boolean allowDetectScanGap = null;
-        Boolean allowIncorrectBarcodes = null;
-        Boolean allowInvertImage = null;
-        Boolean allowMicroWhiteSpotsRemoving = null;
-        Boolean allowOneDFastBarcodesDetector = null;
-        Boolean allowOneDWipedBarsRestoration = null;
-        Boolean allowQRMicroQrRestoration = null;
-        Boolean allowRegularImage = null;
-        Boolean allowSaltAndPepperFiltering = null;
-        Boolean allowWhiteSpotsRemoving = null;
-        Boolean checkMore1DVariants = null;
-        Double regionLikelihoodThresholdPercent = null;
-        List<Integer> scanWindowSizes = null;
-        Double similarity = null;
-        Boolean skipDiagonalSearch = null;
-        Boolean readTinyBarcodes = null;
-        String australianPostEncodingTable = null;
-        String rectangleRegion = null;
-        BarcodeResponseList response =
-                api.getBarcodeRecognize(
-                        testFileName,
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        testStorageName,
-                        remoteTempFolder);
+        GetBarcodeRecognizeRequest request = new GetBarcodeRecognizeRequest(testFileName);
+        request.type = DecodeBarcodeType.CODE11.getValue();
+        request.checksumValidation = ChecksumValidation.OFF.toString();
+        request.preset = PresetType.HIGHPERFORMANCE.toString();
+        request.storage = testStorageName;
+        request.folder = remoteTempFolder;
+
+        BarcodeResponseList response = api.getBarcodeRecognize(request);
 
         assertNotNull(response);
         assertFalse(response.getBarcodes().isEmpty());
 
         BarcodeResponse barcode = response.getBarcodes().get(0);
-        assertEquals(type, barcode.getType());
+        assertEquals(request.type, barcode.getType());
         assertEquals("1234567812", barcode.getBarcodeValue());
 
         List<RegionPoint> region = barcode.getRegion();
@@ -206,7 +77,10 @@ public class BarcodeApiTest extends TestBase {
         File file = new File(filePath.toString());
         String remotePath = remoteTempFolder + filePath.getFileName();
 
-        FilesUploadResult result = fileApi.uploadFile(remotePath, file, testStorageName);
+        UploadFileRequest request = new UploadFileRequest(remotePath, file);
+        request.storageName = testStorageName;
+
+        FilesUploadResult result = fileApi.uploadFile(request);
 
         if (!result.getErrors().isEmpty()) {
             throw new ApiException(result.getErrors().toString());
@@ -221,84 +95,18 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void postBarcodeRecognizeFromUrlOrContentTest() throws ApiException {
-        String type = null;
-        String checksumValidation = ChecksumValidation.OFF.toString();
-        Boolean detectEncoding = null;
-        String preset = PresetType.HIGHPERFORMANCE.toString();
-        Integer rectX = null;
-        Integer rectY = null;
-        Integer rectWidth = null;
-        Integer rectHeight = null;
-        Boolean stripFNC = null;
-        Integer timeout = null;
-        Integer medianSmoothingWindowSize = null;
-        Boolean allowMedianSmoothing = null;
-        Boolean allowComplexBackground = null;
-        Boolean allowDatamatrixIndustrialBarcodes = null;
-        Boolean allowDecreasedImage = null;
-        Boolean allowDetectScanGap = null;
-        Boolean allowIncorrectBarcodes = null;
-        Boolean allowInvertImage = null;
-        Boolean allowMicroWhiteSpotsRemoving = null;
-        Boolean allowOneDFastBarcodesDetector = null;
-        Boolean allowOneDWipedBarsRestoration = null;
-        Boolean allowQRMicroQrRestoration = null;
-        Boolean allowRegularImage = null;
-        Boolean allowSaltAndPepperFiltering = null;
-        Boolean allowWhiteSpotsRemoving = null;
-        Boolean checkMore1DVariants = null;
-        Double regionLikelihoodThresholdPercent = null;
-        List<Integer> scanWindowSizes = null;
-        Double similarity = null;
-        Boolean skipDiagonalSearch = null;
-        Boolean readTinyBarcodes = null;
-        String australianPostEncodingTable = null;
-        String rectangleRegion = null;
-        String url = null;
+        PostBarcodeRecognizeFromUrlOrContentRequest request =
+                new PostBarcodeRecognizeFromUrlOrContentRequest();
+        request.checksumValidation = ChecksumValidation.OFF.toString();
+        request.preset = PresetType.HIGHPERFORMANCE.toString();
 
         Path currentRelativePath = Paths.get("");
         String currentPath = currentRelativePath.toAbsolutePath().toString();
         Path filePath = Paths.get(currentPath, "test_data", "1.png");
 
-        File image = new File(String.valueOf(filePath));
+        request.image = new File(String.valueOf(filePath));
 
-        BarcodeResponseList response =
-                api.postBarcodeRecognizeFromUrlOrContent(
-                        type,
-                        checksumValidation,
-                        detectEncoding,
-                        preset,
-                        rectX,
-                        rectY,
-                        rectWidth,
-                        rectHeight,
-                        stripFNC,
-                        timeout,
-                        medianSmoothingWindowSize,
-                        allowMedianSmoothing,
-                        allowComplexBackground,
-                        allowDatamatrixIndustrialBarcodes,
-                        allowDecreasedImage,
-                        allowDetectScanGap,
-                        allowIncorrectBarcodes,
-                        allowInvertImage,
-                        allowMicroWhiteSpotsRemoving,
-                        allowOneDFastBarcodesDetector,
-                        allowOneDWipedBarsRestoration,
-                        allowQRMicroQrRestoration,
-                        allowRegularImage,
-                        allowSaltAndPepperFiltering,
-                        allowWhiteSpotsRemoving,
-                        checkMore1DVariants,
-                        regionLikelihoodThresholdPercent,
-                        scanWindowSizes,
-                        similarity,
-                        skipDiagonalSearch,
-                        readTinyBarcodes,
-                        australianPostEncodingTable,
-                        rectangleRegion,
-                        url,
-                        image);
+        BarcodeResponseList response = api.postBarcodeRecognizeFromUrlOrContent(request);
 
         assertNotNull(response);
         assertFalse(response.getBarcodes().isEmpty());
@@ -332,8 +140,9 @@ public class BarcodeApiTest extends TestBase {
         generatorParamsList.addBarcodeBuildersItem(barcode1);
         generatorParamsList.addBarcodeBuildersItem(barcode2);
 
-        String format = "jpg";
-        File response = api.postGenerateMultiple(generatorParamsList, format);
+        PostGenerateMultipleRequest request = new PostGenerateMultipleRequest(generatorParamsList);
+        request.format = "jpg";
+        File response = api.postGenerateMultiple(request);
 
         assertNotNull(response);
         assertTrue(response.length() > 0);
@@ -347,82 +156,15 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void putBarcodeGenerateFileTest() throws ApiException {
-        String name = "putBarcodeGenerateFileTest.png";
-        String type = EncodeBarcodeType.QR.getValue();
-        String text = "Put Barcode Generate File Test";
-        String twoDDisplayText = null;
-        String textLocation = null;
-        String textAlignment = null;
-        String textColor = null;
-        String fontSizeMode = null;
-        Double resolution = null;
-        Double resolutionX = null;
-        Double resolutionY = null;
-        Double dimensionX = null;
-        Double textSpace = null;
-        String units = null;
-        String sizeMode = null;
-        Boolean noWrap = null;
-        Double barHeight = null;
-        Double imageHeight = null;
-        Double imageWidth = null;
-        Double rotationAngle = null;
-        String backColor = null;
-        String barColor = null;
-        String borderColor = null;
-        Double borderWidth = null;
-        String borderDashStyle = null;
-        Boolean borderVisible = null;
-        String enableChecksum = null;
-        Boolean enableEscape = null;
-        Boolean filledBars = null;
-        Boolean alwaysShowChecksum = null;
-        Double wideNarrowRatio = null;
-        Boolean validateText = null;
-        String supplementData = null;
-        Double supplementSpace = null;
-        Double barWidthReduction = null;
-        String format = null;
-        ResultImageInfo response =
-                api.putBarcodeGenerateFile(
-                        name,
-                        type,
-                        text,
-                        twoDDisplayText,
-                        textLocation,
-                        textAlignment,
-                        textColor,
-                        fontSizeMode,
-                        noWrap,
-                        resolution,
-                        resolutionX,
-                        resolutionY,
-                        dimensionX,
-                        textSpace,
-                        units,
-                        sizeMode,
-                        barHeight,
-                        imageHeight,
-                        imageWidth,
-                        rotationAngle,
-                        backColor,
-                        barColor,
-                        borderColor,
-                        borderWidth,
-                        borderDashStyle,
-                        borderVisible,
-                        enableChecksum,
-                        enableEscape,
-                        filledBars,
-                        alwaysShowChecksum,
-                        wideNarrowRatio,
-                        validateText,
-                        supplementData,
-                        supplementSpace,
-                        barWidthReduction,
-                        testStorageName,
-                        remoteTempFolder,
-                        format);
+        PutBarcodeGenerateFileRequest request =
+                new PutBarcodeGenerateFileRequest(
+                        "putBarcodeGenerateFileTest.png",
+                        EncodeBarcodeType.QR.getValue(),
+                        "Put Barcode Generate File Test");
+        request.storage = testStorageName;
+        request.folder = remoteTempFolder;
+
+        ResultImageInfo response = api.putBarcodeGenerateFile(request);
 
         assertTrue(response.getFileSize() > 0);
         assertTrue(response.getImageWidth() > 0);
@@ -441,10 +183,14 @@ public class BarcodeApiTest extends TestBase {
 
         ReaderParams readerParams = new ReaderParams();
         readerParams.setChecksumValidation(ChecksumValidation.OFF);
-        String type = DecodeBarcodeType.CODE11.getValue();
-        BarcodeResponseList response =
-                api.putBarcodeRecognizeFromBody(
-                        testFileName, readerParams, type, testStorageName, remoteTempFolder);
+
+        PutBarcodeRecognizeFromBodyRequest request =
+                new PutBarcodeRecognizeFromBodyRequest(testFileName, readerParams);
+        request.type = DecodeBarcodeType.CODE11.getValue();
+        request.storage = testStorageName;
+        request.folder = remoteTempFolder;
+
+        BarcodeResponseList response = api.putBarcodeRecognizeFromBody(request);
 
         assertNotNull(response);
         assertFalse(response.getBarcodes().isEmpty());
@@ -466,8 +212,6 @@ public class BarcodeApiTest extends TestBase {
      */
     @Test
     public void putGenerateMultipleTest() throws ApiException {
-        String name = "putGenerateMultipleTest";
-
         GeneratorParams barcode1 = new GeneratorParams();
         barcode1.setTypeOfBarcode(EncodeBarcodeType.QR);
         barcode1.setText("putGenerateMultipleTest1");
@@ -480,10 +224,12 @@ public class BarcodeApiTest extends TestBase {
         generatorParamsList.addBarcodeBuildersItem(barcode1);
         generatorParamsList.addBarcodeBuildersItem(barcode2);
 
-        String format = "png";
-        ResultImageInfo response =
-                api.putGenerateMultiple(
-                        name, generatorParamsList, format, remoteTempFolder, testStorageName);
+        PutGenerateMultipleRequest request =
+                new PutGenerateMultipleRequest("putGenerateMultipleTest", generatorParamsList);
+        request.format = "png";
+        request.folder = remoteTempFolder;
+        request.storage = testStorageName;
+        ResultImageInfo response = api.putGenerateMultiple(request);
 
         assertNotNull(response);
         assertTrue(response.getFileSize() > 0);

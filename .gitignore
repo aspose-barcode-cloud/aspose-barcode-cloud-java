@@ -9,3 +9,4 @@
 **/target
 build
 aspose-barcode-cloud.iml
+!tools/*

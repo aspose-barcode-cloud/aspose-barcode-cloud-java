@@ -37,6 +37,7 @@ import com.aspose.barcode.cloud.model.DiscUsage;
 import com.aspose.barcode.cloud.model.FileVersions;
 import com.aspose.barcode.cloud.model.ObjectExist;
 import com.aspose.barcode.cloud.model.StorageExist;
+import com.aspose.barcode.cloud.requests.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -68,38 +69,38 @@ public class StorageApi {
     /**
      * Build call for getDiscUsage
      *
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetDiscUsageRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call getDiscUsageCall(
-            String storageName,
+            GetDiscUsageRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath = "/barcode/storage/disc";
+        String path = "/barcode/storage/disc";
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (storageName != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storageName", storageName));
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
+        if (request.storageName != null)
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -125,65 +126,67 @@ public class StorageApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
     private com.squareup.okhttp.Call getDiscUsageValidateBeforeCall(
-            String storageName,
+            GetDiscUsageRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
         com.squareup.okhttp.Call call =
-                getDiscUsageCall(storageName, progressListener, progressRequestListener);
+                getDiscUsageCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Get disc usage
      *
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetDiscUsageRequest}
      * @return DiscUsage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public DiscUsage getDiscUsage(String storageName) throws ApiException {
-        ApiResponse<DiscUsage> resp = getDiscUsageWithHttpInfo(storageName);
+    public DiscUsage getDiscUsage(GetDiscUsageRequest request) throws ApiException {
+        ApiResponse<DiscUsage> resp = getDiscUsageWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Get disc usage
      *
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetDiscUsageRequest}
      * @return ApiResponse&lt;DiscUsage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<DiscUsage> getDiscUsageWithHttpInfo(String storageName) throws ApiException {
-        com.squareup.okhttp.Call call = getDiscUsageValidateBeforeCall(storageName, null, null);
-        Type localVarReturnType = new TypeToken<DiscUsage>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<DiscUsage> getDiscUsageWithHttpInfo(GetDiscUsageRequest request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = getDiscUsageValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<DiscUsage>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Get disc usage (asynchronously)
      *
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetDiscUsageRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
     public com.squareup.okhttp.Call getDiscUsageAsync(
-            String storageName, final ApiCallback<DiscUsage> callback) throws ApiException {
+            GetDiscUsageRequest request, final ApiCallback<DiscUsage> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -208,50 +211,47 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call =
-                getDiscUsageValidateBeforeCall(
-                        storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<DiscUsage>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+                getDiscUsageValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<DiscUsage>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
     /**
      * Build call for getFileVersions
      *
-     * @param path File path e.g. &#39;/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFileVersionsRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call getFileVersionsCall(
-            String path,
-            String storageName,
+            GetFileVersionsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/version/{path}".replaceAll("\\{" + "path" + "}", path);
+        String path =
+                "/barcode/storage/version/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (storageName != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storageName", storageName));
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
+        if (request.storageName != null)
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -277,77 +277,73 @@ public class StorageApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
     private com.squareup.okhttp.Call getFileVersionsValidateBeforeCall(
-            String path,
-            String storageName,
+            GetFileVersionsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'path' is set
-        if (path == null) {
+        // verify the required parameter 'request.path' is set
+        if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'path' when calling getFileVersions(Async)");
+                    "Missing the required parameter 'request.path' when calling"
+                            + " getFileVersions(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                getFileVersionsCall(path, storageName, progressListener, progressRequestListener);
+                getFileVersionsCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Get file versions
      *
-     * @param path File path e.g. &#39;/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFileVersionsRequest}
      * @return FileVersions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public FileVersions getFileVersions(String path, String storageName) throws ApiException {
-        ApiResponse<FileVersions> resp = getFileVersionsWithHttpInfo(path, storageName);
+    public FileVersions getFileVersions(GetFileVersionsRequest request) throws ApiException {
+        ApiResponse<FileVersions> resp = getFileVersionsWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Get file versions
      *
-     * @param path File path e.g. &#39;/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFileVersionsRequest}
      * @return ApiResponse&lt;FileVersions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<FileVersions> getFileVersionsWithHttpInfo(String path, String storageName)
+    public ApiResponse<FileVersions> getFileVersionsWithHttpInfo(GetFileVersionsRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call =
-                getFileVersionsValidateBeforeCall(path, storageName, null, null);
-        Type localVarReturnType = new TypeToken<FileVersions>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        com.squareup.okhttp.Call call = getFileVersionsValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<FileVersions>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Get file versions (asynchronously)
      *
-     * @param path File path e.g. &#39;/file.ext&#39; (required)
-     * @param storageName Storage name (optional)
+     * @param request See {@link GetFileVersionsRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
     public com.squareup.okhttp.Call getFileVersionsAsync(
-            String path, String storageName, final ApiCallback<FileVersions> callback)
+            GetFileVersionsRequest request, final ApiCallback<FileVersions> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -374,53 +370,49 @@ public class StorageApi {
 
         com.squareup.okhttp.Call call =
                 getFileVersionsValidateBeforeCall(
-                        path, storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<FileVersions>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+                        request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<FileVersions>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
     /**
      * Build call for objectExists
      *
-     * @param path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID (optional)
+     * @param request See {@link ObjectExistsRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call objectExistsCall(
-            String path,
-            String storageName,
-            String versionId,
+            ObjectExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "}", path);
+        String path =
+                "/barcode/storage/exist/{path}".replaceAll("\\{" + "path" + "}", request.path);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (storageName != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("storageName", storageName));
-        if (versionId != null)
-            localVarQueryParams.addAll(apiClient.parameterToPair("versionId", versionId));
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
+        if (request.storageName != null)
+            queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        if (request.versionId != null)
+            queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -446,86 +438,73 @@ public class StorageApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
     private com.squareup.okhttp.Call objectExistsValidateBeforeCall(
-            String path,
-            String storageName,
-            String versionId,
+            ObjectExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'path' is set
-        if (path == null) {
+        // verify the required parameter 'request.path' is set
+        if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'path' when calling objectExists(Async)");
+                    "Missing the required parameter 'request.path' when calling"
+                            + " objectExists(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                objectExistsCall(
-                        path, storageName, versionId, progressListener, progressRequestListener);
+                objectExistsCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Check if file or folder exists
      *
-     * @param path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID (optional)
+     * @param request See {@link ObjectExistsRequest}
      * @return ObjectExist
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ObjectExist objectExists(String path, String storageName, String versionId)
-            throws ApiException {
-        ApiResponse<ObjectExist> resp = objectExistsWithHttpInfo(path, storageName, versionId);
+    public ObjectExist objectExists(ObjectExistsRequest request) throws ApiException {
+        ApiResponse<ObjectExist> resp = objectExistsWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Check if file or folder exists
      *
-     * @param path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID (optional)
+     * @param request See {@link ObjectExistsRequest}
      * @return ApiResponse&lt;ObjectExist&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<ObjectExist> objectExistsWithHttpInfo(
-            String path, String storageName, String versionId) throws ApiException {
-        com.squareup.okhttp.Call call =
-                objectExistsValidateBeforeCall(path, storageName, versionId, null, null);
-        Type localVarReturnType = new TypeToken<ObjectExist>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<ObjectExist> objectExistsWithHttpInfo(ObjectExistsRequest request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = objectExistsValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<ObjectExist>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Check if file or folder exists (asynchronously)
      *
-     * @param path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; (required)
-     * @param storageName Storage name (optional)
-     * @param versionId File version ID (optional)
+     * @param request See {@link ObjectExistsRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
     public com.squareup.okhttp.Call objectExistsAsync(
-            String path,
-            String storageName,
-            String versionId,
-            final ApiCallback<ObjectExist> callback)
+            ObjectExistsRequest request, final ApiCallback<ObjectExist> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -551,47 +530,46 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call =
-                objectExistsValidateBeforeCall(
-                        path, storageName, versionId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ObjectExist>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+                objectExistsValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<ObjectExist>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
     /**
      * Build call for storageExists
      *
-     * @param storageName Storage name (required)
+     * @param request See {@link StorageExistsRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     protected com.squareup.okhttp.Call storageExistsCall(
-            String storageName,
+            StorageExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
-        Object localVarPostBody = null;
+        Object postBody = null;
 
         // create path and map variables
-        String localVarPath =
+        String path =
                 "/barcode/storage/{storageName}/exist"
-                        .replaceAll("\\{" + "storageName" + "}", storageName);
+                        .replaceAll("\\{" + "storageName" + "}", request.storageName);
 
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
 
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> headerParams = new HashMap<>();
 
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        Map<String, Object> formParams = new HashMap<>();
 
-        final String[] localVarAccepts = {"application/json"};
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] localVarContentTypes = {"application/json"};
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        final String[] contentTypes = {"application/json"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
 
         if (progressListener != null) {
             apiClient
@@ -617,73 +595,74 @@ public class StorageApi {
         }
 
         return apiClient.buildCall(
-                localVarPath,
+                path,
                 "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarFormParams,
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
                 progressRequestListener);
     }
 
     private com.squareup.okhttp.Call storageExistsValidateBeforeCall(
-            String storageName,
+            StorageExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'storageName' is set
-        if (storageName == null) {
+        // verify the required parameter 'request.storageName' is set
+        if (request.storageName == null) {
             throw new ApiException(
-                    "Missing the required parameter 'storageName' when calling"
+                    "Missing the required parameter 'request.storageName' when calling"
                             + " storageExists(Async)");
         }
 
         com.squareup.okhttp.Call call =
-                storageExistsCall(storageName, progressListener, progressRequestListener);
+                storageExistsCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Check if storage exists
      *
-     * @param storageName Storage name (required)
+     * @param request See {@link StorageExistsRequest}
      * @return StorageExist
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public StorageExist storageExists(String storageName) throws ApiException {
-        ApiResponse<StorageExist> resp = storageExistsWithHttpInfo(storageName);
+    public StorageExist storageExists(StorageExistsRequest request) throws ApiException {
+        ApiResponse<StorageExist> resp = storageExistsWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Check if storage exists
      *
-     * @param storageName Storage name (required)
+     * @param request See {@link StorageExistsRequest}
      * @return ApiResponse&lt;StorageExist&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<StorageExist> storageExistsWithHttpInfo(String storageName)
+    public ApiResponse<StorageExist> storageExistsWithHttpInfo(StorageExistsRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = storageExistsValidateBeforeCall(storageName, null, null);
-        Type localVarReturnType = new TypeToken<StorageExist>() {}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        com.squareup.okhttp.Call call = storageExistsValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<StorageExist>() {}.getType();
+        return apiClient.execute(call, returnType);
     }
 
     /**
      * Check if storage exists (asynchronously)
      *
-     * @param storageName Storage name (required)
+     * @param request See {@link StorageExistsRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
     public com.squareup.okhttp.Call storageExistsAsync(
-            String storageName, final ApiCallback<StorageExist> callback) throws ApiException {
+            StorageExistsRequest request, final ApiCallback<StorageExist> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -708,10 +687,9 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call =
-                storageExistsValidateBeforeCall(
-                        storageName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<StorageExist>() {}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+                storageExistsValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<StorageExist>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
         return call;
     }
 }
