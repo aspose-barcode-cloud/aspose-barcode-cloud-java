@@ -79,32 +79,52 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-import com.aspose.barcode.cloud.*;
-import com.aspose.barcode.cloud.auth.*;
-import com.aspose.barcode.cloud.model.*;
 import com.aspose.barcode.cloud.api.BarcodeApi;
+import com.aspose.barcode.cloud.model.BarcodeResponseList;
+import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.PresetType;
+import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
+import com.aspose.barcode.cloud.requests.PostBarcodeRecognizeFromUrlOrContentRequest;
 
 import java.io.File;
-import java.util.*;
 
 public class BarcodeApiExample {
-
     public static void main(String[] args) {
         ApiClient client = new ApiClient(
-            "Client Id from https://dashboard.aspose.cloud/applications",
-            "Client Secret from https://dashboard.aspose.cloud/applications"
+                "Client Id from https://dashboard.aspose.cloud/applications",
+                "Client Secret from https://dashboard.aspose.cloud/applications"
         );
-        
         BarcodeApi api = new BarcodeApi(client);
-        String type = "type_example"; // String | Type of barcode to generate.
-        String text = "text_example"; // String | Text to encode.
+
         try {
-            File result = api.getBarcodeGenerate(type, text);
-            System.out.println(result);
+            System.out.println("Generating barcode...");
+            File barcodeImage = generateBarcode(api);
+            System.out.println("Barcode image generated");
+
+            System.out.println("Recognizing barcode on image...");
+            BarcodeResponseList recognized = recognizeBarcode(api, barcodeImage);
+            System.out.println("Barcode on image recognized");
+            System.out.println(recognized.toString());
         } catch (ApiException e) {
-            System.err.println("Exception when calling BarcodeApi#getBarcodeGenerate");
+            System.err.println("Error");
             e.printStackTrace();
         }
+    }
+
+    private static File generateBarcode(BarcodeApi api) throws ApiException {
+        String type = EncodeBarcodeType.PDF417.toString();
+        String text = "Aspose.BarCode for Cloud Sample";
+        GetBarcodeGenerateRequest request = new GetBarcodeGenerateRequest(type, text);
+
+        return api.getBarcodeGenerate(request);
+    }
+
+    private static BarcodeResponseList recognizeBarcode(BarcodeApi api, File barcodeImage) throws ApiException {
+        PostBarcodeRecognizeFromUrlOrContentRequest recognizeRequest = new PostBarcodeRecognizeFromUrlOrContentRequest();
+        recognizeRequest.image = barcodeImage;
+        recognizeRequest.preset = PresetType.HIGHPERFORMANCE.toString();
+
+        return api.postBarcodeRecognizeFromUrlOrContent(recognizeRequest);
     }
 }
 ```
