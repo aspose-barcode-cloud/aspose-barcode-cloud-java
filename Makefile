@@ -24,3 +24,7 @@ test:
 .PHONY: publish
 publish: test
 	mvn deploy
+
+.PHONY: update
+update:
+	echo "Not implemented"
