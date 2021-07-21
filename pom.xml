@@ -5,8 +5,8 @@
     <artifactId>aspose-barcode-cloud</artifactId>
     <packaging>jar</packaging>
     <name>aspose-barcode-cloud</name>
-    <version>21.6.0</version>
-    <url>https://www.aspose.cloud/</url>
+    <version>21.7.0</version>
+    <url>https://www.aspose.cloud</url>
     <description>Aspose.BarCode Cloud SDK for Java</description>
     <scm>
         <connection>scm:git:git@github.com:aspose-barcode-cloud/aspose-barcode-cloud-java.git</connection>
@@ -29,7 +29,7 @@
             <name>Denis Averin</name>
             <email>denis.averin@aspose.com</email>
             <organization>Aspose</organization>
-            <organizationUrl>https://www.aspose.cloud/</organizationUrl>
+            <organizationUrl>https://www.aspose.cloud</organizationUrl>
         </developer>
     </developers>
 
