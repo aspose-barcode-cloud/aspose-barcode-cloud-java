@@ -118,6 +118,7 @@ public class ApiClient {
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
+        setReadTimeout(60_000);
     }
 
     /**
