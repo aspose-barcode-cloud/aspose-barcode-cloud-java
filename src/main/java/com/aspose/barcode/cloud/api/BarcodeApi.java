@@ -713,7 +713,9 @@ public class BarcodeApi {
         final String accept = apiClient.selectHeaderAccept(accepts);
         if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] contentTypes = {"multipart/form-data", "application/octet-stream"};
+        final String[] contentTypes = {
+            "multipart/form-data", "application/x-www-form-urlencoded", "application/octet-stream"
+        };
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);
 
@@ -1111,7 +1113,10 @@ public class BarcodeApi {
         if (accept != null) headerParams.put("Accept", accept);
 
         final String[] contentTypes = {
-            "application/json", "application/xml", "multipart/form-data"
+            "multipart/form-data",
+            "application/x-www-form-urlencoded",
+            "application/json",
+            "application/xml"
         };
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);
