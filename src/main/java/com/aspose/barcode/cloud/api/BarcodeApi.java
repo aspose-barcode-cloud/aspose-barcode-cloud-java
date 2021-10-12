@@ -410,6 +410,8 @@ public class BarcodeApi {
         if (request.checkMore1DVariants != null)
             queryParams.addAll(
                     apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
+        if (request.fastScanOnly != null)
+            queryParams.addAll(apiClient.parameterToPair("FastScanOnly", request.fastScanOnly));
         if (request.regionLikelihoodThresholdPercent != null)
             queryParams.addAll(
                     apiClient.parameterToPair(
@@ -431,6 +433,11 @@ public class BarcodeApi {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AustralianPostEncodingTable", request.australianPostEncodingTable));
+        if (request.ignoreEndingFillingPatternsForCTable != null)
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "IgnoreEndingFillingPatternsForCTable",
+                            request.ignoreEndingFillingPatternsForCTable));
         if (request.rectangleRegion != null)
             queryParams.addAll(
                     apiClient.parameterToPair("RectangleRegion", request.rectangleRegion));
@@ -678,6 +685,8 @@ public class BarcodeApi {
         if (request.checkMore1DVariants != null)
             queryParams.addAll(
                     apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
+        if (request.fastScanOnly != null)
+            queryParams.addAll(apiClient.parameterToPair("FastScanOnly", request.fastScanOnly));
         if (request.regionLikelihoodThresholdPercent != null)
             queryParams.addAll(
                     apiClient.parameterToPair(
@@ -699,6 +708,11 @@ public class BarcodeApi {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AustralianPostEncodingTable", request.australianPostEncodingTable));
+        if (request.ignoreEndingFillingPatternsForCTable != null)
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "IgnoreEndingFillingPatternsForCTable",
+                            request.ignoreEndingFillingPatternsForCTable));
         if (request.rectangleRegion != null)
             queryParams.addAll(
                     apiClient.parameterToPair("RectangleRegion", request.rectangleRegion));
@@ -713,9 +727,7 @@ public class BarcodeApi {
         final String accept = apiClient.selectHeaderAccept(accepts);
         if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] contentTypes = {
-            "multipart/form-data", "application/x-www-form-urlencoded", "application/octet-stream"
-        };
+        final String[] contentTypes = {"multipart/form-data", "application/octet-stream"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);
 
@@ -1113,10 +1125,7 @@ public class BarcodeApi {
         if (accept != null) headerParams.put("Accept", accept);
 
         final String[] contentTypes = {
-            "multipart/form-data",
-            "application/x-www-form-urlencoded",
-            "application/json",
-            "application/xml"
+            "application/json", "application/xml", "multipart/form-data"
         };
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);

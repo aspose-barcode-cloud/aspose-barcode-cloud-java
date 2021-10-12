@@ -145,6 +145,11 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
      */
     public Boolean checkMore1DVariants;
     /**
+     * Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result
+     * without using any time-consuming algorithms. Default value: False.
+     */
+    public Boolean fastScanOnly;
+    /**
      * Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom
      * 70% of possible regions are filtered out and not processed further. Region likelihood
      * threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use
@@ -180,6 +185,12 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
      * CustomerInformationInterpretingType.Other.
      */
     public String australianPostEncodingTable;
+    /**
+     * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer
+     * Information Field during decoding as CTable method. CTable encoding method does not have any
+     * gaps in encoding table and sequnce "333" of filling paterns is decoded as letter "z".
+     */
+    public Boolean ignoreEndingFillingPatternsForCTable;
     /** */
     public String rectangleRegion;
     /** The image file url. */

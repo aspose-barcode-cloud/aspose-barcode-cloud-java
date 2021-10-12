@@ -115,6 +115,9 @@ public class ReaderParams {
     @SerializedName(value = "checkMore1DVariants")
     private Boolean checkMore1DVariants = null;
 
+    @SerializedName(value = "fastScanOnly")
+    private Boolean fastScanOnly = null;
+
     @SerializedName(value = "regionLikelihoodThresholdPercent")
     private Double regionLikelihoodThresholdPercent = null;
 
@@ -132,6 +135,9 @@ public class ReaderParams {
 
     @SerializedName(value = "australianPostEncodingTable")
     private CustomerInformationInterpretingType australianPostEncodingTable = null;
+
+    @SerializedName(value = "ignoreEndingFillingPatternsForCTable")
+    private Boolean ignoreEndingFillingPatternsForCTable = null;
 
     /**
      * The type of barcode to read.
@@ -582,6 +588,25 @@ public class ReaderParams {
     }
 
     /**
+     * Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result
+     * without using any time-consuming algorithms. Default value: False.
+     *
+     * @return fastScanOnly
+     */
+    @ApiModelProperty(
+            value =
+                    "Allows engine for 1D barcodes to quickly recognize middle slice of an image"
+                        + " and return result without using any time-consuming algorithms. Default"
+                        + " value: False.")
+    public Boolean isFastScanOnly() {
+        return fastScanOnly;
+    }
+
+    public void setFastScanOnly(Boolean fastScanOnly) {
+        this.fastScanOnly = fastScanOnly;
+    }
+
+    /**
      * Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom
      * 70% of possible regions are filtered out and not processed further. Region likelihood
      * threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use
@@ -714,6 +739,29 @@ public class ReaderParams {
         this.australianPostEncodingTable = australianPostEncodingTable;
     }
 
+    /**
+     * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer
+     * Information Field during decoding as CTable method. CTable encoding method does not have any
+     * gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter
+     * \&quot;z\&quot;.
+     *
+     * @return ignoreEndingFillingPatternsForCTable
+     */
+    @ApiModelProperty(
+            value =
+                    "The flag which force AustraliaPost decoder to ignore last filling patterns in"
+                        + " Customer Information Field during decoding as CTable method.  CTable"
+                        + " encoding method does not have any gaps in encoding table and sequnce"
+                        + " \"333\" of filling paterns is decoded as letter \"z\".")
+    public Boolean isIgnoreEndingFillingPatternsForCTable() {
+        return ignoreEndingFillingPatternsForCTable;
+    }
+
+    public void setIgnoreEndingFillingPatternsForCTable(
+            Boolean ignoreEndingFillingPatternsForCTable) {
+        this.ignoreEndingFillingPatternsForCTable = ignoreEndingFillingPatternsForCTable;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -761,6 +809,7 @@ public class ReaderParams {
                 && Objects.equals(
                         this.allowWhiteSpotsRemoving, readerParams.allowWhiteSpotsRemoving)
                 && Objects.equals(this.checkMore1DVariants, readerParams.checkMore1DVariants)
+                && Objects.equals(this.fastScanOnly, readerParams.fastScanOnly)
                 && Objects.equals(
                         this.regionLikelihoodThresholdPercent,
                         readerParams.regionLikelihoodThresholdPercent)
@@ -769,7 +818,10 @@ public class ReaderParams {
                 && Objects.equals(this.skipDiagonalSearch, readerParams.skipDiagonalSearch)
                 && Objects.equals(this.readTinyBarcodes, readerParams.readTinyBarcodes)
                 && Objects.equals(
-                        this.australianPostEncodingTable, readerParams.australianPostEncodingTable);
+                        this.australianPostEncodingTable, readerParams.australianPostEncodingTable)
+                && Objects.equals(
+                        this.ignoreEndingFillingPatternsForCTable,
+                        readerParams.ignoreEndingFillingPatternsForCTable);
     }
 
     @Override
@@ -801,12 +853,14 @@ public class ReaderParams {
                 allowSaltAndPepperFiltering,
                 allowWhiteSpotsRemoving,
                 checkMore1DVariants,
+                fastScanOnly,
                 regionLikelihoodThresholdPercent,
                 scanWindowSizes,
                 similarity,
                 skipDiagonalSearch,
                 readTinyBarcodes,
-                australianPostEncodingTable);
+                australianPostEncodingTable,
+                ignoreEndingFillingPatternsForCTable);
     }
 
     @Override
@@ -872,6 +926,7 @@ public class ReaderParams {
         sb.append("    checkMore1DVariants: ")
                 .append(toIndentedString(checkMore1DVariants))
                 .append("\n");
+        sb.append("    fastScanOnly: ").append(toIndentedString(fastScanOnly)).append("\n");
         sb.append("    regionLikelihoodThresholdPercent: ")
                 .append(toIndentedString(regionLikelihoodThresholdPercent))
                 .append("\n");
@@ -883,6 +938,9 @@ public class ReaderParams {
         sb.append("    readTinyBarcodes: ").append(toIndentedString(readTinyBarcodes)).append("\n");
         sb.append("    australianPostEncodingTable: ")
                 .append(toIndentedString(australianPostEncodingTable))
+                .append("\n");
+        sb.append("    ignoreEndingFillingPatternsForCTable: ")
+                .append(toIndentedString(ignoreEndingFillingPatternsForCTable))
                 .append("\n");
         sb.append("}");
         return sb.toString();
