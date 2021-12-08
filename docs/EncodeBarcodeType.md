@@ -136,5 +136,7 @@
 
 * `GS1CODABLOCKF` (value: `"GS1CodablockF"`)
 
+* `MAILMARK` (value: `"Mailmark"`)
+
 
 
