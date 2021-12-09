@@ -165,7 +165,9 @@ public enum EncodeBarcodeType {
 
     CODABLOCKF("CodablockF"),
 
-    GS1CODABLOCKF("GS1CodablockF");
+    GS1CODABLOCKF("GS1CodablockF"),
+
+    MAILMARK("Mailmark");
 
     private final String value;
 

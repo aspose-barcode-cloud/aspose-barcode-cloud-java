@@ -138,5 +138,7 @@
 
 * `CODABLOCKF` (value: `"CodablockF"`)
 
+* `MAILMARK` (value: `"Mailmark"`)
+
 
 

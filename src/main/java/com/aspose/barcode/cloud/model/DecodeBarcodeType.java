@@ -167,7 +167,9 @@ public enum DecodeBarcodeType {
 
     DUTCHKIX("DutchKIX"),
 
-    CODABLOCKF("CodablockF");
+    CODABLOCKF("CodablockF"),
+
+    MAILMARK("Mailmark");
 
     private final String value;
 
