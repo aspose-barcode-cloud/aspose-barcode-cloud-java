@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ReaderParams.java">
-//   Copyright (c) 2021 Aspose.BarCode for Cloud
+//   Copyright (c) 2022 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -750,7 +750,7 @@ public class ReaderParams {
     @ApiModelProperty(
             value =
                     "The flag which force AustraliaPost decoder to ignore last filling patterns in"
-                        + " Customer Information Field during decoding as CTable method.  CTable"
+                        + " Customer Information Field during decoding as CTable method. CTable"
                         + " encoding method does not have any gaps in encoding table and sequnce"
                         + " \"333\" of filling paterns is decoded as letter \"z\".")
     public Boolean isIgnoreEndingFillingPatternsForCTable() {
