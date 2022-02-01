@@ -37,7 +37,7 @@
         <repository>
             <id>central</id>
             <name>repository.aspose.cloud-releases</name>
-            <url>http://repository.aspose.cloud/repo</url>
+            <url>https://repository.aspose.cloud/repo</url>
         </repository>
     </distributionManagement>
 
