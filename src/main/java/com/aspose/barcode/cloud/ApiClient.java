@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose">
-//   Copyright (c) 2021 Aspose.BarCode for Cloud
+//   Copyright (c) 2022 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -62,7 +62,7 @@ import javax.net.ssl.*;
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "21.12.0";
+    public final String clientVersion = "22.1.0";
     private String baseUrl = "https://api.aspose.cloud";
     private String clientId;
     private String clientSecret;
@@ -114,7 +114,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/21.12.0/java");
+        setUserAgent("Swagger-Codegen/22.1.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);

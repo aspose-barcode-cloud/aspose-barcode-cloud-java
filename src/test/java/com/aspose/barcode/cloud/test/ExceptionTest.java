@@ -30,7 +30,7 @@ public class ExceptionTest extends TestBase {
             assertEquals("Bad Request", e.getMessage());
             assertEquals("com.aspose.barcode.cloud.ApiException: Bad Request", e.toString());
             assertEquals(
-                    "errorInvalidInputData: The barcode text is not provided.\r\n"
+                    "errorInvalidInputData: Barcode.Text is not provided.\r\n"
                             + "Operation Failed. The input data is not valid.",
                     e.getDetails());
         }

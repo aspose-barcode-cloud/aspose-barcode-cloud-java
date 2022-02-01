@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BarcodeApi.java">
-//   Copyright (c) 2021 Aspose.BarCode for Cloud
+//   Copyright (c) 2022 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -727,7 +727,9 @@ public class BarcodeApi {
         final String accept = apiClient.selectHeaderAccept(accepts);
         if (accept != null) headerParams.put("Accept", accept);
 
-        final String[] contentTypes = {"multipart/form-data", "application/octet-stream"};
+        final String[] contentTypes = {
+            "multipart/form-data", "application/x-www-form-urlencoded", "application/octet-stream"
+        };
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);
 
@@ -1125,7 +1127,10 @@ public class BarcodeApi {
         if (accept != null) headerParams.put("Accept", accept);
 
         final String[] contentTypes = {
-            "application/json", "application/xml", "multipart/form-data"
+            "multipart/form-data",
+            "application/x-www-form-urlencoded",
+            "application/json",
+            "application/xml"
         };
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);
