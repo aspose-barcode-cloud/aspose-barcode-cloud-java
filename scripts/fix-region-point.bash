@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Put @SerializedName value to lower case for 'X' and 'Y'
+# This issue can't be solved on swagger side
 #
 set -euo pipefail
 
