@@ -17,10 +17,11 @@ format_tests:
 
 .PHONY: test
 test:
-	mvn -B package --file pom.xml
+	mvn test
 
-.PHONY: publish
-publish: test
+.PHONY: publish-docker
+publish-docker:
+	sed -i -e 's_<url>https://repository.aspose.cloud/repo</url>_<url>http://repository.aspose.cloud/repo</url>_' pom.xml
 	mvn deploy
 
 .PHONY: update
