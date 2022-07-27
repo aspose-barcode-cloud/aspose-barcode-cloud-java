@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Code16K parameters. */
@@ -66,8 +64,7 @@ public class Code16KParams {
      */
     @ApiModelProperty(
             value =
-                    "Size of the left quiet zone in xDimension. Default value: 10, meaning if"
-                            + " xDimension = 2px than left quiet zone will be 20px.")
+                    "Size of the left quiet zone in xDimension. Default value: 10, meaning if xDimension = 2px than left quiet zone will be 20px.")
     public Integer getQuietZoneLeftCoef() {
         return quietZoneLeftCoef;
     }
@@ -84,8 +81,7 @@ public class Code16KParams {
      */
     @ApiModelProperty(
             value =
-                    "Size of the right quiet zone in xDimension. Default value: 1, meaning if"
-                            + " xDimension = 2px than right quiet zone will be 2px.")
+                    "Size of the right quiet zone in xDimension. Default value: 1, meaning if xDimension = 2px than right quiet zone will be 2px.")
     public Integer getQuietZoneRightCoef() {
         return quietZoneRightCoef;
     }

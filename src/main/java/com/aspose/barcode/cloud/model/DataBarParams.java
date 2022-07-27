@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Databar parameters. */
@@ -113,8 +111,7 @@ public class DataBarParams {
      */
     @ApiModelProperty(
             value =
-                    "If this flag is set, it allows only GS1 encoding standard for Databar barcode"
-                            + " types")
+                    "If this flag is set, it allows only GS1 encoding standard for Databar barcode types")
     public Boolean isIsAllowOnlyGS1Encoding() {
         return isAllowOnlyGS1Encoding;
     }

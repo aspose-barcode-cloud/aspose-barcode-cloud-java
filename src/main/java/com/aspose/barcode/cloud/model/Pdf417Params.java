@@ -26,13 +26,10 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
-import org.threeten.bp.OffsetDateTime;
-
 import java.util.Objects;
+import org.threeten.bp.OffsetDateTime;
 
 /** PDF417 parameters. */
 @ApiModel(description = "PDF417 parameters.")
@@ -147,8 +144,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Pdf417 symbology type of BarCode's compaction mode. Default value:"
-                            + " Pdf417CompactionMode.Auto.")
+                    "Pdf417 symbology type of BarCode's compaction mode. Default value: Pdf417CompactionMode.Auto.")
     public Pdf417CompactionMode getCompactionMode() {
         return compactionMode;
     }
@@ -166,9 +162,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Pdf417 symbology type of BarCode's error correction level ranging from level0"
-                            + " to level8, level0 means no error correction info, level8 means best"
-                            + " error correction which means a larger picture.")
+                    "Pdf417 symbology type of BarCode's error correction level ranging from level0 to level8, level0 means no error correction info, level8 means best error correction which means a larger picture.")
     public Pdf417ErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -198,8 +192,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Macro Pdf417 barcode's segment ID, which starts from 0, to MacroSegmentsCount"
-                            + " - 1.")
+                    "Macro Pdf417 barcode's segment ID, which starts from 0, to MacroSegmentsCount - 1.")
     public Integer getMacroSegmentID() {
         return macroSegmentID;
     }
@@ -260,10 +253,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode"
-                        + " reader details about the used references for encoding the data in the"
-                        + " symbol. Current implementation consists all well known charset"
-                        + " encodings.")
+                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings.")
     public ECIEncodings getPdf417ECIEncoding() {
         return pdf417ECIEncoding;
     }
@@ -280,8 +270,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Used to instruct the reader to interpret the data contained within the symbol"
-                            + " as programming for reader initialization")
+                    "Used to instruct the reader to interpret the data contained within the symbol as programming for reader initialization")
     public Boolean isIsReaderInitialization() {
         return isReaderInitialization;
     }
@@ -326,8 +315,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Macro Pdf417 file size. The file size field contains the size in bytes of the"
-                            + " entire source file")
+                    "Macro Pdf417 file size. The file size field contains the size in bytes of the entire source file")
     public Integer getMacroFileSize() {
         return macroFileSize;
     }
@@ -344,8 +332,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Macro Pdf417 barcode checksum. The checksum field contains the value of the"
-                            + " 16-bit (2 bytes) CRC checksum using the CCITT-16 polynomial")
+                    "Macro Pdf417 barcode checksum. The checksum field contains the value of the 16-bit (2 bytes) CRC checksum using the CCITT-16 polynomial")
     public Integer getMacroChecksum() {
         return macroChecksum;
     }
@@ -389,8 +376,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text"
-                            + " fields.")
+                    "Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields.")
     public ECIEncodings getMacroECIEncoding() {
         return macroECIEncoding;
     }
@@ -407,8 +393,7 @@ public class Pdf417Params {
      */
     @ApiModelProperty(
             value =
-                    "Function codeword for Code 128 emulation. Applied for MicroPDF417 only."
-                            + " Ignored for PDF417 and MacroPDF417 barcodes.")
+                    "Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.")
     public Code128Emulation getCode128Emulation() {
         return code128Emulation;
     }

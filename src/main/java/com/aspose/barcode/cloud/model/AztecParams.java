@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Aztec parameters. */
@@ -68,8 +66,7 @@ public class AztecParams {
      */
     @ApiModelProperty(
             value =
-                    "Level of error correction of Aztec types of barcode. Value should between 10"
-                            + " to 95.")
+                    "Level of error correction of Aztec types of barcode. Value should between 10 to 95.")
     public Integer getErrorLevel() {
         return errorLevel;
     }

@@ -26,12 +26,9 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModelProperty;
-
-import org.threeten.bp.OffsetDateTime;
-
 import java.util.Objects;
+import org.threeten.bp.OffsetDateTime;
 
 /** ApiError */
 public class ApiError {

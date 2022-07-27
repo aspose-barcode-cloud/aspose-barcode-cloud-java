@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** ITF parameters. */
@@ -81,8 +79,7 @@ public class ITFParams {
      */
     @ApiModelProperty(
             value =
-                    "Size of the quiet zones in xDimension. Default value: 10, meaning if"
-                            + " xDimension = 2px than quiet zones will be 20px.")
+                    "Size of the quiet zones in xDimension. Default value: 10, meaning if xDimension = 2px than quiet zones will be 20px.")
     public Integer getQuietZoneCoef() {
         return quietZoneCoef;
     }

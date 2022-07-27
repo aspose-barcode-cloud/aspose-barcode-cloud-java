@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** AustralianPost barcode parameters. */
@@ -49,8 +47,7 @@ public class AustralianPostParams {
      */
     @ApiModelProperty(
             value =
-                    "Interpreting type for the Customer Information of AustralianPost, default to"
-                            + " CustomerInformationInterpretingType.Other\"")
+                    "Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\"")
     public CustomerInformationInterpretingType getEncodingTable() {
         return encodingTable;
     }

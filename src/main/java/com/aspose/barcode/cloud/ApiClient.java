@@ -30,13 +30,6 @@ import com.squareup.okhttp.*;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
-
-import okio.BufferedSink;
-import okio.Okio;
-
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -56,13 +49,16 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.net.ssl.*;
+import okio.BufferedSink;
+import okio.Okio;
+import org.threeten.bp.LocalDate;
+import org.threeten.bp.OffsetDateTime;
 
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "22.3.0";
+    public final String clientVersion = "22.7.0";
     private String baseUrl = "https://api.aspose.cloud";
     private String clientId;
     private String clientSecret;
@@ -114,7 +110,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/22.3.0/java");
+        setUserAgent("Swagger-Codegen/22.7.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);

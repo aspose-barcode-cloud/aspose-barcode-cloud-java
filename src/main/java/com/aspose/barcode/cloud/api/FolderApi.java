@@ -36,7 +36,6 @@ import com.aspose.barcode.cloud.ProgressResponseBody;
 import com.aspose.barcode.cloud.model.FilesList;
 import com.aspose.barcode.cloud.requests.*;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -149,15 +148,13 @@ public class FolderApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling"
-                            + " copyFolder(Async)");
+                    "Missing the required parameter 'request.srcPath' when calling copyFolder(Async)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling"
-                            + " copyFolder(Async)");
+                    "Missing the required parameter 'request.destPath' when calling copyFolder(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -308,8 +305,7 @@ public class FolderApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling"
-                            + " createFolder(Async)");
+                    "Missing the required parameter 'request.path' when calling createFolder(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -463,8 +459,7 @@ public class FolderApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling"
-                            + " deleteFolder(Async)");
+                    "Missing the required parameter 'request.path' when calling deleteFolder(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -616,8 +611,7 @@ public class FolderApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling"
-                            + " getFilesList(Async)");
+                    "Missing the required parameter 'request.path' when calling getFilesList(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -780,15 +774,13 @@ public class FolderApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling"
-                            + " moveFolder(Async)");
+                    "Missing the required parameter 'request.srcPath' when calling moveFolder(Async)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling"
-                            + " moveFolder(Async)");
+                    "Missing the required parameter 'request.destPath' when calling moveFolder(Async)");
         }
 
         com.squareup.okhttp.Call call =
