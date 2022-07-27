@@ -26,12 +26,9 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModelProperty;
-
-import org.threeten.bp.OffsetDateTime;
-
 import java.util.Objects;
+import org.threeten.bp.OffsetDateTime;
 
 /** FileVersion */
 public class FileVersion {
@@ -148,8 +145,7 @@ public class FileVersion {
     @ApiModelProperty(
             required = true,
             value =
-                    "Specifies whether the file is (true) or is not (false) the latest version of"
-                            + " an file.")
+                    "Specifies whether the file is (true) or is not (false) the latest version of an file.")
     public Boolean isIsLatest() {
         return isLatest;
     }

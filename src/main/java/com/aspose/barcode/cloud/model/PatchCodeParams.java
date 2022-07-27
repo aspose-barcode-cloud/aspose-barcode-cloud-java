@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** PatchCode parameters. */
@@ -48,8 +46,7 @@ public class PatchCodeParams {
      */
     @ApiModelProperty(
             value =
-                    "Specifies codetext for an extra QR barcode, when PatchCode is generated in"
-                            + " page mode.")
+                    "Specifies codetext for an extra QR barcode, when PatchCode is generated in page mode.")
     public String getExtraBarcodeText() {
         return extraBarcodeText;
     }
@@ -66,9 +63,7 @@ public class PatchCodeParams {
      */
     @ApiModelProperty(
             value =
-                    "PatchCode format. Choose PatchOnly to generate single PatchCode. Use page"
-                            + " format to generate Patch page with PatchCodes as borders. Default"
-                            + " value: PatchFormat.PatchOnly")
+                    "PatchCode format. Choose PatchOnly to generate single PatchCode. Use page format to generate Patch page with PatchCodes as borders. Default value: PatchFormat.PatchOnly")
     public PatchFormat getPatchFormat() {
         return patchFormat;
     }

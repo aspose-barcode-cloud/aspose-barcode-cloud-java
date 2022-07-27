@@ -39,7 +39,6 @@ import com.aspose.barcode.cloud.model.ObjectExist;
 import com.aspose.barcode.cloud.model.StorageExist;
 import com.aspose.barcode.cloud.requests.*;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -296,8 +295,7 @@ public class StorageApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling"
-                            + " getFileVersions(Async)");
+                    "Missing the required parameter 'request.path' when calling getFileVersions(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -457,8 +455,7 @@ public class StorageApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling"
-                            + " objectExists(Async)");
+                    "Missing the required parameter 'request.path' when calling objectExists(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -614,8 +611,7 @@ public class StorageApi {
         // verify the required parameter 'request.storageName' is set
         if (request.storageName == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.storageName' when calling"
-                            + " storageExists(Async)");
+                    "Missing the required parameter 'request.storageName' when calling storageExists(Async)");
         }
 
         com.squareup.okhttp.Call call =

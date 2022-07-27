@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -164,12 +162,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Enable checksum validation during recognition for 1D barcodes. Default is"
-                        + " treated as Yes for symbologies which must contain checksum, as No"
-                        + " where checksum only possible. Checksum never used: Codabar Checksum is"
-                        + " possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5,"
-                        + " Matrix2of5, ItalianPost25, DeutschePostIdentcode,"
-                        + " DeutschePostLeitcode, VIN Checksum always used: Rest symbologies")
+                    "Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for symbologies which must contain checksum, as No where checksum only possible. Checksum never used: Codabar Checksum is possible: Code39 Standard/Extended, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, DeutschePostIdentcode, DeutschePostLeitcode, VIN Checksum always used: Rest symbologies")
     public ChecksumValidation getChecksumValidation() {
         return checksumValidation;
     }
@@ -201,10 +194,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Preset allows to configure recognition quality and speed manually. You can"
-                        + " quickly set up Preset by embedded presets: HighPerformance,"
-                        + " NormalQuality, HighQuality, MaxBarCodes or you can manually configure"
-                        + " separate options. Default value of Preset is NormalQuality.")
+                    "Preset allows to configure recognition quality and speed manually. You can quickly set up Preset by embedded presets: HighPerformance, NormalQuality, HighQuality, MaxBarCodes or you can manually configure separate options. Default value of Preset is NormalQuality.")
     public PresetType getPreset() {
         return preset;
     }
@@ -305,8 +295,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Window size for median smoothing. Typical values are 3 or 4. Default value is"
-                            + " 3. AllowMedianSmoothing must be set.")
+                    "Window size for median smoothing. Typical values are 3 or 4. Default value is 3. AllowMedianSmoothing must be set.")
     public Integer getMedianSmoothingWindowSize() {
         return medianSmoothingWindowSize;
     }
@@ -323,8 +312,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to enable median smoothing as additional scan. Mode helps to"
-                            + " recognize noised barcodes.")
+                    "Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised barcodes.")
     public Boolean isAllowMedianSmoothing() {
         return allowMedianSmoothing;
     }
@@ -341,8 +329,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize color barcodes on color background as additional"
-                            + " scan. Extremely slow mode.")
+                    "Allows engine to recognize color barcodes on color background as additional scan. Extremely slow mode.")
     public Boolean isAllowComplexBackground() {
         return allowComplexBackground;
     }
@@ -359,9 +346,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine for Datamatrix to recognize dashed industrial Datamatrix"
-                        + " barcodes. Slow mode which helps only for dashed barcodes which consist"
-                        + " from spots.")
+                    "Allows engine for Datamatrix to recognize dashed industrial Datamatrix barcodes. Slow mode which helps only for dashed barcodes which consist from spots.")
     public Boolean isAllowDatamatrixIndustrialBarcodes() {
         return allowDatamatrixIndustrialBarcodes;
     }
@@ -379,10 +364,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize decreased image as additional scan. Size for"
-                        + " decreasing is selected by internal engine algorithms. Mode helps to"
-                        + " recognize barcodes which are noised and blurred but captured with high"
-                        + " resolution.")
+                    "Allows engine to recognize decreased image as additional scan. Size for decreasing is selected by internal engine algorithms. Mode helps to recognize barcodes which are noised and blurred but captured with high resolution.")
     public Boolean isAllowDecreasedImage() {
         return allowDecreasedImage;
     }
@@ -399,8 +381,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to use gap between scans to increase recognition speed. Mode"
-                            + " can make recognition problems with low height barcodes.")
+                    "Allows engine to use gap between scans to increase recognition speed. Mode can make recognition problems with low height barcodes.")
     public Boolean isAllowDetectScanGap() {
         return allowDetectScanGap;
     }
@@ -417,9 +398,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize barcodes which has incorrect checksum or incorrect"
-                        + " values. Mode can be used to recognize damaged barcodes with incorrect"
-                        + " text.")
+                    "Allows engine to recognize barcodes which has incorrect checksum or incorrect values. Mode can be used to recognize damaged barcodes with incorrect text.")
     public Boolean isAllowIncorrectBarcodes() {
         return allowIncorrectBarcodes;
     }
@@ -436,8 +415,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize inverse color image as additional scan. Mode can"
-                            + " be used when barcode is white on black background.")
+                    "Allows engine to recognize inverse color image as additional scan. Mode can be used when barcode is white on black background.")
     public Boolean isAllowInvertImage() {
         return allowInvertImage;
     }
@@ -454,8 +432,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine for Postal barcodes to recognize slightly noised images. Mode"
-                            + " helps to recognize slightly damaged Postal barcodes.")
+                    "Allows engine for Postal barcodes to recognize slightly noised images. Mode helps to recognize slightly damaged Postal barcodes.")
     public Boolean isAllowMicroWhiteSpotsRemoving() {
         return allowMicroWhiteSpotsRemoving;
     }
@@ -472,9 +449,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine for 1D barcodes to quickly recognize high quality barcodes"
-                            + " which fill almost whole image. Mode helps to quickly recognize"
-                            + " generated barcodes from Internet.")
+                    "Allows engine for 1D barcodes to quickly recognize high quality barcodes which fill almost whole image. Mode helps to quickly recognize generated barcodes from Internet.")
     public Boolean isAllowOneDFastBarcodesDetector() {
         return allowOneDFastBarcodesDetector;
     }
@@ -490,8 +465,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine for 1D barcodes to recognize barcodes with single wiped/glued"
-                            + " bars in pattern.")
+                    "Allows engine for 1D barcodes to recognize barcodes with single wiped/glued bars in pattern.")
     public Boolean isAllowOneDWipedBarsRestoration() {
         return allowOneDWipedBarsRestoration;
     }
@@ -522,8 +496,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize regular image without any restorations as main"
-                            + " scan. Mode to recognize image as is.")
+                    "Allows engine to recognize regular image without any restorations as main scan. Mode to recognize image as is.")
     public Boolean isAllowRegularImage() {
         return allowRegularImage;
     }
@@ -540,8 +513,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize barcodes with salt and pepper noise type. Mode can"
-                            + " remove small noise with white and black dots.")
+                    "Allows engine to recognize barcodes with salt and pepper noise type. Mode can remove small noise with white and black dots.")
     public Boolean isAllowSaltAndPepperFiltering() {
         return allowSaltAndPepperFiltering;
     }
@@ -558,9 +530,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize image without small white spots as additional"
-                        + " scan. Mode helps to recognize noised image as well as median smoothing"
-                        + " filtering.")
+                    "Allows engine to recognize image without small white spots as additional scan. Mode helps to recognize noised image as well as median smoothing filtering.")
     public Boolean isAllowWhiteSpotsRemoving() {
         return allowWhiteSpotsRemoving;
     }
@@ -577,8 +547,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize 1D barcodes with checksum by checking more"
-                            + " recognition variants. Default value: False.")
+                    "Allows engine to recognize 1D barcodes with checksum by checking more recognition variants. Default value: False.")
     public Boolean isCheckMore1DVariants() {
         return checkMore1DVariants;
     }
@@ -595,9 +564,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine for 1D barcodes to quickly recognize middle slice of an image"
-                        + " and return result without using any time-consuming algorithms. Default"
-                        + " value: False.")
+                    "Allows engine for 1D barcodes to quickly recognize middle slice of an image and return result without using any time-consuming algorithms. Default value: False.")
     public Boolean isFastScanOnly() {
         return fastScanOnly;
     }
@@ -617,12 +584,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Sets threshold for detected regions that may contain barcodes. Value 0.7"
-                        + " means that bottom 70% of possible regions are filtered out and not"
-                        + " processed further. Region likelihood threshold must be between [0.05,"
-                        + " 0.9] Use high values for clear images with few barcodes. Use low"
-                        + " values for images with many barcodes or for noisy images. Low value"
-                        + " may lead to a bigger recognition time.")
+                    "Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom 70% of possible regions are filtered out and not processed further. Region likelihood threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use low values for images with many barcodes or for noisy images. Low value may lead to a bigger recognition time.")
     public Double getRegionLikelihoodThresholdPercent() {
         return regionLikelihoodThresholdPercent;
     }
@@ -648,10 +610,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning"
-                        + " with small window size takes more time and provides more accuracy but"
-                        + " may fail in detecting very big barcodes. Combining of several window"
-                        + " sizes can improve detection quality.")
+                    "Scan window sizes in pixels. Allowed sizes are 10, 15, 20, 25, 30. Scanning with small window size takes more time and provides more accuracy but may fail in detecting very big barcodes. Combining of several window sizes can improve detection quality.")
     public List<Integer> getScanWindowSizes() {
         return scanWindowSizes;
     }
@@ -669,10 +628,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Similarity coefficient depends on how homogeneous barcodes are. Use high"
-                        + " value for for clear barcodes. Use low values to detect barcodes that"
-                        + " ara partly damaged or not lighten evenly. Similarity coefficient must"
-                        + " be between [0.5, 0.9]")
+                    "Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly. Similarity coefficient must be between [0.5, 0.9]")
     public Double getSimilarity() {
         return similarity;
     }
@@ -690,10 +646,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows detector to skip search for diagonal barcodes. Setting it to false"
-                        + " will increase detection time but allow to find diagonal barcodes that"
-                        + " can be missed otherwise. Enabling of diagonal search leads to a bigger"
-                        + " detection time.")
+                    "Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time.")
     public Boolean isSkipDiagonalSearch() {
         return skipDiagonalSearch;
     }
@@ -710,8 +663,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Allows engine to recognize tiny barcodes on large images. Ignored if"
-                            + " AllowIncorrectBarcodes is set to True. Default value: False.")
+                    "Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False.")
     public Boolean isReadTinyBarcodes() {
         return readTinyBarcodes;
     }
@@ -728,8 +680,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "Interpreting Type for the Customer Information of AustralianPost"
-                            + " BarCode.Default is CustomerInformationInterpretingType.Other.")
+                    "Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other.")
     public CustomerInformationInterpretingType getAustralianPostEncodingTable() {
         return australianPostEncodingTable;
     }
@@ -749,10 +700,7 @@ public class ReaderParams {
      */
     @ApiModelProperty(
             value =
-                    "The flag which force AustraliaPost decoder to ignore last filling patterns in"
-                        + " Customer Information Field during decoding as CTable method. CTable"
-                        + " encoding method does not have any gaps in encoding table and sequnce"
-                        + " \"333\" of filling paterns is decoded as letter \"z\".")
+                    "The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".")
     public Boolean isIgnoreEndingFillingPatternsForCTable() {
         return ignoreEndingFillingPatternsForCTable;
     }

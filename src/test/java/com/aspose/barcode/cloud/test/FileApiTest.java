@@ -8,12 +8,10 @@ import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
 import com.aspose.barcode.cloud.requests.UploadFileRequest;
-
-import org.junit.Test;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.junit.Test;
 
 /** API tests for FileApi */
 public class FileApiTest extends TestBase {

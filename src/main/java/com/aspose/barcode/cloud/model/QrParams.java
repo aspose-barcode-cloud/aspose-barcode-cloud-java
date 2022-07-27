@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** QR parameters. */
@@ -94,8 +92,7 @@ public class QrParams {
      */
     @ApiModelProperty(
             value =
-                    "QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for"
-                            + " MicroQR.")
+                    "QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for MicroQR.")
     public QREncodeType getEncodeType() {
         return encodeType;
     }
@@ -113,10 +110,7 @@ public class QrParams {
      */
     @ApiModelProperty(
             value =
-                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode"
-                        + " reader details about the used references for encoding the data in the"
-                        + " symbol. Current implementation consists all well known charset"
-                        + " encodings.")
+                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings.")
     public ECIEncodings getEcIEncoding() {
         return ecIEncoding;
     }
@@ -132,8 +126,7 @@ public class QrParams {
      */
     @ApiModelProperty(
             value =
-                    "QR symbology type of BarCode's encoding mode. Default value:"
-                            + " QREncodeMode.Auto.")
+                    "QR symbology type of BarCode's encoding mode. Default value: QREncodeMode.Auto.")
     public QREncodeMode getEncodeMode() {
         return encodeMode;
     }
@@ -150,8 +143,7 @@ public class QrParams {
      */
     @ApiModelProperty(
             value =
-                    "Level of Reed-Solomon error correction for QR barcode. From low to high:"
-                            + " LevelL, LevelM, LevelQ, LevelH. see QRErrorLevel.")
+                    "Level of Reed-Solomon error correction for QR barcode. From low to high: LevelL, LevelM, LevelQ, LevelH. see QRErrorLevel.")
     public QRErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -168,8 +160,7 @@ public class QrParams {
      */
     @ApiModelProperty(
             value =
-                    "Version of QR Code. From Version1 to Version40 for QR code and from M1 to M4"
-                            + " for MicroQr. Default value is QRVersion.Auto.")
+                    "Version of QR Code. From Version1 to Version40 for QR code and from M1 to M4 for MicroQr. Default value is QRVersion.Auto.")
     public QRVersion getVersion() {
         return version;
     }

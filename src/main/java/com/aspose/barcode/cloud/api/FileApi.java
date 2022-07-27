@@ -36,7 +36,6 @@ import com.aspose.barcode.cloud.ProgressResponseBody;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
 import com.aspose.barcode.cloud.requests.*;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -152,15 +151,13 @@ public class FileApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling"
-                            + " copyFile(Async)");
+                    "Missing the required parameter 'request.srcPath' when calling copyFile(Async)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling"
-                            + " copyFile(Async)");
+                    "Missing the required parameter 'request.destPath' when calling copyFile(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -464,8 +461,7 @@ public class FileApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling"
-                            + " downloadFile(Async)");
+                    "Missing the required parameter 'request.path' when calling downloadFile(Async)");
         }
 
         com.squareup.okhttp.Call call =
@@ -629,15 +625,13 @@ public class FileApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling"
-                            + " moveFile(Async)");
+                    "Missing the required parameter 'request.srcPath' when calling moveFile(Async)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling"
-                            + " moveFile(Async)");
+                    "Missing the required parameter 'request.destPath' when calling moveFile(Async)");
         }
 
         com.squareup.okhttp.Call call =

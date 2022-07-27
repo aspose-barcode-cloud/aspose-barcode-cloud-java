@@ -26,10 +26,8 @@
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Codabar parameters. */
@@ -52,9 +50,7 @@ public class CodabarParams {
      */
     @ApiModelProperty(
             value =
-                    "Checksum algorithm for Codabar barcodes. Default value:"
-                            + " CodabarChecksumMode.Mod16. To enable checksum calculation set value"
-                            + " EnableChecksum.Yes to property EnableChecksum.")
+                    "Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum.")
     public CodabarChecksumMode getChecksumMode() {
         return checksumMode;
     }
