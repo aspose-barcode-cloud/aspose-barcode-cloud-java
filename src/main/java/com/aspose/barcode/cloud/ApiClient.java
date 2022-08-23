@@ -58,7 +58,7 @@ import org.threeten.bp.OffsetDateTime;
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "22.7.0";
+    public final String clientVersion = "22.8.0";
     private String baseUrl = "https://api.aspose.cloud";
     private String clientId;
     private String clientSecret;
@@ -110,7 +110,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/22.7.0/java");
+        setUserAgent("Swagger-Codegen/22.8.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
