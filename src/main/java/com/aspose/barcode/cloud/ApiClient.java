@@ -92,7 +92,6 @@ public class ApiClient {
      */
     protected ApiClient() {
         httpClient = new OkHttpClient();
-        httpClient.setSslSocketFactory(null);
 
         json = new JSON();
 
