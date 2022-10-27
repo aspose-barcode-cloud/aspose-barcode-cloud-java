@@ -94,6 +94,9 @@ public class Pdf417Params {
     @SerializedName(value = "code128Emulation")
     private Code128Emulation code128Emulation = null;
 
+    @SerializedName(value = "pdf417MacroTerminator")
+    private Pdf417MacroTerminator pdf417MacroTerminator = null;
+
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -402,6 +405,23 @@ public class Pdf417Params {
         this.code128Emulation = code128Emulation;
     }
 
+    /**
+     * Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the
+     * segment. Applied only for Macro PDF417.
+     *
+     * @return pdf417MacroTerminator
+     */
+    @ApiModelProperty(
+            value =
+                    "Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the segment. Applied only for Macro PDF417.")
+    public Pdf417MacroTerminator getPdf417MacroTerminator() {
+        return pdf417MacroTerminator;
+    }
+
+    public void setPdf417MacroTerminator(Pdf417MacroTerminator pdf417MacroTerminator) {
+        this.pdf417MacroTerminator = pdf417MacroTerminator;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -430,7 +450,8 @@ public class Pdf417Params {
                 && Objects.equals(this.macroFileName, pdf417Params.macroFileName)
                 && Objects.equals(this.macroAddressee, pdf417Params.macroAddressee)
                 && Objects.equals(this.macroECIEncoding, pdf417Params.macroECIEncoding)
-                && Objects.equals(this.code128Emulation, pdf417Params.code128Emulation);
+                && Objects.equals(this.code128Emulation, pdf417Params.code128Emulation)
+                && Objects.equals(this.pdf417MacroTerminator, pdf417Params.pdf417MacroTerminator);
     }
 
     @Override
@@ -455,7 +476,8 @@ public class Pdf417Params {
                 macroFileName,
                 macroAddressee,
                 macroECIEncoding,
-                code128Emulation);
+                code128Emulation,
+                pdf417MacroTerminator);
     }
 
     @Override
@@ -489,6 +511,9 @@ public class Pdf417Params {
         sb.append("    macroAddressee: ").append(toIndentedString(macroAddressee)).append("\n");
         sb.append("    macroECIEncoding: ").append(toIndentedString(macroECIEncoding)).append("\n");
         sb.append("    code128Emulation: ").append(toIndentedString(code128Emulation)).append("\n");
+        sb.append("    pdf417MacroTerminator: ")
+                .append(toIndentedString(pdf417MacroTerminator))
+                .append("\n");
         sb.append("}");
         return sb.toString();
     }
