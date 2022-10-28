@@ -35,8 +35,8 @@
 
     <distributionManagement>
         <repository>
-            <id>aspose-cloud-s3-repo-ci</id>
-            <url>s3://data.repository.aspose.cloud/java/repo/</url>
+            <id>aspose-cloud-s3-repo-ci-qa</id>
+            <url>s3://data-qa.repository.aspose.cloud/java/repo/</url>
         </repository>
     </distributionManagement>
 
