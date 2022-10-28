@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepository.aspose.cloud%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://repository.aspose.cloud/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 22.9.0
+- SDK version: 22.10.0
 
 ## Demo applications
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>22.9.0</version>
+  <version>22.10.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-22.9.0.jar`
+- `target/aspose-barcode-cloud-22.10.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -237,6 +237,7 @@ Class | Method | HTTP request | Description
 - [PatchFormat](docs/PatchFormat.md)
 - [Pdf417CompactionMode](docs/Pdf417CompactionMode.md)
 - [Pdf417ErrorLevel](docs/Pdf417ErrorLevel.md)
+- [Pdf417MacroTerminator](docs/Pdf417MacroTerminator.md)
 - [Pdf417Params](docs/Pdf417Params.md)
 - [PostalParams](docs/PostalParams.md)
 - [PresetType](docs/PresetType.md)
