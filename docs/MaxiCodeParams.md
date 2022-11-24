@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aspectRatio** | **Double** | Height/Width ratio of 2D BarCode module. |  [optional]
-**encodeMode** | **Integer** | MaxiCode encode mode. |  [optional]
+**mode** | [**MaxiCodeMode**](MaxiCodeMode.md) | Encoding mode for MaxiCode barcodes. |  [optional]
 
 
 

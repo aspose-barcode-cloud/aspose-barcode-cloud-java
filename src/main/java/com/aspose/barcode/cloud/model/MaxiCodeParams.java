@@ -36,8 +36,8 @@ public class MaxiCodeParams {
     @SerializedName(value = "aspectRatio")
     private Double aspectRatio = null;
 
-    @SerializedName(value = "encodeMode")
-    private Integer encodeMode = null;
+    @SerializedName(value = "mode")
+    private MaxiCodeMode mode = null;
 
     /**
      * Height/Width ratio of 2D BarCode module.
@@ -54,17 +54,17 @@ public class MaxiCodeParams {
     }
 
     /**
-     * MaxiCode encode mode.
+     * Encoding mode for MaxiCode barcodes.
      *
-     * @return encodeMode
+     * @return mode
      */
-    @ApiModelProperty(value = "MaxiCode encode mode.")
-    public Integer getEncodeMode() {
-        return encodeMode;
+    @ApiModelProperty(value = "Encoding mode for MaxiCode barcodes.")
+    public MaxiCodeMode getMode() {
+        return mode;
     }
 
-    public void setEncodeMode(Integer encodeMode) {
-        this.encodeMode = encodeMode;
+    public void setMode(MaxiCodeMode mode) {
+        this.mode = mode;
     }
 
     @Override
@@ -77,12 +77,12 @@ public class MaxiCodeParams {
         }
         MaxiCodeParams maxiCodeParams = (MaxiCodeParams) o;
         return Objects.equals(this.aspectRatio, maxiCodeParams.aspectRatio)
-                && Objects.equals(this.encodeMode, maxiCodeParams.encodeMode);
+                && Objects.equals(this.mode, maxiCodeParams.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aspectRatio, encodeMode);
+        return Objects.hash(aspectRatio, mode);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class MaxiCodeParams {
         sb.append("class MaxiCodeParams {\n");
 
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
-        sb.append("    encodeMode: ").append(toIndentedString(encodeMode)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
