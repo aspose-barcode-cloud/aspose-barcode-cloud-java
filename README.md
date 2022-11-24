@@ -2,10 +2,10 @@
 
 [![License](https://img.shields.io/github/license/aspose-barcode-cloud/aspose-barcode-cloud-java)](LICENSE)
 [![Java CI with Maven](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-java/actions/workflows/maven.yml/badge.svg)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-java/actions/workflows/maven.yml)
-[![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
+[![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepository.aspose.cloud%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://repository.aspose.cloud/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 22.10.0
+- SDK version: 22.11.0
 
 ## Demo applications
 
@@ -40,7 +40,7 @@ Add Aspose Cloud repository to your application pom.xml
 <repository>
     <id>aspose-cloud</id>
     <name>Aspose Cloud Repository</name>
-    <url>https://releases.aspose.cloud/java/repo/</url>
+    <url>https://repository.aspose.cloud/repo/</url>
 </repository>
 ```
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>22.10.0</version>
+  <version>22.11.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-22.10.0.jar`
+- `target/aspose-barcode-cloud-22.11.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -230,6 +230,7 @@ Class | Method | HTTP request | Description
 - [ITF14BorderType](docs/ITF14BorderType.md)
 - [ITFParams](docs/ITFParams.md)
 - [MacroCharacter](docs/MacroCharacter.md)
+- [MaxiCodeMode](docs/MaxiCodeMode.md)
 - [MaxiCodeParams](docs/MaxiCodeParams.md)
 - [ObjectExist](docs/ObjectExist.md)
 - [Padding](docs/Padding.md)
