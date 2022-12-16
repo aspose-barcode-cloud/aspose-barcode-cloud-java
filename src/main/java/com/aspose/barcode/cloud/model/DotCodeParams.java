@@ -54,11 +54,11 @@ public class DotCodeParams {
     }
 
     /**
-     * Mask of Dotcode barcode. Default value: -1.
+     * DEPRECATED: DotCodeMask is now calculated automatically
      *
      * @return dotCodeMask
      */
-    @ApiModelProperty(value = "Mask of Dotcode barcode. Default value: -1.")
+    @ApiModelProperty(value = "DEPRECATED: DotCodeMask is now calculated automatically")
     public Integer getDotCodeMask() {
         return dotCodeMask;
     }
