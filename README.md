@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 22.11.0
+- SDK version: 22.12.0
 
 ## Demo applications
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>22.11.0</version>
+  <version>22.12.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-22.11.0.jar`
+- `target/aspose-barcode-cloud-22.12.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -161,7 +161,7 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 All URIs are relative to *<https://api.aspose.cloud/v3.0>*
 
 Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
+----- | ------ | ------------ | -----------
 *BarcodeApi* | [**getBarcodeGenerate**](docs/BarcodeApi.md#getBarcodeGenerate) | **GET** /barcode/generate | Generate barcode.
 *BarcodeApi* | [**getBarcodeRecognize**](docs/BarcodeApi.md#getBarcodeRecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
 *BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](docs/BarcodeApi.md#postBarcodeRecognizeFromUrlOrContent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image or encoded with base64.
