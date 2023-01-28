@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 22.12.0
+- SDK version: 23.1.0
 
 ## Demo applications
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>22.12.0</version>
+  <version>23.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-22.12.0.jar`
+- `target/aspose-barcode-cloud-23.1.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -213,6 +213,7 @@ Class | Method | HTTP request | Description
 - [DataMatrixParams](docs/DataMatrixParams.md)
 - [DecodeBarcodeType](docs/DecodeBarcodeType.md)
 - [DiscUsage](docs/DiscUsage.md)
+- [DotCodeEncodeMode](docs/DotCodeEncodeMode.md)
 - [DotCodeParams](docs/DotCodeParams.md)
 - [ECIEncodings](docs/ECIEncodings.md)
 - [EnableChecksum](docs/EnableChecksum.md)
@@ -230,6 +231,7 @@ Class | Method | HTTP request | Description
 - [ITF14BorderType](docs/ITF14BorderType.md)
 - [ITFParams](docs/ITFParams.md)
 - [MacroCharacter](docs/MacroCharacter.md)
+- [MaxiCodeEncodeMode](docs/MaxiCodeEncodeMode.md)
 - [MaxiCodeMode](docs/MaxiCodeMode.md)
 - [MaxiCodeParams](docs/MaxiCodeParams.md)
 - [ObjectExist](docs/ObjectExist.md)

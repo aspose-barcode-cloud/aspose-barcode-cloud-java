@@ -138,5 +138,7 @@
 
 * `MAILMARK` (value: `"Mailmark"`)
 
+* `GS1DOTCODE` (value: `"GS1DotCode"`)
+
 
 

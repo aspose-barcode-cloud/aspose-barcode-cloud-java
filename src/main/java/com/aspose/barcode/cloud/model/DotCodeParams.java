@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DotCodeParams.java">
-//   Copyright (c) 2022 Aspose.BarCode for Cloud
+//   Copyright (c) 2023 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,8 +36,20 @@ public class DotCodeParams {
     @SerializedName(value = "aspectRatio")
     private Double aspectRatio = null;
 
-    @SerializedName(value = "dotCodeMask")
-    private Integer dotCodeMask = null;
+    @SerializedName(value = "columns")
+    private Integer columns = null;
+
+    @SerializedName(value = "encodeMode")
+    private DotCodeEncodeMode encodeMode = null;
+
+    @SerializedName(value = "ecIEncoding")
+    private ECIEncodings ecIEncoding = null;
+
+    @SerializedName(value = "isReaderInitialization")
+    private Boolean isReaderInitialization = null;
+
+    @SerializedName(value = "rows")
+    private Integer rows = null;
 
     /**
      * Height/Width ratio of 2D BarCode module.
@@ -54,17 +66,85 @@ public class DotCodeParams {
     }
 
     /**
-     * DEPRECATED: DotCodeMask is now calculated automatically
+     * Identifies columns count. Sum of the number of rows plus the number of columns of a DotCode
+     * symbol must be odd. Number of columns must be at least 5.
      *
-     * @return dotCodeMask
+     * @return columns
      */
-    @ApiModelProperty(value = "DEPRECATED: DotCodeMask is now calculated automatically")
-    public Integer getDotCodeMask() {
-        return dotCodeMask;
+    @ApiModelProperty(
+            value =
+                    "Identifies columns count. Sum of the number of rows plus the number of columns of a DotCode symbol must be odd. Number of columns must be at least 5.")
+    public Integer getColumns() {
+        return columns;
     }
 
-    public void setDotCodeMask(Integer dotCodeMask) {
-        this.dotCodeMask = dotCodeMask;
+    public void setColumns(Integer columns) {
+        this.columns = columns;
+    }
+
+    /**
+     * Identifies DotCode encode mode. Default value: Auto.
+     *
+     * @return encodeMode
+     */
+    @ApiModelProperty(value = "Identifies DotCode encode mode. Default value: Auto.")
+    public DotCodeEncodeMode getEncodeMode() {
+        return encodeMode;
+    }
+
+    public void setEncodeMode(DotCodeEncodeMode encodeMode) {
+        this.encodeMode = encodeMode;
+    }
+
+    /**
+     * Identifies ECI encoding. Used when DotCodeEncodeMode is Auto. Default value: ISO-8859-1.
+     *
+     * @return ecIEncoding
+     */
+    @ApiModelProperty(
+            value =
+                    "Identifies ECI encoding. Used when DotCodeEncodeMode is Auto. Default value: ISO-8859-1.")
+    public ECIEncodings getEcIEncoding() {
+        return ecIEncoding;
+    }
+
+    public void setEcIEncoding(ECIEncodings ecIEncoding) {
+        this.ecIEncoding = ecIEncoding;
+    }
+
+    /**
+     * Indicates whether code is used for instruct reader to interpret the following data as
+     * instructions for initialization or reprogramming of the bar code reader. Default value is
+     * false.
+     *
+     * @return isReaderInitialization
+     */
+    @ApiModelProperty(
+            value =
+                    "Indicates whether code is used for instruct reader to interpret the following data as instructions for initialization or reprogramming of the bar code reader. Default value is false.")
+    public Boolean isIsReaderInitialization() {
+        return isReaderInitialization;
+    }
+
+    public void setIsReaderInitialization(Boolean isReaderInitialization) {
+        this.isReaderInitialization = isReaderInitialization;
+    }
+
+    /**
+     * Identifies rows count. Sum of the number of rows plus the number of columns of a DotCode
+     * symbol must be odd. Number of rows must be at least 5.
+     *
+     * @return rows
+     */
+    @ApiModelProperty(
+            value =
+                    "Identifies rows count. Sum of the number of rows plus the number of columns of a DotCode symbol must be odd. Number of rows must be at least 5.")
+    public Integer getRows() {
+        return rows;
+    }
+
+    public void setRows(Integer rows) {
+        this.rows = rows;
     }
 
     @Override
@@ -77,12 +157,17 @@ public class DotCodeParams {
         }
         DotCodeParams dotCodeParams = (DotCodeParams) o;
         return Objects.equals(this.aspectRatio, dotCodeParams.aspectRatio)
-                && Objects.equals(this.dotCodeMask, dotCodeParams.dotCodeMask);
+                && Objects.equals(this.columns, dotCodeParams.columns)
+                && Objects.equals(this.encodeMode, dotCodeParams.encodeMode)
+                && Objects.equals(this.ecIEncoding, dotCodeParams.ecIEncoding)
+                && Objects.equals(this.isReaderInitialization, dotCodeParams.isReaderInitialization)
+                && Objects.equals(this.rows, dotCodeParams.rows);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aspectRatio, dotCodeMask);
+        return Objects.hash(
+                aspectRatio, columns, encodeMode, ecIEncoding, isReaderInitialization, rows);
     }
 
     @Override
@@ -91,7 +176,13 @@ public class DotCodeParams {
         sb.append("class DotCodeParams {\n");
 
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
-        sb.append("    dotCodeMask: ").append(toIndentedString(dotCodeMask)).append("\n");
+        sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
+        sb.append("    encodeMode: ").append(toIndentedString(encodeMode)).append("\n");
+        sb.append("    ecIEncoding: ").append(toIndentedString(ecIEncoding)).append("\n");
+        sb.append("    isReaderInitialization: ")
+                .append(toIndentedString(isReaderInitialization))
+                .append("\n");
+        sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
         sb.append("}");
         return sb.toString();
     }

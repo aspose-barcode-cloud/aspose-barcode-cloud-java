@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="EncodeBarcodeType.java">
-//   Copyright (c) 2022 Aspose.BarCode for Cloud
+//   Copyright (c) 2023 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -166,7 +166,9 @@ public enum EncodeBarcodeType {
 
     GS1CODABLOCKF("GS1CodablockF"),
 
-    MAILMARK("Mailmark");
+    MAILMARK("Mailmark"),
+
+    GS1DOTCODE("GS1DotCode");
 
     private final String value;
 
