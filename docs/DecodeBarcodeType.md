@@ -140,5 +140,27 @@
 
 * `MAILMARK` (value: `"Mailmark"`)
 
+* `GS1DOTCODE` (value: `"GS1DotCode"`)
+
+* `HIBCCODE39LIC` (value: `"HIBCCode39LIC"`)
+
+* `HIBCCODE128LIC` (value: `"HIBCCode128LIC"`)
+
+* `HIBCAZTECLIC` (value: `"HIBCAztecLIC"`)
+
+* `HIBCDATAMATRIXLIC` (value: `"HIBCDataMatrixLIC"`)
+
+* `HIBCQRLIC` (value: `"HIBCQRLIC"`)
+
+* `HIBCCODE39PAS` (value: `"HIBCCode39PAS"`)
+
+* `HIBCCODE128PAS` (value: `"HIBCCode128PAS"`)
+
+* `HIBCAZTECPAS` (value: `"HIBCAztecPAS"`)
+
+* `HIBCDATAMATRIXPAS` (value: `"HIBCDataMatrixPAS"`)
+
+* `HIBCQRPAS` (value: `"HIBCQRPAS"`)
+
 
 

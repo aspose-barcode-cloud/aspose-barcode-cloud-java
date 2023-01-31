@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AutoSizeMode.java">
+// <copyright company="Aspose" file="DotCodeEncodeMode.java">
 //   Copyright (c) 2023 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -32,17 +32,17 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /** */
-@JsonAdapter(AutoSizeMode.Adapter.class)
-public enum AutoSizeMode {
-    NONE("None"),
+@JsonAdapter(DotCodeEncodeMode.Adapter.class)
+public enum DotCodeEncodeMode {
+    AUTO("Auto"),
 
-    NEAREST("Nearest"),
+    BYTES("Bytes"),
 
-    INTERPOLATION("Interpolation");
+    EXTENDEDCODETEXT("ExtendedCodetext");
 
     private final String value;
 
-    AutoSizeMode(String value) {
+    DotCodeEncodeMode(String value) {
         this.value = value;
     }
 
@@ -55,8 +55,8 @@ public enum AutoSizeMode {
         return String.valueOf(value);
     }
 
-    public static AutoSizeMode fromValue(String text) {
-        for (AutoSizeMode b : AutoSizeMode.values()) {
+    public static DotCodeEncodeMode fromValue(String text) {
+        for (DotCodeEncodeMode b : DotCodeEncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -64,17 +64,17 @@ public enum AutoSizeMode {
         return null;
     }
 
-    public static class Adapter extends TypeAdapter<AutoSizeMode> {
+    public static class Adapter extends TypeAdapter<DotCodeEncodeMode> {
         @Override
-        public void write(final JsonWriter jsonWriter, final AutoSizeMode enumeration)
+        public void write(final JsonWriter jsonWriter, final DotCodeEncodeMode enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public AutoSizeMode read(final JsonReader jsonReader) throws IOException {
+        public DotCodeEncodeMode read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return AutoSizeMode.fromValue(String.valueOf(value));
+            return DotCodeEncodeMode.fromValue(String.valueOf(value));
         }
     }
 }

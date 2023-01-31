@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="MaxiCodeParams.java">
-//   Copyright (c) 2022 Aspose.BarCode for Cloud
+//   Copyright (c) 2023 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,6 +39,9 @@ public class MaxiCodeParams {
     @SerializedName(value = "mode")
     private MaxiCodeMode mode = null;
 
+    @SerializedName(value = "encodeMode")
+    private MaxiCodeEncodeMode encodeMode = null;
+
     /**
      * Height/Width ratio of 2D BarCode module.
      *
@@ -54,17 +57,31 @@ public class MaxiCodeParams {
     }
 
     /**
-     * Encoding mode for MaxiCode barcodes.
+     * Mode for MaxiCode barcodes.
      *
      * @return mode
      */
-    @ApiModelProperty(value = "Encoding mode for MaxiCode barcodes.")
+    @ApiModelProperty(value = "Mode for MaxiCode barcodes.")
     public MaxiCodeMode getMode() {
         return mode;
     }
 
     public void setMode(MaxiCodeMode mode) {
         this.mode = mode;
+    }
+
+    /**
+     * Encoding mode for MaxiCode barcodes.
+     *
+     * @return encodeMode
+     */
+    @ApiModelProperty(value = "Encoding mode for MaxiCode barcodes.")
+    public MaxiCodeEncodeMode getEncodeMode() {
+        return encodeMode;
+    }
+
+    public void setEncodeMode(MaxiCodeEncodeMode encodeMode) {
+        this.encodeMode = encodeMode;
     }
 
     @Override
@@ -77,12 +94,13 @@ public class MaxiCodeParams {
         }
         MaxiCodeParams maxiCodeParams = (MaxiCodeParams) o;
         return Objects.equals(this.aspectRatio, maxiCodeParams.aspectRatio)
-                && Objects.equals(this.mode, maxiCodeParams.mode);
+                && Objects.equals(this.mode, maxiCodeParams.mode)
+                && Objects.equals(this.encodeMode, maxiCodeParams.encodeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aspectRatio, mode);
+        return Objects.hash(aspectRatio, mode, encodeMode);
     }
 
     @Override
@@ -92,6 +110,7 @@ public class MaxiCodeParams {
 
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    encodeMode: ").append(toIndentedString(encodeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
