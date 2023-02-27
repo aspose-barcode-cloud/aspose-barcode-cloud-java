@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **rectWidth** | **Integer** | Set Width of area for recognition. |  [optional]
 **rectHeight** | **Integer** | Set Height of area for recognition. |  [optional]
 **stripFNC** | **Boolean** | Value indicating whether FNC symbol strip must be done. |  [optional]
-**timeout** | **Integer** | Timeout of recognition process. |  [optional]
+**timeout** | **Integer** | Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout. |  [optional]
 **medianSmoothingWindowSize** | **Integer** | Window size for median smoothing. Typical values are 3 or 4. Default value is 3. AllowMedianSmoothing must be set. |  [optional]
 **allowMedianSmoothing** | **Boolean** | Allows engine to enable median smoothing as additional scan. Mode helps to recognize noised barcodes. |  [optional]
 **allowComplexBackground** | **Boolean** | Allows engine to recognize color barcodes on color background as additional scan. Extremely slow mode. |  [optional]
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **skipDiagonalSearch** | **Boolean** | Allows detector to skip search for diagonal barcodes. Setting it to false will increase detection time but allow to find diagonal barcodes that can be missed otherwise. Enabling of diagonal search leads to a bigger detection time. |  [optional]
 **readTinyBarcodes** | **Boolean** | Allows engine to recognize tiny barcodes on large images. Ignored if AllowIncorrectBarcodes is set to True. Default value: False. |  [optional]
 **australianPostEncodingTable** | [**CustomerInformationInterpretingType**](CustomerInformationInterpretingType.md) | Interpreting Type for the Customer Information of AustralianPost BarCode.Default is CustomerInformationInterpretingType.Other. |  [optional]
-**ignoreEndingFillingPatternsForCTable** | **Boolean** | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter \&quot;z\&quot;. |  [optional]
+**ignoreEndingFillingPatternsForCTable** | **Boolean** | The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as letter \&quot;z\&quot;. |  [optional]
 
 
 

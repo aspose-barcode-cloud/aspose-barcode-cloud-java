@@ -777,7 +777,8 @@ public class BarcodeApi {
 
     /**
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes
-     * of the image or encoded with base64.
+     * of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be
+     * passed as a form field.
      *
      * @param request See {@link PostBarcodeRecognizeFromUrlOrContentRequest}
      * @return BarcodeResponseList
@@ -793,7 +794,8 @@ public class BarcodeApi {
 
     /**
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes
-     * of the image or encoded with base64.
+     * of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be
+     * passed as a form field.
      *
      * @param request See {@link PostBarcodeRecognizeFromUrlOrContentRequest}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -810,7 +812,8 @@ public class BarcodeApi {
 
     /**
      * Recognize barcode from an url or from request body. Request body can contain raw data bytes
-     * of the image or encoded with base64. (asynchronously)
+     * of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be
+     * passed as a form field. (asynchronously)
      *
      * @param request See {@link PostBarcodeRecognizeFromUrlOrContentRequest}
      * @param callback The callback to be executed when the API call finishes

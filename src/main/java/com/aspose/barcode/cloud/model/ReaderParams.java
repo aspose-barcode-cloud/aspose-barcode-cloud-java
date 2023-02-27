@@ -274,11 +274,15 @@ public class ReaderParams {
     }
 
     /**
-     * Timeout of recognition process.
+     * Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case
+     * of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to
+     * avoid timeout.
      *
      * @return timeout
      */
-    @ApiModelProperty(value = "Timeout of recognition process.")
+    @ApiModelProperty(
+            value =
+                    "Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to avoid timeout.")
     public Integer getTimeout() {
         return timeout;
     }
@@ -693,14 +697,14 @@ public class ReaderParams {
     /**
      * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer
      * Information Field during decoding as CTable method. CTable encoding method does not have any
-     * gaps in encoding table and sequnce \&quot;333\&quot; of filling paterns is decoded as letter
-     * \&quot;z\&quot;.
+     * gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as
+     * letter \&quot;z\&quot;.
      *
      * @return ignoreEndingFillingPatternsForCTable
      */
     @ApiModelProperty(
             value =
-                    "The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequnce \"333\" of filling paterns is decoded as letter \"z\".")
+                    "The flag which force AustraliaPost decoder to ignore last filling patterns in Customer Information Field during decoding as CTable method. CTable encoding method does not have any gaps in encoding table and sequence \"333\" of filling patterns is decoded as letter \"z\".")
     public Boolean isIgnoreEndingFillingPatternsForCTable() {
         return ignoreEndingFillingPatternsForCTable;
     }

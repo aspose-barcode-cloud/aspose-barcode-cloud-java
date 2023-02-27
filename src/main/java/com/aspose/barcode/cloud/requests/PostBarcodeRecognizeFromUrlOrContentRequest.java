@@ -34,7 +34,8 @@ import java.util.List;
 
 /**
  * Recognize barcode from an url or from request body. Request body can contain raw data bytes of
- * the image or encoded with base64.
+ * the image with content-type \"application/octet-stream\". An image can also be passed as a form
+ * field.
  */
 public class PostBarcodeRecognizeFromUrlOrContentRequest {
     /** The type of barcode to read. */
@@ -65,7 +66,11 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
     public Integer rectHeight;
     /** Value indicating whether FNC symbol strip must be done. */
     public Boolean stripFNC;
-    /** Timeout of recognition process. */
+    /**
+     * Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case
+     * of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to
+     * avoid timeout.
+     */
     public Integer timeout;
     /**
      * Window size for median smoothing. Typical values are 3 or 4. Default value is 3.
@@ -188,7 +193,7 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
     /**
      * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer
      * Information Field during decoding as CTable method. CTable encoding method does not have any
-     * gaps in encoding table and sequnce "333" of filling paterns is decoded as letter "z".
+     * gaps in encoding table and sequence "333" of filling patterns is decoded as letter "z".
      */
     public Boolean ignoreEndingFillingPatternsForCTable;
     /** */
