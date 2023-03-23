@@ -36,7 +36,9 @@ public class GetFilesListRequest {
     /** Storage name */
     public String storageName;
 
-    /** @param path Folder path e.g. '/folder' */
+    /**
+     * @param path Folder path e.g. '/folder'
+     */
     public GetFilesListRequest(String path) {
         this.path = path;
     }

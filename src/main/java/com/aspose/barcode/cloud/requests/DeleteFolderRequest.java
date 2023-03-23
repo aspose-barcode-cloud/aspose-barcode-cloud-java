@@ -38,7 +38,9 @@ public class DeleteFolderRequest {
     /** Enable to delete folders, subfolders and files */
     public Boolean recursive = false;
 
-    /** @param path Folder path e.g. '/folder' */
+    /**
+     * @param path Folder path e.g. '/folder'
+     */
     public DeleteFolderRequest(String path) {
         this.path = path;
     }

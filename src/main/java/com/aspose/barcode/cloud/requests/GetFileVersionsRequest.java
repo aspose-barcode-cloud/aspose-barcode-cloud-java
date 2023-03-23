@@ -36,7 +36,9 @@ public class GetFileVersionsRequest {
     /** Storage name */
     public String storageName;
 
-    /** @param path File path e.g. '/file.ext' */
+    /**
+     * @param path File path e.g. '/file.ext'
+     */
     public GetFileVersionsRequest(String path) {
         this.path = path;
     }

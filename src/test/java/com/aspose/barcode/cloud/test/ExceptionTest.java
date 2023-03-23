@@ -8,6 +8,7 @@ import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
+
 import org.junit.Test;
 
 public class ExceptionTest extends TestBase {

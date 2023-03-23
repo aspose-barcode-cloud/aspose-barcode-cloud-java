@@ -38,7 +38,9 @@ public class ObjectExistsRequest {
     /** File version ID */
     public String versionId;
 
-    /** @param path File or folder path e.g. '/file.ext' or '/folder' */
+    /**
+     * @param path File or folder path e.g. '/file.ext' or '/folder'
+     */
     public ObjectExistsRequest(String path) {
         this.path = path;
     }

@@ -8,12 +8,8 @@ fix:
 	./scripts/fix-region-point.bash
 
 .PHONY: format
-format: fix
+format:
 	./scripts/format.bash
-
-.PHONY: format_tests
-format_tests:
-	find $(SRC)/test -iname "*.java" | xargs java -jar tools/google-java-format-1.9-all-deps.jar --aosp --replace
 
 .PHONY: test
 test:
@@ -26,3 +22,6 @@ publish-docker:
 .PHONY: update
 update:
 	mvn versions:use-latest-releases
+
+.PHONY: after-gen
+after-gen: fix format

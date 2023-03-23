@@ -38,7 +38,9 @@ public class PostGenerateMultipleRequest {
     /** Format to return stream in */
     public String format = "png";
 
-    /** @param generatorParamsList List of barcodes */
+    /**
+     * @param generatorParamsList List of barcodes
+     */
     public PostGenerateMultipleRequest(GeneratorParamsList generatorParamsList) {
         this.generatorParamsList = generatorParamsList;
     }

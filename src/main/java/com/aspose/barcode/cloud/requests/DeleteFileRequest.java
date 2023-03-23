@@ -38,7 +38,9 @@ public class DeleteFileRequest {
     /** File version ID to delete */
     public String versionId;
 
-    /** @param path File path e.g. '/folder/file.ext' */
+    /**
+     * @param path File path e.g. '/folder/file.ext'
+     */
     public DeleteFileRequest(String path) {
         this.path = path;
     }

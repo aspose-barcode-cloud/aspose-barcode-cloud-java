@@ -64,9 +64,9 @@ public class GetBarcodeRecognizeRequest {
     /** Value indicating whether FNC symbol strip must be done. */
     public Boolean stripFNC;
     /**
-     * Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). In case
-     * of a timeout RequestTimeout (408) status will be returned. Try reducing the image size to
-     * avoid timeout.
+     * Timeout of recognition process in milliseconds. Default value is 15_000 (15 seconds). Maximum
+     * value is 60_000 (1 minute). In case of a timeout RequestTimeout (408) status will be
+     * returned. Try reducing the image size to avoid timeout.
      */
     public Integer timeout;
     /**
@@ -200,7 +200,9 @@ public class GetBarcodeRecognizeRequest {
     /** The image folder. */
     public String folder;
 
-    /** @param name The image file name. */
+    /**
+     * @param name The image file name.
+     */
     public GetBarcodeRecognizeRequest(String name) {
         this.name = name;
     }
