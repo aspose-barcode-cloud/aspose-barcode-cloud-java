@@ -3,18 +3,13 @@ package com.aspose.barcode.cloud.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
 
 import org.junit.Test;
 
 public class ExceptionTest extends TestBase {
-
-    private static final ApiClient client = new ApiClient(accessToken);
-    private static final BarcodeApi api = new BarcodeApi(client);
 
     @Test
     public void ExceptionMessageParsed() {
