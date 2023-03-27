@@ -3,21 +3,18 @@ package com.aspose.barcode.cloud.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
 import com.aspose.barcode.cloud.requests.UploadFileRequest;
+
+import org.junit.Test;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.junit.Test;
 
 /** API tests for FileApi */
 public class FileApiTest extends TestBase {
-
-    private static final ApiClient client = new ApiClient(accessToken);
-    private static final FileApi api = new FileApi(client);
 
     /**
      * Upload file
@@ -34,7 +31,7 @@ public class FileApiTest extends TestBase {
         UploadFileRequest request = new UploadFileRequest(path, imageFile);
         request.storageName = testStorageName;
 
-        FilesUploadResult response = api.uploadFile(request);
+        FilesUploadResult response = fileApi.uploadFile(request);
 
         assertTrue(String.valueOf(response.getErrors()), response.getErrors().isEmpty());
         assertEquals(1, response.getUploaded().size());

@@ -34,7 +34,9 @@ public class StorageExistsRequest {
     /** Storage name */
     public final String storageName;
 
-    /** @param storageName Storage name */
+    /**
+     * @param storageName Storage name
+     */
     public StorageExistsRequest(String storageName) {
         this.storageName = storageName;
     }

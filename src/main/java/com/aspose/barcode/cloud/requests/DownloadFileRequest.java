@@ -38,7 +38,9 @@ public class DownloadFileRequest {
     /** File version ID to download */
     public String versionId;
 
-    /** @param path File path e.g. '/folder/file.ext' */
+    /**
+     * @param path File path e.g. '/folder/file.ext'
+     */
     public DownloadFileRequest(String path) {
         this.path = path;
     }

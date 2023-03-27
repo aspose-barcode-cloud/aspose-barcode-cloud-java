@@ -36,7 +36,9 @@ public class CreateFolderRequest {
     /** Storage name */
     public String storageName;
 
-    /** @param path Folder path to create e.g. 'folder_1/folder_2/' */
+    /**
+     * @param path Folder path to create e.g. 'folder_1/folder_2/'
+     */
     public CreateFolderRequest(String path) {
         this.path = path;
     }

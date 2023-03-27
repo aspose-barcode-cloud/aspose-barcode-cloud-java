@@ -2,24 +2,19 @@ package com.aspose.barcode.cloud.test;
 
 import static org.junit.Assert.*;
 
-import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.api.BarcodeApi;
-import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.*;
 import com.aspose.barcode.cloud.requests.*;
+
+import org.junit.Test;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import org.junit.Test;
 
 /** API tests for BarcodeApi */
 public class BarcodeApiTest extends TestBase {
-
-    private static final ApiClient client = new ApiClient(accessToken);
-    private static final BarcodeApi api = new BarcodeApi(client);
-    private static final FileApi fileApi = new FileApi(client);
 
     /**
      * Generate barcode.

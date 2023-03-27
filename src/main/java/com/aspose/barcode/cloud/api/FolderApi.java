@@ -36,6 +36,7 @@ import com.aspose.barcode.cloud.ProgressResponseBody;
 import com.aspose.barcode.cloud.model.FilesList;
 import com.aspose.barcode.cloud.requests.*;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
