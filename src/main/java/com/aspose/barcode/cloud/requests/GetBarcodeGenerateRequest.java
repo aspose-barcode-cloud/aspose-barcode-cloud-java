@@ -153,6 +153,11 @@ public class GetBarcodeGenerateRequest {
     public Double supplementSpace;
     /** Bars reduction value that is used to compensate ink spread while printing. */
     public Double barWidthReduction;
+    /**
+     * Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied
+     * to barcode and text drawing.
+     */
+    public Boolean useAntiAlias;
     /** Result image format. */
     public String format;
 

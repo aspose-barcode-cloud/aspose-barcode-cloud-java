@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 23.3.0
+- SDK version: 23.4.0
 
 ## Demo applications
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>23.3.0</version>
+  <version>23.4.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-23.3.0.jar`
+- `target/aspose-barcode-cloud-23.4.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -220,6 +220,7 @@ Class | Method | HTTP request | Description
 - [EncodeBarcodeType](docs/EncodeBarcodeType.md)
 - [Error](docs/Error.md)
 - [ErrorDetails](docs/ErrorDetails.md)
+- [FileVersion](docs/FileVersion.md)
 - [FileVersions](docs/FileVersions.md)
 - [FilesList](docs/FilesList.md)
 - [FilesUploadResult](docs/FilesUploadResult.md)
@@ -256,7 +257,6 @@ Class | Method | HTTP request | Description
 - [StorageFile](docs/StorageFile.md)
 - [StructuredAppend](docs/StructuredAppend.md)
 - [TextAlignment](docs/TextAlignment.md)
-- [FileVersion](docs/FileVersion.md)
 
 ## Documentation for Authorization
 

@@ -29,102 +29,15 @@ import com.google.gson.annotations.SerializedName;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import org.threeten.bp.OffsetDateTime;
-
 import java.util.Objects;
 
 /** FileVersion */
-public class FileVersion {
-    @SerializedName(value = "name")
-    private String name = null;
-
-    @SerializedName(value = "isFolder")
-    private Boolean isFolder = null;
-
-    @SerializedName(value = "modifiedDate")
-    private OffsetDateTime modifiedDate = null;
-
-    @SerializedName(value = "size")
-    private Long size = null;
-
-    @SerializedName(value = "path")
-    private String path = null;
-
+public class FileVersion extends StorageFile {
     @SerializedName(value = "versionId")
     private String versionId = null;
 
     @SerializedName(value = "isLatest")
     private Boolean isLatest = null;
-
-    /**
-     * File or folder name.
-     *
-     * @return name
-     */
-    @ApiModelProperty(value = "File or folder name.")
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * True if it is a folder.
-     *
-     * @return isFolder
-     */
-    @ApiModelProperty(required = true, value = "True if it is a folder.")
-    public Boolean isIsFolder() {
-        return isFolder;
-    }
-
-    public void setIsFolder(Boolean isFolder) {
-        this.isFolder = isFolder;
-    }
-
-    /**
-     * File or folder last modified DateTime.
-     *
-     * @return modifiedDate
-     */
-    @ApiModelProperty(value = "File or folder last modified DateTime.")
-    public OffsetDateTime getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(OffsetDateTime modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    /**
-     * File or folder size.
-     *
-     * @return size
-     */
-    @ApiModelProperty(required = true, value = "File or folder size.")
-    public Long getSize() {
-        return size;
-    }
-
-    public void setSize(Long size) {
-        this.size = size;
-    }
-
-    /**
-     * File or folder path.
-     *
-     * @return path
-     */
-    @ApiModelProperty(value = "File or folder path.")
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
 
     /**
      * File Version ID.
@@ -166,30 +79,21 @@ public class FileVersion {
             return false;
         }
         FileVersion fileVersion = (FileVersion) o;
-        return Objects.equals(this.name, fileVersion.name)
-                && Objects.equals(this.isFolder, fileVersion.isFolder)
-                && Objects.equals(this.modifiedDate, fileVersion.modifiedDate)
-                && Objects.equals(this.size, fileVersion.size)
-                && Objects.equals(this.path, fileVersion.path)
-                && Objects.equals(this.versionId, fileVersion.versionId)
-                && Objects.equals(this.isLatest, fileVersion.isLatest);
+        return Objects.equals(this.versionId, fileVersion.versionId)
+                && Objects.equals(this.isLatest, fileVersion.isLatest)
+                && super.equals(o);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, isFolder, modifiedDate, size, path, versionId, isLatest);
+        return Objects.hash(versionId, isLatest, super.hashCode());
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class FileVersion {\n");
-
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    isFolder: ").append(toIndentedString(isFolder)).append("\n");
-        sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
-        sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    isLatest: ").append(toIndentedString(isLatest)).append("\n");
         sb.append("}");

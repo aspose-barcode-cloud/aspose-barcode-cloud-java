@@ -206,11 +206,11 @@ public class ReaderParams {
     }
 
     /**
-     * Set X for area for recognition.
+     * Set X of top left corner of area for recognition.
      *
      * @return rectX
      */
-    @ApiModelProperty(value = "Set X for area for recognition.")
+    @ApiModelProperty(value = "Set X of top left corner of area for recognition.")
     public Integer getRectX() {
         return rectX;
     }
@@ -220,11 +220,11 @@ public class ReaderParams {
     }
 
     /**
-     * Set Y for area for recognition.
+     * Set Y of top left corner of area for recognition.
      *
      * @return rectY
      */
-    @ApiModelProperty(value = "Set Y for area for recognition.")
+    @ApiModelProperty(value = "Set Y of top left corner of area for recognition.")
     public Integer getRectY() {
         return rectY;
     }
