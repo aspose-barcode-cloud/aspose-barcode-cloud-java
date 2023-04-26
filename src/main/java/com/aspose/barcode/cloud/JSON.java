@@ -25,19 +25,16 @@
 
 package com.aspose.barcode.cloud;
 
-import com.aspose.barcode.cloud.model.FileVersion;
-import com.aspose.barcode.cloud.model.StorageFile;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
+
 import io.gsonfire.GsonFireBuilder;
-import io.gsonfire.TypeSelector;
 
 import okio.ByteString;
 
@@ -52,8 +49,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class JSON {
     private Gson gson;
@@ -65,23 +60,7 @@ public class JSON {
     private final LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
 
     public static GsonBuilder createGson() {
-        GsonFireBuilder fireBuilder =
-                new GsonFireBuilder()
-                        .registerTypeSelector(
-                                StorageFile.class,
-                                new TypeSelector() {
-                                    @Override
-                                    public Class getClassForElement(JsonElement readElement) {
-                                        Map classByDiscriminatorValue = new HashMap();
-                                        classByDiscriminatorValue.put(
-                                                "FileVersion".toUpperCase(), FileVersion.class);
-                                        classByDiscriminatorValue.put(
-                                                "StorageFile".toUpperCase(), StorageFile.class);
-                                        return getClassByDiscriminator(
-                                                classByDiscriminatorValue,
-                                                getDiscriminatorValue(readElement, ""));
-                                    }
-                                });
+        GsonFireBuilder fireBuilder = new GsonFireBuilder();
         GsonBuilder builder = fireBuilder.createGsonBuilder();
         return builder;
     }
