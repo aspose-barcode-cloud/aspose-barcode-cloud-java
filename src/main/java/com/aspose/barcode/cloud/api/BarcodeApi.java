@@ -160,6 +160,8 @@ public class BarcodeApi {
         if (request.barWidthReduction != null)
             queryParams.addAll(
                     apiClient.parameterToPair("BarWidthReduction", request.barWidthReduction));
+        if (request.useAntiAlias != null)
+            queryParams.addAll(apiClient.parameterToPair("UseAntiAlias", request.useAntiAlias));
         if (request.format != null)
             queryParams.addAll(apiClient.parameterToPair("format", request.format));
 
@@ -436,9 +438,6 @@ public class BarcodeApi {
                     apiClient.parameterToPair(
                             "IgnoreEndingFillingPatternsForCTable",
                             request.ignoreEndingFillingPatternsForCTable));
-        if (request.rectangleRegion != null)
-            queryParams.addAll(
-                    apiClient.parameterToPair("RectangleRegion", request.rectangleRegion));
         if (request.storage != null)
             queryParams.addAll(apiClient.parameterToPair("storage", request.storage));
         if (request.folder != null)
@@ -710,9 +709,6 @@ public class BarcodeApi {
                     apiClient.parameterToPair(
                             "IgnoreEndingFillingPatternsForCTable",
                             request.ignoreEndingFillingPatternsForCTable));
-        if (request.rectangleRegion != null)
-            queryParams.addAll(
-                    apiClient.parameterToPair("RectangleRegion", request.rectangleRegion));
         if (request.url != null) queryParams.addAll(apiClient.parameterToPair("url", request.url));
 
         Map<String, String> headerParams = new HashMap<>();
@@ -1110,6 +1106,8 @@ public class BarcodeApi {
         if (request.barWidthReduction != null)
             queryParams.addAll(
                     apiClient.parameterToPair("BarWidthReduction", request.barWidthReduction));
+        if (request.useAntiAlias != null)
+            queryParams.addAll(apiClient.parameterToPair("UseAntiAlias", request.useAntiAlias));
         if (request.storage != null)
             queryParams.addAll(apiClient.parameterToPair("storage", request.storage));
         if (request.folder != null)

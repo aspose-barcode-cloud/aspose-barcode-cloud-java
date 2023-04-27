@@ -53,9 +53,9 @@ public class GetBarcodeRecognizeRequest {
      * can manually configure separate options. Default value of Preset is NormalQuality.
      */
     public String preset;
-    /** Set X for area for recognition. */
+    /** Set X of top left corner of area for recognition. */
     public Integer rectX;
-    /** Set Y for area for recognition. */
+    /** Set Y of top left corner of area for recognition. */
     public Integer rectY;
     /** Set Width of area for recognition. */
     public Integer rectWidth;
@@ -193,8 +193,6 @@ public class GetBarcodeRecognizeRequest {
      * gaps in encoding table and sequence "333" of filling patterns is decoded as letter "z".
      */
     public Boolean ignoreEndingFillingPatternsForCTable;
-    /** */
-    public String rectangleRegion;
     /** The image storage. */
     public String storage;
     /** The image folder. */

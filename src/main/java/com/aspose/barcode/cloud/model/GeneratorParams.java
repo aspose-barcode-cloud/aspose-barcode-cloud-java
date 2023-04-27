@@ -149,6 +149,9 @@ public class GeneratorParams {
     @SerializedName(value = "barWidthReduction")
     private Double barWidthReduction = null;
 
+    @SerializedName(value = "useAntiAlias")
+    private Boolean useAntiAlias = null;
+
     @SerializedName(value = "australianPost")
     private AustralianPostParams australianPost = null;
 
@@ -790,6 +793,23 @@ public class GeneratorParams {
     }
 
     /**
+     * Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied
+     * to barcode and text drawing.
+     *
+     * @return useAntiAlias
+     */
+    @ApiModelProperty(
+            value =
+                    "Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied to barcode and text drawing.")
+    public Boolean isUseAntiAlias() {
+        return useAntiAlias;
+    }
+
+    public void setUseAntiAlias(Boolean useAntiAlias) {
+        this.useAntiAlias = useAntiAlias;
+    }
+
+    /**
      * AustralianPost params.
      *
      * @return australianPost
@@ -1046,6 +1066,7 @@ public class GeneratorParams {
                 && Objects.equals(this.supplementData, generatorParams.supplementData)
                 && Objects.equals(this.supplementSpace, generatorParams.supplementSpace)
                 && Objects.equals(this.barWidthReduction, generatorParams.barWidthReduction)
+                && Objects.equals(this.useAntiAlias, generatorParams.useAntiAlias)
                 && Objects.equals(this.australianPost, generatorParams.australianPost)
                 && Objects.equals(this.aztec, generatorParams.aztec)
                 && Objects.equals(this.codabar, generatorParams.codabar)
@@ -1104,6 +1125,7 @@ public class GeneratorParams {
                 supplementData,
                 supplementSpace,
                 barWidthReduction,
+                useAntiAlias,
                 australianPost,
                 aztec,
                 codabar,
@@ -1168,6 +1190,7 @@ public class GeneratorParams {
         sb.append("    barWidthReduction: ")
                 .append(toIndentedString(barWidthReduction))
                 .append("\n");
+        sb.append("    useAntiAlias: ").append(toIndentedString(useAntiAlias)).append("\n");
         sb.append("    australianPost: ").append(toIndentedString(australianPost)).append("\n");
         sb.append("    aztec: ").append(toIndentedString(aztec)).append("\n");
         sb.append("    codabar: ").append(toIndentedString(codabar)).append("\n");
