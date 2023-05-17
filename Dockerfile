@@ -6,4 +6,4 @@ RUN apt-get update \
 WORKDIR /aspose-barcode-cloud-java
 COPY . .
 
-ENTRYPOINT ["make", "test"]
+ENTRYPOINT ["make", "publish-docker"]
