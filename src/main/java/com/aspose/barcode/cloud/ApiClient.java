@@ -53,7 +53,7 @@ import java.util.regex.Pattern;
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "23.4.0";
+    public final String clientVersion = "23.5.0";
     private String baseUrl = "https://api.aspose.cloud";
     private String clientId;
     private String clientSecret;
@@ -99,7 +99,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/23.4.0/java");
+        setUserAgent("Swagger-Codegen/23.5.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);

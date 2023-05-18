@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **postal** | [**PostalParams**](PostalParams.md) | Postal params. |  [optional]
 **QR** | [**QrParams**](QrParams.md) | QR params. |  [optional]
 **patchCode** | [**PatchCodeParams**](PatchCodeParams.md) | PatchCode params. |  [optional]
+**code128** | [**Code128Params**](Code128Params.md) | Code128 params. |  [optional]
 
 
 
