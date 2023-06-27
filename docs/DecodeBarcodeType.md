@@ -162,5 +162,9 @@
 
 * `HIBCQRPAS` (value: `"HIBCQRPAS"`)
 
+* `HANXIN` (value: `"HanXin"`)
+
+* `GS1HANXIN` (value: `"GS1HanXin"`)
+
 
 

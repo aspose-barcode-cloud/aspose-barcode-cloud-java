@@ -191,7 +191,11 @@ public enum DecodeBarcodeType {
 
     HIBCDATAMATRIXPAS("HIBCDataMatrixPAS"),
 
-    HIBCQRPAS("HIBCQRPAS");
+    HIBCQRPAS("HIBCQRPAS"),
+
+    HANXIN("HanXin"),
+
+    GS1HANXIN("GS1HanXin");
 
     private final String value;
 
