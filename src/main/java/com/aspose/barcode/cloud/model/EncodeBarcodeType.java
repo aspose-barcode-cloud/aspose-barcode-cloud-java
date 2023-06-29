@@ -169,7 +169,11 @@ public enum EncodeBarcodeType {
 
     MAILMARK("Mailmark"),
 
-    GS1DOTCODE("GS1DotCode");
+    GS1DOTCODE("GS1DotCode"),
+
+    HANXIN("HanXin"),
+
+    GS1HANXIN("GS1HanXin");
 
     private final String value;
 

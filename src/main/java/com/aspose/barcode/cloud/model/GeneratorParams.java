@@ -200,6 +200,9 @@ public class GeneratorParams {
     @SerializedName(value = "code128")
     private Code128Params code128 = null;
 
+    @SerializedName(value = "hanXin")
+    private HanXinParams hanXin = null;
+
     /**
      * Type of barcode to generate.
      *
@@ -1036,6 +1039,20 @@ public class GeneratorParams {
         this.code128 = code128;
     }
 
+    /**
+     * HanXin params.
+     *
+     * @return hanXin
+     */
+    @ApiModelProperty(value = "HanXin params.")
+    public HanXinParams getHanXin() {
+        return hanXin;
+    }
+
+    public void setHanXin(HanXinParams hanXin) {
+        this.hanXin = hanXin;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1099,7 +1116,8 @@ public class GeneratorParams {
                 && Objects.equals(this.postal, generatorParams.postal)
                 && Objects.equals(this.QR, generatorParams.QR)
                 && Objects.equals(this.patchCode, generatorParams.patchCode)
-                && Objects.equals(this.code128, generatorParams.code128);
+                && Objects.equals(this.code128, generatorParams.code128)
+                && Objects.equals(this.hanXin, generatorParams.hanXin);
     }
 
     @Override
@@ -1159,7 +1177,8 @@ public class GeneratorParams {
                 postal,
                 QR,
                 patchCode,
-                code128);
+                code128,
+                hanXin);
     }
 
     @Override
@@ -1226,6 +1245,7 @@ public class GeneratorParams {
         sb.append("    QR: ").append(toIndentedString(QR)).append("\n");
         sb.append("    patchCode: ").append(toIndentedString(patchCode)).append("\n");
         sb.append("    code128: ").append(toIndentedString(code128)).append("\n");
+        sb.append("    hanXin: ").append(toIndentedString(hanXin)).append("\n");
         sb.append("}");
         return sb.toString();
     }

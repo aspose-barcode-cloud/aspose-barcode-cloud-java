@@ -140,5 +140,9 @@
 
 * `GS1DOTCODE` (value: `"GS1DotCode"`)
 
+* `HANXIN` (value: `"HanXin"`)
+
+* `GS1HANXIN` (value: `"GS1HanXin"`)
+
 
 
