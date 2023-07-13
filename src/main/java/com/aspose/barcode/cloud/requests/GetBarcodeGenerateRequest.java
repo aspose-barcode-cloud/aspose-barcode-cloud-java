@@ -70,9 +70,11 @@ public class GetBarcodeGenerateRequest {
     public Double resolution;
 
     /** DEPRECATED: Use 'Resolution' instead. */
+    @Deprecated(forRemoval = true)
     public Double resolutionX;
 
     /** DEPRECATED: Use 'Resolution' instead. */
+    @Deprecated(forRemoval = true)
     public Double resolutionY;
 
     /**

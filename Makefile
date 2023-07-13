@@ -6,6 +6,7 @@ all: format test
 .PHONY: fix
 fix:
 	./scripts/fix-region-point.bash
+	./scripts/annotate-deprecated.bash
 
 .PHONY: format
 format:
