@@ -35,12 +35,16 @@ import com.aspose.barcode.cloud.model.ReaderParams;
 public class PutBarcodeRecognizeFromBodyRequest {
     /** The image file name. */
     public final String name;
+
     /** BarcodeReader object with parameters. */
     public final ReaderParams readerParams;
+
     /** */
     public String type;
+
     /** The storage name */
     public String storage;
+
     /** The image folder. */
     public String folder;
 

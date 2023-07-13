@@ -216,6 +216,7 @@ public class StorageApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for getFileVersions
      *
@@ -374,6 +375,7 @@ public class StorageApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for objectExists
      *
@@ -533,6 +535,7 @@ public class StorageApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for storageExists
      *

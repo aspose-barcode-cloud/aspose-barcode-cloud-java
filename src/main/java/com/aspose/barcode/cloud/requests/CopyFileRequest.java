@@ -33,12 +33,16 @@ package com.aspose.barcode.cloud.requests;
 public class CopyFileRequest {
     /** Source file path e.g. '/folder/file.ext' */
     public final String srcPath;
+
     /** Destination file path */
     public final String destPath;
+
     /** Source storage name */
     public String srcStorageName;
+
     /** Destination storage name */
     public String destStorageName;
+
     /** File version ID to copy */
     public String versionId;
 

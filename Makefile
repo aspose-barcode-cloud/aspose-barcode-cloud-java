@@ -11,6 +11,10 @@ fix:
 format:
 	./scripts/format.bash
 
+.PHONY: lint
+lint:
+	./scripts/checkstyle.bash
+
 .PHONY: test
 test:
 	mvn test

@@ -306,6 +306,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for getBarcodeRecognize
      *
@@ -577,6 +578,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for postBarcodeRecognizeFromUrlOrContent
      *
@@ -852,6 +854,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for postGenerateMultiple
      *
@@ -1011,6 +1014,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for putBarcodeGenerateFile
      *
@@ -1268,6 +1272,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for putBarcodeRecognizeFromBody
      *
@@ -1438,6 +1443,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for putGenerateMultiple
      *

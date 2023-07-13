@@ -229,6 +229,7 @@ public class FileApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+
     /**
      * Build call for deleteFile
      *
@@ -381,6 +382,7 @@ public class FileApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+
     /**
      * Build call for downloadFile
      *
@@ -538,6 +540,7 @@ public class FileApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for moveFile
      *
@@ -703,6 +706,7 @@ public class FileApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+
     /**
      * Build call for uploadFile
      *

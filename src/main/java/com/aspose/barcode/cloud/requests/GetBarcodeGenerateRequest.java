@@ -33,22 +33,28 @@ package com.aspose.barcode.cloud.requests;
 public class GetBarcodeGenerateRequest {
     /** Type of barcode to generate. */
     public final String type;
+
     /** Text to encode. */
     public final String text;
+
     /**
      * Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417,
      * DataMatrix, QR, MaxiCode, DotCode
      */
     public String twoDDisplayText;
+
     /**
      * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default
      * value: CodeLocation.Below.
      */
     public String textLocation;
+
     /** Text alignment. */
     public String textAlignment;
+
     /** Specify the displaying CodeText's Color. Default value: Color.Black. */
     public String textColor;
+
     /**
      * Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated
      * automatically based on xDimension value. It is recommended to use FontSizeMode.Auto
@@ -56,57 +62,76 @@ public class GetBarcodeGenerateRequest {
      * FontSizeMode.Auto.
      */
     public String fontSizeMode;
+
     /** Specify word wraps (line breaks) within text. Default value: false. */
     public Boolean noWrap;
+
     /** Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. */
     public Double resolution;
+
     /** DEPRECATED: Use 'Resolution' instead. */
     public Double resolutionX;
+
     /** DEPRECATED: Use 'Resolution' instead. */
     public Double resolutionY;
+
     /**
      * The smallest width of the unit of BarCode bars or spaces. Increase this will increase the
      * whole barcode image width. Ignored if AutoSizeMode property is set to AutoSizeMode.Nearest or
      * AutoSizeMode.Interpolation.
      */
     public Double dimensionX;
+
     /**
      * Space between the CodeText and the BarCode in Unit value. Default value: 2pt. Ignored for
      * EAN8, EAN13, UPCE, UPCA, ISBN, ISMN, ISSN, UpcaGs1DatabarCoupon.
      */
     public Double textSpace;
+
     /** Common Units for all measuring in query. Default units: pixel. */
     public String units;
+
     /**
      * Specifies the different types of automatic sizing modes. Default value: AutoSizeMode.None.
      */
     public String sizeMode;
+
     /** Height of the barcode in given units. Default units: pixel. */
     public Double barHeight;
+
     /** Height of the barcode image in given units. Default units: pixel. */
     public Double imageHeight;
+
     /** Width of the barcode image in given units. Default units: pixel. */
     public Double imageWidth;
+
     /**
      * BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle =
      * 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the
      * difficulty for the scanner to read the image. Default value: 0.
      */
     public Double rotationAngle;
+
     /** Background color of the barcode image. Default value: Color.White. */
     public String backColor;
+
     /** Bars color. Default value: Color.Black. */
     public String barColor;
+
     /** Border color. Default value: Color.Black. */
     public String borderColor;
+
     /** Border width. Default value: 0. Ignored if Visible is set to false. */
     public Double borderWidth;
+
     /** Border dash style. Default value: BorderDashStyle.Solid. */
     public String borderDashStyle;
+
     /**
      * Border visibility. If false than parameter Width is always ignored (0). Default value: false.
      */
     public Boolean borderVisible;
+
     /**
      * Enable checksum during generation 1D barcodes. Default is treated as Yes for symbology which
      * must contain checksum, as No where checksum only possible. Checksum is possible: Code39
@@ -115,6 +140,7 @@ public class GetBarcodeGenerateRequest {
      * symbology
      */
     public String enableChecksum;
+
     /**
      * Indicates whether explains the character "\" as an escape character in CodeText property.
      * Used for Pdf417, DataMatrix, Code128 only If the EnableEscape is true, "\" will be explained
@@ -123,12 +149,15 @@ public class GetBarcodeGenerateRequest {
      * example, \013 and \\CR stands for CR.
      */
     public Boolean enableEscape;
+
     /** Value indicating whether bars are filled. Only for 1D barcodes. Default value: true. */
     public Boolean filledBars;
+
     /**
      * Always display checksum digit in the human readable text for Code128 and GS1Code128 barcodes.
      */
     public Boolean alwaysShowChecksum;
+
     /**
      * Wide bars to Narrow bars ratio. Default value: 3, that is, wide bars are 3 times as wide as
      * narrow bars. Used for ITF, PZN, PharmaCode, Standard2of5, Interleaved2of5, Matrix2of5,
@@ -136,6 +165,7 @@ public class GetBarcodeGenerateRequest {
      * Code39Extended, Code39Standard
      */
     public Double wideNarrowRatio;
+
     /**
      * Only for 1D barcodes. If codetext is incorrect and value set to true - exception will be
      * thrown. Otherwise codetext will be corrected to match barcode's specification. Exception
@@ -144,20 +174,25 @@ public class GetBarcodeGenerateRequest {
      * Code128 symbology if codetext is incorrect.
      */
     public Boolean validateText;
+
     /**
      * Supplement parameters. Used for Interleaved2of5, Standard2of5, EAN13, EAN8, UPCA, UPCE, ISBN,
      * ISSN, ISMN.
      */
     public String supplementData;
+
     /** Space between main the BarCode and supplement BarCode. */
     public Double supplementSpace;
+
     /** Bars reduction value that is used to compensate ink spread while printing. */
     public Double barWidthReduction;
+
     /**
      * Indicates whether is used anti-aliasing mode to render image. Anti-aliasing mode is applied
      * to barcode and text drawing.
      */
     public Boolean useAntiAlias;
+
     /** Result image format. */
     public String format;
 

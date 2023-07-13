@@ -33,6 +33,7 @@ package com.aspose.barcode.cloud.requests;
 public class GetFilesListRequest {
     /** Folder path e.g. '/folder' */
     public final String path;
+
     /** Storage name */
     public String storageName;
 

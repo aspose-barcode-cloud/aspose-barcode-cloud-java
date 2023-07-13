@@ -35,12 +35,16 @@ import com.aspose.barcode.cloud.model.GeneratorParamsList;
 public class PutGenerateMultipleRequest {
     /** New filename */
     public final String name;
+
     /** List of barcodes */
     public final GeneratorParamsList generatorParamsList;
+
     /** Format of file */
     public String format = "png";
+
     /** Folder to place file to */
     public String folder;
+
     /** The storage name */
     public String storage;
 

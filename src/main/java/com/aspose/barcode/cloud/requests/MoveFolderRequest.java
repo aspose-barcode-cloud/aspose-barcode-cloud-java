@@ -33,10 +33,13 @@ package com.aspose.barcode.cloud.requests;
 public class MoveFolderRequest {
     /** Folder path to move e.g. '/folder' */
     public final String srcPath;
+
     /** Destination folder path to move to e.g '/dst' */
     public final String destPath;
+
     /** Source storage name */
     public String srcStorageName;
+
     /** Destination storage name */
     public String destStorageName;
 
