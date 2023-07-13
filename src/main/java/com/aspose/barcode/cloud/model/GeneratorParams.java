@@ -365,7 +365,7 @@ public class GeneratorParams {
      *
      * @return resolutionX
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     @ApiModelProperty(value = "DEPRECATED: Use 'Resolution' instead.")
     public Double getResolutionX() {
         return resolutionX;
@@ -380,7 +380,7 @@ public class GeneratorParams {
      *
      * @return resolutionY
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     @ApiModelProperty(value = "DEPRECATED: Use 'Resolution' instead.")
     public Double getResolutionY() {
         return resolutionY;

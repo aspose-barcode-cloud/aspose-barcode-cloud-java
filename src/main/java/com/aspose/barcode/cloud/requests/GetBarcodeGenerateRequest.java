@@ -70,12 +70,10 @@ public class GetBarcodeGenerateRequest {
     public Double resolution;
 
     /** DEPRECATED: Use 'Resolution' instead. */
-    @Deprecated(forRemoval = true)
-    public Double resolutionX;
+    @Deprecated() public Double resolutionX;
 
     /** DEPRECATED: Use 'Resolution' instead. */
-    @Deprecated(forRemoval = true)
-    public Double resolutionY;
+    @Deprecated() public Double resolutionY;
 
     /**
      * The smallest width of the unit of BarCode bars or spaces. Increase this will increase the

@@ -21,7 +21,7 @@ def main(input_file):
             deprecated_match = DEPRECATED_RE.match(line)
             if javadoc_started and deprecated_match:
                 # deprecation message found
-                obsolete_message = "@Deprecated(forRemoval = true)"
+                obsolete_message = "@Deprecated()"
 
             if javadoc_started and not COMMENT_RE.match(line):
                 # comment section ended

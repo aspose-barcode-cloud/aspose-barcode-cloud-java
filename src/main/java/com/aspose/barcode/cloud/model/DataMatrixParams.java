@@ -90,7 +90,7 @@ public class DataMatrixParams {
      *
      * @return columns
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     @ApiModelProperty(
             value =
                     "DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count.")
@@ -137,7 +137,7 @@ public class DataMatrixParams {
      *
      * @return rows
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     @ApiModelProperty(
             value =
                     "DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Rows count.")
