@@ -85,11 +85,14 @@ public class DataMatrixParams {
     }
 
     /**
-     * Columns count.
+     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next release Columns
+     * count.
      *
      * @return columns
      */
-    @ApiModelProperty(value = "Columns count.")
+    @ApiModelProperty(
+            value =
+                    "DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count.")
     public Integer getColumns() {
         return columns;
     }
@@ -128,11 +131,14 @@ public class DataMatrixParams {
     }
 
     /**
-     * Rows count.
+     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next release Rows
+     * count.
      *
      * @return rows
      */
-    @ApiModelProperty(value = "Rows count.")
+    @ApiModelProperty(
+            value =
+                    "DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Rows count.")
     public Integer getRows() {
         return rows;
     }
