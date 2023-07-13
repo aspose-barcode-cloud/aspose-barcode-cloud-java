@@ -73,6 +73,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call copyFileCall(
             CopyFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -239,6 +240,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call deleteFileCall(
             DeleteFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -392,6 +394,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call downloadFileCall(
             DownloadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -550,6 +553,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call moveFileCall(
             MoveFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -716,6 +720,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call uploadFileCall(
             UploadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,

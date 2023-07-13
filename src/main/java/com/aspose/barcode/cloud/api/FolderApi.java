@@ -72,6 +72,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call copyFolderCall(
             CopyFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -236,6 +237,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call createFolderCall(
             CreateFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -389,6 +391,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call deleteFolderCall(
             DeleteFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -544,6 +547,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call getFilesListCall(
             GetFilesListRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -702,6 +706,7 @@ public class FolderApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call moveFolderCall(
             MoveFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,

@@ -75,6 +75,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call getDiscUsageCall(
             GetDiscUsageRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -226,6 +227,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call getFileVersionsCall(
             GetFileVersionsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -385,6 +387,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call objectExistsCall(
             ObjectExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -545,6 +548,7 @@ public class StorageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call storageExistsCall(
             StorageExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
