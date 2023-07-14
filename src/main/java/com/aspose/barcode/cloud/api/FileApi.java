@@ -73,6 +73,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call copyFileCall(
             CopyFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -229,6 +230,7 @@ public class FileApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+
     /**
      * Build call for deleteFile
      *
@@ -238,6 +240,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call deleteFileCall(
             DeleteFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -381,6 +384,7 @@ public class FileApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+
     /**
      * Build call for downloadFile
      *
@@ -390,6 +394,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call downloadFileCall(
             DownloadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -538,6 +543,7 @@ public class FileApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for moveFile
      *
@@ -547,6 +553,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call moveFileCall(
             MoveFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -703,6 +710,7 @@ public class FileApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+
     /**
      * Build call for uploadFile
      *
@@ -712,6 +720,7 @@ public class FileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call uploadFileCall(
             UploadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,

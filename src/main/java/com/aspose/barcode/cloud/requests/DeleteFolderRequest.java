@@ -33,8 +33,10 @@ package com.aspose.barcode.cloud.requests;
 public class DeleteFolderRequest {
     /** Folder path e.g. '/folder' */
     public final String path;
+
     /** Storage name */
     public String storageName;
+
     /** Enable to delete folders, subfolders and files */
     public Boolean recursive = false;
 

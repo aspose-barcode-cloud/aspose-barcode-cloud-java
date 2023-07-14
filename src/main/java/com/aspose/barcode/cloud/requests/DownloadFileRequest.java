@@ -33,8 +33,10 @@ package com.aspose.barcode.cloud.requests;
 public class DownloadFileRequest {
     /** File path e.g. '/folder/file.ext' */
     public final String path;
+
     /** Storage name */
     public String storageName;
+
     /** File version ID to download */
     public String versionId;
 

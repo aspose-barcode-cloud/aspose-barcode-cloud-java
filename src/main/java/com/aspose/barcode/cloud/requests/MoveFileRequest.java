@@ -33,12 +33,16 @@ package com.aspose.barcode.cloud.requests;
 public class MoveFileRequest {
     /** Source file path e.g. '/src.ext' */
     public final String srcPath;
+
     /** Destination file path e.g. '/dest.ext' */
     public final String destPath;
+
     /** Source storage name */
     public String srcStorageName;
+
     /** Destination storage name */
     public String destStorageName;
+
     /** File version ID to move */
     public String versionId;
 

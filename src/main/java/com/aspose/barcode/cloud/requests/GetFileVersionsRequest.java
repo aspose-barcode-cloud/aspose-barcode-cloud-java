@@ -33,6 +33,7 @@ package com.aspose.barcode.cloud.requests;
 public class GetFileVersionsRequest {
     /** File path e.g. '/file.ext' */
     public final String path;
+
     /** Storage name */
     public String storageName;
 

@@ -39,8 +39,10 @@ public class UploadFileRequest {
      * filename parameter from Content-Disposition header.
      */
     public final String path;
+
     /** File to upload */
     public final File file;
+
     /** Storage name */
     public String storageName;
 

@@ -33,6 +33,7 @@ package com.aspose.barcode.cloud.requests;
 public class CreateFolderRequest {
     /** Folder path to create e.g. 'folder_1/folder_2/' */
     public final String path;
+
     /** Storage name */
     public String storageName;
 

@@ -33,8 +33,10 @@ package com.aspose.barcode.cloud.requests;
 public class DeleteFileRequest {
     /** File path e.g. '/folder/file.ext' */
     public final String path;
+
     /** Storage name */
     public String storageName;
+
     /** File version ID to delete */
     public String versionId;
 

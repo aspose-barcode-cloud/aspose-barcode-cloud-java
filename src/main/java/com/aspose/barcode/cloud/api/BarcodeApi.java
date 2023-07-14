@@ -74,6 +74,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call getBarcodeGenerateCall(
             GetBarcodeGenerateRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -306,6 +307,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for getBarcodeRecognize
      *
@@ -315,6 +317,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call getBarcodeRecognizeCall(
             GetBarcodeRecognizeRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -577,6 +580,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for postBarcodeRecognizeFromUrlOrContent
      *
@@ -586,6 +590,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call postBarcodeRecognizeFromUrlOrContentCall(
             PostBarcodeRecognizeFromUrlOrContentRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -852,6 +857,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for postGenerateMultiple
      *
@@ -861,6 +867,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call postGenerateMultipleCall(
             PostGenerateMultipleRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -1011,6 +1018,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for putBarcodeGenerateFile
      *
@@ -1020,6 +1028,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call putBarcodeGenerateFileCall(
             PutBarcodeGenerateFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -1268,6 +1277,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for putBarcodeRecognizeFromBody
      *
@@ -1277,6 +1287,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call putBarcodeRecognizeFromBodyCall(
             PutBarcodeRecognizeFromBodyRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
@@ -1438,6 +1449,7 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
     /**
      * Build call for putGenerateMultiple
      *
@@ -1447,6 +1459,7 @@ public class BarcodeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
+    @SuppressWarnings("removal")
     protected com.squareup.okhttp.Call putGenerateMultipleCall(
             PutGenerateMultipleRequest request,
             final ProgressResponseBody.ProgressListener progressListener,

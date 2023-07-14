@@ -33,8 +33,10 @@ package com.aspose.barcode.cloud.requests;
 public class ObjectExistsRequest {
     /** File or folder path e.g. '/file.ext' or '/folder' */
     public final String path;
+
     /** Storage name */
     public String storageName;
+
     /** File version ID */
     public String versionId;
 

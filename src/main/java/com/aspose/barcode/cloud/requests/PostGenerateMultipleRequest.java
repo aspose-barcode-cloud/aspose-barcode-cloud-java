@@ -35,6 +35,7 @@ import com.aspose.barcode.cloud.model.GeneratorParamsList;
 public class PostGenerateMultipleRequest {
     /** List of barcodes */
     public final GeneratorParamsList generatorParamsList;
+
     /** Format to return stream in */
     public String format = "png";
 

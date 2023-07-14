@@ -6,10 +6,15 @@ all: format test
 .PHONY: fix
 fix:
 	./scripts/fix-region-point.bash
+	./scripts/annotate-deprecated.bash
 
 .PHONY: format
 format:
 	./scripts/format.bash
+
+.PHONY: lint
+lint:
+	./scripts/checkstyle.bash
 
 .PHONY: test
 test:
