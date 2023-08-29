@@ -118,6 +118,9 @@ public class ReaderParams {
     @SerializedName(value = "fastScanOnly")
     private Boolean fastScanOnly = null;
 
+    @SerializedName(value = "allowAdditionalRestorations")
+    private Boolean allowAdditionalRestorations = null;
+
     @SerializedName(value = "regionLikelihoodThresholdPercent")
     private Double regionLikelihoodThresholdPercent = null;
 
@@ -580,6 +583,23 @@ public class ReaderParams {
     }
 
     /**
+     * Allows engine using additional image restorations to recognize corrupted barcodes. At this
+     * time, it is used only in MicroPdf417 barcode type. Default value: False.
+     *
+     * @return allowAdditionalRestorations
+     */
+    @ApiModelProperty(
+            value =
+                    "Allows engine using additional image restorations to recognize corrupted barcodes. At this time, it is used only in MicroPdf417 barcode type. Default value: False.")
+    public Boolean isAllowAdditionalRestorations() {
+        return allowAdditionalRestorations;
+    }
+
+    public void setAllowAdditionalRestorations(Boolean allowAdditionalRestorations) {
+        this.allowAdditionalRestorations = allowAdditionalRestorations;
+    }
+
+    /**
      * Sets threshold for detected regions that may contain barcodes. Value 0.7 means that bottom
      * 70% of possible regions are filtered out and not processed further. Region likelihood
      * threshold must be between [0.05, 0.9] Use high values for clear images with few barcodes. Use
@@ -765,6 +785,8 @@ public class ReaderParams {
                 && Objects.equals(this.checkMore1DVariants, readerParams.checkMore1DVariants)
                 && Objects.equals(this.fastScanOnly, readerParams.fastScanOnly)
                 && Objects.equals(
+                        this.allowAdditionalRestorations, readerParams.allowAdditionalRestorations)
+                && Objects.equals(
                         this.regionLikelihoodThresholdPercent,
                         readerParams.regionLikelihoodThresholdPercent)
                 && Objects.equals(this.scanWindowSizes, readerParams.scanWindowSizes)
@@ -808,6 +830,7 @@ public class ReaderParams {
                 allowWhiteSpotsRemoving,
                 checkMore1DVariants,
                 fastScanOnly,
+                allowAdditionalRestorations,
                 regionLikelihoodThresholdPercent,
                 scanWindowSizes,
                 similarity,
@@ -881,6 +904,9 @@ public class ReaderParams {
                 .append(toIndentedString(checkMore1DVariants))
                 .append("\n");
         sb.append("    fastScanOnly: ").append(toIndentedString(fastScanOnly)).append("\n");
+        sb.append("    allowAdditionalRestorations: ")
+                .append(toIndentedString(allowAdditionalRestorations))
+                .append("\n");
         sb.append("    regionLikelihoodThresholdPercent: ")
                 .append(toIndentedString(regionLikelihoodThresholdPercent))
                 .append("\n");

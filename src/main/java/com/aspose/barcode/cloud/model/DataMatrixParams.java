@@ -56,6 +56,9 @@ public class DataMatrixParams {
     @SerializedName(value = "macroCharacters")
     private MacroCharacter macroCharacters = null;
 
+    @SerializedName(value = "version")
+    private DataMatrixVersion version = null;
+
     /**
      * Height/Width ratio of 2D BarCode module
      *
@@ -167,6 +170,21 @@ public class DataMatrixParams {
         this.macroCharacters = macroCharacters;
     }
 
+    /**
+     * Sets a Datamatrix symbol size. Default value: DataMatrixVersion.Auto.
+     *
+     * @return version
+     */
+    @ApiModelProperty(
+            value = "Sets a Datamatrix symbol size. Default value: DataMatrixVersion.Auto.")
+    public DataMatrixVersion getVersion() {
+        return version;
+    }
+
+    public void setVersion(DataMatrixVersion version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -182,7 +200,8 @@ public class DataMatrixParams {
                 && Objects.equals(this.dataMatrixEcc, dataMatrixParams.dataMatrixEcc)
                 && Objects.equals(this.dataMatrixEncodeMode, dataMatrixParams.dataMatrixEncodeMode)
                 && Objects.equals(this.rows, dataMatrixParams.rows)
-                && Objects.equals(this.macroCharacters, dataMatrixParams.macroCharacters);
+                && Objects.equals(this.macroCharacters, dataMatrixParams.macroCharacters)
+                && Objects.equals(this.version, dataMatrixParams.version);
     }
 
     @Override
@@ -194,7 +213,8 @@ public class DataMatrixParams {
                 dataMatrixEcc,
                 dataMatrixEncodeMode,
                 rows,
-                macroCharacters);
+                macroCharacters,
+                version);
     }
 
     @Override
@@ -211,6 +231,7 @@ public class DataMatrixParams {
                 .append("\n");
         sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
         sb.append("    macroCharacters: ").append(toIndentedString(macroCharacters)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

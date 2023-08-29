@@ -415,6 +415,10 @@ public class BarcodeApi {
                     apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
         if (request.fastScanOnly != null)
             queryParams.addAll(apiClient.parameterToPair("FastScanOnly", request.fastScanOnly));
+        if (request.allowAdditionalRestorations != null)
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "AllowAdditionalRestorations", request.allowAdditionalRestorations));
         if (request.regionLikelihoodThresholdPercent != null)
             queryParams.addAll(
                     apiClient.parameterToPair(
@@ -688,6 +692,10 @@ public class BarcodeApi {
                     apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
         if (request.fastScanOnly != null)
             queryParams.addAll(apiClient.parameterToPair("FastScanOnly", request.fastScanOnly));
+        if (request.allowAdditionalRestorations != null)
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "AllowAdditionalRestorations", request.allowAdditionalRestorations));
         if (request.regionLikelihoodThresholdPercent != null)
             queryParams.addAll(
                     apiClient.parameterToPair(
