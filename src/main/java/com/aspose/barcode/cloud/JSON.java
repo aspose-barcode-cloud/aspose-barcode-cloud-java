@@ -50,6 +50,7 @@ import java.text.ParseException;
 import java.text.ParsePosition;
 import java.util.Date;
 
+/** TODO: */
 public class JSON {
     private Gson gson;
     private boolean isLenientOnJson = false;
@@ -59,12 +60,14 @@ public class JSON {
             new OffsetDateTimeTypeAdapter();
     private final LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
 
+    /** TODO: */
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder();
         GsonBuilder builder = fireBuilder.createGsonBuilder();
         return builder;
     }
 
+    /** TODO: */
     public JSON() {
         ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
         gson =
@@ -112,7 +115,6 @@ public class JSON {
     /**
      * Deserialize the given JSON string to Java object.
      *
-     * @param <T> Type
      * @param body The JSON string
      * @param returnType The type to deserialize into
      * @return The deserialized Java object
@@ -130,8 +132,11 @@ public class JSON {
         } catch (JsonParseException e) {
             // Fallback processing when failed to parse JSON form response body:
             // return the response body string directly for the String return type;
-            if (returnType.equals(String.class)) return (T) body;
-            else throw (e);
+            if (returnType.equals(String.class)) {
+                return (T) body;
+            } else {
+                throw (e);
+            }
         }
     }
 

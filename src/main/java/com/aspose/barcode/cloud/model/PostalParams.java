@@ -43,7 +43,7 @@ public class PostalParams {
      *
      * @return shortBarHeight
      */
-    @ApiModelProperty(value = "Short bar's height of Postal barcodes.")
+    @ApiModelProperty(value = "ShortBarHeight")
     public Double getShortBarHeight() {
         return shortBarHeight;
     }

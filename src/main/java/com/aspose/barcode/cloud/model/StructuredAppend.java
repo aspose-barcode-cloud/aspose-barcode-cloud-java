@@ -49,8 +49,7 @@ public class StructuredAppend {
      *
      * @return sequenceIndicator
      */
-    @ApiModelProperty(
-            value = "The index of the QR structured append mode barcode. Index starts from 0.")
+    @ApiModelProperty(value = "SequenceIndicator")
     public Integer getSequenceIndicator() {
         return sequenceIndicator;
     }
@@ -64,7 +63,7 @@ public class StructuredAppend {
      *
      * @return totalCount
      */
-    @ApiModelProperty(value = "QR structured append mode barcodes quantity. Max value is 16.")
+    @ApiModelProperty(value = "TotalCount")
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -78,7 +77,7 @@ public class StructuredAppend {
      *
      * @return parityByte
      */
-    @ApiModelProperty(value = "QR structured append mode parity data.")
+    @ApiModelProperty(value = "ParityByte")
     public Integer getParityByte() {
         return parityByte;
     }

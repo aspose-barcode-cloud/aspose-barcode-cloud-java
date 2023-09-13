@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** Subset of GraphicsUnit. */
+/** AvailableGraphicsUnit. Subset of GraphicsUnit. */
 @JsonAdapter(AvailableGraphicsUnit.Adapter.class)
 public enum AvailableGraphicsUnit {
     PIXEL("Pixel"),
@@ -58,6 +58,7 @@ public enum AvailableGraphicsUnit {
         return String.valueOf(value);
     }
 
+    /** Create AvailableGraphicsUnit from String. */
     public static AvailableGraphicsUnit fromValue(String text) {
         for (AvailableGraphicsUnit b : AvailableGraphicsUnit.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -67,6 +68,7 @@ public enum AvailableGraphicsUnit {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<AvailableGraphicsUnit> {
         @Override
         public void write(final JsonWriter jsonWriter, final AvailableGraphicsUnit enumeration)

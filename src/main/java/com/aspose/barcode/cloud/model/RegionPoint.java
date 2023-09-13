@@ -46,7 +46,7 @@ public class RegionPoint {
      *
      * @return X
      */
-    @ApiModelProperty(required = true, value = "X-coordinate")
+    @ApiModelProperty(required = true, value = "X")
     public Integer getX() {
         return X;
     }
@@ -60,7 +60,7 @@ public class RegionPoint {
      *
      * @return Y
      */
-    @ApiModelProperty(required = true, value = "Y-coordinate")
+    @ApiModelProperty(required = true, value = "Y")
     public Integer getY() {
         return Y;
     }

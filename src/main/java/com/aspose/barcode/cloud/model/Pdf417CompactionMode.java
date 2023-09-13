@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** Pdf417CompactionMode. */
 @JsonAdapter(Pdf417CompactionMode.Adapter.class)
 public enum Pdf417CompactionMode {
     AUTO("Auto"),
@@ -58,6 +58,7 @@ public enum Pdf417CompactionMode {
         return String.valueOf(value);
     }
 
+    /** Create Pdf417CompactionMode from String. */
     public static Pdf417CompactionMode fromValue(String text) {
         for (Pdf417CompactionMode b : Pdf417CompactionMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -67,6 +68,7 @@ public enum Pdf417CompactionMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<Pdf417CompactionMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final Pdf417CompactionMode enumeration)

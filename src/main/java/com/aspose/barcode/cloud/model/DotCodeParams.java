@@ -58,7 +58,7 @@ public class DotCodeParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -73,9 +73,7 @@ public class DotCodeParams {
      *
      * @return columns
      */
-    @ApiModelProperty(
-            value =
-                    "Identifies columns count. Sum of the number of rows plus the number of columns of a DotCode symbol must be odd. Number of columns must be at least 5.")
+    @ApiModelProperty(value = "Columns")
     public Integer getColumns() {
         return columns;
     }
@@ -89,7 +87,7 @@ public class DotCodeParams {
      *
      * @return encodeMode
      */
-    @ApiModelProperty(value = "Identifies DotCode encode mode. Default value: Auto.")
+    @ApiModelProperty(value = "EncodeMode")
     public DotCodeEncodeMode getEncodeMode() {
         return encodeMode;
     }
@@ -103,9 +101,7 @@ public class DotCodeParams {
      *
      * @return ecIEncoding
      */
-    @ApiModelProperty(
-            value =
-                    "Identifies ECI encoding. Used when DotCodeEncodeMode is Auto. Default value: ISO-8859-1.")
+    @ApiModelProperty(value = "EcIEncoding")
     public ECIEncodings getEcIEncoding() {
         return ecIEncoding;
     }
@@ -121,9 +117,7 @@ public class DotCodeParams {
      *
      * @return isReaderInitialization
      */
-    @ApiModelProperty(
-            value =
-                    "Indicates whether code is used for instruct reader to interpret the following data as instructions for initialization or reprogramming of the bar code reader. Default value is false.")
+    @ApiModelProperty(value = "IsReaderInitialization")
     public Boolean isIsReaderInitialization() {
         return isReaderInitialization;
     }
@@ -138,9 +132,7 @@ public class DotCodeParams {
      *
      * @return rows
      */
-    @ApiModelProperty(
-            value =
-                    "Identifies rows count. Sum of the number of rows plus the number of columns of a DotCode symbol must be odd. Number of rows must be at least 5.")
+    @ApiModelProperty(value = "Rows")
     public Integer getRows() {
         return rows;
     }

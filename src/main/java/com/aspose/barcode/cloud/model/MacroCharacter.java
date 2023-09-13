@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** MacroCharacter. */
 @JsonAdapter(MacroCharacter.Adapter.class)
 public enum MacroCharacter {
     NONE("None"),
@@ -56,6 +56,7 @@ public enum MacroCharacter {
         return String.valueOf(value);
     }
 
+    /** Create MacroCharacter from String. */
     public static MacroCharacter fromValue(String text) {
         for (MacroCharacter b : MacroCharacter.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum MacroCharacter {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<MacroCharacter> {
         @Override
         public void write(final JsonWriter jsonWriter, final MacroCharacter enumeration)

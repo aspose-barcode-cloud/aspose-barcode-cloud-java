@@ -49,7 +49,7 @@ public class MaxiCodeParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -63,7 +63,7 @@ public class MaxiCodeParams {
      *
      * @return mode
      */
-    @ApiModelProperty(value = "Mode for MaxiCode barcodes.")
+    @ApiModelProperty(value = "Mode")
     public MaxiCodeMode getMode() {
         return mode;
     }
@@ -77,7 +77,7 @@ public class MaxiCodeParams {
      *
      * @return encodeMode
      */
-    @ApiModelProperty(value = "Encoding mode for MaxiCode barcodes.")
+    @ApiModelProperty(value = "EncodeMode")
     public MaxiCodeEncodeMode getEncodeMode() {
         return encodeMode;
     }

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** MaxiCodeEncodeMode. */
 @JsonAdapter(MaxiCodeEncodeMode.Adapter.class)
 public enum MaxiCodeEncodeMode {
     AUTO("Auto"),
@@ -56,6 +56,7 @@ public enum MaxiCodeEncodeMode {
         return String.valueOf(value);
     }
 
+    /** Create MaxiCodeEncodeMode from String. */
     public static MaxiCodeEncodeMode fromValue(String text) {
         for (MaxiCodeEncodeMode b : MaxiCodeEncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum MaxiCodeEncodeMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<MaxiCodeEncodeMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final MaxiCodeEncodeMode enumeration)

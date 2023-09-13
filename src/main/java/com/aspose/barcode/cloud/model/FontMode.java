@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** FontMode. */
 @JsonAdapter(FontMode.Adapter.class)
 public enum FontMode {
     AUTO("Auto"),
@@ -54,6 +54,7 @@ public enum FontMode {
         return String.valueOf(value);
     }
 
+    /** Create FontMode from String. */
     public static FontMode fromValue(String text) {
         for (FontMode b : FontMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -63,6 +64,7 @@ public enum FontMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<FontMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final FontMode enumeration)

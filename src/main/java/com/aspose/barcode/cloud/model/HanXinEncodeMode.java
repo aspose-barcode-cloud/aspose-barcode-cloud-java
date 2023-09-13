@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** HanXinEncodeMode. */
 @JsonAdapter(HanXinEncodeMode.Adapter.class)
 public enum HanXinEncodeMode {
     AUTO("Auto"),
@@ -62,6 +62,7 @@ public enum HanXinEncodeMode {
         return String.valueOf(value);
     }
 
+    /** Create HanXinEncodeMode from String. */
     public static HanXinEncodeMode fromValue(String text) {
         for (HanXinEncodeMode b : HanXinEncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -71,6 +72,7 @@ public enum HanXinEncodeMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<HanXinEncodeMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final HanXinEncodeMode enumeration)

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** QREncodeMode. */
 @JsonAdapter(QREncodeMode.Adapter.class)
 public enum QREncodeMode {
     AUTO("Auto"),
@@ -62,6 +62,7 @@ public enum QREncodeMode {
         return String.valueOf(value);
     }
 
+    /** Create QREncodeMode from String. */
     public static QREncodeMode fromValue(String text) {
         for (QREncodeMode b : QREncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -71,6 +72,7 @@ public enum QREncodeMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<QREncodeMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final QREncodeMode enumeration)

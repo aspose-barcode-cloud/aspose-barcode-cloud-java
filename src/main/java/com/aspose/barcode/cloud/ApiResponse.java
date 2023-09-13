@@ -39,6 +39,8 @@ public class ApiResponse<T> {
     private final T data;
 
     /**
+     * TODO:
+     *
      * @param statusCode The status code of HTTP response
      * @param headers The headers of HTTP response
      */
@@ -47,6 +49,8 @@ public class ApiResponse<T> {
     }
 
     /**
+     * TODO:
+     *
      * @param statusCode The status code of HTTP response
      * @param headers The headers of HTTP response
      * @param data The object deserialized from response bod

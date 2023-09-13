@@ -36,8 +36,10 @@ import okio.Source;
 
 import java.io.IOException;
 
+/** Display progress while download body. */
 public class ProgressResponseBody extends ResponseBody {
 
+    /** Interface for progress update. */
     public interface ProgressListener {
         void update(long bytesRead, long contentLength, boolean done);
     }

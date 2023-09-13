@@ -43,8 +43,7 @@ public class CouponParams {
      *
      * @return supplementSpace
      */
-    @ApiModelProperty(
-            value = "Space between main the BarCode and supplement BarCode in Unit value.")
+    @ApiModelProperty(value = "SupplementSpace")
     public Double getSupplementSpace() {
         return supplementSpace;
     }

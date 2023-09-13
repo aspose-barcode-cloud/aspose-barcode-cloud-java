@@ -26,7 +26,16 @@
 package com.aspose.barcode.cloud;
 
 import com.aspose.barcode.cloud.model.ApiErrorResponse;
-import com.squareup.okhttp.*;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.MultipartBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
@@ -44,12 +53,18 @@ import java.lang.reflect.Type;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.text.DateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/** ApiClient. */
 public class ApiClient {
 
     public final String apiVersion = "v3.0";
@@ -62,9 +77,6 @@ public class ApiClient {
     private String tempFolderPath = null;
 
     private DateFormat dateFormat;
-    private DateFormat datetimeFormat;
-    private boolean lenientDatetimeFormat;
-    private int dateLength;
 
     private OkHttpClient httpClient;
     private JSON json;
@@ -72,6 +84,7 @@ public class ApiClient {
     private HttpLoggingInterceptor loggingInterceptor;
     private String accessToken;
 
+    /** TODO: */
     public ApiClient(String clientId, String clientSecret, String baseUrl) {
         this();
         this.clientId = clientId;
@@ -81,18 +94,17 @@ public class ApiClient {
         }
     }
 
+    /** TODO: */
     public ApiClient(String clientId, String clientSecret) {
         this(clientId, clientSecret, null);
     }
 
+    /** TODO: */
     public ApiClient(String accessToken) {
         this();
         this.setAccessToken(accessToken);
     }
 
-    /*
-     * Constructor for ApiClient
-     */
     protected ApiClient() {
         httpClient = new OkHttpClient();
 
@@ -107,7 +119,7 @@ public class ApiClient {
     }
 
     /**
-     * Get base path
+     * Get base path.
      *
      * @return Base path
      */
@@ -116,7 +128,7 @@ public class ApiClient {
     }
 
     /**
-     * Get HTTP client
+     * Get HTTP client.
      *
      * @return An instance of OkHttpClient
      */
@@ -125,14 +137,12 @@ public class ApiClient {
     }
 
     /**
-     * Set HTTP client
+     * Set HTTP client.
      *
      * @param httpClient An instance of OkHttpClient
-     * @return Api Client
      */
-    public ApiClient setHttpClient(OkHttpClient httpClient) {
+    public void setHttpClient(OkHttpClient httpClient) {
         this.httpClient = httpClient;
-        return this;
     }
 
     /**
@@ -148,11 +158,9 @@ public class ApiClient {
      * Set JSON
      *
      * @param json JSON object
-     * @return Api client
      */
-    public ApiClient setJSON(JSON json) {
+    public void setJSON(JSON json) {
         this.json = json;
-        return this;
     }
 
     public DateFormat getDateFormat() {
@@ -175,11 +183,9 @@ public class ApiClient {
      * Set the User-Agent header's value (by adding to the default header map).
      *
      * @param userAgent HTTP request's user agent
-     * @return ApiClient
      */
-    public ApiClient setUserAgent(String userAgent) {
+    public void setUserAgent(String userAgent) {
         addDefaultHeader("User-Agent", userAgent);
-        return this;
     }
 
     /**
@@ -187,11 +193,9 @@ public class ApiClient {
      *
      * @param key The header's key
      * @param value The header's value
-     * @return ApiClient
      */
-    public ApiClient addDefaultHeader(String key, String value) {
+    public void addDefaultHeader(String key, String value) {
         defaultHeaderMap.put(key, value);
-        return this;
     }
 
     /**
@@ -207,9 +211,8 @@ public class ApiClient {
      * Enable/disable debugging for this API client.
      *
      * @param debugging To enable (true) or disable (false) debugging
-     * @return ApiClient
      */
-    public ApiClient setDebugging(boolean debugging) {
+    public void setDebugging(boolean debugging) {
         if (debugging != this.debugging) {
             if (debugging) {
                 loggingInterceptor = new HttpLoggingInterceptor();
@@ -221,7 +224,6 @@ public class ApiClient {
             }
         }
         this.debugging = debugging;
-        return this;
     }
 
     /**
@@ -241,11 +243,9 @@ public class ApiClient {
      * Set the temporary folder path (for downloading files)
      *
      * @param tempFolderPath Temporary folder path
-     * @return ApiClient
      */
-    public ApiClient setTempFolderPath(String tempFolderPath) {
+    public void setTempFolderPath(String tempFolderPath) {
         this.tempFolderPath = tempFolderPath;
-        return this;
     }
 
     /**
@@ -262,11 +262,9 @@ public class ApiClient {
      * must be between 1 and {@link Integer#MAX_VALUE}.
      *
      * @param connectionTimeout connection timeout in milliseconds
-     * @return Api client
      */
-    public ApiClient setConnectTimeout(int connectionTimeout) {
+    public void setConnectTimeout(int connectionTimeout) {
         httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
-        return this;
     }
 
     /**
@@ -283,11 +281,9 @@ public class ApiClient {
      * be between 1 and {@link Integer#MAX_VALUE}.
      *
      * @param readTimeout read timeout in milliseconds
-     * @return Api client
      */
-    public ApiClient setReadTimeout(int readTimeout) {
+    public void setReadTimeout(int readTimeout) {
         httpClient.setReadTimeout(readTimeout, TimeUnit.MILLISECONDS);
-        return this;
     }
 
     /**
@@ -304,11 +300,9 @@ public class ApiClient {
      * must be between 1 and {@link Integer#MAX_VALUE}.
      *
      * @param writeTimeout connection timeout in milliseconds
-     * @return Api client
      */
-    public ApiClient setWriteTimeout(int writeTimeout) {
+    public void setWriteTimeout(int writeTimeout) {
         httpClient.setWriteTimeout(writeTimeout, TimeUnit.MILLISECONDS);
-        return this;
     }
 
     /**
@@ -353,8 +347,9 @@ public class ApiClient {
         List<Pair> params = new ArrayList<Pair>();
 
         // preconditions
-        if (name == null || name.isEmpty() || value == null || value instanceof Collection)
+        if (name == null || name.isEmpty() || value == null || value instanceof Collection) {
             return params;
+        }
 
         params.add(new Pair(name, parameterToString(value)));
         return params;
@@ -491,7 +486,6 @@ public class ApiClient {
      * Deserialize response body to Java object, according to the return type and the Content-Type
      * response header.
      *
-     * @param <T> Type
      * @param response HTTP response
      * @param returnType The type of the Java object
      * @return The deserialized Java object
@@ -518,8 +512,11 @@ public class ApiClient {
 
         String respBody;
         try {
-            if (response.body() != null) respBody = response.body().string();
-            else respBody = null;
+            if (response.body() != null) {
+                respBody = response.body().string();
+            } else {
+                respBody = null;
+            }
         } catch (IOException e) {
             throw new ApiException(e);
         }
@@ -580,8 +577,8 @@ public class ApiClient {
      * Download file from the given response.
      *
      * @param response An instance of the Response object
-     * @throws ApiException If fail to read file content from response and write to disk
      * @return Downloaded file
+     * @throws ApiException If fail to read file content from response and write to disk
      */
     public File downloadFileFromResponse(Response response) throws ApiException {
         try {
@@ -596,11 +593,11 @@ public class ApiClient {
     }
 
     /**
-     * Prepare file for download
+     * Prepare file for download.
      *
      * @param response An instance of the Response object
-     * @throws IOException If fail to prepare file for download
      * @return Prepared file for the download
+     * @throws IOException If fail to prepare file for download
      */
     public File prepareDownloadFile(Response response) throws IOException {
         String filename = null;
@@ -628,20 +625,24 @@ public class ApiClient {
                 suffix = filename.substring(pos);
             }
             // File.createTempFile requires the prefix to be at least three characters long
-            if (prefix.length() < 3) prefix = "download-";
+            if (prefix.length() < 3) {
+                prefix = "download-";
+            }
         }
 
-        if (tempFolderPath == null) return File.createTempFile(prefix, suffix);
-        else return File.createTempFile(prefix, suffix, new File(tempFolderPath));
+        if (tempFolderPath == null) {
+            return File.createTempFile(prefix, suffix);
+        } else {
+            return File.createTempFile(prefix, suffix, new File(tempFolderPath));
+        }
     }
 
     /**
-     * {@link #execute(Call, Type)}
+     * Override {@link #execute(Call, Type)}.
      *
-     * @param <T> Type
      * @param call An instance of the Call object
-     * @throws ApiException If fail to execute the call
      * @return ApiResponse&lt;T&gt;
+     * @throws ApiException If fail to execute the call
      */
     public <T> ApiResponse<T> execute(Call call) throws ApiException {
         return execute(call, null);
@@ -651,7 +652,6 @@ public class ApiClient {
      * Execute HTTP call and deserialize the HTTP response body into the given return type.
      *
      * @param returnType The return type used to deserialize HTTP response body
-     * @param <T> The return type corresponding to (same with) returnType
      * @param call Call
      * @return ApiResponse object containing response status, headers and data, which is a Java
      *     object deserialized from response body and would be null when returnType is null.
@@ -668,9 +668,8 @@ public class ApiClient {
     }
 
     /**
-     * {@link #executeAsync(Call, Type, ApiCallback)}
+     * Override {@link #executeAsync(Call, Type, ApiCallback)}
      *
-     * @param <T> Type
      * @param call An instance of the Call object
      * @param callback ApiCallback&lt;T&gt;
      */
@@ -682,7 +681,6 @@ public class ApiClient {
      * Execute HTTP call asynchronously.
      *
      * @see #execute(Call, Type)
-     * @param <T> Type
      * @param call The callback to be executed when the API call finishes
      * @param returnType Return type
      * @param callback ApiCallback
@@ -713,12 +711,11 @@ public class ApiClient {
     /**
      * Handle the given response, return the deserialized object when the response is successful.
      *
-     * @param <T> Type
      * @param response Response
      * @param returnType Return type
+     * @return Type
      * @throws ApiException If the response has a unsuccessful status code or fail to deserialize
      *     the response body
-     * @return Type
      */
     public <T> T handleResponse(Response response, Type returnType) throws ApiException {
         if (response.isSuccessful()) {
@@ -994,7 +991,7 @@ public class ApiClient {
     }
 
     /**
-     * Request OAuth token
+     * Request OAuth token.
      *
      * @throws ApiException If authorization is failed
      */
@@ -1036,7 +1033,7 @@ public class ApiClient {
         headerParams.put("Authorization", "Bearer " + accessToken);
     }
 
-    /** GetAccessTokenResult class */
+    /** GetAccessTokenResult class for deserialization. */
     @SuppressWarnings({"unused", "InnerClassMayBeStatic"})
     private class GetAccessTokenResult {
         public String access_token;

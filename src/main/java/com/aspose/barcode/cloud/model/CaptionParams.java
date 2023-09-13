@@ -61,7 +61,7 @@ public class CaptionParams {
      *
      * @return text
      */
-    @ApiModelProperty(value = "Caption text.")
+    @ApiModelProperty(value = "Text")
     public String getText() {
         return text;
     }
@@ -75,7 +75,7 @@ public class CaptionParams {
      *
      * @return alignment
      */
-    @ApiModelProperty(value = "Text alignment.")
+    @ApiModelProperty(value = "Alignment")
     public TextAlignment getAlignment() {
         return alignment;
     }
@@ -89,7 +89,7 @@ public class CaptionParams {
      *
      * @return color
      */
-    @ApiModelProperty(value = "Text color.")
+    @ApiModelProperty(value = "Color")
     public String getColor() {
         return color;
     }
@@ -103,7 +103,7 @@ public class CaptionParams {
      *
      * @return visible
      */
-    @ApiModelProperty(value = "Is caption visible.")
+    @ApiModelProperty(value = "Visible")
     public Boolean isVisible() {
         return visible;
     }
@@ -117,7 +117,7 @@ public class CaptionParams {
      *
      * @return font
      */
-    @ApiModelProperty(value = "Font.")
+    @ApiModelProperty(value = "Font")
     public FontParams getFont() {
         return font;
     }
@@ -131,7 +131,7 @@ public class CaptionParams {
      *
      * @return padding
      */
-    @ApiModelProperty(value = "Padding.")
+    @ApiModelProperty(value = "Padding")
     public Padding getPadding() {
         return padding;
     }
@@ -145,7 +145,7 @@ public class CaptionParams {
      *
      * @return noWrap
      */
-    @ApiModelProperty(value = "Specify word wraps (line breaks) within text. Default value: false.")
+    @ApiModelProperty(value = "NoWrap")
     public Boolean isNoWrap() {
         return noWrap;
     }

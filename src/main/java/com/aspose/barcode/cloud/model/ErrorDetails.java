@@ -48,7 +48,7 @@ public class ErrorDetails {
      *
      * @return requestId
      */
-    @ApiModelProperty(value = "The request id")
+    @ApiModelProperty(value = "RequestId")
     public String getRequestId() {
         return requestId;
     }

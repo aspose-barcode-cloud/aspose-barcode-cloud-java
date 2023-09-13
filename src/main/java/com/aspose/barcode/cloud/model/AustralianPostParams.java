@@ -43,13 +43,11 @@ public class AustralianPostParams {
 
     /**
      * Interpreting type for the Customer Information of AustralianPost, default to
-     * CustomerInformationInterpretingType.Other\&quot;
+     * CustomerInformationInterpretingType.Other&quot;
      *
      * @return encodingTable
      */
-    @ApiModelProperty(
-            value =
-                    "Interpreting type for the Customer Information of AustralianPost, default to CustomerInformationInterpretingType.Other\"")
+    @ApiModelProperty(value = "EncodingTable")
     public CustomerInformationInterpretingType getEncodingTable() {
         return encodingTable;
     }
@@ -63,7 +61,7 @@ public class AustralianPostParams {
      *
      * @return shortBarHeight
      */
-    @ApiModelProperty(value = "Short bar's height of AustralianPost barcode.")
+    @ApiModelProperty(value = "ShortBarHeight")
     public Double getShortBarHeight() {
         return shortBarHeight;
     }

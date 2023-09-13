@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** CodabarSymbol. */
 @JsonAdapter(CodabarSymbol.Adapter.class)
 public enum CodabarSymbol {
     A("A"),
@@ -58,6 +58,7 @@ public enum CodabarSymbol {
         return String.valueOf(value);
     }
 
+    /** Create CodabarSymbol from String. */
     public static CodabarSymbol fromValue(String text) {
         for (CodabarSymbol b : CodabarSymbol.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -67,6 +68,7 @@ public enum CodabarSymbol {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<CodabarSymbol> {
         @Override
         public void write(final JsonWriter jsonWriter, final CodabarSymbol enumeration)

@@ -25,6 +25,7 @@
 
 package com.aspose.barcode.cloud;
 
+/** TODO: */
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

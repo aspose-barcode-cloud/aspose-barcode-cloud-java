@@ -44,6 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/** FolderApi. */
 public class FolderApi {
     private ApiClient apiClient;
 
@@ -87,21 +88,27 @@ public class FolderApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.destPath != null)
+        if (request.destPath != null) {
             queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
-        if (request.srcStorageName != null)
+        }
+
+        if (request.srcStorageName != null) {
             queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
-        if (request.destStorageName != null)
+        }
+
+        if (request.destStorageName != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -150,13 +157,15 @@ public class FolderApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling copyFolder(Async)");
+                    "Missing the required parameter 'request.srcPath'"
+                            + " when calling copyFolder(...)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling copyFolder(Async)");
+                    "Missing the required parameter 'request.destPath'"
+                            + " when calling copyFolder(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -176,7 +185,7 @@ public class FolderApi {
     }
 
     /**
-     * Copy folder
+     * TODO: Copy folder
      *
      * @param request See {@link CopyFolderRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -251,16 +260,18 @@ public class FolderApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -309,7 +320,8 @@ public class FolderApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling createFolder(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling createFolder(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -329,7 +341,7 @@ public class FolderApi {
     }
 
     /**
-     * Create the folder
+     * TODO: Create the folder
      *
      * @param request See {@link CreateFolderRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -405,18 +417,22 @@ public class FolderApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
-        if (request.recursive != null)
+        }
+
+        if (request.recursive != null) {
             queryParams.addAll(apiClient.parameterToPair("recursive", request.recursive));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -465,7 +481,8 @@ public class FolderApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling deleteFolder(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling deleteFolder(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -485,7 +502,7 @@ public class FolderApi {
     }
 
     /**
-     * Delete folder
+     * TODO: Delete folder
      *
      * @param request See {@link DeleteFolderRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -561,16 +578,18 @@ public class FolderApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -619,7 +638,8 @@ public class FolderApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling getFilesList(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling getFilesList(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -641,7 +661,7 @@ public class FolderApi {
     }
 
     /**
-     * Get all files and folders within a folder
+     * TODO: Get all files and folders within a folder
      *
      * @param request See {@link GetFilesListRequest}
      * @return ApiResponse&lt;FilesList&gt;
@@ -721,21 +741,27 @@ public class FolderApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.destPath != null)
+        if (request.destPath != null) {
             queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
-        if (request.srcStorageName != null)
+        }
+
+        if (request.srcStorageName != null) {
             queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
-        if (request.destStorageName != null)
+        }
+
+        if (request.destStorageName != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -784,13 +810,15 @@ public class FolderApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling moveFolder(Async)");
+                    "Missing the required parameter 'request.srcPath'"
+                            + " when calling moveFolder(...)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling moveFolder(Async)");
+                    "Missing the required parameter 'request.destPath'"
+                            + " when calling moveFolder(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -810,7 +838,7 @@ public class FolderApi {
     }
 
     /**
-     * Move folder
+     * TODO: Move folder
      *
      * @param request See {@link MoveFolderRequest}
      * @return ApiResponse&lt;Void&gt;

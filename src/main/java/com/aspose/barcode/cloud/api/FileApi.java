@@ -45,6 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/** FileApi. */
 public class FileApi {
     private ApiClient apiClient;
 
@@ -88,23 +89,31 @@ public class FileApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.destPath != null)
+        if (request.destPath != null) {
             queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
-        if (request.srcStorageName != null)
+        }
+
+        if (request.srcStorageName != null) {
             queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
-        if (request.destStorageName != null)
+        }
+
+        if (request.destStorageName != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
-        if (request.versionId != null)
+        }
+
+        if (request.versionId != null) {
             queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -153,13 +162,15 @@ public class FileApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling copyFile(Async)");
+                    "Missing the required parameter 'request.srcPath'"
+                            + " when calling copyFile(...)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling copyFile(Async)");
+                    "Missing the required parameter 'request.destPath'"
+                            + " when calling copyFile(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -179,7 +190,7 @@ public class FileApi {
     }
 
     /**
-     * Copy file
+     * TODO: Copy file
      *
      * @param request See {@link CopyFileRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -253,18 +264,22 @@ public class FileApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
-        if (request.versionId != null)
+        }
+
+        if (request.versionId != null) {
             queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -313,7 +328,8 @@ public class FileApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling deleteFile(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling deleteFile(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -333,7 +349,7 @@ public class FileApi {
     }
 
     /**
-     * Delete file
+     * TODO: Delete file
      *
      * @param request See {@link DeleteFileRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -407,18 +423,22 @@ public class FileApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
-        if (request.versionId != null)
+        }
+
+        if (request.versionId != null) {
             queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"multipart/form-data"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -467,7 +487,8 @@ public class FileApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling downloadFile(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling downloadFile(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -489,7 +510,7 @@ public class FileApi {
     }
 
     /**
-     * Download file
+     * TODO: Download file
      *
      * @param request See {@link DownloadFileRequest}
      * @return ApiResponse&lt;File&gt;
@@ -568,23 +589,31 @@ public class FileApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.destPath != null)
+        if (request.destPath != null) {
             queryParams.addAll(apiClient.parameterToPair("destPath", request.destPath));
-        if (request.srcStorageName != null)
+        }
+
+        if (request.srcStorageName != null) {
             queryParams.addAll(apiClient.parameterToPair("srcStorageName", request.srcStorageName));
-        if (request.destStorageName != null)
+        }
+
+        if (request.destStorageName != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("destStorageName", request.destStorageName));
-        if (request.versionId != null)
+        }
+
+        if (request.versionId != null) {
             queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -633,13 +662,15 @@ public class FileApi {
         // verify the required parameter 'request.srcPath' is set
         if (request.srcPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.srcPath' when calling moveFile(Async)");
+                    "Missing the required parameter 'request.srcPath'"
+                            + " when calling moveFile(...)");
         }
 
         // verify the required parameter 'request.destPath' is set
         if (request.destPath == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.destPath' when calling moveFile(Async)");
+                    "Missing the required parameter 'request.destPath'"
+                            + " when calling moveFile(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -659,7 +690,7 @@ public class FileApi {
     }
 
     /**
-     * Move file
+     * TODO: Move file
      *
      * @param request See {@link MoveFileRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -733,17 +764,22 @@ public class FileApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-        if (request.file != null) formParams.put("File", request.file);
+        if (request.file != null) {
+            formParams.put("File", request.file);
+        }
 
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"multipart/form-data"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -792,13 +828,15 @@ public class FileApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling uploadFile(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling uploadFile(...)");
         }
 
         // verify the required parameter 'request.file' is set
         if (request.file == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.file' when calling uploadFile(Async)");
+                    "Missing the required parameter 'request.file'"
+                            + " when calling uploadFile(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -820,7 +858,7 @@ public class FileApi {
     }
 
     /**
-     * Upload file
+     * TODO: Upload file
      *
      * @param request See {@link UploadFileRequest}
      * @return ApiResponse&lt;FilesUploadResult&gt;

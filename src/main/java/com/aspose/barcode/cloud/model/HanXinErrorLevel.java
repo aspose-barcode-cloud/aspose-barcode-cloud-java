@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** HanXinErrorLevel. */
 @JsonAdapter(HanXinErrorLevel.Adapter.class)
 public enum HanXinErrorLevel {
     L1("L1"),
@@ -58,6 +58,7 @@ public enum HanXinErrorLevel {
         return String.valueOf(value);
     }
 
+    /** Create HanXinErrorLevel from String. */
     public static HanXinErrorLevel fromValue(String text) {
         for (HanXinErrorLevel b : HanXinErrorLevel.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -67,6 +68,7 @@ public enum HanXinErrorLevel {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<HanXinErrorLevel> {
         @Override
         public void write(final JsonWriter jsonWriter, final HanXinErrorLevel enumeration)

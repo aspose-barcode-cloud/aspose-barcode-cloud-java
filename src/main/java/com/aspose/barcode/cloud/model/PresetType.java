@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** See QualitySettings allows to configure recognition quality and speed manually. */
+/** PresetType. See QualitySettings allows to configure recognition quality and speed manually. */
 @JsonAdapter(PresetType.Adapter.class)
 public enum PresetType {
     HIGHPERFORMANCE("HighPerformance"),
@@ -62,6 +62,7 @@ public enum PresetType {
         return String.valueOf(value);
     }
 
+    /** Create PresetType from String. */
     public static PresetType fromValue(String text) {
         for (PresetType b : PresetType.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -71,6 +72,7 @@ public enum PresetType {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<PresetType> {
         @Override
         public void write(final JsonWriter jsonWriter, final PresetType enumeration)

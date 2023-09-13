@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** CustomerInformationInterpretingType. */
 @JsonAdapter(CustomerInformationInterpretingType.Adapter.class)
 public enum CustomerInformationInterpretingType {
     CTABLE("CTable"),
@@ -56,6 +56,7 @@ public enum CustomerInformationInterpretingType {
         return String.valueOf(value);
     }
 
+    /** Create CustomerInformationInterpretingType from String. */
     public static CustomerInformationInterpretingType fromValue(String text) {
         for (CustomerInformationInterpretingType b : CustomerInformationInterpretingType.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum CustomerInformationInterpretingType {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<CustomerInformationInterpretingType> {
         @Override
         public void write(

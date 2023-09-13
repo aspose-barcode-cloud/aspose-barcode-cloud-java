@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** HanXinVersion. */
 @JsonAdapter(HanXinVersion.Adapter.class)
 public enum HanXinVersion {
     AUTO("Auto"),
@@ -220,6 +220,7 @@ public enum HanXinVersion {
         return String.valueOf(value);
     }
 
+    /** Create HanXinVersion from String. */
     public static HanXinVersion fromValue(String text) {
         for (HanXinVersion b : HanXinVersion.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -229,6 +230,7 @@ public enum HanXinVersion {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<HanXinVersion> {
         @Override
         public void write(final JsonWriter jsonWriter, final HanXinVersion enumeration)

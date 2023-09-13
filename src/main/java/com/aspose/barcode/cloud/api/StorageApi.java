@@ -47,6 +47,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/** StorageApi. */
 public class StorageApi {
     private ApiClient apiClient;
 
@@ -88,16 +89,18 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -162,7 +165,7 @@ public class StorageApi {
     }
 
     /**
-     * Get disc usage
+     * TODO: Get disc usage
      *
      * @param request See {@link GetDiscUsageRequest}
      * @return ApiResponse&lt;DiscUsage&gt;
@@ -241,16 +244,18 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -299,7 +304,8 @@ public class StorageApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling getFileVersions(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling getFileVersions(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -321,7 +327,7 @@ public class StorageApi {
     }
 
     /**
-     * Get file versions
+     * TODO: Get file versions
      *
      * @param request See {@link GetFileVersionsRequest}
      * @return ApiResponse&lt;FileVersions&gt;
@@ -401,18 +407,22 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
-        if (request.versionId != null)
+        }
+
+        if (request.versionId != null) {
             queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -461,7 +471,8 @@ public class StorageApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling objectExists(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling objectExists(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -483,7 +494,7 @@ public class StorageApi {
     }
 
     /**
-     * Check if file or folder exists
+     * TODO: Check if file or folder exists
      *
      * @param request See {@link ObjectExistsRequest}
      * @return ApiResponse&lt;ObjectExist&gt;
@@ -563,14 +574,14 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -619,7 +630,8 @@ public class StorageApi {
         // verify the required parameter 'request.storageName' is set
         if (request.storageName == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.storageName' when calling storageExists(Async)");
+                    "Missing the required parameter 'request.storageName'"
+                            + " when calling storageExists(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -641,7 +653,7 @@ public class StorageApi {
     }
 
     /**
-     * Check if storage exists
+     * TODO: Check if storage exists
      *
      * @param request See {@link StorageExistsRequest}
      * @return ApiResponse&lt;StorageExist&gt;

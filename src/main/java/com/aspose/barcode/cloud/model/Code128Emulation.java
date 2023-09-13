@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** Code128Emulation. */
 @JsonAdapter(Code128Emulation.Adapter.class)
 public enum Code128Emulation {
     NONE("None"),
@@ -58,6 +58,7 @@ public enum Code128Emulation {
         return String.valueOf(value);
     }
 
+    /** Create Code128Emulation from String. */
     public static Code128Emulation fromValue(String text) {
         for (Code128Emulation b : Code128Emulation.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -67,6 +68,7 @@ public enum Code128Emulation {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<Code128Emulation> {
         @Override
         public void write(final JsonWriter jsonWriter, final Code128Emulation enumeration)

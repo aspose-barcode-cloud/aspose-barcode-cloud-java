@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** Pdf417MacroTerminator. */
 @JsonAdapter(Pdf417MacroTerminator.Adapter.class)
 public enum Pdf417MacroTerminator {
     AUTO("Auto"),
@@ -56,6 +56,7 @@ public enum Pdf417MacroTerminator {
         return String.valueOf(value);
     }
 
+    /** Create Pdf417MacroTerminator from String. */
     public static Pdf417MacroTerminator fromValue(String text) {
         for (Pdf417MacroTerminator b : Pdf417MacroTerminator.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum Pdf417MacroTerminator {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<Pdf417MacroTerminator> {
         @Override
         public void write(final JsonWriter jsonWriter, final Pdf417MacroTerminator enumeration)

@@ -44,7 +44,7 @@ public class ApiErrorResponse {
      *
      * @return requestId
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "RequestId")
     public String getRequestId() {
         return requestId;
     }
@@ -58,7 +58,7 @@ public class ApiErrorResponse {
      *
      * @return error
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "Error")
     public ApiError getError() {
         return error;
     }

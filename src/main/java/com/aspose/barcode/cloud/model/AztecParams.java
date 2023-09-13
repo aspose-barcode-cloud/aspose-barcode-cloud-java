@@ -52,7 +52,7 @@ public class AztecParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -66,9 +66,7 @@ public class AztecParams {
      *
      * @return errorLevel
      */
-    @ApiModelProperty(
-            value =
-                    "Level of error correction of Aztec types of barcode. Value should between 10 to 95.")
+    @ApiModelProperty(value = "ErrorLevel")
     public Integer getErrorLevel() {
         return errorLevel;
     }
@@ -82,7 +80,7 @@ public class AztecParams {
      *
      * @return symbolMode
      */
-    @ApiModelProperty(value = "Aztec Symbol mode. Default value: AztecSymbolMode.Auto.")
+    @ApiModelProperty(value = "SymbolMode")
     public AztecSymbolMode getSymbolMode() {
         return symbolMode;
     }
@@ -96,7 +94,7 @@ public class AztecParams {
      *
      * @return textEncoding
      */
-    @ApiModelProperty(value = "Sets the encoding of codetext.")
+    @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
     }

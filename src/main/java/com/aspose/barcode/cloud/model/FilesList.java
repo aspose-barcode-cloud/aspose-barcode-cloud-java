@@ -40,12 +40,12 @@ public class FilesList {
     @SerializedName(value = "value")
     private List<StorageFile> value = null;
 
-    public FilesList addValueItem(StorageFile valueItem) {
+    /** Add StorageFile. */
+    public void addValueItem(StorageFile valueItem) {
         if (this.value == null) {
             this.value = new ArrayList<StorageFile>();
         }
         this.value.add(valueItem);
-        return this;
     }
 
     /**
@@ -53,7 +53,7 @@ public class FilesList {
      *
      * @return value
      */
-    @ApiModelProperty(value = "Files and folders contained by folder StorageFile.")
+    @ApiModelProperty(value = "Value")
     public List<StorageFile> getValue() {
         return value;
     }

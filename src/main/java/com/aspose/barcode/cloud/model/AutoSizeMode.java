@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** AutoSizeMode. */
 @JsonAdapter(AutoSizeMode.Adapter.class)
 public enum AutoSizeMode {
     NONE("None"),
@@ -56,6 +56,7 @@ public enum AutoSizeMode {
         return String.valueOf(value);
     }
 
+    /** Create AutoSizeMode from String. */
     public static AutoSizeMode fromValue(String text) {
         for (AutoSizeMode b : AutoSizeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum AutoSizeMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<AutoSizeMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final AutoSizeMode enumeration)

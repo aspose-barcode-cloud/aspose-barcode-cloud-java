@@ -61,7 +61,7 @@ public class FileVersion {
      *
      * @return name
      */
-    @ApiModelProperty(value = "File or folder name.")
+    @ApiModelProperty(value = "Name")
     public String getName() {
         return name;
     }
@@ -75,7 +75,7 @@ public class FileVersion {
      *
      * @return isFolder
      */
-    @ApiModelProperty(required = true, value = "True if it is a folder.")
+    @ApiModelProperty(required = true, value = "IsFolder")
     public Boolean isIsFolder() {
         return isFolder;
     }
@@ -89,7 +89,7 @@ public class FileVersion {
      *
      * @return modifiedDate
      */
-    @ApiModelProperty(value = "File or folder last modified DateTime.")
+    @ApiModelProperty(value = "ModifiedDate")
     public OffsetDateTime getModifiedDate() {
         return modifiedDate;
     }
@@ -103,7 +103,7 @@ public class FileVersion {
      *
      * @return size
      */
-    @ApiModelProperty(required = true, value = "File or folder size.")
+    @ApiModelProperty(required = true, value = "Size")
     public Long getSize() {
         return size;
     }
@@ -117,7 +117,7 @@ public class FileVersion {
      *
      * @return path
      */
-    @ApiModelProperty(value = "File or folder path.")
+    @ApiModelProperty(value = "Path")
     public String getPath() {
         return path;
     }
@@ -131,7 +131,7 @@ public class FileVersion {
      *
      * @return versionId
      */
-    @ApiModelProperty(value = "File Version ID.")
+    @ApiModelProperty(value = "VersionId")
     public String getVersionId() {
         return versionId;
     }
@@ -145,10 +145,7 @@ public class FileVersion {
      *
      * @return isLatest
      */
-    @ApiModelProperty(
-            required = true,
-            value =
-                    "Specifies whether the file is (true) or is not (false) the latest version of an file.")
+    @ApiModelProperty(required = true, value = "IsLatest")
     public Boolean isIsLatest() {
         return isLatest;
     }

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** QRErrorLevel. */
 @JsonAdapter(QRErrorLevel.Adapter.class)
 public enum QRErrorLevel {
     LEVELL("LevelL"),
@@ -58,6 +58,7 @@ public enum QRErrorLevel {
         return String.valueOf(value);
     }
 
+    /** Create QRErrorLevel from String. */
     public static QRErrorLevel fromValue(String text) {
         for (QRErrorLevel b : QRErrorLevel.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -67,6 +68,7 @@ public enum QRErrorLevel {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<QRErrorLevel> {
         @Override
         public void write(final JsonWriter jsonWriter, final QRErrorLevel enumeration)

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** See DecodeType */
+/** DecodeBarcodeType. See DecodeType */
 @JsonAdapter(DecodeBarcodeType.Adapter.class)
 public enum DecodeBarcodeType {
     ALL("all"),
@@ -212,6 +212,7 @@ public enum DecodeBarcodeType {
         return String.valueOf(value);
     }
 
+    /** Create DecodeBarcodeType from String. */
     public static DecodeBarcodeType fromValue(String text) {
         for (DecodeBarcodeType b : DecodeBarcodeType.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -221,6 +222,7 @@ public enum DecodeBarcodeType {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<DecodeBarcodeType> {
         @Override
         public void write(final JsonWriter jsonWriter, final DecodeBarcodeType enumeration)

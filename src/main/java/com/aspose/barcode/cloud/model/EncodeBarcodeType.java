@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** See EncodeTypes */
+/** EncodeBarcodeType. See EncodeTypes */
 @JsonAdapter(EncodeBarcodeType.Adapter.class)
 public enum EncodeBarcodeType {
     CODABAR("Codabar"),
@@ -190,6 +190,7 @@ public enum EncodeBarcodeType {
         return String.valueOf(value);
     }
 
+    /** Create EncodeBarcodeType from String. */
     public static EncodeBarcodeType fromValue(String text) {
         for (EncodeBarcodeType b : EncodeBarcodeType.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -199,6 +200,7 @@ public enum EncodeBarcodeType {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<EncodeBarcodeType> {
         @Override
         public void write(final JsonWriter jsonWriter, final EncodeBarcodeType enumeration)
