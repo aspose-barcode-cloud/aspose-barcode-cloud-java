@@ -52,7 +52,6 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -66,40 +65,26 @@ import java.util.regex.Pattern;
 
 /** ApiClient. */
 public class ApiClient {
-
     public final String apiVersion = "v3.0";
     public final String clientVersion = "23.8.0";
+
     private String baseUrl = "https://api.aspose.cloud";
     private String clientId;
     private String clientSecret;
     private boolean debugging = false;
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private String tempFolderPath = null;
-
-    private DateFormat dateFormat;
-
     private OkHttpClient httpClient;
     private JSON json;
-
     private HttpLoggingInterceptor loggingInterceptor;
     private String accessToken;
 
-    /** TODO: */
-    public ApiClient(String clientId, String clientSecret, String baseUrl) {
-        this();
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
-        if (baseUrl != null) {
-            this.baseUrl = baseUrl;
-        }
-    }
-
-    /** TODO: */
+    /** Constructor for ApiClient with clientId and clientSecret */
     public ApiClient(String clientId, String clientSecret) {
         this(clientId, clientSecret, null);
     }
 
-    /** TODO: */
+    /** Constructor for ApiClient with accessToken */
     public ApiClient(String accessToken) {
         this();
         this.setAccessToken(accessToken);
@@ -116,6 +101,15 @@ public class ApiClient {
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
         setReadTimeout(60_000);
+    }
+
+    private ApiClient(String clientId, String clientSecret, String baseUrl) {
+        this();
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+        if (baseUrl != null) {
+            this.baseUrl = baseUrl;
+        }
     }
 
     /**
@@ -161,10 +155,6 @@ public class ApiClient {
      */
     public void setJSON(JSON json) {
         this.json = json;
-    }
-
-    public DateFormat getDateFormat() {
-        return dateFormat;
     }
 
     /**

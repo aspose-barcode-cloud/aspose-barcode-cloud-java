@@ -39,17 +39,7 @@ public class ApiResponse<T> {
     private final T data;
 
     /**
-     * TODO:
-     *
-     * @param statusCode The status code of HTTP response
-     * @param headers The headers of HTTP response
-     */
-    public ApiResponse(int statusCode, Map<String, List<String>> headers) {
-        this(statusCode, headers, null);
-    }
-
-    /**
-     * TODO:
+     * Create a new API response.
      *
      * @param statusCode The status code of HTTP response
      * @param headers The headers of HTTP response

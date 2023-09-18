@@ -1,0 +1,4 @@
+# Ignore all dotfiles
+.*
+**/.idea/
+/target/

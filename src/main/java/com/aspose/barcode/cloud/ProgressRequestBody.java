@@ -36,10 +36,10 @@ import okio.Sink;
 
 import java.io.IOException;
 
-/** TODO: */
+/** ProgressRequestBody. */
 public class ProgressRequestBody extends RequestBody {
 
-    /** TODO: */
+    /** ProgressRequestListener. */
     public interface ProgressRequestListener {
         void onRequestProgress(long bytesWritten, long contentLength, boolean done);
     }

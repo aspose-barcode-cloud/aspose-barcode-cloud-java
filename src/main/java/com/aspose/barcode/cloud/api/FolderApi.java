@@ -185,7 +185,7 @@ public class FolderApi {
     }
 
     /**
-     * TODO: Copy folder
+     * Copy folder
      *
      * @param request See {@link CopyFolderRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -341,7 +341,7 @@ public class FolderApi {
     }
 
     /**
-     * TODO: Create the folder
+     * Create the folder
      *
      * @param request See {@link CreateFolderRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -502,7 +502,7 @@ public class FolderApi {
     }
 
     /**
-     * TODO: Delete folder
+     * Delete folder
      *
      * @param request See {@link DeleteFolderRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -661,7 +661,7 @@ public class FolderApi {
     }
 
     /**
-     * TODO: Get all files and folders within a folder
+     * Get all files and folders within a folder
      *
      * @param request See {@link GetFilesListRequest}
      * @return ApiResponse&lt;FilesList&gt;
@@ -838,7 +838,7 @@ public class FolderApi {
     }
 
     /**
-     * TODO: Move folder
+     * Move folder
      *
      * @param request See {@link MoveFolderRequest}
      * @return ApiResponse&lt;Void&gt;

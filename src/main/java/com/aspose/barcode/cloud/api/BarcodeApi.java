@@ -326,7 +326,7 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Generate barcode.
+     * Generate barcode.
      *
      * @param request See {@link GetBarcodeGenerateRequest}
      * @return ApiResponse&lt;File&gt;
@@ -678,7 +678,7 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Recognize barcode from a file on server.
+     * Recognize barcode from a file on server.
      *
      * @param request See {@link GetBarcodeRecognizeRequest}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -1029,9 +1029,9 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Recognize barcode from an url or from request body. Request body can contain raw data
-     * bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can
-     * also be passed as a form field.
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes
+     * of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be
+     * passed as a form field.
      *
      * @param request See {@link PostBarcodeRecognizeFromUrlOrContentRequest}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -1199,7 +1199,7 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Generate multiple barcodes and return in response stream
+     * Generate multiple barcodes and return in response stream
      *
      * @param request See {@link PostGenerateMultipleRequest}
      * @return ApiResponse&lt;File&gt;
@@ -1535,8 +1535,7 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Generate barcode and save on server (from query params or from file with json or xml
-     * content)
+     * Generate barcode and save on server (from query params or from file with json or xml content)
      *
      * @param request See {@link PutBarcodeGenerateFileRequest}
      * @return ApiResponse&lt;ResultImageInfo&gt;
@@ -1716,7 +1715,7 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Recognition of a barcode from file on server with parameters in body.
+     * Recognition of a barcode from file on server with parameters in body.
      *
      * @param request See {@link PutBarcodeRecognizeFromBodyRequest}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -1897,7 +1896,7 @@ public class BarcodeApi {
     }
 
     /**
-     * TODO: Generate image with multiple barcodes and put new file on server
+     * Generate image with multiple barcodes and put new file on server
      *
      * @param request See {@link PutGenerateMultipleRequest}
      * @return ApiResponse&lt;ResultImageInfo&gt;

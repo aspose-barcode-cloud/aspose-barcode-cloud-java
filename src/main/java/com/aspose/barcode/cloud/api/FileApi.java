@@ -190,7 +190,7 @@ public class FileApi {
     }
 
     /**
-     * TODO: Copy file
+     * Copy file
      *
      * @param request See {@link CopyFileRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -349,7 +349,7 @@ public class FileApi {
     }
 
     /**
-     * TODO: Delete file
+     * Delete file
      *
      * @param request See {@link DeleteFileRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -510,7 +510,7 @@ public class FileApi {
     }
 
     /**
-     * TODO: Download file
+     * Download file
      *
      * @param request See {@link DownloadFileRequest}
      * @return ApiResponse&lt;File&gt;
@@ -690,7 +690,7 @@ public class FileApi {
     }
 
     /**
-     * TODO: Move file
+     * Move file
      *
      * @param request See {@link MoveFileRequest}
      * @return ApiResponse&lt;Void&gt;
@@ -858,7 +858,7 @@ public class FileApi {
     }
 
     /**
-     * TODO: Upload file
+     * Upload file
      *
      * @param request See {@link UploadFileRequest}
      * @return ApiResponse&lt;FilesUploadResult&gt;

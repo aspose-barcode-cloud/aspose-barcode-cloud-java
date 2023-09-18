@@ -50,7 +50,7 @@ import java.text.ParseException;
 import java.text.ParsePosition;
 import java.util.Date;
 
-/** TODO: */
+/** JSON utility class for serialization/deserialization. */
 public class JSON {
     private Gson gson;
     private boolean isLenientOnJson = false;
@@ -60,14 +60,13 @@ public class JSON {
             new OffsetDateTimeTypeAdapter();
     private final LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
 
-    /** TODO: */
-    public static GsonBuilder createGson() {
+    private static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder();
         GsonBuilder builder = fireBuilder.createGsonBuilder();
         return builder;
     }
 
-    /** TODO: */
+    /** Constructor. */
     public JSON() {
         ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
         gson =

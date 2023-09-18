@@ -35,7 +35,7 @@ public class RecognizeWithTimeoutTest extends TestBase {
             api.postBarcodeRecognizeFromUrlOrContent(request);
         } catch (ApiException e) {
             thrown = true;
-            assertEquals(408, e.getCode());
+            assertEquals(408, e.getHttpCode());
             assertEquals("Request Timeout", e.getMessage());
             String details = e.getDetails();
             assertTrue(

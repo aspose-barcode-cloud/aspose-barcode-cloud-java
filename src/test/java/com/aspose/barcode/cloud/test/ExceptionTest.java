@@ -21,7 +21,7 @@ public class ExceptionTest extends TestBase {
             api.getBarcodeGenerate(request);
         } catch (ApiException e) {
             thrown = true;
-            assertEquals(400, e.getCode());
+            assertEquals(400, e.getHttpCode());
             assertEquals("Bad Request", e.getMessage());
             assertEquals("com.aspose.barcode.cloud.ApiException: Bad Request", e.toString());
             assertEquals(

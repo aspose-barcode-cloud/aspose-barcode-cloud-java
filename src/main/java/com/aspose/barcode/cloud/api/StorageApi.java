@@ -165,7 +165,7 @@ public class StorageApi {
     }
 
     /**
-     * TODO: Get disc usage
+     * Get disc usage
      *
      * @param request See {@link GetDiscUsageRequest}
      * @return ApiResponse&lt;DiscUsage&gt;
@@ -327,7 +327,7 @@ public class StorageApi {
     }
 
     /**
-     * TODO: Get file versions
+     * Get file versions
      *
      * @param request See {@link GetFileVersionsRequest}
      * @return ApiResponse&lt;FileVersions&gt;
@@ -494,7 +494,7 @@ public class StorageApi {
     }
 
     /**
-     * TODO: Check if file or folder exists
+     * Check if file or folder exists
      *
      * @param request See {@link ObjectExistsRequest}
      * @return ApiResponse&lt;ObjectExist&gt;
@@ -653,7 +653,7 @@ public class StorageApi {
     }
 
     /**
-     * TODO: Check if storage exists
+     * Check if storage exists
      *
      * @param request See {@link StorageExistsRequest}
      * @return ApiResponse&lt;StorageExist&gt;

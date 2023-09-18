@@ -33,7 +33,7 @@ import java.util.Map;
 
 /** ApiException. */
 public class ApiException extends Exception {
-    private int code = 0;
+    private int httpCode = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;
     private ApiErrorResponse response = null;
@@ -46,36 +46,36 @@ public class ApiException extends Exception {
         super(message);
     }
 
-    public ApiException(String httpMessage, int httpCode) {
-        super(httpMessage);
-        this.code = httpCode;
+    public ApiException(String message, int httpCode) {
+        super(message);
+        this.httpCode = httpCode;
     }
 
-    /** TODO: */
+    /** Constructor for ApiException with message, httpCode, responseHeaders, responseBody */
     public ApiException(
             String message,
-            int code,
+            int httpCode,
             Map<String, List<String>> responseHeaders,
             String responseBody) {
-        this(message, code);
+        this(message, httpCode);
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
     }
 
-    /** TODO: */
+    /** Constructor for ApiException with message, throwable, httpCode, responseHeaders */
     public ApiException(
             String message,
             Throwable throwable,
-            int code,
+            int httpCode,
             Map<String, List<String>> responseHeaders) {
         super(message, throwable);
-        this.code = code;
+        this.httpCode = httpCode;
         this.responseHeaders = responseHeaders;
     }
 
-    /** TODO: */
-    public ApiException(String httpMessage, int httpCode, ApiErrorResponse errorResponse) {
-        this(httpMessage, httpCode);
+    /** Constructor for ApiException with message, httpCode, errorResponse */
+    public ApiException(String message, int httpCode, ApiErrorResponse errorResponse) {
+        this(message, httpCode);
         this.response = errorResponse;
     }
 
@@ -84,8 +84,8 @@ public class ApiException extends Exception {
      *
      * @return HTTP status code
      */
-    public int getCode() {
-        return code;
+    public int getHttpCode() {
+        return httpCode;
     }
 
     /**
