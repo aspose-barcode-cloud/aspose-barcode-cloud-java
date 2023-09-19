@@ -71,7 +71,7 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.2.5</version>
+                                    <version>3.8.1</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
@@ -92,24 +92,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- attach test jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>jar</goal>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
