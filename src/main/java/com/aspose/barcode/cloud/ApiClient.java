@@ -69,25 +69,39 @@ public class ApiClient {
     public final String clientVersion = "23.8.0";
 
     private String baseUrl = "https://api.aspose.cloud";
+    private String tokenUrl = baseUrl + "/connect/token";
     private String clientId;
     private String clientSecret;
     private boolean debugging = false;
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private String tempFolderPath = null;
-    private OkHttpClient httpClient;
-    private JSON json;
+    private final OkHttpClient httpClient;
+    private final JSON json;
     private HttpLoggingInterceptor loggingInterceptor;
     private String accessToken;
 
     /** Constructor for ApiClient with clientId and clientSecret */
     public ApiClient(String clientId, String clientSecret) {
-        this(clientId, clientSecret, null);
+        this(clientId, clientSecret, null, null);
     }
 
     /** Constructor for ApiClient with accessToken */
     public ApiClient(String accessToken) {
         this();
         this.setAccessToken(accessToken);
+    }
+
+    /** Constructor for ApiClient with clientId, clientSecret, baseUrl and tokenUrl */
+    public ApiClient(String clientId, String clientSecret, String baseUrl, String tokenUrl) {
+        this();
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+        if (baseUrl != null) {
+            this.baseUrl = baseUrl;
+        }
+        if (tokenUrl != null) {
+            this.tokenUrl = tokenUrl;
+        }
     }
 
     protected ApiClient() {
@@ -101,15 +115,6 @@ public class ApiClient {
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
         setReadTimeout(60_000);
-    }
-
-    private ApiClient(String clientId, String clientSecret, String baseUrl) {
-        this();
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
-        if (baseUrl != null) {
-            this.baseUrl = baseUrl;
-        }
     }
 
     /**
@@ -128,33 +133,6 @@ public class ApiClient {
      */
     public OkHttpClient getHttpClient() {
         return httpClient;
-    }
-
-    /**
-     * Set HTTP client.
-     *
-     * @param httpClient An instance of OkHttpClient
-     */
-    public void setHttpClient(OkHttpClient httpClient) {
-        this.httpClient = httpClient;
-    }
-
-    /**
-     * Get JSON
-     *
-     * @return JSON object
-     */
-    public JSON getJSON() {
-        return json;
-    }
-
-    /**
-     * Set JSON
-     *
-     * @param json JSON object
-     */
-    public void setJSON(JSON json) {
-        this.json = json;
     }
 
     /**
@@ -218,7 +196,7 @@ public class ApiClient {
 
     /**
      * The path of temporary folder used to store downloaded files from endpoints with file
-     * response. The default value is <code>null</code>, i.e. using the system's default tempopary
+     * response. The default value is <code>null</code>, i.e. using the system's default temporary
      * folder.
      *
      * @see <a
@@ -435,7 +413,7 @@ public class ApiClient {
                 return accept;
             }
         }
-        return StringUtil.join(accepts, ",");
+        return String.join(",", accepts);
     }
 
     /**
@@ -511,7 +489,7 @@ public class ApiClient {
             throw new ApiException(e);
         }
 
-        if (respBody == null || "".equals(respBody)) {
+        if (respBody == null || respBody.isEmpty()) {
             return null;
         }
 
@@ -592,7 +570,7 @@ public class ApiClient {
     public File prepareDownloadFile(Response response) throws IOException {
         String filename = null;
         String contentDisposition = response.header("Content-Disposition");
-        if (contentDisposition != null && !"".equals(contentDisposition)) {
+        if (contentDisposition != null && !contentDisposition.isEmpty()) {
             // Get filename from the Content-Disposition header.
             Pattern pattern = Pattern.compile("filename=['\"]?([^'\"\\s]+)['\"]?");
             Matcher matcher = pattern.matcher(contentDisposition);
@@ -704,7 +682,7 @@ public class ApiClient {
      * @param response Response
      * @param returnType Return type
      * @return Type
-     * @throws ApiException If the response has a unsuccessful status code or fail to deserialize
+     * @throws ApiException If the response has an unsuccessful status code or fail to deserialize
      *     the response body
      */
     public <T> T handleResponse(Response response, Type returnType) throws ApiException {
@@ -994,10 +972,9 @@ public class ApiClient {
                             .addEncoded("client_secret", clientSecret)
                             .build();
 
-            String url = baseUrl + "/connect/token";
             Request request =
                     new Request.Builder()
-                            .url(url)
+                            .url(tokenUrl)
                             .post(requestBody)
                             .addHeader("Content-Type", " application/x-www-form-urlencoded")
                             .build();

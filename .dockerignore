@@ -1,4 +1,15 @@
 # Ignore all dotfiles
 .*
 **/.idea/
-/target/
+
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# build files
+**/target
+build
+aspose-barcode-cloud.iml

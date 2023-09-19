@@ -43,7 +43,6 @@ import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
 import java.io.IOException;
-import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -53,16 +52,11 @@ import java.util.Date;
 /** JSON utility class for serialization/deserialization. */
 public class JSON {
     private Gson gson;
-    private boolean isLenientOnJson = false;
-    private final DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
-    private final SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
-    private final OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter =
-            new OffsetDateTimeTypeAdapter();
-    private final LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
 
     private static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder();
         GsonBuilder builder = fireBuilder.createGsonBuilder();
+        builder.setPrettyPrinting().create();
         return builder;
     }
 
@@ -71,10 +65,10 @@ public class JSON {
         ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
         gson =
                 createGson()
-                        .registerTypeAdapter(Date.class, dateTypeAdapter)
-                        .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
-                        .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
-                        .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
+                        .registerTypeAdapter(Date.class, new DateTypeAdapter())
+                        .registerTypeAdapter(java.sql.Date.class, new SqlDateTypeAdapter())
+                        .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeTypeAdapter())
+                        .registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter())
                         .registerTypeAdapter(byte[].class, byteArrayAdapter)
                         .create();
     }
@@ -97,10 +91,6 @@ public class JSON {
         this.gson = gson;
     }
 
-    public void setLenientOnJson(boolean lenientOnJson) {
-        isLenientOnJson = lenientOnJson;
-    }
-
     /**
      * Serialize the given Java object into JSON string.
      *
@@ -121,13 +111,7 @@ public class JSON {
     @SuppressWarnings("unchecked")
     public <T> T deserialize(String body, Type returnType) {
         try {
-            if (isLenientOnJson) {
-                JsonReader jsonReader = new JsonReader(new StringReader(body));
-                jsonReader.setLenient(true);
-                return gson.fromJson(jsonReader, returnType);
-            } else {
-                return gson.fromJson(body, returnType);
-            }
+            return gson.fromJson(body, returnType);
         } catch (JsonParseException e) {
             // Fallback processing when failed to parse JSON form response body:
             // return the response body string directly for the String return type;
@@ -240,14 +224,6 @@ public class JSON {
         }
     }
 
-    public void setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
-        offsetDateTimeTypeAdapter.setFormat(dateFormat);
-    }
-
-    public void setLocalDateFormat(DateTimeFormatter dateFormat) {
-        localDateTypeAdapter.setFormat(dateFormat);
-    }
-
     /**
      * Gson TypeAdapter for java.sql.Date type If the dateFormat is null, a simple "yyyy-MM-dd"
      * format will be used (more efficient than SimpleDateFormat).
@@ -344,13 +320,5 @@ public class JSON {
                 throw new JsonParseException(e);
             }
         }
-    }
-
-    public void setDateFormat(DateFormat dateFormat) {
-        dateTypeAdapter.setFormat(dateFormat);
-    }
-
-    public void setSqlDateFormat(DateFormat dateFormat) {
-        sqlDateTypeAdapter.setFormat(dateFormat);
     }
 }

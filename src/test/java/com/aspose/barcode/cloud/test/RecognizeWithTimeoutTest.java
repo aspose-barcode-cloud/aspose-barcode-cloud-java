@@ -4,10 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.model.ChecksumValidation;
 import com.aspose.barcode.cloud.model.PresetType;
 import com.aspose.barcode.cloud.requests.PostBarcodeRecognizeFromUrlOrContentRequest;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -15,6 +17,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class RecognizeWithTimeoutTest extends TestBase {
+
+    private static BarcodeApi api;
+
+    @BeforeClass
+    public static void oneTimeSetUp() {
+        api = new BarcodeApi(apiClient);
+    }
 
     @Test
     public void RecognizeWithTimeoutShouldThrowTimeout() {

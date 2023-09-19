@@ -29,7 +29,6 @@ import com.aspose.barcode.cloud.ApiCallback;
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.ApiResponse;
-import com.aspose.barcode.cloud.Configuration;
 import com.aspose.barcode.cloud.Pair;
 import com.aspose.barcode.cloud.ProgressRequestBody;
 import com.aspose.barcode.cloud.ProgressResponseBody;
@@ -46,21 +45,9 @@ import java.util.Map;
 
 /** FolderApi. */
 public class FolderApi {
-    private ApiClient apiClient;
-
-    public FolderApi() {
-        this(Configuration.getDefaultApiClient());
-    }
+    private final ApiClient apiClient;
 
     public FolderApi(ApiClient apiClient) {
-        this.apiClient = apiClient;
-    }
-
-    public ApiClient getApiClient() {
-        return apiClient;
-    }
-
-    public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
