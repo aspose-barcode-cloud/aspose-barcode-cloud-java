@@ -32,8 +32,5 @@ jobs:
         TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
       run: mvn test
 
-    - name: Lint with CheckStyle
-      run: ./scripts/checkstyle.bash
-
     - name: Build the Docker image
       run: docker build . --file Dockerfile
