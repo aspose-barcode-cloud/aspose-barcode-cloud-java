@@ -36,7 +36,7 @@ public class ExceptionTest extends TestBase {
             assertEquals(
                     "errorInvalidInputData: Barcode.Text is not provided.\n"
                             + "Operation Failed. The input data is not valid.",
-                    e.getDetails());
+                    e.getDetails().replace("\r", ""));
         }
 
         assertTrue(thrown);

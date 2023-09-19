@@ -30,3 +30,6 @@ jobs:
       env:
         TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
       run: mvn test
+
+    - name: Lint with CheckStyle
+      run: ./scripts/checkstyle.bash

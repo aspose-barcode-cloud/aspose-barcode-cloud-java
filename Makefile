@@ -1,7 +1,7 @@
 SRC=./src
 
 .PHONY: all
-all: format build test
+all: format build test lint
 
 .PHONY: fix
 fix:
@@ -23,6 +23,10 @@ build:
 .PHONY: test
 test:
 	mvn test
+
+.PHONY: display-updates
+display-updates:
+	mvn versions:display-plugin-updates versions:display-dependency-updates
 
 .PHONY: update
 update:
