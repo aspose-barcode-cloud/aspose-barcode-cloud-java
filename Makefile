@@ -1,7 +1,7 @@
 SRC=./src
 
 .PHONY: all
-all: format test
+all: format build test lint
 
 .PHONY: fix
 fix:
@@ -16,13 +16,17 @@ format:
 lint:
 	./scripts/checkstyle.bash
 
+.PHONY: build
+build:
+	mvn compile -Dmaven.test.skip=true
+
 .PHONY: test
 test:
 	mvn test
 
-.PHONY: publish-docker
-publish-docker:
-	mvn deploy
+.PHONY: display-updates
+display-updates:
+	mvn versions:display-plugin-updates versions:display-dependency-updates
 
 .PHONY: update
 update:

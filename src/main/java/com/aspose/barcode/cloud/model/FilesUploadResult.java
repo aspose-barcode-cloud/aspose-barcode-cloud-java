@@ -43,12 +43,12 @@ public class FilesUploadResult {
     @SerializedName(value = "errors")
     private List<Error> errors = null;
 
-    public FilesUploadResult addUploadedItem(String uploadedItem) {
+    /** Add Uploaded item. */
+    public void addUploadedItem(String uploadedItem) {
         if (this.uploaded == null) {
             this.uploaded = new ArrayList<String>();
         }
         this.uploaded.add(uploadedItem);
-        return this;
     }
 
     /**
@@ -56,7 +56,7 @@ public class FilesUploadResult {
      *
      * @return uploaded
      */
-    @ApiModelProperty(value = "List of uploaded file names")
+    @ApiModelProperty(value = "Uploaded")
     public List<String> getUploaded() {
         return uploaded;
     }
@@ -65,12 +65,12 @@ public class FilesUploadResult {
         this.uploaded = uploaded;
     }
 
-    public FilesUploadResult addErrorsItem(Error errorsItem) {
+    /** Add Error. */
+    public void addErrorsItem(Error errorsItem) {
         if (this.errors == null) {
             this.errors = new ArrayList<Error>();
         }
         this.errors.add(errorsItem);
-        return this;
     }
 
     /**
@@ -78,7 +78,7 @@ public class FilesUploadResult {
      *
      * @return errors
      */
-    @ApiModelProperty(value = "List of errors.")
+    @ApiModelProperty(value = "Errors")
     public List<Error> getErrors() {
         return errors;
     }

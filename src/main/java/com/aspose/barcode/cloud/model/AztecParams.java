@@ -47,12 +47,24 @@ public class AztecParams {
     @SerializedName(value = "textEncoding")
     private String textEncoding = null;
 
+    @SerializedName(value = "encodeMode")
+    private AztecEncodeMode encodeMode = null;
+
+    @SerializedName(value = "ecIEncoding")
+    private ECIEncodings ecIEncoding = null;
+
+    @SerializedName(value = "isReaderInitialization")
+    private Boolean isReaderInitialization = null;
+
+    @SerializedName(value = "layersCount")
+    private Integer layersCount = null;
+
     /**
      * Height/Width ratio of 2D BarCode module.
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -66,9 +78,7 @@ public class AztecParams {
      *
      * @return errorLevel
      */
-    @ApiModelProperty(
-            value =
-                    "Level of error correction of Aztec types of barcode. Value should between 10 to 95.")
+    @ApiModelProperty(value = "ErrorLevel")
     public Integer getErrorLevel() {
         return errorLevel;
     }
@@ -82,7 +92,7 @@ public class AztecParams {
      *
      * @return symbolMode
      */
-    @ApiModelProperty(value = "Aztec Symbol mode. Default value: AztecSymbolMode.Auto.")
+    @ApiModelProperty(value = "SymbolMode")
     public AztecSymbolMode getSymbolMode() {
         return symbolMode;
     }
@@ -92,17 +102,78 @@ public class AztecParams {
     }
 
     /**
-     * Sets the encoding of codetext.
+     * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
+     * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
+     * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
+     * array. @Deprecated() Sets the encoding of codetext.
      *
      * @return textEncoding
      */
-    @ApiModelProperty(value = "Sets the encoding of codetext.")
+    @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
     }
 
     public void setTextEncoding(String textEncoding) {
         this.textEncoding = textEncoding;
+    }
+
+    /**
+     * Encoding mode for Aztec barcodes. Default value: Auto
+     *
+     * @return encodeMode
+     */
+    @ApiModelProperty(value = "EncodeMode")
+    public AztecEncodeMode getEncodeMode() {
+        return encodeMode;
+    }
+
+    public void setEncodeMode(AztecEncodeMode encodeMode) {
+        this.encodeMode = encodeMode;
+    }
+
+    /**
+     * Identifies ECI encoding. Used when AztecEncodeMode is Auto. Default value: ISO-8859-1.
+     *
+     * @return ecIEncoding
+     */
+    @ApiModelProperty(value = "EcIEncoding")
+    public ECIEncodings getEcIEncoding() {
+        return ecIEncoding;
+    }
+
+    public void setEcIEncoding(ECIEncodings ecIEncoding) {
+        this.ecIEncoding = ecIEncoding;
+    }
+
+    /**
+     * Used to instruct the reader to interpret the data contained within the symbol as programming
+     * for reader initialization.
+     *
+     * @return isReaderInitialization
+     */
+    @ApiModelProperty(value = "IsReaderInitialization")
+    public Boolean isIsReaderInitialization() {
+        return isReaderInitialization;
+    }
+
+    public void setIsReaderInitialization(Boolean isReaderInitialization) {
+        this.isReaderInitialization = isReaderInitialization;
+    }
+
+    /**
+     * Gets or sets layers count of Aztec symbol. Layers count should be in range from 1 to 3 for
+     * Compact mode and in range from 1 to 32 for Full Range mode. Default value: 0 (auto).
+     *
+     * @return layersCount
+     */
+    @ApiModelProperty(value = "LayersCount")
+    public Integer getLayersCount() {
+        return layersCount;
+    }
+
+    public void setLayersCount(Integer layersCount) {
+        this.layersCount = layersCount;
     }
 
     @Override
@@ -117,12 +188,24 @@ public class AztecParams {
         return Objects.equals(this.aspectRatio, aztecParams.aspectRatio)
                 && Objects.equals(this.errorLevel, aztecParams.errorLevel)
                 && Objects.equals(this.symbolMode, aztecParams.symbolMode)
-                && Objects.equals(this.textEncoding, aztecParams.textEncoding);
+                && Objects.equals(this.textEncoding, aztecParams.textEncoding)
+                && Objects.equals(this.encodeMode, aztecParams.encodeMode)
+                && Objects.equals(this.ecIEncoding, aztecParams.ecIEncoding)
+                && Objects.equals(this.isReaderInitialization, aztecParams.isReaderInitialization)
+                && Objects.equals(this.layersCount, aztecParams.layersCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aspectRatio, errorLevel, symbolMode, textEncoding);
+        return Objects.hash(
+                aspectRatio,
+                errorLevel,
+                symbolMode,
+                textEncoding,
+                encodeMode,
+                ecIEncoding,
+                isReaderInitialization,
+                layersCount);
     }
 
     @Override
@@ -134,6 +217,12 @@ public class AztecParams {
         sb.append("    errorLevel: ").append(toIndentedString(errorLevel)).append("\n");
         sb.append("    symbolMode: ").append(toIndentedString(symbolMode)).append("\n");
         sb.append("    textEncoding: ").append(toIndentedString(textEncoding)).append("\n");
+        sb.append("    encodeMode: ").append(toIndentedString(encodeMode)).append("\n");
+        sb.append("    ecIEncoding: ").append(toIndentedString(ecIEncoding)).append("\n");
+        sb.append("    isReaderInitialization: ")
+                .append(toIndentedString(isReaderInitialization))
+                .append("\n");
+        sb.append("    layersCount: ").append(toIndentedString(layersCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

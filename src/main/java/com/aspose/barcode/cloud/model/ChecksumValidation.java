@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** ChecksumValidation. */
 @JsonAdapter(ChecksumValidation.Adapter.class)
 public enum ChecksumValidation {
     DEFAULT("Default"),
@@ -56,6 +56,7 @@ public enum ChecksumValidation {
         return String.valueOf(value);
     }
 
+    /** Create ChecksumValidation from String. */
     public static ChecksumValidation fromValue(String text) {
         for (ChecksumValidation b : ChecksumValidation.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum ChecksumValidation {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<ChecksumValidation> {
         @Override
         public void write(final JsonWriter jsonWriter, final ChecksumValidation enumeration)

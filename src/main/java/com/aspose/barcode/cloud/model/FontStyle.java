@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** FontStyle. */
 @JsonAdapter(FontStyle.Adapter.class)
 public enum FontStyle {
     REGULAR("Regular"),
@@ -60,6 +60,7 @@ public enum FontStyle {
         return String.valueOf(value);
     }
 
+    /** Create FontStyle from String. */
     public static FontStyle fromValue(String text) {
         for (FontStyle b : FontStyle.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -69,6 +70,7 @@ public enum FontStyle {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<FontStyle> {
         @Override
         public void write(final JsonWriter jsonWriter, final FontStyle enumeration)

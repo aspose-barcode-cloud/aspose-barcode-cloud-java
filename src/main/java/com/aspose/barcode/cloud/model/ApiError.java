@@ -55,7 +55,7 @@ public class ApiError {
      *
      * @return code
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "Code")
     public String getCode() {
         return code;
     }
@@ -69,7 +69,7 @@ public class ApiError {
      *
      * @return message
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "Message")
     public String getMessage() {
         return message;
     }
@@ -83,7 +83,7 @@ public class ApiError {
      *
      * @return description
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "Description")
     public String getDescription() {
         return description;
     }
@@ -97,7 +97,7 @@ public class ApiError {
      *
      * @return dateTime
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "DateTime")
     public OffsetDateTime getDateTime() {
         return dateTime;
     }
@@ -111,7 +111,7 @@ public class ApiError {
      *
      * @return innerError
      */
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "InnerError")
     public ApiError getInnerError() {
         return innerError;
     }

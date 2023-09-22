@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** BorderDashStyle. */
 @JsonAdapter(BorderDashStyle.Adapter.class)
 public enum BorderDashStyle {
     SOLID("Solid"),
@@ -60,6 +60,7 @@ public enum BorderDashStyle {
         return String.valueOf(value);
     }
 
+    /** Create BorderDashStyle from String. */
     public static BorderDashStyle fromValue(String text) {
         for (BorderDashStyle b : BorderDashStyle.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -69,6 +70,7 @@ public enum BorderDashStyle {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<BorderDashStyle> {
         @Override
         public void write(final JsonWriter jsonWriter, final BorderDashStyle enumeration)

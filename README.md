@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 23.8.0
+- SDK version: 23.9.0
 
 ## Demo applications
 
@@ -23,7 +23,7 @@ This repository contains Aspose.BarCode Cloud SDK for Java source code. This SDK
 
 Building the API client library requires:
 
-1. Java 1.7+
+1. Java 8 (JDK 1.8)
 2. Maven
 
 ## Prerequisites
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>23.8.0</version>
+  <version>23.9.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-23.8.0.jar`
+- `target/aspose-barcode-cloud-23.9.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -191,6 +191,7 @@ Class | Method | HTTP request | Description
 - [AustralianPostParams](docs/AustralianPostParams.md)
 - [AutoSizeMode](docs/AutoSizeMode.md)
 - [AvailableGraphicsUnit](docs/AvailableGraphicsUnit.md)
+- [AztecEncodeMode](docs/AztecEncodeMode.md)
 - [AztecParams](docs/AztecParams.md)
 - [AztecSymbolMode](docs/AztecSymbolMode.md)
 - [BarcodeResponse](docs/BarcodeResponse.md)

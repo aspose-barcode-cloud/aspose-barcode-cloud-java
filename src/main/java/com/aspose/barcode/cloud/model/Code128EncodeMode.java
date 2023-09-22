@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** Code128EncodeMode. */
 @JsonAdapter(Code128EncodeMode.Adapter.class)
 public enum Code128EncodeMode {
     AUTO("Auto"),
@@ -64,6 +64,7 @@ public enum Code128EncodeMode {
         return String.valueOf(value);
     }
 
+    /** Create Code128EncodeMode from String. */
     public static Code128EncodeMode fromValue(String text) {
         for (Code128EncodeMode b : Code128EncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -73,6 +74,7 @@ public enum Code128EncodeMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<Code128EncodeMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final Code128EncodeMode enumeration)

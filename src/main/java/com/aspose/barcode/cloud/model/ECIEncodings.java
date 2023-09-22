@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** ECIEncodings. */
 @JsonAdapter(ECIEncodings.Adapter.class)
 public enum ECIEncodings {
     NONE("NONE"),
@@ -104,6 +104,7 @@ public enum ECIEncodings {
         return String.valueOf(value);
     }
 
+    /** Create ECIEncodings from String. */
     public static ECIEncodings fromValue(String text) {
         for (ECIEncodings b : ECIEncodings.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -113,6 +114,7 @@ public enum ECIEncodings {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<ECIEncodings> {
         @Override
         public void write(final JsonWriter jsonWriter, final ECIEncodings enumeration)

@@ -49,7 +49,7 @@ public class FontParams {
      *
      * @return family
      */
-    @ApiModelProperty(value = "Font family.")
+    @ApiModelProperty(value = "Family")
     public String getFamily() {
         return family;
     }
@@ -63,7 +63,7 @@ public class FontParams {
      *
      * @return size
      */
-    @ApiModelProperty(value = "Font size in units.")
+    @ApiModelProperty(value = "Size")
     public Double getSize() {
         return size;
     }
@@ -77,7 +77,7 @@ public class FontParams {
      *
      * @return style
      */
-    @ApiModelProperty(value = "Font style.")
+    @ApiModelProperty(value = "Style")
     public FontStyle getStyle() {
         return style;
     }

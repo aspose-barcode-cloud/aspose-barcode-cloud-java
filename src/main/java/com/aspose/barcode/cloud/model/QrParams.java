@@ -64,7 +64,7 @@ public class QrParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -74,11 +74,14 @@ public class QrParams {
     }
 
     /**
-     * Encoding of codetext.
+     * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
+     * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
+     * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
+     * array. @Deprecated() Sets the encoding of codetext.
      *
      * @return textEncoding
      */
-    @ApiModelProperty(value = "Encoding of codetext.")
+    @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
     }
@@ -92,9 +95,7 @@ public class QrParams {
      *
      * @return encodeType
      */
-    @ApiModelProperty(
-            value =
-                    "QR / MicroQR selector mode. Select ForceQR for standard QR symbols, Auto for MicroQR.")
+    @ApiModelProperty(value = "EncodeType")
     public QREncodeType getEncodeType() {
         return encodeType;
     }
@@ -110,9 +111,7 @@ public class QrParams {
      *
      * @return ecIEncoding
      */
-    @ApiModelProperty(
-            value =
-                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings.")
+    @ApiModelProperty(value = "EcIEncoding")
     public ECIEncodings getEcIEncoding() {
         return ecIEncoding;
     }
@@ -126,9 +125,7 @@ public class QrParams {
      *
      * @return encodeMode
      */
-    @ApiModelProperty(
-            value =
-                    "QR symbology type of BarCode's encoding mode. Default value: QREncodeMode.Auto.")
+    @ApiModelProperty(value = "EncodeMode")
     public QREncodeMode getEncodeMode() {
         return encodeMode;
     }
@@ -143,9 +140,7 @@ public class QrParams {
      *
      * @return errorLevel
      */
-    @ApiModelProperty(
-            value =
-                    "Level of Reed-Solomon error correction for QR barcode. From low to high: LevelL, LevelM, LevelQ, LevelH. see QRErrorLevel.")
+    @ApiModelProperty(value = "ErrorLevel")
     public QRErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -160,9 +155,7 @@ public class QrParams {
      *
      * @return version
      */
-    @ApiModelProperty(
-            value =
-                    "Version of QR Code. From Version1 to Version40 for QR code and from M1 to M4 for MicroQr. Default value is QRVersion.Auto.")
+    @ApiModelProperty(value = "Version")
     public QRVersion getVersion() {
         return version;
     }
@@ -176,7 +169,7 @@ public class QrParams {
      *
      * @return structuredAppend
      */
-    @ApiModelProperty(value = "QR structured append parameters.")
+    @ApiModelProperty(value = "StructuredAppend")
     public StructuredAppend getStructuredAppend() {
         return structuredAppend;
     }

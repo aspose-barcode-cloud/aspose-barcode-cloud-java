@@ -44,9 +44,7 @@ public class Code128Params {
      *
      * @return encodeMode
      */
-    @ApiModelProperty(
-            value =
-                    "Encoding mode for Code128 barcodes. Code 128 specification Default value: Code128EncodeMode.Auto.")
+    @ApiModelProperty(value = "EncodeMode")
     public Code128EncodeMode getEncodeMode() {
         return encodeMode;
     }

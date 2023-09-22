@@ -19,7 +19,8 @@ jobs:
     - name: Set up JDK 1.8
       uses: actions/setup-java@v3
       with:
-        distribution: 'semeru'
+        # Use same in Dockerfile
+        distribution: 'corretto'
         java-version: 8
         cache: 'maven'
 
@@ -30,3 +31,6 @@ jobs:
       env:
         TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
       run: mvn test
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile

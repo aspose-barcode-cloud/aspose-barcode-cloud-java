@@ -29,7 +29,6 @@ import com.aspose.barcode.cloud.ApiCallback;
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.ApiResponse;
-import com.aspose.barcode.cloud.Configuration;
 import com.aspose.barcode.cloud.Pair;
 import com.aspose.barcode.cloud.ProgressRequestBody;
 import com.aspose.barcode.cloud.ProgressResponseBody;
@@ -46,22 +45,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/** BarcodeApi. */
 public class BarcodeApi {
-    private ApiClient apiClient;
-
-    public BarcodeApi() {
-        this(Configuration.getDefaultApiClient());
-    }
+    private final ApiClient apiClient;
 
     public BarcodeApi(ApiClient apiClient) {
-        this.apiClient = apiClient;
-    }
-
-    public ApiClient getApiClient() {
-        return apiClient;
-    }
-
-    public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -87,94 +75,166 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.type != null)
+        if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
-        if (request.text != null)
+        }
+
+        if (request.text != null) {
             queryParams.addAll(apiClient.parameterToPair("Text", request.text));
-        if (request.twoDDisplayText != null)
+        }
+
+        if (request.twoDDisplayText != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("TwoDDisplayText", request.twoDDisplayText));
-        if (request.textLocation != null)
+        }
+
+        if (request.textLocation != null) {
             queryParams.addAll(apiClient.parameterToPair("TextLocation", request.textLocation));
-        if (request.textAlignment != null)
+        }
+
+        if (request.textAlignment != null) {
             queryParams.addAll(apiClient.parameterToPair("TextAlignment", request.textAlignment));
-        if (request.textColor != null)
+        }
+
+        if (request.textColor != null) {
             queryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
-        if (request.fontSizeMode != null)
+        }
+
+        if (request.fontSizeMode != null) {
             queryParams.addAll(apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
-        if (request.noWrap != null)
+        }
+
+        if (request.noWrap != null) {
             queryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
-        if (request.resolution != null)
+        }
+
+        if (request.resolution != null) {
             queryParams.addAll(apiClient.parameterToPair("Resolution", request.resolution));
-        if (request.resolutionX != null)
+        }
+
+        if (request.resolutionX != null) {
             queryParams.addAll(apiClient.parameterToPair("ResolutionX", request.resolutionX));
-        if (request.resolutionY != null)
+        }
+
+        if (request.resolutionY != null) {
             queryParams.addAll(apiClient.parameterToPair("ResolutionY", request.resolutionY));
-        if (request.dimensionX != null)
+        }
+
+        if (request.dimensionX != null) {
             queryParams.addAll(apiClient.parameterToPair("DimensionX", request.dimensionX));
-        if (request.textSpace != null)
+        }
+
+        if (request.textSpace != null) {
             queryParams.addAll(apiClient.parameterToPair("TextSpace", request.textSpace));
-        if (request.units != null)
+        }
+
+        if (request.units != null) {
             queryParams.addAll(apiClient.parameterToPair("Units", request.units));
-        if (request.sizeMode != null)
+        }
+
+        if (request.sizeMode != null) {
             queryParams.addAll(apiClient.parameterToPair("SizeMode", request.sizeMode));
-        if (request.barHeight != null)
+        }
+
+        if (request.barHeight != null) {
             queryParams.addAll(apiClient.parameterToPair("BarHeight", request.barHeight));
-        if (request.imageHeight != null)
+        }
+
+        if (request.imageHeight != null) {
             queryParams.addAll(apiClient.parameterToPair("ImageHeight", request.imageHeight));
-        if (request.imageWidth != null)
+        }
+
+        if (request.imageWidth != null) {
             queryParams.addAll(apiClient.parameterToPair("ImageWidth", request.imageWidth));
-        if (request.rotationAngle != null)
+        }
+
+        if (request.rotationAngle != null) {
             queryParams.addAll(apiClient.parameterToPair("RotationAngle", request.rotationAngle));
-        if (request.backColor != null)
+        }
+
+        if (request.backColor != null) {
             queryParams.addAll(apiClient.parameterToPair("BackColor", request.backColor));
-        if (request.barColor != null)
+        }
+
+        if (request.barColor != null) {
             queryParams.addAll(apiClient.parameterToPair("BarColor", request.barColor));
-        if (request.borderColor != null)
+        }
+
+        if (request.borderColor != null) {
             queryParams.addAll(apiClient.parameterToPair("BorderColor", request.borderColor));
-        if (request.borderWidth != null)
+        }
+
+        if (request.borderWidth != null) {
             queryParams.addAll(apiClient.parameterToPair("BorderWidth", request.borderWidth));
-        if (request.borderDashStyle != null)
+        }
+
+        if (request.borderDashStyle != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("BorderDashStyle", request.borderDashStyle));
-        if (request.borderVisible != null)
+        }
+
+        if (request.borderVisible != null) {
             queryParams.addAll(apiClient.parameterToPair("BorderVisible", request.borderVisible));
-        if (request.enableChecksum != null)
+        }
+
+        if (request.enableChecksum != null) {
             queryParams.addAll(apiClient.parameterToPair("EnableChecksum", request.enableChecksum));
-        if (request.enableEscape != null)
+        }
+
+        if (request.enableEscape != null) {
             queryParams.addAll(apiClient.parameterToPair("EnableEscape", request.enableEscape));
-        if (request.filledBars != null)
+        }
+
+        if (request.filledBars != null) {
             queryParams.addAll(apiClient.parameterToPair("FilledBars", request.filledBars));
-        if (request.alwaysShowChecksum != null)
+        }
+
+        if (request.alwaysShowChecksum != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AlwaysShowChecksum", request.alwaysShowChecksum));
-        if (request.wideNarrowRatio != null)
+        }
+
+        if (request.wideNarrowRatio != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("WideNarrowRatio", request.wideNarrowRatio));
-        if (request.validateText != null)
+        }
+
+        if (request.validateText != null) {
             queryParams.addAll(apiClient.parameterToPair("ValidateText", request.validateText));
-        if (request.supplementData != null)
+        }
+
+        if (request.supplementData != null) {
             queryParams.addAll(apiClient.parameterToPair("SupplementData", request.supplementData));
-        if (request.supplementSpace != null)
+        }
+
+        if (request.supplementSpace != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("SupplementSpace", request.supplementSpace));
-        if (request.barWidthReduction != null)
+        }
+
+        if (request.barWidthReduction != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("BarWidthReduction", request.barWidthReduction));
-        if (request.useAntiAlias != null)
+        }
+
+        if (request.useAntiAlias != null) {
             queryParams.addAll(apiClient.parameterToPair("UseAntiAlias", request.useAntiAlias));
-        if (request.format != null)
+        }
+
+        if (request.format != null) {
             queryParams.addAll(apiClient.parameterToPair("format", request.format));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {
             "image/png", "image/bmp", "image/gif", "image/jpeg", "image/svg+xml", "image/tiff"
         };
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -223,13 +283,15 @@ public class BarcodeApi {
         // verify the required parameter 'request.type' is set
         if (request.type == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.type' when calling getBarcodeGenerate(Async)");
+                    "Missing the required parameter 'request.type'"
+                            + " when calling getBarcodeGenerate(...)");
         }
 
         // verify the required parameter 'request.text' is set
         if (request.text == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.text' when calling getBarcodeGenerate(Async)");
+                    "Missing the required parameter 'request.text'"
+                            + " when calling getBarcodeGenerate(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -330,133 +392,207 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.type != null)
+        if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
-        if (request.checksumValidation != null)
+        }
+
+        if (request.checksumValidation != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("ChecksumValidation", request.checksumValidation));
-        if (request.detectEncoding != null)
+        }
+
+        if (request.detectEncoding != null) {
             queryParams.addAll(apiClient.parameterToPair("DetectEncoding", request.detectEncoding));
-        if (request.preset != null)
+        }
+
+        if (request.preset != null) {
             queryParams.addAll(apiClient.parameterToPair("Preset", request.preset));
-        if (request.rectX != null)
+        }
+
+        if (request.rectX != null) {
             queryParams.addAll(apiClient.parameterToPair("RectX", request.rectX));
-        if (request.rectY != null)
+        }
+
+        if (request.rectY != null) {
             queryParams.addAll(apiClient.parameterToPair("RectY", request.rectY));
-        if (request.rectWidth != null)
+        }
+
+        if (request.rectWidth != null) {
             queryParams.addAll(apiClient.parameterToPair("RectWidth", request.rectWidth));
-        if (request.rectHeight != null)
+        }
+
+        if (request.rectHeight != null) {
             queryParams.addAll(apiClient.parameterToPair("RectHeight", request.rectHeight));
-        if (request.stripFNC != null)
+        }
+
+        if (request.stripFNC != null) {
             queryParams.addAll(apiClient.parameterToPair("StripFNC", request.stripFNC));
-        if (request.timeout != null)
+        }
+
+        if (request.timeout != null) {
             queryParams.addAll(apiClient.parameterToPair("Timeout", request.timeout));
-        if (request.medianSmoothingWindowSize != null)
+        }
+
+        if (request.medianSmoothingWindowSize != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "MedianSmoothingWindowSize", request.medianSmoothingWindowSize));
-        if (request.allowMedianSmoothing != null)
+        }
+
+        if (request.allowMedianSmoothing != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowMedianSmoothing", request.allowMedianSmoothing));
-        if (request.allowComplexBackground != null)
+        }
+
+        if (request.allowComplexBackground != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowComplexBackground", request.allowComplexBackground));
-        if (request.allowDatamatrixIndustrialBarcodes != null)
+        }
+
+        if (request.allowDatamatrixIndustrialBarcodes != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowDatamatrixIndustrialBarcodes",
                             request.allowDatamatrixIndustrialBarcodes));
-        if (request.allowDecreasedImage != null)
+        }
+
+        if (request.allowDecreasedImage != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowDecreasedImage", request.allowDecreasedImage));
-        if (request.allowDetectScanGap != null)
+        }
+
+        if (request.allowDetectScanGap != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowDetectScanGap", request.allowDetectScanGap));
-        if (request.allowIncorrectBarcodes != null)
+        }
+
+        if (request.allowIncorrectBarcodes != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowIncorrectBarcodes", request.allowIncorrectBarcodes));
-        if (request.allowInvertImage != null)
+        }
+
+        if (request.allowInvertImage != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowInvertImage", request.allowInvertImage));
-        if (request.allowMicroWhiteSpotsRemoving != null)
+        }
+
+        if (request.allowMicroWhiteSpotsRemoving != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowMicroWhiteSpotsRemoving", request.allowMicroWhiteSpotsRemoving));
-        if (request.allowOneDFastBarcodesDetector != null)
+        }
+
+        if (request.allowOneDFastBarcodesDetector != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowOneDFastBarcodesDetector",
                             request.allowOneDFastBarcodesDetector));
-        if (request.allowOneDWipedBarsRestoration != null)
+        }
+
+        if (request.allowOneDWipedBarsRestoration != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowOneDWipedBarsRestoration",
                             request.allowOneDWipedBarsRestoration));
-        if (request.allowQRMicroQrRestoration != null)
+        }
+
+        if (request.allowQRMicroQrRestoration != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowQRMicroQrRestoration", request.allowQRMicroQrRestoration));
-        if (request.allowRegularImage != null)
+        }
+
+        if (request.allowRegularImage != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowRegularImage", request.allowRegularImage));
-        if (request.allowSaltAndPepperFiltering != null)
+        }
+
+        if (request.allowSaltAndPepperFiltering != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowSaltAndPepperFiltering", request.allowSaltAndPepperFiltering));
-        if (request.allowWhiteSpotsRemoving != null)
+        }
+
+        if (request.allowWhiteSpotsRemoving != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowWhiteSpotsRemoving", request.allowWhiteSpotsRemoving));
-        if (request.checkMore1DVariants != null)
+        }
+
+        if (request.checkMore1DVariants != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
-        if (request.fastScanOnly != null)
+        }
+
+        if (request.fastScanOnly != null) {
             queryParams.addAll(apiClient.parameterToPair("FastScanOnly", request.fastScanOnly));
-        if (request.allowAdditionalRestorations != null)
+        }
+
+        if (request.allowAdditionalRestorations != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowAdditionalRestorations", request.allowAdditionalRestorations));
-        if (request.regionLikelihoodThresholdPercent != null)
+        }
+
+        if (request.regionLikelihoodThresholdPercent != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "RegionLikelihoodThresholdPercent",
                             request.regionLikelihoodThresholdPercent));
-        if (request.scanWindowSizes != null)
+        }
+
+        if (request.scanWindowSizes != null) {
             collectionQueryParams.addAll(
                     apiClient.parameterToPairs(
                             "multi", "ScanWindowSizes", request.scanWindowSizes));
-        if (request.similarity != null)
+        }
+
+        if (request.similarity != null) {
             queryParams.addAll(apiClient.parameterToPair("Similarity", request.similarity));
-        if (request.skipDiagonalSearch != null)
+        }
+
+        if (request.skipDiagonalSearch != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("SkipDiagonalSearch", request.skipDiagonalSearch));
-        if (request.readTinyBarcodes != null)
+        }
+
+        if (request.readTinyBarcodes != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("ReadTinyBarcodes", request.readTinyBarcodes));
-        if (request.australianPostEncodingTable != null)
+        }
+
+        if (request.australianPostEncodingTable != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AustralianPostEncodingTable", request.australianPostEncodingTable));
-        if (request.ignoreEndingFillingPatternsForCTable != null)
+        }
+
+        if (request.ignoreEndingFillingPatternsForCTable != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "IgnoreEndingFillingPatternsForCTable",
                             request.ignoreEndingFillingPatternsForCTable));
-        if (request.storage != null)
+        }
+
+        if (request.storage != null) {
             queryParams.addAll(apiClient.parameterToPair("storage", request.storage));
-        if (request.folder != null)
+        }
+
+        if (request.folder != null) {
             queryParams.addAll(apiClient.parameterToPair("folder", request.folder));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -505,7 +641,8 @@ public class BarcodeApi {
         // verify the required parameter 'request.name' is set
         if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.name' when calling getBarcodeRecognize(Async)");
+                    "Missing the required parameter 'request.name'"
+                            + " when calling getBarcodeRecognize(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -607,131 +744,207 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.type != null)
+        if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
-        if (request.checksumValidation != null)
+        }
+
+        if (request.checksumValidation != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("ChecksumValidation", request.checksumValidation));
-        if (request.detectEncoding != null)
+        }
+
+        if (request.detectEncoding != null) {
             queryParams.addAll(apiClient.parameterToPair("DetectEncoding", request.detectEncoding));
-        if (request.preset != null)
+        }
+
+        if (request.preset != null) {
             queryParams.addAll(apiClient.parameterToPair("Preset", request.preset));
-        if (request.rectX != null)
+        }
+
+        if (request.rectX != null) {
             queryParams.addAll(apiClient.parameterToPair("RectX", request.rectX));
-        if (request.rectY != null)
+        }
+
+        if (request.rectY != null) {
             queryParams.addAll(apiClient.parameterToPair("RectY", request.rectY));
-        if (request.rectWidth != null)
+        }
+
+        if (request.rectWidth != null) {
             queryParams.addAll(apiClient.parameterToPair("RectWidth", request.rectWidth));
-        if (request.rectHeight != null)
+        }
+
+        if (request.rectHeight != null) {
             queryParams.addAll(apiClient.parameterToPair("RectHeight", request.rectHeight));
-        if (request.stripFNC != null)
+        }
+
+        if (request.stripFNC != null) {
             queryParams.addAll(apiClient.parameterToPair("StripFNC", request.stripFNC));
-        if (request.timeout != null)
+        }
+
+        if (request.timeout != null) {
             queryParams.addAll(apiClient.parameterToPair("Timeout", request.timeout));
-        if (request.medianSmoothingWindowSize != null)
+        }
+
+        if (request.medianSmoothingWindowSize != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "MedianSmoothingWindowSize", request.medianSmoothingWindowSize));
-        if (request.allowMedianSmoothing != null)
+        }
+
+        if (request.allowMedianSmoothing != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowMedianSmoothing", request.allowMedianSmoothing));
-        if (request.allowComplexBackground != null)
+        }
+
+        if (request.allowComplexBackground != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowComplexBackground", request.allowComplexBackground));
-        if (request.allowDatamatrixIndustrialBarcodes != null)
+        }
+
+        if (request.allowDatamatrixIndustrialBarcodes != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowDatamatrixIndustrialBarcodes",
                             request.allowDatamatrixIndustrialBarcodes));
-        if (request.allowDecreasedImage != null)
+        }
+
+        if (request.allowDecreasedImage != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowDecreasedImage", request.allowDecreasedImage));
-        if (request.allowDetectScanGap != null)
+        }
+
+        if (request.allowDetectScanGap != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowDetectScanGap", request.allowDetectScanGap));
-        if (request.allowIncorrectBarcodes != null)
+        }
+
+        if (request.allowIncorrectBarcodes != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowIncorrectBarcodes", request.allowIncorrectBarcodes));
-        if (request.allowInvertImage != null)
+        }
+
+        if (request.allowInvertImage != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowInvertImage", request.allowInvertImage));
-        if (request.allowMicroWhiteSpotsRemoving != null)
+        }
+
+        if (request.allowMicroWhiteSpotsRemoving != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowMicroWhiteSpotsRemoving", request.allowMicroWhiteSpotsRemoving));
-        if (request.allowOneDFastBarcodesDetector != null)
+        }
+
+        if (request.allowOneDFastBarcodesDetector != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowOneDFastBarcodesDetector",
                             request.allowOneDFastBarcodesDetector));
-        if (request.allowOneDWipedBarsRestoration != null)
+        }
+
+        if (request.allowOneDWipedBarsRestoration != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowOneDWipedBarsRestoration",
                             request.allowOneDWipedBarsRestoration));
-        if (request.allowQRMicroQrRestoration != null)
+        }
+
+        if (request.allowQRMicroQrRestoration != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowQRMicroQrRestoration", request.allowQRMicroQrRestoration));
-        if (request.allowRegularImage != null)
+        }
+
+        if (request.allowRegularImage != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AllowRegularImage", request.allowRegularImage));
-        if (request.allowSaltAndPepperFiltering != null)
+        }
+
+        if (request.allowSaltAndPepperFiltering != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowSaltAndPepperFiltering", request.allowSaltAndPepperFiltering));
-        if (request.allowWhiteSpotsRemoving != null)
+        }
+
+        if (request.allowWhiteSpotsRemoving != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowWhiteSpotsRemoving", request.allowWhiteSpotsRemoving));
-        if (request.checkMore1DVariants != null)
+        }
+
+        if (request.checkMore1DVariants != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("CheckMore1DVariants", request.checkMore1DVariants));
-        if (request.fastScanOnly != null)
+        }
+
+        if (request.fastScanOnly != null) {
             queryParams.addAll(apiClient.parameterToPair("FastScanOnly", request.fastScanOnly));
-        if (request.allowAdditionalRestorations != null)
+        }
+
+        if (request.allowAdditionalRestorations != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AllowAdditionalRestorations", request.allowAdditionalRestorations));
-        if (request.regionLikelihoodThresholdPercent != null)
+        }
+
+        if (request.regionLikelihoodThresholdPercent != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "RegionLikelihoodThresholdPercent",
                             request.regionLikelihoodThresholdPercent));
-        if (request.scanWindowSizes != null)
+        }
+
+        if (request.scanWindowSizes != null) {
             collectionQueryParams.addAll(
                     apiClient.parameterToPairs(
                             "multi", "ScanWindowSizes", request.scanWindowSizes));
-        if (request.similarity != null)
+        }
+
+        if (request.similarity != null) {
             queryParams.addAll(apiClient.parameterToPair("Similarity", request.similarity));
-        if (request.skipDiagonalSearch != null)
+        }
+
+        if (request.skipDiagonalSearch != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("SkipDiagonalSearch", request.skipDiagonalSearch));
-        if (request.readTinyBarcodes != null)
+        }
+
+        if (request.readTinyBarcodes != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("ReadTinyBarcodes", request.readTinyBarcodes));
-        if (request.australianPostEncodingTable != null)
+        }
+
+        if (request.australianPostEncodingTable != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "AustralianPostEncodingTable", request.australianPostEncodingTable));
-        if (request.ignoreEndingFillingPatternsForCTable != null)
+        }
+
+        if (request.ignoreEndingFillingPatternsForCTable != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "IgnoreEndingFillingPatternsForCTable",
                             request.ignoreEndingFillingPatternsForCTable));
-        if (request.url != null) queryParams.addAll(apiClient.parameterToPair("url", request.url));
+        }
+
+        if (request.url != null) {
+            queryParams.addAll(apiClient.parameterToPair("url", request.url));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-        if (request.image != null) formParams.put("image", request.image);
+        if (request.image != null) {
+            formParams.put("image", request.image);
+        }
 
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {
             "multipart/form-data", "application/x-www-form-urlencoded", "application/octet-stream"
@@ -888,18 +1101,20 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.format != null)
+        if (request.format != null) {
             queryParams.addAll(apiClient.parameterToPair("format", request.format));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {
             "image/png", "image/bmp", "image/gif", "image/jpeg", "image/svg+xml", "image/tiff"
         };
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json", "application/xml"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -948,7 +1163,8 @@ public class BarcodeApi {
         // verify the required parameter 'request.generatorParamsList' is set
         if (request.generatorParamsList == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.generatorParamsList' when calling postGenerateMultiple(Async)");
+                    "Missing the required parameter 'request.generatorParamsList'"
+                            + " when calling postGenerateMultiple(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -1049,96 +1265,172 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.type != null)
+        if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
-        if (request.text != null)
+        }
+
+        if (request.text != null) {
             queryParams.addAll(apiClient.parameterToPair("Text", request.text));
-        if (request.twoDDisplayText != null)
+        }
+
+        if (request.twoDDisplayText != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("TwoDDisplayText", request.twoDDisplayText));
-        if (request.textLocation != null)
+        }
+
+        if (request.textLocation != null) {
             queryParams.addAll(apiClient.parameterToPair("TextLocation", request.textLocation));
-        if (request.textAlignment != null)
+        }
+
+        if (request.textAlignment != null) {
             queryParams.addAll(apiClient.parameterToPair("TextAlignment", request.textAlignment));
-        if (request.textColor != null)
+        }
+
+        if (request.textColor != null) {
             queryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
-        if (request.fontSizeMode != null)
+        }
+
+        if (request.fontSizeMode != null) {
             queryParams.addAll(apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
-        if (request.noWrap != null)
+        }
+
+        if (request.noWrap != null) {
             queryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
-        if (request.resolution != null)
+        }
+
+        if (request.resolution != null) {
             queryParams.addAll(apiClient.parameterToPair("Resolution", request.resolution));
-        if (request.resolutionX != null)
+        }
+
+        if (request.resolutionX != null) {
             queryParams.addAll(apiClient.parameterToPair("ResolutionX", request.resolutionX));
-        if (request.resolutionY != null)
+        }
+
+        if (request.resolutionY != null) {
             queryParams.addAll(apiClient.parameterToPair("ResolutionY", request.resolutionY));
-        if (request.dimensionX != null)
+        }
+
+        if (request.dimensionX != null) {
             queryParams.addAll(apiClient.parameterToPair("DimensionX", request.dimensionX));
-        if (request.textSpace != null)
+        }
+
+        if (request.textSpace != null) {
             queryParams.addAll(apiClient.parameterToPair("TextSpace", request.textSpace));
-        if (request.units != null)
+        }
+
+        if (request.units != null) {
             queryParams.addAll(apiClient.parameterToPair("Units", request.units));
-        if (request.sizeMode != null)
+        }
+
+        if (request.sizeMode != null) {
             queryParams.addAll(apiClient.parameterToPair("SizeMode", request.sizeMode));
-        if (request.barHeight != null)
+        }
+
+        if (request.barHeight != null) {
             queryParams.addAll(apiClient.parameterToPair("BarHeight", request.barHeight));
-        if (request.imageHeight != null)
+        }
+
+        if (request.imageHeight != null) {
             queryParams.addAll(apiClient.parameterToPair("ImageHeight", request.imageHeight));
-        if (request.imageWidth != null)
+        }
+
+        if (request.imageWidth != null) {
             queryParams.addAll(apiClient.parameterToPair("ImageWidth", request.imageWidth));
-        if (request.rotationAngle != null)
+        }
+
+        if (request.rotationAngle != null) {
             queryParams.addAll(apiClient.parameterToPair("RotationAngle", request.rotationAngle));
-        if (request.backColor != null)
+        }
+
+        if (request.backColor != null) {
             queryParams.addAll(apiClient.parameterToPair("BackColor", request.backColor));
-        if (request.barColor != null)
+        }
+
+        if (request.barColor != null) {
             queryParams.addAll(apiClient.parameterToPair("BarColor", request.barColor));
-        if (request.borderColor != null)
+        }
+
+        if (request.borderColor != null) {
             queryParams.addAll(apiClient.parameterToPair("BorderColor", request.borderColor));
-        if (request.borderWidth != null)
+        }
+
+        if (request.borderWidth != null) {
             queryParams.addAll(apiClient.parameterToPair("BorderWidth", request.borderWidth));
-        if (request.borderDashStyle != null)
+        }
+
+        if (request.borderDashStyle != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("BorderDashStyle", request.borderDashStyle));
-        if (request.borderVisible != null)
+        }
+
+        if (request.borderVisible != null) {
             queryParams.addAll(apiClient.parameterToPair("BorderVisible", request.borderVisible));
-        if (request.enableChecksum != null)
+        }
+
+        if (request.enableChecksum != null) {
             queryParams.addAll(apiClient.parameterToPair("EnableChecksum", request.enableChecksum));
-        if (request.enableEscape != null)
+        }
+
+        if (request.enableEscape != null) {
             queryParams.addAll(apiClient.parameterToPair("EnableEscape", request.enableEscape));
-        if (request.filledBars != null)
+        }
+
+        if (request.filledBars != null) {
             queryParams.addAll(apiClient.parameterToPair("FilledBars", request.filledBars));
-        if (request.alwaysShowChecksum != null)
+        }
+
+        if (request.alwaysShowChecksum != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("AlwaysShowChecksum", request.alwaysShowChecksum));
-        if (request.wideNarrowRatio != null)
+        }
+
+        if (request.wideNarrowRatio != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("WideNarrowRatio", request.wideNarrowRatio));
-        if (request.validateText != null)
+        }
+
+        if (request.validateText != null) {
             queryParams.addAll(apiClient.parameterToPair("ValidateText", request.validateText));
-        if (request.supplementData != null)
+        }
+
+        if (request.supplementData != null) {
             queryParams.addAll(apiClient.parameterToPair("SupplementData", request.supplementData));
-        if (request.supplementSpace != null)
+        }
+
+        if (request.supplementSpace != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("SupplementSpace", request.supplementSpace));
-        if (request.barWidthReduction != null)
+        }
+
+        if (request.barWidthReduction != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("BarWidthReduction", request.barWidthReduction));
-        if (request.useAntiAlias != null)
+        }
+
+        if (request.useAntiAlias != null) {
             queryParams.addAll(apiClient.parameterToPair("UseAntiAlias", request.useAntiAlias));
-        if (request.storage != null)
+        }
+
+        if (request.storage != null) {
             queryParams.addAll(apiClient.parameterToPair("storage", request.storage));
-        if (request.folder != null)
+        }
+
+        if (request.folder != null) {
             queryParams.addAll(apiClient.parameterToPair("folder", request.folder));
-        if (request.format != null)
+        }
+
+        if (request.format != null) {
             queryParams.addAll(apiClient.parameterToPair("format", request.format));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {
             "multipart/form-data",
@@ -1192,19 +1484,22 @@ public class BarcodeApi {
         // verify the required parameter 'request.name' is set
         if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.name' when calling putBarcodeGenerateFile(Async)");
+                    "Missing the required parameter 'request.name'"
+                            + " when calling putBarcodeGenerateFile(...)");
         }
 
         // verify the required parameter 'request.type' is set
         if (request.type == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.type' when calling putBarcodeGenerateFile(Async)");
+                    "Missing the required parameter 'request.type'"
+                            + " when calling putBarcodeGenerateFile(...)");
         }
 
         // verify the required parameter 'request.text' is set
         if (request.text == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.text' when calling putBarcodeGenerateFile(Async)");
+                    "Missing the required parameter 'request.text'"
+                            + " when calling putBarcodeGenerateFile(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -1308,20 +1603,26 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.type != null)
+        if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("type", request.type));
-        if (request.storage != null)
+        }
+
+        if (request.storage != null) {
             queryParams.addAll(apiClient.parameterToPair("storage", request.storage));
-        if (request.folder != null)
+        }
+
+        if (request.folder != null) {
             queryParams.addAll(apiClient.parameterToPair("folder", request.folder));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -1370,13 +1671,15 @@ public class BarcodeApi {
         // verify the required parameter 'request.name' is set
         if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.name' when calling putBarcodeRecognizeFromBody(Async)");
+                    "Missing the required parameter 'request.name'"
+                            + " when calling putBarcodeRecognizeFromBody(...)");
         }
 
         // verify the required parameter 'request.readerParams' is set
         if (request.readerParams == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.readerParams' when calling putBarcodeRecognizeFromBody(Async)");
+                    "Missing the required parameter 'request.readerParams'"
+                            + " when calling putBarcodeRecognizeFromBody(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -1481,20 +1784,26 @@ public class BarcodeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.format != null)
+        if (request.format != null) {
             queryParams.addAll(apiClient.parameterToPair("format", request.format));
-        if (request.folder != null)
+        }
+
+        if (request.folder != null) {
             queryParams.addAll(apiClient.parameterToPair("folder", request.folder));
-        if (request.storage != null)
+        }
+
+        if (request.storage != null) {
             queryParams.addAll(apiClient.parameterToPair("storage", request.storage));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json", "application/xml"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -1543,13 +1852,15 @@ public class BarcodeApi {
         // verify the required parameter 'request.name' is set
         if (request.name == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.name' when calling putGenerateMultiple(Async)");
+                    "Missing the required parameter 'request.name'"
+                            + " when calling putGenerateMultiple(...)");
         }
 
         // verify the required parameter 'request.generatorParamsList' is set
         if (request.generatorParamsList == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.generatorParamsList' when calling putGenerateMultiple(Async)");
+                    "Missing the required parameter 'request.generatorParamsList'"
+                            + " when calling putGenerateMultiple(...)");
         }
 
         com.squareup.okhttp.Call call =

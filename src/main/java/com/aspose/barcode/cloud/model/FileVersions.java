@@ -40,12 +40,12 @@ public class FileVersions {
     @SerializedName(value = "value")
     private List<FileVersion> value = null;
 
-    public FileVersions addValueItem(FileVersion valueItem) {
+    /** Add FileVersion. */
+    public void addValueItem(FileVersion valueItem) {
         if (this.value == null) {
             this.value = new ArrayList<FileVersion>();
         }
         this.value.add(valueItem);
-        return this;
     }
 
     /**
@@ -53,7 +53,7 @@ public class FileVersions {
      *
      * @return value
      */
-    @ApiModelProperty(value = "File versions FileVersion.")
+    @ApiModelProperty(value = "Value")
     public List<FileVersion> getValue() {
         return value;
     }

@@ -4,9 +4,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.api.FileApi;
 import com.aspose.barcode.cloud.model.FilesUploadResult;
 import com.aspose.barcode.cloud.requests.UploadFileRequest;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -15,6 +17,12 @@ import java.nio.file.Paths;
 
 /** API tests for FileApi */
 public class FileApiTest extends TestBase {
+    private static FileApi fileApi;
+
+    @BeforeClass
+    public static void oneTimeSetUp() {
+        fileApi = new FileApi(apiClient);
+    }
 
     /**
      * Upload file

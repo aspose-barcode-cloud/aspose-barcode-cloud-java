@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** QRVersion. */
 @JsonAdapter(QRVersion.Adapter.class)
 public enum QRVersion {
     AUTO("Auto"),
@@ -140,6 +140,7 @@ public enum QRVersion {
         return String.valueOf(value);
     }
 
+    /** Create QRVersion from String. */
     public static QRVersion fromValue(String text) {
         for (QRVersion b : QRVersion.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -149,6 +150,7 @@ public enum QRVersion {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<QRVersion> {
         @Override
         public void write(final JsonWriter jsonWriter, final QRVersion enumeration)

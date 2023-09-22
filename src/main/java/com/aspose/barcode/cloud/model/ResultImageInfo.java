@@ -49,7 +49,7 @@ public class ResultImageInfo {
      *
      * @return fileSize
      */
-    @ApiModelProperty(required = true, value = "Result file size.")
+    @ApiModelProperty(required = true, value = "FileSize")
     public Long getFileSize() {
         return fileSize;
     }
@@ -63,7 +63,7 @@ public class ResultImageInfo {
      *
      * @return imageWidth
      */
-    @ApiModelProperty(value = "Result image width.")
+    @ApiModelProperty(value = "ImageWidth")
     public Integer getImageWidth() {
         return imageWidth;
     }
@@ -77,7 +77,7 @@ public class ResultImageInfo {
      *
      * @return imageHeight
      */
-    @ApiModelProperty(value = "Result image height.")
+    @ApiModelProperty(value = "ImageHeight")
     public Integer getImageHeight() {
         return imageHeight;
     }

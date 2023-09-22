@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** CodeLocation. */
 @JsonAdapter(CodeLocation.Adapter.class)
 public enum CodeLocation {
     BELOW("Below"),
@@ -56,6 +56,7 @@ public enum CodeLocation {
         return String.valueOf(value);
     }
 
+    /** Create CodeLocation from String. */
     public static CodeLocation fromValue(String text) {
         for (CodeLocation b : CodeLocation.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum CodeLocation {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<CodeLocation> {
         @Override
         public void write(final JsonWriter jsonWriter, final CodeLocation enumeration)

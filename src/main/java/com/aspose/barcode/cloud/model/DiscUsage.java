@@ -46,7 +46,7 @@ public class DiscUsage {
      *
      * @return usedSize
      */
-    @ApiModelProperty(required = true, value = "Application used disc space.")
+    @ApiModelProperty(required = true, value = "UsedSize")
     public Long getUsedSize() {
         return usedSize;
     }
@@ -60,7 +60,7 @@ public class DiscUsage {
      *
      * @return totalSize
      */
-    @ApiModelProperty(required = true, value = "Total disc space.")
+    @ApiModelProperty(required = true, value = "TotalSize")
     public Long getTotalSize() {
         return totalSize;
     }

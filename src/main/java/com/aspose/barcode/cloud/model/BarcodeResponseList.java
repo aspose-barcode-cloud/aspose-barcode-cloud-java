@@ -40,12 +40,12 @@ public class BarcodeResponseList {
     @SerializedName(value = "barcodes")
     private List<BarcodeResponse> barcodes = null;
 
-    public BarcodeResponseList addBarcodesItem(BarcodeResponse barcodesItem) {
+    /** Add BarcodeResponse. */
+    public void addBarcodesItem(BarcodeResponse barcodesItem) {
         if (this.barcodes == null) {
             this.barcodes = new ArrayList<BarcodeResponse>();
         }
         this.barcodes.add(barcodesItem);
-        return this;
     }
 
     /**
@@ -53,7 +53,7 @@ public class BarcodeResponseList {
      *
      * @return barcodes
      */
-    @ApiModelProperty(value = "List of barcodes which are present in image.")
+    @ApiModelProperty(value = "Barcodes")
     public List<BarcodeResponse> getBarcodes() {
         return barcodes;
     }

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** PatchFormat. */
 @JsonAdapter(PatchFormat.Adapter.class)
 public enum PatchFormat {
     PATCHONLY("PatchOnly"),
@@ -60,6 +60,7 @@ public enum PatchFormat {
         return String.valueOf(value);
     }
 
+    /** Create PatchFormat from String. */
     public static PatchFormat fromValue(String text) {
         for (PatchFormat b : PatchFormat.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -69,6 +70,7 @@ public enum PatchFormat {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<PatchFormat> {
         @Override
         public void write(final JsonWriter jsonWriter, final PatchFormat enumeration)

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** CodabarChecksumMode. */
 @JsonAdapter(CodabarChecksumMode.Adapter.class)
 public enum CodabarChecksumMode {
     MOD10("Mod10"),
@@ -54,6 +54,7 @@ public enum CodabarChecksumMode {
         return String.valueOf(value);
     }
 
+    /** Create CodabarChecksumMode from String. */
     public static CodabarChecksumMode fromValue(String text) {
         for (CodabarChecksumMode b : CodabarChecksumMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -63,6 +64,7 @@ public enum CodabarChecksumMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<CodabarChecksumMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final CodabarChecksumMode enumeration)

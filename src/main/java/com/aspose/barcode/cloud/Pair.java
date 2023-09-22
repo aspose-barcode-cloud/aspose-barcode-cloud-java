@@ -25,6 +25,7 @@
 
 package com.aspose.barcode.cloud;
 
+/** Name-value pair. */
 public class Pair {
     private String name = "";
     private String value = "";
@@ -35,13 +36,17 @@ public class Pair {
     }
 
     private void setName(String name) {
-        if (IsNullOrEmpty(name)) return;
+        if (isNullOrEmpty(name)) {
+            return;
+        }
 
         this.name = name;
     }
 
     private void setValue(String value) {
-        if (IsNullOrEmpty(value)) return;
+        if (isNullOrEmpty(value)) {
+            return;
+        }
 
         this.value = value;
     }
@@ -54,8 +59,10 @@ public class Pair {
         return this.value;
     }
 
-    private static boolean IsNullOrEmpty(String arg) {
-        if (arg == null) return true;
+    private static boolean isNullOrEmpty(String arg) {
+        if (arg == null) {
+            return true;
+        }
         return arg.trim().isEmpty();
     }
 }

@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** DataMatrix encoder&#39;s encoding mode, default to Auto */
+/** DataMatrixEncodeMode. DataMatrix encoder&#39;s encoding mode, default to Auto */
 @JsonAdapter(DataMatrixEncodeMode.Adapter.class)
 public enum DataMatrixEncodeMode {
     AUTO("Auto"),
@@ -68,6 +68,7 @@ public enum DataMatrixEncodeMode {
         return String.valueOf(value);
     }
 
+    /** Create DataMatrixEncodeMode from String. */
     public static DataMatrixEncodeMode fromValue(String text) {
         for (DataMatrixEncodeMode b : DataMatrixEncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -77,6 +78,7 @@ public enum DataMatrixEncodeMode {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<DataMatrixEncodeMode> {
         @Override
         public void write(final JsonWriter jsonWriter, final DataMatrixEncodeMode enumeration)

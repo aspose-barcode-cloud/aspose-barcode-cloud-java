@@ -49,8 +49,7 @@ public class ITFParams {
      *
      * @return borderThickness
      */
-    @ApiModelProperty(
-            value = "ITF border (bearer bar) thickness in Unit value. Default value: 12pt.")
+    @ApiModelProperty(value = "BorderThickness")
     public Double getBorderThickness() {
         return borderThickness;
     }
@@ -64,7 +63,7 @@ public class ITFParams {
      *
      * @return borderType
      */
-    @ApiModelProperty(value = "Border type of ITF barcode. Default value: ITF14BorderType.Bar.")
+    @ApiModelProperty(value = "BorderType")
     public ITF14BorderType getBorderType() {
         return borderType;
     }
@@ -79,9 +78,7 @@ public class ITFParams {
      *
      * @return quietZoneCoef
      */
-    @ApiModelProperty(
-            value =
-                    "Size of the quiet zones in xDimension. Default value: 10, meaning if xDimension = 2px than quiet zones will be 20px.")
+    @ApiModelProperty(value = "QuietZoneCoef")
     public Integer getQuietZoneCoef() {
         return quietZoneCoef;
     }

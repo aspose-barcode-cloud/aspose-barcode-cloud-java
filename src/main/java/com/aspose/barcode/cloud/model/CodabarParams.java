@@ -50,9 +50,7 @@ public class CodabarParams {
      *
      * @return checksumMode
      */
-    @ApiModelProperty(
-            value =
-                    "Checksum algorithm for Codabar barcodes. Default value: CodabarChecksumMode.Mod16. To enable checksum calculation set value EnableChecksum.Yes to property EnableChecksum.")
+    @ApiModelProperty(value = "ChecksumMode")
     public CodabarChecksumMode getChecksumMode() {
         return checksumMode;
     }
@@ -66,8 +64,7 @@ public class CodabarParams {
      *
      * @return startSymbol
      */
-    @ApiModelProperty(
-            value = "Start symbol (character) of Codabar symbology. Default value: CodabarSymbol.A")
+    @ApiModelProperty(value = "StartSymbol")
     public CodabarSymbol getStartSymbol() {
         return startSymbol;
     }
@@ -81,8 +78,7 @@ public class CodabarParams {
      *
      * @return stopSymbol
      */
-    @ApiModelProperty(
-            value = "Stop symbol (character) of Codabar symbology. Default value: CodabarSymbol.A")
+    @ApiModelProperty(value = "StopSymbol")
     public CodabarSymbol getStopSymbol() {
         return stopSymbol;
     }

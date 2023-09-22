@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** Pdf417ErrorLevel. */
 @JsonAdapter(Pdf417ErrorLevel.Adapter.class)
 public enum Pdf417ErrorLevel {
     LEVEL0("Level0"),
@@ -68,6 +68,7 @@ public enum Pdf417ErrorLevel {
         return String.valueOf(value);
     }
 
+    /** Create Pdf417ErrorLevel from String. */
     public static Pdf417ErrorLevel fromValue(String text) {
         for (Pdf417ErrorLevel b : Pdf417ErrorLevel.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -77,6 +78,7 @@ public enum Pdf417ErrorLevel {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<Pdf417ErrorLevel> {
         @Override
         public void write(final JsonWriter jsonWriter, final Pdf417ErrorLevel enumeration)

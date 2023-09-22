@@ -64,7 +64,7 @@ public class DataMatrixParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -74,11 +74,14 @@ public class DataMatrixParams {
     }
 
     /**
-     * Encoding of codetext.
+     * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
+     * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
+     * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
+     * array. @Deprecated() Sets the encoding of codetext.
      *
      * @return textEncoding
      */
-    @ApiModelProperty(value = "Encoding of codetext.")
+    @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
     }
@@ -88,15 +91,12 @@ public class DataMatrixParams {
     }
 
     /**
-     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next release Columns
-     * count.
+     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next
+     * release @Deprecated() Columns count.
      *
      * @return columns
      */
-    @Deprecated()
-    @ApiModelProperty(
-            value =
-                    "DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Columns count.")
+    @ApiModelProperty(value = "Columns")
     public Integer getColumns() {
         return columns;
     }
@@ -110,7 +110,7 @@ public class DataMatrixParams {
      *
      * @return dataMatrixEcc
      */
-    @ApiModelProperty(value = "Datamatrix ECC type. Default value: DataMatrixEccType.Ecc200.")
+    @ApiModelProperty(value = "DataMatrixEcc")
     public DataMatrixEccType getDataMatrixEcc() {
         return dataMatrixEcc;
     }
@@ -124,8 +124,7 @@ public class DataMatrixParams {
      *
      * @return dataMatrixEncodeMode
      */
-    @ApiModelProperty(
-            value = "Encode mode of Datamatrix barcode. Default value: DataMatrixEncodeMode.Auto.")
+    @ApiModelProperty(value = "DataMatrixEncodeMode")
     public DataMatrixEncodeMode getDataMatrixEncodeMode() {
         return dataMatrixEncodeMode;
     }
@@ -135,15 +134,12 @@ public class DataMatrixParams {
     }
 
     /**
-     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next release Rows
-     * count.
+     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next
+     * release @Deprecated() Rows count.
      *
      * @return rows
      */
-    @Deprecated()
-    @ApiModelProperty(
-            value =
-                    "DEPRECATED: Will be replaced with 'DataMatrix.Version' in the next release  Rows count.")
+    @ApiModelProperty(value = "Rows")
     public Integer getRows() {
         return rows;
     }
@@ -159,9 +155,7 @@ public class DataMatrixParams {
      *
      * @return macroCharacters
      */
-    @ApiModelProperty(
-            value =
-                    "Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes. Can be used only with DataMatrixEccType.Ecc200 or DataMatrixEccType.EccAuto. Cannot be used with EncodeTypes.GS1DataMatrix Default value: MacroCharacters.None.")
+    @ApiModelProperty(value = "MacroCharacters")
     public MacroCharacter getMacroCharacters() {
         return macroCharacters;
     }
@@ -175,8 +169,7 @@ public class DataMatrixParams {
      *
      * @return version
      */
-    @ApiModelProperty(
-            value = "Sets a Datamatrix symbol size. Default value: DataMatrixVersion.Auto.")
+    @ApiModelProperty(value = "Version")
     public DataMatrixVersion getVersion() {
         return version;
     }

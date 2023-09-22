@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** DataMatrixEccType. */
 @JsonAdapter(DataMatrixEccType.Adapter.class)
 public enum DataMatrixEccType {
     ECCAUTO("EccAuto"),
@@ -64,6 +64,7 @@ public enum DataMatrixEccType {
         return String.valueOf(value);
     }
 
+    /** Create DataMatrixEccType from String. */
     public static DataMatrixEccType fromValue(String text) {
         for (DataMatrixEccType b : DataMatrixEccType.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -73,6 +74,7 @@ public enum DataMatrixEccType {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<DataMatrixEccType> {
         @Override
         public void write(final JsonWriter jsonWriter, final DataMatrixEccType enumeration)

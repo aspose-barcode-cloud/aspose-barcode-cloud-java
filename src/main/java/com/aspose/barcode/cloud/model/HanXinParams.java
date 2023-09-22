@@ -52,8 +52,7 @@ public class HanXinParams {
      *
      * @return encodeMode
      */
-    @ApiModelProperty(
-            value = "Encoding mode for XanXin barcodes. Default value: HanXinEncodeMode.Auto.")
+    @ApiModelProperty(value = "EncodeMode")
     public HanXinEncodeMode getEncodeMode() {
         return encodeMode;
     }
@@ -67,9 +66,7 @@ public class HanXinParams {
      *
      * @return errorLevel
      */
-    @ApiModelProperty(
-            value =
-                    "Allowed Han Xin error correction levels from L1 to L4. Default value: HanXinErrorLevel.L1.")
+    @ApiModelProperty(value = "ErrorLevel")
     public HanXinErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -83,9 +80,7 @@ public class HanXinParams {
      *
      * @return version
      */
-    @ApiModelProperty(
-            value =
-                    "Allowed Han Xin versions, Auto and Version01 - Version84. Default value: HanXinVersion.Auto.")
+    @ApiModelProperty(value = "Version")
     public HanXinVersion getVersion() {
         return version;
     }
@@ -101,9 +96,7 @@ public class HanXinParams {
      *
      * @return ecIEncoding
      */
-    @ApiModelProperty(
-            value =
-                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings. Default value: ECIEncodings.ISO_8859_1")
+    @ApiModelProperty(value = "EcIEncoding")
     public ECIEncodings getEcIEncoding() {
         return ecIEncoding;
     }

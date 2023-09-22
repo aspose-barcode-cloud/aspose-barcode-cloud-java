@@ -49,7 +49,7 @@ public class Code16KParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -64,9 +64,7 @@ public class Code16KParams {
      *
      * @return quietZoneLeftCoef
      */
-    @ApiModelProperty(
-            value =
-                    "Size of the left quiet zone in xDimension. Default value: 10, meaning if xDimension = 2px than left quiet zone will be 20px.")
+    @ApiModelProperty(value = "QuietZoneLeftCoef")
     public Integer getQuietZoneLeftCoef() {
         return quietZoneLeftCoef;
     }
@@ -81,9 +79,7 @@ public class Code16KParams {
      *
      * @return quietZoneRightCoef
      */
-    @ApiModelProperty(
-            value =
-                    "Size of the right quiet zone in xDimension. Default value: 1, meaning if xDimension = 2px than right quiet zone will be 2px.")
+    @ApiModelProperty(value = "QuietZoneRightCoef")
     public Integer getQuietZoneRightCoef() {
         return quietZoneRightCoef;
     }

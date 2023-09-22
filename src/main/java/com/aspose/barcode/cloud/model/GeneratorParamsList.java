@@ -46,12 +46,12 @@ public class GeneratorParamsList {
     @SerializedName(value = "ystep")
     private Integer ystep = null;
 
-    public GeneratorParamsList addBarcodeBuildersItem(GeneratorParams barcodeBuildersItem) {
+    /** Add GeneratorParams. */
+    public void addBarcodeBuildersItem(GeneratorParams barcodeBuildersItem) {
         if (this.barcodeBuilders == null) {
             this.barcodeBuilders = new ArrayList<GeneratorParams>();
         }
         this.barcodeBuilders.add(barcodeBuildersItem);
-        return this;
     }
 
     /**
@@ -59,7 +59,7 @@ public class GeneratorParamsList {
      *
      * @return barcodeBuilders
      */
-    @ApiModelProperty(value = "List of barcode generators")
+    @ApiModelProperty(value = "BarcodeBuilders")
     public List<GeneratorParams> getBarcodeBuilders() {
         return barcodeBuilders;
     }
@@ -73,7 +73,7 @@ public class GeneratorParamsList {
      *
      * @return xstep
      */
-    @ApiModelProperty(required = true, value = "Shift step according to X axis")
+    @ApiModelProperty(required = true, value = "Xstep")
     public Integer getXstep() {
         return xstep;
     }
@@ -87,7 +87,7 @@ public class GeneratorParamsList {
      *
      * @return ystep
      */
-    @ApiModelProperty(required = true, value = "Shift step according to Y axis")
+    @ApiModelProperty(required = true, value = "Ystep")
     public Integer getYstep() {
         return ystep;
     }

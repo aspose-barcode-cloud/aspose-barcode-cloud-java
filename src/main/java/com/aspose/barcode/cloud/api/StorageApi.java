@@ -29,7 +29,6 @@ import com.aspose.barcode.cloud.ApiCallback;
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.ApiResponse;
-import com.aspose.barcode.cloud.Configuration;
 import com.aspose.barcode.cloud.Pair;
 import com.aspose.barcode.cloud.ProgressRequestBody;
 import com.aspose.barcode.cloud.ProgressResponseBody;
@@ -47,22 +46,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/** StorageApi. */
 public class StorageApi {
-    private ApiClient apiClient;
-
-    public StorageApi() {
-        this(Configuration.getDefaultApiClient());
-    }
+    private final ApiClient apiClient;
 
     public StorageApi(ApiClient apiClient) {
-        this.apiClient = apiClient;
-    }
-
-    public ApiClient getApiClient() {
-        return apiClient;
-    }
-
-    public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -88,16 +76,18 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -241,16 +231,18 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -299,7 +291,8 @@ public class StorageApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling getFileVersions(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling getFileVersions(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -401,18 +394,22 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.storageName != null)
+        if (request.storageName != null) {
             queryParams.addAll(apiClient.parameterToPair("storageName", request.storageName));
-        if (request.versionId != null)
+        }
+
+        if (request.versionId != null) {
             queryParams.addAll(apiClient.parameterToPair("versionId", request.versionId));
+        }
 
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -461,7 +458,8 @@ public class StorageApi {
         // verify the required parameter 'request.path' is set
         if (request.path == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.path' when calling objectExists(Async)");
+                    "Missing the required parameter 'request.path'"
+                            + " when calling objectExists(...)");
         }
 
         com.squareup.okhttp.Call call =
@@ -563,14 +561,14 @@ public class StorageApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) headerParams.put("Accept", accept);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
 
         final String[] contentTypes = {"application/json"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
@@ -619,7 +617,8 @@ public class StorageApi {
         // verify the required parameter 'request.storageName' is set
         if (request.storageName == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.storageName' when calling storageExists(Async)");
+                    "Missing the required parameter 'request.storageName'"
+                            + " when calling storageExists(...)");
         }
 
         com.squareup.okhttp.Call call =

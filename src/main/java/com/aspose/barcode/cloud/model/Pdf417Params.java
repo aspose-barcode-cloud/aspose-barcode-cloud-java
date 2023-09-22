@@ -105,7 +105,7 @@ public class Pdf417Params {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -115,11 +115,14 @@ public class Pdf417Params {
     }
 
     /**
-     * Encoding of codetext.
+     * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
+     * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
+     * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
+     * array. @Deprecated() Sets the encoding of codetext.
      *
      * @return textEncoding
      */
-    @ApiModelProperty(value = "Encoding of codetext.")
+    @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
     }
@@ -133,7 +136,7 @@ public class Pdf417Params {
      *
      * @return columns
      */
-    @ApiModelProperty(value = "Columns count.")
+    @ApiModelProperty(value = "Columns")
     public Integer getColumns() {
         return columns;
     }
@@ -148,9 +151,7 @@ public class Pdf417Params {
      *
      * @return compactionMode
      */
-    @ApiModelProperty(
-            value =
-                    "Pdf417 symbology type of BarCode's compaction mode. Default value: Pdf417CompactionMode.Auto.")
+    @ApiModelProperty(value = "CompactionMode")
     public Pdf417CompactionMode getCompactionMode() {
         return compactionMode;
     }
@@ -166,9 +167,7 @@ public class Pdf417Params {
      *
      * @return errorLevel
      */
-    @ApiModelProperty(
-            value =
-                    "Pdf417 symbology type of BarCode's error correction level ranging from level0 to level8, level0 means no error correction info, level8 means best error correction which means a larger picture.")
+    @ApiModelProperty(value = "ErrorLevel")
     public Pdf417ErrorLevel getErrorLevel() {
         return errorLevel;
     }
@@ -182,7 +181,7 @@ public class Pdf417Params {
      *
      * @return macroFileID
      */
-    @ApiModelProperty(value = "Macro Pdf417 barcode's file ID. Used for MacroPdf417.")
+    @ApiModelProperty(value = "MacroFileID")
     public Integer getMacroFileID() {
         return macroFileID;
     }
@@ -196,9 +195,7 @@ public class Pdf417Params {
      *
      * @return macroSegmentID
      */
-    @ApiModelProperty(
-            value =
-                    "Macro Pdf417 barcode's segment ID, which starts from 0, to MacroSegmentsCount - 1.")
+    @ApiModelProperty(value = "MacroSegmentID")
     public Integer getMacroSegmentID() {
         return macroSegmentID;
     }
@@ -212,7 +209,7 @@ public class Pdf417Params {
      *
      * @return macroSegmentsCount
      */
-    @ApiModelProperty(value = "Macro Pdf417 barcode segments count.")
+    @ApiModelProperty(value = "MacroSegmentsCount")
     public Integer getMacroSegmentsCount() {
         return macroSegmentsCount;
     }
@@ -226,7 +223,7 @@ public class Pdf417Params {
      *
      * @return rows
      */
-    @ApiModelProperty(value = "Rows count.")
+    @ApiModelProperty(value = "Rows")
     public Integer getRows() {
         return rows;
     }
@@ -240,8 +237,7 @@ public class Pdf417Params {
      *
      * @return truncate
      */
-    @ApiModelProperty(
-            value = "Whether Pdf417 symbology type of BarCode is truncated (to reduce space).")
+    @ApiModelProperty(value = "Truncate")
     public Boolean isTruncate() {
         return truncate;
     }
@@ -257,9 +253,7 @@ public class Pdf417Params {
      *
      * @return pdf417ECIEncoding
      */
-    @ApiModelProperty(
-            value =
-                    "Extended Channel Interpretation Identifiers. It is used to tell the barcode reader details about the used references for encoding the data in the symbol. Current implementation consists all well known charset encodings.")
+    @ApiModelProperty(value = "Pdf417ECIEncoding")
     public ECIEncodings getPdf417ECIEncoding() {
         return pdf417ECIEncoding;
     }
@@ -274,9 +268,7 @@ public class Pdf417Params {
      *
      * @return isReaderInitialization
      */
-    @ApiModelProperty(
-            value =
-                    "Used to instruct the reader to interpret the data contained within the symbol as programming for reader initialization")
+    @ApiModelProperty(value = "IsReaderInitialization")
     public Boolean isIsReaderInitialization() {
         return isReaderInitialization;
     }
@@ -290,7 +282,7 @@ public class Pdf417Params {
      *
      * @return macroTimeStamp
      */
-    @ApiModelProperty(value = "Macro Pdf417 barcode time stamp")
+    @ApiModelProperty(value = "MacroTimeStamp")
     public OffsetDateTime getMacroTimeStamp() {
         return macroTimeStamp;
     }
@@ -304,7 +296,7 @@ public class Pdf417Params {
      *
      * @return macroSender
      */
-    @ApiModelProperty(value = "Macro Pdf417 barcode sender name")
+    @ApiModelProperty(value = "MacroSender")
     public String getMacroSender() {
         return macroSender;
     }
@@ -319,9 +311,7 @@ public class Pdf417Params {
      *
      * @return macroFileSize
      */
-    @ApiModelProperty(
-            value =
-                    "Macro Pdf417 file size. The file size field contains the size in bytes of the entire source file")
+    @ApiModelProperty(value = "MacroFileSize")
     public Integer getMacroFileSize() {
         return macroFileSize;
     }
@@ -336,9 +326,7 @@ public class Pdf417Params {
      *
      * @return macroChecksum
      */
-    @ApiModelProperty(
-            value =
-                    "Macro Pdf417 barcode checksum. The checksum field contains the value of the 16-bit (2 bytes) CRC checksum using the CCITT-16 polynomial")
+    @ApiModelProperty(value = "MacroChecksum")
     public Integer getMacroChecksum() {
         return macroChecksum;
     }
@@ -352,7 +340,7 @@ public class Pdf417Params {
      *
      * @return macroFileName
      */
-    @ApiModelProperty(value = "Macro Pdf417 barcode file name")
+    @ApiModelProperty(value = "MacroFileName")
     public String getMacroFileName() {
         return macroFileName;
     }
@@ -366,7 +354,7 @@ public class Pdf417Params {
      *
      * @return macroAddressee
      */
-    @ApiModelProperty(value = "Macro Pdf417 barcode addressee name")
+    @ApiModelProperty(value = "MacroAddressee")
     public String getMacroAddressee() {
         return macroAddressee;
     }
@@ -380,9 +368,7 @@ public class Pdf417Params {
      *
      * @return macroECIEncoding
      */
-    @ApiModelProperty(
-            value =
-                    "Extended Channel Interpretation Identifiers. Applies for Macro PDF417 text fields.")
+    @ApiModelProperty(value = "MacroECIEncoding")
     public ECIEncodings getMacroECIEncoding() {
         return macroECIEncoding;
     }
@@ -397,9 +383,7 @@ public class Pdf417Params {
      *
      * @return code128Emulation
      */
-    @ApiModelProperty(
-            value =
-                    "Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.")
+    @ApiModelProperty(value = "Code128Emulation")
     public Code128Emulation getCode128Emulation() {
         return code128Emulation;
     }
@@ -414,9 +398,7 @@ public class Pdf417Params {
      *
      * @return pdf417MacroTerminator
      */
-    @ApiModelProperty(
-            value =
-                    "Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the segment. Applied only for Macro PDF417.")
+    @ApiModelProperty(value = "Pdf417MacroTerminator")
     public Pdf417MacroTerminator getPdf417MacroTerminator() {
         return pdf417MacroTerminator;
     }

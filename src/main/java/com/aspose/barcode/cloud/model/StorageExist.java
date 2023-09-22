@@ -43,7 +43,7 @@ public class StorageExist {
      *
      * @return exists
      */
-    @ApiModelProperty(required = true, value = "Shows that the storage exists.")
+    @ApiModelProperty(required = true, value = "Exists")
     public Boolean isExists() {
         return exists;
     }

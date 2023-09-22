@@ -57,7 +57,7 @@ public class StorageFile {
      *
      * @return name
      */
-    @ApiModelProperty(value = "File or folder name.")
+    @ApiModelProperty(value = "Name")
     public String getName() {
         return name;
     }
@@ -71,7 +71,7 @@ public class StorageFile {
      *
      * @return isFolder
      */
-    @ApiModelProperty(required = true, value = "True if it is a folder.")
+    @ApiModelProperty(required = true, value = "IsFolder")
     public Boolean isIsFolder() {
         return isFolder;
     }
@@ -85,7 +85,7 @@ public class StorageFile {
      *
      * @return modifiedDate
      */
-    @ApiModelProperty(value = "File or folder last modified DateTime.")
+    @ApiModelProperty(value = "ModifiedDate")
     public OffsetDateTime getModifiedDate() {
         return modifiedDate;
     }
@@ -99,7 +99,7 @@ public class StorageFile {
      *
      * @return size
      */
-    @ApiModelProperty(required = true, value = "File or folder size.")
+    @ApiModelProperty(required = true, value = "Size")
     public Long getSize() {
         return size;
     }
@@ -113,7 +113,7 @@ public class StorageFile {
      *
      * @return path
      */
-    @ApiModelProperty(value = "File or folder path.")
+    @ApiModelProperty(value = "Path")
     public String getPath() {
         return path;
     }

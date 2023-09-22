@@ -144,5 +144,7 @@
 
 * `GS1HANXIN` (value: `"GS1HanXin"`)
 
+* `GS1AZTEC` (value: `"GS1Aztec"`)
+
 
 

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AztecSymbolMode.java">
+// <copyright company="Aspose" file="AztecEncodeMode.java">
 //   Copyright (c) 2023 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -32,20 +32,18 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** AztecSymbolMode. */
-@JsonAdapter(AztecSymbolMode.Adapter.class)
-public enum AztecSymbolMode {
+/** AztecEncodeMode. */
+@JsonAdapter(AztecEncodeMode.Adapter.class)
+public enum AztecEncodeMode {
     AUTO("Auto"),
 
-    COMPACT("Compact"),
+    BYTES("Bytes"),
 
-    FULLRANGE("FullRange"),
-
-    RUNE("Rune");
+    EXTENDEDCODETEXT("ExtendedCodetext");
 
     private final String value;
 
-    AztecSymbolMode(String value) {
+    AztecEncodeMode(String value) {
         this.value = value;
     }
 
@@ -58,9 +56,9 @@ public enum AztecSymbolMode {
         return String.valueOf(value);
     }
 
-    /** Create AztecSymbolMode from String. */
-    public static AztecSymbolMode fromValue(String text) {
-        for (AztecSymbolMode b : AztecSymbolMode.values()) {
+    /** Create AztecEncodeMode from String. */
+    public static AztecEncodeMode fromValue(String text) {
+        for (AztecEncodeMode b : AztecEncodeMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -69,17 +67,17 @@ public enum AztecSymbolMode {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<AztecSymbolMode> {
+    public static class Adapter extends TypeAdapter<AztecEncodeMode> {
         @Override
-        public void write(final JsonWriter jsonWriter, final AztecSymbolMode enumeration)
+        public void write(final JsonWriter jsonWriter, final AztecEncodeMode enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public AztecSymbolMode read(final JsonReader jsonReader) throws IOException {
+        public AztecEncodeMode read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return AztecSymbolMode.fromValue(String.valueOf(value));
+            return AztecEncodeMode.fromValue(String.valueOf(value));
         }
     }
 }

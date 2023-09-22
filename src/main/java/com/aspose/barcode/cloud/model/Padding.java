@@ -52,7 +52,7 @@ public class Padding {
      *
      * @return left
      */
-    @ApiModelProperty(value = "Left padding.")
+    @ApiModelProperty(value = "Left")
     public Double getLeft() {
         return left;
     }
@@ -66,7 +66,7 @@ public class Padding {
      *
      * @return right
      */
-    @ApiModelProperty(value = "Right padding.")
+    @ApiModelProperty(value = "Right")
     public Double getRight() {
         return right;
     }
@@ -80,7 +80,7 @@ public class Padding {
      *
      * @return top
      */
-    @ApiModelProperty(value = "Top padding.")
+    @ApiModelProperty(value = "Top")
     public Double getTop() {
         return top;
     }
@@ -94,7 +94,7 @@ public class Padding {
      *
      * @return bottom
      */
-    @ApiModelProperty(value = "Bottom padding.")
+    @ApiModelProperty(value = "Bottom")
     public Double getBottom() {
         return bottom;
     }

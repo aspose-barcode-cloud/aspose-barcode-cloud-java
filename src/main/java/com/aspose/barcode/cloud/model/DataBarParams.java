@@ -55,7 +55,7 @@ public class DataBarParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module. Used for DataBar stacked.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -69,7 +69,7 @@ public class DataBarParams {
      *
      * @return columns
      */
-    @ApiModelProperty(value = "Columns count.")
+    @ApiModelProperty(value = "Columns")
     public Integer getColumns() {
         return columns;
     }
@@ -83,7 +83,7 @@ public class DataBarParams {
      *
      * @return rows
      */
-    @ApiModelProperty(value = "Rows count.")
+    @ApiModelProperty(value = "Rows")
     public Integer getRows() {
         return rows;
     }
@@ -97,7 +97,7 @@ public class DataBarParams {
      *
      * @return is2DCompositeComponent
      */
-    @ApiModelProperty(value = "Enables flag of 2D composite component with DataBar barcode")
+    @ApiModelProperty(value = "Is2DCompositeComponent")
     public Boolean isIs2DCompositeComponent() {
         return is2DCompositeComponent;
     }
@@ -111,9 +111,7 @@ public class DataBarParams {
      *
      * @return isAllowOnlyGS1Encoding
      */
-    @ApiModelProperty(
-            value =
-                    "If this flag is set, it allows only GS1 encoding standard for Databar barcode types")
+    @ApiModelProperty(value = "IsAllowOnlyGS1Encoding")
     public Boolean isIsAllowOnlyGS1Encoding() {
         return isAllowOnlyGS1Encoding;
     }

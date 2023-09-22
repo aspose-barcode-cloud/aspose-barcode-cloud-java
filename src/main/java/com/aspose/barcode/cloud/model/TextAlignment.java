@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** TextAlignment. */
 @JsonAdapter(TextAlignment.Adapter.class)
 public enum TextAlignment {
     LEFT("Left"),
@@ -56,6 +56,7 @@ public enum TextAlignment {
         return String.valueOf(value);
     }
 
+    /** Create TextAlignment from String. */
     public static TextAlignment fromValue(String text) {
         for (TextAlignment b : TextAlignment.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -65,6 +66,7 @@ public enum TextAlignment {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<TextAlignment> {
         @Override
         public void write(final JsonWriter jsonWriter, final TextAlignment enumeration)

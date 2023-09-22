@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** ITF14BorderType. */
 @JsonAdapter(ITF14BorderType.Adapter.class)
 public enum ITF14BorderType {
     NONE("None"),
@@ -60,6 +60,7 @@ public enum ITF14BorderType {
         return String.valueOf(value);
     }
 
+    /** Create ITF14BorderType from String. */
     public static ITF14BorderType fromValue(String text) {
         for (ITF14BorderType b : ITF14BorderType.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -69,6 +70,7 @@ public enum ITF14BorderType {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<ITF14BorderType> {
         @Override
         public void write(final JsonWriter jsonWriter, final ITF14BorderType enumeration)

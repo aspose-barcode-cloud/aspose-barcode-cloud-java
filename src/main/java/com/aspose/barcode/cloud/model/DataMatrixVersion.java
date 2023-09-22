@@ -32,7 +32,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** */
+/** DataMatrixVersion. */
 @JsonAdapter(DataMatrixVersion.Adapter.class)
 public enum DataMatrixVersion {
     AUTO("Auto"),
@@ -192,6 +192,7 @@ public enum DataMatrixVersion {
         return String.valueOf(value);
     }
 
+    /** Create DataMatrixVersion from String. */
     public static DataMatrixVersion fromValue(String text) {
         for (DataMatrixVersion b : DataMatrixVersion.values()) {
             if (String.valueOf(b.value).equals(text)) {
@@ -201,6 +202,7 @@ public enum DataMatrixVersion {
         return null;
     }
 
+    /** Class for JsonAdapter. */
     public static class Adapter extends TypeAdapter<DataMatrixVersion> {
         @Override
         public void write(final JsonWriter jsonWriter, final DataMatrixVersion enumeration)

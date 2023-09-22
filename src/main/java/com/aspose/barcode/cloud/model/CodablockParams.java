@@ -49,7 +49,7 @@ public class CodablockParams {
      *
      * @return aspectRatio
      */
-    @ApiModelProperty(value = "Height/Width ratio of 2D BarCode module.")
+    @ApiModelProperty(value = "AspectRatio")
     public Double getAspectRatio() {
         return aspectRatio;
     }
@@ -63,7 +63,7 @@ public class CodablockParams {
      *
      * @return columns
      */
-    @ApiModelProperty(value = "Columns count.")
+    @ApiModelProperty(value = "Columns")
     public Integer getColumns() {
         return columns;
     }
@@ -77,7 +77,7 @@ public class CodablockParams {
      *
      * @return rows
      */
-    @ApiModelProperty(value = "Rows count.")
+    @ApiModelProperty(value = "Rows")
     public Integer getRows() {
         return rows;
     }

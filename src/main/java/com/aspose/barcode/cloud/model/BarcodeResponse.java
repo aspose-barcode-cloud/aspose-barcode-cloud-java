@@ -54,7 +54,7 @@ public class BarcodeResponse {
      *
      * @return barcodeValue
      */
-    @ApiModelProperty(value = "Barcode data.")
+    @ApiModelProperty(value = "BarcodeValue")
     public String getBarcodeValue() {
         return barcodeValue;
     }
@@ -68,7 +68,7 @@ public class BarcodeResponse {
      *
      * @return type
      */
-    @ApiModelProperty(value = "Type of the barcode.")
+    @ApiModelProperty(value = "Type")
     public String getType() {
         return type;
     }
@@ -77,12 +77,12 @@ public class BarcodeResponse {
         this.type = type;
     }
 
-    public BarcodeResponse addRegionItem(RegionPoint regionItem) {
+    /** Add RegionPoint. */
+    public void addRegionItem(RegionPoint regionItem) {
         if (this.region == null) {
             this.region = new ArrayList<RegionPoint>();
         }
         this.region.add(regionItem);
-        return this;
     }
 
     /**
@@ -90,7 +90,7 @@ public class BarcodeResponse {
      *
      * @return region
      */
-    @ApiModelProperty(value = "Region with barcode.")
+    @ApiModelProperty(value = "Region")
     public List<RegionPoint> getRegion() {
         return region;
     }
@@ -104,7 +104,7 @@ public class BarcodeResponse {
      *
      * @return checksum
      */
-    @ApiModelProperty(value = "Checksum of barcode.")
+    @ApiModelProperty(value = "Checksum")
     public String getChecksum() {
         return checksum;
     }

@@ -94,7 +94,7 @@ public class Error {
      *
      * @return innerError
      */
-    @ApiModelProperty(value = "Inner Error")
+    @ApiModelProperty(value = "InnerError")
     public ErrorDetails getInnerError() {
         return innerError;
     }
