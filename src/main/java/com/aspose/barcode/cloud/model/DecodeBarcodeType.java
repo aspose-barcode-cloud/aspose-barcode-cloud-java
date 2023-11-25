@@ -199,7 +199,9 @@ public enum DecodeBarcodeType {
 
     GS1AZTEC("GS1Aztec"),
 
-    GS1COMPOSITEBAR("GS1CompositeBar");
+    GS1COMPOSITEBAR("GS1CompositeBar"),
+
+    GS1MICROPDF417("GS1MicroPdf417");
 
     private final String value;
 

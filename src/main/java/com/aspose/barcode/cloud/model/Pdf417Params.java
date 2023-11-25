@@ -97,8 +97,17 @@ public class Pdf417Params {
     @SerializedName(value = "code128Emulation")
     private Code128Emulation code128Emulation = null;
 
+    @SerializedName(value = "isCode128Emulation")
+    private Boolean isCode128Emulation = null;
+
     @SerializedName(value = "pdf417MacroTerminator")
     private Pdf417MacroTerminator pdf417MacroTerminator = null;
+
+    @SerializedName(value = "isLinked")
+    private Boolean isLinked = null;
+
+    @SerializedName(value = "macroCharacters")
+    private MacroCharacter macroCharacters = null;
 
     /**
      * Height/Width ratio of 2D BarCode module.
@@ -378,6 +387,9 @@ public class Pdf417Params {
     }
 
     /**
+     * DEPRECATED: This property is obsolete and will be removed in future releases. See samples of
+     * using new parameters on
+     * https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ @Deprecated()
      * Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417
      * and MacroPDF417 barcodes.
      *
@@ -393,6 +405,22 @@ public class Pdf417Params {
     }
 
     /**
+     * Can be used only with MicroPdf417 and encodes Code 128 emulation modes. Can encode FNC1 in
+     * second position modes 908 and 909, also can encode 910 and 911 which just indicate that
+     * recognized MicroPdf417 can be interpret as Code 128.
+     *
+     * @return isCode128Emulation
+     */
+    @ApiModelProperty(value = "IsCode128Emulation")
+    public Boolean isIsCode128Emulation() {
+        return isCode128Emulation;
+    }
+
+    public void setIsCode128Emulation(Boolean isCode128Emulation) {
+        this.isCode128Emulation = isCode128Emulation;
+    }
+
+    /**
      * Used to tell the encoder whether to add Macro PDF417 Terminator (codeword 922) to the
      * segment. Applied only for Macro PDF417.
      *
@@ -405,6 +433,39 @@ public class Pdf417Params {
 
     public void setPdf417MacroTerminator(Pdf417MacroTerminator pdf417MacroTerminator) {
         this.pdf417MacroTerminator = pdf417MacroTerminator;
+    }
+
+    /**
+     * Defines linked modes with GS1MicroPdf417, MicroPdf417 and Pdf417 barcodes. With
+     * GS1MicroPdf417 symbology encodes 906, 907, 912, 913, 914, 915 “Linked” UCC/EAN-128 modes.
+     * With MicroPdf417 and Pdf417 symbologies encodes 918 linkage flag to associated linear
+     * component other than an EAN.UCC.
+     *
+     * @return isLinked
+     */
+    @ApiModelProperty(value = "IsLinked")
+    public Boolean isIsLinked() {
+        return isLinked;
+    }
+
+    public void setIsLinked(Boolean isLinked) {
+        this.isLinked = isLinked;
+    }
+
+    /**
+     * Macro Characters 05 and 06 values are used to obtain more compact encoding in special modes.
+     * Can be used only with MicroPdf417 and encodes 916 and 917 MicroPdf417 modes. Default value:
+     * MacroCharacters.None.
+     *
+     * @return macroCharacters
+     */
+    @ApiModelProperty(value = "MacroCharacters")
+    public MacroCharacter getMacroCharacters() {
+        return macroCharacters;
+    }
+
+    public void setMacroCharacters(MacroCharacter macroCharacters) {
+        this.macroCharacters = macroCharacters;
     }
 
     @Override
@@ -436,7 +497,10 @@ public class Pdf417Params {
                 && Objects.equals(this.macroAddressee, pdf417Params.macroAddressee)
                 && Objects.equals(this.macroECIEncoding, pdf417Params.macroECIEncoding)
                 && Objects.equals(this.code128Emulation, pdf417Params.code128Emulation)
-                && Objects.equals(this.pdf417MacroTerminator, pdf417Params.pdf417MacroTerminator);
+                && Objects.equals(this.isCode128Emulation, pdf417Params.isCode128Emulation)
+                && Objects.equals(this.pdf417MacroTerminator, pdf417Params.pdf417MacroTerminator)
+                && Objects.equals(this.isLinked, pdf417Params.isLinked)
+                && Objects.equals(this.macroCharacters, pdf417Params.macroCharacters);
     }
 
     @Override
@@ -462,7 +526,10 @@ public class Pdf417Params {
                 macroAddressee,
                 macroECIEncoding,
                 code128Emulation,
-                pdf417MacroTerminator);
+                isCode128Emulation,
+                pdf417MacroTerminator,
+                isLinked,
+                macroCharacters);
     }
 
     @Override
@@ -496,9 +563,14 @@ public class Pdf417Params {
         sb.append("    macroAddressee: ").append(toIndentedString(macroAddressee)).append("\n");
         sb.append("    macroECIEncoding: ").append(toIndentedString(macroECIEncoding)).append("\n");
         sb.append("    code128Emulation: ").append(toIndentedString(code128Emulation)).append("\n");
+        sb.append("    isCode128Emulation: ")
+                .append(toIndentedString(isCode128Emulation))
+                .append("\n");
         sb.append("    pdf417MacroTerminator: ")
                 .append(toIndentedString(pdf417MacroTerminator))
                 .append("\n");
+        sb.append("    isLinked: ").append(toIndentedString(isLinked)).append("\n");
+        sb.append("    macroCharacters: ").append(toIndentedString(macroCharacters)).append("\n");
         sb.append("}");
         return sb.toString();
     }

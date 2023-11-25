@@ -170,5 +170,7 @@
 
 * `GS1COMPOSITEBAR` (value: `"GS1CompositeBar"`)
 
+* `GS1MICROPDF417` (value: `"GS1MicroPdf417"`)
+
 
 

@@ -146,5 +146,7 @@
 
 * `GS1AZTEC` (value: `"GS1Aztec"`)
 
+* `GS1MICROPDF417` (value: `"GS1MicroPdf417"`)
+
 
 
