@@ -175,7 +175,9 @@ public enum EncodeBarcodeType {
 
     GS1HANXIN("GS1HanXin"),
 
-    GS1AZTEC("GS1Aztec");
+    GS1AZTEC("GS1Aztec"),
+
+    GS1MICROPDF417("GS1MicroPdf417");
 
     private final String value;
 

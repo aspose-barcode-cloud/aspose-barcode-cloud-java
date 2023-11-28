@@ -32,7 +32,10 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** Code128Emulation. */
+/**
+ * Code128Emulation. DEPRECATED. This enum will be removed in future releases Function codewords for
+ * Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417 and MacroPDF417 barcodes.
+ */
 @JsonAdapter(Code128Emulation.Adapter.class)
 public enum Code128Emulation {
     NONE("None"),
