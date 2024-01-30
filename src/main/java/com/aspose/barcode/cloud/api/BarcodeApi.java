@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BarcodeApi.java">
-//   Copyright (c) 2023 Aspose.BarCode for Cloud
+//   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -396,6 +396,11 @@ public class BarcodeApi {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
         }
 
+        if (request.types != null) {
+            collectionQueryParams.addAll(
+                    apiClient.parameterToPairs("multi", "Types", request.types));
+        }
+
         if (request.checksumValidation != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("ChecksumValidation", request.checksumValidation));
@@ -746,6 +751,11 @@ public class BarcodeApi {
         List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
+        }
+
+        if (request.types != null) {
+            collectionQueryParams.addAll(
+                    apiClient.parameterToPairs("multi", "Types", request.types));
         }
 
         if (request.checksumValidation != null) {

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PostBarcodeRecognizeFromUrlOrContentRequest.java">
-//   Copyright (c) 2023 Aspose.BarCode for Cloud
+//   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,6 +36,9 @@ import java.util.List;
 public class PostBarcodeRecognizeFromUrlOrContentRequest {
     /** The type of barcode to read.. */
     public String type;
+
+    /** Multiple barcode types to read.. */
+    public List<String> types;
 
     /**
      * Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for

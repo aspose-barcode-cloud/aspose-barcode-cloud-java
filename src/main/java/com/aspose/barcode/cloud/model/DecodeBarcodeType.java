@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DecodeBarcodeType.java">
-//   Copyright (c) 2023 Aspose.BarCode for Cloud
+//   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -201,7 +201,9 @@ public enum DecodeBarcodeType {
 
     GS1COMPOSITEBAR("GS1CompositeBar"),
 
-    GS1MICROPDF417("GS1MicroPdf417");
+    GS1MICROPDF417("GS1MicroPdf417"),
+
+    MOSTCOMMONLYUSED("mostCommonlyUsed");
 
     private final String value;
 
