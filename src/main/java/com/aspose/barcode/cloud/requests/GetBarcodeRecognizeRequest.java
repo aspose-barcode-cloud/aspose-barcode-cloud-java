@@ -35,6 +35,9 @@ public class GetBarcodeRecognizeRequest {
     /** The type of barcode to read.. */
     public String type;
 
+    /** Multiple barcode types to read.. */
+    public List<DecodeBarcodeType> types;
+
     /**
      * Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for
      * symbologies which must contain checksum, as No where checksum only possible. Checksum never

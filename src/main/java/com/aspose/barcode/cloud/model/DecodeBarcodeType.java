@@ -201,7 +201,9 @@ public enum DecodeBarcodeType {
 
     GS1COMPOSITEBAR("GS1CompositeBar"),
 
-    GS1MICROPDF417("GS1MicroPdf417");
+    GS1MICROPDF417("GS1MicroPdf417"),
+
+    MOSTCOMMONLYUSED("mostCommonlyUsed");
 
     private final String value;
 

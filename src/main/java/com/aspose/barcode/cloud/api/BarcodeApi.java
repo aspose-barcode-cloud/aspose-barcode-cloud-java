@@ -396,6 +396,11 @@ public class BarcodeApi {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
         }
 
+        if (request.types != null) {
+            collectionQueryParams.addAll(
+                    apiClient.parameterToPairs("multi", "Types", request.types));
+        }
+
         if (request.checksumValidation != null) {
             queryParams.addAll(
                     apiClient.parameterToPair("ChecksumValidation", request.checksumValidation));
@@ -746,6 +751,11 @@ public class BarcodeApi {
         List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.type != null) {
             queryParams.addAll(apiClient.parameterToPair("Type", request.type));
+        }
+
+        if (request.types != null) {
+            collectionQueryParams.addAll(
+                    apiClient.parameterToPairs("multi", "Types", request.types));
         }
 
         if (request.checksumValidation != null) {

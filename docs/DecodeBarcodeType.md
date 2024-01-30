@@ -172,5 +172,7 @@
 
 * `GS1MICROPDF417` (value: `"GS1MicroPdf417"`)
 
+* `MOSTCOMMONLYUSED` (value: `"mostCommonlyUsed"`)
+
 
 

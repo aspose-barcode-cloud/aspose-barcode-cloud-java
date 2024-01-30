@@ -40,6 +40,9 @@ public class ReaderParams {
     @SerializedName(value = "type")
     private DecodeBarcodeType type = null;
 
+    @SerializedName(value = "types")
+    private List<DecodeBarcodeType> types = null;
+
     @SerializedName(value = "checksumValidation")
     private ChecksumValidation checksumValidation = null;
 
@@ -154,6 +157,28 @@ public class ReaderParams {
 
     public void setType(DecodeBarcodeType type) {
         this.type = type;
+    }
+
+    /** Add DecodeBarcodeType. */
+    public void addTypesItem(DecodeBarcodeType typesItem) {
+        if (this.types == null) {
+            this.types = new ArrayList<DecodeBarcodeType>();
+        }
+        this.types.add(typesItem);
+    }
+
+    /**
+     * Multiple barcode types to read.
+     *
+     * @return types
+     */
+    @ApiModelProperty(value = "Types")
+    public List<DecodeBarcodeType> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<DecodeBarcodeType> types) {
+        this.types = types;
     }
 
     /**
@@ -692,6 +717,7 @@ public class ReaderParams {
         }
         ReaderParams readerParams = (ReaderParams) o;
         return Objects.equals(this.type, readerParams.type)
+                && Objects.equals(this.types, readerParams.types)
                 && Objects.equals(this.checksumValidation, readerParams.checksumValidation)
                 && Objects.equals(this.detectEncoding, readerParams.detectEncoding)
                 && Objects.equals(this.preset, readerParams.preset)
@@ -750,6 +776,7 @@ public class ReaderParams {
     public int hashCode() {
         return Objects.hash(
                 type,
+                types,
                 checksumValidation,
                 detectEncoding,
                 preset,
@@ -792,6 +819,7 @@ public class ReaderParams {
         sb.append("class ReaderParams {\n");
 
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    types: ").append(toIndentedString(types)).append("\n");
         sb.append("    checksumValidation: ")
                 .append(toIndentedString(checksumValidation))
                 .append("\n");
