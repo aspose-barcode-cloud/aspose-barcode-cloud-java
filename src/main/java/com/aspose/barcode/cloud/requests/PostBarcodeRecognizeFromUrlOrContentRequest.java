@@ -38,7 +38,7 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
     public String type;
 
     /** Multiple barcode types to read.. */
-    public List<DecodeBarcodeType> types;
+    public List<String> types;
 
     /**
      * Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for
