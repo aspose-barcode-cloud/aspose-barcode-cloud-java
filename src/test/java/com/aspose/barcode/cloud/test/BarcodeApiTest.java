@@ -15,6 +15,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /** API tests for BarcodeApi */
 public class BarcodeApiTest extends TestBase {
@@ -75,6 +76,32 @@ public class BarcodeApiTest extends TestBase {
         assertFalse(region.isEmpty());
         assertTrue(region.get(0).getX() > 0);
         assertTrue(region.get(0).getY() > 0);
+    }
+
+    /**
+     * Recognize barcode from a file on server with multiple types in params
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getBarcodeRecognizeWithTypesTest() throws ApiException {
+        String testFileName = "ManyTypes.png";
+        uploadTestFile(testFileName);
+
+        GetBarcodeRecognizeRequest request = new GetBarcodeRecognizeRequest(testFileName);
+        request.types = List.of(DecodeBarcodeType.QR, DecodeBarcodeType.CODE128, DecodeBarcodeType.CODE11);
+        request.checksumValidation = ChecksumValidation.OFF.toString();
+        request.preset = PresetType.HIGHPERFORMANCE.toString();
+        request.storage = testStorageName;
+        request.folder = remoteTempFolder;
+
+        BarcodeResponseList response = api.getBarcodeRecognize(request);
+
+        assertNotNull(response);
+        assertFalse(response.getBarcodes().isEmpty());
+
+        assertEquals(3, response.getBarcodes().size());
+
     }
 
     private void uploadTestFile(String testFileName) throws ApiException {
