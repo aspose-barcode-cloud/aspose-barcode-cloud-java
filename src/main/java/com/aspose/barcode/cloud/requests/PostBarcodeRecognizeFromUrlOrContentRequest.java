@@ -25,6 +25,8 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.DecodeBarcodeType;
+
 import java.io.File;
 import java.util.List;
 
@@ -38,7 +40,7 @@ public class PostBarcodeRecognizeFromUrlOrContentRequest {
     public String type;
 
     /** Multiple barcode types to read.. */
-    public List<String> types;
+    public List<DecodeBarcodeType> types;
 
     /**
      * Enable checksum validation during recognition for 1D barcodes. Default is treated as Yes for
