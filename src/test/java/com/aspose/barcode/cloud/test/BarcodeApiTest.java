@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -89,7 +90,7 @@ public class BarcodeApiTest extends TestBase {
         uploadTestFile(testFileName);
 
         GetBarcodeRecognizeRequest request = new GetBarcodeRecognizeRequest(testFileName);
-        request.types = List.of(DecodeBarcodeType.QR, DecodeBarcodeType.CODE128, DecodeBarcodeType.CODE11);
+        request.types = Arrays.asList(DecodeBarcodeType.QR, DecodeBarcodeType.CODE128, DecodeBarcodeType.CODE11);
         request.checksumValidation = ChecksumValidation.OFF.toString();
         request.preset = PresetType.HIGHPERFORMANCE.toString();
         request.storage = testStorageName;
