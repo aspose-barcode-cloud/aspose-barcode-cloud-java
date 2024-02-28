@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.BarcodeApi;
-import com.aspose.barcode.cloud.model.ChecksumValidation;
-import com.aspose.barcode.cloud.model.PresetType;
 import com.aspose.barcode.cloud.requests.PostBarcodeRecognizeFromUrlOrContentRequest;
 
 import org.junit.BeforeClass;
@@ -29,8 +27,6 @@ public class RecognizeWithTimeoutTest extends TestBase {
     public void RecognizeWithTimeoutShouldThrowTimeout() {
         PostBarcodeRecognizeFromUrlOrContentRequest request =
                 new PostBarcodeRecognizeFromUrlOrContentRequest();
-        request.checksumValidation = ChecksumValidation.OFF.toString();
-        request.preset = PresetType.HIGHPERFORMANCE.toString();
 
         Path currentRelativePath = Paths.get("");
         String currentPath = currentRelativePath.toAbsolutePath().toString();

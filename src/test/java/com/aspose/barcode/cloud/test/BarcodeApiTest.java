@@ -15,6 +15,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /** API tests for BarcodeApi */
@@ -57,7 +58,7 @@ public class BarcodeApiTest extends TestBase {
         uploadTestFile(testFileName);
 
         GetBarcodeRecognizeRequest request = new GetBarcodeRecognizeRequest(testFileName);
-        request.type = DecodeBarcodeType.CODE11.getValue();
+        request.types = Collections.singletonList(DecodeBarcodeType.CODE11);
         request.checksumValidation = ChecksumValidation.OFF.toString();
         request.preset = PresetType.HIGHPERFORMANCE.toString();
         request.storage = testStorageName;
@@ -69,7 +70,7 @@ public class BarcodeApiTest extends TestBase {
         assertFalse(response.getBarcodes().isEmpty());
 
         BarcodeResponse barcode = response.getBarcodes().get(0);
-        assertEquals(request.type, barcode.getType());
+        assertEquals("Code11", barcode.getType());
         assertEquals("1234567812", barcode.getBarcodeValue());
 
         List<RegionPoint> region = barcode.getRegion();
@@ -132,6 +133,7 @@ public class BarcodeApiTest extends TestBase {
                 new PostBarcodeRecognizeFromUrlOrContentRequest();
         request.checksumValidation = ChecksumValidation.OFF.toString();
         request.preset = PresetType.HIGHPERFORMANCE.toString();
+        request.types = Collections.singletonList(DecodeBarcodeType.CODE11);
 
         Path currentRelativePath = Paths.get("");
         String currentPath = currentRelativePath.toAbsolutePath().toString();
@@ -216,10 +218,11 @@ public class BarcodeApiTest extends TestBase {
 
         ReaderParams readerParams = new ReaderParams();
         readerParams.setChecksumValidation(ChecksumValidation.OFF);
+        readerParams.setTypes(Collections.singletonList(DecodeBarcodeType.CODE11));
+        readerParams.setPreset(PresetType.HIGHPERFORMANCE);
 
         PutBarcodeRecognizeFromBodyRequest request =
                 new PutBarcodeRecognizeFromBodyRequest(testFileName, readerParams);
-        request.type = DecodeBarcodeType.CODE11.getValue();
         request.storage = testStorageName;
         request.folder = remoteTempFolder;
 
