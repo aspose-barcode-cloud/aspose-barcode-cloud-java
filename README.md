@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 24.2.0
+- SDK version: 24.3.0
 
 ## Demo applications
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>24.2.0</version>
+  <version>24.3.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-24.2.0.jar`
+- `target/aspose-barcode-cloud-24.3.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -126,10 +126,10 @@ public class BarcodeApiExample {
     }
 
     private static File generateBarcode(BarcodeApi api) throws ApiException {
-        String type = EncodeBarcodeType.PDF417.toString();
+        String type = EncodeBarcodeType.QR.toString();
         String text = "Aspose.BarCode for Cloud Sample";
         GetBarcodeGenerateRequest request = new GetBarcodeGenerateRequest(type, text);
-
+        request.textLocation = "None";
         return api.getBarcodeGenerate(request);
     }
 
