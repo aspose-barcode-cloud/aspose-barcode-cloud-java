@@ -1949,4 +1949,173 @@ public class BarcodeApi {
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
+
+    /**
+     * Build call for scanBarcode
+     *
+     * @param request See {@link ScanBarcodeRequest}
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    @SuppressWarnings("removal")
+    protected com.squareup.okhttp.Call scanBarcodeCall(
+            ScanBarcodeRequest request,
+            final ProgressResponseBody.ProgressListener progressListener,
+            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
+            throws ApiException {
+        Object postBody = null;
+
+        // create path and map variables
+        String path = "/barcode/scan";
+
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
+        Map<String, String> headerParams = new HashMap<>();
+
+        Map<String, Object> formParams = new HashMap<>();
+        if (request.imageFile != null) {
+            formParams.put("imageFile", request.imageFile);
+        }
+
+        if (request.decodeTypes != null) {
+            formParams.put("decodeTypes", request.decodeTypes);
+        }
+
+        if (request.timeout != null) {
+            formParams.put("timeout", request.timeout);
+        }
+
+        final String[] accepts = {"application/json"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
+
+        final String[] contentTypes = {"multipart/form-data"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
+
+        if (progressListener != null) {
+            apiClient
+                    .getHttpClient()
+                    .networkInterceptors()
+                    .add(
+                            new com.squareup.okhttp.Interceptor() {
+                                @Override
+                                public com.squareup.okhttp.Response intercept(
+                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                        throws IOException {
+                                    com.squareup.okhttp.Response originalResponse =
+                                            chain.proceed(chain.request());
+                                    return originalResponse
+                                            .newBuilder()
+                                            .body(
+                                                    new ProgressResponseBody(
+                                                            originalResponse.body(),
+                                                            progressListener))
+                                            .build();
+                                }
+                            });
+        }
+
+        return apiClient.buildCall(
+                path,
+                "POST",
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
+                progressRequestListener);
+    }
+
+    private com.squareup.okhttp.Call scanBarcodeValidateBeforeCall(
+            ScanBarcodeRequest request,
+            final ProgressResponseBody.ProgressListener progressListener,
+            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
+            throws ApiException {
+
+        // verify the required parameter 'request.imageFile' is set
+        if (request.imageFile == null) {
+            throw new ApiException(
+                    "Missing the required parameter 'request.imageFile'"
+                            + " when calling scanBarcode(...)");
+        }
+
+        com.squareup.okhttp.Call call =
+                scanBarcodeCall(request, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * Quickly scan a barcode from an image.
+     *
+     * @param request See {@link ScanBarcodeRequest}
+     * @return BarcodeResponseList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     */
+    public BarcodeResponseList scanBarcode(ScanBarcodeRequest request) throws ApiException {
+        ApiResponse<BarcodeResponseList> resp = scanBarcodeWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * Quickly scan a barcode from an image.
+     *
+     * @param request See {@link ScanBarcodeRequest}
+     * @return ApiResponse&lt;BarcodeResponseList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     */
+    public ApiResponse<BarcodeResponseList> scanBarcodeWithHttpInfo(ScanBarcodeRequest request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = scanBarcodeValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
+        return apiClient.execute(call, returnType);
+    }
+
+    /**
+     * Quickly scan a barcode from an image. (asynchronously)
+     *
+     * @param request See {@link ScanBarcodeRequest}
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body
+     *     object
+     */
+    public com.squareup.okhttp.Call scanBarcodeAsync(
+            ScanBarcodeRequest request, final ApiCallback<BarcodeResponseList> callback)
+            throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener =
+                    new ProgressResponseBody.ProgressListener() {
+                        @Override
+                        public void update(long bytesRead, long contentLength, boolean done) {
+                            callback.onDownloadProgress(bytesRead, contentLength, done);
+                        }
+                    };
+
+            progressRequestListener =
+                    new ProgressRequestBody.ProgressRequestListener() {
+                        @Override
+                        public void onRequestProgress(
+                                long bytesWritten, long contentLength, boolean done) {
+                            callback.onUploadProgress(bytesWritten, contentLength, done);
+                        }
+                    };
+        }
+
+        com.squareup.okhttp.Call call =
+                scanBarcodeValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
+        return call;
+    }
 }
