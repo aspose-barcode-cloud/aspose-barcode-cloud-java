@@ -52,10 +52,11 @@ public class DataMatrixParams {
      * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
      * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
      * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
-     * array. @Deprecated() Sets the encoding of codetext.
+     * array. Sets the encoding of codetext.
      *
      * @return textEncoding
      */
+    @Deprecated()
     @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
@@ -66,11 +67,12 @@ public class DataMatrixParams {
     }
 
     /**
-     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next
-     * release @Deprecated() Columns count.
+     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next release Columns
+     * count.
      *
      * @return columns
      */
+    @Deprecated()
     @ApiModelProperty(value = "Columns")
     public Integer getColumns() {
         return columns;
@@ -109,11 +111,12 @@ public class DataMatrixParams {
     }
 
     /**
-     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next
-     * release @Deprecated() Rows count.
+     * DEPRECATED: Will be replaced with &#39;DataMatrix.Version&#39; in the next release Rows
+     * count.
      *
      * @return rows
      */
+    @Deprecated()
     @ApiModelProperty(value = "Rows")
     public Integer getRows() {
         return rows;

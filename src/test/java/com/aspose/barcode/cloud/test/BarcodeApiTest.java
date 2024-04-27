@@ -20,7 +20,6 @@ import com.aspose.barcode.cloud.model.PresetType;
 import com.aspose.barcode.cloud.model.ReaderParams;
 import com.aspose.barcode.cloud.model.RegionPoint;
 import com.aspose.barcode.cloud.model.ResultImageInfo;
-
 import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
 import com.aspose.barcode.cloud.requests.GetBarcodeRecognizeRequest;
 import com.aspose.barcode.cloud.requests.PostBarcodeRecognizeFromUrlOrContentRequest;
@@ -30,6 +29,7 @@ import com.aspose.barcode.cloud.requests.PutBarcodeRecognizeFromBodyRequest;
 import com.aspose.barcode.cloud.requests.PutGenerateMultipleRequest;
 import com.aspose.barcode.cloud.requests.ScanBarcodeRequest;
 import com.aspose.barcode.cloud.requests.UploadFileRequest;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 

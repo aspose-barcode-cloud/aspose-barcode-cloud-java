@@ -616,11 +616,11 @@ public class GeneratorParams {
     }
 
     /**
-     * Indicates whether explains the character &quot;\&quot; as an escape character in CodeText
+     * Indicates whether explains the character \&quot;\\\&quot; as an escape character in CodeText
      * property. Used for Pdf417, DataMatrix, Code128 only If the EnableEscape is true,
-     * &quot;\&quot; will be explained as a special escape character. Otherwise, &quot;\&quot; acts
-     * as normal characters. Aspose.BarCode supports input decimal ascii code and mnemonic for ASCII
-     * control-code characters. For example, \013 and \\CR stands for CR.
+     * \&quot;\\\&quot; will be explained as a special escape character. Otherwise, \&quot;\\\&quot;
+     * acts as normal characters. Aspose.BarCode supports input decimal ascii code and mnemonic for
+     * ASCII control-code characters. For example, \\013 and \\\\CR stands for CR.
      *
      * @return enableEscape
      */

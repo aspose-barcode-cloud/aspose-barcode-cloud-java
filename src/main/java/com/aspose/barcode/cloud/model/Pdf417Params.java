@@ -102,10 +102,11 @@ public class Pdf417Params {
      * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
      * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
      * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
-     * array. @Deprecated() Sets the encoding of codetext.
+     * array. Sets the encoding of codetext.
      *
      * @return textEncoding
      */
+    @Deprecated()
     @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
@@ -364,12 +365,13 @@ public class Pdf417Params {
     /**
      * DEPRECATED: This property is obsolete and will be removed in future releases. See samples of
      * using new parameters on
-     * https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ @Deprecated()
+     * https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/
      * Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417
      * and MacroPDF417 barcodes.
      *
      * @return code128Emulation
      */
+    @Deprecated()
     @ApiModelProperty(value = "Code128Emulation")
     public Code128Emulation getCode128Emulation() {
         return code128Emulation;
