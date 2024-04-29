@@ -1,28 +1,3 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="Pdf417Params.java">
-//   Copyright (c) 2024 Aspose.BarCode for Cloud
-// </copyright>
-// <summary>
-//   Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
@@ -127,10 +102,11 @@ public class Pdf417Params {
      * DEPRECATED: This property is obsolete and will be removed in future releases. Unicode symbols
      * detection and encoding will be processed in Auto mode with Extended Channel Interpretation
      * charset designator. Using of own encodings requires manual CodeText encoding into byte[]
-     * array. @Deprecated() Sets the encoding of codetext.
+     * array. Sets the encoding of codetext.
      *
      * @return textEncoding
      */
+    @Deprecated()
     @ApiModelProperty(value = "TextEncoding")
     public String getTextEncoding() {
         return textEncoding;
@@ -389,12 +365,13 @@ public class Pdf417Params {
     /**
      * DEPRECATED: This property is obsolete and will be removed in future releases. See samples of
      * using new parameters on
-     * https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/ @Deprecated()
+     * https://releases.aspose.com/barcode/net/release-notes/2023/aspose-barcode-for-net-23-10-release-notes/
      * Function codeword for Code 128 emulation. Applied for MicroPDF417 only. Ignored for PDF417
      * and MacroPDF417 barcodes.
      *
      * @return code128Emulation
      */
+    @Deprecated()
     @ApiModelProperty(value = "Code128Emulation")
     public Code128Emulation getCode128Emulation() {
         return code128Emulation;

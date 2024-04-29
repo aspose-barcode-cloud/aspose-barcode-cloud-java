@@ -1,28 +1,3 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReaderParams.java">
-//   Copyright (c) 2024 Aspose.BarCode for Cloud
-// </copyright>
-// <summary>
-//   Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
 package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
@@ -627,7 +602,7 @@ public class ReaderParams {
     }
 
     /**
-     * Similarity coefficient depends on how homogeneous barcodes are. Use high value for for clear
+     * Similarity coefficient depends on how homogeneous barcodes are. Use high value for clear
      * barcodes. Use low values to detect barcodes that ara partly damaged or not lighten evenly.
      * Similarity coefficient must be between [0.5, 0.9]
      *
@@ -692,8 +667,8 @@ public class ReaderParams {
     /**
      * The flag which force AustraliaPost decoder to ignore last filling patterns in Customer
      * Information Field during decoding as CTable method. CTable encoding method does not have any
-     * gaps in encoding table and sequence &quot;333&quot; of filling patterns is decoded as letter
-     * &quot;z&quot;.
+     * gaps in encoding table and sequence \&quot;333\&quot; of filling patterns is decoded as
+     * letter \&quot;z\&quot;.
      *
      * @return ignoreEndingFillingPatternsForCTable
      */

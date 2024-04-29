@@ -1,28 +1,3 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose">
-//   Copyright (c) 2024 Aspose.BarCode for Cloud
-// </copyright>
-// <summary>
-//   Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
 package com.aspose.barcode.cloud;
 
 import com.aspose.barcode.cloud.model.ApiErrorResponse;
@@ -66,7 +41,7 @@ import java.util.regex.Pattern;
 /** ApiClient. */
 public class ApiClient {
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "24.3.0";
+    public final String clientVersion = "24.4.0";
 
     private String baseUrl = "https://api.aspose.cloud";
     private String tokenUrl = baseUrl + "/connect/token";
@@ -110,7 +85,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/24.3.0/java");
+        setUserAgent("Swagger-Codegen/24.4.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
@@ -919,8 +894,9 @@ public class ApiClient {
     public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
         MultipartBuilder mpBuilder = new MultipartBuilder().type(MultipartBuilder.FORM);
         for (Entry<String, Object> param : formParams.entrySet()) {
-            if (param.getValue() instanceof File) {
-                File file = (File) param.getValue();
+            Object paramValue = param.getValue();
+            if (paramValue instanceof File) {
+                File file = (File) paramValue;
                 Headers partHeaders =
                         Headers.of(
                                 "Content-Disposition",
@@ -931,13 +907,23 @@ public class ApiClient {
                                         + "\"");
                 MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));
                 mpBuilder.addPart(partHeaders, RequestBody.create(mediaType, file));
+            } else if (paramValue instanceof Collection) {
+                Collection<Object> collection = (Collection<Object>) paramValue;
+                for (Object item : collection) {
+                    Headers partHeaders =
+                            Headers.of(
+                                    "Content-Disposition",
+                                    "form-data; name=\"" + param.getKey() + "\"");
+                    mpBuilder.addPart(
+                            partHeaders, RequestBody.create(null, parameterToString(item)));
+                }
             } else {
                 Headers partHeaders =
                         Headers.of(
                                 "Content-Disposition",
                                 "form-data; name=\"" + param.getKey() + "\"");
                 mpBuilder.addPart(
-                        partHeaders, RequestBody.create(null, parameterToString(param.getValue())));
+                        partHeaders, RequestBody.create(null, parameterToString(paramValue)));
             }
         }
         return mpBuilder.build();

@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 3.0
-- SDK version: 24.3.0
+- SDK version: 24.4.0
 
 ## Demo applications
 
@@ -68,7 +68,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>24.3.0</version>
+  <version>24.4.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-24.3.0.jar`
+- `target/aspose-barcode-cloud-24.4.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -130,6 +130,7 @@ public class BarcodeApiExample {
         String text = "Aspose.BarCode for Cloud Sample";
         GetBarcodeGenerateRequest request = new GetBarcodeGenerateRequest(type, text);
         request.textLocation = "None";
+        
         return api.getBarcodeGenerate(request);
     }
 
@@ -169,6 +170,7 @@ Class | Method | HTTP request | Description
 *BarcodeApi* | [**putBarcodeGenerateFile**](docs/BarcodeApi.md#putBarcodeGenerateFile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
 *BarcodeApi* | [**putBarcodeRecognizeFromBody**](docs/BarcodeApi.md#putBarcodeRecognizeFromBody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
 *BarcodeApi* | [**putGenerateMultiple**](docs/BarcodeApi.md#putGenerateMultiple) | **PUT** /barcode/{name}/generateMultiple | Generate image with multiple barcodes and put new file on server
+*BarcodeApi* | [**scanBarcode**](docs/BarcodeApi.md#scanBarcode) | **POST** /barcode/scan | Quickly scan a barcode from an image.
 *FileApi* | [**copyFile**](docs/FileApi.md#copyFile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
 *FileApi* | [**deleteFile**](docs/FileApi.md#deleteFile) | **DELETE** /barcode/storage/file/{path} | Delete file
 *FileApi* | [**downloadFile**](docs/FileApi.md#downloadFile) | **GET** /barcode/storage/file/{path} | Download file

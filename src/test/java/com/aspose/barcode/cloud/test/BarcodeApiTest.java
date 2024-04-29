@@ -1,12 +1,34 @@
 package com.aspose.barcode.cloud.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.BarcodeApi;
 import com.aspose.barcode.cloud.api.FileApi;
-import com.aspose.barcode.cloud.model.*;
-import com.aspose.barcode.cloud.requests.*;
+import com.aspose.barcode.cloud.model.BarcodeResponse;
+import com.aspose.barcode.cloud.model.BarcodeResponseList;
+import com.aspose.barcode.cloud.model.ChecksumValidation;
+import com.aspose.barcode.cloud.model.DecodeBarcodeType;
+import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.FilesUploadResult;
+import com.aspose.barcode.cloud.model.GeneratorParams;
+import com.aspose.barcode.cloud.model.GeneratorParamsList;
+import com.aspose.barcode.cloud.model.PresetType;
+import com.aspose.barcode.cloud.model.ReaderParams;
+import com.aspose.barcode.cloud.model.RegionPoint;
+import com.aspose.barcode.cloud.model.ResultImageInfo;
+import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
+import com.aspose.barcode.cloud.requests.GetBarcodeRecognizeRequest;
+import com.aspose.barcode.cloud.requests.PostBarcodeRecognizeFromUrlOrContentRequest;
+import com.aspose.barcode.cloud.requests.PostGenerateMultipleRequest;
+import com.aspose.barcode.cloud.requests.PutBarcodeGenerateFileRequest;
+import com.aspose.barcode.cloud.requests.PutBarcodeRecognizeFromBodyRequest;
+import com.aspose.barcode.cloud.requests.PutGenerateMultipleRequest;
+import com.aspose.barcode.cloud.requests.ScanBarcodeRequest;
+import com.aspose.barcode.cloud.requests.UploadFileRequest;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -271,5 +293,34 @@ public class BarcodeApiTest extends TestBase {
         assertTrue(response.getFileSize() > 0);
         assertTrue(response.getImageWidth() > 0);
         assertTrue(response.getImageHeight() > 0);
+    }
+
+    /**
+     * Recognize barcode from an url or from request body. Request body can contain raw data bytes
+     * of the image or encoded with base64.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void scanBarcodeTest() throws ApiException {
+        Path currentRelativePath = Paths.get("");
+        String currentPath = currentRelativePath.toAbsolutePath().toString();
+        Path filePath = Paths.get(currentPath, "test_data", "QR_and_Code128.png");
+
+        ScanBarcodeRequest request = new ScanBarcodeRequest(new File(String.valueOf(filePath)));
+        request.decodeTypes = Arrays.asList(DecodeBarcodeType.CODE128, DecodeBarcodeType.QR);
+        BarcodeResponseList response = api.scanBarcode(request);
+
+        assertNotNull(response);
+        assertFalse(response.getBarcodes().isEmpty());
+
+        List<BarcodeResponse> barcodes = response.getBarcodes();
+        assertEquals(2, barcodes.size());
+
+        assertEquals(DecodeBarcodeType.QR.getValue(), barcodes.get(0).getType());
+        assertEquals("Hello world!", barcodes.get(0).getBarcodeValue());
+
+        assertEquals(DecodeBarcodeType.CODE128.getValue(), barcodes.get(1).getType());
+        assertEquals("Hello world!", barcodes.get(1).getBarcodeValue());
     }
 }
