@@ -30,7 +30,7 @@ display-updates:
 
 .PHONY: update
 update:
-	mvn versions:use-latest-releases
+	mvn versions:update-properties
 
 .PHONY: after-gen
 after-gen: fix format
