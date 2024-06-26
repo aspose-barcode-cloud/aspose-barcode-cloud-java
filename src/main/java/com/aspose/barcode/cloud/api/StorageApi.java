@@ -64,7 +64,7 @@ public class StorageApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call getDiscUsageCall(
+    protected okhttp3.Call getDiscUsageCall(
             GetDiscUsageRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -98,12 +98,12 @@ public class StorageApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(
+                                        okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -127,13 +127,13 @@ public class StorageApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call getDiscUsageValidateBeforeCall(
+    private okhttp3.Call getDiscUsageValidateBeforeCall(
             GetDiscUsageRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 getDiscUsageCall(request, progressListener, progressRequestListener);
         return call;
     }
@@ -161,7 +161,7 @@ public class StorageApi {
      */
     public ApiResponse<DiscUsage> getDiscUsageWithHttpInfo(GetDiscUsageRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = getDiscUsageValidateBeforeCall(request, null, null);
+        okhttp3.Call call = getDiscUsageValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<DiscUsage>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -175,7 +175,7 @@ public class StorageApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call getDiscUsageAsync(
+    public okhttp3.Call getDiscUsageAsync(
             GetDiscUsageRequest request, final ApiCallback<DiscUsage> callback)
             throws ApiException {
 
@@ -201,7 +201,7 @@ public class StorageApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 getDiscUsageValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<DiscUsage>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -218,7 +218,7 @@ public class StorageApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call getFileVersionsCall(
+    protected okhttp3.Call getFileVersionsCall(
             GetFileVersionsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -253,12 +253,12 @@ public class StorageApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(
+                                        okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -282,7 +282,7 @@ public class StorageApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call getFileVersionsValidateBeforeCall(
+    private okhttp3.Call getFileVersionsValidateBeforeCall(
             GetFileVersionsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -295,7 +295,7 @@ public class StorageApi {
                             + " when calling getFileVersions(...)");
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 getFileVersionsCall(request, progressListener, progressRequestListener);
         return call;
     }
@@ -323,7 +323,7 @@ public class StorageApi {
      */
     public ApiResponse<FileVersions> getFileVersionsWithHttpInfo(GetFileVersionsRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = getFileVersionsValidateBeforeCall(request, null, null);
+        okhttp3.Call call = getFileVersionsValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<FileVersions>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -337,7 +337,7 @@ public class StorageApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call getFileVersionsAsync(
+    public okhttp3.Call getFileVersionsAsync(
             GetFileVersionsRequest request, final ApiCallback<FileVersions> callback)
             throws ApiException {
 
@@ -363,7 +363,7 @@ public class StorageApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 getFileVersionsValidateBeforeCall(
                         request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<FileVersions>() {}.getType();
@@ -381,7 +381,7 @@ public class StorageApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call objectExistsCall(
+    protected okhttp3.Call objectExistsCall(
             ObjectExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -420,12 +420,12 @@ public class StorageApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(
+                                        okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -449,7 +449,7 @@ public class StorageApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call objectExistsValidateBeforeCall(
+    private okhttp3.Call objectExistsValidateBeforeCall(
             ObjectExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -462,7 +462,7 @@ public class StorageApi {
                             + " when calling objectExists(...)");
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 objectExistsCall(request, progressListener, progressRequestListener);
         return call;
     }
@@ -490,7 +490,7 @@ public class StorageApi {
      */
     public ApiResponse<ObjectExist> objectExistsWithHttpInfo(ObjectExistsRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = objectExistsValidateBeforeCall(request, null, null);
+        okhttp3.Call call = objectExistsValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<ObjectExist>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -504,7 +504,7 @@ public class StorageApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call objectExistsAsync(
+    public okhttp3.Call objectExistsAsync(
             ObjectExistsRequest request, final ApiCallback<ObjectExist> callback)
             throws ApiException {
 
@@ -530,7 +530,7 @@ public class StorageApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 objectExistsValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<ObjectExist>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -547,7 +547,7 @@ public class StorageApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call storageExistsCall(
+    protected okhttp3.Call storageExistsCall(
             StorageExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -579,12 +579,12 @@ public class StorageApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(
+                                        okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -608,7 +608,7 @@ public class StorageApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call storageExistsValidateBeforeCall(
+    private okhttp3.Call storageExistsValidateBeforeCall(
             StorageExistsRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -621,7 +621,7 @@ public class StorageApi {
                             + " when calling storageExists(...)");
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 storageExistsCall(request, progressListener, progressRequestListener);
         return call;
     }
@@ -649,7 +649,7 @@ public class StorageApi {
      */
     public ApiResponse<StorageExist> storageExistsWithHttpInfo(StorageExistsRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = storageExistsValidateBeforeCall(request, null, null);
+        okhttp3.Call call = storageExistsValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<StorageExist>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -663,7 +663,7 @@ public class StorageApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call storageExistsAsync(
+    public okhttp3.Call storageExistsAsync(
             StorageExistsRequest request, final ApiCallback<StorageExist> callback)
             throws ApiException {
 
@@ -689,7 +689,7 @@ public class StorageApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 storageExistsValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<StorageExist>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
