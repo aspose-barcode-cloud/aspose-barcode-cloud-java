@@ -6,7 +6,7 @@
     <artifactId>aspose-barcode-cloud</artifactId>
     <packaging>jar</packaging>
     <name>aspose-barcode-cloud</name>
-    <version>24.6.0</version>
+    <version>24.7.0</version>
     <url>https://www.aspose.cloud</url>
     <description>Aspose.BarCode Cloud SDK for Java</description>
     <scm>
@@ -203,7 +203,7 @@
         <threetenbp-version>1.6.9</threetenbp-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.13.2</junit-version>
-        <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>

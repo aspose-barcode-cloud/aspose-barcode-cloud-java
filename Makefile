@@ -32,5 +32,9 @@ display-updates:
 update:
 	mvn versions:update-properties
 
+.PHONY: insert-example
+insert-example:
+	./scripts/insert-example.bash
+
 .PHONY: after-gen
-after-gen: fix format
+after-gen: fix format insert-example
