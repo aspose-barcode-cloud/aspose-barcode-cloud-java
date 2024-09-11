@@ -25,6 +25,8 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.GenerateParams;
+
 /** Generate barcode using POST request with parameters in body in json or xml format. */
 public class BarcodeGenerateBodyPostRequest {
     /** . */

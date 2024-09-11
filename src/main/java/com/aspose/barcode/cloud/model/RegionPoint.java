@@ -2,11 +2,14 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Objects;
 
 /** Wrapper around Drawing.Point for proper specification. */
 @ApiModel(description = "Wrapper around Drawing.Point for proper specification.")
-@javax.annotation.Generated(
+@jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class RegionPoint {

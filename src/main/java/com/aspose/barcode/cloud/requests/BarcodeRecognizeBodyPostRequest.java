@@ -25,6 +25,8 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.RecognizeBase64Request;
+
 /**
  * Recognize barcode from file in request body using POST requests with parameters in body in json
  * or xml format.

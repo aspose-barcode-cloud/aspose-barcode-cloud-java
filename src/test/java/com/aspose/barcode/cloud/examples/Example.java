@@ -2,15 +2,16 @@ package com.aspose.barcode.cloud.examples;
 
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.api.BarcodeApi;
+import com.aspose.barcode.cloud.api.GenerateApi;
+import com.aspose.barcode.cloud.api.ScanApi;
+import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
-import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
-import com.aspose.barcode.cloud.requests.ScanBarcodeRequest;
+import com.aspose.barcode.cloud.model.EncodeDataType;
+import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
+import com.aspose.barcode.cloud.requests.BarcodeScanFormPostRequest;
 
 import java.io.File;
-import java.util.Collections;
 
 public class Example {
     public static void main(String[] args) {
@@ -20,15 +21,16 @@ public class Example {
                         "Client Secret from https://dashboard.aspose.cloud/applications");
         client.setReadTimeout(5 * 60 * 1000);
 
-        BarcodeApi api = new BarcodeApi(client);
+        GenerateApi genApi = new GenerateApi(client);
+        ScanApi scanApi = new ScanApi(client);
 
         try {
             System.out.println("Generating barcode...");
-            File barcodeImage = generateBarcode(api);
+            File barcodeImage = generateBarcode(genApi);
             System.out.println("Barcode image saved to file " + barcodeImage.getAbsolutePath());
 
             System.out.println("Recognizing barcode on image...");
-            BarcodeResponseList recognized = scanBarcode(api, barcodeImage);
+            BarcodeResponseList recognized = scanBarcode(scanApi, barcodeImage);
             System.out.print("Barcode on image:");
             System.out.println(recognized.toString());
         } catch (ApiException e) {
@@ -37,20 +39,21 @@ public class Example {
         }
     }
 
-    private static File generateBarcode(BarcodeApi api) throws ApiException {
-        String type = EncodeBarcodeType.QR.toString();
+    private static File generateBarcode(GenerateApi api) throws ApiException {
+        EncodeBarcodeType type = EncodeBarcodeType.QR;
+        EncodeDataType dataType = EncodeDataType.STRING_DATA;
         String text = "Aspose.BarCode for Cloud Sample";
-        GetBarcodeGenerateRequest request = new GetBarcodeGenerateRequest(type, text);
-        request.textLocation = "None";
+        BarcodeGenerateBarcodeTypeGetRequest request =
+                new BarcodeGenerateBarcodeTypeGetRequest(type, dataType, text);
+        request.imageFormat = AvailableBarCodeImageFormat.JPEG;
 
-        return api.getBarcodeGenerate(request);
+        return api.barcodeGenerateBarcodeTypeGet(request);
     }
 
-    private static BarcodeResponseList scanBarcode(BarcodeApi api, File barcodeImage)
+    private static BarcodeResponseList scanBarcode(ScanApi api, File barcodeImage)
             throws ApiException {
-        ScanBarcodeRequest request = new ScanBarcodeRequest(barcodeImage);
-        request.decodeTypes = Collections.singletonList(DecodeBarcodeType.QR);
+        BarcodeScanFormPostRequest request = new BarcodeScanFormPostRequest(barcodeImage);
 
-        return api.scanBarcode(request);
+        return api.barcodeScanFormPost(request);
     }
 }

@@ -2,10 +2,12 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Objects;
 
 /** EncodeData */
-@javax.annotation.Generated(
+@jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class EncodeData {
@@ -14,6 +16,17 @@ public class EncodeData {
 
     @SerializedName(value = "data")
     private String data;
+
+    /**
+     * .
+     *
+     * @param
+     * @param String represents data to encode
+     */
+    public EncodeData(EncodeDataType dataType, String data) {
+        this.dataType = dataType;
+        this.data = data;
+    }
 
     /**
      * Get dataType

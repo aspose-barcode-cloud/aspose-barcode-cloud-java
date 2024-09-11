@@ -26,6 +26,10 @@
 package com.aspose.barcode.cloud.requests;
 
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
+import com.aspose.barcode.cloud.model.RecognitionImageKind;
+import com.aspose.barcode.cloud.model.RecognitionMode;
+
+import java.net.URI;
 
 /**
  * Recognize barcode from file on server using GET requests with parameters in route and query

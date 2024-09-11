@@ -25,6 +25,8 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.ScanBase64Request;
+
 /**
  * Scan barcode from file in request body using POST requests with parameter in body in json or xml
  * format.

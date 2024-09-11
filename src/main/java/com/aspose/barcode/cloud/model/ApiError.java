@@ -2,12 +2,15 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /** Api Error. */
 @ApiModel(description = "Api Error.")
-@javax.annotation.Generated(
+@jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class ApiError {
@@ -25,6 +28,17 @@ public class ApiError {
 
     @SerializedName(value = "innerError")
     private ApiError innerError;
+
+    /**
+     * .
+     *
+     * @param Gets or sets api error code.
+     * @param Gets or sets error message.
+     */
+    public ApiError(String code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 
     /**
      * Gets or sets api error code.

@@ -25,6 +25,8 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import java.net.URI;
+
 /** Scan barcode from file on server using GET requests with parameter in query string. */
 public class BarcodeScanGetRequest {
     /** Url to barcode image. */

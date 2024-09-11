@@ -2,16 +2,28 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Objects;
 
 /** Scan barcode request. */
 @ApiModel(description = "Scan barcode request.")
-@javax.annotation.Generated(
+@jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class ScanBase64Request {
     @SerializedName(value = "fileBase64")
     private String fileBase64;
+
+    /**
+     * .
+     *
+     * @param Barcode image bytes encoded as base-64.
+     */
+    public ScanBase64Request(String fileBase64) {
+        this.fileBase64 = fileBase64;
+    }
 
     /**
      * Barcode image bytes encoded as base-64.

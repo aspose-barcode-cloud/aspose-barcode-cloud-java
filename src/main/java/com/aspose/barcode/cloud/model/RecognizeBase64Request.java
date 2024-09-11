@@ -2,13 +2,16 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /** Barcode recognize request */
 @ApiModel(description = "Barcode recognize request")
-@javax.annotation.Generated(
+@jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class RecognizeBase64Request {
@@ -23,6 +26,17 @@ public class RecognizeBase64Request {
 
     @SerializedName(value = "fileBase64")
     private String fileBase64;
+
+    /**
+     * .
+     *
+     * @param Array of decode types to find on barcode
+     * @param Barcode image bytes encoded as base-64.
+     */
+    public RecognizeBase64Request(List<DecodeBarcodeType> barcodeTypes, String fileBase64) {
+        this.barcodeTypes = barcodeTypes;
+        this.fileBase64 = fileBase64;
+    }
 
     /**
      * Array of decode types to find on barcode

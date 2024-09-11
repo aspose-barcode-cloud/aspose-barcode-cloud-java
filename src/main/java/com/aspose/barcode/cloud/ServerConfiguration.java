@@ -28,7 +28,7 @@ package com.aspose.barcode.cloud;
 import java.util.Map;
 
 /** Representing a Server configuration. */
-@javax.annotation.Generated(
+@jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class ServerConfiguration {

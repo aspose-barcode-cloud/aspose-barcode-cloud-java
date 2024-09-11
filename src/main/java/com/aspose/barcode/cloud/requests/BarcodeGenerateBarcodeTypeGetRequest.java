@@ -25,6 +25,13 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
+import com.aspose.barcode.cloud.model.AvailableGraphicsUnit;
+import com.aspose.barcode.cloud.model.CodeLocation;
+import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.EncodeDataType;
+import com.aspose.barcode.cloud.model.TextAlignment;
+
 /** Generate barcode using GET request with parameters in route and query string. */
 public class BarcodeGenerateBarcodeTypeGetRequest {
     /** Type of barcode to generate.. */

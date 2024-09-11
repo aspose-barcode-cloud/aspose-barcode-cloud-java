@@ -71,7 +71,7 @@ public class RecognizeApi {
         // create path and map variables
         String path =
                 "/barcode/recognize/{barcodeType}"
-                        .replaceAll("\\{" + "barcodeType" + "}", request.barcodeType);
+                        .replaceAll("\\{" + "barcodeType" + "}", request.barcodeType.toString());
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
