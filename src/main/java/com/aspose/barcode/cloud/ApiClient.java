@@ -1,25 +1,22 @@
 package com.aspose.barcode.cloud;
 
 import com.aspose.barcode.cloud.model.ApiErrorResponse;
-
-import okhttp3.Call;
-import okhttp3.FormBody;
-import okhttp3.Headers;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.internal.http.HttpMethod;
-import okhttp3.logging.HttpLoggingInterceptor;
-import okhttp3.logging.HttpLoggingInterceptor.Level;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.MultipartBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.internal.http.HttpMethod;
+import com.squareup.okhttp.logging.HttpLoggingInterceptor;
+import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
 
 import okio.BufferedSink;
 import okio.Okio;
-
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,6 +24,8 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -40,17 +39,17 @@ import java.util.regex.Pattern;
 
 /** ApiClient. */
 public class ApiClient {
-    public final String apiVersion = "v3.0";
-    public final String clientVersion = "24.12.0";
+    public final String apiVersion = "v4.0";
+    public final String clientVersion = "25.1.0";
 
     private String baseUrl = "https://api.aspose.cloud";
-    private String tokenUrl = baseUrl + "/connect/token";
+    private String tokenUrl = "https://id.aspose.cloud/connect/token";
     private String clientId;
     private String clientSecret;
     private boolean debugging = false;
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private String tempFolderPath = null;
-    private OkHttpClient httpClient;
+    private final OkHttpClient httpClient;
     private final JSON json;
     private HttpLoggingInterceptor loggingInterceptor;
     private String accessToken;
@@ -79,24 +78,17 @@ public class ApiClient {
         }
     }
 
-    /** Constructor for ApiClient with readTimeout */
-    protected ApiClient(long readTimeoutMillis) {
-        httpClient =
-                new OkHttpClient.Builder()
-                        .readTimeout(readTimeoutMillis, TimeUnit.MILLISECONDS)
-                        .build();
+    protected ApiClient() {
+        httpClient = new OkHttpClient();
 
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/24.10.0/java");
+        setUserAgent("OpenApi-Generator/25.1.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
-    }
-
-    protected ApiClient() {
-        this(60_000);
+        setReadTimeout(60_000);
     }
 
     /**
@@ -204,7 +196,17 @@ public class ApiClient {
      * @return Timeout in milliseconds
      */
     public int getConnectTimeout() {
-        return httpClient.connectTimeoutMillis();
+        return httpClient.getConnectTimeout();
+    }
+
+    /**
+     * Sets the connect timeout (in milliseconds). A value of 0 means no timeout, otherwise values
+     * must be between 1 and {@link Integer#MAX_VALUE}.
+     *
+     * @param connectionTimeout connection timeout in milliseconds
+     */
+    public void setConnectTimeout(int connectionTimeout) {
+        httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
     }
 
     /**
@@ -213,7 +215,7 @@ public class ApiClient {
      * @return Timeout in milliseconds
      */
     public int getReadTimeout() {
-        return httpClient.readTimeoutMillis();
+        return httpClient.getReadTimeout();
     }
 
     /**
@@ -223,8 +225,7 @@ public class ApiClient {
      * @param readTimeout read timeout in milliseconds
      */
     public void setReadTimeout(int readTimeout) {
-        httpClient =
-                new OkHttpClient.Builder().readTimeout(readTimeout, TimeUnit.MILLISECONDS).build();
+        httpClient.setReadTimeout(readTimeout, TimeUnit.MILLISECONDS);
     }
 
     /**
@@ -233,7 +234,17 @@ public class ApiClient {
      * @return Timeout in milliseconds
      */
     public int getWriteTimeout() {
-        return httpClient.writeTimeoutMillis();
+        return httpClient.getWriteTimeout();
+    }
+
+    /**
+     * Sets the write timeout (in milliseconds). A value of 0 means no timeout, otherwise values
+     * must be between 1 and {@link Integer#MAX_VALUE}.
+     *
+     * @param writeTimeout connection timeout in milliseconds
+     */
+    public void setWriteTimeout(int writeTimeout) {
+        httpClient.setWriteTimeout(writeTimeout, TimeUnit.MILLISECONDS);
     }
 
     /**
@@ -253,7 +264,7 @@ public class ApiClient {
             return jsonStr.substring(1, jsonStr.length() - 1);
         } else if (param instanceof Collection) {
             StringBuilder b = new StringBuilder();
-            for (Object o : (Collection<Object>) param) {
+            for (Object o : (Collection) param) {
                 if (b.length() > 0) {
                     b.append(",");
                 }
@@ -487,10 +498,10 @@ public class ApiClient {
     public RequestBody serialize(Object obj, String contentType) throws ApiException {
         if (obj instanceof byte[]) {
             // Binary (byte array) body parameter support.
-            return RequestBody.create((byte[]) obj, MediaType.parse(contentType));
+            return RequestBody.create(MediaType.parse(contentType), (byte[]) obj);
         } else if (obj instanceof File) {
             // File body parameter support.
-            return RequestBody.create((File) obj, MediaType.parse(contentType));
+            return RequestBody.create(MediaType.parse(contentType), (File) obj);
         } else if (isJsonMime(contentType)) {
             String content;
             if (obj != null) {
@@ -498,7 +509,7 @@ public class ApiClient {
             } else {
                 content = null;
             }
-            return RequestBody.create(content, MediaType.parse(contentType));
+            return RequestBody.create(MediaType.parse(contentType), content);
         } else {
             throw new ApiException("Content type \"" + contentType + "\" is not supported");
         }
@@ -618,14 +629,14 @@ public class ApiClient {
      */
     public <T> void executeAsync(Call call, final Type returnType, final ApiCallback<T> callback) {
         call.enqueue(
-                new okhttp3.Callback() {
+                new Callback() {
                     @Override
-                    public void onFailure(Call call, IOException e) {
+                    public void onFailure(Request request, IOException e) {
                         callback.onFailure(new ApiException(e), 0, null);
                     }
 
                     @Override
-                    public void onResponse(Call call, Response response) {
+                    public void onResponse(Response response) {
                         T result;
                         try {
                             result = handleResponse(response, returnType);
@@ -656,7 +667,7 @@ public class ApiClient {
                 if (response.body() != null) {
                     try {
                         response.body().close();
-                    } catch (Exception e) {
+                    } catch (IOException e) {
                         throw new ApiException(
                                 response.message(),
                                 e,
@@ -671,7 +682,6 @@ public class ApiClient {
         if (response.body() == null) {
             throw new ApiException(response.message(), response.code());
         }
-
         ApiErrorResponse errorResponse;
         try {
             errorResponse = deserialize(response, ApiErrorResponse.class);
@@ -762,8 +772,6 @@ public class ApiClient {
         RequestBody reqBody;
         if (!HttpMethod.permitsRequestBody(method)) {
             reqBody = null;
-        } else if ("application/x-www-form-urlencoded".equals(contentType)) {
-            reqBody = buildRequestBodyForm(formParams);
         } else if ("multipart/form-data".equals(contentType)) {
             reqBody = buildRequestBodyMultipart(formParams);
         } else if (body == null) {
@@ -772,7 +780,7 @@ public class ApiClient {
                 reqBody = null;
             } else {
                 // use an empty request body (for POST, PUT and PATCH)
-                reqBody = RequestBody.create("", MediaType.parse(contentType));
+                reqBody = RequestBody.create(MediaType.parse(contentType), "");
             }
         } else {
             reqBody = serialize(body, contentType);
@@ -860,20 +868,6 @@ public class ApiClient {
     }
 
     /**
-     * Build a form-encoding request body with the given form parameters.
-     *
-     * @param formParams Form parameters in the form of Map
-     * @return RequestBody
-     */
-    public RequestBody buildRequestBodyForm(Map<String, Object> formParams) {
-        FormBody.Builder formBuilder = new FormBody.Builder();
-        for (Entry<String, Object> param : formParams.entrySet()) {
-            formBuilder.add(param.getKey(), parameterToString(param.getValue()));
-        }
-        return formBuilder.build();
-    }
-
-    /**
      * Build a multipart (file uploading) request body with the given form parameters, which could
      * contain text fields and file fields.
      *
@@ -881,7 +875,7 @@ public class ApiClient {
      * @return RequestBody
      */
     public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
-        MultipartBody.Builder mpBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        MultipartBuilder mpBuilder = new MultipartBuilder().type(MultipartBuilder.FORM);
         for (Entry<String, Object> param : formParams.entrySet()) {
             Object paramValue = param.getValue();
             if (paramValue instanceof File) {
@@ -895,7 +889,7 @@ public class ApiClient {
                                         + file.getName()
                                         + "\"");
                 MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));
-                mpBuilder.addPart(partHeaders, RequestBody.create(file, mediaType));
+                mpBuilder.addPart(partHeaders, RequestBody.create(mediaType, file));
             } else if (paramValue instanceof Collection) {
                 Collection<Object> collection = (Collection<Object>) paramValue;
                 for (Object item : collection) {
@@ -904,7 +898,7 @@ public class ApiClient {
                                     "Content-Disposition",
                                     "form-data; name=\"" + param.getKey() + "\"");
                     mpBuilder.addPart(
-                            partHeaders, RequestBody.create(parameterToString(item), null));
+                            partHeaders, RequestBody.create(null, parameterToString(item)));
                 }
             } else {
                 Headers partHeaders =
@@ -912,7 +906,7 @@ public class ApiClient {
                                 "Content-Disposition",
                                 "form-data; name=\"" + param.getKey() + "\"");
                 mpBuilder.addPart(
-                        partHeaders, RequestBody.create(parameterToString(paramValue), null));
+                        partHeaders, RequestBody.create(null, parameterToString(paramValue)));
             }
         }
         return mpBuilder.build();
@@ -941,7 +935,7 @@ public class ApiClient {
     public void requestToken() throws ApiException {
         try {
             RequestBody requestBody =
-                    new FormBody.Builder()
+                    new FormEncodingBuilder()
                             .addEncoded("grant_type", "client_credentials")
                             .addEncoded("client_id", clientId)
                             .addEncoded("client_secret", clientSecret)
@@ -955,13 +949,13 @@ public class ApiClient {
                             .build();
 
             Response response = httpClient.newCall(request).execute();
-            if (response.code() != 200) {
-                throw new ApiException(
-                        "Error fetching token: " + response.message(), response.code());
+            if (response.isSuccessful()) {
+                GetAccessTokenResult result =
+                        json.deserialize(response.body().string(), GetAccessTokenResult.class);
+                setAccessToken(result.access_token);
+            } else {
+                throw new ApiException(response.body().string());
             }
-            GetAccessTokenResult result =
-                    json.deserialize(response.body().string(), GetAccessTokenResult.class);
-            setAccessToken(result.access_token);
         } catch (Exception ex) {
             throw new ApiException(ex);
         }

@@ -5,31 +5,33 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /** Represents information about barcode. */
 @ApiModel(description = "Represents information about barcode.")
+@jakarta.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        comments = "Generator version: 7.8.0")
 public class BarcodeResponse {
     @SerializedName(value = "barcodeValue")
-    private String barcodeValue = null;
+    private String barcodeValue;
 
     @SerializedName(value = "type")
-    private String type = null;
+    private String type;
 
     @SerializedName(value = "region")
     private List<RegionPoint> region = null;
 
     @SerializedName(value = "checksum")
-    private String checksum = null;
+    private String checksum;
 
     /**
      * Barcode data.
      *
      * @return barcodeValue
      */
-    @ApiModelProperty(value = "BarcodeValue")
+    @ApiModelProperty(value = "barcodeValue")
     public String getBarcodeValue() {
         return barcodeValue;
     }
@@ -43,7 +45,7 @@ public class BarcodeResponse {
      *
      * @return type
      */
-    @ApiModelProperty(value = "Type")
+    @ApiModelProperty(value = "type")
     public String getType() {
         return type;
     }
@@ -52,20 +54,12 @@ public class BarcodeResponse {
         this.type = type;
     }
 
-    /** Add RegionPoint. */
-    public void addRegionItem(RegionPoint regionItem) {
-        if (this.region == null) {
-            this.region = new ArrayList<RegionPoint>();
-        }
-        this.region.add(regionItem);
-    }
-
     /**
      * Region with barcode.
      *
      * @return region
      */
-    @ApiModelProperty(value = "Region")
+    @ApiModelProperty(value = "region")
     public List<RegionPoint> getRegion() {
         return region;
     }
@@ -79,7 +73,7 @@ public class BarcodeResponse {
      *
      * @return checksum
      */
-    @ApiModelProperty(value = "Checksum")
+    @ApiModelProperty(value = "checksum")
     public String getChecksum() {
         return checksum;
     }
