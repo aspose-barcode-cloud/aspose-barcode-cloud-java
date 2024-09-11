@@ -7,20 +7,18 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** AvailableGraphicsUnit. Subset of Aspose.Drawing.GraphicsUnit. */
-@JsonAdapter(AvailableGraphicsUnit.Adapter.class)
-public enum AvailableGraphicsUnit {
-    PIXEL("Pixel"),
+/** RecognitionImageKind. Kind of image to recognize */
+@JsonAdapter(RecognitionImageKind.Adapter.class)
+public enum RecognitionImageKind {
+    PHOTO("Photo"),
 
-    POINT("Point"),
+    SCANNED_DOCUMENT("ScannedDocument"),
 
-    INCH("Inch"),
-
-    MILLIMETER("Millimeter");
+    CLEAR_IMAGE("ClearImage");
 
     private final String value;
 
-    AvailableGraphicsUnit(String value) {
+    RecognitionImageKind(String value) {
         this.value = value;
     }
 
@@ -33,9 +31,9 @@ public enum AvailableGraphicsUnit {
         return String.valueOf(value);
     }
 
-    /** Create AvailableGraphicsUnit from String. */
-    public static AvailableGraphicsUnit fromValue(String text) {
-        for (AvailableGraphicsUnit b : AvailableGraphicsUnit.values()) {
+    /** Create RecognitionImageKind from String. */
+    public static RecognitionImageKind fromValue(String text) {
+        for (RecognitionImageKind b : RecognitionImageKind.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -44,17 +42,17 @@ public enum AvailableGraphicsUnit {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<AvailableGraphicsUnit> {
+    public static class Adapter extends TypeAdapter<RecognitionImageKind> {
         @Override
-        public void write(final JsonWriter jsonWriter, final AvailableGraphicsUnit enumeration)
+        public void write(final JsonWriter jsonWriter, final RecognitionImageKind enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public AvailableGraphicsUnit read(final JsonReader jsonReader) throws IOException {
+        public RecognitionImageKind read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return AvailableGraphicsUnit.fromValue(String.valueOf(value));
+            return RecognitionImageKind.fromValue(String.valueOf(value));
         }
     }
 }

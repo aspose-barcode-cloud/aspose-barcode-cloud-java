@@ -1,4 +1,5 @@
 
+
 # EncodeBarcodeType
 
 ## Enum
@@ -8,17 +9,15 @@
 
 * `CODE11` (value: `"Code11"`)
 
-* `CODE39STANDARD` (value: `"Code39Standard"`)
+* `CODE39` (value: `"Code39"`)
 
-* `CODE39EXTENDED` (value: `"Code39Extended"`)
+* `CODE39_FULL_ASCII` (value: `"Code39FullASCII"`)
 
-* `CODE93STANDARD` (value: `"Code93Standard"`)
-
-* `CODE93EXTENDED` (value: `"Code93Extended"`)
+* `CODE93` (value: `"Code93"`)
 
 * `CODE128` (value: `"Code128"`)
 
-* `GS1CODE128` (value: `"GS1Code128"`)
+* `GS1_CODE128` (value: `"GS1Code128"`)
 
 * `EAN8` (value: `"EAN8"`)
 
@@ -46,7 +45,7 @@
 
 * `MATRIX2OF5` (value: `"Matrix2of5"`)
 
-* `ITALIANPOST25` (value: `"ItalianPost25"`)
+* `ITALIAN_POST25` (value: `"ItalianPost25"`)
 
 * `IATA2OF5` (value: `"IATA2of5"`)
 
@@ -58,19 +57,19 @@
 
 * `VIN` (value: `"VIN"`)
 
-* `DEUTSCHEPOSTIDENTCODE` (value: `"DeutschePostIdentcode"`)
+* `DEUTSCHE_POST_IDENTCODE` (value: `"DeutschePostIdentcode"`)
 
-* `DEUTSCHEPOSTLEITCODE` (value: `"DeutschePostLeitcode"`)
+* `DEUTSCHE_POST_LEITCODE` (value: `"DeutschePostLeitcode"`)
 
 * `OPC` (value: `"OPC"`)
 
 * `PZN` (value: `"PZN"`)
 
-* `CODE16K` (value: `"Code16K"`)
+* `CODE16_K` (value: `"Code16K"`)
 
 * `PHARMACODE` (value: `"Pharmacode"`)
 
-* `DATAMATRIX` (value: `"DataMatrix"`)
+* `DATA_MATRIX` (value: `"DataMatrix"`)
 
 * `QR` (value: `"QR"`)
 
@@ -78,75 +77,79 @@
 
 * `PDF417` (value: `"Pdf417"`)
 
-* `MACROPDF417` (value: `"MacroPdf417"`)
+* `MACRO_PDF417` (value: `"MacroPdf417"`)
 
-* `AUSTRALIAPOST` (value: `"AustraliaPost"`)
+* `AUSTRALIA_POST` (value: `"AustraliaPost"`)
 
 * `POSTNET` (value: `"Postnet"`)
 
 * `PLANET` (value: `"Planet"`)
 
-* `ONECODE` (value: `"OneCode"`)
+* `ONE_CODE` (value: `"OneCode"`)
 
-* `RM4SCC` (value: `"RM4SCC"`)
+* `RM4_SCC` (value: `"RM4SCC"`)
 
-* `DATABAROMNIDIRECTIONAL` (value: `"DatabarOmniDirectional"`)
+* `DATABAR_OMNI_DIRECTIONAL` (value: `"DatabarOmniDirectional"`)
 
-* `DATABARTRUNCATED` (value: `"DatabarTruncated"`)
+* `DATABAR_TRUNCATED` (value: `"DatabarTruncated"`)
 
-* `DATABARLIMITED` (value: `"DatabarLimited"`)
+* `DATABAR_LIMITED` (value: `"DatabarLimited"`)
 
-* `DATABAREXPANDED` (value: `"DatabarExpanded"`)
+* `DATABAR_EXPANDED` (value: `"DatabarExpanded"`)
 
-* `SINGAPOREPOST` (value: `"SingaporePost"`)
+* `SINGAPORE_POST` (value: `"SingaporePost"`)
 
-* `GS1DATAMATRIX` (value: `"GS1DataMatrix"`)
+* `GS1_DATA_MATRIX` (value: `"GS1DataMatrix"`)
 
-* `AUSTRALIANPOSTEPARCEL` (value: `"AustralianPosteParcel"`)
+* `AUSTRALIAN_POSTE_PARCEL` (value: `"AustralianPosteParcel"`)
 
-* `SWISSPOSTPARCEL` (value: `"SwissPostParcel"`)
+* `SWISS_POST_PARCEL` (value: `"SwissPostParcel"`)
 
-* `PATCHCODE` (value: `"PatchCode"`)
+* `PATCH_CODE` (value: `"PatchCode"`)
 
-* `DATABAREXPANDEDSTACKED` (value: `"DatabarExpandedStacked"`)
+* `DATABAR_EXPANDED_STACKED` (value: `"DatabarExpandedStacked"`)
 
-* `DATABARSTACKED` (value: `"DatabarStacked"`)
+* `DATABAR_STACKED` (value: `"DatabarStacked"`)
 
-* `DATABARSTACKEDOMNIDIRECTIONAL` (value: `"DatabarStackedOmniDirectional"`)
+* `DATABAR_STACKED_OMNI_DIRECTIONAL` (value: `"DatabarStackedOmniDirectional"`)
 
-* `MICROPDF417` (value: `"MicroPdf417"`)
+* `MICRO_PDF417` (value: `"MicroPdf417"`)
 
-* `GS1QR` (value: `"GS1QR"`)
+* `GS1_QR` (value: `"GS1QR"`)
 
-* `MAXICODE` (value: `"MaxiCode"`)
+* `MAXI_CODE` (value: `"MaxiCode"`)
 
 * `CODE32` (value: `"Code32"`)
 
-* `DATALOGIC2OF5` (value: `"DataLogic2of5"`)
+* `DATA_LOGIC2OF5` (value: `"DataLogic2of5"`)
 
-* `DOTCODE` (value: `"DotCode"`)
+* `DOT_CODE` (value: `"DotCode"`)
 
-* `DUTCHKIX` (value: `"DutchKIX"`)
+* `DUTCH_KIX` (value: `"DutchKIX"`)
 
-* `UPCAGS1CODE128COUPON` (value: `"UpcaGs1Code128Coupon"`)
+* `UPCA_GS1_CODE128_COUPON` (value: `"UpcaGs1Code128Coupon"`)
 
-* `UPCAGS1DATABARCOUPON` (value: `"UpcaGs1DatabarCoupon"`)
+* `UPCA_GS1_DATABAR_COUPON` (value: `"UpcaGs1DatabarCoupon"`)
 
-* `CODABLOCKF` (value: `"CodablockF"`)
+* `CODABLOCK_F` (value: `"CodablockF"`)
 
-* `GS1CODABLOCKF` (value: `"GS1CodablockF"`)
+* `GS1_CODABLOCK_F` (value: `"GS1CodablockF"`)
 
 * `MAILMARK` (value: `"Mailmark"`)
 
-* `GS1DOTCODE` (value: `"GS1DotCode"`)
+* `GS1_DOT_CODE` (value: `"GS1DotCode"`)
 
-* `HANXIN` (value: `"HanXin"`)
+* `HAN_XIN` (value: `"HanXin"`)
 
-* `GS1HANXIN` (value: `"GS1HanXin"`)
+* `GS1_HAN_XIN` (value: `"GS1HanXin"`)
 
-* `GS1AZTEC` (value: `"GS1Aztec"`)
+* `GS1_AZTEC` (value: `"GS1Aztec"`)
 
-* `GS1MICROPDF417` (value: `"GS1MicroPdf417"`)
+* `GS1_MICRO_PDF417` (value: `"GS1MicroPdf417"`)
+
+* `RECT_MICRO_QR` (value: `"RectMicroQR"`)
+
+* `MICRO_QR` (value: `"MicroQR"`)
 
 
 

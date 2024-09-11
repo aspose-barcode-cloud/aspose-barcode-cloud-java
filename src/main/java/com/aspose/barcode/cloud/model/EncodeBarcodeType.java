@@ -7,24 +7,22 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** EncodeBarcodeType. See EncodeTypes */
+/** EncodeBarcodeType. See Aspose.BarCode.Generation.EncodeTypes */
 @JsonAdapter(EncodeBarcodeType.Adapter.class)
 public enum EncodeBarcodeType {
     CODABAR("Codabar"),
 
     CODE11("Code11"),
 
-    CODE39STANDARD("Code39Standard"),
+    CODE39("Code39"),
 
-    CODE39EXTENDED("Code39Extended"),
+    CODE39_FULL_ASCII("Code39FullASCII"),
 
-    CODE93STANDARD("Code93Standard"),
-
-    CODE93EXTENDED("Code93Extended"),
+    CODE93("Code93"),
 
     CODE128("Code128"),
 
-    GS1CODE128("GS1Code128"),
+    GS1_CODE128("GS1Code128"),
 
     EAN8("EAN8"),
 
@@ -52,7 +50,7 @@ public enum EncodeBarcodeType {
 
     MATRIX2OF5("Matrix2of5"),
 
-    ITALIANPOST25("ItalianPost25"),
+    ITALIAN_POST25("ItalianPost25"),
 
     IATA2OF5("IATA2of5"),
 
@@ -64,19 +62,19 @@ public enum EncodeBarcodeType {
 
     VIN("VIN"),
 
-    DEUTSCHEPOSTIDENTCODE("DeutschePostIdentcode"),
+    DEUTSCHE_POST_IDENTCODE("DeutschePostIdentcode"),
 
-    DEUTSCHEPOSTLEITCODE("DeutschePostLeitcode"),
+    DEUTSCHE_POST_LEITCODE("DeutschePostLeitcode"),
 
     OPC("OPC"),
 
     PZN("PZN"),
 
-    CODE16K("Code16K"),
+    CODE16_K("Code16K"),
 
     PHARMACODE("Pharmacode"),
 
-    DATAMATRIX("DataMatrix"),
+    DATA_MATRIX("DataMatrix"),
 
     QR("QR"),
 
@@ -84,75 +82,79 @@ public enum EncodeBarcodeType {
 
     PDF417("Pdf417"),
 
-    MACROPDF417("MacroPdf417"),
+    MACRO_PDF417("MacroPdf417"),
 
-    AUSTRALIAPOST("AustraliaPost"),
+    AUSTRALIA_POST("AustraliaPost"),
 
     POSTNET("Postnet"),
 
     PLANET("Planet"),
 
-    ONECODE("OneCode"),
+    ONE_CODE("OneCode"),
 
-    RM4SCC("RM4SCC"),
+    RM4_SCC("RM4SCC"),
 
-    DATABAROMNIDIRECTIONAL("DatabarOmniDirectional"),
+    DATABAR_OMNI_DIRECTIONAL("DatabarOmniDirectional"),
 
-    DATABARTRUNCATED("DatabarTruncated"),
+    DATABAR_TRUNCATED("DatabarTruncated"),
 
-    DATABARLIMITED("DatabarLimited"),
+    DATABAR_LIMITED("DatabarLimited"),
 
-    DATABAREXPANDED("DatabarExpanded"),
+    DATABAR_EXPANDED("DatabarExpanded"),
 
-    SINGAPOREPOST("SingaporePost"),
+    SINGAPORE_POST("SingaporePost"),
 
-    GS1DATAMATRIX("GS1DataMatrix"),
+    GS1_DATA_MATRIX("GS1DataMatrix"),
 
-    AUSTRALIANPOSTEPARCEL("AustralianPosteParcel"),
+    AUSTRALIAN_POSTE_PARCEL("AustralianPosteParcel"),
 
-    SWISSPOSTPARCEL("SwissPostParcel"),
+    SWISS_POST_PARCEL("SwissPostParcel"),
 
-    PATCHCODE("PatchCode"),
+    PATCH_CODE("PatchCode"),
 
-    DATABAREXPANDEDSTACKED("DatabarExpandedStacked"),
+    DATABAR_EXPANDED_STACKED("DatabarExpandedStacked"),
 
-    DATABARSTACKED("DatabarStacked"),
+    DATABAR_STACKED("DatabarStacked"),
 
-    DATABARSTACKEDOMNIDIRECTIONAL("DatabarStackedOmniDirectional"),
+    DATABAR_STACKED_OMNI_DIRECTIONAL("DatabarStackedOmniDirectional"),
 
-    MICROPDF417("MicroPdf417"),
+    MICRO_PDF417("MicroPdf417"),
 
-    GS1QR("GS1QR"),
+    GS1_QR("GS1QR"),
 
-    MAXICODE("MaxiCode"),
+    MAXI_CODE("MaxiCode"),
 
     CODE32("Code32"),
 
-    DATALOGIC2OF5("DataLogic2of5"),
+    DATA_LOGIC2OF5("DataLogic2of5"),
 
-    DOTCODE("DotCode"),
+    DOT_CODE("DotCode"),
 
-    DUTCHKIX("DutchKIX"),
+    DUTCH_KIX("DutchKIX"),
 
-    UPCAGS1CODE128COUPON("UpcaGs1Code128Coupon"),
+    UPCA_GS1_CODE128_COUPON("UpcaGs1Code128Coupon"),
 
-    UPCAGS1DATABARCOUPON("UpcaGs1DatabarCoupon"),
+    UPCA_GS1_DATABAR_COUPON("UpcaGs1DatabarCoupon"),
 
-    CODABLOCKF("CodablockF"),
+    CODABLOCK_F("CodablockF"),
 
-    GS1CODABLOCKF("GS1CodablockF"),
+    GS1_CODABLOCK_F("GS1CodablockF"),
 
     MAILMARK("Mailmark"),
 
-    GS1DOTCODE("GS1DotCode"),
+    GS1_DOT_CODE("GS1DotCode"),
 
-    HANXIN("HanXin"),
+    HAN_XIN("HanXin"),
 
-    GS1HANXIN("GS1HanXin"),
+    GS1_HAN_XIN("GS1HanXin"),
 
-    GS1AZTEC("GS1Aztec"),
+    GS1_AZTEC("GS1Aztec"),
 
-    GS1MICROPDF417("GS1MicroPdf417");
+    GS1_MICRO_PDF417("GS1MicroPdf417"),
+
+    RECT_MICRO_QR("RectMicroQR"),
+
+    MICRO_QR("MicroQR");
 
     private final String value;
 

@@ -7,20 +7,18 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** AvailableGraphicsUnit. Subset of Aspose.Drawing.GraphicsUnit. */
-@JsonAdapter(AvailableGraphicsUnit.Adapter.class)
-public enum AvailableGraphicsUnit {
-    PIXEL("Pixel"),
+/** EncodeDataType. Types of data can be encoded to barcode */
+@JsonAdapter(EncodeDataType.Adapter.class)
+public enum EncodeDataType {
+    STRING_DATA("StringData"),
 
-    POINT("Point"),
+    BASE64_BYTES("Base64Bytes"),
 
-    INCH("Inch"),
-
-    MILLIMETER("Millimeter");
+    HEX_BYTES("HexBytes");
 
     private final String value;
 
-    AvailableGraphicsUnit(String value) {
+    EncodeDataType(String value) {
         this.value = value;
     }
 
@@ -33,9 +31,9 @@ public enum AvailableGraphicsUnit {
         return String.valueOf(value);
     }
 
-    /** Create AvailableGraphicsUnit from String. */
-    public static AvailableGraphicsUnit fromValue(String text) {
-        for (AvailableGraphicsUnit b : AvailableGraphicsUnit.values()) {
+    /** Create EncodeDataType from String. */
+    public static EncodeDataType fromValue(String text) {
+        for (EncodeDataType b : EncodeDataType.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -44,17 +42,17 @@ public enum AvailableGraphicsUnit {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<AvailableGraphicsUnit> {
+    public static class Adapter extends TypeAdapter<EncodeDataType> {
         @Override
-        public void write(final JsonWriter jsonWriter, final AvailableGraphicsUnit enumeration)
+        public void write(final JsonWriter jsonWriter, final EncodeDataType enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public AvailableGraphicsUnit read(final JsonReader jsonReader) throws IOException {
+        public EncodeDataType read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return AvailableGraphicsUnit.fromValue(String.valueOf(value));
+            return EncodeDataType.fromValue(String.valueOf(value));
         }
     }
 }

@@ -7,20 +7,18 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** AvailableGraphicsUnit. Subset of Aspose.Drawing.GraphicsUnit. */
-@JsonAdapter(AvailableGraphicsUnit.Adapter.class)
-public enum AvailableGraphicsUnit {
-    PIXEL("Pixel"),
+/** RecognitionMode. Recognition mode. */
+@JsonAdapter(RecognitionMode.Adapter.class)
+public enum RecognitionMode {
+    FAST("Fast"),
 
-    POINT("Point"),
+    NORMAL("Normal"),
 
-    INCH("Inch"),
-
-    MILLIMETER("Millimeter");
+    EXCELLENT("Excellent");
 
     private final String value;
 
-    AvailableGraphicsUnit(String value) {
+    RecognitionMode(String value) {
         this.value = value;
     }
 
@@ -33,9 +31,9 @@ public enum AvailableGraphicsUnit {
         return String.valueOf(value);
     }
 
-    /** Create AvailableGraphicsUnit from String. */
-    public static AvailableGraphicsUnit fromValue(String text) {
-        for (AvailableGraphicsUnit b : AvailableGraphicsUnit.values()) {
+    /** Create RecognitionMode from String. */
+    public static RecognitionMode fromValue(String text) {
+        for (RecognitionMode b : RecognitionMode.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -44,17 +42,17 @@ public enum AvailableGraphicsUnit {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<AvailableGraphicsUnit> {
+    public static class Adapter extends TypeAdapter<RecognitionMode> {
         @Override
-        public void write(final JsonWriter jsonWriter, final AvailableGraphicsUnit enumeration)
+        public void write(final JsonWriter jsonWriter, final RecognitionMode enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public AvailableGraphicsUnit read(final JsonReader jsonReader) throws IOException {
+        public RecognitionMode read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return AvailableGraphicsUnit.fromValue(String.valueOf(value));
+            return RecognitionMode.fromValue(String.valueOf(value));
         }
     }
 }

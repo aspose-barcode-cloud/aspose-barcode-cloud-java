@@ -4,7 +4,7 @@
 [![Java CI with Maven](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-java/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-java/actions/workflows/maven.yml)
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
-- API version: 3.0
+- API version: 4.0
 - SDK version: 24.7.0
 
 ## Demo applications
@@ -165,114 +165,41 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *<https://api.aspose.cloud/v3.0>*
+All URIs are relative to *<https://barcode.qa.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*BarcodeApi* | [**getBarcodeGenerate**](docs/BarcodeApi.md#getBarcodeGenerate) | **GET** /barcode/generate | Generate barcode.
-*BarcodeApi* | [**getBarcodeRecognize**](docs/BarcodeApi.md#getBarcodeRecognize) | **GET** /barcode/{name}/recognize | Recognize barcode from a file on server.
-*BarcodeApi* | [**postBarcodeRecognizeFromUrlOrContent**](docs/BarcodeApi.md#postBarcodeRecognizeFromUrlOrContent) | **POST** /barcode/recognize | Recognize barcode from an url or from request body. Request body can contain raw data bytes of the image with content-type \&quot;application/octet-stream\&quot;. An image can also be passed as a form field.
-*BarcodeApi* | [**postGenerateMultiple**](docs/BarcodeApi.md#postGenerateMultiple) | **POST** /barcode/generateMultiple | Generate multiple barcodes and return in response stream
-*BarcodeApi* | [**putBarcodeGenerateFile**](docs/BarcodeApi.md#putBarcodeGenerateFile) | **PUT** /barcode/{name}/generate | Generate barcode and save on server (from query params or from file with json or xml content)
-*BarcodeApi* | [**putBarcodeRecognizeFromBody**](docs/BarcodeApi.md#putBarcodeRecognizeFromBody) | **PUT** /barcode/{name}/recognize | Recognition of a barcode from file on server with parameters in body.
-*BarcodeApi* | [**putGenerateMultiple**](docs/BarcodeApi.md#putGenerateMultiple) | **PUT** /barcode/{name}/generateMultiple | Generate image with multiple barcodes and put new file on server
-*BarcodeApi* | [**scanBarcode**](docs/BarcodeApi.md#scanBarcode) | **POST** /barcode/scan | Quickly scan a barcode from an image.
-*FileApi* | [**copyFile**](docs/FileApi.md#copyFile) | **PUT** /barcode/storage/file/copy/{srcPath} | Copy file
-*FileApi* | [**deleteFile**](docs/FileApi.md#deleteFile) | **DELETE** /barcode/storage/file/{path} | Delete file
-*FileApi* | [**downloadFile**](docs/FileApi.md#downloadFile) | **GET** /barcode/storage/file/{path} | Download file
-*FileApi* | [**moveFile**](docs/FileApi.md#moveFile) | **PUT** /barcode/storage/file/move/{srcPath} | Move file
-*FileApi* | [**uploadFile**](docs/FileApi.md#uploadFile) | **PUT** /barcode/storage/file/{path} | Upload file
-*FolderApi* | [**copyFolder**](docs/FolderApi.md#copyFolder) | **PUT** /barcode/storage/folder/copy/{srcPath} | Copy folder
-*FolderApi* | [**createFolder**](docs/FolderApi.md#createFolder) | **PUT** /barcode/storage/folder/{path} | Create the folder
-*FolderApi* | [**deleteFolder**](docs/FolderApi.md#deleteFolder) | **DELETE** /barcode/storage/folder/{path} | Delete folder
-*FolderApi* | [**getFilesList**](docs/FolderApi.md#getFilesList) | **GET** /barcode/storage/folder/{path} | Get all files and folders within a folder
-*FolderApi* | [**moveFolder**](docs/FolderApi.md#moveFolder) | **PUT** /barcode/storage/folder/move/{srcPath} | Move folder
-*StorageApi* | [**getDiscUsage**](docs/StorageApi.md#getDiscUsage) | **GET** /barcode/storage/disc | Get disc usage
-*StorageApi* | [**getFileVersions**](docs/StorageApi.md#getFileVersions) | **GET** /barcode/storage/version/{path} | Get file versions
-*StorageApi* | [**objectExists**](docs/StorageApi.md#objectExists) | **GET** /barcode/storage/exist/{path} | Check if file or folder exists
-*StorageApi* | [**storageExists**](docs/StorageApi.md#storageExists) | **GET** /barcode/storage/{storageName}/exist | Check if storage exists
+*GenerateApi* | [**barcodeGenerateBarcodeTypeGet**](docs/GenerateApi.md#barcodeGenerateBarcodeTypeGet) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
+*GenerateApi* | [**barcodeGenerateBodyPost**](docs/GenerateApi.md#barcodeGenerateBodyPost) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
+*GenerateApi* | [**barcodeGenerateFormPost**](docs/GenerateApi.md#barcodeGenerateFormPost) | **POST** /barcode/generate-form | Generate barcode using POST request with parameters in url ecncoded form.
+*RecognizeApi* | [**barcodeRecognizeBarcodeTypeGet**](docs/RecognizeApi.md#barcodeRecognizeBarcodeTypeGet) | **GET** /barcode/recognize/{barcodeType} | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**barcodeRecognizeBodyPost**](docs/RecognizeApi.md#barcodeRecognizeBodyPost) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+*RecognizeApi* | [**barcodeRecognizeFormPost**](docs/RecognizeApi.md#barcodeRecognizeFormPost) | **POST** /barcode/recognize-form | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*ScanApi* | [**barcodeScanBodyPost**](docs/ScanApi.md#barcodeScanBodyPost) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+*ScanApi* | [**barcodeScanFormPost**](docs/ScanApi.md#barcodeScanFormPost) | **POST** /barcode/scan-form | Scan barcode from file in request body using POST requests with parameter in multipart form.
+*ScanApi* | [**barcodeScanGet**](docs/ScanApi.md#barcodeScanGet) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
 
 ## Documentation for Models
 
 - [ApiError](docs/ApiError.md)
 - [ApiErrorResponse](docs/ApiErrorResponse.md)
-- [AustralianPostParams](docs/AustralianPostParams.md)
-- [AutoSizeMode](docs/AutoSizeMode.md)
+- [AvailableBarCodeImageFormat](docs/AvailableBarCodeImageFormat.md)
 - [AvailableGraphicsUnit](docs/AvailableGraphicsUnit.md)
-- [AztecEncodeMode](docs/AztecEncodeMode.md)
-- [AztecParams](docs/AztecParams.md)
-- [AztecSymbolMode](docs/AztecSymbolMode.md)
+- [BarcodeImageParams](docs/BarcodeImageParams.md)
 - [BarcodeResponse](docs/BarcodeResponse.md)
 - [BarcodeResponseList](docs/BarcodeResponseList.md)
-- [BorderDashStyle](docs/BorderDashStyle.md)
-- [CaptionParams](docs/CaptionParams.md)
-- [ChecksumValidation](docs/ChecksumValidation.md)
-- [CodabarChecksumMode](docs/CodabarChecksumMode.md)
-- [CodabarParams](docs/CodabarParams.md)
-- [CodabarSymbol](docs/CodabarSymbol.md)
-- [CodablockParams](docs/CodablockParams.md)
-- [Code128Emulation](docs/Code128Emulation.md)
-- [Code128EncodeMode](docs/Code128EncodeMode.md)
-- [Code128Params](docs/Code128Params.md)
-- [Code16KParams](docs/Code16KParams.md)
 - [CodeLocation](docs/CodeLocation.md)
-- [CouponParams](docs/CouponParams.md)
-- [CustomerInformationInterpretingType](docs/CustomerInformationInterpretingType.md)
-- [DataBarParams](docs/DataBarParams.md)
-- [DataMatrixEccType](docs/DataMatrixEccType.md)
-- [DataMatrixEncodeMode](docs/DataMatrixEncodeMode.md)
-- [DataMatrixParams](docs/DataMatrixParams.md)
-- [DataMatrixVersion](docs/DataMatrixVersion.md)
 - [DecodeBarcodeType](docs/DecodeBarcodeType.md)
-- [DiscUsage](docs/DiscUsage.md)
-- [DotCodeEncodeMode](docs/DotCodeEncodeMode.md)
-- [DotCodeParams](docs/DotCodeParams.md)
-- [ECIEncodings](docs/ECIEncodings.md)
-- [EnableChecksum](docs/EnableChecksum.md)
 - [EncodeBarcodeType](docs/EncodeBarcodeType.md)
-- [Error](docs/Error.md)
-- [ErrorDetails](docs/ErrorDetails.md)
-- [FileVersions](docs/FileVersions.md)
-- [FilesList](docs/FilesList.md)
-- [FilesUploadResult](docs/FilesUploadResult.md)
-- [FontMode](docs/FontMode.md)
-- [FontParams](docs/FontParams.md)
-- [FontStyle](docs/FontStyle.md)
-- [GeneratorParams](docs/GeneratorParams.md)
-- [GeneratorParamsList](docs/GeneratorParamsList.md)
-- [HanXinEncodeMode](docs/HanXinEncodeMode.md)
-- [HanXinErrorLevel](docs/HanXinErrorLevel.md)
-- [HanXinParams](docs/HanXinParams.md)
-- [HanXinVersion](docs/HanXinVersion.md)
-- [ITF14BorderType](docs/ITF14BorderType.md)
-- [ITFParams](docs/ITFParams.md)
-- [MacroCharacter](docs/MacroCharacter.md)
-- [MaxiCodeEncodeMode](docs/MaxiCodeEncodeMode.md)
-- [MaxiCodeMode](docs/MaxiCodeMode.md)
-- [MaxiCodeParams](docs/MaxiCodeParams.md)
-- [ObjectExist](docs/ObjectExist.md)
-- [Padding](docs/Padding.md)
-- [PatchCodeParams](docs/PatchCodeParams.md)
-- [PatchFormat](docs/PatchFormat.md)
-- [Pdf417CompactionMode](docs/Pdf417CompactionMode.md)
-- [Pdf417ErrorLevel](docs/Pdf417ErrorLevel.md)
-- [Pdf417MacroTerminator](docs/Pdf417MacroTerminator.md)
-- [Pdf417Params](docs/Pdf417Params.md)
-- [PostalParams](docs/PostalParams.md)
-- [PresetType](docs/PresetType.md)
-- [QREncodeMode](docs/QREncodeMode.md)
-- [QREncodeType](docs/QREncodeType.md)
-- [QRErrorLevel](docs/QRErrorLevel.md)
-- [QRVersion](docs/QRVersion.md)
-- [QrParams](docs/QrParams.md)
-- [ReaderParams](docs/ReaderParams.md)
+- [EncodeData](docs/EncodeData.md)
+- [EncodeDataType](docs/EncodeDataType.md)
+- [GenerateParams](docs/GenerateParams.md)
+- [RecognitionImageKind](docs/RecognitionImageKind.md)
+- [RecognitionMode](docs/RecognitionMode.md)
+- [RecognizeBase64Request](docs/RecognizeBase64Request.md)
 - [RegionPoint](docs/RegionPoint.md)
-- [ResultImageInfo](docs/ResultImageInfo.md)
-- [StorageExist](docs/StorageExist.md)
-- [StorageFile](docs/StorageFile.md)
-- [StructuredAppend](docs/StructuredAppend.md)
+- [ScanBase64Request](docs/ScanBase64Request.md)
 - [TextAlignment](docs/TextAlignment.md)
-- [FileVersion](docs/FileVersion.md)
 
 ## Documentation for Authorization
 
@@ -282,7 +209,6 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
-- **Authorization URL**: <https://api.aspose.cloud/connect/token>
 
 ## Recommendation
 

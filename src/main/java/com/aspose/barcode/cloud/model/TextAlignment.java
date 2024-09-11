@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** TextAlignment. */
+/** TextAlignment. Gets or Sets TextAlignment. */
 @JsonAdapter(TextAlignment.Adapter.class)
 public enum TextAlignment {
     LEFT("Left"),

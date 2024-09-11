@@ -2,24 +2,26 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
-/** ApiErrorResponse */
+/** ApiError Response */
+@ApiModel(description = "ApiError Response")
+@javax.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        comments = "Generator version: 7.8.0")
 public class ApiErrorResponse {
     @SerializedName(value = "requestId")
-    private String requestId = null;
+    private String requestId;
 
     @SerializedName(value = "error")
-    private ApiError error = null;
+    private ApiError error;
 
     /**
-     * Get requestId
+     * Gets or sets request Id.
      *
      * @return requestId
      */
-    @ApiModelProperty(value = "RequestId")
+    @ApiModelProperty(value = "requestId")
     public String getRequestId() {
         return requestId;
     }
@@ -33,7 +35,7 @@ public class ApiErrorResponse {
      *
      * @return error
      */
-    @ApiModelProperty(value = "Error")
+    @ApiModelProperty(value = "error")
     public ApiError getError() {
         return error;
     }

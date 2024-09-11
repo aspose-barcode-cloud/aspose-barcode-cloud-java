@@ -18,15 +18,14 @@ import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
 
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -40,10 +39,10 @@ import java.util.regex.Pattern;
 
 /** ApiClient. */
 public class ApiClient {
-    public final String apiVersion = "v3.0";
+    public final String apiVersion = "v4.0";
     public final String clientVersion = "24.7.0";
 
-    private String baseUrl = "https://api.aspose.cloud";
+    private String baseUrl = "";
     private String tokenUrl = baseUrl + "/connect/token";
     private String clientId;
     private String clientSecret;
@@ -85,7 +84,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/24.7.0/java");
+        setUserAgent("OpenApi-Generator/24.7.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);

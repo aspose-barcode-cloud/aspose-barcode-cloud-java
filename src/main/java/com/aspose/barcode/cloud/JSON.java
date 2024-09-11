@@ -13,15 +13,14 @@ import io.gsonfire.GsonFireBuilder;
 
 import okio.ByteString;
 
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /** JSON utility class for serialization/deserialization. */

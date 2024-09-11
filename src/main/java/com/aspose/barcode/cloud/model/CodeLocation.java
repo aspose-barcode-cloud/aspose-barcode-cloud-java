@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** CodeLocation. */
+/** CodeLocation. Gets or Sets CodeLocation. */
 @JsonAdapter(CodeLocation.Adapter.class)
 public enum CodeLocation {
     BELOW("Below"),

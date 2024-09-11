@@ -2,30 +2,29 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import java.util.Objects;
 
-/** Represents information about barcode list. */
-@ApiModel(description = "Represents information about barcode list.")
+/** Scan barcode request. */
+@ApiModel(description = "Scan barcode request.")
 @javax.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
-public class BarcodeResponseList {
-    @SerializedName(value = "barcodes")
-    private List<BarcodeResponse> barcodes;
+public class ScanBase64Request {
+    @SerializedName(value = "fileBase64")
+    private String fileBase64;
 
     /**
-     * List of barcodes which are present in image.
+     * Barcode image bytes encoded as base-64.
      *
-     * @return barcodes
+     * @return fileBase64
      */
-    @ApiModelProperty(required = true, value = "barcodes")
-    public List<BarcodeResponse> getBarcodes() {
-        return barcodes;
+    @ApiModelProperty(required = true, value = "fileBase64")
+    public String getFileBase64() {
+        return fileBase64;
     }
 
-    public void setBarcodes(List<BarcodeResponse> barcodes) {
-        this.barcodes = barcodes;
+    public void setFileBase64(String fileBase64) {
+        this.fileBase64 = fileBase64;
     }
 
     @Override
@@ -36,21 +35,21 @@ public class BarcodeResponseList {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BarcodeResponseList barcodeResponseList = (BarcodeResponseList) o;
-        return Objects.equals(this.barcodes, barcodeResponseList.barcodes);
+        ScanBase64Request scanBase64Request = (ScanBase64Request) o;
+        return Objects.equals(this.fileBase64, scanBase64Request.fileBase64);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(barcodes);
+        return Objects.hash(fileBase64);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BarcodeResponseList {\n");
+        sb.append("class ScanBase64Request {\n");
 
-        sb.append("    barcodes: ").append(toIndentedString(barcodes)).append("\n");
+        sb.append("    fileBase64: ").append(toIndentedString(fileBase64)).append("\n");
         sb.append("}");
         return sb.toString();
     }
