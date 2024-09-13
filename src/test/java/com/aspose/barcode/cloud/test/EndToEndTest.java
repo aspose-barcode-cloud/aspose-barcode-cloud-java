@@ -27,8 +27,8 @@ public class EndToEndTest extends TestBase {
 
         // Generate barcode request
         BarcodeGenerateBarcodeTypeGetRequest genRequest =
-                new BarcodeGenerateBarcodeTypeGetRequest(
-                        EncodeBarcodeType.QR, EncodeDataType.STRING_DATA, "Java SDK Test");
+                new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType.QR,  "Java SDK Test");
+        genRequest.dataType = EncodeDataType.STRING_DATA;
         genRequest.imageFormat = AvailableBarCodeImageFormat.PNG;
 
         // Generate barcode

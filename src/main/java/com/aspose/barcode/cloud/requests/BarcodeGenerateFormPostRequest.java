@@ -37,11 +37,11 @@ public class BarcodeGenerateFormPostRequest {
     /** . */
     public final EncodeBarcodeType barcodeType;
 
-    /** . */
-    public final EncodeDataType dataType;
-
     /** String represents data to encode. */
     public final String data;
+
+    /** . */
+    public EncodeDataType dataType;
 
     /** . */
     public AvailableBarCodeImageFormat imageFormat;
@@ -95,13 +95,10 @@ public class BarcodeGenerateFormPostRequest {
      * Generate barcode using POST request with parameters in url ecncoded form..
      *
      * @param barcodeType
-     * @param dataType
      * @param data String represents data to encode
      */
-    public BarcodeGenerateFormPostRequest(
-            EncodeBarcodeType barcodeType, EncodeDataType dataType, String data) {
+    public BarcodeGenerateFormPostRequest(EncodeBarcodeType barcodeType, String data) {
         this.barcodeType = barcodeType;
-        this.dataType = dataType;
         this.data = data;
     }
 }

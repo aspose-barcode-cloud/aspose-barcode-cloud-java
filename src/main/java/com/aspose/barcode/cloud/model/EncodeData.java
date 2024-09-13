@@ -2,11 +2,13 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-/** EncodeData */
+/** Data to encode in barcode */
+@ApiModel(description = "Data to encode in barcode")
 @jakarta.annotation.Generated(
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
@@ -20,11 +22,9 @@ public class EncodeData {
     /**
      * .
      *
-     * @param
      * @param String represents data to encode
      */
-    public EncodeData(EncodeDataType dataType, String data) {
-        this.dataType = dataType;
+    public EncodeData(String data) {
         this.data = data;
     }
 
@@ -33,7 +33,7 @@ public class EncodeData {
      *
      * @return dataType
      */
-    @ApiModelProperty(required = true, value = "dataType")
+    @ApiModelProperty(value = "dataType")
     public EncodeDataType getDataType() {
         return dataType;
     }

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## barcodeGenerateBarcodeTypeGet
 
-> File barcodeGenerateBarcodeTypeGet(barcodeType, dataType, data, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
+> File barcodeGenerateBarcodeTypeGet(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
 
 Generate barcode using GET request with parameters in route and query string.
 
@@ -32,10 +32,9 @@ public class Main {
 
         GenerateApi api = new GenerateApi(client);
         EncodeBarcodeType barcodeType = EncodeBarcodeType.fromValue("Codabar"); // EncodeBarcodeType | Type of barcode to generate.
-        EncodeDataType dataType = EncodeDataType.fromValue("StringData"); // EncodeDataType | Type of data to encode.
         String data = "data_example"; // String | String represents data to encode
         try {
-            File result = api.barcodeGenerateBarcodeTypeGet(barcodeType, dataType, data);
+            File result = api.barcodeGenerateBarcodeTypeGet(barcodeType, data);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GenerateApi.barcodeGenerateBarcodeTypeGet");
@@ -50,8 +49,8 @@ public class Main {
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | [**EncodeBarcodeType**](.md)| Type of barcode to generate. | [enum: Codabar, Code11, Code39, Code39FullASCII, Code93, Code128, GS1Code128, EAN8, EAN13, EAN14, SCC14, SSCC18, UPCA, UPCE, ISBN, ISSN, ISMN, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, ITF14, ITF6, MSI, VIN, DeutschePostIdentcode, DeutschePostLeitcode, OPC, PZN, Code16K, Pharmacode, DataMatrix, QR, Aztec, Pdf417, MacroPdf417, AustraliaPost, Postnet, Planet, OneCode, RM4SCC, DatabarOmniDirectional, DatabarTruncated, DatabarLimited, DatabarExpanded, SingaporePost, GS1DataMatrix, AustralianPosteParcel, SwissPostParcel, PatchCode, DatabarExpandedStacked, DatabarStacked, DatabarStackedOmniDirectional, MicroPdf417, GS1QR, MaxiCode, Code32, DataLogic2of5, DotCode, DutchKIX, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, CodablockF, GS1CodablockF, Mailmark, GS1DotCode, HanXin, GS1HanXin, GS1Aztec, GS1MicroPdf417, RectMicroQR, MicroQR]
- **dataType** | [**EncodeDataType**](.md)| Type of data to encode. | [enum: StringData, Base64Bytes, HexBytes]
  **data** | **String**| String represents data to encode |
+ **dataType** | [**EncodeDataType**](.md)| Type of data to encode.  Default value:  EncodeDataType.StringData. | [optional] [enum: StringData, Base64Bytes, HexBytes]
  **imageFormat** | [**AvailableBarCodeImageFormat**](.md)| Barcode output image format.  Default value: png | [optional] [enum: Gif, Jpeg, Png, Tiff, Svg]
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional]
  **textLocation** | [**CodeLocation**](.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below. | [optional] [enum: Below, Above, None]
@@ -115,7 +114,7 @@ Name | Type | Description  | Notes
 
 ## barcodeGenerateFormPost
 
-> File barcodeGenerateFormPost(barcodeType, dataType, data, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
+> File barcodeGenerateFormPost(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
 
 Generate barcode using POST request with parameters in url ecncoded form.
 
@@ -137,10 +136,9 @@ public class Main {
 
         GenerateApi api = new GenerateApi(client);
         EncodeBarcodeType barcodeType = EncodeBarcodeType.fromValue("Codabar"); // EncodeBarcodeType | 
-        EncodeDataType dataType = EncodeDataType.fromValue("StringData"); // EncodeDataType | 
         String data = "data_example"; // String | String represents data to encode
         try {
-            File result = api.barcodeGenerateFormPost(barcodeType, dataType, data);
+            File result = api.barcodeGenerateFormPost(barcodeType, data);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GenerateApi.barcodeGenerateFormPost");
@@ -155,8 +153,8 @@ public class Main {
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | [**EncodeBarcodeType**](EncodeBarcodeType.md)|  | [enum: Codabar, Code11, Code39, Code39FullASCII, Code93, Code128, GS1Code128, EAN8, EAN13, EAN14, SCC14, SSCC18, UPCA, UPCE, ISBN, ISSN, ISMN, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, ITF14, ITF6, MSI, VIN, DeutschePostIdentcode, DeutschePostLeitcode, OPC, PZN, Code16K, Pharmacode, DataMatrix, QR, Aztec, Pdf417, MacroPdf417, AustraliaPost, Postnet, Planet, OneCode, RM4SCC, DatabarOmniDirectional, DatabarTruncated, DatabarLimited, DatabarExpanded, SingaporePost, GS1DataMatrix, AustralianPosteParcel, SwissPostParcel, PatchCode, DatabarExpandedStacked, DatabarStacked, DatabarStackedOmniDirectional, MicroPdf417, GS1QR, MaxiCode, Code32, DataLogic2of5, DotCode, DutchKIX, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, CodablockF, GS1CodablockF, Mailmark, GS1DotCode, HanXin, GS1HanXin, GS1Aztec, GS1MicroPdf417, RectMicroQR, MicroQR]
- **dataType** | [**EncodeDataType**](EncodeDataType.md)|  | [enum: StringData, Base64Bytes, HexBytes]
  **data** | **String**| String represents data to encode |
+ **dataType** | [**EncodeDataType**](EncodeDataType.md)|  | [optional] [enum: StringData, Base64Bytes, HexBytes]
  **imageFormat** | [**AvailableBarCodeImageFormat**](AvailableBarCodeImageFormat.md)|  | [optional] [enum: Gif, Jpeg, Png, Tiff, Svg]
  **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional]
  **textLocation** | [**CodeLocation**](CodeLocation.md)|  | [optional] [enum: Below, Above, None]

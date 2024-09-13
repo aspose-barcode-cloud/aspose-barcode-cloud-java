@@ -18,14 +18,14 @@ public class RecognizeBase64Request {
     @SerializedName(value = "barcodeTypes")
     private List<DecodeBarcodeType> barcodeTypes = new ArrayList<>();
 
+    @SerializedName(value = "fileBase64")
+    private String fileBase64;
+
     @SerializedName(value = "recognitionMode")
     private RecognitionMode recognitionMode;
 
     @SerializedName(value = "imageKind")
     private RecognitionImageKind imageKind;
-
-    @SerializedName(value = "fileBase64")
-    private String fileBase64;
 
     /**
      * .
@@ -50,6 +50,20 @@ public class RecognizeBase64Request {
 
     public void setBarcodeTypes(List<DecodeBarcodeType> barcodeTypes) {
         this.barcodeTypes = barcodeTypes;
+    }
+
+    /**
+     * Barcode image bytes encoded as base-64.
+     *
+     * @return fileBase64
+     */
+    @ApiModelProperty(required = true, value = "fileBase64")
+    public String getFileBase64() {
+        return fileBase64;
+    }
+
+    public void setFileBase64(String fileBase64) {
+        this.fileBase64 = fileBase64;
     }
 
     /**
@@ -80,20 +94,6 @@ public class RecognizeBase64Request {
         this.imageKind = imageKind;
     }
 
-    /**
-     * Barcode image bytes encoded as base-64.
-     *
-     * @return fileBase64
-     */
-    @ApiModelProperty(required = true, value = "fileBase64")
-    public String getFileBase64() {
-        return fileBase64;
-    }
-
-    public void setFileBase64(String fileBase64) {
-        this.fileBase64 = fileBase64;
-    }
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,14 +104,14 @@ public class RecognizeBase64Request {
         }
         RecognizeBase64Request recognizeBase64Request = (RecognizeBase64Request) o;
         return Objects.equals(this.barcodeTypes, recognizeBase64Request.barcodeTypes)
+                && Objects.equals(this.fileBase64, recognizeBase64Request.fileBase64)
                 && Objects.equals(this.recognitionMode, recognizeBase64Request.recognitionMode)
-                && Objects.equals(this.imageKind, recognizeBase64Request.imageKind)
-                && Objects.equals(this.fileBase64, recognizeBase64Request.fileBase64);
+                && Objects.equals(this.imageKind, recognizeBase64Request.imageKind);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(barcodeTypes, recognitionMode, imageKind, fileBase64);
+        return Objects.hash(barcodeTypes, fileBase64, recognitionMode, imageKind);
     }
 
     @Override
@@ -120,9 +120,9 @@ public class RecognizeBase64Request {
         sb.append("class RecognizeBase64Request {\n");
 
         sb.append("    barcodeTypes: ").append(toIndentedString(barcodeTypes)).append("\n");
+        sb.append("    fileBase64: ").append(toIndentedString(fileBase64)).append("\n");
         sb.append("    recognitionMode: ").append(toIndentedString(recognitionMode)).append("\n");
         sb.append("    imageKind: ").append(toIndentedString(imageKind)).append("\n");
-        sb.append("    fileBase64: ").append(toIndentedString(fileBase64)).append("\n");
         sb.append("}");
         return sb.toString();
     }

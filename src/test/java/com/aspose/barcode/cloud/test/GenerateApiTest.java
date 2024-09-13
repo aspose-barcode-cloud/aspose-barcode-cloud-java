@@ -36,7 +36,7 @@ public class GenerateApiTest extends TestBase {
         File response =
                 api.barcodeGenerateBarcodeTypeGet(
                         new BarcodeGenerateBarcodeTypeGetRequest(
-                                EncodeBarcodeType.CODE128, EncodeDataType.STRING_DATA, "Hello!"));
+                                EncodeBarcodeType.CODE128, "Hello!"));
 
         long contentLength = response.length();
         assertTrue("Content length is zero or negative", contentLength > 0);
@@ -50,10 +50,12 @@ public class GenerateApiTest extends TestBase {
         BarcodeImageParams imageParams = new BarcodeImageParams();
         imageParams.setImageFormat(AvailableBarCodeImageFormat.JPEG);
 
+        EncodeData encodeData = new EncodeData("VGVzdA==");
+        encodeData.setDataType(EncodeDataType.BASE64_BYTES);
         GenerateParams generatorParams =
                 new GenerateParams(
                         EncodeBarcodeType.QR,
-                        new EncodeData(EncodeDataType.BASE64_BYTES, "VGVzdA=="));
+                        encodeData);
 
         generatorParams.setBarcodeImageParams(imageParams);
 
@@ -70,10 +72,11 @@ public class GenerateApiTest extends TestBase {
         // Test case for barcode_generate_form_post
         // Generate barcode from params in form
 
+        BarcodeGenerateFormPostRequest request = new BarcodeGenerateFormPostRequest(
+            EncodeBarcodeType.QR, "54657374");
+       request.dataType = EncodeDataType.HEX_BYTES;
         File response =
-                api.barcodeGenerateFormPost(
-                        new BarcodeGenerateFormPostRequest(
-                                EncodeBarcodeType.QR, EncodeDataType.HEX_BYTES, "54657374"));
+                api.barcodeGenerateFormPost(request);
 
         long contentLength = response.length();
         assertTrue("Content length is zero or negative", contentLength > 0);

@@ -200,13 +200,6 @@ public class GenerateApi {
                             + " when calling barcodeGenerateBarcodeTypeGet(...)");
         }
 
-        // verify the required parameter 'request.dataType' is set
-        if (request.dataType == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'request.dataType'"
-                            + " when calling barcodeGenerateBarcodeTypeGet(...)");
-        }
-
         // verify the required parameter 'request.data' is set
         if (request.data == null) {
             throw new ApiException(
@@ -608,13 +601,6 @@ public class GenerateApi {
         if (request.barcodeType == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.barcodeType'"
-                            + " when calling barcodeGenerateFormPost(...)");
-        }
-
-        // verify the required parameter 'request.dataType' is set
-        if (request.dataType == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'request.dataType'"
                             + " when calling barcodeGenerateFormPost(...)");
         }
 

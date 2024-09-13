@@ -37,11 +37,11 @@ public class BarcodeGenerateBarcodeTypeGetRequest {
     /** Type of barcode to generate.. */
     public final EncodeBarcodeType barcodeType;
 
-    /** Type of data to encode.. */
-    public final EncodeDataType dataType;
-
     /** String represents data to encode. */
     public final String data;
+
+    /** Type of data to encode. Default value: EncodeDataType.StringData.. */
+    public EncodeDataType dataType;
 
     /** Barcode output image format. Default value: png. */
     public AvailableBarCodeImageFormat imageFormat;
@@ -98,13 +98,10 @@ public class BarcodeGenerateBarcodeTypeGetRequest {
      * Generate barcode using GET request with parameters in route and query string..
      *
      * @param barcodeType Type of barcode to generate.
-     * @param dataType Type of data to encode.
      * @param data String represents data to encode
      */
-    public BarcodeGenerateBarcodeTypeGetRequest(
-            EncodeBarcodeType barcodeType, EncodeDataType dataType, String data) {
+    public BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType barcodeType, String data) {
         this.barcodeType = barcodeType;
-        this.dataType = dataType;
         this.data = data;
     }
 }

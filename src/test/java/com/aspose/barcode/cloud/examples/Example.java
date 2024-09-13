@@ -41,10 +41,9 @@ public class Example {
 
     private static File generateBarcode(GenerateApi api) throws ApiException {
         EncodeBarcodeType type = EncodeBarcodeType.QR;
-        EncodeDataType dataType = EncodeDataType.STRING_DATA;
         String text = "Aspose.BarCode for Cloud Sample";
         BarcodeGenerateBarcodeTypeGetRequest request =
-                new BarcodeGenerateBarcodeTypeGetRequest(type, dataType, text);
+                new BarcodeGenerateBarcodeTypeGetRequest(type, text);
         request.imageFormat = AvailableBarCodeImageFormat.JPEG;
 
         return api.barcodeGenerateBarcodeTypeGet(request);
