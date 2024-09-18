@@ -100,7 +100,6 @@ import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
 import com.aspose.barcode.cloud.requests.BarcodeScanFormPostRequest;
 
@@ -134,10 +133,9 @@ public class Example {
 
     private static File generateBarcode(GenerateApi api) throws ApiException {
         EncodeBarcodeType type = EncodeBarcodeType.QR;
-        EncodeDataType dataType = EncodeDataType.STRING_DATA;
         String text = "Aspose.BarCode for Cloud Sample";
         BarcodeGenerateBarcodeTypeGetRequest request =
-                new BarcodeGenerateBarcodeTypeGetRequest(type, dataType, text);
+                new BarcodeGenerateBarcodeTypeGetRequest(type, text);
         request.imageFormat = AvailableBarCodeImageFormat.JPEG;
 
         return api.barcodeGenerateBarcodeTypeGet(request);

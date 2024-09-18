@@ -399,8 +399,8 @@ public class ScanApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.url != null) {
-            queryParams.addAll(apiClient.parameterToPair("url", request.url));
+        if (request.fileUrl != null) {
+            queryParams.addAll(apiClient.parameterToPair("fileUrl", request.fileUrl));
         }
 
         Map<String, String> headerParams = new HashMap<>();
@@ -457,10 +457,10 @@ public class ScanApi {
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'request.url' is set
-        if (request.url == null) {
+        // verify the required parameter 'request.fileUrl' is set
+        if (request.fileUrl == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.url'"
+                    "Missing the required parameter 'request.fileUrl'"
                             + " when calling barcodeScanGet(...)");
         }
 

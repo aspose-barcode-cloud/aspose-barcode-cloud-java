@@ -75,8 +75,8 @@ public class RecognizeApi {
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
-        if (request.url != null) {
-            queryParams.addAll(apiClient.parameterToPair("url", request.url));
+        if (request.fileUrl != null) {
+            queryParams.addAll(apiClient.parameterToPair("fileUrl", request.fileUrl));
         }
 
         if (request.recognitionMode != null) {
@@ -149,10 +149,10 @@ public class RecognizeApi {
                             + " when calling barcodeRecognizeBarcodeTypeGet(...)");
         }
 
-        // verify the required parameter 'request.url' is set
-        if (request.url == null) {
+        // verify the required parameter 'request.fileUrl' is set
+        if (request.fileUrl == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request.url'"
+                    "Missing the required parameter 'request.fileUrl'"
                             + " when calling barcodeRecognizeBarcodeTypeGet(...)");
         }
 

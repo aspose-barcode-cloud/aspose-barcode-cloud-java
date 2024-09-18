@@ -30,14 +30,14 @@ import java.net.URI;
 /** Scan barcode from file on server using GET requests with parameter in query string. */
 public class BarcodeScanGetRequest {
     /** Url to barcode image. */
-    public final URI url;
+    public final URI fileUrl;
 
     /**
      * Scan barcode from file on server using GET requests with parameter in query string..
      *
-     * @param url Url to barcode image
+     * @param fileUrl Url to barcode image
      */
-    public BarcodeScanGetRequest(URI url) {
-        this.url = url;
+    public BarcodeScanGetRequest(URI fileUrl) {
+        this.fileUrl = fileUrl;
     }
 }

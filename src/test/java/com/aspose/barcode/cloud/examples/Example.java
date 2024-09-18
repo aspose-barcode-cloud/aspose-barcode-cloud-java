@@ -7,7 +7,6 @@ import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
 import com.aspose.barcode.cloud.requests.BarcodeScanFormPostRequest;
 

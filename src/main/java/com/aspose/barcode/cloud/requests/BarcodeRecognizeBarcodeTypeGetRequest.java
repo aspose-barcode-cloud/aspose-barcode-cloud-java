@@ -40,7 +40,7 @@ public class BarcodeRecognizeBarcodeTypeGetRequest {
     public final DecodeBarcodeType barcodeType;
 
     /** Url to barcode image. */
-    public final URI url;
+    public final URI fileUrl;
 
     /** Recognition mode. */
     public RecognitionMode recognitionMode;
@@ -53,10 +53,10 @@ public class BarcodeRecognizeBarcodeTypeGetRequest {
      * string..
      *
      * @param barcodeType Type of barcode to recognize
-     * @param url Url to barcode image
+     * @param fileUrl Url to barcode image
      */
-    public BarcodeRecognizeBarcodeTypeGetRequest(DecodeBarcodeType barcodeType, URI url) {
+    public BarcodeRecognizeBarcodeTypeGetRequest(DecodeBarcodeType barcodeType, URI fileUrl) {
         this.barcodeType = barcodeType;
-        this.url = url;
+        this.fileUrl = fileUrl;
     }
 }

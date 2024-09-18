@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## barcodeScanGet
 
-> BarcodeResponseList barcodeScanGet(url)
+> BarcodeResponseList barcodeScanGet(fileUrl)
 
 Scan barcode from file on server using GET requests with parameter in query string.
 
@@ -121,9 +121,9 @@ public class Main {
         );
 
         ScanApi api = new ScanApi(client);
-        URI url = new URI(); // URI | Url to barcode image
+        URI fileUrl = new URI(); // URI | Url to barcode image
         try {
-            BarcodeResponseList result = api.barcodeScanGet(url);
+            BarcodeResponseList result = api.barcodeScanGet(fileUrl);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ScanApi.barcodeScanGet");
@@ -137,7 +137,7 @@ public class Main {
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **url** | **URI**| Url to barcode image |
+ **fileUrl** | **URI**| Url to barcode image |
 
 ### barcodeScanGet return type
 

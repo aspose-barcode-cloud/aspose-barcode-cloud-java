@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
 
 import org.junit.BeforeClass;
@@ -24,8 +23,7 @@ public class ExceptionTest extends TestBase {
     @Test
     public void ExceptionMessageParsed() {
         BarcodeGenerateBarcodeTypeGetRequest request =
-                new BarcodeGenerateBarcodeTypeGetRequest(
-                        EncodeBarcodeType.QR, "");
+                new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType.QR, "");
 
         boolean thrown = false;
         try {
