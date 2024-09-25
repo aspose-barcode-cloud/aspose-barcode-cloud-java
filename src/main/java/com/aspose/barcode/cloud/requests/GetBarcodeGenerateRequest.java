@@ -48,16 +48,11 @@ public class GetBarcodeGenerateRequest {
     /** Text alignment.. */
     public String textAlignment;
 
-    /** Specify the displaying CodeText's Color. Default value: Color.Black.. */
-    public String textColor;
-
     /**
-     * Specify FontSizeMode. If FontSizeMode is set to Auto, font size will be calculated
-     * automatically based on xDimension value. It is recommended to use FontSizeMode.Auto
-     * especially in AutoSizeMode.Nearest or AutoSizeMode.Interpolation. Default value:
-     * FontSizeMode.Auto..
+     * Specify the displaying CodeText's Color. Default value: black. Use named colors like: red,
+     * green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF.
      */
-    public String fontSizeMode;
+    public String textColor;
 
     /** Specify word wraps (line breaks) within text. Default value: false.. */
     public Boolean noWrap;
@@ -108,13 +103,22 @@ public class GetBarcodeGenerateRequest {
      */
     public Double rotationAngle;
 
-    /** Background color of the barcode image. Default value: Color.White.. */
+    /**
+     * Background color of the barcode image. Default value: white. Use named colors like: red,
+     * green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF.
+     */
     public String backColor;
 
-    /** Bars color. Default value: Color.Black.. */
+    /**
+     * Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors
+     * like: #FF0000, #00FF00, #0000FF.
+     */
     public String barColor;
 
-    /** Border color. Default value: Color.Black.. */
+    /**
+     * Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors
+     * like: #FF0000, #00FF00, #0000FF.
+     */
     public String borderColor;
 
     /** Border width. Default value: 0. Ignored if Visible is set to false.. */

@@ -100,10 +100,6 @@ public class BarcodeApi {
             queryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
         }
 
-        if (request.fontSizeMode != null) {
-            queryParams.addAll(apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
-        }
-
         if (request.noWrap != null) {
             queryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
         }
@@ -1298,10 +1294,6 @@ public class BarcodeApi {
 
         if (request.textColor != null) {
             queryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
-        }
-
-        if (request.fontSizeMode != null) {
-            queryParams.addAll(apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
         }
 
         if (request.noWrap != null) {
