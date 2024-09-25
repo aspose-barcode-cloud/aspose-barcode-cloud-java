@@ -1979,6 +1979,10 @@ public class BarcodeApi {
             formParams.put("timeout", request.timeout);
         }
 
+        if (request.checksumValidation != null) {
+            formParams.put("checksumValidation", request.checksumValidation);
+        }
+
         final String[] accepts = {"application/json"};
         final String accept = apiClient.selectHeaderAccept(accepts);
         if (accept != null) {
