@@ -45,6 +45,9 @@ public class ScanBarcodeRequest {
      */
     public Integer timeout;
 
+    /** Checksum validation setting. Default is ON.. */
+    public String checksumValidation;
+
     /**
      * Quickly scan a barcode from an image..
      *

@@ -100,10 +100,6 @@ public class BarcodeApi {
             queryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
         }
 
-        if (request.fontSizeMode != null) {
-            queryParams.addAll(apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
-        }
-
         if (request.noWrap != null) {
             queryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
         }
@@ -1300,10 +1296,6 @@ public class BarcodeApi {
             queryParams.addAll(apiClient.parameterToPair("TextColor", request.textColor));
         }
 
-        if (request.fontSizeMode != null) {
-            queryParams.addAll(apiClient.parameterToPair("FontSizeMode", request.fontSizeMode));
-        }
-
         if (request.noWrap != null) {
             queryParams.addAll(apiClient.parameterToPair("NoWrap", request.noWrap));
         }
@@ -1985,6 +1977,10 @@ public class BarcodeApi {
 
         if (request.timeout != null) {
             formParams.put("timeout", request.timeout);
+        }
+
+        if (request.checksumValidation != null) {
+            formParams.put("checksumValidation", request.checksumValidation);
         }
 
         final String[] accepts = {"application/json"};

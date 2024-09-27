@@ -251,7 +251,8 @@ public class GeneratorParams {
     }
 
     /**
-     * Specify the displaying CodeText&#39;s Color. Default value: Color.Black.
+     * Specify the displaying CodeText&#39;s Color. Default value: black. Use named colors like:
+     * red, green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return textColor
      */
@@ -514,7 +515,8 @@ public class GeneratorParams {
     }
 
     /**
-     * Background color of the barcode image. Default value: Color.White.
+     * Background color of the barcode image. Default value: white. Use named colors like: red,
+     * green, blue Or HTML colors like: #FF0000, #00FF00, #0000FF
      *
      * @return backColor
      */
@@ -528,7 +530,8 @@ public class GeneratorParams {
     }
 
     /**
-     * Bars color. Default value: Color.Black.
+     * Bars color. Default value: black. Use named colors like: red, green, blue Or HTML colors
+     * like: #FF0000, #00FF00, #0000FF
      *
      * @return barColor
      */
@@ -542,7 +545,8 @@ public class GeneratorParams {
     }
 
     /**
-     * Border color. Default value: Color.Black.
+     * Border color. Default value: black. Use named colors like: red, green, blue Or HTML colors
+     * like: #FF0000, #00FF00, #0000FF
      *
      * @return borderColor
      */
@@ -965,7 +969,7 @@ public class GeneratorParams {
     }
 
     /**
-     * Code128 params.
+     * Code128 parameters
      *
      * @return code128
      */
