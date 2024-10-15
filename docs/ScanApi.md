@@ -76,7 +76,7 @@ public class Main {
         );
 
         ScanApi api = new ScanApi(client);
-        File _file = new File("/path/to/file"); // File | 
+        File _file = new File("/path/to/file"); // File | Barcode image file
         try {
             BarcodeResponseList result = api.barcodeScanFormPost(_file);
             System.out.println(result);
@@ -92,7 +92,7 @@ public class Main {
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **_file** | **File**|  |
+ **_file** | **File**| Barcode image file |
 
 ### barcodeScanFormPost return type
 

@@ -39,7 +39,7 @@ public class BarcodeRecognizeFormPostRequest {
     /** . */
     public final DecodeBarcodeType barcodeType;
 
-    /** . */
+    /** Barcode image file. */
     public final File _file;
 
     /** . */
@@ -53,7 +53,7 @@ public class BarcodeRecognizeFormPostRequest {
      * form..
      *
      * @param barcodeType
-     * @param _file
+     * @param _file Barcode image file
      */
     public BarcodeRecognizeFormPostRequest(DecodeBarcodeType barcodeType, File _file) {
         this.barcodeType = barcodeType;

@@ -29,13 +29,13 @@ import java.io.File;
 
 /** Scan barcode from file in request body using POST requests with parameter in multipart form. */
 public class BarcodeScanFormPostRequest {
-    /** . */
+    /** Barcode image file. */
     public final File _file;
 
     /**
      * Scan barcode from file in request body using POST requests with parameter in multipart form..
      *
-     * @param _file
+     * @param _file Barcode image file
      */
     public BarcodeScanFormPostRequest(File _file) {
         this._file = _file;

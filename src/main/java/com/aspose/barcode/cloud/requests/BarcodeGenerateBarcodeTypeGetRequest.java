@@ -64,14 +64,14 @@ public class BarcodeGenerateBarcodeTypeGetRequest {
     /**
      * Specify the displaying bars and content Color. Value: Color name from
      * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.
-     * For example: Color.AliceBlue or #FF000000 Default value: Color.Black..
+     * For example: AliceBlue or #FF000000 Default value: Black..
      */
     public String foregroundColor;
 
     /**
      * Background color of the barcode image. Value: Color name from
      * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.
-     * For example: Color.AliceBlue or #FF000000 Default value: Color.White..
+     * For example: AliceBlue or #FF000000 Default value: White..
      */
     public String backgroundColor;
 

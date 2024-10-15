@@ -553,7 +553,7 @@ public class GenerateApi {
             headerParams.put("Accept", accept);
         }
 
-        final String[] contentTypes = {"application/x-www-form-urlencoded"};
+        final String[] contentTypes = {"multipart/form-data"};
         final String contentType = apiClient.selectHeaderContentType(contentTypes);
         headerParams.put("Content-Type", contentType);
 
