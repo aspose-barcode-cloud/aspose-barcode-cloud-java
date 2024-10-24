@@ -62,7 +62,7 @@ public class FileApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call copyFileCall(
+    protected okhttp3.Call copyFileCall(
             CopyFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -111,12 +111,11 @@ public class FileApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -140,7 +139,7 @@ public class FileApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call copyFileValidateBeforeCall(
+    private okhttp3.Call copyFileValidateBeforeCall(
             CopyFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -160,8 +159,7 @@ public class FileApi {
                             + " when calling copyFile(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                copyFileCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = copyFileCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -185,7 +183,7 @@ public class FileApi {
      *     response body
      */
     public ApiResponse<Void> copyFileWithHttpInfo(CopyFileRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = copyFileValidateBeforeCall(request, null, null);
+        okhttp3.Call call = copyFileValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -198,8 +196,8 @@ public class FileApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call copyFileAsync(
-            CopyFileRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call copyFileAsync(CopyFileRequest request, final ApiCallback<Void> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -223,7 +221,7 @@ public class FileApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 copyFileValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
@@ -239,7 +237,7 @@ public class FileApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call deleteFileCall(
+    protected okhttp3.Call deleteFileCall(
             DeleteFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -277,12 +275,11 @@ public class FileApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -306,7 +303,7 @@ public class FileApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call deleteFileValidateBeforeCall(
+    private okhttp3.Call deleteFileValidateBeforeCall(
             DeleteFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -319,8 +316,7 @@ public class FileApi {
                             + " when calling deleteFile(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                deleteFileCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteFileCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -344,7 +340,7 @@ public class FileApi {
      *     response body
      */
     public ApiResponse<Void> deleteFileWithHttpInfo(DeleteFileRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = deleteFileValidateBeforeCall(request, null, null);
+        okhttp3.Call call = deleteFileValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -357,8 +353,8 @@ public class FileApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call deleteFileAsync(
-            DeleteFileRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteFileAsync(DeleteFileRequest request, final ApiCallback<Void> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -382,7 +378,7 @@ public class FileApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 deleteFileValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
@@ -398,7 +394,7 @@ public class FileApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call downloadFileCall(
+    protected okhttp3.Call downloadFileCall(
             DownloadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -436,12 +432,11 @@ public class FileApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -465,7 +460,7 @@ public class FileApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call downloadFileValidateBeforeCall(
+    private okhttp3.Call downloadFileValidateBeforeCall(
             DownloadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -478,8 +473,7 @@ public class FileApi {
                             + " when calling downloadFile(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                downloadFileCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = downloadFileCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -506,7 +500,7 @@ public class FileApi {
      */
     public ApiResponse<File> downloadFileWithHttpInfo(DownloadFileRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = downloadFileValidateBeforeCall(request, null, null);
+        okhttp3.Call call = downloadFileValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -520,7 +514,7 @@ public class FileApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call downloadFileAsync(
+    public okhttp3.Call downloadFileAsync(
             DownloadFileRequest request, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -545,7 +539,7 @@ public class FileApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 downloadFileValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -562,7 +556,7 @@ public class FileApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call moveFileCall(
+    protected okhttp3.Call moveFileCall(
             MoveFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -611,12 +605,11 @@ public class FileApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -640,7 +633,7 @@ public class FileApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call moveFileValidateBeforeCall(
+    private okhttp3.Call moveFileValidateBeforeCall(
             MoveFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -660,8 +653,7 @@ public class FileApi {
                             + " when calling moveFile(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                moveFileCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = moveFileCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -685,7 +677,7 @@ public class FileApi {
      *     response body
      */
     public ApiResponse<Void> moveFileWithHttpInfo(MoveFileRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = moveFileValidateBeforeCall(request, null, null);
+        okhttp3.Call call = moveFileValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -698,8 +690,8 @@ public class FileApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call moveFileAsync(
-            MoveFileRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call moveFileAsync(MoveFileRequest request, final ApiCallback<Void> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -723,7 +715,7 @@ public class FileApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 moveFileValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
@@ -739,7 +731,7 @@ public class FileApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call uploadFileCall(
+    protected okhttp3.Call uploadFileCall(
             UploadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -777,12 +769,11 @@ public class FileApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -806,7 +797,7 @@ public class FileApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call uploadFileValidateBeforeCall(
+    private okhttp3.Call uploadFileValidateBeforeCall(
             UploadFileRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -826,8 +817,7 @@ public class FileApi {
                             + " when calling uploadFile(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                uploadFileCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = uploadFileCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -854,7 +844,7 @@ public class FileApi {
      */
     public ApiResponse<FilesUploadResult> uploadFileWithHttpInfo(UploadFileRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = uploadFileValidateBeforeCall(request, null, null);
+        okhttp3.Call call = uploadFileValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<FilesUploadResult>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -868,7 +858,7 @@ public class FileApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call uploadFileAsync(
+    public okhttp3.Call uploadFileAsync(
             UploadFileRequest request, final ApiCallback<FilesUploadResult> callback)
             throws ApiException {
 
@@ -894,7 +884,7 @@ public class FileApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 uploadFileValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<FilesUploadResult>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
