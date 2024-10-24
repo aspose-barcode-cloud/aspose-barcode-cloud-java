@@ -41,7 +41,6 @@ public class RecognizeWithTimeoutTest extends TestBase {
         } catch (ApiException e) {
             thrown = true;
             assertEquals(408, e.getHttpCode());
-            assertEquals("Request Timeout", e.getMessage());
             String details = e.getDetails();
             assertTrue(
                     details,

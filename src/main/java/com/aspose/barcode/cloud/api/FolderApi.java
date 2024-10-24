@@ -61,7 +61,7 @@ public class FolderApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call copyFolderCall(
+    protected okhttp3.Call copyFolderCall(
             CopyFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -106,12 +106,11 @@ public class FolderApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -135,7 +134,7 @@ public class FolderApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call copyFolderValidateBeforeCall(
+    private okhttp3.Call copyFolderValidateBeforeCall(
             CopyFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -155,8 +154,7 @@ public class FolderApi {
                             + " when calling copyFolder(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                copyFolderCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = copyFolderCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -180,7 +178,7 @@ public class FolderApi {
      *     response body
      */
     public ApiResponse<Void> copyFolderWithHttpInfo(CopyFolderRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = copyFolderValidateBeforeCall(request, null, null);
+        okhttp3.Call call = copyFolderValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -193,8 +191,8 @@ public class FolderApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call copyFolderAsync(
-            CopyFolderRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call copyFolderAsync(CopyFolderRequest request, final ApiCallback<Void> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -218,7 +216,7 @@ public class FolderApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 copyFolderValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
@@ -234,7 +232,7 @@ public class FolderApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call createFolderCall(
+    protected okhttp3.Call createFolderCall(
             CreateFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -269,12 +267,11 @@ public class FolderApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -298,7 +295,7 @@ public class FolderApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call createFolderValidateBeforeCall(
+    private okhttp3.Call createFolderValidateBeforeCall(
             CreateFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -311,8 +308,7 @@ public class FolderApi {
                             + " when calling createFolder(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                createFolderCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = createFolderCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -337,7 +333,7 @@ public class FolderApi {
      */
     public ApiResponse<Void> createFolderWithHttpInfo(CreateFolderRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = createFolderValidateBeforeCall(request, null, null);
+        okhttp3.Call call = createFolderValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -350,7 +346,7 @@ public class FolderApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call createFolderAsync(
+    public okhttp3.Call createFolderAsync(
             CreateFolderRequest request, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -375,7 +371,7 @@ public class FolderApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 createFolderValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
@@ -391,7 +387,7 @@ public class FolderApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call deleteFolderCall(
+    protected okhttp3.Call deleteFolderCall(
             DeleteFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -430,12 +426,11 @@ public class FolderApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -459,7 +454,7 @@ public class FolderApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call deleteFolderValidateBeforeCall(
+    private okhttp3.Call deleteFolderValidateBeforeCall(
             DeleteFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -472,8 +467,7 @@ public class FolderApi {
                             + " when calling deleteFolder(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                deleteFolderCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteFolderCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -498,7 +492,7 @@ public class FolderApi {
      */
     public ApiResponse<Void> deleteFolderWithHttpInfo(DeleteFolderRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = deleteFolderValidateBeforeCall(request, null, null);
+        okhttp3.Call call = deleteFolderValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -511,7 +505,7 @@ public class FolderApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call deleteFolderAsync(
+    public okhttp3.Call deleteFolderAsync(
             DeleteFolderRequest request, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -536,7 +530,7 @@ public class FolderApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 deleteFolderValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
@@ -552,7 +546,7 @@ public class FolderApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call getFilesListCall(
+    protected okhttp3.Call getFilesListCall(
             GetFilesListRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -587,12 +581,11 @@ public class FolderApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -616,7 +609,7 @@ public class FolderApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call getFilesListValidateBeforeCall(
+    private okhttp3.Call getFilesListValidateBeforeCall(
             GetFilesListRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -629,8 +622,7 @@ public class FolderApi {
                             + " when calling getFilesList(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                getFilesListCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = getFilesListCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -657,7 +649,7 @@ public class FolderApi {
      */
     public ApiResponse<FilesList> getFilesListWithHttpInfo(GetFilesListRequest request)
             throws ApiException {
-        com.squareup.okhttp.Call call = getFilesListValidateBeforeCall(request, null, null);
+        okhttp3.Call call = getFilesListValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<FilesList>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -671,7 +663,7 @@ public class FolderApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call getFilesListAsync(
+    public okhttp3.Call getFilesListAsync(
             GetFilesListRequest request, final ApiCallback<FilesList> callback)
             throws ApiException {
 
@@ -697,7 +689,7 @@ public class FolderApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 getFilesListValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<FilesList>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -714,7 +706,7 @@ public class FolderApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call moveFolderCall(
+    protected okhttp3.Call moveFolderCall(
             MoveFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -759,12 +751,11 @@ public class FolderApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -788,7 +779,7 @@ public class FolderApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call moveFolderValidateBeforeCall(
+    private okhttp3.Call moveFolderValidateBeforeCall(
             MoveFolderRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -808,8 +799,7 @@ public class FolderApi {
                             + " when calling moveFolder(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                moveFolderCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = moveFolderCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -833,7 +823,7 @@ public class FolderApi {
      *     response body
      */
     public ApiResponse<Void> moveFolderWithHttpInfo(MoveFolderRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = moveFolderValidateBeforeCall(request, null, null);
+        okhttp3.Call call = moveFolderValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
@@ -846,8 +836,8 @@ public class FolderApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call moveFolderAsync(
-            MoveFolderRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call moveFolderAsync(MoveFolderRequest request, final ApiCallback<Void> callback)
+            throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -871,7 +861,7 @@ public class FolderApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 moveFolderValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
