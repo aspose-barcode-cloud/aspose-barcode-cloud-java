@@ -3,8 +3,10 @@ package com.aspose.barcode.cloud;
 import com.aspose.barcode.cloud.model.ApiErrorResponse;
 
 import okhttp3.Call;
+import okhttp3.FormBody;
 import okhttp3.Headers;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
