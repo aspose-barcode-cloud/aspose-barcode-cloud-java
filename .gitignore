@@ -10,5 +10,7 @@
 build
 aspose-barcode-cloud.iml
 !tools/*
+.idea
 
 **/configuration*.json
+
