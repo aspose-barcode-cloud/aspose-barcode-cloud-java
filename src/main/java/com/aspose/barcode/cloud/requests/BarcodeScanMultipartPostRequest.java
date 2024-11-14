@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BarcodeScanFormPostRequest.java">
+// <copyright company="Aspose" file="BarcodeScanMultipartPostRequest.java">
 //   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -28,7 +28,7 @@ package com.aspose.barcode.cloud.requests;
 import java.io.File;
 
 /** Scan barcode from file in request body using POST requests with parameter in multipart form. */
-public class BarcodeScanFormPostRequest {
+public class BarcodeScanMultipartPostRequest {
     /** Barcode image file. */
     public final File _file;
 
@@ -37,7 +37,7 @@ public class BarcodeScanFormPostRequest {
      *
      * @param _file Barcode image file
      */
-    public BarcodeScanFormPostRequest(File _file) {
+    public BarcodeScanMultipartPostRequest(File _file) {
         this._file = _file;
     }
 }

@@ -172,20 +172,19 @@ Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *GenerateApi* | [**barcodeGenerateBarcodeTypeGet**](docs/GenerateApi.md#barcodeGenerateBarcodeTypeGet) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
 *GenerateApi* | [**barcodeGenerateBodyPost**](docs/GenerateApi.md#barcodeGenerateBodyPost) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**barcodeGenerateFormPost**](docs/GenerateApi.md#barcodeGenerateFormPost) | **POST** /barcode/generate-form | Generate barcode using POST request with parameters in url ecncoded form.
-*RecognizeApi* | [**barcodeRecognizeBarcodeTypeGet**](docs/RecognizeApi.md#barcodeRecognizeBarcodeTypeGet) | **GET** /barcode/recognize/{barcodeType} | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*GenerateApi* | [**barcodeGenerateMultipartPost**](docs/GenerateApi.md#barcodeGenerateMultipartPost) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
 *RecognizeApi* | [**barcodeRecognizeBodyPost**](docs/RecognizeApi.md#barcodeRecognizeBodyPost) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**barcodeRecognizeFormPost**](docs/RecognizeApi.md#barcodeRecognizeFormPost) | **POST** /barcode/recognize-form | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*RecognizeApi* | [**barcodeRecognizeGet**](docs/RecognizeApi.md#barcodeRecognizeGet) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**barcodeRecognizeMultipartPost**](docs/RecognizeApi.md#barcodeRecognizeMultipartPost) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
 *ScanApi* | [**barcodeScanBodyPost**](docs/ScanApi.md#barcodeScanBodyPost) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**barcodeScanFormPost**](docs/ScanApi.md#barcodeScanFormPost) | **POST** /barcode/scan-form | Scan barcode from file in request body using POST requests with parameter in multipart form.
 *ScanApi* | [**barcodeScanGet**](docs/ScanApi.md#barcodeScanGet) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**barcodeScanMultipartPost**](docs/ScanApi.md#barcodeScanMultipartPost) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation for Models
 
 - [ApiError](docs/ApiError.md)
 - [ApiErrorResponse](docs/ApiErrorResponse.md)
-- [AvailableBarCodeImageFormat](docs/AvailableBarCodeImageFormat.md)
-- [AvailableGraphicsUnit](docs/AvailableGraphicsUnit.md)
+- [BarcodeImageFormat](docs/BarcodeImageFormat.md)
 - [BarcodeImageParams](docs/BarcodeImageParams.md)
 - [BarcodeResponse](docs/BarcodeResponse.md)
 - [BarcodeResponseList](docs/BarcodeResponseList.md)
@@ -195,12 +194,12 @@ Class | Method | HTTP request | Description
 - [EncodeData](docs/EncodeData.md)
 - [EncodeDataType](docs/EncodeDataType.md)
 - [GenerateParams](docs/GenerateParams.md)
+- [GraphicsUnit](docs/GraphicsUnit.md)
 - [RecognitionImageKind](docs/RecognitionImageKind.md)
 - [RecognitionMode](docs/RecognitionMode.md)
 - [RecognizeBase64Request](docs/RecognizeBase64Request.md)
 - [RegionPoint](docs/RegionPoint.md)
 - [ScanBase64Request](docs/ScanBase64Request.md)
-- [TextAlignment](docs/TextAlignment.md)
 
 ## Documentation for Authorization
 
@@ -210,6 +209,7 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
+- **Authorization URL**: <https://id-qa.aspose.cloud/connect/token>
 
 ## Recommendation
 

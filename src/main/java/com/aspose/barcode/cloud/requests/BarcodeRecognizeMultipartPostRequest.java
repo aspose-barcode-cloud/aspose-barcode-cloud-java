@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BarcodeRecognizeBarcodeTypeGetRequest.java">
+// <copyright company="Aspose" file="BarcodeRecognizeMultipartPostRequest.java">
 //   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,34 +29,34 @@ import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
 
-import java.net.URI;
+import java.io.File;
 
 /**
- * Recognize barcode from file on server using GET requests with parameters in route and query
- * string.
+ * Recognize barcode from file in request body using POST requests with parameters in multipart
+ * form.
  */
-public class BarcodeRecognizeBarcodeTypeGetRequest {
-    /** Type of barcode to recognize. */
+public class BarcodeRecognizeMultipartPostRequest {
+    /** . */
     public final DecodeBarcodeType barcodeType;
 
-    /** Url to barcode image. */
-    public final URI fileUrl;
+    /** Barcode image file. */
+    public final File _file;
 
-    /** Recognition mode. */
+    /** . */
     public RecognitionMode recognitionMode;
 
-    /** Image kind. */
-    public RecognitionImageKind imageKind;
+    /** . */
+    public RecognitionImageKind recognitionImageKind;
 
     /**
-     * Recognize barcode from file on server using GET requests with parameters in route and query
-     * string..
+     * Recognize barcode from file in request body using POST requests with parameters in multipart
+     * form..
      *
-     * @param barcodeType Type of barcode to recognize
-     * @param fileUrl Url to barcode image
+     * @param barcodeType
+     * @param _file Barcode image file
      */
-    public BarcodeRecognizeBarcodeTypeGetRequest(DecodeBarcodeType barcodeType, URI fileUrl) {
+    public BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType barcodeType, File _file) {
         this.barcodeType = barcodeType;
-        this.fileUrl = fileUrl;
+        this._file = _file;
     }
 }

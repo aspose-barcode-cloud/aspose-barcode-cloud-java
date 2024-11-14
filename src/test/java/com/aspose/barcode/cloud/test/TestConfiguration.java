@@ -12,10 +12,12 @@ public class TestConfiguration {
 
     public static Configuration load() {
         File maybeConfigFile = ConfigFileName.toFile();
+
         if (maybeConfigFile.exists()) {
             try {
                 return Configuration.loadFromFile(maybeConfigFile);
             } catch (IOException ignored) {
+
             }
         }
 

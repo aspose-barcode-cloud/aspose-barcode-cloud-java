@@ -8,7 +8,7 @@ import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.ScanBase64Request;
 import com.aspose.barcode.cloud.requests.BarcodeScanBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanFormPostRequest;
+import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
 import com.aspose.barcode.cloud.requests.BarcodeScanGetRequest;
 
 import org.junit.BeforeClass;
@@ -34,11 +34,11 @@ public class ScanApiTest extends TestBase {
     }
 
     @Test
-    public void testBarcodeScanFormPost() throws Exception {
+    public void testBarcodeScanMultipartPost() throws Exception {
         File file = new File(String.valueOf(Paths.get(testDataFolderPath, "pdf417Sample.png")));
-        BarcodeScanFormPostRequest scanRequest = new BarcodeScanFormPostRequest(file);
+        BarcodeScanMultipartPostRequest scanRequest = new BarcodeScanMultipartPostRequest(file);
 
-        BarcodeResponseList scanResponse = api.barcodeScanFormPost(scanRequest);
+        BarcodeResponseList scanResponse = api.barcodeScanMultipartPost(scanRequest);
         assertNotNull(scanResponse);
 
         assertEquals(1, scanResponse.getBarcodes().size());

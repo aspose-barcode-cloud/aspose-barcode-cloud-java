@@ -14,16 +14,10 @@ import java.util.Objects;
         comments = "Generator version: 7.8.0")
 public class BarcodeImageParams {
     @SerializedName(value = "imageFormat")
-    private AvailableBarCodeImageFormat imageFormat;
-
-    @SerializedName(value = "twoDDisplayText")
-    private String twoDDisplayText;
+    private BarcodeImageFormat imageFormat;
 
     @SerializedName(value = "textLocation")
     private CodeLocation textLocation;
-
-    @SerializedName(value = "textAlignment")
-    private TextAlignment textAlignment;
 
     @SerializedName(value = "foregroundColor")
     private String foregroundColor;
@@ -32,7 +26,7 @@ public class BarcodeImageParams {
     private String backgroundColor;
 
     @SerializedName(value = "units")
-    private AvailableGraphicsUnit units;
+    private GraphicsUnit units;
 
     @SerializedName(value = "resolution")
     private Float resolution;
@@ -52,27 +46,12 @@ public class BarcodeImageParams {
      * @return imageFormat
      */
     @ApiModelProperty(value = "imageFormat")
-    public AvailableBarCodeImageFormat getImageFormat() {
+    public BarcodeImageFormat getImageFormat() {
         return imageFormat;
     }
 
-    public void setImageFormat(AvailableBarCodeImageFormat imageFormat) {
+    public void setImageFormat(BarcodeImageFormat imageFormat) {
         this.imageFormat = imageFormat;
-    }
-
-    /**
-     * Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417,
-     * DataMatrix, QR, MaxiCode, DotCode
-     *
-     * @return twoDDisplayText
-     */
-    @ApiModelProperty(value = "twoDDisplayText")
-    public String getTwoDDisplayText() {
-        return twoDDisplayText;
-    }
-
-    public void setTwoDDisplayText(String twoDDisplayText) {
-        this.twoDDisplayText = twoDDisplayText;
     }
 
     /**
@@ -87,20 +66,6 @@ public class BarcodeImageParams {
 
     public void setTextLocation(CodeLocation textLocation) {
         this.textLocation = textLocation;
-    }
-
-    /**
-     * Get textAlignment
-     *
-     * @return textAlignment
-     */
-    @ApiModelProperty(value = "textAlignment")
-    public TextAlignment getTextAlignment() {
-        return textAlignment;
-    }
-
-    public void setTextAlignment(TextAlignment textAlignment) {
-        this.textAlignment = textAlignment;
     }
 
     /**
@@ -141,16 +106,17 @@ public class BarcodeImageParams {
      * @return units
      */
     @ApiModelProperty(value = "units")
-    public AvailableGraphicsUnit getUnits() {
+    public GraphicsUnit getUnits() {
         return units;
     }
 
-    public void setUnits(AvailableGraphicsUnit units) {
+    public void setUnits(GraphicsUnit units) {
         this.units = units;
     }
 
     /**
      * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
+     * Decimal separator is dot.
      *
      * @return resolution
      */
@@ -164,7 +130,7 @@ public class BarcodeImageParams {
     }
 
     /**
-     * Height of the barcode image in given units. Default units: pixel.
+     * Height of the barcode image in given units. Default units: pixel. Decimal separator is dot.
      *
      * @return imageHeight
      */
@@ -178,7 +144,7 @@ public class BarcodeImageParams {
     }
 
     /**
-     * Width of the barcode image in given units. Default units: pixel.
+     * Width of the barcode image in given units. Default units: pixel. Decimal separator is dot.
      *
      * @return imageWidth
      */
@@ -217,9 +183,7 @@ public class BarcodeImageParams {
         }
         BarcodeImageParams barcodeImageParams = (BarcodeImageParams) o;
         return Objects.equals(this.imageFormat, barcodeImageParams.imageFormat)
-                && Objects.equals(this.twoDDisplayText, barcodeImageParams.twoDDisplayText)
                 && Objects.equals(this.textLocation, barcodeImageParams.textLocation)
-                && Objects.equals(this.textAlignment, barcodeImageParams.textAlignment)
                 && Objects.equals(this.foregroundColor, barcodeImageParams.foregroundColor)
                 && Objects.equals(this.backgroundColor, barcodeImageParams.backgroundColor)
                 && Objects.equals(this.units, barcodeImageParams.units)
@@ -233,9 +197,7 @@ public class BarcodeImageParams {
     public int hashCode() {
         return Objects.hash(
                 imageFormat,
-                twoDDisplayText,
                 textLocation,
-                textAlignment,
                 foregroundColor,
                 backgroundColor,
                 units,
@@ -251,9 +213,7 @@ public class BarcodeImageParams {
         sb.append("class BarcodeImageParams {\n");
 
         sb.append("    imageFormat: ").append(toIndentedString(imageFormat)).append("\n");
-        sb.append("    twoDDisplayText: ").append(toIndentedString(twoDDisplayText)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
-        sb.append("    textAlignment: ").append(toIndentedString(textAlignment)).append("\n");
         sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
         sb.append("    backgroundColor: ").append(toIndentedString(backgroundColor)).append("\n");
         sb.append("    units: ").append(toIndentedString(units)).append("\n");

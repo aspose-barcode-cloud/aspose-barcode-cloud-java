@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BarcodeGenerateFormPostRequest.java">
+// <copyright company="Aspose" file="BarcodeGenerateMultipartPostRequest.java">
 //   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -25,15 +25,14 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
-import com.aspose.barcode.cloud.model.AvailableGraphicsUnit;
+import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
-import com.aspose.barcode.cloud.model.TextAlignment;
+import com.aspose.barcode.cloud.model.GraphicsUnit;
 
-/** Generate barcode using POST request with parameters in url ecncoded form. */
-public class BarcodeGenerateFormPostRequest {
+/** Generate barcode using POST request with parameters in multipart form. */
+public class BarcodeGenerateMultipartPostRequest {
     /** . */
     public final EncodeBarcodeType barcodeType;
 
@@ -44,19 +43,10 @@ public class BarcodeGenerateFormPostRequest {
     public EncodeDataType dataType;
 
     /** . */
-    public AvailableBarCodeImageFormat imageFormat;
-
-    /**
-     * Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417,
-     * DataMatrix, QR, MaxiCode, DotCode.
-     */
-    public String twoDDisplayText;
+    public BarcodeImageFormat imageFormat;
 
     /** . */
     public CodeLocation textLocation;
-
-    /** . */
-    public TextAlignment textAlignment;
 
     /**
      * Specify the displaying bars and content Color. Value: Color name from
@@ -73,15 +63,22 @@ public class BarcodeGenerateFormPostRequest {
     public String backgroundColor;
 
     /** . */
-    public AvailableGraphicsUnit units;
+    public GraphicsUnit units;
 
-    /** Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.. */
+    /**
+     * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
+     * Decimal separator is dot..
+     */
     public Float resolution;
 
-    /** Height of the barcode image in given units. Default units: pixel.. */
+    /**
+     * Height of the barcode image in given units. Default units: pixel. Decimal separator is dot..
+     */
     public Float imageHeight;
 
-    /** Width of the barcode image in given units. Default units: pixel.. */
+    /**
+     * Width of the barcode image in given units. Default units: pixel. Decimal separator is dot..
+     */
     public Float imageWidth;
 
     /**
@@ -92,12 +89,12 @@ public class BarcodeGenerateFormPostRequest {
     public Integer rotationAngle;
 
     /**
-     * Generate barcode using POST request with parameters in url ecncoded form..
+     * Generate barcode using POST request with parameters in multipart form..
      *
      * @param barcodeType
      * @param data String represents data to encode
      */
-    public BarcodeGenerateFormPostRequest(EncodeBarcodeType barcodeType, String data) {
+    public BarcodeGenerateMultipartPostRequest(EncodeBarcodeType barcodeType, String data) {
         this.barcodeType = barcodeType;
         this.data = data;
     }

@@ -11,7 +11,7 @@ Barcode recognize request
 |**barcodeTypes** | **List&lt;DecodeBarcodeType&gt;** | Array of decode types to find on barcode |  |
 |**fileBase64** | **String** | Barcode image bytes encoded as base-64. |  |
 |**recognitionMode** | **RecognitionMode** |  |  [optional] |
-|**imageKind** | **RecognitionImageKind** |  |  [optional] |
+|**recognitionImageKind** | **RecognitionImageKind** |  |  [optional] |
 
 
 

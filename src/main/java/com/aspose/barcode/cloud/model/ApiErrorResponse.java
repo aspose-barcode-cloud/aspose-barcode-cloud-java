@@ -20,11 +20,22 @@ public class ApiErrorResponse {
     private ApiError error;
 
     /**
+     * .
+     *
+     * @param Gets or sets request Id.
+     * @param
+     */
+    public ApiErrorResponse(String requestId, ApiError error) {
+        this.requestId = requestId;
+        this.error = error;
+    }
+
+    /**
      * Gets or sets request Id.
      *
      * @return requestId
      */
-    @ApiModelProperty(value = "requestId")
+    @ApiModelProperty(required = true, value = "requestId")
     public String getRequestId() {
         return requestId;
     }
@@ -38,7 +49,7 @@ public class ApiErrorResponse {
      *
      * @return error
      */
-    @ApiModelProperty(value = "error")
+    @ApiModelProperty(required = true, value = "error")
     public ApiError getError() {
         return error;
     }

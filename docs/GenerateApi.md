@@ -6,11 +6,11 @@ Method | HTTP request | Description
 ------ | ------------ | -----------
 [**barcodeGenerateBarcodeTypeGet**](GenerateApi.md#barcodeGenerateBarcodeTypeGet) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
 [**barcodeGenerateBodyPost**](GenerateApi.md#barcodeGenerateBodyPost) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-[**barcodeGenerateFormPost**](GenerateApi.md#barcodeGenerateFormPost) | **POST** /barcode/generate-form | Generate barcode using POST request with parameters in url ecncoded form.
+[**barcodeGenerateMultipartPost**](GenerateApi.md#barcodeGenerateMultipartPost) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
 
 ## barcodeGenerateBarcodeTypeGet
 
-> File barcodeGenerateBarcodeTypeGet(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
+> File barcodeGenerateBarcodeTypeGet(barcodeType, data, dataType, imageFormat, textLocation, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
 
 Generate barcode using GET request with parameters in route and query string.
 
@@ -18,7 +18,10 @@ Generate barcode using GET request with parameters in route and query string.
 
 ```java
 // Import classes:
+import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
 import com.aspose.barcode.cloud.api.GenerateApi;
 
 public class Main {
@@ -31,7 +34,7 @@ public class Main {
         );
 
         GenerateApi api = new GenerateApi(client);
-        EncodeBarcodeType barcodeType = EncodeBarcodeType.fromValue("Codabar"); // EncodeBarcodeType | Type of barcode to generate.
+        EncodeBarcodeType barcodeType = EncodeBarcodeType.fromValue("QR"); // EncodeBarcodeType | Type of barcode to generate.
         String data = "data_example"; // String | String represents data to encode
         try {
             File result = api.barcodeGenerateBarcodeTypeGet(barcodeType, data);
@@ -48,19 +51,17 @@ public class Main {
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcodeType** | [**EncodeBarcodeType**](.md)| Type of barcode to generate. | [enum: Codabar, Code11, Code39, Code39FullASCII, Code93, Code128, GS1Code128, EAN8, EAN13, EAN14, SCC14, SSCC18, UPCA, UPCE, ISBN, ISSN, ISMN, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, ITF14, ITF6, MSI, VIN, DeutschePostIdentcode, DeutschePostLeitcode, OPC, PZN, Code16K, Pharmacode, DataMatrix, QR, Aztec, Pdf417, MacroPdf417, AustraliaPost, Postnet, Planet, OneCode, RM4SCC, DatabarOmniDirectional, DatabarTruncated, DatabarLimited, DatabarExpanded, SingaporePost, GS1DataMatrix, AustralianPosteParcel, SwissPostParcel, PatchCode, DatabarExpandedStacked, DatabarStacked, DatabarStackedOmniDirectional, MicroPdf417, GS1QR, MaxiCode, Code32, DataLogic2of5, DotCode, DutchKIX, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, CodablockF, GS1CodablockF, Mailmark, GS1DotCode, HanXin, GS1HanXin, GS1Aztec, GS1MicroPdf417, RectMicroQR, MicroQR]
+ **barcodeType** | [**EncodeBarcodeType**](.md)| Type of barcode to generate. | [enum: QR, AustraliaPost, AustralianPosteParcel, Aztec, Codabar, CodablockF, Code11, Code128, Code16K, Code32, Code39, Code39FullASCII, Code93, DataLogic2of5, DataMatrix, DatabarExpanded, DatabarExpandedStacked, DatabarLimited, DatabarOmniDirectional, DatabarStacked, DatabarStackedOmniDirectional, DatabarTruncated, DeutschePostIdentcode, DeutschePostLeitcode, DotCode, DutchKIX, EAN13, EAN14, EAN8, GS1Aztec, GS1CodablockF, GS1Code128, GS1DataMatrix, GS1DotCode, GS1HanXin, GS1MicroPdf417, GS1QR, HanXin, IATA2of5, ISBN, ISMN, ISSN, ITF14, ITF6, Interleaved2of5, ItalianPost25, MSI, MacroPdf417, Mailmark, Matrix2of5, MaxiCode, MicroPdf417, MicroQR, OPC, OneCode, PZN, PatchCode, Pdf417, Pharmacode, Planet, Postnet, RM4SCC, RectMicroQR, SCC14, SSCC18, SingaporePost, Standard2of5, SwissPostParcel, UPCA, UPCE, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, VIN]
  **data** | **String**| String represents data to encode |
  **dataType** | [**EncodeDataType**](.md)| Type of data to encode.  Default value:  EncodeDataType.StringData. | [optional] [enum: StringData, Base64Bytes, HexBytes]
- **imageFormat** | [**AvailableBarCodeImageFormat**](.md)| Barcode output image format.  Default value: png | [optional] [enum: Gif, Jpeg, Png, Tiff, Svg]
- **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional]
+ **imageFormat** | [**BarcodeImageFormat**](.md)| Barcode output image format.  Default value: png | [optional] [enum: Gif, Jpeg, Png, Tiff, Svg]
  **textLocation** | [**CodeLocation**](.md)| Specify the displaying Text Location, set to CodeLocation.None to hide CodeText.  Default value: CodeLocation.Below. | [optional] [enum: Below, Above, None]
- **textAlignment** | [**TextAlignment**](.md)| Text alignment.  Default value: TextAligment.Left | [optional] [enum: Left, Center, Right]
- **foregroundColor** | **String**| Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black. | [optional]
- **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White. | [optional]
- **units** | [**AvailableGraphicsUnit**](.md)| Common Units for all measuring in query. Default units: pixel. | [optional] [enum: Pixel, Point, Inch, Millimeter]
- **resolution** | **Float**| Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi. | [optional]
- **imageHeight** | **Float**| Height of the barcode image in given units. Default units: pixel. | [optional]
- **imageWidth** | **Float**| Width of the barcode image in given units. Default units: pixel. | [optional]
+ **foregroundColor** | **String**| Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black. | [optional]
+ **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White. | [optional]
+ **units** | [**GraphicsUnit**](.md)| Common Units for all measuring in query. Default units: pixel. | [optional] [enum: Pixel, Point, Inch, Millimeter]
+ **resolution** | **Float**| Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot. | [optional]
+ **imageHeight** | **Float**| Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot. | [optional]
+ **imageWidth** | **Float**| Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot. | [optional]
  **rotationAngle** | **Integer**| BarCode image rotation angle, measured in degree, e.g. RotationAngle &#x3D; 0 or RotationAngle &#x3D; 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0. | [optional]
 
 ### barcodeGenerateBarcodeTypeGet return type
@@ -77,7 +78,10 @@ Generate barcode using POST request with parameters in body in json or xml forma
 
 ```java
 // Import classes:
+import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
 import com.aspose.barcode.cloud.api.GenerateApi;
 
 public class Main {
@@ -112,17 +116,20 @@ Name | Type | Description  | Notes
 
 **File**
 
-## barcodeGenerateFormPost
+## barcodeGenerateMultipartPost
 
-> File barcodeGenerateFormPost(barcodeType, data, dataType, imageFormat, twoDDisplayText, textLocation, textAlignment, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
+> File barcodeGenerateMultipartPost(barcodeType, data, dataType, imageFormat, textLocation, foregroundColor, backgroundColor, units, resolution, imageHeight, imageWidth, rotationAngle)
 
-Generate barcode using POST request with parameters in url ecncoded form.
+Generate barcode using POST request with parameters in multipart form.
 
-### barcodeGenerateFormPost example
+### barcodeGenerateMultipartPost example
 
 ```java
 // Import classes:
+import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
 import com.aspose.barcode.cloud.api.GenerateApi;
 
 public class Main {
@@ -135,39 +142,37 @@ public class Main {
         );
 
         GenerateApi api = new GenerateApi(client);
-        EncodeBarcodeType barcodeType = EncodeBarcodeType.fromValue("Codabar"); // EncodeBarcodeType | 
+        EncodeBarcodeType barcodeType = EncodeBarcodeType.fromValue("QR"); // EncodeBarcodeType | 
         String data = "data_example"; // String | String represents data to encode
         try {
-            File result = api.barcodeGenerateFormPost(barcodeType, data);
+            File result = api.barcodeGenerateMultipartPost(barcodeType, data);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling GenerateApi.barcodeGenerateFormPost");
+            System.err.println("Exception when calling GenerateApi.barcodeGenerateMultipartPost");
             e.printStackTrace();
         }
     }
 }
 ```
 
-### barcodeGenerateFormPost parameters
+### barcodeGenerateMultipartPost parameters
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcodeType** | [**EncodeBarcodeType**](EncodeBarcodeType.md)|  | [enum: Codabar, Code11, Code39, Code39FullASCII, Code93, Code128, GS1Code128, EAN8, EAN13, EAN14, SCC14, SSCC18, UPCA, UPCE, ISBN, ISSN, ISMN, Standard2of5, Interleaved2of5, Matrix2of5, ItalianPost25, IATA2of5, ITF14, ITF6, MSI, VIN, DeutschePostIdentcode, DeutschePostLeitcode, OPC, PZN, Code16K, Pharmacode, DataMatrix, QR, Aztec, Pdf417, MacroPdf417, AustraliaPost, Postnet, Planet, OneCode, RM4SCC, DatabarOmniDirectional, DatabarTruncated, DatabarLimited, DatabarExpanded, SingaporePost, GS1DataMatrix, AustralianPosteParcel, SwissPostParcel, PatchCode, DatabarExpandedStacked, DatabarStacked, DatabarStackedOmniDirectional, MicroPdf417, GS1QR, MaxiCode, Code32, DataLogic2of5, DotCode, DutchKIX, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, CodablockF, GS1CodablockF, Mailmark, GS1DotCode, HanXin, GS1HanXin, GS1Aztec, GS1MicroPdf417, RectMicroQR, MicroQR]
+ **barcodeType** | [**EncodeBarcodeType**](EncodeBarcodeType.md)|  | [enum: QR, AustraliaPost, AustralianPosteParcel, Aztec, Codabar, CodablockF, Code11, Code128, Code16K, Code32, Code39, Code39FullASCII, Code93, DataLogic2of5, DataMatrix, DatabarExpanded, DatabarExpandedStacked, DatabarLimited, DatabarOmniDirectional, DatabarStacked, DatabarStackedOmniDirectional, DatabarTruncated, DeutschePostIdentcode, DeutschePostLeitcode, DotCode, DutchKIX, EAN13, EAN14, EAN8, GS1Aztec, GS1CodablockF, GS1Code128, GS1DataMatrix, GS1DotCode, GS1HanXin, GS1MicroPdf417, GS1QR, HanXin, IATA2of5, ISBN, ISMN, ISSN, ITF14, ITF6, Interleaved2of5, ItalianPost25, MSI, MacroPdf417, Mailmark, Matrix2of5, MaxiCode, MicroPdf417, MicroQR, OPC, OneCode, PZN, PatchCode, Pdf417, Pharmacode, Planet, Postnet, RM4SCC, RectMicroQR, SCC14, SSCC18, SingaporePost, Standard2of5, SwissPostParcel, UPCA, UPCE, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, VIN]
  **data** | **String**| String represents data to encode |
  **dataType** | [**EncodeDataType**](EncodeDataType.md)|  | [optional] [enum: StringData, Base64Bytes, HexBytes]
- **imageFormat** | [**AvailableBarCodeImageFormat**](AvailableBarCodeImageFormat.md)|  | [optional] [enum: Gif, Jpeg, Png, Tiff, Svg]
- **twoDDisplayText** | **String**| Text that will be displayed instead of codetext in 2D barcodes.  Used for: Aztec, Pdf417, DataMatrix, QR, MaxiCode, DotCode | [optional]
+ **imageFormat** | [**BarcodeImageFormat**](BarcodeImageFormat.md)|  | [optional] [enum: Gif, Jpeg, Png, Tiff, Svg]
  **textLocation** | [**CodeLocation**](CodeLocation.md)|  | [optional] [enum: Below, Above, None]
- **textAlignment** | [**TextAlignment**](TextAlignment.md)|  | [optional] [enum: Left, Center, Right]
- **foregroundColor** | **String**| Specify the displaying bars and content Color.   Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: Black. | [optional]
- **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.   For example: AliceBlue or #FF000000  Default value: White. | [optional]
- **units** | [**AvailableGraphicsUnit**](AvailableGraphicsUnit.md)|  | [optional] [enum: Pixel, Point, Inch, Millimeter]
- **resolution** | **Float**| Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi. | [optional]
- **imageHeight** | **Float**| Height of the barcode image in given units. Default units: pixel. | [optional]
- **imageWidth** | **Float**| Width of the barcode image in given units. Default units: pixel. | [optional]
+ **foregroundColor** | **String**| Specify the displaying bars and content Color.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: Black. | [optional]
+ **backgroundColor** | **String**| Background color of the barcode image.  Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.  For example: AliceBlue or #FF000000  Default value: White. | [optional]
+ **units** | [**GraphicsUnit**](GraphicsUnit.md)|  | [optional] [enum: Pixel, Point, Inch, Millimeter]
+ **resolution** | **Float**| Resolution of the BarCode image.  One value for both dimensions.  Default value: 96 dpi.  Decimal separator is dot. | [optional]
+ **imageHeight** | **Float**| Height of the barcode image in given units. Default units: pixel.  Decimal separator is dot. | [optional]
+ **imageWidth** | **Float**| Width of the barcode image in given units. Default units: pixel.  Decimal separator is dot. | [optional]
  **rotationAngle** | **Integer**| BarCode image rotation angle, measured in degree, e.g. RotationAngle &#x3D; 0 or RotationAngle &#x3D; 360 means no rotation.  If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image.  Default value: 0. | [optional]
 
-### barcodeGenerateFormPost return type
+### barcodeGenerateMultipartPost return type
 
 **File**
 

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BarcodeRecognizeFormPostRequest.java">
+// <copyright company="Aspose" file="BarcodeRecognizeGetRequest.java">
 //   Copyright (c) 2024 Aspose.BarCode for Cloud
 // </copyright>
 // <summary>
@@ -29,34 +29,34 @@ import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
 
-import java.io.File;
+import java.net.URI;
 
 /**
- * Recognize barcode from file in request body using POST requests with parameters in multipart
- * form.
+ * Recognize barcode from file on server using GET requests with parameters in route and query
+ * string.
  */
-public class BarcodeRecognizeFormPostRequest {
-    /** . */
+public class BarcodeRecognizeGetRequest {
+    /** Type of barcode to recognize. */
     public final DecodeBarcodeType barcodeType;
 
-    /** Barcode image file. */
-    public final File _file;
+    /** Url to barcode image. */
+    public final URI fileUrl;
 
-    /** . */
+    /** Recognition mode. */
     public RecognitionMode recognitionMode;
 
-    /** . */
-    public RecognitionImageKind imageKind;
+    /** Image kind for recognition. */
+    public RecognitionImageKind recognitionImageKind;
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in multipart
-     * form..
+     * Recognize barcode from file on server using GET requests with parameters in route and query
+     * string..
      *
-     * @param barcodeType
-     * @param _file Barcode image file
+     * @param barcodeType Type of barcode to recognize
+     * @param fileUrl Url to barcode image
      */
-    public BarcodeRecognizeFormPostRequest(DecodeBarcodeType barcodeType, File _file) {
+    public BarcodeRecognizeGetRequest(DecodeBarcodeType barcodeType, URI fileUrl) {
         this.barcodeType = barcodeType;
-        this._file = _file;
+        this.fileUrl = fileUrl;
     }
 }

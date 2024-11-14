@@ -1,6 +1,6 @@
 
 
-# AvailableBarCodeImageFormat
+# BarcodeImageFormat
 
 ## Enum
 

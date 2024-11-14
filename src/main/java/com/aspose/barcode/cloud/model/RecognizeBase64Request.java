@@ -24,8 +24,8 @@ public class RecognizeBase64Request {
     @SerializedName(value = "recognitionMode")
     private RecognitionMode recognitionMode;
 
-    @SerializedName(value = "imageKind")
-    private RecognitionImageKind imageKind;
+    @SerializedName(value = "recognitionImageKind")
+    private RecognitionImageKind recognitionImageKind;
 
     /**
      * .
@@ -81,17 +81,17 @@ public class RecognizeBase64Request {
     }
 
     /**
-     * Get imageKind
+     * Get recognitionImageKind
      *
-     * @return imageKind
+     * @return recognitionImageKind
      */
-    @ApiModelProperty(value = "imageKind")
-    public RecognitionImageKind getImageKind() {
-        return imageKind;
+    @ApiModelProperty(value = "recognitionImageKind")
+    public RecognitionImageKind getRecognitionImageKind() {
+        return recognitionImageKind;
     }
 
-    public void setImageKind(RecognitionImageKind imageKind) {
-        this.imageKind = imageKind;
+    public void setRecognitionImageKind(RecognitionImageKind recognitionImageKind) {
+        this.recognitionImageKind = recognitionImageKind;
     }
 
     @Override
@@ -106,12 +106,13 @@ public class RecognizeBase64Request {
         return Objects.equals(this.barcodeTypes, recognizeBase64Request.barcodeTypes)
                 && Objects.equals(this.fileBase64, recognizeBase64Request.fileBase64)
                 && Objects.equals(this.recognitionMode, recognizeBase64Request.recognitionMode)
-                && Objects.equals(this.imageKind, recognizeBase64Request.imageKind);
+                && Objects.equals(
+                        this.recognitionImageKind, recognizeBase64Request.recognitionImageKind);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(barcodeTypes, fileBase64, recognitionMode, imageKind);
+        return Objects.hash(barcodeTypes, fileBase64, recognitionMode, recognitionImageKind);
     }
 
     @Override
@@ -122,7 +123,9 @@ public class RecognizeBase64Request {
         sb.append("    barcodeTypes: ").append(toIndentedString(barcodeTypes)).append("\n");
         sb.append("    fileBase64: ").append(toIndentedString(fileBase64)).append("\n");
         sb.append("    recognitionMode: ").append(toIndentedString(recognitionMode)).append("\n");
-        sb.append("    imageKind: ").append(toIndentedString(imageKind)).append("\n");
+        sb.append("    recognitionImageKind: ")
+                .append(toIndentedString(recognitionImageKind))
+                .append("\n");
         sb.append("}");
         return sb.toString();
     }

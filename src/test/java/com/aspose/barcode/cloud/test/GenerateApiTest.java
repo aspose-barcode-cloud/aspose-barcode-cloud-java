@@ -3,7 +3,7 @@ package com.aspose.barcode.cloud.test;
 import static org.junit.Assert.assertTrue;
 
 import com.aspose.barcode.cloud.api.GenerateApi;
-import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeData;
@@ -11,7 +11,7 @@ import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.model.GenerateParams;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateFormPostRequest;
+import com.aspose.barcode.cloud.requests.BarcodeGenerateMultipartPostRequest;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -48,7 +48,7 @@ public class GenerateApiTest extends TestBase {
         // Test case for barcode_generate_body_post
         // Generate barcode from params in body
         BarcodeImageParams imageParams = new BarcodeImageParams();
-        imageParams.setImageFormat(AvailableBarCodeImageFormat.JPEG);
+        imageParams.setImageFormat(BarcodeImageFormat.JPEG);
 
         EncodeData encodeData = new EncodeData("VGVzdA==");
         encodeData.setDataType(EncodeDataType.BASE64_BYTES);
@@ -65,14 +65,14 @@ public class GenerateApiTest extends TestBase {
     }
 
     @Test
-    public void testBarcodeGenerateFormPost() throws Exception {
+    public void testBarcodeGenerateMultipartPost() throws Exception {
         // Test case for barcode_generate_form_post
         // Generate barcode from params in form
 
-        BarcodeGenerateFormPostRequest request =
-                new BarcodeGenerateFormPostRequest(EncodeBarcodeType.QR, "54657374");
+        BarcodeGenerateMultipartPostRequest request =
+                new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType.QR, "54657374");
         request.dataType = EncodeDataType.HEX_BYTES;
-        File response = api.barcodeGenerateFormPost(request);
+        File response = api.barcodeGenerateMultipartPost(request);
 
         long contentLength = response.length();
         assertTrue("Content length is zero or negative", contentLength > 0);

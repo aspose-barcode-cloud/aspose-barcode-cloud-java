@@ -1,6 +1,6 @@
 
 
-# AvailableGraphicsUnit
+# GraphicsUnit
 
 ## Enum
 

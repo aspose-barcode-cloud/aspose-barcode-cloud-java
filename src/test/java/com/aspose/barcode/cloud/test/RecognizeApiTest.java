@@ -10,9 +10,9 @@ import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
 import com.aspose.barcode.cloud.model.RecognizeBase64Request;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeBarcodeTypeGetRequest;
+import com.aspose.barcode.cloud.requests.BarcodeRecognizeGetRequest;
 import com.aspose.barcode.cloud.requests.BarcodeRecognizeBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeFormPostRequest;
+import com.aspose.barcode.cloud.requests.BarcodeRecognizeMultipartPostRequest;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,8 +41,8 @@ public class RecognizeApiTest extends TestBase {
     @Test
     public void testBarcodeRecognizeBarcodeTypeGet() throws Exception {
         BarcodeResponseList response =
-                api.barcodeRecognizeBarcodeTypeGet(
-                        new BarcodeRecognizeBarcodeTypeGetRequest(
+                api.barcodeRecognizeGet(
+                        new BarcodeRecognizeGetRequest(
                                 DecodeBarcodeType.QR,
                                 new URI(
                                         "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png")));
@@ -61,7 +61,7 @@ public class RecognizeApiTest extends TestBase {
         String encodedString = Base64.getEncoder().encodeToString(fileContent);
         RecognizeBase64Request request =
                 new RecognizeBase64Request(Arrays.asList(DecodeBarcodeType.PDF417), encodedString);
-        request.setImageKind(RecognitionImageKind.CLEAR_IMAGE);
+        request.setRecognitionImageKind(RecognitionImageKind.CLEAR_IMAGE);
         request.setRecognitionMode(RecognitionMode.FAST);
 
         BarcodeResponseList response =
@@ -78,14 +78,14 @@ public class RecognizeApiTest extends TestBase {
     }
 
     @Test
-    public void testBarcodeRecognizeFormPost() throws Exception {
+    public void testBarcodeRecognizeMultipartPost() throws Exception {
         File file = new File(String.valueOf(Paths.get(testDataFolderPath, "ManyTypes.png")));
-        BarcodeRecognizeFormPostRequest request =
-                new BarcodeRecognizeFormPostRequest(DecodeBarcodeType.MOST_COMMONLY_USED, file);
-        request.imageKind = RecognitionImageKind.CLEAR_IMAGE;
+        BarcodeRecognizeMultipartPostRequest request =
+                new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType.MOST_COMMONLY_USED, file);
+        request.recognitionImageKind = RecognitionImageKind.CLEAR_IMAGE;
         request.recognitionMode = RecognitionMode.NORMAL;
 
-        BarcodeResponseList response = api.barcodeRecognizeFormPost(request);
+        BarcodeResponseList response = api.barcodeRecognizeMultipartPost(request);
 
         assertNotNull(response);
         assertEquals(3, response.getBarcodes().size());

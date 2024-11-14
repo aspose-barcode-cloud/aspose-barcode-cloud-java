@@ -76,58 +76,49 @@ public class GenerateApi {
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
         if (request.dataType != null) {
-            queryParams.addAll(apiClient.parameterToPair("DataType", request.dataType));
+            queryParams.addAll(apiClient.parameterToPair("dataType", request.dataType));
         }
 
         if (request.data != null) {
-            queryParams.addAll(apiClient.parameterToPair("Data", request.data));
+            queryParams.addAll(apiClient.parameterToPair("data", request.data));
         }
 
         if (request.imageFormat != null) {
-            queryParams.addAll(apiClient.parameterToPair("ImageFormat", request.imageFormat));
-        }
-
-        if (request.twoDDisplayText != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("TwoDDisplayText", request.twoDDisplayText));
+            queryParams.addAll(apiClient.parameterToPair("imageFormat", request.imageFormat));
         }
 
         if (request.textLocation != null) {
-            queryParams.addAll(apiClient.parameterToPair("TextLocation", request.textLocation));
-        }
-
-        if (request.textAlignment != null) {
-            queryParams.addAll(apiClient.parameterToPair("TextAlignment", request.textAlignment));
+            queryParams.addAll(apiClient.parameterToPair("textLocation", request.textLocation));
         }
 
         if (request.foregroundColor != null) {
             queryParams.addAll(
-                    apiClient.parameterToPair("ForegroundColor", request.foregroundColor));
+                    apiClient.parameterToPair("foregroundColor", request.foregroundColor));
         }
 
         if (request.backgroundColor != null) {
             queryParams.addAll(
-                    apiClient.parameterToPair("BackgroundColor", request.backgroundColor));
+                    apiClient.parameterToPair("backgroundColor", request.backgroundColor));
         }
 
         if (request.units != null) {
-            queryParams.addAll(apiClient.parameterToPair("Units", request.units));
+            queryParams.addAll(apiClient.parameterToPair("units", request.units));
         }
 
         if (request.resolution != null) {
-            queryParams.addAll(apiClient.parameterToPair("Resolution", request.resolution));
+            queryParams.addAll(apiClient.parameterToPair("resolution", request.resolution));
         }
 
         if (request.imageHeight != null) {
-            queryParams.addAll(apiClient.parameterToPair("ImageHeight", request.imageHeight));
+            queryParams.addAll(apiClient.parameterToPair("imageHeight", request.imageHeight));
         }
 
         if (request.imageWidth != null) {
-            queryParams.addAll(apiClient.parameterToPair("ImageWidth", request.imageWidth));
+            queryParams.addAll(apiClient.parameterToPair("imageWidth", request.imageWidth));
         }
 
         if (request.rotationAngle != null) {
-            queryParams.addAll(apiClient.parameterToPair("RotationAngle", request.rotationAngle));
+            queryParams.addAll(apiClient.parameterToPair("rotationAngle", request.rotationAngle));
         }
 
         Map<String, String> headerParams = new HashMap<>();
@@ -458,24 +449,24 @@ public class GenerateApi {
     }
 
     /**
-     * Build call for barcodeGenerateFormPost
+     * Build call for barcodeGenerateMultipartPost
      *
-     * @param request See {@link BarcodeGenerateFormPostRequest}
+     * @param request See {@link BarcodeGenerateMultipartPostRequest}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeGenerateFormPostCall(
-            BarcodeGenerateFormPostRequest request,
+    protected com.squareup.okhttp.Call barcodeGenerateMultipartPostCall(
+            BarcodeGenerateMultipartPostRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
         Object postBody = null;
 
         // create path and map variables
-        String path = "/barcode/generate-form";
+        String path = "/barcode/generate-multipart";
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();
@@ -487,55 +478,47 @@ public class GenerateApi {
         }
 
         if (request.dataType != null) {
-            formParams.put("DataType", request.dataType);
+            formParams.put("dataType", request.dataType);
         }
 
         if (request.data != null) {
-            formParams.put("Data", request.data);
+            formParams.put("data", request.data);
         }
 
         if (request.imageFormat != null) {
-            formParams.put("ImageFormat", request.imageFormat);
-        }
-
-        if (request.twoDDisplayText != null) {
-            formParams.put("TwoDDisplayText", request.twoDDisplayText);
+            formParams.put("imageFormat", request.imageFormat);
         }
 
         if (request.textLocation != null) {
-            formParams.put("TextLocation", request.textLocation);
-        }
-
-        if (request.textAlignment != null) {
-            formParams.put("TextAlignment", request.textAlignment);
+            formParams.put("textLocation", request.textLocation);
         }
 
         if (request.foregroundColor != null) {
-            formParams.put("ForegroundColor", request.foregroundColor);
+            formParams.put("foregroundColor", request.foregroundColor);
         }
 
         if (request.backgroundColor != null) {
-            formParams.put("BackgroundColor", request.backgroundColor);
+            formParams.put("backgroundColor", request.backgroundColor);
         }
 
         if (request.units != null) {
-            formParams.put("Units", request.units);
+            formParams.put("units", request.units);
         }
 
         if (request.resolution != null) {
-            formParams.put("Resolution", request.resolution);
+            formParams.put("resolution", request.resolution);
         }
 
         if (request.imageHeight != null) {
-            formParams.put("ImageHeight", request.imageHeight);
+            formParams.put("imageHeight", request.imageHeight);
         }
 
         if (request.imageWidth != null) {
-            formParams.put("ImageWidth", request.imageWidth);
+            formParams.put("imageWidth", request.imageWidth);
         }
 
         if (request.rotationAngle != null) {
-            formParams.put("RotationAngle", request.rotationAngle);
+            formParams.put("rotationAngle", request.rotationAngle);
         }
 
         final String[] accepts = {
@@ -591,8 +574,8 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call barcodeGenerateFormPostValidateBeforeCall(
-            BarcodeGenerateFormPostRequest request,
+    private com.squareup.okhttp.Call barcodeGenerateMultipartPostValidateBeforeCall(
+            BarcodeGenerateMultipartPostRequest request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -601,62 +584,63 @@ public class GenerateApi {
         if (request.barcodeType == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.barcodeType'"
-                            + " when calling barcodeGenerateFormPost(...)");
+                            + " when calling barcodeGenerateMultipartPost(...)");
         }
 
         // verify the required parameter 'request.data' is set
         if (request.data == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.data'"
-                            + " when calling barcodeGenerateFormPost(...)");
+                            + " when calling barcodeGenerateMultipartPost(...)");
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateFormPostCall(request, progressListener, progressRequestListener);
+                barcodeGenerateMultipartPostCall(
+                        request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
-     * Generate barcode using POST request with parameters in url ecncoded form.
+     * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param request See {@link BarcodeGenerateFormPostRequest}
+     * @param request See {@link BarcodeGenerateMultipartPostRequest}
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public File barcodeGenerateFormPost(BarcodeGenerateFormPostRequest request)
+    public File barcodeGenerateMultipartPost(BarcodeGenerateMultipartPostRequest request)
             throws ApiException {
-        ApiResponse<File> resp = barcodeGenerateFormPostWithHttpInfo(request);
+        ApiResponse<File> resp = barcodeGenerateMultipartPostWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
-     * Generate barcode using POST request with parameters in url ecncoded form.
+     * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param request See {@link BarcodeGenerateFormPostRequest}
+     * @param request See {@link BarcodeGenerateMultipartPostRequest}
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<File> barcodeGenerateFormPostWithHttpInfo(
-            BarcodeGenerateFormPostRequest request) throws ApiException {
+    public ApiResponse<File> barcodeGenerateMultipartPostWithHttpInfo(
+            BarcodeGenerateMultipartPostRequest request) throws ApiException {
         com.squareup.okhttp.Call call =
-                barcodeGenerateFormPostValidateBeforeCall(request, null, null);
+                barcodeGenerateMultipartPostValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
 
     /**
-     * Generate barcode using POST request with parameters in url ecncoded form. (asynchronously)
+     * Generate barcode using POST request with parameters in multipart form. (asynchronously)
      *
-     * @param request See {@link BarcodeGenerateFormPostRequest}
+     * @param request See {@link BarcodeGenerateMultipartPostRequest}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call barcodeGenerateFormPostAsync(
-            BarcodeGenerateFormPostRequest request, final ApiCallback<File> callback)
+    public com.squareup.okhttp.Call barcodeGenerateMultipartPostAsync(
+            BarcodeGenerateMultipartPostRequest request, final ApiCallback<File> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -682,7 +666,7 @@ public class GenerateApi {
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateFormPostValidateBeforeCall(
+                barcodeGenerateMultipartPostValidateBeforeCall(
                         request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);

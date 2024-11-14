@@ -4,11 +4,11 @@ import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.api.ScanApi;
-import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanFormPostRequest;
+import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
 
 import java.io.File;
 
@@ -43,15 +43,15 @@ public class Example {
         String text = "Aspose.BarCode for Cloud Sample";
         BarcodeGenerateBarcodeTypeGetRequest request =
                 new BarcodeGenerateBarcodeTypeGetRequest(type, text);
-        request.imageFormat = AvailableBarCodeImageFormat.JPEG;
+        request.imageFormat = BarcodeImageFormat.JPEG;
 
         return api.barcodeGenerateBarcodeTypeGet(request);
     }
 
     private static BarcodeResponseList scanBarcode(ScanApi api, File barcodeImage)
             throws ApiException {
-        BarcodeScanFormPostRequest request = new BarcodeScanFormPostRequest(barcodeImage);
+        BarcodeScanMultipartPostRequest request = new BarcodeScanMultipartPostRequest(barcodeImage);
 
-        return api.barcodeScanFormPost(request);
+        return api.barcodeScanMultipartPost(request);
     }
 }

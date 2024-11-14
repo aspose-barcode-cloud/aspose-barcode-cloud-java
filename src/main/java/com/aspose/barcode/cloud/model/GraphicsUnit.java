@@ -7,18 +7,20 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** TextAlignment. Gets or Sets TextAlignment. */
-@JsonAdapter(TextAlignment.Adapter.class)
-public enum TextAlignment {
-    LEFT("Left"),
+/** GraphicsUnit. Subset of Aspose.Drawing.GraphicsUnit. */
+@JsonAdapter(GraphicsUnit.Adapter.class)
+public enum GraphicsUnit {
+    PIXEL("Pixel"),
 
-    CENTER("Center"),
+    POINT("Point"),
 
-    RIGHT("Right");
+    INCH("Inch"),
+
+    MILLIMETER("Millimeter");
 
     private final String value;
 
-    TextAlignment(String value) {
+    GraphicsUnit(String value) {
         this.value = value;
     }
 
@@ -31,9 +33,9 @@ public enum TextAlignment {
         return String.valueOf(value);
     }
 
-    /** Create TextAlignment from String. */
-    public static TextAlignment fromValue(String text) {
-        for (TextAlignment b : TextAlignment.values()) {
+    /** Create GraphicsUnit from String. */
+    public static GraphicsUnit fromValue(String text) {
+        for (GraphicsUnit b : GraphicsUnit.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -42,17 +44,17 @@ public enum TextAlignment {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<TextAlignment> {
+    public static class Adapter extends TypeAdapter<GraphicsUnit> {
         @Override
-        public void write(final JsonWriter jsonWriter, final TextAlignment enumeration)
+        public void write(final JsonWriter jsonWriter, final GraphicsUnit enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public TextAlignment read(final JsonReader jsonReader) throws IOException {
+        public GraphicsUnit read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return TextAlignment.fromValue(String.valueOf(value));
+            return GraphicsUnit.fromValue(String.valueOf(value));
         }
     }
 }

@@ -10,21 +10,27 @@ import java.io.IOException;
 /** DecodeBarcodeType. See Aspose.BarCode.Aspose.BarCode.BarCodeRecognition.DecodeType */
 @JsonAdapter(DecodeBarcodeType.Adapter.class)
 public enum DecodeBarcodeType {
-    MOST_COMMONLY_USED("mostCommonlyUsed"),
+    MOST_COMMONLY_USED("MostCommonlyUsed"),
+
+    QR("QR"),
 
     AUSTRALIA_POST("AustraliaPost"),
 
+    AUSTRALIAN_POSTE_PARCEL("AustralianPosteParcel"),
+
     AZTEC("Aztec"),
 
-    ISBN("ISBN"),
-
     CODABAR("Codabar"),
+
+    CODABLOCK_F("CodablockF"),
 
     CODE11("Code11"),
 
     CODE128("Code128"),
 
-    GS1_CODE128("GS1Code128"),
+    CODE16_K("Code16K"),
+
+    CODE32("Code32"),
 
     CODE39("Code39"),
 
@@ -32,13 +38,33 @@ public enum DecodeBarcodeType {
 
     CODE93("Code93"),
 
-    CODE93_FULL_ASCII("Code93FullASCII"),
+    COMPACT_PDF417("CompactPdf417"),
+
+    DATA_LOGIC2OF5("DataLogic2of5"),
 
     DATA_MATRIX("DataMatrix"),
+
+    DATABAR_EXPANDED("DatabarExpanded"),
+
+    DATABAR_EXPANDED_STACKED("DatabarExpandedStacked"),
+
+    DATABAR_LIMITED("DatabarLimited"),
+
+    DATABAR_OMNI_DIRECTIONAL("DatabarOmniDirectional"),
+
+    DATABAR_STACKED("DatabarStacked"),
+
+    DATABAR_STACKED_OMNI_DIRECTIONAL("DatabarStackedOmniDirectional"),
+
+    DATABAR_TRUNCATED("DatabarTruncated"),
 
     DEUTSCHE_POST_IDENTCODE("DeutschePostIdentcode"),
 
     DEUTSCHE_POST_LEITCODE("DeutschePostLeitcode"),
+
+    DOT_CODE("DotCode"),
+
+    DUTCH_KIX("DutchKIX"),
 
     EAN13("EAN13"),
 
@@ -46,23 +72,73 @@ public enum DecodeBarcodeType {
 
     EAN8("EAN8"),
 
+    GS1_AZTEC("GS1Aztec"),
+
+    GS1_CODE128("GS1Code128"),
+
+    GS1_COMPOSITE_BAR("GS1CompositeBar"),
+
+    GS1_DATA_MATRIX("GS1DataMatrix"),
+
+    GS1_DOT_CODE("GS1DotCode"),
+
+    GS1_HAN_XIN("GS1HanXin"),
+
+    GS1_MICRO_PDF417("GS1MicroPdf417"),
+
+    GS1_QR("GS1QR"),
+
+    HAN_XIN("HanXin"),
+
+    HIBC_AZTEC_LIC("HIBCAztecLIC"),
+
+    HIBC_AZTEC_PAS("HIBCAztecPAS"),
+
+    HIBC_CODE128_LIC("HIBCCode128LIC"),
+
+    HIBC_CODE128_PAS("HIBCCode128PAS"),
+
+    HIBC_CODE39_LIC("HIBCCode39LIC"),
+
+    HIBC_CODE39_PAS("HIBCCode39PAS"),
+
+    HIBC_DATA_MATRIX_LIC("HIBCDataMatrixLIC"),
+
+    HIBC_DATA_MATRIX_PAS("HIBCDataMatrixPAS"),
+
+    HIBCQRLIC("HIBCQRLIC"),
+
+    HIBCQRPAS("HIBCQRPAS"),
+
     IATA2OF5("IATA2of5"),
 
-    INTERLEAVED2OF5("Interleaved2of5"),
-
-    ISSN("ISSN"),
+    ISBN("ISBN"),
 
     ISMN("ISMN"),
 
-    ITALIAN_POST25("ItalianPost25"),
+    ISSN("ISSN"),
 
     ITF14("ITF14"),
 
     ITF6("ITF6"),
 
+    INTERLEAVED2OF5("Interleaved2of5"),
+
+    ITALIAN_POST25("ItalianPost25"),
+
     MACRO_PDF417("MacroPdf417"),
 
+    MAILMARK("Mailmark"),
+
     MATRIX2OF5("Matrix2of5"),
+
+    MAXI_CODE("MaxiCode"),
+
+    MICR_E13_B("MicrE13B"),
+
+    MICRO_PDF417("MicroPdf417"),
+
+    MICRO_QR("MicroQR"),
 
     MSI("MSI"),
 
@@ -74,17 +150,13 @@ public enum DecodeBarcodeType {
 
     PDF417("Pdf417"),
 
-    MICRO_PDF417("MicroPdf417"),
+    PHARMACODE("Pharmacode"),
 
     PLANET("Planet"),
 
     POSTNET("Postnet"),
 
     PZN("PZN"),
-
-    QR("QR"),
-
-    MICRO_QR("MicroQR"),
 
     RECT_MICRO_QR("RectMicroQR"),
 
@@ -98,87 +170,13 @@ public enum DecodeBarcodeType {
 
     SUPPLEMENT("Supplement"),
 
+    SWISS_POST_PARCEL("SwissPostParcel"),
+
     UPCA("UPCA"),
 
     UPCE("UPCE"),
 
-    VIN("VIN"),
-
-    PHARMACODE("Pharmacode"),
-
-    GS1_DATA_MATRIX("GS1DataMatrix"),
-
-    DATABAR_OMNI_DIRECTIONAL("DatabarOmniDirectional"),
-
-    DATABAR_TRUNCATED("DatabarTruncated"),
-
-    DATABAR_LIMITED("DatabarLimited"),
-
-    DATABAR_EXPANDED("DatabarExpanded"),
-
-    SWISS_POST_PARCEL("SwissPostParcel"),
-
-    AUSTRALIAN_POSTE_PARCEL("AustralianPosteParcel"),
-
-    CODE16_K("Code16K"),
-
-    DATABAR_STACKED_OMNI_DIRECTIONAL("DatabarStackedOmniDirectional"),
-
-    DATABAR_STACKED("DatabarStacked"),
-
-    DATABAR_EXPANDED_STACKED("DatabarExpandedStacked"),
-
-    COMPACT_PDF417("CompactPdf417"),
-
-    GS1_QR("GS1QR"),
-
-    MAXI_CODE("MaxiCode"),
-
-    MICR_E13_B("MicrE13B"),
-
-    CODE32("Code32"),
-
-    DATA_LOGIC2OF5("DataLogic2of5"),
-
-    DOT_CODE("DotCode"),
-
-    DUTCH_KIX("DutchKIX"),
-
-    CODABLOCK_F("CodablockF"),
-
-    MAILMARK("Mailmark"),
-
-    GS1_DOT_CODE("GS1DotCode"),
-
-    HIBC_CODE39_LIC("HIBCCode39LIC"),
-
-    HIBC_CODE128_LIC("HIBCCode128LIC"),
-
-    HIBC_AZTEC_LIC("HIBCAztecLIC"),
-
-    HIBC_DATA_MATRIX_LIC("HIBCDataMatrixLIC"),
-
-    HIBCQRLIC("HIBCQRLIC"),
-
-    HIBC_CODE39_PAS("HIBCCode39PAS"),
-
-    HIBC_CODE128_PAS("HIBCCode128PAS"),
-
-    HIBC_AZTEC_PAS("HIBCAztecPAS"),
-
-    HIBC_DATA_MATRIX_PAS("HIBCDataMatrixPAS"),
-
-    HIBCQRPAS("HIBCQRPAS"),
-
-    HAN_XIN("HanXin"),
-
-    GS1_HAN_XIN("GS1HanXin"),
-
-    GS1_AZTEC("GS1Aztec"),
-
-    GS1_COMPOSITE_BAR("GS1CompositeBar"),
-
-    GS1_MICRO_PDF417("GS1MicroPdf417");
+    VIN("VIN");
 
     private final String value;
 

@@ -25,12 +25,11 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.AvailableBarCodeImageFormat;
-import com.aspose.barcode.cloud.model.AvailableGraphicsUnit;
+import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
-import com.aspose.barcode.cloud.model.TextAlignment;
+import com.aspose.barcode.cloud.model.GraphicsUnit;
 
 /** Generate barcode using GET request with parameters in route and query string. */
 public class BarcodeGenerateBarcodeTypeGetRequest {
@@ -44,22 +43,13 @@ public class BarcodeGenerateBarcodeTypeGetRequest {
     public EncodeDataType dataType;
 
     /** Barcode output image format. Default value: png. */
-    public AvailableBarCodeImageFormat imageFormat;
-
-    /**
-     * Text that will be displayed instead of codetext in 2D barcodes. Used for: Aztec, Pdf417,
-     * DataMatrix, QR, MaxiCode, DotCode.
-     */
-    public String twoDDisplayText;
+    public BarcodeImageFormat imageFormat;
 
     /**
      * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default
      * value: CodeLocation.Below..
      */
     public CodeLocation textLocation;
-
-    /** Text alignment. Default value: TextAligment.Left. */
-    public TextAlignment textAlignment;
 
     /**
      * Specify the displaying bars and content Color. Value: Color name from
@@ -76,15 +66,22 @@ public class BarcodeGenerateBarcodeTypeGetRequest {
     public String backgroundColor;
 
     /** Common Units for all measuring in query. Default units: pixel.. */
-    public AvailableGraphicsUnit units;
+    public GraphicsUnit units;
 
-    /** Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.. */
+    /**
+     * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
+     * Decimal separator is dot..
+     */
     public Float resolution;
 
-    /** Height of the barcode image in given units. Default units: pixel.. */
+    /**
+     * Height of the barcode image in given units. Default units: pixel. Decimal separator is dot..
+     */
     public Float imageHeight;
 
-    /** Width of the barcode image in given units. Default units: pixel.. */
+    /**
+     * Width of the barcode image in given units. Default units: pixel. Decimal separator is dot..
+     */
     public Float imageWidth;
 
     /**
