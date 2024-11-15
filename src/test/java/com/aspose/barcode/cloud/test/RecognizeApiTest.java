@@ -39,7 +39,7 @@ public class RecognizeApiTest extends TestBase {
     }
 
     @Test
-    public void testBarcodeRecognizeBarcodeTypeGet() throws Exception {
+    public void testBarcodeRecognizeGet() throws Exception {
         BarcodeResponseList response =
                 api.barcodeRecognizeGet(
                         new BarcodeRecognizeGetRequest(
