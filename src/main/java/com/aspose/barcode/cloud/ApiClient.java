@@ -949,9 +949,13 @@ public class ApiClient {
                             .build();
 
             Response response = httpClient.newCall(request).execute();
-            GetAccessTokenResult result =
-                    json.deserialize(response.body().string(), GetAccessTokenResult.class);
-            setAccessToken(result.access_token);
+            if (response.isSuccessful()) {
+                GetAccessTokenResult result =
+                        json.deserialize(response.body().string(), GetAccessTokenResult.class);
+                setAccessToken(result.access_token);
+            } else {
+                throw new ApiException(response.body().string());
+            }
         } catch (Exception ex) {
             throw new ApiException(ex);
         }

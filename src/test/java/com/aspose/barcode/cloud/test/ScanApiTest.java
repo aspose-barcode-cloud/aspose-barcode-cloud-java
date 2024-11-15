@@ -8,8 +8,8 @@ import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.ScanBase64Request;
 import com.aspose.barcode.cloud.requests.BarcodeScanBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
 import com.aspose.barcode.cloud.requests.BarcodeScanGetRequest;
+import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

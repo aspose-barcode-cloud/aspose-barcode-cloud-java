@@ -10,8 +10,8 @@ import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
 import com.aspose.barcode.cloud.model.RecognizeBase64Request;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeGetRequest;
 import com.aspose.barcode.cloud.requests.BarcodeRecognizeBodyPostRequest;
+import com.aspose.barcode.cloud.requests.BarcodeRecognizeGetRequest;
 import com.aspose.barcode.cloud.requests.BarcodeRecognizeMultipartPostRequest;
 
 import org.junit.BeforeClass;
@@ -81,7 +81,8 @@ public class RecognizeApiTest extends TestBase {
     public void testBarcodeRecognizeMultipartPost() throws Exception {
         File file = new File(String.valueOf(Paths.get(testDataFolderPath, "ManyTypes.png")));
         BarcodeRecognizeMultipartPostRequest request =
-                new BarcodeRecognizeMultipartPostRequest(DecodeBarcodeType.MOST_COMMONLY_USED, file);
+                new BarcodeRecognizeMultipartPostRequest(
+                        DecodeBarcodeType.MOST_COMMONLY_USED, file);
         request.recognitionImageKind = RecognitionImageKind.CLEAR_IMAGE;
         request.recognitionMode = RecognitionMode.NORMAL;
 
