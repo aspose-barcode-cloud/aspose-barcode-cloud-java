@@ -111,7 +111,7 @@ public class Example {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        client.setReadTimeout(5 * 60 * 1000);
+        
 
         GenerateApi genApi = new GenerateApi(client);
         ScanApi scanApi = new ScanApi(client);
