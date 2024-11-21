@@ -27,13 +27,14 @@ public class RecognizeBody{
 
         try {
 
-            File file = new File(String.valueOf(Paths.get(testDataFolderPath, "pdf417Sample.png")));
+            File file = new File(String.valueOf(Paths.get(testDataFolderPath, "multi-types.png")));
             byte[] fileContent = Files.readAllBytes(file.toPath());
             String encodedString = Base64.getEncoder().encodeToString(fileContent);
-            
-            RecognizeBase64Request request =
-                    new RecognizeBase64Request(Arrays.asList(DecodeBarcodeType.PDF417), encodedString);
 
+            RecognizeBase64Request request =
+                    new RecognizeBase64Request(Arrays.asList(DecodeBarcodeType.QR, DecodeBarcodeType.PDF417), encodedString);
+
+  
             BarcodeResponseList response =
                     recognizeApi.barcodeRecognizeBodyPost(new BarcodeRecognizeBodyPostRequest(request));
 

@@ -2,13 +2,13 @@ import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.RecognizeApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeMultipartPostRequest;
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.aspose.barcode.cloud.model.RecognitionImageKind;
+import com.aspose.barcode.cloud.model.RecognitionMode;
+import com.aspose.barcode.cloud.requests.BarcodeRecognizeGetRequest;
+import java.net.URI;
 
 
-public class RecognizeMultipart {
+public class RecognizeGet {
     public static void main(String[] args) {
         ApiClient client =
                 new ApiClient(
@@ -16,19 +16,19 @@ public class RecognizeMultipart {
                         "Client Secret from https://dashboard.aspose.cloud/applications");
 
         RecognizeApi recognizeApi = new RecognizeApi(client);
-        Path currentRelativePath = Paths.get("");
-        String currentPath = currentRelativePath.toAbsolutePath().toString();
-        String testDataFolderPath = String.valueOf(Paths.get(currentPath, "test_data"));
 
         try {
 
-        File file = new File(String.valueOf(Paths.get(testDataFolderPath, "QR_and_Code128.png")));
 
-        BarcodeRecognizeMultipartPostRequest request =
-                new BarcodeRecognizeMultipartPostRequest(
-                        DecodeBarcodeType.MOST_COMMONLY_USED, file);
+            BarcodeRecognizeGetRequest request =  new BarcodeRecognizeGetRequest(
+                DecodeBarcodeType.MOST_COMMONLY_USED,
+                new URI(
+                        "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
 
-        BarcodeResponseList response = recognizeApi.barcodeRecognizeMultipartPost(request);
+            request.recognitionImageKind = RecognitionImageKind.PHOTO;
+
+            BarcodeResponseList response =
+            recognizeApi.barcodeRecognizeGet(request);
 
             System.out.print("Barcode on image:");
             System.out.println(response.getBarcodes().get(0).getBarcodeValue());
