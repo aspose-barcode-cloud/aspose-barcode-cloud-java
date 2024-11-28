@@ -14,8 +14,8 @@ import java.util.stream.Collectors;
 public class ManualFetchToken {
     public static void main(String[] args) {
       
-        String clientId = "<Your-Client-Id>";
-        String clientSecret = "<Your-Client-Secret>";
+        String clientId = "Client Id from https://dashboard.aspose.cloud/applications";
+        String clientSecret = "Client Secret from https://dashboard.aspose.cloud/applications";
 
         HttpClient client = HttpClient.newHttpClient();
         
