@@ -13,24 +13,24 @@ public class GenerateGet {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        
 
         GenerateApi generateApi = new GenerateApi(client);
 
         try {
-            BarcodeGenerateBarcodeTypeGetRequest getRequest = 
-            new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
+            BarcodeGenerateBarcodeTypeGetRequest getRequest =
+                    new BarcodeGenerateBarcodeTypeGetRequest(
+                            EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
 
             getRequest.dataType = EncodeDataType.STRING_DATA;
-            
+
             File barcodeImage = generateApi.barcodeGenerateBarcodeTypeGet(getRequest);
 
             System.out.println("Barcode image saved to file " + barcodeImage.getAbsolutePath());
 
-        } catch (ApiException e) {
+        } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
-
 }

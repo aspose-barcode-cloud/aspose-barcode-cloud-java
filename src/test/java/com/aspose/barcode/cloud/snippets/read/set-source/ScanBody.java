@@ -1,4 +1,3 @@
-
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
@@ -25,20 +24,23 @@ public class ScanBody {
 
         try {
 
-        File file = new File(String.valueOf(Paths.get(testDataFolderPath, "QR_and_Code128.png")));
-        byte[] fileContent = Files.readAllBytes(file.toPath());
-        String encodedFile = Base64.getEncoder().encodeToString(fileContent);
+            File file =
+                    new File(String.valueOf(Paths.get(testDataFolderPath, "QR_and_Code128.png")));
+            byte[] fileContent = Files.readAllBytes(file.toPath());
+            String encodedFile = Base64.getEncoder().encodeToString(fileContent);
 
-        ScanBase64Request scanBase64Request = new ScanBase64Request(encodedFile);
+            ScanBase64Request scanBase64Request = new ScanBase64Request(encodedFile);
 
-        BarcodeScanBodyPostRequest scanRequest = new BarcodeScanBodyPostRequest(scanBase64Request);
-        BarcodeResponseList scanResponse = scanApi.barcodeScanBodyPost(scanRequest);
+            BarcodeScanBodyPostRequest scanRequest =
+                    new BarcodeScanBodyPostRequest(scanBase64Request);
+            BarcodeResponseList scanResponse = scanApi.barcodeScanBodyPost(scanRequest);
 
-            System.out.print("Barcode on image:");
+            System.out.print("Barcode value: ");
             System.out.println(scanResponse.getBarcodes().get(0).getBarcodeValue());
         } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }

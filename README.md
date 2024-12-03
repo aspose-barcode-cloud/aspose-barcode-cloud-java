@@ -111,7 +111,6 @@ public class Example {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        
 
         GenerateApi genApi = new GenerateApi(client);
         ScanApi scanApi = new ScanApi(client);

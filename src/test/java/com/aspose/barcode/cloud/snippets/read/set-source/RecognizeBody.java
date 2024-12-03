@@ -1,10 +1,10 @@
-
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.RecognizeApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognizeBase64Request;
 import com.aspose.barcode.cloud.requests.BarcodeRecognizeBodyPostRequest;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,8 +12,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Base64;
 
-
-public class RecognizeBody{
+public class RecognizeBody {
     public static void main(String[] args) {
         ApiClient client =
                 new ApiClient(
@@ -30,18 +29,21 @@ public class RecognizeBody{
             File file = new File(String.valueOf(Paths.get(testDataFolderPath, "pdf417Sample.png")));
             byte[] fileContent = Files.readAllBytes(file.toPath());
             String encodedString = Base64.getEncoder().encodeToString(fileContent);
-            
+
             RecognizeBase64Request request =
-                    new RecognizeBase64Request(Arrays.asList(DecodeBarcodeType.PDF417), encodedString);
+                    new RecognizeBase64Request(
+                            Arrays.asList(DecodeBarcodeType.PDF417), encodedString);
 
             BarcodeResponseList response =
-                    recognizeApi.barcodeRecognizeBodyPost(new BarcodeRecognizeBodyPostRequest(request));
+                    recognizeApi.barcodeRecognizeBodyPost(
+                            new BarcodeRecognizeBodyPostRequest(request));
 
-            System.out.print("Barcode on image:");
+            System.out.print("Barcode value: ");
             System.out.println(response.getBarcodes().get(0).getBarcodeValue());
         } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }

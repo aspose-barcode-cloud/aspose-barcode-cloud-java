@@ -3,10 +3,9 @@ import com.aspose.barcode.cloud.api.RecognizeApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
-import com.aspose.barcode.cloud.model.RecognitionMode;
 import com.aspose.barcode.cloud.requests.BarcodeRecognizeGetRequest;
-import java.net.URI;
 
+import java.net.URI;
 
 public class RecognizeGet {
     public static void main(String[] args) {
@@ -19,22 +18,22 @@ public class RecognizeGet {
 
         try {
 
-
-            BarcodeRecognizeGetRequest request =  new BarcodeRecognizeGetRequest(
-                DecodeBarcodeType.MOST_COMMONLY_USED,
-                new URI(
-                        "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
+            BarcodeRecognizeGetRequest request =
+                    new BarcodeRecognizeGetRequest(
+                            DecodeBarcodeType.MOST_COMMONLY_USED,
+                            new URI(
+                                    "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
 
             request.recognitionImageKind = RecognitionImageKind.PHOTO;
 
-            BarcodeResponseList response =
-            recognizeApi.barcodeRecognizeGet(request);
+            BarcodeResponseList response = recognizeApi.barcodeRecognizeGet(request);
 
-            System.out.print("Barcode on image:");
+            System.out.print("Barcode value: ");
             System.out.println(response.getBarcodes().get(0).getBarcodeValue());
         } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }

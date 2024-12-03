@@ -1,4 +1,3 @@
-
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
@@ -18,17 +17,18 @@ public class ScanGet {
         try {
 
             BarcodeScanGetRequest scanRequest =
-            new BarcodeScanGetRequest(
-                    new URI(
-                            "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
+                    new BarcodeScanGetRequest(
+                            new URI(
+                                    "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
 
-    BarcodeResponseList scanResponse = scanApi.barcodeScanGet(scanRequest);
+            BarcodeResponseList scanResponse = scanApi.barcodeScanGet(scanRequest);
 
-            System.out.print("Barcode on image:");
+            System.out.print("Barcode value: ");
             System.out.println(scanResponse.getBarcodes().get(0).getBarcodeValue());
         } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }

@@ -1,4 +1,3 @@
-
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
@@ -7,7 +6,6 @@ import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 
 public class ScanMultipart {
     public static void main(String[] args) {
@@ -23,17 +21,19 @@ public class ScanMultipart {
 
         try {
 
-        File file = new File(String.valueOf(Paths.get(testDataFolderPath, "QR_and_Code128.png")));
+            File file =
+                    new File(String.valueOf(Paths.get(testDataFolderPath, "QR_and_Code128.png")));
 
-        BarcodeScanMultipartPostRequest scanRequest = new BarcodeScanMultipartPostRequest(file);
+            BarcodeScanMultipartPostRequest scanRequest = new BarcodeScanMultipartPostRequest(file);
 
-        BarcodeResponseList scanResponse = scanApi.barcodeScanMultipartPost(scanRequest);
+            BarcodeResponseList scanResponse = scanApi.barcodeScanMultipartPost(scanRequest);
 
-            System.out.print("Barcode on image:");
+            System.out.print("Barcode value: ");
             System.out.println(scanResponse.getBarcodes().get(0).getBarcodeValue());
         } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }

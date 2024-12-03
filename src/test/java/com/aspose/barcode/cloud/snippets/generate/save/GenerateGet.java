@@ -5,10 +5,9 @@ import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
 
-
 import java.io.File;
-import java.io.FileOutputStream;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class GenerateGet {
@@ -17,26 +16,29 @@ public class GenerateGet {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        
 
         GenerateApi generateApi = new GenerateApi(client);
 
         try {
-            BarcodeGenerateBarcodeTypeGetRequest request = 
-                        new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType.CODE128, "Aspose.BarCode.Cloud");
+            BarcodeGenerateBarcodeTypeGetRequest request =
+                    new BarcodeGenerateBarcodeTypeGetRequest(
+                            EncodeBarcodeType.CODE128, "Aspose.BarCode.Cloud");
 
             request.imageFormat = BarcodeImageFormat.PNG;
-        
+
             File barcodeImage = generateApi.barcodeGenerateBarcodeTypeGet(request);
 
-            File destination = new File("barcode.png");
-            Files.move(barcodeImage.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            File destination =  Paths.get("test_data","Code128.png").toFile();
+            Files.move(
+                    barcodeImage.toPath(),
+                    destination.toPath(),
+                    StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Barcode image saved to file " + destination.getAbsolutePath());
 
-        } catch (ApiException e) {
+        } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
-
 }

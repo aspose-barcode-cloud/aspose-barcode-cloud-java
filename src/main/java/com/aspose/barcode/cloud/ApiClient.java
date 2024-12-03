@@ -42,8 +42,8 @@ public class ApiClient {
     public final String apiVersion = "v4.0";
     public final String clientVersion = "24.7.0";
 
-    private String baseUrl = "";
-    private String tokenUrl = baseUrl + "/connect/token";
+    private String baseUrl = "https://barcode.qa.aspose.cloud";
+    private String tokenUrl = "https://id-qa.aspose.cloud/connect/token";
     private String clientId;
     private String clientSecret;
     private boolean debugging = false;

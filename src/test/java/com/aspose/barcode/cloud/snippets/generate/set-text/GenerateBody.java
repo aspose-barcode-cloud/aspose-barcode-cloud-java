@@ -15,24 +15,24 @@ public class GenerateBody {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        
 
         GenerateApi generateApi = new GenerateApi(client);
 
         try {
-        EncodeData encodeData = new EncodeData("QXNwb3NlLkJhckNvZGUuQ2xvdWQ=");
-        encodeData.setDataType(EncodeDataType.BASE64_BYTES);
+            EncodeData encodeData = new EncodeData("QXNwb3NlLkJhckNvZGUuQ2xvdWQ=");
+            encodeData.setDataType(EncodeDataType.BASE64_BYTES);
 
-        GenerateParams postParams = new GenerateParams(EncodeBarcodeType.PDF417, encodeData);
-        BarcodeGenerateBodyPostRequest postRequest = new BarcodeGenerateBodyPostRequest(postParams);
-        File barcodeImage = generateApi.barcodeGenerateBodyPost(postRequest);
+            GenerateParams postParams = new GenerateParams(EncodeBarcodeType.PDF417, encodeData);
+            BarcodeGenerateBodyPostRequest postRequest =
+                    new BarcodeGenerateBodyPostRequest(postParams);
+            File barcodeImage = generateApi.barcodeGenerateBodyPost(postRequest);
 
             System.out.println("Barcode image saved to file " + barcodeImage.getAbsolutePath());
 
-        } catch (ApiException e) {
+        } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
-
 }

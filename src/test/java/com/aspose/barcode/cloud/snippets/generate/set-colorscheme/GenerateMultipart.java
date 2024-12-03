@@ -13,24 +13,24 @@ public class GenerateMultipart {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        
+
         GenerateApi generateApi = new GenerateApi(client);
 
         try {
-            BarcodeGenerateMultipartPostRequest request = new BarcodeGenerateMultipartPostRequest(
-                EncodeBarcodeType.CODE39, "Aspose");
+            BarcodeGenerateMultipartPostRequest request =
+                    new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType.CODE39, "Aspose");
             request.foregroundColor = "Green";
             request.backgroundColor = "Yellow";
             request.imageFormat = BarcodeImageFormat.GIF;
-        
+
             File barcodeFile = generateApi.barcodeGenerateMultipartPost(request);
 
             System.out.println("Barcode image saved to file " + barcodeFile.getAbsolutePath());
 
-        } catch (ApiException e) {
+        } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
-
 }

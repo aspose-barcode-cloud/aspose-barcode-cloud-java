@@ -4,9 +4,7 @@ import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.model.GraphicsUnit;
 import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
-
 
 import java.io.File;
 
@@ -16,13 +14,13 @@ public class GenerateGet {
                 new ApiClient(
                         "Client Id from https://dashboard.aspose.cloud/applications",
                         "Client Secret from https://dashboard.aspose.cloud/applications");
-        
 
         GenerateApi generateApi = new GenerateApi(client);
 
         try {
-            BarcodeGenerateBarcodeTypeGetRequest request = new BarcodeGenerateBarcodeTypeGetRequest(
-                EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
+            BarcodeGenerateBarcodeTypeGetRequest request =
+                    new BarcodeGenerateBarcodeTypeGetRequest(
+                            EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
 
             request.imageFormat = BarcodeImageFormat.PNG;
             request.foregroundColor = "Black";
@@ -32,15 +30,14 @@ public class GenerateGet {
             request.imageWidth = 200f;
             request.resolution = 300f;
 
-        
-             File barcodeImage = generateApi.barcodeGenerateBarcodeTypeGet(request);
+            File barcodeImage = generateApi.barcodeGenerateBarcodeTypeGet(request);
 
             System.out.println("Barcode image saved to file " + barcodeImage.getAbsolutePath());
 
-        } catch (ApiException e) {
+        } catch (Exception e) {
             System.err.println("Error");
             e.printStackTrace();
+            System.exit(1);
         }
     }
-
 }
