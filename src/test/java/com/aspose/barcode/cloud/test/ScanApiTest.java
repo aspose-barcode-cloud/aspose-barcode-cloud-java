@@ -7,9 +7,9 @@ import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.ScanBase64Request;
-import com.aspose.barcode.cloud.requests.BarcodeScanBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanGetRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
+import com.aspose.barcode.cloud.requests.ScanBase64RequestWrapper;
+import com.aspose.barcode.cloud.requests.ScanMultipartRequestWrapper;
+import com.aspose.barcode.cloud.requests.ScanRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -36,9 +36,9 @@ public class ScanApiTest extends TestBase {
     @Test
     public void testBarcodeScanMultipartPost() throws Exception {
         File file = new File(String.valueOf(Paths.get(testDataFolderPath, "pdf417Sample.png")));
-        BarcodeScanMultipartPostRequest scanRequest = new BarcodeScanMultipartPostRequest(file);
+        ScanMultipartRequestWrapper ScanRequestWrapper = new ScanMultipartRequestWrapper(file);
 
-        BarcodeResponseList scanResponse = api.barcodeScanMultipartPost(scanRequest);
+        BarcodeResponseList scanResponse = api.scanMultipart(ScanRequestWrapper);
         assertNotNull(scanResponse);
 
         assertEquals(1, scanResponse.getBarcodes().size());
@@ -58,8 +58,9 @@ public class ScanApiTest extends TestBase {
 
         ScanBase64Request scanBase64Request = new ScanBase64Request(encodedFile);
 
-        BarcodeScanBodyPostRequest scanRequest = new BarcodeScanBodyPostRequest(scanBase64Request);
-        BarcodeResponseList scanResponse = api.barcodeScanBodyPost(scanRequest);
+        ScanBase64RequestWrapper scanRequestWrapper =
+                new ScanBase64RequestWrapper(scanBase64Request);
+        BarcodeResponseList scanResponse = api.scanBase64(scanRequestWrapper);
         assertNotNull(scanResponse);
 
         assertEquals(2, scanResponse.getBarcodes().size());
@@ -73,12 +74,12 @@ public class ScanApiTest extends TestBase {
 
     @Test
     public void testBarcodeScanGet() throws Exception {
-        BarcodeScanGetRequest scanRequest =
-                new BarcodeScanGetRequest(
+        ScanRequestWrapper ScanRequestWrapper =
+                new ScanRequestWrapper(
                         new URI(
                                 "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
 
-        BarcodeResponseList response = api.barcodeScanGet(scanRequest);
+        BarcodeResponseList response = api.scan(ScanRequestWrapper);
         assertNotNull(response);
 
         assertEquals(1, response.getBarcodes().size());

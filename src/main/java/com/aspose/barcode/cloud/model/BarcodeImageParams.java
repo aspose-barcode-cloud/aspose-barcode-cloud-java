@@ -20,10 +20,10 @@ public class BarcodeImageParams {
     private CodeLocation textLocation;
 
     @SerializedName(value = "foregroundColor")
-    private String foregroundColor;
+    private String foregroundColor = "Black";
 
     @SerializedName(value = "backgroundColor")
-    private String backgroundColor;
+    private String backgroundColor = "White";
 
     @SerializedName(value = "units")
     private GraphicsUnit units;
@@ -116,7 +116,7 @@ public class BarcodeImageParams {
 
     /**
      * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
-     * Decimal separator is dot.
+     * Decimal separator is dot. minimum: 1 maximum: 100000
      *
      * @return resolution
      */

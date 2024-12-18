@@ -5,15 +5,15 @@
 ## Enum
 
 
-* `GIF` (value: `"Gif"`)
+* `PNG` (value: `"Png"`)
 
 * `JPEG` (value: `"Jpeg"`)
 
-* `PNG` (value: `"Png"`)
+* `SVG` (value: `"Svg"`)
 
 * `TIFF` (value: `"Tiff"`)
 
-* `SVG` (value: `"Svg"`)
+* `GIF` (value: `"Gif"`)
 
 
 

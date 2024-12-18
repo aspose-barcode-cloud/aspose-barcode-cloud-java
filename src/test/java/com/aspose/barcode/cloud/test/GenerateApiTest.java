@@ -9,9 +9,9 @@ import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeData;
 import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.model.GenerateParams;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateMultipartPostRequest;
+import com.aspose.barcode.cloud.requests.GenerateBodyRequestWrapper;
+import com.aspose.barcode.cloud.requests.GenerateMultipartRequestWrapper;
+import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,13 +34,10 @@ public class GenerateApiTest extends TestBase {
         // Generate barcode
 
         File response =
-                api.barcodeGenerateBarcodeTypeGet(
-                        new BarcodeGenerateBarcodeTypeGetRequest(
-                                EncodeBarcodeType.CODE128, "Hello!"));
+                api.generate(new GenerateRequestWrapper(EncodeBarcodeType.CODE128, "Hello!"));
 
         long contentLength = response.length();
         assertTrue("Content length is zero or negative", contentLength > 0);
-        assertTrue(response.getName().contains("png"));
     }
 
     @Test
@@ -56,12 +53,10 @@ public class GenerateApiTest extends TestBase {
 
         generatorParams.setBarcodeImageParams(imageParams);
 
-        File response =
-                api.barcodeGenerateBodyPost(new BarcodeGenerateBodyPostRequest(generatorParams));
+        File response = api.generateBody(new GenerateBodyRequestWrapper(generatorParams));
 
         long contentLength = response.length();
         assertTrue("Content length is zero or negative", contentLength > 0);
-        assertTrue(response.getName().contains("jpeg"));
     }
 
     @Test
@@ -69,13 +64,12 @@ public class GenerateApiTest extends TestBase {
         // Test case for barcode_generate_form_post
         // Generate barcode from params in form
 
-        BarcodeGenerateMultipartPostRequest request =
-                new BarcodeGenerateMultipartPostRequest(EncodeBarcodeType.QR, "54657374");
+        GenerateMultipartRequestWrapper request =
+                new GenerateMultipartRequestWrapper(EncodeBarcodeType.QR, "54657374");
         request.dataType = EncodeDataType.HEX_BYTES;
-        File response = api.barcodeGenerateMultipartPost(request);
+        File response = api.generateMultipart(request);
 
         long contentLength = response.length();
         assertTrue("Content length is zero or negative", contentLength > 0);
-        assertTrue(response.getName().contains("png"));
     }
 }

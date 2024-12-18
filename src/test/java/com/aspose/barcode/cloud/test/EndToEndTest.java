@@ -9,8 +9,8 @@ import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
+import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
+import com.aspose.barcode.cloud.requests.ScanMultipartRequestWrapper;
 
 import org.junit.Test;
 
@@ -26,20 +26,20 @@ public class EndToEndTest extends TestBase {
         ScanApi scanApi = new ScanApi(apiClient);
 
         // Generate barcode request
-        BarcodeGenerateBarcodeTypeGetRequest genRequest =
-                new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType.QR, "Java SDK Test");
+        GenerateRequestWrapper genRequest =
+                new GenerateRequestWrapper(EncodeBarcodeType.QR, "Java SDK Test");
         genRequest.dataType = EncodeDataType.STRING_DATA;
         genRequest.imageFormat = BarcodeImageFormat.PNG;
 
         // Generate barcode
-        File genResponse = genApi.barcodeGenerateBarcodeTypeGet(genRequest);
+        File genResponse = genApi.generate(genRequest);
 
         // Scan barcode request
-        BarcodeScanMultipartPostRequest scanRequest =
-                new BarcodeScanMultipartPostRequest(genResponse);
+        ScanMultipartRequestWrapper ScanRequestWrapper =
+                new ScanMultipartRequestWrapper(genResponse);
 
         // Scan barcode
-        BarcodeResponseList scanResponse = scanApi.barcodeScanMultipartPost(scanRequest);
+        BarcodeResponseList scanResponse = scanApi.scanMultipart(ScanRequestWrapper);
 
         // Assertions
         assertNotNull(scanResponse);

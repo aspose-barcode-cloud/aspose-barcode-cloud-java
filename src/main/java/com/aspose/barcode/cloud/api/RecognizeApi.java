@@ -52,181 +52,17 @@ public class RecognizeApi {
     }
 
     /**
-     * Build call for barcodeRecognizeBodyPost
+     * Build call for recognize
      *
-     * @param request See {@link BarcodeRecognizeBodyPostRequest}
+     * @param request See {@link RecognizeRequestWrapper}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeRecognizeBodyPostCall(
-            BarcodeRecognizeBodyPostRequest request,
-            final ProgressResponseBody.ProgressListener progressListener,
-            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
-            throws ApiException {
-        Object postBody = request.recognizeBase64Request;
-
-        // create path and map variables
-        String path = "/barcode/recognize-body";
-
-        List<Pair> queryParams = new ArrayList<>();
-        List<Pair> collectionQueryParams = new ArrayList<>();
-        Map<String, String> headerParams = new HashMap<>();
-
-        Map<String, Object> formParams = new HashMap<>();
-        final String[] accepts = {"application/json", "application/xml"};
-        final String accept = apiClient.selectHeaderAccept(accepts);
-        if (accept != null) {
-            headerParams.put("Accept", accept);
-        }
-
-        final String[] contentTypes = {"application/json", "application/xml"};
-        final String contentType = apiClient.selectHeaderContentType(contentTypes);
-        headerParams.put("Content-Type", contentType);
-
-        if (progressListener != null) {
-            apiClient
-                    .getHttpClient()
-                    .networkInterceptors()
-                    .add(
-                            new com.squareup.okhttp.Interceptor() {
-                                @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
-                                        throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
-                                            chain.proceed(chain.request());
-                                    return originalResponse
-                                            .newBuilder()
-                                            .body(
-                                                    new ProgressResponseBody(
-                                                            originalResponse.body(),
-                                                            progressListener))
-                                            .build();
-                                }
-                            });
-        }
-
-        return apiClient.buildCall(
-                path,
-                "POST",
-                queryParams,
-                collectionQueryParams,
-                postBody,
-                headerParams,
-                formParams,
-                progressRequestListener);
-    }
-
-    private com.squareup.okhttp.Call barcodeRecognizeBodyPostValidateBeforeCall(
-            BarcodeRecognizeBodyPostRequest request,
-            final ProgressResponseBody.ProgressListener progressListener,
-            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
-            throws ApiException {
-
-        // verify the required parameter 'request.recognizeBase64Request' is set
-        if (request.recognizeBase64Request == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'request.recognizeBase64Request'"
-                            + " when calling barcodeRecognizeBodyPost(...)");
-        }
-
-        com.squareup.okhttp.Call call =
-                barcodeRecognizeBodyPostCall(request, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * Recognize barcode from file in request body using POST requests with parameters in body in
-     * json or xml format.
-     *
-     * @param request See {@link BarcodeRecognizeBodyPostRequest}
-     * @return BarcodeResponseList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
-     */
-    public BarcodeResponseList barcodeRecognizeBodyPost(BarcodeRecognizeBodyPostRequest request)
-            throws ApiException {
-        ApiResponse<BarcodeResponseList> resp = barcodeRecognizeBodyPostWithHttpInfo(request);
-        return resp.getData();
-    }
-
-    /**
-     * Recognize barcode from file in request body using POST requests with parameters in body in
-     * json or xml format.
-     *
-     * @param request See {@link BarcodeRecognizeBodyPostRequest}
-     * @return ApiResponse&lt;BarcodeResponseList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
-     */
-    public ApiResponse<BarcodeResponseList> barcodeRecognizeBodyPostWithHttpInfo(
-            BarcodeRecognizeBodyPostRequest request) throws ApiException {
-        com.squareup.okhttp.Call call =
-                barcodeRecognizeBodyPostValidateBeforeCall(request, null, null);
-        Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
-        return apiClient.execute(call, returnType);
-    }
-
-    /**
-     * Recognize barcode from file in request body using POST requests with parameters in body in
-     * json or xml format. (asynchronously)
-     *
-     * @param request See {@link BarcodeRecognizeBodyPostRequest}
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
-     */
-    public com.squareup.okhttp.Call barcodeRecognizeBodyPostAsync(
-            BarcodeRecognizeBodyPostRequest request,
-            final ApiCallback<BarcodeResponseList> callback)
-            throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener =
-                    new ProgressResponseBody.ProgressListener() {
-                        @Override
-                        public void update(long bytesRead, long contentLength, boolean done) {
-                            callback.onDownloadProgress(bytesRead, contentLength, done);
-                        }
-                    };
-
-            progressRequestListener =
-                    new ProgressRequestBody.ProgressRequestListener() {
-                        @Override
-                        public void onRequestProgress(
-                                long bytesWritten, long contentLength, boolean done) {
-                            callback.onUploadProgress(bytesWritten, contentLength, done);
-                        }
-                    };
-        }
-
-        com.squareup.okhttp.Call call =
-                barcodeRecognizeBodyPostValidateBeforeCall(
-                        request, progressListener, progressRequestListener);
-        Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
-        apiClient.executeAsync(call, returnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for barcodeRecognizeGet
-     *
-     * @param request See {@link BarcodeRecognizeGetRequest}
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeRecognizeGetCall(
-            BarcodeRecognizeGetRequest request,
+    protected com.squareup.okhttp.Call recognizeCall(
+            RecognizeRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -304,8 +140,8 @@ public class RecognizeApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call barcodeRecognizeGetValidateBeforeCall(
-            BarcodeRecognizeGetRequest request,
+    private com.squareup.okhttp.Call recognizeValidateBeforeCall(
+            RecognizeRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -314,18 +150,18 @@ public class RecognizeApi {
         if (request.barcodeType == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.barcodeType'"
-                            + " when calling barcodeRecognizeGet(...)");
+                            + " when calling recognize(...)");
         }
 
         // verify the required parameter 'request.fileUrl' is set
         if (request.fileUrl == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.fileUrl'"
-                            + " when calling barcodeRecognizeGet(...)");
+                            + " when calling recognize(...)");
         }
 
         com.squareup.okhttp.Call call =
-                barcodeRecognizeGetCall(request, progressListener, progressRequestListener);
+                recognizeCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -333,14 +169,13 @@ public class RecognizeApi {
      * Recognize barcode from file on server using GET requests with parameters in route and query
      * string.
      *
-     * @param request See {@link BarcodeRecognizeGetRequest}
+     * @param request See {@link RecognizeRequestWrapper}
      * @return BarcodeResponseList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public BarcodeResponseList barcodeRecognizeGet(BarcodeRecognizeGetRequest request)
-            throws ApiException {
-        ApiResponse<BarcodeResponseList> resp = barcodeRecognizeGetWithHttpInfo(request);
+    public BarcodeResponseList recognize(RecognizeRequestWrapper request) throws ApiException {
+        ApiResponse<BarcodeResponseList> resp = recognizeWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -348,14 +183,14 @@ public class RecognizeApi {
      * Recognize barcode from file on server using GET requests with parameters in route and query
      * string.
      *
-     * @param request See {@link BarcodeRecognizeGetRequest}
+     * @param request See {@link RecognizeRequestWrapper}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<BarcodeResponseList> barcodeRecognizeGetWithHttpInfo(
-            BarcodeRecognizeGetRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = barcodeRecognizeGetValidateBeforeCall(request, null, null);
+    public ApiResponse<BarcodeResponseList> recognizeWithHttpInfo(RecognizeRequestWrapper request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = recognizeValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -364,14 +199,14 @@ public class RecognizeApi {
      * Recognize barcode from file on server using GET requests with parameters in route and query
      * string. (asynchronously)
      *
-     * @param request See {@link BarcodeRecognizeGetRequest}
+     * @param request See {@link RecognizeRequestWrapper}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call barcodeRecognizeGetAsync(
-            BarcodeRecognizeGetRequest request, final ApiCallback<BarcodeResponseList> callback)
+    public com.squareup.okhttp.Call recognizeAsync(
+            RecognizeRequestWrapper request, final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -397,7 +232,168 @@ public class RecognizeApi {
         }
 
         com.squareup.okhttp.Call call =
-                barcodeRecognizeGetValidateBeforeCall(
+                recognizeValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for recognizeBase64
+     *
+     * @param request See {@link RecognizeBase64RequestWrapper}
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    @SuppressWarnings("removal")
+    protected com.squareup.okhttp.Call recognizeBase64Call(
+            RecognizeBase64RequestWrapper request,
+            final ProgressResponseBody.ProgressListener progressListener,
+            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
+            throws ApiException {
+        Object postBody = request.recognizeBase64Request;
+
+        // create path and map variables
+        String path = "/barcode/recognize-body";
+
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
+        Map<String, String> headerParams = new HashMap<>();
+
+        Map<String, Object> formParams = new HashMap<>();
+        final String[] accepts = {"application/json", "application/xml"};
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
+
+        final String[] contentTypes = {"application/json", "application/xml"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
+
+        if (progressListener != null) {
+            apiClient
+                    .getHttpClient()
+                    .networkInterceptors()
+                    .add(
+                            new com.squareup.okhttp.Interceptor() {
+                                @Override
+                                public com.squareup.okhttp.Response intercept(
+                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                        throws IOException {
+                                    com.squareup.okhttp.Response originalResponse =
+                                            chain.proceed(chain.request());
+                                    return originalResponse
+                                            .newBuilder()
+                                            .body(
+                                                    new ProgressResponseBody(
+                                                            originalResponse.body(),
+                                                            progressListener))
+                                            .build();
+                                }
+                            });
+        }
+
+        return apiClient.buildCall(
+                path,
+                "POST",
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
+                progressRequestListener);
+    }
+
+    private com.squareup.okhttp.Call recognizeBase64ValidateBeforeCall(
+            RecognizeBase64RequestWrapper request,
+            final ProgressResponseBody.ProgressListener progressListener,
+            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
+            throws ApiException {
+
+        // verify the required parameter 'request.recognizeBase64Request' is set
+        if (request.recognizeBase64Request == null) {
+            throw new ApiException(
+                    "Missing the required parameter 'request.recognizeBase64Request'"
+                            + " when calling recognizeBase64(...)");
+        }
+
+        com.squareup.okhttp.Call call =
+                recognizeBase64Call(request, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * Recognize barcode from file in request body using POST requests with parameters in body in
+     * json or xml format.
+     *
+     * @param request See {@link RecognizeBase64RequestWrapper}
+     * @return BarcodeResponseList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     */
+    public BarcodeResponseList recognizeBase64(RecognizeBase64RequestWrapper request)
+            throws ApiException {
+        ApiResponse<BarcodeResponseList> resp = recognizeBase64WithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * Recognize barcode from file in request body using POST requests with parameters in body in
+     * json or xml format.
+     *
+     * @param request See {@link RecognizeBase64RequestWrapper}
+     * @return ApiResponse&lt;BarcodeResponseList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     */
+    public ApiResponse<BarcodeResponseList> recognizeBase64WithHttpInfo(
+            RecognizeBase64RequestWrapper request) throws ApiException {
+        com.squareup.okhttp.Call call = recognizeBase64ValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
+        return apiClient.execute(call, returnType);
+    }
+
+    /**
+     * Recognize barcode from file in request body using POST requests with parameters in body in
+     * json or xml format. (asynchronously)
+     *
+     * @param request See {@link RecognizeBase64RequestWrapper}
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body
+     *     object
+     */
+    public com.squareup.okhttp.Call recognizeBase64Async(
+            RecognizeBase64RequestWrapper request, final ApiCallback<BarcodeResponseList> callback)
+            throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener =
+                    new ProgressResponseBody.ProgressListener() {
+                        @Override
+                        public void update(long bytesRead, long contentLength, boolean done) {
+                            callback.onDownloadProgress(bytesRead, contentLength, done);
+                        }
+                    };
+
+            progressRequestListener =
+                    new ProgressRequestBody.ProgressRequestListener() {
+                        @Override
+                        public void onRequestProgress(
+                                long bytesWritten, long contentLength, boolean done) {
+                            callback.onUploadProgress(bytesWritten, contentLength, done);
+                        }
+                    };
+        }
+
+        com.squareup.okhttp.Call call =
+                recognizeBase64ValidateBeforeCall(
                         request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -405,17 +401,17 @@ public class RecognizeApi {
     }
 
     /**
-     * Build call for barcodeRecognizeMultipartPost
+     * Build call for recognizeMultipart
      *
-     * @param request See {@link BarcodeRecognizeMultipartPostRequest}
+     * @param request See {@link RecognizeMultipartRequestWrapper}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeRecognizeMultipartPostCall(
-            BarcodeRecognizeMultipartPostRequest request,
+    protected com.squareup.okhttp.Call recognizeMultipartCall(
+            RecognizeMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -489,8 +485,8 @@ public class RecognizeApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call barcodeRecognizeMultipartPostValidateBeforeCall(
-            BarcodeRecognizeMultipartPostRequest request,
+    private com.squareup.okhttp.Call recognizeMultipartValidateBeforeCall(
+            RecognizeMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -499,19 +495,18 @@ public class RecognizeApi {
         if (request.barcodeType == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.barcodeType'"
-                            + " when calling barcodeRecognizeMultipartPost(...)");
+                            + " when calling recognizeMultipart(...)");
         }
 
         // verify the required parameter 'request._file' is set
         if (request._file == null) {
             throw new ApiException(
                     "Missing the required parameter 'request._file'"
-                            + " when calling barcodeRecognizeMultipartPost(...)");
+                            + " when calling recognizeMultipart(...)");
         }
 
         com.squareup.okhttp.Call call =
-                barcodeRecognizeMultipartPostCall(
-                        request, progressListener, progressRequestListener);
+                recognizeMultipartCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -519,14 +514,14 @@ public class RecognizeApi {
      * Recognize barcode from file in request body using POST requests with parameters in multipart
      * form.
      *
-     * @param request See {@link BarcodeRecognizeMultipartPostRequest}
+     * @param request See {@link RecognizeMultipartRequestWrapper}
      * @return BarcodeResponseList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public BarcodeResponseList barcodeRecognizeMultipartPost(
-            BarcodeRecognizeMultipartPostRequest request) throws ApiException {
-        ApiResponse<BarcodeResponseList> resp = barcodeRecognizeMultipartPostWithHttpInfo(request);
+    public BarcodeResponseList recognizeMultipart(RecognizeMultipartRequestWrapper request)
+            throws ApiException {
+        ApiResponse<BarcodeResponseList> resp = recognizeMultipartWithHttpInfo(request);
         return resp.getData();
     }
 
@@ -534,15 +529,14 @@ public class RecognizeApi {
      * Recognize barcode from file in request body using POST requests with parameters in multipart
      * form.
      *
-     * @param request See {@link BarcodeRecognizeMultipartPostRequest}
+     * @param request See {@link RecognizeMultipartRequestWrapper}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<BarcodeResponseList> barcodeRecognizeMultipartPostWithHttpInfo(
-            BarcodeRecognizeMultipartPostRequest request) throws ApiException {
-        com.squareup.okhttp.Call call =
-                barcodeRecognizeMultipartPostValidateBeforeCall(request, null, null);
+    public ApiResponse<BarcodeResponseList> recognizeMultipartWithHttpInfo(
+            RecognizeMultipartRequestWrapper request) throws ApiException {
+        com.squareup.okhttp.Call call = recognizeMultipartValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -551,14 +545,14 @@ public class RecognizeApi {
      * Recognize barcode from file in request body using POST requests with parameters in multipart
      * form. (asynchronously)
      *
-     * @param request See {@link BarcodeRecognizeMultipartPostRequest}
+     * @param request See {@link RecognizeMultipartRequestWrapper}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call barcodeRecognizeMultipartPostAsync(
-            BarcodeRecognizeMultipartPostRequest request,
+    public com.squareup.okhttp.Call recognizeMultipartAsync(
+            RecognizeMultipartRequestWrapper request,
             final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
@@ -585,7 +579,7 @@ public class RecognizeApi {
         }
 
         com.squareup.okhttp.Call call =
-                barcodeRecognizeMultipartPostValidateBeforeCall(
+                recognizeMultipartValidateBeforeCall(
                         request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);

@@ -23,6 +23,7 @@ build:
 .PHONY: test
 test:
 	mvn test
+	./scripts/run_snippets.sh
 
 .PHONY: display-updates
 display-updates:

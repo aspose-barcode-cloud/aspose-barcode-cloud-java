@@ -52,17 +52,17 @@ public class GenerateApi {
     }
 
     /**
-     * Build call for barcodeGenerateBarcodeTypeGet
+     * Build call for generate
      *
-     * @param request See {@link BarcodeGenerateBarcodeTypeGetRequest}
+     * @param request See {@link GenerateRequestWrapper}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeGenerateBarcodeTypeGetCall(
-            BarcodeGenerateBarcodeTypeGetRequest request,
+    protected com.squareup.okhttp.Call generateCall(
+            GenerateRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -178,8 +178,8 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call barcodeGenerateBarcodeTypeGetValidateBeforeCall(
-            BarcodeGenerateBarcodeTypeGetRequest request,
+    private com.squareup.okhttp.Call generateValidateBeforeCall(
+            GenerateRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -188,48 +188,45 @@ public class GenerateApi {
         if (request.barcodeType == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.barcodeType'"
-                            + " when calling barcodeGenerateBarcodeTypeGet(...)");
+                            + " when calling generate(...)");
         }
 
         // verify the required parameter 'request.data' is set
         if (request.data == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.data'"
-                            + " when calling barcodeGenerateBarcodeTypeGet(...)");
+                            + " when calling generate(...)");
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateBarcodeTypeGetCall(
-                        request, progressListener, progressRequestListener);
+                generateCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Generate barcode using GET request with parameters in route and query string.
      *
-     * @param request See {@link BarcodeGenerateBarcodeTypeGetRequest}
+     * @param request See {@link GenerateRequestWrapper}
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public File barcodeGenerateBarcodeTypeGet(BarcodeGenerateBarcodeTypeGetRequest request)
-            throws ApiException {
-        ApiResponse<File> resp = barcodeGenerateBarcodeTypeGetWithHttpInfo(request);
+    public File generate(GenerateRequestWrapper request) throws ApiException {
+        ApiResponse<File> resp = generateWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Generate barcode using GET request with parameters in route and query string.
      *
-     * @param request See {@link BarcodeGenerateBarcodeTypeGetRequest}
+     * @param request See {@link GenerateRequestWrapper}
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<File> barcodeGenerateBarcodeTypeGetWithHttpInfo(
-            BarcodeGenerateBarcodeTypeGetRequest request) throws ApiException {
-        com.squareup.okhttp.Call call =
-                barcodeGenerateBarcodeTypeGetValidateBeforeCall(request, null, null);
+    public ApiResponse<File> generateWithHttpInfo(GenerateRequestWrapper request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = generateValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -238,15 +235,14 @@ public class GenerateApi {
      * Generate barcode using GET request with parameters in route and query string.
      * (asynchronously)
      *
-     * @param request See {@link BarcodeGenerateBarcodeTypeGetRequest}
+     * @param request See {@link GenerateRequestWrapper}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call barcodeGenerateBarcodeTypeGetAsync(
-            BarcodeGenerateBarcodeTypeGetRequest request, final ApiCallback<File> callback)
-            throws ApiException {
+    public com.squareup.okhttp.Call generateAsync(
+            GenerateRequestWrapper request, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -271,25 +267,24 @@ public class GenerateApi {
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateBarcodeTypeGetValidateBeforeCall(
-                        request, progressListener, progressRequestListener);
+                generateValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
 
     /**
-     * Build call for barcodeGenerateBodyPost
+     * Build call for generateBody
      *
-     * @param request See {@link BarcodeGenerateBodyPostRequest}
+     * @param request See {@link GenerateBodyRequestWrapper}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeGenerateBodyPostCall(
-            BarcodeGenerateBodyPostRequest request,
+    protected com.squareup.okhttp.Call generateBodyCall(
+            GenerateBodyRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -356,8 +351,8 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call barcodeGenerateBodyPostValidateBeforeCall(
-            BarcodeGenerateBodyPostRequest request,
+    private com.squareup.okhttp.Call generateBodyValidateBeforeCall(
+            GenerateBodyRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -366,40 +361,38 @@ public class GenerateApi {
         if (request.generateParams == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.generateParams'"
-                            + " when calling barcodeGenerateBodyPost(...)");
+                            + " when calling generateBody(...)");
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateBodyPostCall(request, progressListener, progressRequestListener);
+                generateBodyCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Generate barcode using POST request with parameters in body in json or xml format.
      *
-     * @param request See {@link BarcodeGenerateBodyPostRequest}
+     * @param request See {@link GenerateBodyRequestWrapper}
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public File barcodeGenerateBodyPost(BarcodeGenerateBodyPostRequest request)
-            throws ApiException {
-        ApiResponse<File> resp = barcodeGenerateBodyPostWithHttpInfo(request);
+    public File generateBody(GenerateBodyRequestWrapper request) throws ApiException {
+        ApiResponse<File> resp = generateBodyWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Generate barcode using POST request with parameters in body in json or xml format.
      *
-     * @param request See {@link BarcodeGenerateBodyPostRequest}
+     * @param request See {@link GenerateBodyRequestWrapper}
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<File> barcodeGenerateBodyPostWithHttpInfo(
-            BarcodeGenerateBodyPostRequest request) throws ApiException {
-        com.squareup.okhttp.Call call =
-                barcodeGenerateBodyPostValidateBeforeCall(request, null, null);
+    public ApiResponse<File> generateBodyWithHttpInfo(GenerateBodyRequestWrapper request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = generateBodyValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -408,14 +401,14 @@ public class GenerateApi {
      * Generate barcode using POST request with parameters in body in json or xml format.
      * (asynchronously)
      *
-     * @param request See {@link BarcodeGenerateBodyPostRequest}
+     * @param request See {@link GenerateBodyRequestWrapper}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call barcodeGenerateBodyPostAsync(
-            BarcodeGenerateBodyPostRequest request, final ApiCallback<File> callback)
+    public com.squareup.okhttp.Call generateBodyAsync(
+            GenerateBodyRequestWrapper request, final ApiCallback<File> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -441,25 +434,24 @@ public class GenerateApi {
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateBodyPostValidateBeforeCall(
-                        request, progressListener, progressRequestListener);
+                generateBodyValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
         return call;
     }
 
     /**
-     * Build call for barcodeGenerateMultipartPost
+     * Build call for generateMultipart
      *
-     * @param request See {@link BarcodeGenerateMultipartPostRequest}
+     * @param request See {@link GenerateMultipartRequestWrapper}
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call barcodeGenerateMultipartPostCall(
-            BarcodeGenerateMultipartPostRequest request,
+    protected com.squareup.okhttp.Call generateMultipartCall(
+            GenerateMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -574,8 +566,8 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call barcodeGenerateMultipartPostValidateBeforeCall(
-            BarcodeGenerateMultipartPostRequest request,
+    private com.squareup.okhttp.Call generateMultipartValidateBeforeCall(
+            GenerateMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
@@ -584,48 +576,45 @@ public class GenerateApi {
         if (request.barcodeType == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.barcodeType'"
-                            + " when calling barcodeGenerateMultipartPost(...)");
+                            + " when calling generateMultipart(...)");
         }
 
         // verify the required parameter 'request.data' is set
         if (request.data == null) {
             throw new ApiException(
                     "Missing the required parameter 'request.data'"
-                            + " when calling barcodeGenerateMultipartPost(...)");
+                            + " when calling generateMultipart(...)");
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateMultipartPostCall(
-                        request, progressListener, progressRequestListener);
+                generateMultipartCall(request, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param request See {@link BarcodeGenerateMultipartPostRequest}
+     * @param request See {@link GenerateMultipartRequestWrapper}
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public File barcodeGenerateMultipartPost(BarcodeGenerateMultipartPostRequest request)
-            throws ApiException {
-        ApiResponse<File> resp = barcodeGenerateMultipartPostWithHttpInfo(request);
+    public File generateMultipart(GenerateMultipartRequestWrapper request) throws ApiException {
+        ApiResponse<File> resp = generateMultipartWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
      * Generate barcode using POST request with parameters in multipart form.
      *
-     * @param request See {@link BarcodeGenerateMultipartPostRequest}
+     * @param request See {@link GenerateMultipartRequestWrapper}
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
      *     response body
      */
-    public ApiResponse<File> barcodeGenerateMultipartPostWithHttpInfo(
-            BarcodeGenerateMultipartPostRequest request) throws ApiException {
-        com.squareup.okhttp.Call call =
-                barcodeGenerateMultipartPostValidateBeforeCall(request, null, null);
+    public ApiResponse<File> generateMultipartWithHttpInfo(GenerateMultipartRequestWrapper request)
+            throws ApiException {
+        com.squareup.okhttp.Call call = generateMultipartValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -633,14 +622,14 @@ public class GenerateApi {
     /**
      * Generate barcode using POST request with parameters in multipart form. (asynchronously)
      *
-     * @param request See {@link BarcodeGenerateMultipartPostRequest}
+     * @param request See {@link GenerateMultipartRequestWrapper}
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call barcodeGenerateMultipartPostAsync(
-            BarcodeGenerateMultipartPostRequest request, final ApiCallback<File> callback)
+    public com.squareup.okhttp.Call generateMultipartAsync(
+            GenerateMultipartRequestWrapper request, final ApiCallback<File> callback)
             throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -666,7 +655,7 @@ public class GenerateApi {
         }
 
         com.squareup.okhttp.Call call =
-                barcodeGenerateMultipartPostValidateBeforeCall(
+                generateMultipartValidateBeforeCall(
                         request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);

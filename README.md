@@ -100,8 +100,8 @@ import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
-import com.aspose.barcode.cloud.requests.BarcodeScanMultipartPostRequest;
+import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
+import com.aspose.barcode.cloud.requests.ScanMultipartRequestWrapper;
 
 import java.io.File;
 
@@ -133,18 +133,17 @@ public class Example {
     private static File generateBarcode(GenerateApi api) throws ApiException {
         EncodeBarcodeType type = EncodeBarcodeType.QR;
         String text = "Aspose.BarCode for Cloud Sample";
-        BarcodeGenerateBarcodeTypeGetRequest request =
-                new BarcodeGenerateBarcodeTypeGetRequest(type, text);
+        GenerateRequestWrapper request = new GenerateRequestWrapper(type, text);
         request.imageFormat = BarcodeImageFormat.JPEG;
 
-        return api.barcodeGenerateBarcodeTypeGet(request);
+        return api.generate(request);
     }
 
     private static BarcodeResponseList scanBarcode(ScanApi api, File barcodeImage)
             throws ApiException {
-        BarcodeScanMultipartPostRequest request = new BarcodeScanMultipartPostRequest(barcodeImage);
+        ScanMultipartRequestWrapper request = new ScanMultipartRequestWrapper(barcodeImage);
 
-        return api.barcodeScanMultipartPost(request);
+        return api.scanMultipart(request);
     }
 }
 
@@ -165,19 +164,19 @@ All Aspose.BarCode for Cloud SDKs, helper scripts and templates are licensed und
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *<https://barcode.qa.aspose.cloud/v4.0>*
+All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*GenerateApi* | [**barcodeGenerateBarcodeTypeGet**](docs/GenerateApi.md#barcodeGenerateBarcodeTypeGet) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
-*GenerateApi* | [**barcodeGenerateBodyPost**](docs/GenerateApi.md#barcodeGenerateBodyPost) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**barcodeGenerateMultipartPost**](docs/GenerateApi.md#barcodeGenerateMultipartPost) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
-*RecognizeApi* | [**barcodeRecognizeBodyPost**](docs/RecognizeApi.md#barcodeRecognizeBodyPost) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**barcodeRecognizeGet**](docs/RecognizeApi.md#barcodeRecognizeGet) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
-*RecognizeApi* | [**barcodeRecognizeMultipartPost**](docs/RecognizeApi.md#barcodeRecognizeMultipartPost) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
-*ScanApi* | [**barcodeScanBodyPost**](docs/ScanApi.md#barcodeScanBodyPost) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**barcodeScanGet**](docs/ScanApi.md#barcodeScanGet) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
-*ScanApi* | [**barcodeScanMultipartPost**](docs/ScanApi.md#barcodeScanMultipartPost) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
+*GenerateApi* | [**generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
+*GenerateApi* | [**generateBody**](docs/GenerateApi.md#generateBody) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
+*GenerateApi* | [**generateMultipart**](docs/GenerateApi.md#generateMultipart) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
+*RecognizeApi* | [**recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+*RecognizeApi* | [**recognizeBase64**](docs/RecognizeApi.md#recognizeBase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+*RecognizeApi* | [**recognizeMultipart**](docs/RecognizeApi.md#recognizeMultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+*ScanApi* | [**scan**](docs/ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server using GET requests with parameter in query string.
+*ScanApi* | [**scanBase64**](docs/ScanApi.md#scanBase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+*ScanApi* | [**scanMultipart**](docs/ScanApi.md#scanMultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
 
 ## Documentation for Models
 
@@ -196,9 +195,9 @@ Class | Method | HTTP request | Description
 - [GraphicsUnit](docs/GraphicsUnit.md)
 - [RecognitionImageKind](docs/RecognitionImageKind.md)
 - [RecognitionMode](docs/RecognitionMode.md)
-- [RecognizeBase64Request](docs/RecognizeBase64Request.md)
+- [RecognizeBase64RequestWrapper](docs/RecognizeBase64RequestWrapper.md)
 - [RegionPoint](docs/RegionPoint.md)
-- [ScanBase64Request](docs/ScanBase64Request.md)
+- [ScanBase64RequestWrapper](docs/ScanBase64RequestWrapper.md)
 
 ## Documentation for Authorization
 
@@ -208,7 +207,7 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
-- **Authorization URL**: <https://id-qa.aspose.cloud/connect/token>
+- **Authorization URL**: <https://id.aspose.cloud/connect/token>
 
 ## Recommendation
 

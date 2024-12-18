@@ -10,15 +10,15 @@ import java.io.IOException;
 /** BarcodeImageFormat. Specifies the file format of the image. */
 @JsonAdapter(BarcodeImageFormat.Adapter.class)
 public enum BarcodeImageFormat {
-    GIF("Gif"),
+    PNG("Png"),
 
     JPEG("Jpeg"),
 
-    PNG("Png"),
+    SVG("Svg"),
 
     TIFF("Tiff"),
 
-    SVG("Svg");
+    GIF("Gif");
 
     private final String value;
 

@@ -1,6 +1,6 @@
 
 
-# RecognizeBase64Request
+# RecognizeBase64RequestWrapper
 
 Barcode recognize request
 

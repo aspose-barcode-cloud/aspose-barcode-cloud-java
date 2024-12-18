@@ -8,8 +8,8 @@ import java.nio.file.Files;
 public class Configuration {
     public String ClientId = "Client Id from https://dashboard.aspose.cloud/applications";
     public String ClientSecret = "Client Secret from https://dashboard.aspose.cloud/applications";
-    public String ApiBaseUrl = "https://barcode.qa.aspose.cloud";
-    public String TokenUrl = "https://id-qa.aspose.cloud/connect/token";
+    public String ApiBaseUrl = "https://api.aspose.cloud";
+    public String TokenUrl = "https://id.aspose.cloud/connect/token";
     public String AccessToken = null;
 
     /** Build ApiClient from configuration. */

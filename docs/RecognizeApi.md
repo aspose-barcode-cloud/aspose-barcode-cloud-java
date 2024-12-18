@@ -1,68 +1,20 @@
 # RecognizeApi
 
-All URIs are relative to *<https://barcode.qa.aspose.cloud/v4.0>*
+All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**barcodeRecognizeBodyPost**](RecognizeApi.md#barcodeRecognizeBodyPost) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-[**barcodeRecognizeGet**](RecognizeApi.md#barcodeRecognizeGet) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
-[**barcodeRecognizeMultipartPost**](RecognizeApi.md#barcodeRecognizeMultipartPost) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+[**recognize**](RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server using GET requests with parameters in route and query string.
+[**recognizeBase64**](RecognizeApi.md#recognizeBase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+[**recognizeMultipart**](RecognizeApi.md#recognizeMultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
 
-## barcodeRecognizeBodyPost
+## recognize
 
-> BarcodeResponseList barcodeRecognizeBodyPost(recognizeBase64Request)
-
-Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-
-### barcodeRecognizeBodyPost example
-
-```java
-// Import classes:
-import com.aspose.barcode.cloud.ApiClient;
-import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.Configuration;
-import com.aspose.barcode.cloud.auth.*;
-import com.aspose.barcode.cloud.api.RecognizeApi;
-
-public class Main {
-
-    public static void main(String[] args) {
-
-        ApiClient client = new ApiClient(
-            "Client Id from https://dashboard.aspose.cloud/applications",
-            "Client Secret from https://dashboard.aspose.cloud/applications"
-        );
-
-        RecognizeApi api = new RecognizeApi(client);
-        RecognizeBase64Request recognizeBase64Request = new RecognizeBase64Request(); // RecognizeBase64Request | Barcode recognition request
-        try {
-            BarcodeResponseList result = api.barcodeRecognizeBodyPost(recognizeBase64Request);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling RecognizeApi.barcodeRecognizeBodyPost");
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### barcodeRecognizeBodyPost parameters
-
-Name | Type | Description  | Notes
----- | ---- | ------------ | -----
- **recognizeBase64Request** | [**RecognizeBase64Request**](RecognizeBase64Request.md)| Barcode recognition request |
-
-### barcodeRecognizeBodyPost return type
-
-[**BarcodeResponseList**](BarcodeResponseList.md)
-
-## barcodeRecognizeGet
-
-> BarcodeResponseList barcodeRecognizeGet(barcodeType, fileUrl, recognitionMode, recognitionImageKind)
+> BarcodeResponseList recognize(barcodeType, fileUrl, recognitionMode, recognitionImageKind)
 
 Recognize barcode from file on server using GET requests with parameters in route and query string.
 
-### barcodeRecognizeGet example
+### recognize example
 
 ```java
 // Import classes:
@@ -85,17 +37,17 @@ public class Main {
         DecodeBarcodeType barcodeType = DecodeBarcodeType.fromValue("MostCommonlyUsed"); // DecodeBarcodeType | Type of barcode to recognize
         URI fileUrl = new URI(); // URI | Url to barcode image
         try {
-            BarcodeResponseList result = api.barcodeRecognizeGet(barcodeType, fileUrl);
+            BarcodeResponseList result = api.recognize(barcodeType, fileUrl);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling RecognizeApi.barcodeRecognizeGet");
+            System.err.println("Exception when calling RecognizeApi.recognize");
             e.printStackTrace();
         }
     }
 }
 ```
 
-### barcodeRecognizeGet parameters
+### recognize parameters
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
@@ -104,17 +56,65 @@ Name | Type | Description  | Notes
  **recognitionMode** | [**RecognitionMode**](.md)| Recognition mode | [optional] [enum: Fast, Normal, Excellent]
  **recognitionImageKind** | [**RecognitionImageKind**](.md)| Image kind for recognition | [optional] [enum: Photo, ScannedDocument, ClearImage]
 
-### barcodeRecognizeGet return type
+### recognize return type
 
 [**BarcodeResponseList**](BarcodeResponseList.md)
 
-## barcodeRecognizeMultipartPost
+## recognizeBase64
 
-> BarcodeResponseList barcodeRecognizeMultipartPost(barcodeType, _file, recognitionMode, recognitionImageKind)
+> BarcodeResponseList recognizeBase64(RecognizeBase64RequestWrapper)
+
+Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+
+### recognizeBase64 example
+
+```java
+// Import classes:
+import com.aspose.barcode.cloud.ApiClient;
+import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.Configuration;
+import com.aspose.barcode.cloud.auth.*;
+import com.aspose.barcode.cloud.api.RecognizeApi;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ApiClient client = new ApiClient(
+            "Client Id from https://dashboard.aspose.cloud/applications",
+            "Client Secret from https://dashboard.aspose.cloud/applications"
+        );
+
+        RecognizeApi api = new RecognizeApi(client);
+        RecognizeBase64RequestWrapper RecognizeBase64RequestWrapper = new RecognizeBase64RequestWrapper(); // RecognizeBase64RequestWrapper | Barcode recognition request
+        try {
+            BarcodeResponseList result = api.recognizeBase64(RecognizeBase64RequestWrapper);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RecognizeApi.recognizeBase64");
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### recognizeBase64 parameters
+
+Name | Type | Description  | Notes
+---- | ---- | ------------ | -----
+ **RecognizeBase64RequestWrapper** | [**RecognizeBase64RequestWrapper**](RecognizeBase64RequestWrapper.md)| Barcode recognition request |
+
+### recognizeBase64 return type
+
+[**BarcodeResponseList**](BarcodeResponseList.md)
+
+## recognizeMultipart
+
+> BarcodeResponseList recognizeMultipart(barcodeType, _file, recognitionMode, recognitionImageKind)
 
 Recognize barcode from file in request body using POST requests with parameters in multipart form.
 
-### barcodeRecognizeMultipartPost example
+### recognizeMultipart example
 
 ```java
 // Import classes:
@@ -137,17 +137,17 @@ public class Main {
         DecodeBarcodeType barcodeType = DecodeBarcodeType.fromValue("MostCommonlyUsed"); // DecodeBarcodeType | 
         File _file = new File("/path/to/file"); // File | Barcode image file
         try {
-            BarcodeResponseList result = api.barcodeRecognizeMultipartPost(barcodeType, _file);
+            BarcodeResponseList result = api.recognizeMultipart(barcodeType, _file);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling RecognizeApi.barcodeRecognizeMultipartPost");
+            System.err.println("Exception when calling RecognizeApi.recognizeMultipart");
             e.printStackTrace();
         }
     }
 }
 ```
 
-### barcodeRecognizeMultipartPost parameters
+### recognizeMultipart parameters
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
  **recognitionMode** | [**RecognitionMode**](RecognitionMode.md)|  | [optional] [enum: Fast, Normal, Excellent]
  **recognitionImageKind** | [**RecognitionImageKind**](RecognitionImageKind.md)|  | [optional] [enum: Photo, ScannedDocument, ClearImage]
 
-### barcodeRecognizeMultipartPost return type
+### recognizeMultipart return type
 
 [**BarcodeResponseList**](BarcodeResponseList.md)
 

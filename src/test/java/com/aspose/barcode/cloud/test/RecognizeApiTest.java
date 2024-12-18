@@ -10,9 +10,9 @@ import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
 import com.aspose.barcode.cloud.model.RecognizeBase64Request;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeBodyPostRequest;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeGetRequest;
-import com.aspose.barcode.cloud.requests.BarcodeRecognizeMultipartPostRequest;
+import com.aspose.barcode.cloud.requests.RecognizeBase64RequestWrapper;
+import com.aspose.barcode.cloud.requests.RecognizeMultipartRequestWrapper;
+import com.aspose.barcode.cloud.requests.RecognizeRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,8 +41,8 @@ public class RecognizeApiTest extends TestBase {
     @Test
     public void testBarcodeRecognizeGet() throws Exception {
         BarcodeResponseList response =
-                api.barcodeRecognizeGet(
-                        new BarcodeRecognizeGetRequest(
+                api.recognize(
+                        new RecognizeRequestWrapper(
                                 DecodeBarcodeType.QR,
                                 new URI(
                                         "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png")));
@@ -65,7 +65,7 @@ public class RecognizeApiTest extends TestBase {
         request.setRecognitionMode(RecognitionMode.FAST);
 
         BarcodeResponseList response =
-                api.barcodeRecognizeBodyPost(new BarcodeRecognizeBodyPostRequest(request));
+                api.recognizeBase64(new RecognizeBase64RequestWrapper(request));
 
         assertNotNull(response);
         assertEquals(1, response.getBarcodes().size());
@@ -80,13 +80,12 @@ public class RecognizeApiTest extends TestBase {
     @Test
     public void testBarcodeRecognizeMultipartPost() throws Exception {
         File file = new File(String.valueOf(Paths.get(testDataFolderPath, "ManyTypes.png")));
-        BarcodeRecognizeMultipartPostRequest request =
-                new BarcodeRecognizeMultipartPostRequest(
-                        DecodeBarcodeType.MOST_COMMONLY_USED, file);
+        RecognizeMultipartRequestWrapper request =
+                new RecognizeMultipartRequestWrapper(DecodeBarcodeType.MOST_COMMONLY_USED, file);
         request.recognitionImageKind = RecognitionImageKind.CLEAR_IMAGE;
         request.recognitionMode = RecognitionMode.NORMAL;
 
-        BarcodeResponseList response = api.barcodeRecognizeMultipartPost(request);
+        BarcodeResponseList response = api.recognizeMultipart(request);
 
         assertNotNull(response);
         assertEquals(3, response.getBarcodes().size());

@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.requests.BarcodeGenerateBarcodeTypeGetRequest;
+import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -22,12 +22,11 @@ public class ExceptionTest extends TestBase {
 
     @Test
     public void ExceptionMessageParsed() {
-        BarcodeGenerateBarcodeTypeGetRequest request =
-                new BarcodeGenerateBarcodeTypeGetRequest(EncodeBarcodeType.QR, "");
+        GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "");
 
         boolean thrown = false;
         try {
-            api.barcodeGenerateBarcodeTypeGet(request);
+            api.generate(request);
         } catch (ApiException e) {
             thrown = true;
             System.err.println(e);
@@ -35,7 +34,7 @@ public class ExceptionTest extends TestBase {
             assertEquals("Bad Request", e.getMessage());
             assertEquals("com.aspose.barcode.cloud.ApiException: Bad Request", e.toString());
             assertEquals(
-                    "errorInvalidInputData: 1. Field name: 'Data'. Errors: The Data field is required."
+                    "errorInvalidInputData: Error: Field name: 'Data' errors: The Data field is required."
                             + "Operation Failed. The input data is not valid.",
                     e.getDetails().replace("\r", ""));
         }

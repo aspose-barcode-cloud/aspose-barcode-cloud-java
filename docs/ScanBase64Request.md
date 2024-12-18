@@ -1,6 +1,6 @@
 
 
-# ScanBase64Request
+# ScanBase64RequestWrapper
 
 Scan barcode request.
 
