@@ -955,6 +955,9 @@ public class ApiClient {
                             .build();
 
             Response response = httpClient.newCall(request).execute();
+            if (response.code() != 200) {
+                throw new ApiException("Error fetching token: " + response.message(), response.code());
+            }
             GetAccessTokenResult result =
                     json.deserialize(response.body().string(), GetAccessTokenResult.class);
             setAccessToken(result.access_token);
