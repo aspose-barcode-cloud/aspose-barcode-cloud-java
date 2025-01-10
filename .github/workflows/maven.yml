@@ -32,5 +32,6 @@ jobs:
         TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
       run: mvn test
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile
+    # TODO: Move to pack.yml
+    # - name: Build the Docker image
+    #   run: docker build . --file Dockerfile
