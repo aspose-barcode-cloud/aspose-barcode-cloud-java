@@ -31,10 +31,9 @@ jobs:
       env:
         TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
       run: |
-        mvn test
         chmod +x scripts/*
-        ls target/lib
-        ./scripts/run_snippets.sh
+        make build
+        make test
 
     # TODO: Move to pack.yml
     # - name: Build the Docker image
