@@ -19,6 +19,12 @@ public class ManualFetchToken {
         String clientId = "Client Id from https://dashboard.aspose.cloud/applications";
         String clientSecret = "Client Secret from https://dashboard.aspose.cloud/applications";
 
+        // Check the client_id is changed to not break GitHub CI pipeline
+        if (clientId.startsWith("Client Id")) {
+            System.out.println("client_id not configured. Skip this snippet test");
+            return;
+        }
+
         HttpClient client = HttpClient.newHttpClient();
 
         // Form the payload

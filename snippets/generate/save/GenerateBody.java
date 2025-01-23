@@ -14,10 +14,17 @@ import java.nio.file.StandardCopyOption;
 
 public class GenerateBody {
     public static void main(String[] args) {
-        ApiClient client =
-                new ApiClient(
-                        "Client Id from https://dashboard.aspose.cloud/applications",
-                        "Client Secret from https://dashboard.aspose.cloud/applications");
+        String accessToken = System.getenv("TEST_CONFIGURATION_ACCESS_TOKEN");
+        ApiClient client;
+
+        if (accessToken != null && !accessToken.isEmpty()) {
+            client = new Configuration(accessToken);
+        } else {
+            client =
+                    new Configuration(
+                            "Client Id from https://dashboard.aspose.cloud/applications",
+                            "Client Secret from https://dashboard.aspose.cloud/applications");
+        }
 
         GenerateApi generateApi = new GenerateApi(client);
 
