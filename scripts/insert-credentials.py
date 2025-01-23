@@ -10,7 +10,7 @@ def replace_values_in_file(text_file_path, json_file_path, output_folder_path):
                 os.makedirs(output_folder_path, exist_ok=True)
 
                 # Generate the output file path
-                output_file_path = os.path.join(output_folder_path, os.path.basename(text_file_path))
+                output_file_path = os.path.join(output_folder_path, "Snippet.java")
 
                 # Write the original content to the output file
                 with open(text_file_path, 'r') as text_file, open(output_file_path, 'w') as output_file:

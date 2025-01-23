@@ -61,7 +61,7 @@ public class ScanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call scanCall(
+    protected okhttp3.Call scanCall(
             ScanRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -96,12 +96,11 @@ public class ScanApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -125,7 +124,7 @@ public class ScanApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call scanValidateBeforeCall(
+    private okhttp3.Call scanValidateBeforeCall(
             ScanRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -137,8 +136,7 @@ public class ScanApi {
                     "Missing the required parameter 'request.fileUrl'" + " when calling scan(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                scanCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = scanCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -165,7 +163,7 @@ public class ScanApi {
      */
     public ApiResponse<BarcodeResponseList> scanWithHttpInfo(ScanRequestWrapper request)
             throws ApiException {
-        com.squareup.okhttp.Call call = scanValidateBeforeCall(request, null, null);
+        okhttp3.Call call = scanValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -180,7 +178,7 @@ public class ScanApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call scanAsync(
+    public okhttp3.Call scanAsync(
             ScanRequestWrapper request, final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
@@ -206,7 +204,7 @@ public class ScanApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 scanValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -223,7 +221,7 @@ public class ScanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call scanBase64Call(
+    protected okhttp3.Call scanBase64Call(
             ScanBase64RequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -253,12 +251,11 @@ public class ScanApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -282,7 +279,7 @@ public class ScanApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call scanBase64ValidateBeforeCall(
+    private okhttp3.Call scanBase64ValidateBeforeCall(
             ScanBase64RequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -295,8 +292,7 @@ public class ScanApi {
                             + " when calling scanBase64(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                scanBase64Call(request, progressListener, progressRequestListener);
+        okhttp3.Call call = scanBase64Call(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -325,7 +321,7 @@ public class ScanApi {
      */
     public ApiResponse<BarcodeResponseList> scanBase64WithHttpInfo(ScanBase64RequestWrapper request)
             throws ApiException {
-        com.squareup.okhttp.Call call = scanBase64ValidateBeforeCall(request, null, null);
+        okhttp3.Call call = scanBase64ValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -340,7 +336,7 @@ public class ScanApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call scanBase64Async(
+    public okhttp3.Call scanBase64Async(
             ScanBase64RequestWrapper request, final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
@@ -366,7 +362,7 @@ public class ScanApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 scanBase64ValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -383,7 +379,7 @@ public class ScanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call scanMultipartCall(
+    protected okhttp3.Call scanMultipartCall(
             ScanMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -417,12 +413,11 @@ public class ScanApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -446,7 +441,7 @@ public class ScanApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call scanMultipartValidateBeforeCall(
+    private okhttp3.Call scanMultipartValidateBeforeCall(
             ScanMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -459,8 +454,7 @@ public class ScanApi {
                             + " when calling scanMultipart(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                scanMultipartCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = scanMultipartCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -488,7 +482,7 @@ public class ScanApi {
      */
     public ApiResponse<BarcodeResponseList> scanMultipartWithHttpInfo(
             ScanMultipartRequestWrapper request) throws ApiException {
-        com.squareup.okhttp.Call call = scanMultipartValidateBeforeCall(request, null, null);
+        okhttp3.Call call = scanMultipartValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -503,7 +497,7 @@ public class ScanApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call scanMultipartAsync(
+    public okhttp3.Call scanMultipartAsync(
             ScanMultipartRequestWrapper request, final ApiCallback<BarcodeResponseList> callback)
             throws ApiException {
 
@@ -529,7 +523,7 @@ public class ScanApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 scanMultipartValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<BarcodeResponseList>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);

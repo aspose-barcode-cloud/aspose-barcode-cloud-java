@@ -61,7 +61,7 @@ public class GenerateApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call generateCall(
+    protected okhttp3.Call generateCall(
             GenerateRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -149,12 +149,11 @@ public class GenerateApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -178,7 +177,7 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call generateValidateBeforeCall(
+    private okhttp3.Call generateValidateBeforeCall(
             GenerateRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -198,8 +197,7 @@ public class GenerateApi {
                             + " when calling generate(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                generateCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = generateCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -226,7 +224,7 @@ public class GenerateApi {
      */
     public ApiResponse<File> generateWithHttpInfo(GenerateRequestWrapper request)
             throws ApiException {
-        com.squareup.okhttp.Call call = generateValidateBeforeCall(request, null, null);
+        okhttp3.Call call = generateValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -241,7 +239,7 @@ public class GenerateApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call generateAsync(
+    public okhttp3.Call generateAsync(
             GenerateRequestWrapper request, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -266,7 +264,7 @@ public class GenerateApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 generateValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -283,7 +281,7 @@ public class GenerateApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call generateBodyCall(
+    protected okhttp3.Call generateBodyCall(
             GenerateBodyRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -322,12 +320,11 @@ public class GenerateApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -351,7 +348,7 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call generateBodyValidateBeforeCall(
+    private okhttp3.Call generateBodyValidateBeforeCall(
             GenerateBodyRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -364,8 +361,7 @@ public class GenerateApi {
                             + " when calling generateBody(...)");
         }
 
-        com.squareup.okhttp.Call call =
-                generateBodyCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = generateBodyCall(request, progressListener, progressRequestListener);
         return call;
     }
 
@@ -392,7 +388,7 @@ public class GenerateApi {
      */
     public ApiResponse<File> generateBodyWithHttpInfo(GenerateBodyRequestWrapper request)
             throws ApiException {
-        com.squareup.okhttp.Call call = generateBodyValidateBeforeCall(request, null, null);
+        okhttp3.Call call = generateBodyValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -407,7 +403,7 @@ public class GenerateApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call generateBodyAsync(
+    public okhttp3.Call generateBodyAsync(
             GenerateBodyRequestWrapper request, final ApiCallback<File> callback)
             throws ApiException {
 
@@ -433,7 +429,7 @@ public class GenerateApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 generateBodyValidateBeforeCall(request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();
         apiClient.executeAsync(call, returnType, callback);
@@ -450,7 +446,7 @@ public class GenerateApi {
      * @throws ApiException If fail to serialize the request body object
      */
     @SuppressWarnings("removal")
-    protected com.squareup.okhttp.Call generateMultipartCall(
+    protected okhttp3.Call generateMultipartCall(
             GenerateMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -537,12 +533,11 @@ public class GenerateApi {
                     .getHttpClient()
                     .networkInterceptors()
                     .add(
-                            new com.squareup.okhttp.Interceptor() {
+                            new okhttp3.Interceptor() {
                                 @Override
-                                public com.squareup.okhttp.Response intercept(
-                                        com.squareup.okhttp.Interceptor.Chain chain)
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
                                         throws IOException {
-                                    com.squareup.okhttp.Response originalResponse =
+                                    okhttp3.Response originalResponse =
                                             chain.proceed(chain.request());
                                     return originalResponse
                                             .newBuilder()
@@ -566,7 +561,7 @@ public class GenerateApi {
                 progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call generateMultipartValidateBeforeCall(
+    private okhttp3.Call generateMultipartValidateBeforeCall(
             GenerateMultipartRequestWrapper request,
             final ProgressResponseBody.ProgressListener progressListener,
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -586,7 +581,7 @@ public class GenerateApi {
                             + " when calling generateMultipart(...)");
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 generateMultipartCall(request, progressListener, progressRequestListener);
         return call;
     }
@@ -614,7 +609,7 @@ public class GenerateApi {
      */
     public ApiResponse<File> generateMultipartWithHttpInfo(GenerateMultipartRequestWrapper request)
             throws ApiException {
-        com.squareup.okhttp.Call call = generateMultipartValidateBeforeCall(request, null, null);
+        okhttp3.Call call = generateMultipartValidateBeforeCall(request, null, null);
         Type returnType = new TypeToken<File>() {}.getType();
         return apiClient.execute(call, returnType);
     }
@@ -628,7 +623,7 @@ public class GenerateApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body
      *     object
      */
-    public com.squareup.okhttp.Call generateMultipartAsync(
+    public okhttp3.Call generateMultipartAsync(
             GenerateMultipartRequestWrapper request, final ApiCallback<File> callback)
             throws ApiException {
 
@@ -654,7 +649,7 @@ public class GenerateApi {
                     };
         }
 
-        com.squareup.okhttp.Call call =
+        okhttp3.Call call =
                 generateMultipartValidateBeforeCall(
                         request, progressListener, progressRequestListener);
         Type returnType = new TypeToken<File>() {}.getType();

@@ -13,10 +13,10 @@ public class RecognizeGet {
         ApiClient client;
 
         if (accessToken != null && !accessToken.isEmpty()) {
-            client = new Configuration(accessToken);
+            client = new ApiClient(accessToken);
         } else {
             client =
-                    new Configuration(
+                    new ApiClient(
                             "Client Id from https://dashboard.aspose.cloud/applications",
                             "Client Secret from https://dashboard.aspose.cloud/applications");
         }
