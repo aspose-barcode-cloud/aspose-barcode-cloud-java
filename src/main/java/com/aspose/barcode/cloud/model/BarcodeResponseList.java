@@ -20,7 +20,7 @@ public class BarcodeResponseList {
     /**
      * .
      *
-     * @param List of barcodes which are present in image.
+     * @param barcodes List of barcodes which are present in image.
      */
     public BarcodeResponseList(List<BarcodeResponse> barcodes) {
         this.barcodes = barcodes;

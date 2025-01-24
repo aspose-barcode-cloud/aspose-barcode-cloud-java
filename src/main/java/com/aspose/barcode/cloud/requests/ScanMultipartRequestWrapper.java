@@ -30,14 +30,14 @@ import java.io.File;
 /** Scan barcode from file in request body using POST requests with parameter in multipart form. */
 public class ScanMultipartRequestWrapper {
     /** Barcode image file. */
-    public final File _file;
+    public final File file;
 
     /**
      * Scan barcode from file in request body using POST requests with parameter in multipart form..
      *
-     * @param _file Barcode image file
+     * @param file Barcode image file
      */
-    public ScanMultipartRequestWrapper(File _file) {
-        this._file = _file;
+    public ScanMultipartRequestWrapper(File file) {
+        this.file = file;
     }
 }

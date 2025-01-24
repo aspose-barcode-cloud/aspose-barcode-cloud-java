@@ -30,8 +30,8 @@ public class RecognizeBase64Request {
     /**
      * .
      *
-     * @param Array of decode types to find on barcode
-     * @param Barcode image bytes encoded as base-64.
+     * @param barcodeTypes Array of decode types to find on barcode
+     * @param fileBase64 Barcode image bytes encoded as base-64.
      */
     public RecognizeBase64Request(List<DecodeBarcodeType> barcodeTypes, String fileBase64) {
         this.barcodeTypes = barcodeTypes;

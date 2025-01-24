@@ -22,8 +22,8 @@ public class ApiErrorResponse {
     /**
      * .
      *
-     * @param Gets or sets request Id.
-     * @param
+     * @param requestId Gets or sets request Id.
+     * @param error Param of type ApiError
      */
     public ApiErrorResponse(String requestId, ApiError error) {
         this.requestId = requestId;

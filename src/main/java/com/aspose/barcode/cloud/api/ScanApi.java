@@ -394,8 +394,8 @@ public class ScanApi {
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
-        if (request._file != null) {
-            formParams.put("file", request._file);
+        if (request.file != null) {
+            formParams.put("file", request.file);
         }
 
         final String[] accepts = {"application/json", "application/xml"};
@@ -447,10 +447,10 @@ public class ScanApi {
             final ProgressRequestBody.ProgressRequestListener progressRequestListener)
             throws ApiException {
 
-        // verify the required parameter 'request._file' is set
-        if (request._file == null) {
+        // verify the required parameter 'request.file' is set
+        if (request.file == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request._file'"
+                    "Missing the required parameter 'request.file'"
                             + " when calling scanMultipart(...)");
         }
 

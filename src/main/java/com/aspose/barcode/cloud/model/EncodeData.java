@@ -22,7 +22,7 @@ public class EncodeData {
     /**
      * .
      *
-     * @param String represents data to encode
+     * @param data String represents data to encode
      */
     public EncodeData(String data) {
         this.data = data;

@@ -35,7 +35,7 @@ public class GenerateBodyRequestWrapper {
     /**
      * Generate barcode using POST request with parameters in body in json or xml format..
      *
-     * @param generateParams
+     * @param generateParams Param of type GenerateParams
      */
     public GenerateBodyRequestWrapper(GenerateParams generateParams) {
         this.generateParams = generateParams;

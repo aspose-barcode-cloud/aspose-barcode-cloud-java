@@ -25,8 +25,8 @@ public class GenerateParams {
     /**
      * .
      *
-     * @param
-     * @param
+     * @param barcodeType Param of type EncodeBarcodeType
+     * @param encodeData Param of type EncodeData
      */
     public GenerateParams(EncodeBarcodeType barcodeType, EncodeData encodeData) {
         this.barcodeType = barcodeType;

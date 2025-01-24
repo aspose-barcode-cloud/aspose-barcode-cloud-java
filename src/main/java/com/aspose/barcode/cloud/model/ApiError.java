@@ -32,8 +32,8 @@ public class ApiError {
     /**
      * .
      *
-     * @param Gets or sets api error code.
-     * @param Gets or sets error message.
+     * @param code Gets or sets api error code.
+     * @param message Gets or sets error message.
      */
     public ApiError(String code, String message) {
         this.code = code;

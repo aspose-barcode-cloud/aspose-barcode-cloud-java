@@ -39,7 +39,7 @@ public class ScanBase64RequestWrapper {
      * Scan barcode from file in request body using POST requests with parameter in body in json or
      * xml format..
      *
-     * @param scanBase64Request
+     * @param scanBase64Request Param of type ScanBase64Request
      */
     public ScanBase64RequestWrapper(ScanBase64Request scanBase64Request) {
         this.scanBase64Request = scanBase64Request;

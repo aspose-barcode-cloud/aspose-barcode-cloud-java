@@ -39,7 +39,7 @@ public class RecognizeBase64RequestWrapper {
      * Recognize barcode from file in request body using POST requests with parameters in body in
      * json or xml format..
      *
-     * @param recognizeBase64Request
+     * @param recognizeBase64Request Param of type RecognizeBase64Request
      */
     public RecognizeBase64RequestWrapper(RecognizeBase64Request recognizeBase64Request) {
         this.recognizeBase64Request = recognizeBase64Request;

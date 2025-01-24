@@ -32,31 +32,33 @@ import java.util.Map;
         value = "org.openapitools.codegen.languages.JavaClientCodegen",
         comments = "Generator version: 7.8.0")
 public class ServerConfiguration {
-    public String URL;
+    public String url;
     public String description;
     public Map<String, ServerVariable> variables;
 
     /**
-     * @param URL A URL to the target host.
-     * @param description A description of the host designated by the URL.
+     * Constructor
+     *
+     * @param url A url to the target host.
+     * @param description A description of the host designated by the url.
      * @param variables A map between a variable name and its value. The value is used for
-     *     substitution in the server's URL template.
+     *     substitution in the server's url template.
      */
     public ServerConfiguration(
-            String URL, String description, Map<String, ServerVariable> variables) {
-        this.URL = URL;
+            String url, String description, Map<String, ServerVariable> variables) {
+        this.url = url;
         this.description = description;
         this.variables = variables;
     }
 
     /**
-     * Format URL template using given variables.
+     * Format url template using given variables.
      *
      * @param variables A map between a variable name and its value.
-     * @return Formatted URL.
+     * @return Formatted url.
      */
-    public String URL(Map<String, String> variables) {
-        String url = this.URL;
+    public String url(Map<String, String> variables) {
+        String url = this.url;
 
         // go through variables and replace placeholders
         for (Map.Entry<String, ServerVariable> variable : this.variables.entrySet()) {
@@ -71,7 +73,7 @@ public class ServerConfiguration {
                     throw new IllegalArgumentException(
                             "The variable "
                                     + name
-                                    + " in the server URL has invalid value "
+                                    + " in the server url has invalid value "
                                     + value
                                     + ".");
                 }
@@ -82,11 +84,11 @@ public class ServerConfiguration {
     }
 
     /**
-     * Format URL template using default server variables.
+     * Format url template using default server variables.
      *
-     * @return Formatted URL.
+     * @return Formatted url.
      */
-    public String URL() {
-        return URL(null);
+    public String url() {
+        return url(null);
     }
 }

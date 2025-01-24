@@ -425,8 +425,8 @@ public class RecognizeApi {
             formParams.put("barcodeType", request.barcodeType);
         }
 
-        if (request._file != null) {
-            formParams.put("file", request._file);
+        if (request.file != null) {
+            formParams.put("file", request.file);
         }
 
         if (request.recognitionMode != null) {
@@ -493,10 +493,10 @@ public class RecognizeApi {
                             + " when calling recognizeMultipart(...)");
         }
 
-        // verify the required parameter 'request._file' is set
-        if (request._file == null) {
+        // verify the required parameter 'request.file' is set
+        if (request.file == null) {
             throw new ApiException(
-                    "Missing the required parameter 'request._file'"
+                    "Missing the required parameter 'request.file'"
                             + " when calling recognizeMultipart(...)");
         }
 

@@ -19,7 +19,7 @@ public class ScanBase64Request {
     /**
      * .
      *
-     * @param Barcode image bytes encoded as base-64.
+     * @param fileBase64 Barcode image bytes encoded as base-64.
      */
     public ScanBase64Request(String fileBase64) {
         this.fileBase64 = fileBase64;

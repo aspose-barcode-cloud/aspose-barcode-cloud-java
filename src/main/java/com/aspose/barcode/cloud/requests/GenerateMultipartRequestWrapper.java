@@ -91,7 +91,7 @@ public class GenerateMultipartRequestWrapper {
     /**
      * Generate barcode using POST request with parameters in multipart form..
      *
-     * @param barcodeType
+     * @param barcodeType Param of type EncodeBarcodeType
      * @param data String represents data to encode
      */
     public GenerateMultipartRequestWrapper(EncodeBarcodeType barcodeType, String data) {

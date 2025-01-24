@@ -40,7 +40,7 @@ public class RecognizeMultipartRequestWrapper {
     public final DecodeBarcodeType barcodeType;
 
     /** Barcode image file. */
-    public final File _file;
+    public final File file;
 
     /** . */
     public RecognitionMode recognitionMode;
@@ -52,11 +52,11 @@ public class RecognizeMultipartRequestWrapper {
      * Recognize barcode from file in request body using POST requests with parameters in multipart
      * form..
      *
-     * @param barcodeType
-     * @param _file Barcode image file
+     * @param barcodeType Param of type DecodeBarcodeType
+     * @param file Barcode image file
      */
-    public RecognizeMultipartRequestWrapper(DecodeBarcodeType barcodeType, File _file) {
+    public RecognizeMultipartRequestWrapper(DecodeBarcodeType barcodeType, File file) {
         this.barcodeType = barcodeType;
-        this._file = _file;
+        this.file = file;
     }
 }
