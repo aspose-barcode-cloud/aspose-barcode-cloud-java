@@ -19,6 +19,7 @@ lint:
 .PHONY: build
 build:
 	mvn compile -Dmaven.test.skip=true
+	mvn dependency:copy-dependencies -DoutputDirectory=target/lib/
 
 .PHONY: test
 test:
