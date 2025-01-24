@@ -5,22 +5,25 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /** Represents information about barcode list. */
 @ApiModel(description = "Represents information about barcode list.")
+@jakarta.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        comments = "Generator version: 7.8.0")
 public class BarcodeResponseList {
     @SerializedName(value = "barcodes")
-    private List<BarcodeResponse> barcodes = null;
+    private List<BarcodeResponse> barcodes;
 
-    /** Add BarcodeResponse. */
-    public void addBarcodesItem(BarcodeResponse barcodesItem) {
-        if (this.barcodes == null) {
-            this.barcodes = new ArrayList<BarcodeResponse>();
-        }
-        this.barcodes.add(barcodesItem);
+    /**
+     * .
+     *
+     * @param barcodes List of barcodes which are present in image.
+     */
+    public BarcodeResponseList(List<BarcodeResponse> barcodes) {
+        this.barcodes = barcodes;
     }
 
     /**
@@ -28,7 +31,7 @@ public class BarcodeResponseList {
      *
      * @return barcodes
      */
-    @ApiModelProperty(value = "Barcodes")
+    @ApiModelProperty(required = true, value = "barcodes")
     public List<BarcodeResponse> getBarcodes() {
         return barcodes;
     }

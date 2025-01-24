@@ -1,11 +1,15 @@
 
+
 # RegionPoint
 
+Wrapper around Drawing.Point for proper specification.
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**X** | **Integer** | X-coordinate | 
-**Y** | **Integer** | Y-coordinate | 
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**x** | **Integer** | X-coordinate |  [optional] |
+|**y** | **Integer** | Y-coordinate |  [optional] |
 
 
 

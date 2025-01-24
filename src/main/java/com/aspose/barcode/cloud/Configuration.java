@@ -9,7 +9,7 @@ public class Configuration {
     public String ClientId = "Client Id from https://dashboard.aspose.cloud/applications";
     public String ClientSecret = "Client Secret from https://dashboard.aspose.cloud/applications";
     public String ApiBaseUrl = "https://api.aspose.cloud";
-    public String TokenUrl = ApiBaseUrl + "/connect/token";
+    public String TokenUrl = "https://id.aspose.cloud/connect/token";
     public String AccessToken = null;
 
     /** Build ApiClient from configuration. */

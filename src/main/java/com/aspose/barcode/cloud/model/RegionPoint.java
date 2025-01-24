@@ -9,39 +9,42 @@ import java.util.Objects;
 
 /** Wrapper around Drawing.Point for proper specification. */
 @ApiModel(description = "Wrapper around Drawing.Point for proper specification.")
+@jakarta.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        comments = "Generator version: 7.8.0")
 public class RegionPoint {
     @SerializedName(value = "x")
-    private Integer X = null;
+    private Integer x;
 
     @SerializedName(value = "y")
-    private Integer Y = null;
+    private Integer y;
 
     /**
      * X-coordinate
      *
-     * @return X
+     * @return x
      */
-    @ApiModelProperty(required = true, value = "X")
+    @ApiModelProperty(value = "x")
     public Integer getX() {
-        return X;
+        return x;
     }
 
-    public void setX(Integer X) {
-        this.X = X;
+    public void setX(Integer x) {
+        this.x = x;
     }
 
     /**
      * Y-coordinate
      *
-     * @return Y
+     * @return y
      */
-    @ApiModelProperty(required = true, value = "Y")
+    @ApiModelProperty(value = "y")
     public Integer getY() {
-        return Y;
+        return y;
     }
 
-    public void setY(Integer Y) {
-        this.Y = Y;
+    public void setY(Integer y) {
+        this.y = y;
     }
 
     @Override
@@ -53,12 +56,12 @@ public class RegionPoint {
             return false;
         }
         RegionPoint regionPoint = (RegionPoint) o;
-        return Objects.equals(this.X, regionPoint.X) && Objects.equals(this.Y, regionPoint.Y);
+        return Objects.equals(this.x, regionPoint.x) && Objects.equals(this.y, regionPoint.y);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(X, Y);
+        return Objects.hash(x, y);
     }
 
     @Override
@@ -66,8 +69,8 @@ public class RegionPoint {
         StringBuilder sb = new StringBuilder();
         sb.append("class RegionPoint {\n");
 
-        sb.append("    X: ").append(toIndentedString(X)).append("\n");
-        sb.append("    Y: ").append(toIndentedString(Y)).append("\n");
+        sb.append("    x: ").append(toIndentedString(x)).append("\n");
+        sb.append("    y: ").append(toIndentedString(y)).append("\n");
         sb.append("}");
         return sb.toString();
     }

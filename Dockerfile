@@ -1,4 +1,4 @@
-FROM maven:3-amazoncorretto-8-debian
+FROM maven:3-amazoncorretto-11-debian
 RUN apt-get update \
     && apt-get install -y make \
     && rm -rf /var/lib/apt/lists/*
