@@ -1,43 +1,41 @@
 package com.aspose.barcode.cloud.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import com.aspose.barcode.cloud.ApiException;
-import com.aspose.barcode.cloud.api.BarcodeApi;
+import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
-import com.aspose.barcode.cloud.requests.GetBarcodeGenerateRequest;
+import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 public class ExceptionTest extends TestBase {
 
-    private static BarcodeApi api;
+    private static GenerateApi api;
 
     @BeforeClass
     public static void oneTimeSetUp() {
-        api = new BarcodeApi(apiClient);
+        api = new GenerateApi(apiClient);
     }
 
     @Test
     public void ExceptionMessageParsed() {
-        GetBarcodeGenerateRequest request =
-                new GetBarcodeGenerateRequest(EncodeBarcodeType.QR.getValue(), "");
+        GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "");
 
-        boolean thrown = false;
+        ApiException thrownE = null;
         try {
-            api.getBarcodeGenerate(request);
+            api.generate(request);
         } catch (ApiException e) {
-            thrown = true;
+            thrownE = e;
             assertEquals(400, e.getHttpCode());
             assertEquals("com.aspose.barcode.cloud.ApiException: Bad Request", e.toString());
             assertEquals(
-                    "errorInvalidInputData: Barcode.Text is not provided.\n"
+                    "errorInvalidInputData: Error: Field name: 'Data' errors: The Data field is required."
                             + "Operation Failed. The input data is not valid.",
                     e.getDetails().replace("\r", ""));
         }
 
-        assertTrue(thrown);
+        assertNotNull(thrownE);
     }
 }

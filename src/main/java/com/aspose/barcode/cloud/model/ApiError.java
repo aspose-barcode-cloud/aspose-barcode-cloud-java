@@ -2,35 +2,50 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import org.threeten.bp.OffsetDateTime;
-
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
-/** ApiError */
+/** Api Error. */
+@ApiModel(description = "Api Error.")
+@jakarta.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        comments = "Generator version: 7.8.0")
 public class ApiError {
     @SerializedName(value = "code")
-    private String code = null;
+    private String code;
 
     @SerializedName(value = "message")
-    private String message = null;
+    private String message;
 
     @SerializedName(value = "description")
-    private String description = null;
+    private String description;
 
     @SerializedName(value = "dateTime")
-    private OffsetDateTime dateTime = null;
+    private OffsetDateTime dateTime;
 
     @SerializedName(value = "innerError")
-    private ApiError innerError = null;
+    private ApiError innerError;
 
     /**
-     * Get code
+     * .
+     *
+     * @param code Gets or sets api error code.
+     * @param message Gets or sets error message.
+     */
+    public ApiError(String code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    /**
+     * Gets or sets api error code.
      *
      * @return code
      */
-    @ApiModelProperty(value = "Code")
+    @ApiModelProperty(required = true, value = "code")
     public String getCode() {
         return code;
     }
@@ -40,11 +55,11 @@ public class ApiError {
     }
 
     /**
-     * Get message
+     * Gets or sets error message.
      *
      * @return message
      */
-    @ApiModelProperty(value = "Message")
+    @ApiModelProperty(required = true, value = "message")
     public String getMessage() {
         return message;
     }
@@ -54,11 +69,11 @@ public class ApiError {
     }
 
     /**
-     * Get description
+     * Gets or sets error description.
      *
      * @return description
      */
-    @ApiModelProperty(value = "Description")
+    @ApiModelProperty(value = "description")
     public String getDescription() {
         return description;
     }
@@ -68,11 +83,11 @@ public class ApiError {
     }
 
     /**
-     * Get dateTime
+     * Gets or sets server datetime.
      *
      * @return dateTime
      */
-    @ApiModelProperty(value = "DateTime")
+    @ApiModelProperty(value = "dateTime")
     public OffsetDateTime getDateTime() {
         return dateTime;
     }
@@ -86,7 +101,7 @@ public class ApiError {
      *
      * @return innerError
      */
-    @ApiModelProperty(value = "InnerError")
+    @ApiModelProperty(value = "innerError")
     public ApiError getInnerError() {
         return innerError;
     }

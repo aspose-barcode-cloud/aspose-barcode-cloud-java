@@ -18,15 +18,14 @@ import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
 
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -40,11 +39,11 @@ import java.util.regex.Pattern;
 
 /** ApiClient. */
 public class ApiClient {
-    public final String apiVersion = "v3.0";
-    public final String clientVersion = "24.12.0";
+    public final String apiVersion = "v4.0";
+    public final String clientVersion = "25.1.0";
 
     private String baseUrl = "https://api.aspose.cloud";
-    private String tokenUrl = baseUrl + "/connect/token";
+    private String tokenUrl = "https://id.aspose.cloud/connect/token";
     private String clientId;
     private String clientSecret;
     private boolean debugging = false;
@@ -89,10 +88,11 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/24.10.0/java");
+        setUserAgent("OpenApi-Generator/25.1.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);
+        setReadTimeout(60_000);
     }
 
     protected ApiClient() {
@@ -671,7 +671,6 @@ public class ApiClient {
         if (response.body() == null) {
             throw new ApiException(response.message(), response.code());
         }
-
         ApiErrorResponse errorResponse;
         try {
             errorResponse = deserialize(response, ApiErrorResponse.class);
@@ -762,8 +761,6 @@ public class ApiClient {
         RequestBody reqBody;
         if (!HttpMethod.permitsRequestBody(method)) {
             reqBody = null;
-        } else if ("application/x-www-form-urlencoded".equals(contentType)) {
-            reqBody = buildRequestBodyForm(formParams);
         } else if ("multipart/form-data".equals(contentType)) {
             reqBody = buildRequestBodyMultipart(formParams);
         } else if (body == null) {
@@ -860,20 +857,6 @@ public class ApiClient {
     }
 
     /**
-     * Build a form-encoding request body with the given form parameters.
-     *
-     * @param formParams Form parameters in the form of Map
-     * @return RequestBody
-     */
-    public RequestBody buildRequestBodyForm(Map<String, Object> formParams) {
-        FormBody.Builder formBuilder = new FormBody.Builder();
-        for (Entry<String, Object> param : formParams.entrySet()) {
-            formBuilder.add(param.getKey(), parameterToString(param.getValue()));
-        }
-        return formBuilder.build();
-    }
-
-    /**
      * Build a multipart (file uploading) request body with the given form parameters, which could
      * contain text fields and file fields.
      *
@@ -912,7 +895,7 @@ public class ApiClient {
                                 "Content-Disposition",
                                 "form-data; name=\"" + param.getKey() + "\"");
                 mpBuilder.addPart(
-                        partHeaders, RequestBody.create(parameterToString(paramValue), null));
+                        partHeaders, RequestBody.create(null, parameterToString(paramValue)));
             }
         }
         return mpBuilder.build();
@@ -955,13 +938,14 @@ public class ApiClient {
                             .build();
 
             Response response = httpClient.newCall(request).execute();
-            if (response.code() != 200) {
-                throw new ApiException(
-                        "Error fetching token: " + response.message(), response.code());
+            String responseBody = response.body().string();
+            if (response.isSuccessful()) {
+                GetAccessTokenResult result =
+                        json.deserialize(responseBody, GetAccessTokenResult.class);
+                setAccessToken(result.access_token);
+            } else {
+                throw new ApiException(responseBody);
             }
-            GetAccessTokenResult result =
-                    json.deserialize(response.body().string(), GetAccessTokenResult.class);
-            setAccessToken(result.access_token);
         } catch (Exception ex) {
             throw new ApiException(ex);
         }
