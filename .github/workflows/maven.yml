@@ -22,7 +22,7 @@ jobs:
         # Use same in Dockerfile
         distribution: 'corretto'
         java-version: 11
-        # cache: 'maven'
+        cache: 'maven'
 
     - name: Maven Compile
       run: mvn compile
