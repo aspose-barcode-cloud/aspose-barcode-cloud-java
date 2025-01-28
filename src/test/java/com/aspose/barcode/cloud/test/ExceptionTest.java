@@ -1,8 +1,5 @@
 package com.aspose.barcode.cloud.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
@@ -10,6 +7,8 @@ import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class ExceptionTest extends TestBase {
 
@@ -24,12 +23,11 @@ public class ExceptionTest extends TestBase {
     public void ExceptionMessageParsed() {
         GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "");
 
-        boolean thrown = false;
+        ApiException thrownE = null;
         try {
             api.generate(request);
         } catch (ApiException e) {
-            thrown = true;
-            System.err.println(e);
+            thrownE = e;
             assertEquals(400, e.getHttpCode());
             assertEquals("com.aspose.barcode.cloud.ApiException: Bad Request", e.toString());
             assertEquals(
@@ -38,6 +36,6 @@ public class ExceptionTest extends TestBase {
                     e.getDetails().replace("\r", ""));
         }
 
-        assertTrue(thrown);
+        assertNotNull(thrownE);
     }
 }
