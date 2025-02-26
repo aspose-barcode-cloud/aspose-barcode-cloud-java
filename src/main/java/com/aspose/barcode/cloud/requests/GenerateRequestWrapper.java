@@ -47,7 +47,8 @@ public class GenerateRequestWrapper {
 
     /**
      * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default
-     * value: CodeLocation.Below..
+     * value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D
+     * Barcodes..
      */
     public CodeLocation textLocation;
 

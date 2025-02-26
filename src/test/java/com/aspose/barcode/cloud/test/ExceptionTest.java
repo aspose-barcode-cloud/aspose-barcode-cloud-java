@@ -1,5 +1,7 @@
 package com.aspose.barcode.cloud.test;
 
+import static org.junit.Assert.*;
+
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
@@ -7,8 +9,6 @@ import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ExceptionTest extends TestBase {
 
