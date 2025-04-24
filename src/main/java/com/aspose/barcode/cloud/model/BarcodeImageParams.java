@@ -120,7 +120,7 @@ public class BarcodeImageParams {
      *
      * @return resolution
      */
-    @ApiModelProperty(value = "resolution")
+    @ApiModelProperty(example = "96", value = "resolution")
     public Float getResolution() {
         return resolution;
     }
@@ -134,7 +134,7 @@ public class BarcodeImageParams {
      *
      * @return imageHeight
      */
-    @ApiModelProperty(value = "imageHeight")
+    @ApiModelProperty(example = "200", value = "imageHeight")
     public Float getImageHeight() {
         return imageHeight;
     }
@@ -148,7 +148,7 @@ public class BarcodeImageParams {
      *
      * @return imageWidth
      */
-    @ApiModelProperty(value = "imageWidth")
+    @ApiModelProperty(example = "200", value = "imageWidth")
     public Float getImageWidth() {
         return imageWidth;
     }
