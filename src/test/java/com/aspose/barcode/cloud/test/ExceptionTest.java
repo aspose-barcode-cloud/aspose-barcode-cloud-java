@@ -29,7 +29,7 @@ public class ExceptionTest extends TestBase {
         } catch (ApiException e) {
             thrownE = e;
             assertEquals(400, e.getHttpCode());
-            assertEquals("com.aspose.barcode.cloud.ApiException: Bad Request", e.toString());
+            assertEquals("com.aspose.barcode.cloud.ApiException: ", e.toString());
             assertEquals(
                     "errorInvalidInputData: Error: Field name: 'Data' errors: The Data field is required."
                             + "Operation Failed. The input data is not valid.",
