@@ -41,7 +41,7 @@ import java.util.regex.Pattern;
 /** ApiClient. */
 public class ApiClient {
     public final String apiVersion = "v3.0";
-    public final String clientVersion = "24.12.0";
+    public final String clientVersion = "24.13.0";
 
     private String baseUrl = "https://api.aspose.cloud";
     private String tokenUrl = baseUrl + "/connect/token";
@@ -680,7 +680,10 @@ public class ApiClient {
                     response.message(), e, response.code(), response.headers().toMultimap());
         }
 
-        throw new ApiException(response.message(), response.code(), errorResponse);
+        throw new ApiException(
+                response.message().isEmpty() ? String.valueOf(response.code()) : response.message(),
+                response.code(),
+                errorResponse);
     }
 
     /**
