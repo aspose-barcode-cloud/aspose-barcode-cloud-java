@@ -680,7 +680,10 @@ public class ApiClient {
                     response.message(), e, response.code(), response.headers().toMultimap());
         }
 
-        throw new ApiException(response.message(), response.code(), errorResponse);
+        throw new ApiException(
+                response.message().isEmpty() ? String.valueOf(response.code()) : response.message(),
+                response.code(),
+                errorResponse);
     }
 
     /**
