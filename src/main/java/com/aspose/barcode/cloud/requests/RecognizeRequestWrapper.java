@@ -32,8 +32,9 @@ import com.aspose.barcode.cloud.model.RecognitionMode;
 import java.net.URI;
 
 /**
- * Recognize barcode from file on server using GET requests with parameters in route and query
- * string.
+ * Recognize barcode from file on server in the Internet using GET requests with parameter in query
+ * string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart`
+ * endpoints instead.
  */
 public class RecognizeRequestWrapper {
     /** Type of barcode to recognize. */
@@ -49,8 +50,9 @@ public class RecognizeRequestWrapper {
     public RecognitionImageKind recognitionImageKind;
 
     /**
-     * Recognize barcode from file on server using GET requests with parameters in route and query
-     * string..
+     * Recognize barcode from file on server in the Internet using GET requests with parameter in
+     * query string. For recognizing files from your hard drive use `recognize-body` or
+     * `recognize-multipart` endpoints instead..
      *
      * @param barcodeType Type of barcode to recognize
      * @param fileUrl Url to barcode image
