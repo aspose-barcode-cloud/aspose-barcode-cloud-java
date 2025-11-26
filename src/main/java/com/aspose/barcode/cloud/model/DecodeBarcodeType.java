@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** DecodeBarcodeType. See Aspose.BarCode.Aspose.BarCode.BarCodeRecognition.DecodeType */
+/** DecodeBarcodeType. See Aspose.BarCode.BarCodeRecognition.DecodeType */
 @JsonAdapter(DecodeBarcodeType.Adapter.class)
 public enum DecodeBarcodeType {
     MOST_COMMONLY_USED("MostCommonlyUsed"),
