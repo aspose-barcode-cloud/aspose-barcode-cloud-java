@@ -3,6 +3,7 @@ package com.aspose.barcode.cloud.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.RecognizeApi;
 import com.aspose.barcode.cloud.model.BarcodeResponse;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
@@ -85,7 +86,14 @@ public class RecognizeApiTest extends TestBase {
         request.recognitionImageKind = RecognitionImageKind.CLEAR_IMAGE;
         request.recognitionMode = RecognitionMode.NORMAL;
 
-        BarcodeResponseList response = api.recognizeMultipart(request);
+        BarcodeResponseList response;
+        try {
+            response = api.recognizeMultipart(request);
+        } catch (ApiException e) {
+            throw new AssertionError(
+                    "recognizeMultipart failed: httpCode=" + e.getHttpCode() + ", details=" + e.getDetails(),
+                    e);
+        }
 
         assertNotNull(response);
         assertEquals(3, response.getBarcodes().size());
