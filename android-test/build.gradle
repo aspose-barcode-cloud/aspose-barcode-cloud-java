@@ -15,10 +15,33 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        androidTest {
+            java {
+                srcDirs = ['../src/test/java']
+                include 'com/aspose/barcode/cloud/api/**'
+            }
+        }
+    }
+
+    testOptions {
+        managedDevices {
+            localDevices {
+                pixel2api30 {
+                    device = "Pixel 2"
+                    apiLevel = 30
+                    systemImageSource = "aosp-atd"
+                }
+            }
+        }
+    }
 }
 
 dependencies {
     implementation files('../target/aspose-barcode-cloud-26.3.0.jar')
-    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'com.squareup.okhttp3:okhttp:5.3.2'
 }
