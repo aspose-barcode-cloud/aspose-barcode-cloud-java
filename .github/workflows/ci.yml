@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: test (Java version ${{ matrix.java-version }})
+    name: test with Java version ${{ matrix.java-version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
