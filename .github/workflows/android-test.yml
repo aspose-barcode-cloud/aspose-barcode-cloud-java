@@ -2,9 +2,9 @@ name: Android Compatibility
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   android-test:
@@ -15,9 +15,9 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: "temurin"
           java-version: 17
-          cache: 'gradle'
+          cache: "gradle"
 
       - name: Build Java library JAR
         run: mvn package -Dmaven.test.skip=true

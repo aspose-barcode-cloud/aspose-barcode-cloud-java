@@ -5,39 +5,35 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
-
+    name: test (Java version ${{ matrix.java-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
         java-version: [11, 21]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK ${{ matrix.java-version }}
-      uses: actions/setup-java@v4
-      with:
-        # Use same in Dockerfile
-        distribution: 'corretto'
-        java-version: ${{ matrix.java-version }}
-        cache: 'maven'
+      - uses: actions/checkout@v4
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          # Use same in Dockerfile
+          distribution: "corretto"
+          java-version: ${{ matrix.java-version }}
+          cache: "maven"
 
-    - name: Maven Compile
-      run: mvn compile
+      - name: Maven Compile
+        run: mvn compile
 
-    - name: Test with Maven
-      env:
-        TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
-      run: |
-        chmod +x scripts/*
-        make build
-        make test
-
-    # TODO: Move to pack.yml
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile
+      - name: Test with Maven
+        env:
+          TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
+        run: |
+          chmod +x scripts/*
+          make build
+          make test
