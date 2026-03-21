@@ -24,6 +24,7 @@ build:
 .PHONY: test
 test:
 	mvn test
+	mvn dependency:copy-dependencies -DoutputDirectory=target/lib/
 	./scripts/run_snippets.sh
 
 .PHONY: display-updates

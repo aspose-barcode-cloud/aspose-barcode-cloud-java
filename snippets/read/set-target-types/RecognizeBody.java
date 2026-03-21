@@ -42,7 +42,7 @@ public class RecognizeBody {
                     new RecognizeBase64Request(
                             Arrays.asList(DecodeBarcodeType.QR, DecodeBarcodeType.CODE128),
                             encodedString);
-            request.setRecognitionMode(RecognitionMode.NORMAL);
+            request.setRecognitionMode(RecognitionMode.FAST);
 
             BarcodeResponseList response =
                     recognizeApi.recognizeBase64(new RecognizeBase64RequestWrapper(request));
