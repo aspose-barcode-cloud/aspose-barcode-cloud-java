@@ -321,8 +321,7 @@ public class GenerateApiUnitTest {
 
     @Test(expected = ApiException.class)
     public void testGenerateMultipart_CallsExecute() throws ApiException {
-        api.generateMultipart(
-                new GenerateMultipartRequestWrapper(EncodeBarcodeType.QR, "test"));
+        api.generateMultipart(new GenerateMultipartRequestWrapper(EncodeBarcodeType.QR, "test"));
     }
 
     @Test(expected = ApiException.class)

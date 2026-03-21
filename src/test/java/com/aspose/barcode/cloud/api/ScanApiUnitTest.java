@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import com.aspose.barcode.cloud.ApiCallback;
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
+import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.ScanBase64Request;
 import com.aspose.barcode.cloud.requests.ScanBase64RequestWrapper;
 import com.aspose.barcode.cloud.requests.ScanMultipartRequestWrapper;
@@ -14,8 +15,6 @@ import okhttp3.Request;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.aspose.barcode.cloud.model.BarcodeResponseList;
 
 import java.io.File;
 import java.net.URI;
@@ -107,7 +106,8 @@ public class ScanApiUnitTest {
 
     @Test
     public void testScanMultipartCall_PathAndMethod() throws ApiException {
-        ScanMultipartRequestWrapper request = new ScanMultipartRequestWrapper(new File("dummy.png"));
+        ScanMultipartRequestWrapper request =
+                new ScanMultipartRequestWrapper(new File("dummy.png"));
         Request httpRequest = api.scanMultipartCall(request, null, null).request();
         assertTrue(httpRequest.url().toString().contains("/barcode/scan-multipart"));
         assertEquals("POST", httpRequest.method());
@@ -143,7 +143,8 @@ public class ScanApiUnitTest {
 
     @Test
     public void testScanMultipartCall_ContentTypeMultipart() throws ApiException {
-        ScanMultipartRequestWrapper request = new ScanMultipartRequestWrapper(new File("dummy.png"));
+        ScanMultipartRequestWrapper request =
+                new ScanMultipartRequestWrapper(new File("dummy.png"));
         Request httpRequest = api.scanMultipartCall(request, null, null).request();
         String contentType = httpRequest.header("Content-Type");
         assertTrue(contentType.contains("multipart/form-data"));

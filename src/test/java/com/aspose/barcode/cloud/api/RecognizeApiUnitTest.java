@@ -7,9 +7,9 @@ import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
-import com.aspose.barcode.cloud.model.RecognizeBase64Request;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
+import com.aspose.barcode.cloud.model.RecognizeBase64Request;
 import com.aspose.barcode.cloud.requests.RecognizeBase64RequestWrapper;
 import com.aspose.barcode.cloud.requests.RecognizeMultipartRequestWrapper;
 import com.aspose.barcode.cloud.requests.RecognizeRequestWrapper;
@@ -51,7 +51,8 @@ public class RecognizeApiUnitTest {
     @Test
     public void testRecognize_NullBarcodeType_ErrorMessage() throws Exception {
         try {
-            api.recognize(new RecognizeRequestWrapper(null, new URI("https://example.com/img.png")));
+            api.recognize(
+                    new RecognizeRequestWrapper(null, new URI("https://example.com/img.png")));
             fail("Expected ApiException");
         } catch (ApiException e) {
             assertTrue(e.getMessage().contains("request.barcodeType"));
@@ -85,14 +86,12 @@ public class RecognizeApiUnitTest {
 
     @Test(expected = ApiException.class)
     public void testRecognizeMultipart_NullBarcodeType_ThrowsApiException() throws ApiException {
-        api.recognizeMultipart(
-                new RecognizeMultipartRequestWrapper(null, new File("dummy.png")));
+        api.recognizeMultipart(new RecognizeMultipartRequestWrapper(null, new File("dummy.png")));
     }
 
     @Test(expected = ApiException.class)
     public void testRecognizeMultipart_NullFile_ThrowsApiException() throws ApiException {
-        api.recognizeMultipart(
-                new RecognizeMultipartRequestWrapper(DecodeBarcodeType.QR, null));
+        api.recognizeMultipart(new RecognizeMultipartRequestWrapper(DecodeBarcodeType.QR, null));
     }
 
     @Test
