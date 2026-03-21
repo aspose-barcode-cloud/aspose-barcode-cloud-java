@@ -13,15 +13,18 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [11, 21]
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 11
+    - name: Set up JDK ${{ matrix.java-version }}
       uses: actions/setup-java@v4
       with:
         # Use same in Dockerfile
         distribution: 'corretto'
-        java-version: 11
+        java-version: ${{ matrix.java-version }}
         cache: 'maven'
 
     - name: Maven Compile

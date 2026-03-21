@@ -1,0 +1,24 @@
+plugins {
+    id 'com.android.library' version '9.1.0'
+}
+
+android {
+    namespace 'com.aspose.barcode.cloud.androidtest'
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 23
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation files('../target/aspose-barcode-cloud-26.3.0.jar')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+}

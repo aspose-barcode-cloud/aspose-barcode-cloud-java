@@ -1,0 +1,26 @@
+name: Android Compatibility
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Java 17 for AGP
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+          cache: 'gradle'
+
+      - name: Build Java library JAR
+        run: mvn package -Dmaven.test.skip=true
+
+      - name: Build Android module
+        run: cd android-test && ./gradlew build
