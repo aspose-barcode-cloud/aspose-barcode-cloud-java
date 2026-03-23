@@ -5,15 +5,6 @@ RUN apt-get update \
 
 WORKDIR /aspose-barcode-cloud-java
 
-# Resolve some dependencies
-# Due to https://issues.apache.org/jira/browse/MDEP-82
-# MVN can't resolve ALL dependencies before build
-COPY ./pom.xml .
-RUN mvn dependency:go-offline -B
-
-# Build the package
 COPY . .
-RUN mvn clean install -Dmaven.test.skip=true
 
-# Publish package
-ENTRYPOINT ["mvn", "deploy"]
+ENTRYPOINT ["mvn", "deploy", "-Dmaven.test.skip=true"]
