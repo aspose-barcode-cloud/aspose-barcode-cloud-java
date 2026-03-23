@@ -40,7 +40,14 @@ android {
 }
 
 dependencies {
-    implementation files('../target/aspose-barcode-cloud-26.3.0.jar')
+    implementation fileTree(
+        dir: '../target',
+        include: ['aspose-barcode-cloud-*.jar'],
+        exclude: [
+            'aspose-barcode-cloud-*-sources.jar',
+            'aspose-barcode-cloud-*-javadoc.jar'
+        ]
+    )
     implementation 'com.google.code.gson:gson:2.13.2'
     implementation 'io.gsonfire:gson-fire:1.9.0'
     implementation 'com.squareup.okhttp3:okhttp:5.3.2'
