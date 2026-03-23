@@ -10,7 +10,10 @@
 build
 aspose-barcode-cloud.iml
 !tools/*
+!**/gradle-wrapper.jar
 .idea
+.gradle
+local.properties
 
 **/configuration*.json
 snippets_test/

@@ -84,14 +84,17 @@ public class RecognizeApiTest extends TestBase {
         RecognizeMultipartRequestWrapper request =
                 new RecognizeMultipartRequestWrapper(DecodeBarcodeType.MOST_COMMONLY_USED, file);
         request.recognitionImageKind = RecognitionImageKind.CLEAR_IMAGE;
-        request.recognitionMode = RecognitionMode.NORMAL;
+        request.recognitionMode = RecognitionMode.FAST;
 
         BarcodeResponseList response;
         try {
             response = api.recognizeMultipart(request);
         } catch (ApiException e) {
             throw new AssertionError(
-                    "recognizeMultipart failed: httpCode=" + e.getHttpCode() + ", details=" + e.getDetails(),
+                    "recognizeMultipart failed: httpCode="
+                            + e.getHttpCode()
+                            + ", details="
+                            + e.getDetails(),
                     e);
         }
 

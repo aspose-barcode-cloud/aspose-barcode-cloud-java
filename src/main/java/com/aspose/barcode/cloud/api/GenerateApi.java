@@ -71,7 +71,7 @@ public class GenerateApi {
         // create path and map variables
         String path =
                 "/barcode/generate/{barcodeType}"
-                        .replaceAll("\\{" + "barcodeType" + "}", request.barcodeType.toString());
+                        .replace("{" + "barcodeType" + "}", request.barcodeType.toString());
 
         List<Pair> queryParams = new ArrayList<>();
         List<Pair> collectionQueryParams = new ArrayList<>();

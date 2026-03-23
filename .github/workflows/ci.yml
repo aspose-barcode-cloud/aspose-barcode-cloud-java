@@ -1,0 +1,77 @@
+name: Java CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: test with Java version ${{ matrix.java-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [11, 21]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          # Use same in Dockerfile
+          distribution: "corretto"
+          java-version: ${{ matrix.java-version }}
+          cache: "maven"
+
+      - name: Maven Compile
+        run: mvn compile
+
+      - name: Test with Maven
+        env:
+          TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
+        run: |
+          chmod +x scripts/*
+          make build
+          make test
+
+  android-test:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Java library JAR
+        run: mvn package -Dmaven.test.skip=true
+
+      - name: Accept Android SDK Licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Cache AVD
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-pixel2-api30-atd
+
+      - name: Run Android Tests
+        working-directory: android-test
+        run: >
+          ./gradlew pixel2api30DebugAndroidTest
+          -Pandroid.testoptions.manageddevices.emulator.gpu=swiftshader_indirect
