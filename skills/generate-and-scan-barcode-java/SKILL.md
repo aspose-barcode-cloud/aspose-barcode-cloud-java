@@ -1,9 +1,9 @@
 ---
-name: aspose-barcode-cloud-java
+name: generate-and-scan-barcode-java
 description: "Write or update Java code that uses the Aspose.BarCode Cloud SDK (`com.aspose.barcode.cloud.*`; Maven artifact `com.aspose:aspose-barcode-cloud`) to generate, recognize, or scan barcodes through Aspose's cloud REST API. Use this skill whenever the user wants barcode work in Java, touches files under `submodules/java`, or mentions `ApiClient`, `Configuration`, `GenerateApi`, `RecognizeApi`, `ScanApi`, `GenerateParams`, `RecognizeBase64Request`, `ScanBase64Request`, or the `*RequestWrapper` classes. The Java SDK has several easy-to-miss idioms: generate methods return `File`, every API call goes through wrapper objects, GET recognize/scan methods require a public `URI`, base64 methods expect caller-encoded data, tests prefer `src/test/configuration.json` or `TEST_CONFIGURATION_ACCESS_TOKEN`, and repo scripts should run through WSL on Windows, so consult this skill instead of guessing."
 ---
 
-# Aspose.BarCode Cloud SDK for Java
+# Generate and scan barcode in Java
 
 The Java SDK is a thin generated client over the Aspose BarCode Cloud REST API. Most tasks boil down to choosing the right API class (`GenerateApi`, `RecognizeApi`, `ScanApi`), picking the right auth path with `ApiClient` or `Configuration`, and building the matching `*RequestWrapper`.
 

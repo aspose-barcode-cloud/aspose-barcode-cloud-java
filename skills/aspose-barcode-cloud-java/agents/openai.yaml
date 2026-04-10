@@ -1,4 +1,0 @@
-interface:
-  display_name: "Aspose BarCode Cloud Java"
-  short_description: "Build and maintain Java barcode SDK code"
-  default_prompt: "Use $aspose-barcode-cloud-java to write or update Java code with the Aspose.BarCode Cloud SDK."
