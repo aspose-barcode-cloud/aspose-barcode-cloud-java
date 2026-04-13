@@ -24,6 +24,10 @@
 
 This repository contains Aspose.BarCode Cloud SDK for Java source code. This SDK allows you to work with Aspose.BarCode for Cloud REST APIs in your Java applications quickly and easily.
 
+## AI Agent Skills
+
+This repository includes an AI-agent skill in [`skills/generate-and-scan-barcode-java/SKILL.md`](skills/generate-and-scan-barcode-java/SKILL.md). Point your coding agent to it when working with this SDK so it follows the repo workflow and SDK-specific API patterns.
+
 ## Requirements
 
 Building the API client library requires:
@@ -217,4 +221,3 @@ Authentication schemes defined for the API:
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-

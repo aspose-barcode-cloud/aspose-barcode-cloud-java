@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate and scan barcode in Java"
+  short_description: "Use Aspose.BarCode Cloud from Java"
+  default_prompt: "Use $generate-and-scan-barcode-java to write or update Java code that generates, recognizes, or scans barcodes with Aspose.BarCode Cloud."
