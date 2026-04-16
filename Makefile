@@ -39,5 +39,10 @@ update:
 insert-example:
 	./scripts/insert-example.bash
 
+.PHONY: format-doc
+format-doc:
+	# Trim trailing empty line
+	sed -i -e '$${/^$$/d;}' README.md
+
 .PHONY: after-gen
-after-gen: fix format insert-example
+after-gen: fix format insert-example format-doc
