@@ -9,8 +9,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
-import io.gsonfire.GsonFireBuilder;
-
 import okio.ByteString;
 
 import java.io.IOException;
@@ -28,8 +26,7 @@ public class JSON {
     private Gson gson;
 
     private static GsonBuilder createGson() {
-        GsonFireBuilder fireBuilder = new GsonFireBuilder();
-        GsonBuilder builder = fireBuilder.createGsonBuilder();
+        GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting().create();
         return builder;
     }
