@@ -2,18 +2,11 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /** Barcode recognize request */
-@ApiModel(description = "Barcode recognize request")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class RecognizeBase64Request {
     @SerializedName(value = "barcodeTypes")
     private List<DecodeBarcodeType> barcodeTypes = new ArrayList<>();
@@ -43,7 +36,6 @@ public class RecognizeBase64Request {
      *
      * @return barcodeTypes
      */
-    @ApiModelProperty(required = true, value = "barcodeTypes")
     public List<DecodeBarcodeType> getBarcodeTypes() {
         return barcodeTypes;
     }
@@ -57,7 +49,6 @@ public class RecognizeBase64Request {
      *
      * @return fileBase64
      */
-    @ApiModelProperty(required = true, value = "fileBase64")
     public String getFileBase64() {
         return fileBase64;
     }
@@ -71,7 +62,6 @@ public class RecognizeBase64Request {
      *
      * @return recognitionMode
      */
-    @ApiModelProperty(value = "recognitionMode")
     public RecognitionMode getRecognitionMode() {
         return recognitionMode;
     }
@@ -85,7 +75,6 @@ public class RecognizeBase64Request {
      *
      * @return recognitionImageKind
      */
-    @ApiModelProperty(value = "recognitionImageKind")
     public RecognitionImageKind getRecognitionImageKind() {
         return recognitionImageKind;
     }

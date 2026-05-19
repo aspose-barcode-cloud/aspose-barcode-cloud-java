@@ -2,16 +2,9 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Scan barcode request. */
-@ApiModel(description = "Scan barcode request.")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class ScanBase64Request {
     @SerializedName(value = "fileBase64")
     private String fileBase64;
@@ -30,7 +23,6 @@ public class ScanBase64Request {
      *
      * @return fileBase64
      */
-    @ApiModelProperty(required = true, value = "fileBase64")
     public String getFileBase64() {
         return fileBase64;
     }

@@ -2,17 +2,10 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.List;
 import java.util.Objects;
 
 /** Represents information about barcode. */
-@ApiModel(description = "Represents information about barcode.")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class BarcodeResponse {
     @SerializedName(value = "barcodeValue")
     private String barcodeValue;
@@ -31,7 +24,6 @@ public class BarcodeResponse {
      *
      * @return barcodeValue
      */
-    @ApiModelProperty(value = "barcodeValue")
     public String getBarcodeValue() {
         return barcodeValue;
     }
@@ -45,7 +37,6 @@ public class BarcodeResponse {
      *
      * @return type
      */
-    @ApiModelProperty(value = "type")
     public String getType() {
         return type;
     }
@@ -59,7 +50,6 @@ public class BarcodeResponse {
      *
      * @return region
      */
-    @ApiModelProperty(value = "region")
     public List<RegionPoint> getRegion() {
         return region;
     }
@@ -73,7 +63,6 @@ public class BarcodeResponse {
      *
      * @return checksum
      */
-    @ApiModelProperty(value = "checksum")
     public String getChecksum() {
         return checksum;
     }
