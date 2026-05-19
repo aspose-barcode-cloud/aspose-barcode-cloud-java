@@ -2,17 +2,10 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /** Api Error. */
-@ApiModel(description = "Api Error.")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class ApiError {
     @SerializedName(value = "code")
     private String code;
@@ -45,7 +38,6 @@ public class ApiError {
      *
      * @return code
      */
-    @ApiModelProperty(required = true, value = "code")
     public String getCode() {
         return code;
     }
@@ -59,7 +51,6 @@ public class ApiError {
      *
      * @return message
      */
-    @ApiModelProperty(required = true, value = "message")
     public String getMessage() {
         return message;
     }
@@ -73,7 +64,6 @@ public class ApiError {
      *
      * @return description
      */
-    @ApiModelProperty(value = "description")
     public String getDescription() {
         return description;
     }
@@ -87,7 +77,6 @@ public class ApiError {
      *
      * @return dateTime
      */
-    @ApiModelProperty(value = "dateTime")
     public OffsetDateTime getDateTime() {
         return dateTime;
     }
@@ -101,7 +90,6 @@ public class ApiError {
      *
      * @return innerError
      */
-    @ApiModelProperty(value = "innerError")
     public ApiError getInnerError() {
         return innerError;
     }

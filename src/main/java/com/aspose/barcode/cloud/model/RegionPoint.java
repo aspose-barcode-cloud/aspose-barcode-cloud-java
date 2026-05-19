@@ -2,16 +2,9 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Wrapper around Drawing.Point for proper specification. */
-@ApiModel(description = "Wrapper around Drawing.Point for proper specification.")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class RegionPoint {
     @SerializedName(value = "x")
     private Integer x;
@@ -24,7 +17,6 @@ public class RegionPoint {
      *
      * @return x
      */
-    @ApiModelProperty(value = "x")
     public Integer getX() {
         return x;
     }
@@ -38,7 +30,6 @@ public class RegionPoint {
      *
      * @return y
      */
-    @ApiModelProperty(value = "y")
     public Integer getY() {
         return y;
     }

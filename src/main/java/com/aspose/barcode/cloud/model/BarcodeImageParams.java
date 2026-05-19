@@ -2,16 +2,9 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Barcode image optional parameters */
-@ApiModel(description = "Barcode image optional parameters")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class BarcodeImageParams {
     @SerializedName(value = "imageFormat")
     private BarcodeImageFormat imageFormat;
@@ -45,7 +38,6 @@ public class BarcodeImageParams {
      *
      * @return imageFormat
      */
-    @ApiModelProperty(value = "imageFormat")
     public BarcodeImageFormat getImageFormat() {
         return imageFormat;
     }
@@ -59,7 +51,6 @@ public class BarcodeImageParams {
      *
      * @return textLocation
      */
-    @ApiModelProperty(value = "textLocation")
     public CodeLocation getTextLocation() {
         return textLocation;
     }
@@ -75,7 +66,6 @@ public class BarcodeImageParams {
      *
      * @return foregroundColor
      */
-    @ApiModelProperty(value = "foregroundColor")
     public String getForegroundColor() {
         return foregroundColor;
     }
@@ -91,7 +81,6 @@ public class BarcodeImageParams {
      *
      * @return backgroundColor
      */
-    @ApiModelProperty(value = "backgroundColor")
     public String getBackgroundColor() {
         return backgroundColor;
     }
@@ -105,7 +94,6 @@ public class BarcodeImageParams {
      *
      * @return units
      */
-    @ApiModelProperty(value = "units")
     public GraphicsUnit getUnits() {
         return units;
     }
@@ -120,7 +108,6 @@ public class BarcodeImageParams {
      *
      * @return resolution
      */
-    @ApiModelProperty(example = "96", value = "resolution")
     public Float getResolution() {
         return resolution;
     }
@@ -134,7 +121,6 @@ public class BarcodeImageParams {
      *
      * @return imageHeight
      */
-    @ApiModelProperty(example = "200", value = "imageHeight")
     public Float getImageHeight() {
         return imageHeight;
     }
@@ -148,7 +134,6 @@ public class BarcodeImageParams {
      *
      * @return imageWidth
      */
-    @ApiModelProperty(example = "200", value = "imageWidth")
     public Float getImageWidth() {
         return imageWidth;
     }
@@ -164,7 +149,6 @@ public class BarcodeImageParams {
      *
      * @return rotationAngle
      */
-    @ApiModelProperty(value = "rotationAngle")
     public Integer getRotationAngle() {
         return rotationAngle;
     }

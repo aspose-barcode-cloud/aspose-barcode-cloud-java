@@ -2,16 +2,9 @@ package com.aspose.barcode.cloud.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Objects;
 
 /** Barcode generation parameters */
-@ApiModel(description = "Barcode generation parameters")
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.8.0")
 public class GenerateParams {
     @SerializedName(value = "barcodeType")
     private EncodeBarcodeType barcodeType;
@@ -38,7 +31,6 @@ public class GenerateParams {
      *
      * @return barcodeType
      */
-    @ApiModelProperty(required = true, value = "barcodeType")
     public EncodeBarcodeType getBarcodeType() {
         return barcodeType;
     }
@@ -52,7 +44,6 @@ public class GenerateParams {
      *
      * @return encodeData
      */
-    @ApiModelProperty(required = true, value = "encodeData")
     public EncodeData getEncodeData() {
         return encodeData;
     }
@@ -66,7 +57,6 @@ public class GenerateParams {
      *
      * @return barcodeImageParams
      */
-    @ApiModelProperty(value = "barcodeImageParams")
     public BarcodeImageParams getBarcodeImageParams() {
         return barcodeImageParams;
     }
